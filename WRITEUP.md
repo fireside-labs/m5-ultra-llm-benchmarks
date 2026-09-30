@@ -1,5 +1,3 @@
-# Long-context LLM and video benchmarks on an M5 Ultra
-
 A while back I promised you all M5 Ultra benchmarks. Then I remembered that every Mac benchmark on the internet is someone typing "hi" at a model and posting the tok/s like it's a PR at the gym. Nobody's life depends on how fast a model says hi back.
 
 I use these models for long documents and for coding agents that run for hours. So that's what I tested, and my Mac Studio has not been allowed to rest since. It's fine. It's a 256GB machine. It knew what it signed up for.
@@ -18,7 +16,7 @@ I use these models for long documents and for coding agents that run for hours. 
 
 If you only look at one chart, make it this one.
 
-![cold vs warm](charts/03_qwen_warm_vs_cold_ttft.png)
+![cold vs warm](03_qwen_warm_vs_cold_ttft.png)
 
 | | Cold (fresh prompt) | Warm (next step, cached) |
 |---|---|---|
@@ -34,7 +32,7 @@ So the real question isn't "how fast is prefill," it's "how often do you pay it.
 
 Qwen3.8-Flash-Next only has 12 full-attention layers out of 48, and it shows. On oMLX its decode barely moves from 10k to 250k. On llama.cpp it gasps like me on the stairs after leg day.
 
-![qwen decode](charts/02_qwen_decode_vs_depth.png)
+![qwen decode](02_qwen_decode_vs_depth.png)
 
 | Qwen, 8-bit, MTP off | 10k | 100k | 250k |
 |---|---|---|---|
@@ -51,7 +49,7 @@ With MTP on, oMLX Qwen decodes at 88 t/s at 10k and still 68 t/s at 250k, on sum
 
 DeepSeek-V4-Flash was slow out of the box. Here's what each change did at 10k context:
 
-![what each fix bought](charts/08_deepseek_what_each_fix_bought.png)
+![what each fix bought](08_deepseek_what_each_fix_bought.png)
 
 - llama.cpp with default settings: 628 t/s prefill
 - llama.cpp with `-b 2048 -ub 2048`: 827 t/s (+31%, one flag, free gains, the creatine of settings)
@@ -61,13 +59,13 @@ DeepSeek-V4-Flash was slow out of the box. Here's what each change did at 10k co
 
 Important: the Homebrew build of oMLX doesn't include the custom Metal kernels for DeepSeek's sparse attention. The log literally tells you long-context prefill is "several times slower," in the tone of a coach who's disappointed but not surprised. If you run DeepSeek V4 on oMLX, build it from source with `OMLX_WITH_CUSTOM_KERNEL=1`. You need Xcode's Metal toolchain for that, which is a 20-minute download I will never get back.
 
-Honest caveat: on DeepSeek I compared 0731 at 4-bit on oMLX against Vision-Exp at 8-bit on llama.cpp, so part of that gap is the quant, not the engine. A matched test is on my list.
+Honest caveat: on DeepSeek the two engines didn't run the exact same file. llama.cpp ran Vision-Exp (unsloth UD-Q8_K_XL, which keeps DeepSeek's native FP4 experts and FP8-ish everything else, basically lossless, 162GB). oMLX ran 0731 (Jundot's oQ4e, a 4-bit mixed re-quant of the same native format, 154GB). The experts are 4-bit in both, so this is closer to fair than it looks, but it's a different variant and a re-quant, not byte-for-byte the same model. A matched test is on my list.
 
 ## 4. MTP and DSpark
 
 Both guess a few tokens ahead. They're great on predictable stuff like JSON and code and do basically nothing for creative writing, which honestly relates to how I do at poetry.
 
-![mtp dspark](charts/07_mtp_dspark_speedup_by_task.png)
+![mtp dspark](07_mtp_dspark_speedup_by_task.png)
 
 | | Code | Reasoning | JSON | Prose |
 |---|---|---|---|---|
@@ -97,7 +95,7 @@ What I took from it:
 
 Because agents take different paths every run, I also did a cleaner engine test: I recorded one Qwen agent session (181 requests growing to 200k) and replayed the exact same requests against both engines, with the output fixed at 256 tokens per step.
 
-![replay](charts/09_qwen_replay_engines.png)
+![replay](09_qwen_replay_engines.png)
 
 | Same 181 requests, Qwen 8-bit, MTP off | oMLX | llama.cpp |
 |---|---|---|
@@ -143,7 +141,7 @@ Honest take: video diffusion is pure compute, which is exactly where NVIDIA is s
 ## Caveats
 
 - One overnight run per setup, so treat the agent numbers as a first look, not gospel.
-- The DeepSeek engine comparison mixes quant and variant (see above).
+- The DeepSeek engine comparison uses two variants (Vision-Exp vs 0731) and two packagings of the same native FP4/FP8 format (see above).
 - The LTX timings with the fixes applied are single runs; the unfixed baseline was repeatable within about 1%.
 - Qwen MTP doesn't load in mainline llama.cpp yet (unsloth has a branch), so the llama.cpp Qwen numbers are MTP off.
 
@@ -154,3 +152,5 @@ Honest take: video diffusion is pure compute, which is exactly where NVIDIA is s
 - LTX-2.3 vs 2.5, and more video settings
 
 Happy to answer questions, or run something specific if you tell me what you want to see. Meanwhile, my girlfriend says the Mac Studio and I both need to go outside. The Mac is staying in. My legs are still recovering from the sunlight.
+
+Everything is on GitHub: the scripts, raw results, charts and the hidden-test referee, so you can check my work or run it on your own machine: https://github.com/fireside-labs/m5-ultra-llm-benchmarks

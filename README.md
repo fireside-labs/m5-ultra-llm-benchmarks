@@ -56,8 +56,9 @@ Replaying the same 181-request Qwen agent session (to 200k, 256 output tokens pe
 on oMLX against 29.7 min on llama.cpp. LTX-2.5 generated 5 s of 1080p video with audio in 244 s
 (`--gpu-only`, 1024 VAE tiles), and 720p in 92 s.
 
-Caveats: there was one overnight run per setup. The DeepSeek engine comparison mixes model variant and quant
-(0731 oQ4e on oMLX, Vision-Exp Q8 on llama.cpp). See WRITEUP.md for the details.
+Caveats: there was one overnight run per setup. The DeepSeek engine comparison uses two variants and two packagings of the same
+native format (DeepSeek ships FP4 experts + FP8 elsewhere): 0731 as oQ4e, a 4-bit mixed re-quant, on oMLX;
+Vision-Exp as UD-Q8_K_XL, which keeps the native FP4 experts, on llama.cpp. Experts are 4-bit in both. See WRITEUP.md for the details.
 
 ## Layout
 

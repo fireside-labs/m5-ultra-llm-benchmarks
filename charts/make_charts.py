@@ -221,8 +221,8 @@ QWEN_SETUP = ("Qwen3.8-Flash-Next · llama.cpp Q8_0 vs oMLX oQ8e (Homebrew build
               "Both final runs: 3 reps on a quiet machine.")
 DS_SETUP = ("DeepSeek-V4-Flash · llama.cpp: Vision-Exp UD-Q8_K_XL (PRELIMINARY, 1 rep) vs oMLX kernel build: "
             "0731 oQ4e.")
-DS_CAVEAT = ("Different model variant (Vision-Exp vs 0731) and quant (8-bit vs 4-bit): this compares "
-             "engine + quant, not engine alone.")
+DS_CAVEAT = ("Different variant (Vision-Exp vs 0731) and packaging: UD-Q8_K_XL keeps the native FP4 experts + 8-bit rest; "
+             "oQ4e is a 4-bit mixed re-quant. Experts are 4-bit in both.")
 DS_BUILD = ('oMLX "kernel build" = built from source with OMLX_WITH_CUSTOM_KERNEL=1. '
             "llama.cpp run ended at 500k (planned to 1M).")
 
@@ -328,7 +328,7 @@ def chart4():
         for xs, ys in ((x1, y1), (x2, y2)):
             note(ax, xs[-1], ys[-1], fmt.format(ys[-1]), dx=0, dy=9, ha="center", va="bottom")
         ax.set_title(name, loc="left", fontsize=10.5, color=INK, weight="bold")
-    ly = frame(fig, (a1, a2), "DeepSeek: oMLX (4-bit) beats llama.cpp (8-bit) at every depth both engines ran",
+    ly = frame(fig, (a1, a2), "DeepSeek: oMLX beats llama.cpp at every depth both engines ran",
                DS_SETUP + "\n" + DS_CAVEAT,
                f"{HW}\n{PROMPTS}\n{DS_BUILD} oMLX: 1k-10k = 2 reps, 50k-200k = 1 rep; the kernel-build long run "
                f"stopped at 200k.\nSource: {fname(DL)}, {fname(DK_SHORT)}, {fname(DK_DEPTH)}",
@@ -512,7 +512,7 @@ def chart8():
                          f"{rhalf(pk):,} t/s, decode {d2048:.0f} → {code_on:.0f} t/s",
           "DeepSeek-V4-Flash · llama.cpp: Vision-Exp UD-Q8_K_XL (prelim., 1 rep) · oMLX: 0731 oQ4e (2 reps). "
           "Multipliers are vs the first bar.\nEach step changes one thing, except llama.cpp → oMLX, which also "
-          "switches variant and quant (8-bit → 4-bit).",
+          "switches variant (Vision-Exp → 0731) and packaging (native FP4 experts → 4-bit re-quant).",
           f"{HW}\nubatch 512 = first llama.cpp run, {os.path.basename(first)} (superseded by the ubatch 2048 run under the "
           "same label; ubatch itself is not recorded in the JSONL). Probes in results/probes give 824 t/s "
           "(ubatch 2048) and 840 t/s (ubatch 4096) at 10k. DSpark 10k = cold 10k book prompt; DSpark code = short code "
