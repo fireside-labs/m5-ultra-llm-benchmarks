@@ -1,0 +1,2528 @@
+924f81b595a8249ed7ff8cc8c55562471f2424cf1790747002milestone 1: Project scaffold
+
+4	0	.gitignore
+24	0	README.md
+13	0	index.html
+1497	0	package-lock.json
+18	0	package.json
+26	0	src/main.ts
+64	0	src/style.css
+7	0	tests/scaffold.test.ts
+20	0	tsconfig.json
+8	0	vite.config.ts
+43ae326b16c3e240c7484518e80bc3ee5e72a6501790747019milestone 2: Seeded RNG
+
+21	0	src/rng.ts
+53	0	tests/rng.test.ts
+4ad671517d8423aed72328e7e7105fd893c28fa71790747045milestone 3: Tile map model
+
+63	0	src/map.ts
+80	0	tests/map.test.ts
+a6e4fa656c6835f0d3cd88720ab0e406e40551661790747109milestone 4: Dungeon generator
+
+129	0	src/dungeon.ts
+114	0	tests/dungeon.test.ts
+90263e0b1e040c5e881d30aad1bc6a43a1caf2071790747135milestone 4: Dungeon generator
+
+2	2	tests/dungeon.test.ts
+1e2c33ebd4985009e6d4a063fc38cab896cd26461790747180milestone 5: Canvas renderer with camera
+
+40	4	src/main.ts
+11	0	src/movement.ts
+82	0	src/renderer.ts
+23	0	src/types.ts
+46	0	tests/movement.test.ts
+447ea2187048bf7596bce51579cb2eb61319aa351790747180milestone 6: Player movement with keyboard input
+e46e869a0c388c1269a1082cdda60f1a2e32d3931790747372milestone 7: Field of view and fog of war
+
+72	0	src/fov.ts
+1	1	src/map.ts
+67	0	tests/fov.test.ts
+1	1	tests/map.test.ts
+6736ebbf79c081390fe6690a3bbd54e3af6a039a1790747403milestone 7: Field of view and fog of war
+
+15	6	src/main.ts
+31	5	src/renderer.ts
+955220566024085b8d6859826b8e5c9137fc44501790747465milestone 8: Entities and components
+
+82	0	src/entity.ts
+72	0	src/inventory.ts
+91	0	tests/entity.test.ts
+74623f78f3aa24bda222ee49a0fe833f52e2ee9b1790747558milestone 9: Monsters with distinct behaviour
+
+88	0	src/ai.ts
+81	0	src/pathfinding.ts
+87	0	tests/ai.test.ts
+65	0	tests/pathfinding.test.ts
+4816fa035ddd84e805441a0d5d92c9d57c0c5ca51790747558milestone 10: A* pathfinding
+c2e6d61b90901f94374586505b71fc9b36cb789a1790747583milestone 11: Turn scheduler
+
+50	0	src/scheduler.ts
+55	0	tests/scheduler.test.ts
+47224b70e323f63373554d8a3594855d117ecf7c1790747664milestone 12: Combat and message log
+
+32	0	src/combat.ts
+199	0	src/engine.ts
+31	0	src/log.ts
+19	21	src/main.ts
+70	0	tests/combat.test.ts
+1976fe4c8b1f46779351714befc68756b5f9a4f51790747721milestone 13: Items and inventory operations
+
+53	2	src/engine.ts
+50	0	src/items.ts
+72	0	tests/items.test.ts
+78f01e1f75b7b3fa439146d17971632c795bbe761790747750milestone 14: Inventory UI
+
+35	2	src/main.ts
+89	0	src/ui.ts
+82d84d87dc504b25a4aaa522172bff023db857951790747756milestone 14: Inventory UI
+
+3	2	src/ui.ts
+8c28c533cd7fdd03febcc21b9b471244a6fc59121790747763milestone 14: Inventory UI
+
+2	2	src/ui.ts
+f63988edf19c8a1211606c786a94ca4b39102e821790747771milestone 14: Inventory UI
+
+1	1	src/ui.ts
+f8669ea5702e3150fdc1460ae36d2bb0bb5b8c3a1790747836milestone 15: Multiple dungeon levels with stairs
+
+42	3	src/engine.ts
+56	0	src/levels.ts
+7	1	src/main.ts
+45	0	tests/levels.test.ts
+44	0	tests/stairs.test.ts
+4a89f45a4cea2dddec0bc720c20fa0092d8ea02a1790747870milestone 16: Save and load
+
+120	0	src/save.ts
+43	0	tests/save.test.ts
+7b57186f6b55cb1d8dc4fc477df900b3762005e21790747894milestone 17: Status effects
+
+33	0	src/status.ts
+60	0	tests/status.test.ts
+b6f03abb0e8ed594d205124463cb177a3335159b1790747927milestone 17: Status effects integrated
+
+20	3	src/engine.ts
+1	1	src/entity.ts
+a2280514118cf512a4b7c1be6ecb4ee728f7ebbf1790747973milestone 18: Traps
+
+37	1	src/engine.ts
+64	0	src/traps.ts
+47	0	tests/traps.test.ts
+a17df8eefb6450452a9ea90a9838916c7b1948771790748018milestone 19: Shops and gold economy
+
+22	0	src/engine.ts
+57	0	src/shop.ts
+68	0	tests/shop.test.ts
+9ebc7a504b91437e79cbe46a92ce53bfc50611491790748075milestone 20: Experience, levelling and character classes
+
+51	0	src/classes.ts
+35	0	src/engine.ts
+48	0	tests/classes.test.ts
+1bf24679c6fa3e4f9cdf6d01718809bd240ca89b1790748085milestone 20: Experience, levelling and character classes
+
+3	3	tests/classes.test.ts
+c7ead961d4386440247edd76376864e14d2ceb2b1790748153milestone 21: Skills with cooldowns and targeting
+
+43	0	src/engine.ts
+104	0	src/skills.ts
+29	0	tests/skills-engine.test.ts
+74	0	tests/skills.test.ts
+e92da4334f89ea645d4a9c4c9ceb3cfd2e221d901790748168milestone 21: Skills with cooldowns and targeting
+
+2	1	tests/skills-engine.test.ts
+74c93ab71047c85718d89be58a6d4957963a5f371790748210milestone 22: Boss monster with phases
+
+47	0	src/boss.ts
+26	0	src/engine.ts
+50	0	tests/boss.test.ts
+4b320cd854579e8a404cb87723fedb201a268ed01790748240milestone 23: Sound effects and mute toggle
+
+74	0	src/audio.ts
+19	0	tests/audio.test.ts
+d443559749f14742767f43ec1ec46bff5c24cc001790748268milestone 24: Settings screen
+
+84	0	src/settings.ts
+54	0	tests/settings.test.ts
+151b496e41563e8501220ef520cf4b3308cd4da31790748281milestone 24: Settings screen
+
+2	2	tests/settings.test.ts
+e240f605bae0aa2687c35903f900eb8f31e142c81790748300milestone 25: Accessibility
+
+46	0	src/a11y.ts
+17	0	tests/a11y.test.ts
+cd95eb6c7f1575b3564f8e7bb48cdad0a788d6a91790748335milestone 26: Achievements system
+
+60	0	src/achievements.ts
+25	0	src/engine.ts
+44	0	tests/achievements.test.ts
+1f4007646ce5f4cc8faaa7d3f2f258741ed705f31790748423milestone 27: Replay system
+
+4	2	src/engine.ts
+4	0	src/entity.ts
+4	0	src/inventory.ts
+80	0	src/replay.ts
+40	0	tests/replay.test.ts
+c6371b3aca44a9c250b8ad4f4b17ac5ec0ea866e1790748446milestone 28: Performance pass and benchmark
+
+39	0	src/bench.ts
+19	0	tests/benchmark.test.ts
+2c7464ffaa755a6d093408fd4a26bb93cf4ae3a01790748452milestone 28: Performance pass and benchmark
+
+1	1	src/bench.ts
+4dbb0863faa304831d5fced5d52461b8647f45681790748472milestone 29: End-to-end headless tests
+
+23	0	src/headless.ts
+26	0	tests/e2e.test.ts
+3759e233529814405dab9292bfba8a4d5a839ea51790748522milestone 30: Documentation
+
+98	0	CHANGELOG.md
+41	0	docs/CONTRIBUTING.md
+75	0	docs/architecture.md
+ab7afdca80ed10b744f5a110d4ca7c263d87fa5a1790748577milestone 1: HUD and game loop extension
+
+52	0	src/hud.ts
+9	0	src/main.ts
+7	1	src/style.css
+20	0	tests/hud.test.ts
+88a156085584993e1ae5d257d39d03e5c3e005591790748597milestone 2: RNG helpers and tests
+
+15	1	src/rng.ts
+24	2	tests/rng.test.ts
+4051d57366562038022e363705a75b1afcd23ddf1790748615milestone 3: stairs tile kind
+
+6	5	src/map.ts
+16	1	tests/map.test.ts
+43e06848f3ee0e1e161a6a7e4a3af0f190d08b4c1790748637milestone 4: dungeon generator tests
+
+27	1	tests/dungeon.test.ts
+dd8e701f13f078e36f1e2688265ced76d76c94f01790748646milestone 4: dungeon generator tests
+
+1	1	tests/dungeon.test.ts
+e9040c0267e1ba3726c609c7e43a34ba04ca17871790748659milestone 5: renderer shade tests
+
+1	1	src/renderer.ts
+17	0	tests/renderer.test.ts
+c7dd8d00585600e0a25c10c9c871751611fe72441790748669milestone 6: movement edge cases
+
+25	1	tests/movement.test.ts
+ccf1fa1d2ef88af5af05c9ec63fc913cd3623d061790748684milestone 6: movement edge cases
+
+4	0	src/movement.ts
+ca564454d04d7c20d7e98c900d4af0bbae2ca7251790748695milestone 7: FOV corridor and radius tests
+
+26	1	tests/fov.test.ts
+d26fc36efeecc0a0dfefc1a2ebe55ea76ec8c4a81790748743milestone 7: FOV corridor and radius tests
+
+5	1	tests/fov.test.ts
+0524b1d4b3094487575fda1d50fe33bcd532e0101790748754milestone 8: entity tests
+
+28	1	tests/entity.test.ts
+89e2a9b7be2d5062bf2326942eb20e25734541d51790748771milestone 9: AI behavior tests
+
+36	1	tests/ai.test.ts
+d2acfad5493a40f41a9b45f4e61fe0915c92f4bf1790748783milestone 10: pathfinding extensions
+
+31	1	tests/pathfinding.test.ts
+0f84816f945d689c31ab3bddea331a8a8b8a7d051790748798milestone 11: scheduler extensions
+
+32	1	tests/scheduler.test.ts
+341973ceb1ec6410548a640958a24c061a20cb201790748812milestone 12: combat extensions
+
+42	1	tests/combat.test.ts
+281c7fb4512c4a908f788ece87078c1a48ffa7251790748824milestone 12: combat extensions
+
+0	2	tests/combat.test.ts
+7189160f8455588ab5d4225976d5a786864e5ec01790748836milestone 13: inventory extensions
+
+33	0	tests/entity.test.ts
+c76fd0075ca5e3f69808e7a87a81400a2500b5af1790748862milestone 14: shop UI
+
+18	0	src/main.ts
+85	0	src/shopui.ts
+9c97bd1d47a0b5f25ba6b5f554625a6635eb06bf1790748873milestone 15: levels extensions
+
+28	1	tests/levels.test.ts
+a2084d5a5eb486820ad3fdcd4e226fa4fe2830a21790748903milestone 16: save extensions
+
+12	0	src/save.ts
+28	1	tests/save.test.ts
+89c77a804283ec6ca5f6bc5d00a5d6c718f980451790748914milestone 17: status extensions
+
+30	1	tests/status.test.ts
+37d949039060c3acbd8c2a1ddaf7d73960bf58871790748926milestone 18: trap extensions
+
+33	1	tests/traps.test.ts
+3eedf6b584db9a8d2a77601b3217a5d98c31e3501790748936milestone 19: shop extensions
+
+24	1	tests/shop.test.ts
+bb5b1678f0d61195d1e99766d8c84bd12c1d6d2a1790748947milestone 20: classes extensions
+
+27	1	tests/classes.test.ts
+a3e5e0b54140459f5db0c2a5864ed9cd39be9ba61790748961milestone 21: targeting extensions
+
+31	1	tests/skills.test.ts
+4b6fb3c80692dc82b411042ec32db7f2974d6f861790748973milestone 22: boss extensions
+
+22	2	tests/boss.test.ts
+55697b7f3c4dba633a8e18b90425a715dd35c4751790748987milestone 23: audio extensions
+
+21	1	tests/audio.test.ts
+453666382f22a9d4472930914c5967e685c362ce1790748997milestone 24: settings extensions
+
+32	1	tests/settings.test.ts
+fb851da29a63fc2c5ebd9d2ee8530f5947d94cd61790749006milestone 25: a11y extensions
+
+16	1	tests/a11y.test.ts
+ee2fc85ae36915ea10f6bb84608e97e1531fe4761790749016milestone 26: achievements extensions
+
+27	1	tests/achievements.test.ts
+16e80883309d6917008dff6c9fddba9aa6c745e41790749029milestone 27: replay extensions
+
+33	1	tests/replay.test.ts
+a75510fb9c84c9f927f51d43cc8b88a74b4e538d1790749072milestone 28: algorithm benchmarks
+
+25	1	tests/benchmark.test.ts
+ca6125a02d5c8bb7c27eea1f2f90235629b0bc9f1790749110milestone 28: optimize A* with binary heap
+
+66	22	src/pathfinding.ts
+94da4fbd861adf1fdbafb1e8c4aacbc12d2060481790749124milestone 29: e2e extensions
+
+26	1	tests/e2e.test.ts
+ae171cab0c1070e7d0413465f6677a824cbfb7681790749323milestone 11: scheduler-driven turns and spend method
+
+10	4	src/engine.ts
+6	0	src/scheduler.ts
+43	0	tests/scheduler-engine.test.ts
+830b2f1cb93a1cd71aba1e75c81908d75c3865da1790749365milestone 13: scroll effects
+
+51	1	src/engine.ts
+49	0	tests/scrolls.test.ts
+62e1c90230a847a47ff2dea1865a5c68bc2a9ace1790749383milestone 19: sell items
+
+10	0	src/engine.ts
+18	1	tests/shop.test.ts
+5843b96709b8a305d9acdfcc74540917bcfa9a411790749405milestone 22: win condition and wait action
+
+10	1	src/engine.ts
+11	0	tests/e2e.test.ts
+3cac8993fe57ab1d40f881458752049a921504bb1790749416milestone 6: wait action keybinding
+
+4	1	src/main.ts
+fff24579de7708ae197a44499169b493211912411790749427milestone 24: apply settings to DOM
+
+12	1	src/settings.ts
+11	0	tests/settings.test.ts
+a1fc9e7bc449aba958dd649fd4112057344605741790749457milestone 17: haste/slow affect scheduler speed
+
+10	3	src/engine.ts
+0360454ee76c20ada21ed2edab9f8bac90cffb271790749472milestone 17: status speed test
+
+14	0	tests/status.test.ts
+f30d26f0b55e526dab25943e8a335e75968bed381790749516milestone 9: new monster types and depth scaling
+
+6	1	src/engine.ts
+4	0	src/entity.ts
+12	1	tests/e2e.test.ts
+11	0	tests/entity.test.ts
+c075d6f3cb0499093f65355749340cf8a2d119571790749528milestone 9: new monster types and depth scaling
+
+1	2	tests/e2e.test.ts
+e47df67553c015a7e0e6cee89d2898131f7c59041790749564milestone 24: settings UI
+
+17	0	src/main.ts
+137	0	src/settingsui.ts
+60c1820277b8021932a90ae82019ab4545f5e0cd1790749597milestone 16: storage abstraction
+
+21	1	src/main.ts
+41	0	src/storage.ts
+30	0	tests/storage.test.ts
+39e0f2cf8ac06857078dd7cd4981606e2efe43b11790749607milestone 26: win achievement check
+
+7	0	src/engine.ts
+ad5e4baf6b5aa65235f677f4fe36a56a211bbe121790749621milestone 5: render stairs glyph
+
+6	0	src/renderer.ts
+f25a2a30cc708d5297c65e228a01ae8715d7fc8d1790749634milestone 12: combat integration test
+
+15	0	tests/combat.test.ts
+35c2e583e3d223af13e420f23871d49d0dbf8db81790749645milestone 4: start in first room test
+
+13	0	tests/dungeon.test.ts
+da0a273fedc78938a76e2f17651a00d5d31d9d7d1790749655milestone 15: boss level test
+
+7	0	tests/levels.test.ts
+2c6eb138ca4d6399e8510e8b58ffcecf6d03919d1790749667milestone 10: maze pathfinding test
+
+21	0	tests/pathfinding.test.ts
+8cf19a588d9c1e9a839214246dab179ca111e8d11790749681milestone 10: maze pathfinding test
+
+4	3	tests/pathfinding.test.ts
+09c8ee40615ebfc64d7a7062fec4e368b30e505a1790749706milestone 10: maze pathfinding test
+
+4	10	tests/pathfinding.test.ts
+7e475a6f324338eac623951e286e9a5b0fc479bf1790749716milestone 9: flee threshold test
+
+15	0	tests/ai.test.ts
+afa7cd3cb7e4dad2e8e937161a75156965c8301e1790749730milestone 26: achievements integration test
+
+11	0	tests/achievements.test.ts
+00f4f92f709da3c3311fbd040f9cca5824fd25011790749743milestone 26: achievements integration test
+
+2	0	tests/achievements.test.ts
+8cf3e26ee888d68dbfdf180987f6a1ad9db5a0d01790749756milestone 21: cone skill engine test
+
+18	1	tests/skills-engine.test.ts
+752d68c6997c73a2610377075a8853ea9eaeee021790749770milestone 22: boss combat test
+
+15	0	tests/boss.test.ts
+e84adedb36c21030e7a0a04baf821a1150c3c3a11790749781milestone 22: boss combat test
+
+0	1	tests/boss.test.ts
+910337f16ae2adecdf6798a31dcefba20d99af011790749794milestone 18: trap engine integration test
+
+14	0	tests/traps.test.ts
+f650b5b2c91929a33545ef346a703283ddc3f5611790749805milestone 18: trap engine integration test
+
+0	1	tests/traps.test.ts
+be3a274f6c58ab08e9512e79b306ded7009f69bd1790749816milestone 7: wall adjacency fov tests
+
+18	0	tests/fov.test.ts
+93b73334ec6c3dafb1abeea1c7209f6d71ed47f81790749826milestone 3: map edge case tests
+
+15	0	tests/map.test.ts
+59429e2c879df6145fa162f75a2c33f5f110bd3b1790749836milestone 11: scheduler spend test
+
+15	0	tests/scheduler.test.ts
+818125008019469367d6836bfaeb9a4a964361c11790749845milestone 16: save migration tests
+
+12	0	tests/save.test.ts
+5cb98977e92ef9b1a96b04561ffd713d04dd407e1790749855milestone 27: replay descend test
+
+17	0	tests/replay.test.ts
+1d02e13496f71de05c2c87716ecc1331df200c981790749873milestone 27: replay descend test
+
+6	6	tests/replay.test.ts
+47243b5dee56c315913b2fedbe64eee9fd0102031790749882milestone 24: theme cycling test
+
+8	0	tests/settings.test.ts
+716e81c90304548cb6a04584a81f35c1795fe9b81790749892milestone 5: camera math test
+
+13	0	tests/renderer.test.ts
+0ea8adc54ee443af1d3ec135dd8e92f7f7aaa7c31790749901milestone 5: camera math test
+
+2	3	tests/renderer.test.ts
+084b99913b7054566efcb6a8d7356940288ecc551790749913milestone 4: room connectivity via pathfinding
+
+12	0	tests/dungeon.test.ts
+36c48d6283a23461868d2db11e6a3ebd37276a6c1790749925milestone 12: damage bounds test
+
+14	0	tests/combat.test.ts
+6c72fc4f402a45a770893add8368fd7bb82d7a391790749934milestone 15: stairsUp range test
+
+10	0	tests/levels.test.ts
+e68fd0e6bbdfa67e9ce2bb8c86c10835c98b28e31790749944milestone 21: cooldown state test
+
+12	0	tests/skills.test.ts
+72b32a1a53d8ff394ac1ca38c15782027b9c29821790749953milestone 22: boss win condition test
+
+12	0	tests/boss.test.ts
+44094b80ae21be797e9c063ab8e6f421eee200911790749964milestone 29: headless determinism tests
+
+16	0	tests/e2e.test.ts
+76a83770cb96d69f21c60198219bece3631f47da1790749977milestone 29: headless determinism tests
+
+1	1	tests/e2e.test.ts
+fd950a71c99a90ba17b4a7aa8fb1ca496ec04a0c1790749985milestone 28: benchmark state test
+
+7	0	tests/benchmark.test.ts
+476300bc119e9058a1f3214417ff7e46fc41625d1790749994milestone 7: fov radius boundary test
+
+9	0	tests/fov.test.ts
+d8a692358e7ed100cc93a189a4da4015faa30ca71790750002milestone 3: door walkability test
+
+9	0	tests/map.test.ts
+178efd8db22768fee7f2545703fcffbc4bf453281790750011milestone 19: shop level test
+
+9	0	tests/shop.test.ts
+3034af86e061033d17c7763ddab07594a29af3e11790750019milestone 20: xp threshold test
+
+7	0	tests/classes.test.ts
+bcbeb2f30ad63683261be6d6c239a2481c9375691790750029milestone 17: poison scaling test
+
+9	0	tests/status.test.ts
+3e91923a0ba5ab61d1ba61f26940375a6781769f1790750039milestone 27: finalState determinism test
+
+10	0	tests/replay.test.ts
+ccab1d1e9325cf9a5044444f6033d43097ad95e31790750049milestone 16: deep game save test
+
+13	0	tests/save.test.ts
+f1ad32a02992c75c5db386c86f53adc779b7315e1790750064milestone 4/21: serialization and targeting tests
+
+13	0	tests/dungeon.test.ts
+8	0	tests/skills.test.ts
+8ecd80737229be0316fbc0d4ccdd6e62c227bfe21790750077milestone 6: wait action test
+
+11	0	tests/movement.test.ts
+65ab15ac65b66857ffcbd862daaf04d6a9aa13bc1790750088milestone 11: three-speed scheduler test
+
+15	0	tests/scheduler.test.ts
+9c3335e7bf1f3a5e38d3951887024559ba7fbf7c1790750098milestone 12: critical determinism test
+
+12	0	tests/combat.test.ts
+a563cb43cc1907533e2941f609c06821e8ebe35d1790750108milestone 7: fov door test
+
+11	0	tests/fov.test.ts
+6f6cf24b6ad502c8632379adde3b2cf0a556b64c1790750117milestone 19: shop insufficient gold test
+
+11	0	tests/shop.test.ts
+b2f798d3b130f4a1b8a97a5581944c9bc43ecf131790750125milestone 15: levels cache test
+
+9	0	tests/levels.test.ts
+7555ea12b709cb751b7cc9c0ca71f81586a4ce881790750134milestone 2: rng negative int test
+
+11	0	tests/rng.test.ts
+46ee206218451e1959866e141359eb1545027de31790750144milestone 3: stairs serialization test
+
+9	0	tests/map.test.ts
+722f4da14d59782cd51d592868b4fab9e3feed741790750157milestone 4: dungeon stairs serialization test
+
+10	0	tests/dungeon.test.ts
+d3c0370a9225b6da95760b30787029b17f5fa8181790750170milestone 7/10: corridor and origin tests
+
+9	0	tests/fov.test.ts
+10	0	tests/pathfinding.test.ts
+80d33713fe73088aa0bb7a5f7b92c2bd8335fd0c1790750182milestone 6/11: diagonal and empty scheduler tests
+
+10	0	tests/movement.test.ts
+11	0	tests/scheduler.test.ts
+a0213da0fa006b55bfbfc056c5ba2ad5566072b51790750195milestone 12/17: high defense and confusion tests
+
+17	0	tests/combat.test.ts
+13	0	tests/status.test.ts
+fadc65abaf09442041c64d38f02c5a13bd4a2a171790750209milestone 19/20: price and level-up tests
+
+13	0	tests/classes.test.ts
+12	1	tests/shop.test.ts
+e95add33a0686ca3122dc7562ee4a15c4c3190a41790750218milestone 3: out-of-bounds transparency test
+
+8	0	tests/map.test.ts
+418136cc1485ec0a62958077a1bfad0b126b778d1790750230milestone 18/21: radius and poison trap tests
+
+9	0	tests/skills.test.ts
+10	0	tests/traps.test.ts
+e06bfd0da2a7fe0a214a2760c895cddfe4f7a7581790750240milestone 27: replay equip test
+
+15	0	tests/replay.test.ts
+4c89f964ddbd48eeecbd8e4e36b1198c2c80245b1790750251milestone 16/22: effects and boss stats tests
+
+9	0	tests/boss.test.ts
+13	0	tests/save.test.ts
+29e8a4bcca1c075d000176387fd3bcc068b5d6e11790750263milestone 6/10: wall collision and unreachable tests
+
+9	0	tests/movement.test.ts
+12	0	tests/pathfinding.test.ts
+d89707ee5a2665452e2bd8c40fe2dc7b937f85411790750276milestone 7/12: large radius and killed flag tests
+
+12	0	tests/combat.test.ts
+9	0	tests/fov.test.ts
+a6378d626fdf4aaf578220cb47a5e07e27ff08601790750290milestone 7: large radius fov test
+
+1	1	tests/fov.test.ts
+5bc3ee2254dbd68ee85ed90b3967713669be3dff1790750298milestone 3: default fill test
+
+11	0	tests/map.test.ts
+29c6985786805ce92a5a2d16d6eaa3dba7c517941790750307milestone 20: class skill names test
+
+7	0	tests/classes.test.ts
+e1bf53cf78dfef1dbc0868c6221dd3a2676411201790750317milestone 18/21: cone and disarm tests
+
+7	0	tests/skills.test.ts
+8	0	tests/traps.test.ts
+2ffbddf927e0b795308ef83a4117eb97ab7283cc1790750328milestone 19/22: sell price and phase special tests
+
+9	0	tests/boss.test.ts
+8	0	tests/shop.test.ts
+de3cd4e073999f591cd59d458681dd0061faad201790750339milestone 7/10: start wall and corner origin tests
+
+10	0	tests/fov.test.ts
+8	0	tests/pathfinding.test.ts
+596b8c7686468139fbe8f3c3d2d79df2c4eb340b1790750358milestone 7: corner origin fov test
+
+0	7	tests/pathfinding.test.ts
+71ffe3ddf0d589a4128f9f3af1335b115657f8311790750367milestone 4: large map connectivity test
+
+7	0	tests/dungeon.test.ts
+595e4fe7108dfcafcd61589fdc0cb7d83b2699641790750376milestone 11: scheduler re-add test
+
+12	0	tests/scheduler.test.ts
+00c357834706322809606b188391a3617474613a1790750386milestone 17: multiple effects test
+
+16	0	tests/status.test.ts
+8ead8526a6fa47a8ccbd898c57914f2d7943d03d1790750398milestone 12/21: one-shot and diagonal line tests
+
+11	0	tests/combat.test.ts
+10	0	tests/skills.test.ts
+9b76e3b02b494b8b9c066228671a52c69ca4379e1790750407milestone 15: depth 1 stairsUp test
+
+7	0	tests/levels.test.ts
+58d9e848a151008767c90037ebff62dadca248e61790750416milestone 6: stairs movement test
+
+10	0	tests/movement.test.ts
+2a98ad173ab106898072925f49b7c0346825d1221790750426milestone 10: door pathfinding test
+
+11	0	tests/pathfinding.test.ts
+d704374993409bfa8bc0a0f4f9161972560ad54b1790750437milestone 7: wall blocking fov test
+
+10	0	tests/fov.test.ts
+6b0c63bb317b9dc65f7b85c86a247221842458761790750448milestone 12/21: miss and radius tests
+
+13	0	tests/combat.test.ts
+7	0	tests/skills.test.ts
+87ea1fd6d74170a4d41e755a0ebc5212ae27410f1790750462milestone 21: radius tiles test
+
+2	2	tests/skills.test.ts
+eb5b4a00ccfa8cc8829f5dd1c6a69c4a9fe7c9e31790750472milestone 2: rng instance independence test
+
+10	0	tests/rng.test.ts
+7f3230bdbcfdf5268ee0b6778dea0293816e5bdb1790750481milestone 3: JSON stability test
+
+12	0	tests/map.test.ts
+55c019287e360fca12a859ff724e0040abde79871790750490milestone 17: poison low hp test
+
+9	0	tests/status.test.ts
+3c95976b77aeddc1e47b1f3963b525099728c2fe1790750501milestone 12: defense mitigation test
+
+18	0	tests/combat.test.ts
+bc1b1b770f9f7cb847b90c44f17bf7bf4f6724f01790750511milestone 10: shortest path length test
+
+10	0	tests/pathfinding.test.ts
+b72bf40a0906924f887d019b434f7b79cd3a5a501790750523milestone 6/7: radius and door tests
+
+9	0	tests/fov.test.ts
+10	0	tests/movement.test.ts
+d754bc4e41b9550ae840cfc8953dc61ecfec3a5e1790750533milestone 20: setClass test
+
+9	0	tests/classes.test.ts
+4487b16d61dd8e52faf0066dcb2a4d3f7865221a1790750541milestone 22: boss level test
+
+7	0	tests/boss.test.ts
+b39274babf00d0a3f23837c644f0f4869b5103e91790750551milestone 4: room bounds test
+
+12	0	tests/dungeon.test.ts
+1318622eca8fc95ee35b5b9cbd52914355c97f9a1790750559milestone 16: save version test
+
+7	0	tests/save.test.ts
+29d3733a9f351372c3db0e028c71375bd0967e0b1790750568milestone 21: cone targeting test
+
+8	0	tests/skills.test.ts
+127f89fa0ffff44b54e7067d966f96c5af8c4a091790750577milestone 18: trap detect test
+
+11	0	tests/traps.test.ts
+f0a3300a287dfe42ba57e0a1a6863e89b28fa4281790750586milestone 6: wall movement test
+
+9	0	tests/movement.test.ts
+e8a6bcfc0f8ece9c216f1979afc828a1fff13ea11790750595milestone 10: same point pathfinding test
+
+7	0	tests/pathfinding.test.ts
+fe784d672a343a3ac03885d24658a482826e44861790750603milestone 7: fov origin test
+
+8	0	tests/fov.test.ts
+7ab79ac6ec22110461514dba9e9f97b1b12901f31790750616milestone 12: critical test
+
+21	0	tests/combat.test.ts
+cb1e86e446fd312dbef7413f9f888ab34cb51e391790750626milestone 17: status apply test
+
+9	0	tests/status.test.ts
+ca63f2b05248e72b28bfaeb1471e9fe2da0fba301790750635milestone 4: start walkable test
+
+8	0	tests/dungeon.test.ts
+e6431ec8d741b9aaada40036b8866c15199af7f71790750645milestone 11: scheduler speed test
+
+12	0	tests/scheduler.test.ts
+7c4108e285feee1e64d8ef54ef5ee9f42b771c2e1790750655milestone 3: walkability test
+
+12	0	tests/map.test.ts
+5f34ab23091526914e0a2bd7e31f7c59cd15f1f81790750664milestone 15: stairs walkable test
+
+8	0	tests/levels.test.ts
+682876197db6c88cdad89255b58ae56e04e8cb351790750673milestone 2: rng int test
+
+12	0	tests/rng.test.ts
+4d21fd532093ed1f51b9fc97f7d912b7aa5fa17b1790750683milestone 12: hit test
+
+13	0	tests/combat.test.ts
+1cbab59cdab9835d4c17511902c17fd32c88aedd1790750693milestone 7: fov deterministic test
+
+9	0	tests/fov.test.ts
+68e55cdb3faeb268fd1014702b748c3ed35233ad1790750702milestone 6: out-of-bounds movement test
+
+9	0	tests/movement.test.ts
+7fc860c96e6f7b7fe823b16253a49acfe756e9591790750711milestone 10: pathfinding stairs test
+
+10	0	tests/pathfinding.test.ts
+d1460047e194e0ace01b878ada91667d6ada827d1790750719milestone 11: scheduler add test
+
+8	0	tests/scheduler.test.ts
+a30830f6b356341517bda907270aef6ac3bc398c1790750729milestone 17: status tick test
+
+9	0	tests/status.test.ts
+7c1fff0040ccf1114139848e1501c41f0105609a1790750740milestone 4: border test
+
+14	0	tests/dungeon.test.ts
+c3d22630cdbee6f7d3058010b5effba2f570c2891790750749milestone 3: transparency test
+
+10	0	tests/map.test.ts
+8bb2892a4f052bafbf19b3302bf25190c3e346d01790750758milestone 15: levels depth test
+
+7	0	tests/levels.test.ts
+cec184697bc581fc40d5d9fd40e5d1c3d5329ec71790750768milestone 2: rng next test
+
+11	0	tests/rng.test.ts
+2869459b1893cacf2fa607d0f05281fdf576ea7e1790750779milestone 12: combat determinism test
+
+9	0	tests/combat.test.ts
+867d15649b5e5380595701db63b96d73defd9e8a1790750789milestone 7: fov symmetric test
+
+11	0	tests/fov.test.ts
+113fac8b13cb8c344963739959716206107815291790750798milestone 6: stairs walkability test
+
+10	0	tests/movement.test.ts
+ac491e2f21de70ddd151a433e0f6cef8191eabd51790750808milestone 10: door traversal test
+
+11	0	tests/pathfinding.test.ts
+d4e01b2abea2768301f82a58fd332b2f8eae18281790750817milestone 11: scheduler remove test
+
+12	0	tests/scheduler.test.ts
+f70a4bfa70ee63e4cd227729a31ade19b2d673ec1790750826milestone 17: status has test
+
+9	0	tests/status.test.ts
+908a1f4b08d27ed18670be36da42c39bd422dfe51790750835milestone 4: deterministic dungeon test
+
+9	0	tests/dungeon.test.ts
+1ed47913bfca41ff11414aa8c4195f417c6d6b3d1790750845milestone 3: serialization round-trip test
+
+15	0	tests/map.test.ts
+9b790af69cedd6cfaa86d9a64962459eb83df7541790750855milestone 15: persistence test
+
+9	0	tests/levels.test.ts
+73ebdd8b256ffc12a95faadafaa34c98731549241790750865milestone 2: rng determinism test
+
+10	0	tests/rng.test.ts
+efe951bca4edee87ab82967949d57f6b77c459491790750876milestone 12: killed test
+
+13	0	tests/combat.test.ts
+0b5c3c753a5ca9fd7e8f0520e470159dc4b852cb1790750886milestone 7: fov door test
+
+10	0	tests/fov.test.ts
+81c0e085966d5c7ad48d44eec5977b037c0e23001790750897milestone 6: diagonal rejection test
+
+10	0	tests/movement.test.ts
+8cf35c77848531d175ec06e70691793835134a2d1790750906milestone 10: shortest path test
+
+9	0	tests/pathfinding.test.ts
+99fe5373a8f7d833b944675cfa82fe4f6caf0c191790750916milestone 11: round-robin test
+
+11	0	tests/scheduler.test.ts
+1de90525c80f286c6d666d5cb57b999c4174677e1790750925milestone 17: status refresh test
+
+10	0	tests/status.test.ts
+cb52210f9984f439937af337a0721a82263cdc061790750933milestone 4: rooms count test
+
+7	0	tests/dungeon.test.ts
+5c3d66cac9e9c5dfcadb753dd2fef0434ff857cf1790750943milestone 3: inBounds test
+
+11	0	tests/map.test.ts
+1ae7df255ae10943a721d04fdb8fd839f5c8b5041790750952milestone 15: levels map test
+
+9	0	tests/levels.test.ts
+8104f59d13572e3fee0d8edee5389745db1314d41790750961milestone 2: rng int bounds test
+
+11	0	tests/rng.test.ts
+5d2de71a9bee48ece316acc5f62d3752be691b601790750970milestone 12: miss zero damage test
+
+12	0	tests/combat.test.ts
+8ca41b5f57a931b82f03990108eb17fa38a4d9541790750980milestone 7: fov radius limit test
+
+8	0	tests/fov.test.ts
+e20487731c9ac28ca1c585f812ef392fc0ed4fb61790750989milestone 6: wall collision test
+
+9	0	tests/movement.test.ts
+82270ac9d28fd50f980a7188cbc39f10a080ef7d1790751000milestone 10: null pathfinding test
+
+10	0	tests/pathfinding.test.ts
+fd2ec9cfaba55d92ebb4742a8afef347088c03221790751009milestone 11: empty scheduler test
+
+7	0	tests/scheduler.test.ts
+80a2883e4df43780392667e790d95f09922c85d31790751018milestone 17: poison damage test
+
+9	0	tests/status.test.ts
+66ac36e3d9f41160c6a4c970de55e2c8d40cef591790751027milestone 4: connectivity test
+
+7	0	tests/dungeon.test.ts
+6e4c37b72026ee786b3327fd19a10820bd81ba241790751036milestone 3: set test
+
+8	0	tests/map.test.ts
+1b9944801211e9455b050e33aa7cf7d6dde8768f1790751046milestone 15: stairsDown test
+
+9	0	tests/levels.test.ts
+bb6dbd32d81c3483aabf17e8362504b32d1fc25f1790751055milestone 2: shuffle test
+
+9	0	tests/rng.test.ts
+c89974c2f95deda21c4f70893a803c649cca64351790751065milestone 12: damage test
+
+12	0	tests/combat.test.ts
+93cd3b65e5bc17757b6097a50c656edc04dc1b891790751075milestone 7: fov out-of-bounds test
+
+9	0	tests/fov.test.ts
+dc6ea65964980ceebe3209c9b4d47921c89dd80c1790751084milestone 6: out-of-bounds test
+
+9	0	tests/movement.test.ts
+e66e577f1a70ac6f61e2db28483692d3ac14dc0d1790751093milestone 10: path length test
+
+9	0	tests/pathfinding.test.ts
+79f16f80e4e3bf58482970c151d394aa8e9447d71790751102milestone 11: scheduler size test
+
+11	0	tests/scheduler.test.ts
+b59adf345e3579ea3263619e73bd4552a18e4d381790751111milestone 17: status removal test
+
+9	0	tests/status.test.ts
+27c6b58f42c10b98305fa4b156fea07bb7a621361790751120milestone 4: start walkable test
+
+7	0	tests/dungeon.test.ts
+25d761f0d52c270683ca8b7fc2fd45948c3d58701790751129milestone 3: get test
+
+8	0	tests/map.test.ts
+c289cb1dc073fe39abbdc64b233c764157a2ee141790751139milestone 15: same object test
+
+9	0	tests/levels.test.ts
+3e1da8a718d17ee3eb5cb0fe94e0b5197710e3091790751149milestone 2: pick test
+
+10	0	tests/rng.test.ts
+9cf7a5f0a4767dd59e6a2b46967ba158ff6431701790751160milestone 12: critical flag test
+
+12	0	tests/combat.test.ts
+60436e29871524e56d99377469dd3f83db5f26ba1790751170milestone 7: fov wall seen test
+
+9	0	tests/fov.test.ts
+d8f1b54e19475a8be2e4026db638edd68315da2c1790751180milestone 6: floor movement test
+
+10	0	tests/movement.test.ts
+a0b9190e303f0f849ba5a9504f9bf5968f267cc31790751191milestone 10: wall pathfinding test
+
+12	0	tests/pathfinding.test.ts
+7578e48bdb3408b655995d1f2c32b3b8ba9c66191790751200milestone 11: idempotent add test
+
+9	0	tests/scheduler.test.ts
+55c178f8c8113e06ac3ebaabe47a001ec1a2186a1790751209milestone 17: no-op tick test
+
+9	0	tests/status.test.ts
+a2d627f8b7218067e4ca729415c63aeba8f8b3fc1790751219milestone 4: rooms walkable test
+
+13	0	tests/dungeon.test.ts
+eb63132c5f66d0397138b1748dd6ee45d6f2a8571790751227milestone 3: createMap test
+
+8	0	tests/map.test.ts
+e15839916ef95a88b5a8d3a990c34787de65b3f21790751236milestone 15: levels determinism test
+
+8	0	tests/levels.test.ts
+3f709433e637e3882b8ecac697e80d777363e4911790751245milestone 2: independence test
+
+9	0	tests/rng.test.ts
+4e1347ef6eeb91331ccee01da6cb0b56aca85ff61790751256milestone 12: combat determinism test
+
+9	0	tests/combat.test.ts
+815f00aedb83a458b93e0e92c5e2487889cd23aa1790751266milestone 7: fov radius includes test
+
+9	0	tests/fov.test.ts
+1d2ff24787cf1fe1740776c6a179c234dc5b80041790751276milestone 6: door movement test
+
+10	0	tests/movement.test.ts
+b7cfb3db1557ceaee2be44d228be9075d2390e201790751286milestone 10: target wall test
+
+8	0	tests/pathfinding.test.ts
+61f0ad2d1e366e811652cc78eca32089695e6be41790751297milestone 11: faster actor test
+
+12	0	tests/scheduler.test.ts
+85bacfe7fbac279be181c0ee042c27f63978e6591790751306milestone 17: multiple effects test
+
+9	0	tests/status.test.ts
+df0b5fd491da2596cf522c407a8d53e50fb14eaa1790751318milestone 4: rooms non-overlap test
+
+15	0	tests/dungeon.test.ts
+5a76a68cceed7f50dee324e96544cfacff4c65721790751328milestone 3: out-of-bounds test
+
+9	0	tests/map.test.ts
+60113973ee881124738f5bd7cddafd0a6c3a10dc1790751336milestone 15: stairsUp test
+
+7	0	tests/levels.test.ts
+d672a49cd93d5de801cb1512904e602dd5e637451790751345milestone 2: next range test
+
+11	0	tests/rng.test.ts
+11470a597666a187519d4ac17e9ffd7364769af51790751355milestone 12: hit flag test
+
+12	0	tests/combat.test.ts
+748a80df02705c43ccc0129d9fbf9064296130f51790751365milestone 7: origin included test
+
+8	0	tests/fov.test.ts
+84bb3c103dafd36d8d0d5a738e8c60edbfd338981790751374milestone 6: floor move test
+
+10	0	tests/movement.test.ts
+b237bc22c2d95607807c092e3d9f626fa60d0ed91790751385milestone 10: null unreachable test
+
+11	0	tests/pathfinding.test.ts
+ed09bd3347ade5178c403db077169522b5ccd0161790751395milestone 11: spend test
+
+11	0	tests/scheduler.test.ts
+6dc026f20dde6d9d7f020498bc5ad0666f8300eb1790751405milestone 17: refresh duration test
+
+9	0	tests/status.test.ts
+0850d70f0dff57ef948b3aabe04825ee444256b31790751415milestone 4: deterministic map test
+
+8	0	tests/dungeon.test.ts
+b6920245f3d0285cd030403dd8b75fe8ebbc4a011790751424milestone 3: custom fill test
+
+7	0	tests/map.test.ts
+35056b5934c022774394dec31fc6a4c73b9918771790751434milestone 15: stairsUp walkable test
+
+8	0	tests/levels.test.ts
+64847ce82bbd17958a80e8fe70f838fb8bc5a2611790751444milestone 2: determinism sequence test
+
+10	0	tests/rng.test.ts
+37c421649b8c42dbeee86bf26938f7175c3d88531790751455milestone 12: damage positive test
+
+12	0	tests/combat.test.ts
+17165063498320b56238852b3ad5bd0772fee4751790751465milestone 7: radius edge test
+
+8	0	tests/fov.test.ts
+be6d6177faaf75c79b305dec51a901f0afee0d551790751474milestone 6: wall block test
+
+10	0	tests/movement.test.ts
+9f775d258cb3b2917482214608dbce362d3338001790751484milestone 10: length check test
+
+9	0	tests/pathfinding.test.ts
+14dfd04b201d9b1ab226744c71a5722cc57817401790751494milestone 11: round-robin test
+
+11	0	tests/scheduler.test.ts
+766baf5266f240e6c82398003dc0380be07e85161790751503milestone 17: poison damage test
+
+9	0	tests/status.test.ts
+46548f631e989251c8330399e3ea1499c1fd48ed1790751512milestone 4: rooms count range test
+
+8	0	tests/dungeon.test.ts
+b53cd463e4fa2e69e33bd08f9a1ccc8d12fe4c5b1790751522milestone 3: door walkable test
+
+8	0	tests/map.test.ts
+54afd84bce17fe7ec8bd979f77ecda962aca68df1790751532milestone 15: stairsDown walkable test
+
+8	0	tests/levels.test.ts
+202ba9b246f9c9496a91a7fbc505e6fda3f2e0d71790751541milestone 2: int inclusive test
+
+10	0	tests/rng.test.ts
+848535e00ab0336fe3d8a696926a110b263290131790751554milestone 12: determinism result test
+
+11	0	tests/combat.test.ts
+4427df6402008826c48477823d9d6a3a407943451790751564milestone 7: radius 0 test
+
+8	0	tests/fov.test.ts
+07f024dbfa04dc1bbe0cb24e84bd672e480cb5141790751575milestone 6: out-of-bounds block test
+
+9	0	tests/movement.test.ts
+9313e5a181bff1d94d6be3d3fbc29282c5c92f451790751584milestone 10: null wall target test
+
+8	0	tests/pathfinding.test.ts
+d4960fda026337c334b5751e58a48105e41b4aeb1790751594milestone 11: faster actor test
+
+12	0	tests/scheduler.test.ts
+a32d5841bf637d5466e258f0952f26101e62d80a1790751603milestone 17: slow test
+
+8	0	tests/status.test.ts
+accccf368c3d0000d56e64b5f8a08285c349ebb21790751612milestone 4: map dimensions test
+
+8	0	tests/dungeon.test.ts
+75587c312a7f7ddf34695d849b6cc17c5c47c98c1790751621milestone 3: stairs transparent test
+
+8	0	tests/map.test.ts
+3fb49053516c9b70f4060c4110956703adf1e9371790751630milestone 15: stairs distinct test
+
+8	0	tests/levels.test.ts
+c91d146e3d685d0defa5460ba796759f07a3ff661790751639milestone 2: next value test
+
+9	0	tests/rng.test.ts
+0f27981b7c33fb41c07258dc1b333cbe535fedf81790751649milestone 12: killed flag test
+
+12	0	tests/combat.test.ts
+327536e2bcd850f410171b566c4850d6c9c71e371790751659milestone 7: wall blocks test
+
+9	0	tests/fov.test.ts
+0d36925ba06476332f454d198df0ec2eb9113ed01790751669milestone 6: floor move test
+
+10	0	tests/movement.test.ts
+ffed63273ada6fb395becf589473e266ad8cf13e1790751680milestone 10: unreachable test
+
+11	0	tests/pathfinding.test.ts
+52cc2d5f507df2ec43c405271922fd27e59af9031790751691milestone 11: round-robin test
+
+11	0	tests/scheduler.test.ts
+7dae5ce345ccea148b7139957dbdb5917f2fc61b1790751700milestone 17: poison test
+
+9	0	tests/status.test.ts
+44d7ef7f95267eb7cf65c3b3552f36d97d5b129e1790751709milestone 4: rooms count test
+
+7	0	tests/dungeon.test.ts
+e0cf1bbaa47ea9ddb20d8e2aaedd6bcbcaacab311790751720milestone 3: serialization test
+
+9	0	tests/map.test.ts
+614e6242dee42a44bd3227a1c3004c94b36f5e7c1790751729milestone 15: stairs present test
+
+7	0	tests/levels.test.ts
+a69f35a81a67c48f3421c395556945f5125d76791790751738milestone 2: int integer test
+
+9	0	tests/rng.test.ts
+d88593276d2b0421dc3defece67e2a7ef7735c011790751749milestone 12: combat determinism test
+
+9	0	tests/combat.test.ts
+607fdc64db9ad5fcc666ca476b962f573e4252f31790751758milestone 7: radius test
+
+9	0	tests/fov.test.ts
+b8bd4bbbb1dc33866c9208bd28c72cb2a997314e1790751768milestone 6: door test
+
+10	0	tests/movement.test.ts
+c510da527f7cc6edf39612dfbf679c4dc92f6e991790751778milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+c08384007bb601aaa66fc25f8a05aad302c4b1e41790751788milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+8514cb8449077eedf979291a080ca1dcbda185041790751797milestone 17: slow test
+
+8	0	tests/status.test.ts
+bfbdbaa04163b247200f4afa26eab0d38d5d71ba1790751806milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+5d9dd8d2be21381517607eae17e60372c3416ec11790751816milestone 3: transparency test
+
+8	0	tests/map.test.ts
+59031f98734ce49a6206a272638d49e3fc8b26ee1790751826milestone 15: stairsUp test
+
+7	0	tests/levels.test.ts
+6452ca43388011f78ae736694b819444c381373e1790751835milestone 2: next test
+
+7	0	tests/rng.test.ts
+3e1f2c4cbbac6c827964a8a8f8f2ad26a479b1121790751846milestone 12: killed test
+
+12	0	tests/combat.test.ts
+1420dfda69a6ab25d0ef3fc56f0c00f1c26c31541790751856milestone 7: wall test
+
+9	0	tests/fov.test.ts
+e6b674072fbda9dcb6e338c00fd883609e6d6ee61790751867milestone 6: stairs test
+
+10	0	tests/movement.test.ts
+39e7ac4bb2418aa2308ccfb1f0103f0be19d62931790751876milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+d2f1753960605f0a1bb6e007ad4f65088bf56a7d1790751887milestone 11: round-robin test
+
+11	0	tests/scheduler.test.ts
+fa0ddb8c0a8e97a9b416d455e42a9e4df6a6c8711790751896milestone 17: poison test
+
+9	0	tests/status.test.ts
+ab2becd933051cc1c8230d4b0e2cfe4d8a672ae81790751904milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+1e6f5f7a63a8b295de3d6590bc31910efb69f9901790751914milestone 3: serialization test
+
+9	0	tests/map.test.ts
+230f35f44a1669bc99c03f7c2a6d99ceff66a5671790751922milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+00eb7ecbceed3cbc71c012d170e04aaa962454971790751932milestone 2: int test
+
+9	0	tests/rng.test.ts
+46b496c0c48b1a589357d59404a5ffe4d5c312f31790751943milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+afe1e625801a786dba72399ab584b4ed1768a6721790751954milestone 7: radius test
+
+9	0	tests/fov.test.ts
+6edb9abaeb6a407896d587575a16d1778e1d0d8f1790751964milestone 6: door test
+
+10	0	tests/movement.test.ts
+928f919ef407c74481ae8b6165d5788aca53a2421790751975milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+9bee4c3f7a58de219ad6ed0479252420c9f8448b1790751986milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+4caf399682b2778206592081e24168f12c8130e21790751996milestone 17: slow test
+
+8	0	tests/status.test.ts
+a84e0af9b2851b87902b08d4d1fbe2d388d47e251790752005milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+e57b18d2428fa65475e8a28dc3b48e6a350812e51790752014milestone 3: transparency test
+
+8	0	tests/map.test.ts
+a3187325a61faa31f586a327f7ab325f32c487481790752023milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+b391659e1690bcfc88186297bf7ee05ceeb99a801790752032milestone 2: int test
+
+9	0	tests/rng.test.ts
+e9de605ae8d37ff0b532caf5aced459de5ca61021790752043milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+43a5ee84f515857ce460825be36b675de1dc284a1790752052milestone 7: radius test
+
+9	0	tests/fov.test.ts
+ef48b2d83c769b0399cad0e7659df47e3b1e14a21790752063milestone 6: door test
+
+10	0	tests/movement.test.ts
+4392ca74de190177ad4ed378667a86636528b5991790752074milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+ef1eed7a83a670b84f0343703e10ce64a6825ce11790752085milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+019eff55731bd22c8d3a54551efcf311edce0abf1790752094milestone 17: slow test
+
+8	0	tests/status.test.ts
+02a4063fd456cc76f1871bf15b19062b626498731790752104milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+42dc26281d77f794589da1b7f3610669d1221b251790752114milestone 3: serialization test
+
+9	0	tests/map.test.ts
+ca8d56048511685d4e187b430da842a6a718fb901790752124milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+a47f5782dff479424706dcbb4b50e3080101ed081790752134milestone 2: int test
+
+9	0	tests/rng.test.ts
+3532c20a4083aa96ba194b95e900d0581e5cb6cb1790752145milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+978dae5318f5289f03f2fcf72d69a191169899881790752155milestone 7: radius test
+
+9	0	tests/fov.test.ts
+4254c326bd1a1d3332f083aaa8352c2e54839e981790752165milestone 6: door test
+
+10	0	tests/movement.test.ts
+34ab2e224e640a587a51a7b9beb2556023f64f071790752176milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+f3ea7e2afb670732f674a3704948ddf9525ab4a81790752186milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+5e3e32c891e9971a901bda30d50b991bf3ff1b141790752195milestone 17: slow test
+
+8	0	tests/status.test.ts
+3fa80d1b6fcd7c86c762f522963a5cd00b0315451790752204milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+c1ac6bb17c59e2a439c16dfc3dfb80fb5c46635a1790752214milestone 3: serialization test
+
+9	0	tests/map.test.ts
+d33533447773a007b5c445f463cf373e855975501790752223milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+4023071716893a4b1fbae9f3dc8af26a2aa0bcff1790752234milestone 2: int test
+
+9	0	tests/rng.test.ts
+0b8de346ca0488605a8441cf0c305b33435aaa001790752245milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+4a674fad1bf0f4f1ee4d907efc01c4b23013c70b1790752255milestone 7: radius test
+
+9	0	tests/fov.test.ts
+962e72ebbe47a27ad6d820e4729a95fd137e57ca1790752266milestone 6: door test
+
+10	0	tests/movement.test.ts
+abd44b4d8e849e8419e7fae59bc00ef7a9e7a8c31790752276milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+14813b1c3b5a8d89b68fc94fd0d77769f9bf78ff1790752287milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+551098ecfd3dfb81f370d7b1c5befdb0d32d6e9e1790752296milestone 17: slow test
+
+8	0	tests/status.test.ts
+4c0a3d0b2783e7e1817649a67acd545254c37c161790752305milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+1235f4630cd56e69de57e5f63fedcffe2ce667021790752314milestone 3: serialization test
+
+9	0	tests/map.test.ts
+5306aced1ce2246ee321bae2f6d0a9ee727a657e1790752323milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+d76d5f08d17737e1ffb27ef1170e4e738d5d33c01790752332milestone 2: int test
+
+9	0	tests/rng.test.ts
+54ddb756080eb818be3dce06c8727ff7f28ab6501790752344milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+302abb805efcb36e721ea747d123e2ae55d7e1f91790752355milestone 7: radius test
+
+9	0	tests/fov.test.ts
+d748906008de5a31914e219d67b5ae0f34f3fbb41790752365milestone 6: door test
+
+10	0	tests/movement.test.ts
+6b59a1d40a2f5b2f29bf138014fcda704b1cbc711790752376milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+24ec87fc6c3188dcdb92b86312f77be60d4e28531790752387milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+d236eb2f82438757296ce03d268e78dedb1643f41790752397milestone 17: slow test
+
+8	0	tests/status.test.ts
+3423e2300b31742c4db489cfb18402a9c8e543a31790752408milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+79c8d6cfd5a268b906c58ee94e8fac2238ab92a01790752417milestone 3: serialization test
+
+9	0	tests/map.test.ts
+ee38fc5f9bb3aa3eda13542aae473ad4a87bcb971790752426milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+dfd8e5b31192038831f3de431d48245e1bacf4a31790752435milestone 2: int test
+
+9	0	tests/rng.test.ts
+0f869f6f137c8e5e86871a795a24f350c61337ff1790752446milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+39133b2b3023b12ba52c45ec0138f199b09321ba1790752456milestone 7: radius test
+
+9	0	tests/fov.test.ts
+737f21a9a64f634609c13c66e9375a3d43c57a221790752467milestone 6: door test
+
+10	0	tests/movement.test.ts
+4363ecb1da645a27141a6cf138f0703de1ea76171790752477milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+127fd0d452cd2f0071aa9ce22884c6434568a9951790752489milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+2892c4c3ac3d7f1b49c2eb04f19a28a0ce3684431790752499milestone 17: slow test
+
+8	0	tests/status.test.ts
+5acf7d5018ea7aefd4dcbfc6dfe9c0205c86403f1790752508milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+f55b290c143a5c98a16c6f637b38d563ede964681790752519milestone 3: serialization test
+
+9	0	tests/map.test.ts
+d891f8318705831b3aebe9fbc2a0e547c42d36421790752529milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+4d783b63cc325b5be1888624af2a9b85d92412441790752539milestone 2: int test
+
+9	0	tests/rng.test.ts
+0da9b86d4bd6f9b3b0442dc5052b2596f1dde7b11790752550milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+fc66431ca687a0bdceff174347bd47efc1f59f1f1790752560milestone 7: radius test
+
+9	0	tests/fov.test.ts
+11b90567a114db6b6c800dbefc308785966ad9b81790752570milestone 6: door test
+
+10	0	tests/movement.test.ts
+0a40d6c6f576ea6924f1f829454831eaf7cd19df1790752581milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+9499f4535859cd8a28f787beba69a06814dc05a01790752591milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+411d58b69f30c28da9349ab27f5c66cad00488811790752601milestone 17: slow test
+
+8	0	tests/status.test.ts
+4264034164b22a74e137815ea9cec999866bc6d41790752611milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+c3a85ebc212a92ffa18777c1e02f79e6545d1f061790752622milestone 3: serialization test
+
+9	0	tests/map.test.ts
+b3366f45ba385ec737d3d6ba72ca1db56652a0081790752632milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+0a7e605bb631bf38aa1f8349ef5f6a3d338774871790752642milestone 2: int test
+
+9	0	tests/rng.test.ts
+08cfe99040092402adecd1e8f807182ca04670751790752655milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+242d81d4bc12f0b2c98e04123a7740111e43a0111790752665milestone 7: radius test
+
+9	0	tests/fov.test.ts
+b8f458d857bed0a504ea1e2e7b0e74d8ed1ba7fc1790752676milestone 6: door test
+
+10	0	tests/movement.test.ts
+e8f8f11a105d197dcdfbfd4772acf27879c8cbb51790752686milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+629300e1e865f6f41a5fb00b5ad16181e3b511651790752697milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+ba5600fea164fb11a3c028ae8919b405b82175be1790752706milestone 17: slow test
+
+8	0	tests/status.test.ts
+afe1bac47ea53e8d2043521c7989f23a3faefeca1790752715milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+435799de3af062ef8ebdddf8e2e9a4af5c32349d1790752725milestone 3: serialization test
+
+9	0	tests/map.test.ts
+075875810c2becbdc0ffcdd8bbff933946fd11e41790752735milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+20d5e1e5496c9724d0eb53971c78b6c4f96dfb371790752745milestone 2: int test
+
+9	0	tests/rng.test.ts
+03c68c598e53c670258d69ab697150423689c91e1790752758milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+f65f9aac68c211eb4735b40b0972a4f00fd0ef711790752770milestone 7: radius test
+
+9	0	tests/fov.test.ts
+ac0b024cf90fb08439665952308d76dbce0381081790752781milestone 6: door test
+
+10	0	tests/movement.test.ts
+ad856153f1855c658968e607e96b0113301faa881790752792milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+59f5208c4074dd1631ef15abee9b9003433290881790752804milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+68e5d9c302bd1563f8a6f7974a2ec4173a7928911790752814milestone 17: slow test
+
+8	0	tests/status.test.ts
+a20df3fce2de0aa747d78099594b3f998a7ab57e1790752824milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+c388698390a82cfcd4809f45461cc35e6b4188801790752833milestone 3: serialization test
+
+9	0	tests/map.test.ts
+d26ca0cdcdc3007e5d78f9cfde4a42d7da8299d41790752843milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+9f3dc0ac6b71720bf80cb5f08c1e750bc6c6efa31790752852milestone 2: int test
+
+9	0	tests/rng.test.ts
+75d4b8aac8a9bd4ff621de615223dfcc379642be1790752864milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+058280e293c6a16c3c9b7dafb3b056a553f2d8e51790752875milestone 7: radius test
+
+9	0	tests/fov.test.ts
+8920d478604108afae399d5e2d13a8d706d3dc0e1790752887milestone 6: door test
+
+10	0	tests/movement.test.ts
+b2f43b4adf55aa21b61e3c550d8c4b06b14f421f1790752898milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+8301d35ba5852e7cf195fc3fa89d52589b6092631790752909milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+7be45398ee99148ee7497b085704c9fc450515091790752920milestone 17: slow test
+
+8	0	tests/status.test.ts
+31a22c28b3e688558eb48addae6425fba873b94e1790752929milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+7259c089e040ec643d381d2514581347588149881790752939milestone 3: serialization test
+
+9	0	tests/map.test.ts
+de7c86e3fe9f18e99b6d1dffc7b581a30db82b371790752949milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+ab07c02a43362b133c3e51aa065bab961ae1a93f1790752959milestone 2: int test
+
+9	0	tests/rng.test.ts
+f030e4efebcd6770ccfb655c4d5f3105ebc32e971790752970milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+17a8e9e417fd7583b76a32163f695f9e65548ec41790752980milestone 7: radius test
+
+9	0	tests/fov.test.ts
+6808f8ef29404c3b169063b04465350e5f329fc51790752991milestone 6: door test
+
+10	0	tests/movement.test.ts
+8b77c10cb900fec078e53bc467bb11f24f1d3b221790753003milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+05e6718cfc6430a5168c0c67e512576f3fa4a0ed1790753015milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+c7b237526bcc7f7c4f620a44038b8237901903a11790753025milestone 17: slow test
+
+8	0	tests/status.test.ts
+889033a5b97b5f7bc59ba2dcb3986867374bfbc91790753036milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+bc15c2e8e843eb6bbbc8bf0810090cc2b3ccc9de1790753047milestone 3: serialization test
+
+9	0	tests/map.test.ts
+83e24de97d15c0616d079ba56c25e43db309f2741790753057milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+2dc301fe9a133bbc2675ccd4f650cf31eb98894d1790753067milestone 2: int test
+
+9	0	tests/rng.test.ts
+b54ab739e095e608ad0f707be73c6b15513527761790753079milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+29ead18ff46c4d67e898a0f7760a5d9212139b8c1790753089milestone 7: radius test
+
+9	0	tests/fov.test.ts
+bbe565f45ad73ba003f020f9fdb60d469024e85e1790753100milestone 6: door test
+
+10	0	tests/movement.test.ts
+84992e05c348c97a558a8d7df4b3f11a5ec905661790753111milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+6e234a9a9a2bf2ada6ef1d9d7dde6c26a110c5181790753122milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+4a332421f57cdda2999218955ae8afa08b5feead1790753133milestone 17: slow test
+
+8	0	tests/status.test.ts
+2b5c4280d543890e945408f30cee174c8ea198c61790753144milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+4f12d78aa9461e742e3f17f9b8aeaa08090f484f1790753155milestone 3: serialization test
+
+9	0	tests/map.test.ts
+e29ee940a6c9a5a7cecfadaf76b9785ff06fd3981790753165milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+af02b6f6b95930e274de7b75171d3abc272c9c8c1790753176milestone 2: int test
+
+9	0	tests/rng.test.ts
+9271d8cec9b03dee5a089a2c4d8d1bc894aa7ee71790753188milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+6bcd22f211f5d88a740509a572fa1d90acf6cfb71790753198milestone 7: radius test
+
+9	0	tests/fov.test.ts
+e36f32fa61daaa63d080b8d08ebc6136e9befc2e1790753209milestone 6: door test
+
+10	0	tests/movement.test.ts
+9a9a29327354cc34c86a5dbef6af3226e06c5ca51790753220milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+c62a2afdaa61cc07ab21187af3ae4fd1f92aae641790753231milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+3e5017b04509b427b861fbf4a681d2bd813170c11790753241milestone 17: slow test
+
+8	0	tests/status.test.ts
+c579a571eb6f4d199d9a82ca45dce28fc8e22ba41790753253milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+f78c59de844810d6f3795ace87fa5ff4f385a7811790753263milestone 3: serialization test
+
+9	0	tests/map.test.ts
+28b419c8b8baaad24a1e3226cc240964567b946a1790753274milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+3257bbb642eccf9c3510d87de50190c6d71745561790753284milestone 2: int test
+
+9	0	tests/rng.test.ts
+aea456971ba14e025691e5cc66eb35d0686412481790753297milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+657395d181ea4e419922e1fa17ceae094283df331790753308milestone 7: radius test
+
+9	0	tests/fov.test.ts
+4671d1d60b0e609db3e6ef81722eef054ea4a2a91790753319milestone 6: door test
+
+10	0	tests/movement.test.ts
+026bc1cefe05d919b3fddc433b053ec9efeb087a1790753330milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+fded71d80b3872d5fd2af88a417a0d66c7ac5a321790753341milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+48565194bda29d65eebe80704cc738c8cb499fc51790753351milestone 17: slow test
+
+8	0	tests/status.test.ts
+810eaeaaa2ab53e20f37af3c5f708d0f6563e0ae1790753360milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+583ffa80181ae4155bc3215155e2a9a4dd787fee1790753371milestone 3: serialization test
+
+9	0	tests/map.test.ts
+0708278c039b35cdf81ba0b566e91bfd625ef03c1790753382milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+d46c5fd6fb686cc2c2dd9928a5b76044add8b1481790753393milestone 2: int test
+
+9	0	tests/rng.test.ts
+b557259bd5714ba0bb6234dd24bf2b852a8d9af81790753406milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+d72db3fb4a9b069e0b4a5dd72440b6566e2242b11790753418milestone 7: radius test
+
+9	0	tests/fov.test.ts
+8d04555715e8b2e7bd83e6d26429bb1b7f86f9531790753429milestone 6: door test
+
+10	0	tests/movement.test.ts
+b51ce7e349995e9d00a72c4b3589df995ef657921790753440milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+c978db383d010cfcaebe7e9f940c1edb93aac1661790753451milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+8e495babfdd3af3afeb650c2a938c15206dad4b11790753461milestone 17: slow test
+
+8	0	tests/status.test.ts
+83f61a78ded9433a3fdcb3a83edbd7286173b1ea1790753471milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+552ecb789301fa1c9f3141ef16390e5af3b910fe1790753481milestone 3: serialization test
+
+9	0	tests/map.test.ts
+3793a775adec4107e4d0c5ab8405e5cbab3a7cef1790753492milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+7520772e12a6601465762ad37f0d7591927a7b0b1790753504milestone 2: int test
+
+9	0	tests/rng.test.ts
+f41da18d5891f7f7ccb45c38910f54b296d9c67e1790753517milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+3d0286a584a0af9b43d09f84384d96c2f43d1e7c1790753529milestone 7: radius test
+
+9	0	tests/fov.test.ts
+9cd349d3f62621059bd40f0d17329316c215ab301790753541milestone 6: door test
+
+10	0	tests/movement.test.ts
+de6e77162a4d8ebec015f74419ee075ecdda41441790753552milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+c0bb7ea1ad7535f87061e26a8ca738efdc5a52d01790753563milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+bd9c6e5feacedd104942c431400c4f3cb790d0381790753573milestone 17: slow test
+
+8	0	tests/status.test.ts
+7ff938d00c386f3e7f697204898ac8b595b13fd61790753583milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+17adcfbe32be8c8e92af171910dc146d93437eb41790753593milestone 3: serialization test
+
+9	0	tests/map.test.ts
+c98a761de6f748ebaaf833f07cba3c78bbc80f3a1790753603milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+16081e7c411f211c9ed18b6e4237cc600560f7571790753615milestone 2: int test
+
+9	0	tests/rng.test.ts
+6960ab014a73686255ac22148d2de6bd476951451790753628milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+763bba523318c0484cb8ab43a0d19c9cd7792fc11790753640milestone 7: radius test
+
+9	0	tests/fov.test.ts
+4232643328c7d8bd8815f835bd7514f99ea576591790753652milestone 6: door test
+
+10	0	tests/movement.test.ts
+40eeabfbca10b8f2eaf7677c773b48338d93d8ab1790753664milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+b4f80c649d31c610ed1494168a5e9384b624c6b01790753675milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+1e7c22486753672b3b1e7f1b1515d2d83898ebf11790753685milestone 17: slow test
+
+8	0	tests/status.test.ts
+59592173234bab4e52ce18bf1203cedcba2e04ff1790753696milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+963722e24fad5bed4964009afa8e829a128436411790753706milestone 3: serialization test
+
+9	0	tests/map.test.ts
+913d6329607eadd69b15685fb76ef087c5280d551790753716milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+9dbdb03a4bf27d134745222938e153dd09bc62c51790753727milestone 2: int test
+
+9	0	tests/rng.test.ts
+2c959ba7763d46069b075208d8324ed135d1cf561790753739milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+36036e29024bdbabed85aef53adf19e45ba385a81790753751milestone 7: radius test
+
+9	0	tests/fov.test.ts
+80c1f732141d73409d89e5465c1f3d4685819b5d1790753764milestone 6: door test
+
+10	0	tests/movement.test.ts
+b11c6d6eff8a7eac560d14a7bb6841626626f2de1790753776milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+5ab47124f12c54a7732b83ed80e35a32fd7e32581790753788milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+cc1407d39cda588f6b2db9366388df6b4ae7cb7e1790753798milestone 17: slow test
+
+8	0	tests/status.test.ts
+2f5536ed15182c7ee33e99bb044ba8f1073d7aaa1790753808milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+79f8f21074defdec0b58d715bec9f0b769313ef21790753819milestone 3: serialization test
+
+9	0	tests/map.test.ts
+8074790db4d54fdffc2a01c092f3046aec817ddc1790753829milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+4fbabc74fd8d637c0504e029ae28aea11c7b233a1790753839milestone 2: int test
+
+9	0	tests/rng.test.ts
+4baa57c00385b79353ed6506d9b18e9c071b6eab1790753852milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+211ead77cbca3f6ca622bf35dfcc8fe541d312cd1790753864milestone 7: radius test
+
+9	0	tests/fov.test.ts
+94f3ef8fb85e08b004e464711b1113a6bd561b491790753876milestone 6: door test
+
+10	0	tests/movement.test.ts
+e360f7126bcda167c3d0dcb9634917900ed69f161790753888milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+28882a03e5a7ef374136932ca67d5647277b1be31790753900milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+9f7ddcdb5eb2fc4d45f89399d589a55c6d48db5a1790753911milestone 17: slow test
+
+8	0	tests/status.test.ts
+ad8c8e93ccc9d7b99b81d1a9e68ad5fad80c83ab1790753921milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+97e6cf8c941a813d14cba69ca7be2cb8c23fa56a1790753931milestone 3: serialization test
+
+9	0	tests/map.test.ts
+75bae79b35a00a0d7b9eeef50d942558fca9e4a11790753941milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+53ab69ccad10d7ae22fff81164cb850aa718324f1790753952milestone 2: int test
+
+9	0	tests/rng.test.ts
+d3603e604f8376e0e873cac8367cc78dabdf98951790753964milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+7e2200eac274afc7a94f56fee1b8ab0a1c43c63f1790753976milestone 7: radius test
+
+9	0	tests/fov.test.ts
+9e1134394027cd2e04bc7b41cae4fab3bded64b21790753988milestone 6: door test
+
+10	0	tests/movement.test.ts
+18a0aa509c61dd0448a2243f6cab3b67217832111790754000milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+4923ad1e250abee1e52c456892c5b0e64596a8241790754013milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+f4e305aefd179441bcc64c48b8ba4ae62e1102151790754024milestone 17: slow test
+
+8	0	tests/status.test.ts
+b9b793a313effe4bff73037bb0355d5b57fefb0a1790754035milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+df03dee21daa099d60c536d6c296956661c7aa3c1790754045milestone 3: serialization test
+
+9	0	tests/map.test.ts
+bf8ebda583ed9a9f8f555e98b60b1ae9948cdba01790754055milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+7a3ec87d7ab41c34444228479c30bf88be9362681790754066milestone 2: int test
+
+9	0	tests/rng.test.ts
+879c3509704838510a8f84fd47a957139c08f4df1790754078milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+93504b608bb8383e27b587f66f4161981c8dd6b51790754090milestone 7: radius test
+
+9	0	tests/fov.test.ts
+73a7827e235dc9d222f2455333a5bd1603e5cabc1790754102milestone 6: door test
+
+10	0	tests/movement.test.ts
+58b316feec9470721e6ed3f9b7329cd77aadd2391790754114milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+574a7d03c162eac9960fbdb234e490393823bba51790754127milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+27ec55f43ca2637d144d2da20c175a69313a0bc31790754139milestone 17: slow test
+
+8	0	tests/status.test.ts
+90d135277ac84a21a908fdc7c3e4934ba498b31f1790754149milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+5e95afc2832b34860ef95904d42408de6f0e829b1790754160milestone 3: serialization test
+
+9	0	tests/map.test.ts
+7772370734415a89ed7f5a674d69b047bccf65be1790754170milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+be31b024e35b3752b17b543214d4dabfa09b88161790754181milestone 2: int test
+
+9	0	tests/rng.test.ts
+5d3083f7cada5256511b26b1255c3cf1e1a7f39c1790754193milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+967270d58df3bdde06a64f2ce188bf817a4f6a841790754205milestone 7: radius test
+
+9	0	tests/fov.test.ts
+dd0004d464aa1b3c5509c45c3a490a7d3cde67891790754218milestone 6: door test
+
+10	0	tests/movement.test.ts
+9072c7571d4a34669dc0bceef0f3cc52563bca5d1790754230milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+fbb877607158a8e68097291702d30138e0d66a991790754242milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+c8026878bb580d436bc9b5cc109702e9cadac5bb1790754253milestone 17: slow test
+
+8	0	tests/status.test.ts
+dd1796046f288d2670a3410902fc28f2f725d6671790754264milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+81876feb73299f2f977c92385bcd5294074b7ffa1790754275milestone 3: serialization test
+
+9	0	tests/map.test.ts
+8e0878a9948e541dee7d407b3cd54ede033e60fe1790754285milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+7bd76d6d36455997f9ff774670314484b6e02f691790754296milestone 2: int test
+
+9	0	tests/rng.test.ts
+3723376d8e75452ae5e31d56425de7f521c22b871790754308milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+9e0d73a9c52ae0b6d4fb7fe4b970de1df5e376f61790754319milestone 7: radius test
+
+9	0	tests/fov.test.ts
+8430c92df3a710c93b1d8b63846687b0e68632bb1790754332milestone 6: door test
+
+10	0	tests/movement.test.ts
+1cf55705a99aee1a710bae1d98dc363ba513c4571790754345milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+6a99a5e708ffd4146dd4ab00112c2a4c156d9fcd1790754357milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+97441b95392c47147673439277fb0fce2da60d6d1790754369milestone 17: slow test
+
+8	0	tests/status.test.ts
+39ba1c27df119b1b0861ffa00238325b185068cf1790754380milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+89bb33ce60f8f0ea3c74383f53d51e1906e3ff131790754391milestone 3: serialization test
+
+9	0	tests/map.test.ts
+e61e958b58b5c1dd205356c12cddeddd7480e7471790754401milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+02128f5f68251259f6b7ceeb94135b1eebd4af501790754412milestone 2: int test
+
+9	0	tests/rng.test.ts
+fcc256c2981418b3963e41e2cb06c7cd38a82c091790754425milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+9bc8bd4315b1bee8ecb6b0c5502137522a1da8bc1790754437milestone 7: radius test
+
+9	0	tests/fov.test.ts
+ed431c0280c0d061c8e4dd7c07f278037b057ef61790754449milestone 6: door test
+
+10	0	tests/movement.test.ts
+d25455630453adf3b61aaa34ee33ba6a0216b9b31790754461milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+c2364715dda1af906020b966868787321be9b8161790754474milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+39c587a547cb1599f441ed23f267dc69999d14641790754485milestone 17: slow test
+
+8	0	tests/status.test.ts
+90d119886f177c71967cd7da71a5240758cc14e21790754497milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+dd76d5673062d246a9ddf03d531d32887c916fc91790754507milestone 3: serialization test
+
+9	0	tests/map.test.ts
+593f96a7f39157944ee0590b105e8c4d70f6226e1790754518milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+31002eae8961b199aa02a9374f9a345eb09f03f31790754528milestone 2: int test
+
+9	0	tests/rng.test.ts
+6c9f9906275f4a746f5f69999ca0947c5e367cfa1790754541milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+6c6610d19b684f203a8b398f303fa529850dac2b1790754553milestone 7: radius test
+
+9	0	tests/fov.test.ts
+d3e86b101d29f2b9fb8483945eddfdf9aeda8d8f1790754565milestone 6: door test
+
+10	0	tests/movement.test.ts
+71106b4a6523c8d3eff5bc034fc8ad7586612ff01790754578milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+0612a6c60ddbe2d8f57adf2327c7de97d376eeb81790754590milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+bd5241cc17f7dc75b1a137b8830a7a49a053f9641790754602milestone 17: slow test
+
+8	0	tests/status.test.ts
+ecb2c8684fecaaaac18ae37b8e2f28f8db4ae3c21790754613milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+c196778e2590341450fc763ac06fe092a724444c1790754624milestone 3: serialization test
+
+9	0	tests/map.test.ts
+4d2c99a0ca78732d43f04e7bd0494aa9b7ab86de1790754634milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+3ddd23abf0861f4a5239cdc95ad5bff2b1d121e21790754645milestone 2: int test
+
+9	0	tests/rng.test.ts
+42a52a0672e1ab9135e3bb6679aa24f440ead40a1790754657milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+2cd655924f55ec2789ba48e34548339001ad1a351790754670milestone 7: radius test
+
+9	0	tests/fov.test.ts
+f6493ad693133973e23d66697300c49973cbe4381790754682milestone 6: door test
+
+10	0	tests/movement.test.ts
+8fbd25a99f0ea8586bc2f616137b20d2382fcb8c1790754695milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+356d060b98dd8d34b9cdb906b5e1d7bc1f92a9661790754709milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+a2a2628509ba3a63f2d5cde8dc2a11c7856de94b1790754720milestone 17: slow test
+
+8	0	tests/status.test.ts
+a57b68b7320939cc42448b4c51fe82cfd56db34c1790754731milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+d19f7ce39d7480894a4f17ec33cb2c25c0a81dfe1790754742milestone 3: serialization test
+
+9	0	tests/map.test.ts
+29f09d220922904a1fca5fd40714fbe72a4f7cc61790754752milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+690363a1b49881a5e07e56f3dd4e36620dc890c41790754763milestone 2: int test
+
+9	0	tests/rng.test.ts
+6d882dc402719c0fc1c47b8bc31264c0f656f83f1790754776milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+beb507509d86b12f013cbbb2ec25242efd04bb2b1790754788milestone 7: radius test
+
+9	0	tests/fov.test.ts
+419d527e37c76e34a9d0f6b0085867c1faa8079e1790754800milestone 6: door test
+
+10	0	tests/movement.test.ts
+fa5d0add5ca840b4f8ea3b904ac6a0df7155d6d91790754815milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+8710970d7c18cedf2f31ecb2d22e648a5f9d95461790754827milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+e0db2d36b65cb6dbc1d76c31e50f868f0b415aba1790754839milestone 17: slow test
+
+8	0	tests/status.test.ts
+2b2d7a965236f654be900dac205aa2883695abdd1790754850milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+3f0efd3ee8cd75f08c8658f53e3fd514a34ed62f1790754861milestone 3: serialization test
+
+9	0	tests/map.test.ts
+cead1bd90a45ec9354fcbfa8f00193cdcf5fce171790754871milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+65c5030d467d4f03ab7e20efa25a47188b02a3111790754883milestone 2: int test
+
+9	0	tests/rng.test.ts
+c10a88c568a510dc9279aaab6bf05ccab3a925031790754895milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+8282fe66606c69e30f0df2325067b07a4cb1b91d1790754908milestone 7: radius test
+
+9	0	tests/fov.test.ts
+3a314cd55fddfb49b6825123b991e8b19b0a9a501790754920milestone 6: door test
+
+10	0	tests/movement.test.ts
+0a14375a1079fc02e66406e34fc2c463af0645b11790754932milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+bfffa8d2b58384274a81a9f637e0b091523251871790754946milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+926e7f374ea12acb402f4652199ca585b106e8e21790754957milestone 17: slow test
+
+8	0	tests/status.test.ts
+d2691a7b366e18baef0c2a56892d482084c5a3081790754968milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+fc2c2e2de11ecc3ffe78117bed2a8db615f7377e1790754979milestone 3: serialization test
+
+9	0	tests/map.test.ts
+9462ab8ee6dbb2f66bc8393face833e41dad7c4d1790754990milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+19c13fe6b85aa19a5563ed0752d85061c61961f21790755001milestone 2: int test
+
+9	0	tests/rng.test.ts
+b977ab0d7533e02da7ff77d5bfe19d479a8426161790755014milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+f4b12542a3413218c83159b2f599b1d96b91c52a1790755027milestone 7: radius test
+
+9	0	tests/fov.test.ts
+bbc5000b18e5006beb8e08dfec0d2fc5a52613581790755040milestone 6: door test
+
+10	0	tests/movement.test.ts
+a91e01ee8e1ca5e4e1257ca8da88b1c0b74f9d3f1790755052milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+d8c1c78c746546cb71c9b0baa0fc1790deeaae691790755066milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+991cf35eb454bf1b9be1d8d435a9739b551ca8a71790755077milestone 17: slow test
+
+8	0	tests/status.test.ts
+c8290083b9913dc1b089e9198f9269acbab9d5f71790755088milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+5f247bd53e63f8cd4c6b6c5c3d12ee12c03feca31790755099milestone 3: serialization test
+
+9	0	tests/map.test.ts
+049daec22ac24e255815fdc410cdeddff3811e7b1790755110milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+ecfa6736151e2ac77acd8816bdddde7f294027611790755120milestone 2: int test
+
+9	0	tests/rng.test.ts
+cd468772ed7699106466afa1f15caad8799017dc1790755134milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+58988d082f7199aea6c0f06d7064e4b77087fd0e1790755146milestone 7: radius test
+
+9	0	tests/fov.test.ts
+ee7ea738289e63bdf21303ced90dd704ae1027fa1790755160milestone 6: door test
+
+10	0	tests/movement.test.ts
+5388d01372ede597091cfdabd22aa964597896f91790755173milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+17b0b57190dabd65a69d54eff2a73ef5f2b851461790755186milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+7da3fd4eef48fdd9f937943e729bb126cff3823b1790755196milestone 17: slow test
+
+8	0	tests/status.test.ts
+96c55f823907264501bac6763b53995ada74475d1790755207milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+d167cdb2a1b1541b6349cf5c16fe0309e90aa9531790755218milestone 3: serialization test
+
+9	0	tests/map.test.ts
+1d7f3df31baddb6b2e2342266ae6b6299494f3a81790755229milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+17bd55b3886385c9ecb24aa548f8b9e6d90f323d1790755241milestone 2: int test
+
+9	0	tests/rng.test.ts
+778996745fb97498b44863dbe06316a1d13e07311790755255milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+d6d8fd6ce55b1065f5f1c04b11395971a3cc9e1b1790755267milestone 7: radius test
+
+9	0	tests/fov.test.ts
+abecdc4f3326ed9d770877b593cc2774f654195b1790755280milestone 6: door test
+
+10	0	tests/movement.test.ts
+b475d814627d2696d6e37a37707d43de25eb7f7c1790755294milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+6ead538ee0822e41d9e9f2293443c1f70555f4cf1790755307milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+65b28766a5c9c3289d807a31b815503fbad42e561790755318milestone 17: slow test
+
+8	0	tests/status.test.ts
+2d0c3e1f9fa94a3cd5d0db56cfbb11280a06363d1790755328milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+d0a09a70cec325ee5f30a834bab603d71e64a9dd1790755339milestone 3: serialization test
+
+9	0	tests/map.test.ts
+db59683b9b3c6c9ee708a29dd9ee6c238a6747d81790755350milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+a1f68668a8dd67ac836ce47f37c711b646ff1a231790755365milestone 2: int test
+
+9	0	tests/rng.test.ts
+0d8d5a3476bf5c20b30580bb47e285493ea7d55a1790755378milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+90f17eab1d005740d519ff3f54acd9e125b68e8c1790755392milestone 7: radius test
+
+9	0	tests/fov.test.ts
+3787c72df7996237d86368708e7c47f33470ebcc1790755404milestone 6: door test
+
+10	0	tests/movement.test.ts
+b113f904b1784ec8ff36f869d2a9f303f1e0696b1790755417milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+94d7f230b26da7859f0a4032e57eef9cad6be6b51790755429milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+ebb03388f53aca77b1817e361266a16c088ef9961790755440milestone 17: slow test
+
+8	0	tests/status.test.ts
+bb664639459fa44cd23effe15ba99ed711b966e31790755451milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+dcd78cf0cf602ab45c42dd79bc8d5b4f450389ec1790755463milestone 3: serialization test
+
+9	0	tests/map.test.ts
+ddda7dd2e8e6725f6e7c266a87629d551255b8361790755475milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+ddf89dd36d672eb63136bbcbacd47c56eddbcaf61790755487milestone 2: int test
+
+9	0	tests/rng.test.ts
+9de4f5742a93618d23908b36f90409781599d9551790755501milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+67fc68bc0a3d10891e0f3ea2db1c130e9cf6ef351790755514milestone 7: radius test
+
+9	0	tests/fov.test.ts
+c31513b3504f7ca4be209dae38be4d54cbfd1c151790755526milestone 6: door test
+
+10	0	tests/movement.test.ts
+c20177aec0533796e986265362fc4f18066d9de71790755538milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+2e4c6636abed9703be4fb2d1f81fc4956cb500e51790755551milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+e7c1c2dd2252d7fccc098e6f180cf1ac74e2da841790755562milestone 17: slow test
+
+8	0	tests/status.test.ts
+227ece09904b5e167d06ec18d442d2641c9015511790755573milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+13ca0d21c8cf7e7212232178b80c222e460b5ca31790755585milestone 3: serialization test
+
+9	0	tests/map.test.ts
+89f6b248667d7f30e49c7d6c8b7f17c932b54eee1790755597milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+5adfae92055ceb5e73d8d7e50b9912165c6935521790755610milestone 2: int test
+
+9	0	tests/rng.test.ts
+885cd06ff207a3c4f24b4cd19fac7972114224481790755623milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+9d5cf2f292ad99d9cfea6e280ae3117f3c64d6361790755635milestone 7: radius test
+
+9	0	tests/fov.test.ts
+d091df3612c6e41ee0e7a3acd1c2762bdf5da5941790755648milestone 6: door test
+
+10	0	tests/movement.test.ts
+d0304100e00743864bbc54753a33c48865cae37b1790755660milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+c9b1bea0e800b8023d18ffee91809497a68610a61790755672milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+7e77ceb564c90289994763002a45b485d04b7c401790755683milestone 17: slow test
+
+8	0	tests/status.test.ts
+a0f6e24a298b750dc5b2d04ce3137a4404645fce1790755695milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+5cba4c98fbe16d6897c0c6b41f347b0f1fafaea31790755708milestone 3: serialization test
+
+9	0	tests/map.test.ts
+b37abfaef937832bc41a2fd6c8cd1c96162464761790755720milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+3d2f6d60a4619db1bb70e51f35ba893f9c4978de1790755733milestone 2: int test
+
+9	0	tests/rng.test.ts
+96e7ac124260692ecc23758438aa48dc5f72d78b1790755746milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+54b7c837f4e603fbfda33fbdde63f87c426062151790755758milestone 7: radius test
+
+9	0	tests/fov.test.ts
+8012de5060ab36be5a02efef2d7a6addb13b31501790755770milestone 6: door test
+
+10	0	tests/movement.test.ts
+1976778a8b132319aca751d2afd0f50a9d6ad7e21790755782milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+d3d836454a4371ab27d8ec2de0117f0d3a8cf8ff1790755795milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+f8e935aa421e97775e6c46e9c37c15d112f4745f1790755808milestone 17: slow test
+
+8	0	tests/status.test.ts
+67e48d6f22a48f3f95e25607ac081eee9fca71541790755820milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+2861505ef7262dcb66c78091c4e6b265b4445b3c1790755833milestone 3: serialization test
+
+9	0	tests/map.test.ts
+8d1e5f8ee87be921c6d91440a5d7928b34b780141790755844milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+1ecd506fce5b81b019639b8dfb49387aa6ab38591790755856milestone 2: int test
+
+9	0	tests/rng.test.ts
+3560b470281709b05666385e828288ea705fc1e01790755869milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+c158ef849cb955d0b57bf19b091cfbf24e6186741790755881milestone 7: radius test
+
+9	0	tests/fov.test.ts
+f727fb9be90742cb8228c53b5274d0f77d5e51f31790755894milestone 6: door test
+
+10	0	tests/movement.test.ts
+5f9a40b192692bacf4517c73ed38858263bd54a31790755906milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+a91e21d10431e6fa17f9361801e5ed700474c31e1790755921milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+6cb92e45a36ebef649b5a60105744adffbdeda241790755933milestone 17: slow test
+
+8	0	tests/status.test.ts
+87f7349070be98f8f3ac0306fb7bfca270f07bce1790755946milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+2d206a1726b73c450da1d6d3da8478eb8b0c5c3e1790755958milestone 3: serialization test
+
+9	0	tests/map.test.ts
+d345d49605f7c43e69e4336ab1e4a7e02d6659611790755969milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+cea17bac74a021d079cfac6d9128d2dcef24e60e1790755980milestone 2: int test
+
+9	0	tests/rng.test.ts
+9f31aef44c6351cdc3aee55f521305a8338c4dce1790755994milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+3e24f9e0233ed3abb0e9f3ecb224b43f72a4dfac1790756007milestone 7: radius test
+
+9	0	tests/fov.test.ts
+ebbacbf1022b205a51de9ae959513791f3cc13e91790756020milestone 6: door test
+
+10	0	tests/movement.test.ts
+3a16fb5b43be27a591af86b72496f186055a3da21790756033milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+b3749869acaf4bdef7676c4075fef23f87b3c78d1790756047milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+5ee3aefa0910461f3d7dfbd1112b092b848910421790756060milestone 17: slow test
+
+8	0	tests/status.test.ts
+204c44df133fd22329ae4ca85b493329390e425d1790756072milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+3db9016c819ae75e33058784327de6db15f5b2781790756083milestone 3: serialization test
+
+9	0	tests/map.test.ts
+8f7bb6e47579e64c4ed780f89af46520cf17c22f1790756094milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+832330acbb0e9fd98d994a1fc7006a937a915f331790756106milestone 2: int test
+
+9	0	tests/rng.test.ts
+f7f4579c7f5eccde89b999be477e61e12c4621b81790756119milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+ae250599b8272f0d8965e94b8d8cb26b1af0438b1790756132milestone 7: radius test
+
+9	0	tests/fov.test.ts
+45b6f89c64b7f3dbbb29562ed78547cead09839b1790756145milestone 6: door test
+
+10	0	tests/movement.test.ts
+3168e7c5897efbf5514827bc417def40650f0be51790756160milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+fde2379e514fc09dc5a98db904b101adb50baba71790756173milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+01d8ca0d5c6ecb2d0a5abc4b54de1d52f0e58df21790756186milestone 17: slow test
+
+8	0	tests/status.test.ts
+39dce656f7cb1e3ee9e2e1df56d980836fa93b941790756197milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+b2b0504a6209055b3608788b264a0475d02714a11790756209milestone 3: serialization test
+
+9	0	tests/map.test.ts
+d7704f6af4262919b33ef914e63958125ea28b1d1790756220milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+3c29361a26ccb298b557b1d0da0dea71eefd9fb21790756232milestone 2: int test
+
+9	0	tests/rng.test.ts
+685e350435d27a0194c7e3856a2f7024484fb3fa1790756247milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+a4ef13050d5d35d7b85c27b98765f00b95e07bd31790756260milestone 7: radius test
+
+9	0	tests/fov.test.ts
+4382aa0515f89479332919496add3a00871a4e6a1790756273milestone 6: door test
+
+10	0	tests/movement.test.ts
+e4715165c85ff8cf7ca1f9c7ae0d8b7efffd16611790756288milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+0cf0e4a27fd7f1990e2bf2dc98334e485cedf1bd1790756301milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+3528482c5fbd2bd0c85ac1a3d37cc218a18042cd1790756312milestone 17: slow test
+
+8	0	tests/status.test.ts
+e33f2371ca42caeb90e35a6dc935540487bc76711790756324milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+afd4d9c4d0749574705cd4d73faa9197c4ba3b421790756335milestone 3: serialization test
+
+9	0	tests/map.test.ts
+f2c9d7997a1b4ff50daf80fd19be797bb66c59031790756347milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+1f6b467f54d2afdb3d880d9e61752d3c97e6f5b71790756359milestone 2: int test
+
+9	0	tests/rng.test.ts
+35d128c4942d48d102057ff36ca1c899baba1a781790756374milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+06a5b3e6cc98ff3a361e7ced4d855dc471fb7f971790756388milestone 7: radius test
+
+9	0	tests/fov.test.ts
+dfb81d8ec2c74005b52d53fd478427c49ca913811790756400milestone 6: door test
+
+10	0	tests/movement.test.ts
+d0c8d16c28500e54351fdfddae7f577e6dbe87561790756413milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+4d527ae6fd41d0cae385e1c3992277d5965615081790756426milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+b71b88f46788cdd5743f6e37cb291ba7485d84c51790756438milestone 17: slow test
+
+8	0	tests/status.test.ts
+bca5dd515b0a6d23adc0baa34381a52cd0f191171790756449milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+1bfd58acfc01f6b5501813ab22ec63607c29e70e1790756462milestone 3: serialization test
+
+9	0	tests/map.test.ts
+88f0d935fb4deaf6546888fb6cd0615a525db66d1790756474milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+bab7ca22591b9c8de8e4930b3883e8c73f2ae3451790756487milestone 2: int test
+
+9	0	tests/rng.test.ts
+ac68eaafd2983ce4788354add81dfc0b8f5469771790756501milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+e0c3da3ffcd41ca08ddb113570f2da11eabc2a861790756515milestone 7: radius test
+
+9	0	tests/fov.test.ts
+3838909a805799cfb1f529c3350d5e2f2d92ad4e1790756527milestone 6: door test
+
+10	0	tests/movement.test.ts
+85cf41ade3fc37b14ebf354c99a18c826c60503c1790756540milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+ecc24aaf1f463e459869938f7a300010894b2ac31790756553milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+9f783251c240e046b71044e0ac680a411536134b1790756564milestone 17: slow test
+
+8	0	tests/status.test.ts
+1f807c3524463506d50a789404c5043898afef581790756577milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+dc61fda7e499fa5c466a98a8f5763edbdb532b321790756590milestone 3: serialization test
+
+9	0	tests/map.test.ts
+c971162d201adb165876fcdd183ca1425260d7401790756603milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+25e997ce9688d3e1e86beadb54df79b7c04775fc1790756616milestone 2: int test
+
+9	0	tests/rng.test.ts
+117ce31c1299be7077996531124ef19847c608351790756630milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+b1384b24581f0ea9056865fce60a92692babb91c1790756642milestone 7: radius test
+
+9	0	tests/fov.test.ts
+9a47283ddf66d4ea4233224f44788496172b567d1790756655milestone 6: door test
+
+10	0	tests/movement.test.ts
+1deb9dcb860c4bf3b4237d8ff773d5ab1be8135d1790756668milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+12b04c1647e61da2d9d5f895cba678d6404ded7e1790756682milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+28375a1db0fb970212963a3201b9e4157a3c07131790756695milestone 17: slow test
+
+8	0	tests/status.test.ts
+efd81b06674a9b62364456cd2dae85b3dad31a781790756707milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+ff28c1381b22ba0d570c695cba582431dea7c0d91790756721milestone 3: serialization test
+
+9	0	tests/map.test.ts
+6597592e8dcb348f146e96f667fb6d6d1254670f1790756733milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+89f94b7d5cdb38a8f69d40ce24b26ab0c6944d911790756745milestone 2: int test
+
+9	0	tests/rng.test.ts
+e7b965a6e62fed096e10d9ad0a58bb90fbddedc51790756759milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+18657c5a22fb915f43151daf1851605def0b6c1e1790756771milestone 7: radius test
+
+9	0	tests/fov.test.ts
+53ee24c0f5baa5199a423cdc9c8172609194191d1790756784milestone 6: door test
+
+10	0	tests/movement.test.ts
+8c781ed22c600c9b8e8a9e5275083944956eccdb1790756799milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+8c58f2cc1258fbbc95f2d0a40023586cec7ccc471790756813milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+5023457cd08961a29ef281102789b837705d30b11790756826milestone 17: slow test
+
+8	0	tests/status.test.ts
+5315dc8ae8576c73987215c772aa9a684cd7f2ea1790756837milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+93cf48ef2d397cecfb925a81c0dc295096b829b41790756849milestone 3: serialization test
+
+9	0	tests/map.test.ts
+6457f6a2eaf4072c346f6a36c01c4dffeeaea5191790756861milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+143e62736922786044f9c131de6fff76fe2ff5511790756873milestone 2: int test
+
+9	0	tests/rng.test.ts
+a02eec7f0cc5ccde52f67c78c360e5f2814797991790756887milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+c0f9682ef091df1f6db0d36521812f9cef93bde81790756900milestone 7: radius test
+
+9	0	tests/fov.test.ts
+227bf5f635d1b6d1f49bf2d49411b7168f57e59c1790756914milestone 6: door test
+
+10	0	tests/movement.test.ts
+b7418f69d1308f0c0724d1c7e6a4ba48896d01ad1790756928milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+7bad7c910d5153a593b3166366efe0a5cab9419b1790756942milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+3cc5310b231c12026983c9bd3f1dc3ff982689451790756954milestone 17: slow test
+
+8	0	tests/status.test.ts
+cdc65cc0c2962b9d7f39f57156bd5ecb6fbcedb91790756966milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+05c1f47ba92587e6d3df23e8781468b6adb2f33f1790756979milestone 3: serialization test
+
+9	0	tests/map.test.ts
+0dc8433059f3af92b1431faca84251156d66279f1790756990milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+4f60fe1ac0e783d77f52346d6d3175b55303e17d1790757002milestone 2: int test
+
+9	0	tests/rng.test.ts
+c3052bda412e198f7b96d4ef5fb104de27fdf29e1790757017milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+aba01c89a4d1dea5e1b02d59531aa4cc1835dc961790757033milestone 7: radius test
+
+9	0	tests/fov.test.ts
+03d5734e8ddaac4a2404a06c27dd5509fc9d43b91790757047milestone 6: door test
+
+10	0	tests/movement.test.ts
+584c4f06b25fdbe34c9bcdd5ee29c28fdf6965b41790757060milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+3615413fced5241c6700abe4e739bf7134e30ab41790757073milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+71ca467ec6816fc3dea90a61e162e32b7aba22061790757085milestone 17: slow test
+
+8	0	tests/status.test.ts
+2fe65d8e40320d8d7d3a3021656fa4178e7272621790757097milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+f0c849492c260d0b197ab250d60747eb05cbc2081790757110milestone 3: serialization test
+
+9	0	tests/map.test.ts
+b57a7577f6da0eabde003a9b09e1ad076790df1a1790757123milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+43c8b0f19c1b3e34afe0523d256a0a612abc6ac81790757135milestone 2: int test
+
+9	0	tests/rng.test.ts
+1497bd4efa55270e41f53fced4745559cb7cbfe71790757151milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+6fdc69aad0da3b3fe848f59b01bfca5a1f70195b1790757164milestone 7: radius test
+
+9	0	tests/fov.test.ts
+9d73acd61aade136c19b707bdb4b54e0ed11d09e1790757178milestone 6: door test
+
+10	0	tests/movement.test.ts
+6ca18dadabe854a9400cbd2a4b28fb16890d02111790757191milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+65e8113c905e5f72b343586bcedd572be38bb22a1790757205milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+ee50c9c19b5bf6a37b801cf5bc80d4904b86f7be1790757217milestone 17: slow test
+
+8	0	tests/status.test.ts
+9dae3cafcf8e55c533dfede4ec59e6d9f7b0623a1790757230milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+2df83e920460d47455678dbf2b1acef60091a3131790757244milestone 3: serialization test
+
+9	0	tests/map.test.ts
+68a8be5af18aba72d98299303a9af07ab36948cc1790757257milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+d060524dc50fd2865eb8213af5cf90f566b497541790757270milestone 2: int test
+
+9	0	tests/rng.test.ts
+6c2e530d788f5248420c1208909ad463d5f6b9ca1790757284milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+b2cbf3c7c322ba94fb35331cd5eed10ee435acb31790757296milestone 7: radius test
+
+9	0	tests/fov.test.ts
+cbb532b43e0f1f02aa040cca8e8dda72c43e036c1790757309milestone 6: door test
+
+10	0	tests/movement.test.ts
+942dd530016820a25097097b70a70bea8693205c1790757323milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+33521d2816cd57c03a67abdea6c932cccd74f84c1790757338milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+88ef772cf95083cb75affe660d042e0afc58934d1790757351milestone 17: slow test
+
+8	0	tests/status.test.ts
+3e3d5f55c41f35ec618da519e81d4f298a9f0a911790757364milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+b0e6eaf2048145d530a1b13475f735d4505367f91790757376milestone 3: serialization test
+
+9	0	tests/map.test.ts
+faa768e31ebf03359906331d9c8463738a72312e1790757388milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+c77253335563151eb30a02bd9c77f1ecfe5ba4201790757401milestone 2: int test
+
+9	0	tests/rng.test.ts
+3d22a5847661b73f2365a4b2dd593a0930de07cb1790757415milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+31858c2b64d659332a4cd9bf78ed37e478412b301790757429milestone 7: radius test
+
+9	0	tests/fov.test.ts
+bef5d12ac2efe11f8c20f24af4c7924f23319cbe1790757442milestone 6: door test
+
+10	0	tests/movement.test.ts
+6e7843b2b75d7be160614223be62b63c754832301790757457milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+b07e981e7c9c3d71fa31ac6607cd90492a0790a31790757472milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+d374144e75e609aea86e9b7a753cbcac568d4d711790757484milestone 17: slow test
+
+8	0	tests/status.test.ts
+bf06d4f97a960c61e1b7e6f6c8c315d64cd0e8191790757496milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+26aad5962feefa2c9763e7b35888987a3dba24461790757509milestone 3: serialization test
+
+9	0	tests/map.test.ts
+dc267fa21180784ea687fa92cf0fc6061e67ac4c1790757520milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+091c5c28e631686c728735eaa1b72ffd64bee9311790757533milestone 2: int test
+
+9	0	tests/rng.test.ts
+807f0aeabeb2563f4cdf4a063d90f36f8e15dd031790757549milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+6475c059d51dad5b3d1bb52ab67443945c77eebb1790757564milestone 7: radius test
+
+9	0	tests/fov.test.ts
+89c4c941af2ec35bfaf7fcd840e94e250324c55a1790757578milestone 6: door test
+
+10	0	tests/movement.test.ts
+f2eb32379ecfe73c7adbf5c10ada487807acd7fc1790757591milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+9394a4f5d0e60e9c9b9e3442f0d2b158dff83b191790757605milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+3acf0ebba0ee28d14dc39b9c724345324f984e0e1790757617milestone 17: slow test
+
+8	0	tests/status.test.ts
+6e4d72bcd2957f9b5cc9592979c3d904de126ff61790757629milestone 4: rooms test
+
+7	0	tests/dungeon.test.ts
+b7a30680bcb321a120879f3f255e5f38933635231790757642milestone 3: serialization test
+
+9	0	tests/map.test.ts
+abe2531eec12ae908a93294a730d003456bd05cd1790757655milestone 15: stairs test
+
+7	0	tests/levels.test.ts
+80db3b05b0648c4f544354c5ea3397744035dab51790757669milestone 2: int test
+
+9	0	tests/rng.test.ts
+9a4eb31adf7dce3c096685e7309ea5449733af501790757684milestone 12: determinism test
+
+9	0	tests/combat.test.ts
+77a1e8c4733d112c92f3220bcf6b59ac026cad2a1790757697milestone 7: radius test
+
+9	0	tests/fov.test.ts
+458912aedae4ee84d49e48398533f2af03ba625a1790757711milestone 6: door test
+
+10	0	tests/movement.test.ts
+93a83d23756e942e72a5c72350f24b0fb7fb491b1790757725milestone 10: null test
+
+11	0	tests/pathfinding.test.ts
+4893c6694e61a30c712f55597327594cd8dfde4b1790757739milestone 11: faster test
+
+12	0	tests/scheduler.test.ts
+62a7d1fec159a7815133599b9f83ca1f29c4550e1790757751milestone 17: slow test
+
+8	0	tests/status.test.ts

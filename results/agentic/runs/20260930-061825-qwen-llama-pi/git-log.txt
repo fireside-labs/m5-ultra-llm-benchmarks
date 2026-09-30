@@ -1,0 +1,98 @@
+fecc0bec1355cb0c7a18fcd1da9e2070317aea301790774372milestone 1: Project scaffold: Vite + TypeScript strict mode + Vitest, src/, tests/, a README.
+
+6	0	.gitignore
+26	0	README.md
+12	0	index.html
+1497	0	package-lock.json
+18	0	package.json
+14	0	src/main.ts
+1	0	src/version.ts
+8	0	tests/scaffold.test.ts
+21	0	tsconfig.json
+12	0	vite.config.ts
+a4277b612fce2e506a84c970757ceba698addef01790774429milestone 2: Seeded RNG (mulberry32) with tests proving determinism.
+
+61	0	src/rng.ts
+45	0	src/types.ts
+99	0	tests/rng.test.ts
+f01cbff5a17bf5eac056d9df597fc0ec8773f2191790774491milestone 3: Tile map model: walls, floors, doors; map serialization to/from JSON; tests.
+
+131	0	src/map.ts
+104	0	tests/map.test.ts
+c372f4bb5f76628884474368f1e35030e13fbcd11790774661milestone 4: Dungeon generator: rooms and corridors (BSP), guaranteed connectivity; property tests over 200 seeds.
+
+197	0	src/dungeon.ts
+96	0	tests/dungeon.test.ts
+9d9cf6ed0d24ae6ae212bee3b1479bcf7d8f18e61790774759milestone 5: Canvas renderer with a camera that follows the player; resize handling.
+
+47	0	src/camera.ts
+42	5	src/main.ts
+146	0	src/render.ts
+56	0	tests/camera.test.ts
+8	0	tests/scaffold.test.ts
+822621c62ad9d6dd9a5e42047603d610de1ade331790774853milestone 6: Player movement with keyboard input and wall collision; tests for movement rules.
+
+86	0	src/input.ts
+36	10	src/main.ts
+35	0	src/movement.ts
+40	0	tests/input.test.ts
+77	0	tests/movement.test.ts
+77ecd5dbab67b738b958b61f6f3a773cc04ead561790774886milestone 6: Player movement with keyboard input and wall collision; tests for movement rules.
+
+2	1	tests/input.test.ts
+5	0	tests/movement.test.ts
+3589e72b1762fa1ca9f6a4cbe8db4340a4ed40fb1790775703milestone 7: Field of view (recursive shadowcasting) and fog of war; tests on hand-made maps.
+
+104	0	src/fov.ts
+7	0	src/main.ts
+124	0	tests/fov.test.ts
+05eb067ebe4d5e216ff0be89638405afe42a41501790775944milestone 8: Entities and components: health, attack, defense, inventory.
+
+171	0	src/entity.ts
+109	0	src/inventory.ts
+25	1	src/main.ts
+124	0	tests/entity.test.ts
+171	0	tests/inventory.test.ts
+1c8439d21476495db02d380d792b30cb765304171790776426milestone 9: Monsters: five types with distinct behaviour (wander, chase, flee at low HP, ranged, pack).
+
+180	0	src/game.ts
+28	53	src/main.ts
+249	0	src/monsters.ts
+84	0	tests/game.test.ts
+202	0	tests/monsters.test.ts
+b85e54a0865deaafc5ab8e63e725f7c6e1ecf1731790776575milestone 10: A* pathfinding with tests, used by chasing monsters.
+
+2	0	src/game.ts
+140	0	src/pathfinding.ts
+119	0	tests/pathfinding.test.ts
+17a6ead7a1738ba9f732f11f8da7804230b0c0351790776774milestone 11: Turn scheduler with speed-based energy system; tests.
+
+14	6	src/game.ts
+77	0	src/scheduler.ts
+97	0	tests/scheduler.test.ts
+174fb8d04bf4f2a47f1e6071f47201434a57b9a51790776960milestone 12: Combat: to-hit, damage, criticals, death; message log UI.
+
+50	0	src/combat.ts
+32	20	src/game.ts
+22	1	src/main.ts
+136	0	tests/combat.test.ts
+6f224d04ed51da36014c4ec55754ceef2fb148bc1790777210milestone 13: Items: potions, scrolls, weapons, armor; pick up, drop, equip, use.
+
+161	1	src/game.ts
+94	0	src/items.ts
+32	2	src/main.ts
+104	0	tests/items.test.ts
+ca599f9dce8acec423c04d68e286a49090e81f801790777386milestone 14: Inventory UI with keyboard navigation.
+
+43	0	src/main.ts
+154	0	src/ui.ts
+48	0	src/uinav.ts
+51	0	tests/uinav.test.ts
+528167671ac531047c21aa0f07740be54d6dbf1f1790777799milestone 15: Multiple dungeon levels with stairs; level persistence when you return.
+
+120	23	src/game.ts
+4	0	src/input.ts
+76	0	src/levels.ts
+24	5	src/main.ts
+85	0	tests/levels-game.test.ts
+59	0	tests/levels.test.ts

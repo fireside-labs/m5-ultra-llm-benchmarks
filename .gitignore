@@ -1,0 +1,11 @@
+# rebuilt by longctx/build_corpus.py (manifests are tracked)
+longctx/corpus/*
+!longctx/corpus/*.manifest.json
+# live agent workspaces, transcripts, sandbox profiles, harness configs
+/agentic/runs/
+/agentic/harness-config/
+*.sb
+__pycache__/
+*.pyc
+.venv/
+.DS_Store

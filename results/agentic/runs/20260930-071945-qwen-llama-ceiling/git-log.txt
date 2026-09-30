@@ -1,0 +1,43 @@
+9ebfd597d27edeb789b9b8ead176a80aba80593d1790778115milestone 1: project scaffold
+
+8	0	.gitignore
+44	0	README.md
+14	0	index.html
+1497	0	package-lock.json
+21	0	package.json
+33	0	src/main.ts
+95	0	src/styles.css
+109	0	src/types.ts
+58	0	tests/scaffold.test.ts
+24	0	tsconfig.json
+21	0	vite.config.ts
+05d31f277c26e1d8003817335980b9a68e3b75c31790778327milestone 2: seeded RNG (mulberry32)
+
+147	0	src/rng.ts
+184	0	tests/rng.test.ts
+5c921e51693d406fcbc8d1fab40c7df742361ebc1790778494milestone 3: tile map model with JSON serialisation
+
+357	0	src/map.ts
+201	0	tests/map.test.ts
+8acfdccc2845c17617cfec601b19ac501976bc321790778806milestone 4: BSP dungeon generator with guaranteed connectivity
+
+380	0	src/dungeon.ts
+178	0	tests/dungeon.test.ts
+10cda6d1b141a9084d2a03ff2a60cbe60f1d1ca81790779391milestone 5: canvas renderer with a camera that follows the player
+
+96	0	src/browser.ts
+194	0	src/camera.ts
+77	8	src/main.ts
+377	0	src/render.ts
+139	0	tests/browser.test.ts
+146	0	tests/camera.test.ts
+281	0	tests/render.test.ts
+171c5cf6704043448cf00aa701f9bff0ae469fab1790780244milestone 6: player movement with keyboard input and wall collision
+
+299	0	src/game.ts
+356	0	src/input.ts
+44	37	src/main.ts
+195	0	src/movement.ts
+159	0	tests/game.test.ts
+144	0	tests/input.test.ts
+215	0	tests/movement.test.ts

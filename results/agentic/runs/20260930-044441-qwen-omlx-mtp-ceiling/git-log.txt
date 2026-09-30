@@ -1,0 +1,79 @@
+8d1ce26f8f32098b628ac7a1007fa2cb319f72951790768810milestone 1: Project scaffold (Vite + TypeScript strict + Vitest)
+
+12	0	.gitignore
+40	0	MILESTONES.md
+61	0	README.md
+17	0	index.html
+1670	0	package-lock.json
+24	0	package.json
+22	0	src/main.ts
+29	0	src/style.css
+115	0	src/types.ts
+2	0	src/version.ts
+20	0	tests/shell.test.ts
+76	0	tests/types.test.ts
+32	0	tsconfig.json
+24	0	vite.config.ts
+ad547b91a39416fef5f109b9e84ea7ee036e65491790768954milestone 2: Seeded RNG (mulberry32) with determinism tests
+
+192	0	src/rng.ts
+23	0	tests/purity.test.ts
+250	0	tests/rng.test.ts
+a7ecc69d5767144e23b1e3dba279765f5fffe9e81790769285milestone 3: Tile map model with JSON serialisation
+
+480	0	src/map.ts
+358	0	tests/map.test.ts
+1	0	tests/purity.test.ts
+c5f78711d2afc4de9ba3d765f92b0d1ce08497d31790769556milestone 4: BSP dungeon generator with guaranteed connectivity
+
+3	3	MILESTONES.md
+99	0	src/connectivity.ts
+470	0	src/dungeon.ts
+99	0	tests/connectivity.test.ts
+277	0	tests/dungeon.test.ts
+2	0	tests/purity.test.ts
+e9118010e932300127bea39a5de1acadd9da8e4a1790769891milestone 5: Canvas renderer, player-following camera and resize handling
+
+1	1	MILESTONES.md
+1	1	index.html
+15	0	src/boot.ts
+89	13	src/main.ts
+217	0	src/render/camera.ts
+122	0	src/render/glyphs.ts
+362	0	src/render/renderer.ts
+209	0	src/render/theme.ts
+71	0	src/style.css
+64	0	src/ui/shell.ts
+153	0	tests/camera.test.ts
+156	0	tests/helpers/fakeCanvas.ts
+302	0	tests/renderer.test.ts
+103	13	tests/shell.test.ts
+daf052cde11ab8f34cab6eeaeed699445e719e8e1790770282milestone 6: Player movement, key bindings and the headless game object
+
+1	1	MILESTONES.md
+8	2	src/dungeon.ts
+32	0	src/events.ts
+135	0	src/game.ts
+316	0	src/input/keybindings.ts
+114	0	src/input/keyboard.ts
+134	0	src/log.ts
+84	43	src/main.ts
+162	0	src/movement.ts
+76	0	src/player.ts
+77	0	src/ui/logView.ts
+274	0	tests/keybindings.test.ts
+205	0	tests/movement.test.ts
+262	0	tests/player.test.ts
+6	0	tests/purity.test.ts
+115	25	tests/shell.test.ts
+e19ce1b494f39786e63b87282d2f9d8eae09ee0f1790772209milestone 7: Symmetric recursive shadowcasting FOV with fog of war
+
+1	1	MILESTONES.md
+278	0	src/fov.ts
+20	6	src/game.ts
+1	0	src/main.ts
+80	0	tests/fog.test.ts
+384	0	tests/fov.test.ts
+84	0	tests/helpers/referenceFov.ts
+5	2	tests/player.test.ts
+1	0	tests/purity.test.ts

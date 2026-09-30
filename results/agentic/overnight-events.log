@@ -1,0 +1,32 @@
+22:12:10 QUEUE smoke ['ds0731-omlxk-dspark-ceiling', 'dsv4v-llama-dspark-ceiling', 'qwen-omlx-mtp-ceiling', 'qwen-omlx-mtp-pi']
+22:12:35 START ds0731-omlxk-dspark-ceiling-smoke: server ready in 20s
+22:17:38 END ds0731-omlxk-dspark-ceiling-smoke: time cap; 20 requests, last ctx 14,648, cache breaks 19, 0.09 h
+22:18:22 START dsv4v-llama-dspark-ceiling-smoke: server ready in 25s
+22:23:25 END dsv4v-llama-dspark-ceiling-smoke: time cap; 38 requests, last ctx 20,655, cache breaks 0, 0.09 h
+22:23:56 START qwen-omlx-mtp-ceiling-smoke: server ready in 21s
+22:28:59 END qwen-omlx-mtp-ceiling-smoke: time cap; 24 requests, last ctx 15,485, cache breaks 23, 0.09 h
+22:29:30 START qwen-omlx-mtp-pi-smoke: server ready in 19s
+22:34:33 END qwen-omlx-mtp-pi-smoke: agent finished; 16 requests, last ctx 16,555, cache breaks 15, 0.09 h
+22:34:39 QUEUE DONE
+22:34:40 QUEUE smoke ['ds0731-omlxk-dspark-ceiling', 'qwen-llama-mtp-ceiling', 'qwen-llama-mtp-pi']
+22:35:08 START ds0731-omlxk-dspark-ceiling-smoke: server ready in 23s
+22:40:11 END ds0731-omlxk-dspark-ceiling-smoke: time cap; 41 requests, last ctx 20,499, cache breaks 0, 0.09 h
+22:40:48 ERROR qwen-llama-mtp-ceiling-smoke: RuntimeError: server exited with 1
+22:41:04 ERROR qwen-llama-mtp-pi-smoke: RuntimeError: server exited with 1
+22:41:09 QUEUE DONE
+22:42:06 QUEUE ['ds0731-omlxk-dspark-ceiling', 'dsv4v-llama-dspark-ceiling', 'qwen-omlx-mtp-ceiling', 'qwen-llama-ceiling', 'qwen-llama-pi']
+22:42:32 START ds0731-omlxk-dspark-ceiling: server ready in 21s
+01:43:16 END ds0731-omlxk-dspark-ceiling: time cap; 1044 requests, last ctx 421,098, cache breaks 0, 3.02 h
+01:43:53 START dsv4v-llama-dspark-ceiling: server ready in 25s
+04:44:07 END dsv4v-llama-dspark-ceiling: time cap; 722 requests, last ctx 436,001, cache breaks 0, 3.01 h
+04:44:38 START qwen-omlx-mtp-ceiling: server ready in 21s
+05:44:42 END qwen-omlx-mtp-ceiling: time cap; 181 requests, last ctx 200,578, cache breaks 0, 1.01 h
+05:45:16 START qwen-llama-ceiling: server ready in 19s
+06:18:20 END qwen-llama-ceiling: agent finished; 68 requests, last ctx 0, cache breaks 0, 0.56 h
+06:18:37 START qwen-llama-pi: server ready in 7s
+07:18:41 END qwen-llama-pi: time cap; 117 requests, last ctx 133,686, cache breaks 0, 1.00 h
+07:18:46 QUEUE DONE
+07:19:30 QUEUE ['qwen-llama-ceiling']
+07:19:42 START qwen-llama-ceiling: server ready in 7s
+08:20:10 END qwen-llama-ceiling: time cap; 91 requests, last ctx 106,022, cache breaks 0, 1.01 h
+08:20:15 QUEUE DONE
