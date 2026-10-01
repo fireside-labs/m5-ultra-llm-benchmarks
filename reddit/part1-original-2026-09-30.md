@@ -1,3 +1,7 @@
+# Part 1 as originally posted (2026-09-30)
+
+Archived when the post was rewritten on 2026-10-01. Some numbers here are superseded; see the live post and README.
+
 A while back I promised you all M5 Ultra benchmarks. Then I remembered that every Mac benchmark on the internet is someone typing "hi" at a model and posting the tok/s like it's a PR at the gym. Nobody's life depends on how fast a model says hi back.
 
 I use these models for long documents and for coding agents that run for hours. So that's what I tested, and my Mac Studio has not been allowed to rest since. It's fine. It's a 256GB machine. It knew what it signed up for.
@@ -16,13 +20,9 @@ I use these models for long documents and for coding agents that run for hours. 
 
 If you only look at one chart, make it this one.
 
-![cold vs warm](charts/03_qwen_warm_vs_cold_ttft.png)
+*[chart: 03_qwen_warm_vs_cold_ttft.png]*
 
-| | Cold (fresh prompt) | Warm (next step, cached) |
-|---|---|---|
-| Qwen, 250k context, llama.cpp | 234 s | 0.64 s |
-| DeepSeek, 400k context, llama.cpp | 934 s | 1.23 s |
-| DeepSeek, 500k context, llama.cpp | 1,311 s | 1.42 s |
+*[table: table_01_cold_vs_warm.png]*
 
 Twenty-two minutes for the first answer at 500k. I went and made a protein shake. I came back. It was still thinking. I understood it on a spiritual level.
 
@@ -32,14 +32,9 @@ So the real question isn't "how fast is prefill," it's "how often do you pay it.
 
 Qwen3.8-Flash-Next only has 12 full-attention layers out of 48, and it shows. On oMLX its decode barely moves from 10k to 250k. On llama.cpp it gasps like me on the stairs after leg day.
 
-![qwen decode](charts/02_qwen_decode_vs_depth.png)
+*[chart: 02_qwen_decode_vs_depth.png]*
 
-| Qwen, 8-bit, MTP off | 10k | 100k | 250k |
-|---|---|---|---|
-| Decode, llama.cpp (Q8_0) | 47 t/s | 30 t/s | 17 t/s |
-| Decode, oMLX (oQ8e) | 56 t/s | 53 t/s | 51 t/s |
-| Prefill, llama.cpp | 1,622 t/s | 1,393 t/s | 1,069 t/s |
-| Prefill, oMLX | 1,714 t/s | 1,555 t/s | 1,365 t/s |
+*[table: table_02_qwen_depth.png]*
 
 oMLX wins prefill at every depth (+28% at 250k), and decode is almost 3x faster at 250k. llama.cpp still wins tiny follow-up steps: 64 new tokens start in about 0.4-0.6 s at any depth, while oMLX has a per-step cost that grows with context (4.8 s at 250k). With a more realistic 4k-token tool result, oMLX is faster again from about 150k up.
 
@@ -49,7 +44,7 @@ With MTP on, oMLX Qwen decodes at 88 t/s at 10k and still 68 t/s at 250k, on sum
 
 DeepSeek-V4-Flash was slow out of the box. Here's what each change did at 10k context:
 
-![what each fix bought](charts/08_deepseek_what_each_fix_bought.png)
+*[chart: 08_deepseek_what_each_fix_bought.png]*
 
 - llama.cpp with default settings: 628 t/s prefill
 - llama.cpp with `-b 2048 -ub 2048`: 827 t/s (+31%, one flag, free gains, the creatine of settings)
@@ -65,13 +60,9 @@ Honest caveat: on DeepSeek the two engines didn't run the exact same file. llama
 
 Both guess a few tokens ahead. They're great on predictable stuff like JSON and code and do basically nothing for creative writing, which honestly relates to how I do at poetry.
 
-![mtp dspark](charts/07_mtp_dspark_speedup_by_task.png)
+*[chart: 07_mtp_dspark_speedup_by_task.png]*
 
-| | Code | Reasoning | JSON | Prose |
-|---|---|---|---|---|
-| Qwen MTP (oMLX), temp 0 | 1.97x | 2.09x | 2.28x | 1.53x |
-| Qwen MTP, Qwen's recommended sampling | 1.89x | 1.89x | 2.16x | 1.38x |
-| DeepSeek DSpark (oMLX) | 1.53x | 1.54x | 1.51x | 1.00x |
+*[table: table_03_mtp_dspark.png]*
 
 DeepSeek's DSpark gave word-for-word identical output with it on or off. Qwen's MTP gave slightly different, equally fine text (on one prose prompt, off wrote "the grain of Elias's skin" and on wrote "the creases of Elias's face." Both are fine. Both made me moisturize). Each mode was repeatable on its own. You don't need to raise temperature for MTP; higher temperature slightly lowers the gain.
 
@@ -79,13 +70,7 @@ DeepSeek's DSpark gave word-for-word identical output with it on or off. Qwen's 
 
 Same task for every setup: build a browser roguelike in TypeScript, 30 milestones, run tests and the build after each one, commit, and never stop. It's deliberately too big to finish. A logging proxy recorded every request, and a separate "referee" checked every milestone commit against 54 hidden tests the model never saw. Basically a drug test for code.
 
-| Run | Final context | Steps/hour | Hidden tests passed |
-|---|---|---|---|
-| DeepSeek, oMLX + kernels + DSpark (3 h) | 421k | 348 | 52/54 |
-| DeepSeek, llama.cpp + DSpark (3 h) | 436k | 241 | 49/54 |
-| Qwen, oMLX + MTP (1 h) | 201k | 181 | 23/24 |
-| Qwen, llama.cpp (1 h) | 106k | 91 | 19/19 |
-| Qwen, llama.cpp + pi harness (1 h) | 134k | 118 | 45/45 |
+*[table: table_04_overnight_agents.png]*
 
 What I took from it:
 
@@ -95,13 +80,9 @@ What I took from it:
 
 Because agents take different paths every run, I also did a cleaner engine test: I recorded one Qwen agent session (181 requests growing to 200k) and replayed the exact same requests against both engines, with the output fixed at 256 tokens per step.
 
-![replay](charts/09_qwen_replay_engines.png)
+*[chart: 09_qwen_replay_engines.png]*
 
-| Same 181 requests, Qwen 8-bit, MTP off | oMLX | llama.cpp |
-|---|---|---|
-| Total time | 18.5 min (about 19.5 if it had written every token, see below) | 29.7 min |
-| Time to first token, 150-200k | 2.4 s | 1.6 s |
-| Decode, 150-200k | 52 t/s | 22 t/s |
+*[table: table_05_replay_engines.png]*
 
 llama.cpp starts each step a bit sooner, but oMLX writes so much faster at depth that it wins as soon as a reply is longer than about 35 tokens. oMLX finished the same session about 1.5x faster. (Small confession: I forgot to tell oMLX to ignore end-of-text, so it stopped early on 39 of the 181 replies and wrote about 7% fewer tokens. Adjusted for that, it's about 19.5 min vs 29.7 min. Still a win, just a slightly less smug one.)
 
@@ -109,14 +90,7 @@ llama.cpp starts each step a bit sooner, but oMLX writes so much faster at depth
 
 I also said I'd do video, so here's LTX-2.5 (22B, distilled, int8) with ComfyUI's official "Text to Video (LTX-2.5)" template. Fixed prompt (a golden retriever running on a beach at sunset, because I'm not a monster), seed 42, 5 seconds, 24 fps, with audio.
 
-| LTX-2.5, 121 frames, 5 s with audio | Time |
-|---|---|
-| 1280x704, template defaults, first run (includes model load) | 135 s |
-| 1280x704, template defaults, warm | 122 s |
-| 1280x704, `--gpu-only` | 109 s |
-| 1280x704, `--gpu-only` + full-frame VAE decode | **92 s** |
-| 1920x1088, `--gpu-only`, template tiles (512) | 269 s |
-| 1920x1088, `--gpu-only`, bigger tiles (1024) | **244 s** |
+*[table: table_06_ltx_video.png]*
 
 Things I learned:
 
@@ -133,16 +107,16 @@ Several of you asked if the 1M context claim is real on a Mac. So I fed DeepSeek
 
 I also hid three vault codes in the text at 10%, 50% and 90% of the way through, each sitting right next to a nearly identical decoy (e.g. "Aurora: 7294-KILO" next to "Aurelia: 7249-KILN"), and asked for all three at the end. And I measured power while it worked.
 
-![DeepSeek at 1M](tables/table_07_deepseek_1m.png)
+*[table: table_07_deepseek_1m.png]*
 
 - **Yes, 1M works.** The first read took 57 minutes. I aged. The Mac did not. Decode still ran at about 21 t/s at a million tokens, and every next turn after that was cached and started in about 44 s.
 - **Recall held perfectly to 750k.** At 1M it got 2 of 3, and the miss is the interesting part: for the earliest code it answered **7249-KILO**, which is the decoy's numbers glued to the real code's suffix. It didn't lose the fact, it blended two similar facts together. That's the kind of long-context rot a plain needle test never shows you. One run, so treat it as a signal, not a verdict.
 - **Power stayed at about 135 W** while chewing through all of it (chip power from macmon, CPU plus GPU, not the wall). My space heater uses more than that and has never read Tolstoy.
 - **oMLX vs llama.cpp at very long context: oMLX wins real sessions.** My first synthetic test (one giant message plus a tiny 64-token follow-up) made llama.cpp look much better at starting turns, because a 64-token follow-up is basically free for it. Real agent turns aren't tiny: each one adds about 2k tokens of tool output and code. So I replayed a real 418k-token DeepSeek agent session, the exact same requests, on both engines. oMLX started every turn faster (7.3 s vs 16.6 s at 300-420k), wrote faster (29 vs 21 t/s), and finished the whole session in 46 minutes vs 73. Lesson learned: benchmark the workload you actually have, not the one that's easy to script.
 
-![DeepSeek replay table](tables/table_08_deepseek_replay.png)
+*[table: table_08_deepseek_replay.png]*
 
-![DeepSeek replay](charts/10_deepseek_replay_engines.png)
+*[chart: 10_deepseek_replay_engines.png]*
 
 ## Gotchas that cost me hours (so they don't cost you)
 
@@ -160,12 +134,12 @@ I also hid three vault codes in the text at 10%, 50% and 90% of the way through,
 - One overnight run per setup, so treat the agent numbers as a first look, not gospel.
 - The DeepSeek engine comparison uses two variants (Vision-Exp vs 0731) and two packagings of the same native FP4/FP8 format (see above).
 - The LTX timings with the fixes applied are single runs; the unfixed baseline was repeatable within about 1%.
-- The 1M run is a single pass (one prompt per depth, one set of needles), so the recall result is a signal, not a verdict. Power is chip power from macmon, not wall power.
 - Qwen MTP doesn't load in mainline llama.cpp yet (unsloth has a branch), so the llama.cpp Qwen numbers are MTP off.
 
 ## What's next
 
 - Matched DeepSeek test (same variant on both engines)
+- Parallel requests (what happens with 4-8 conversations at once)
 - More harnesses (DeepSeek Harness, Oh My Pi) on both models
 - LTX-2.3 vs 2.5, and more video settings
 

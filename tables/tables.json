@@ -1,0 +1,307 @@
+[
+ {
+  "n": 1,
+  "name": "cold_vs_warm",
+  "title": "Pay prefill once",
+  "header": [
+   "",
+   "Cold (fresh prompt)",
+   "Warm (next step, cached)"
+  ],
+  "rows": [
+   [
+    "Qwen, 250k context, llama.cpp",
+    "234 s",
+    "0.64 s"
+   ],
+   [
+    "DeepSeek, 400k context, llama.cpp",
+    "934 s",
+    "1.23 s"
+   ],
+   [
+    "DeepSeek, 500k context, llama.cpp",
+    "1,311 s",
+    "1.42 s"
+   ]
+  ]
+ },
+ {
+  "n": 2,
+  "name": "qwen_depth",
+  "title": "Qwen doesn't get tired (on oMLX)",
+  "header": [
+   "Qwen, 8-bit, MTP off",
+   "10k",
+   "100k",
+   "250k"
+  ],
+  "rows": [
+   [
+    "Decode, llama.cpp (Q8_0)",
+    "47 t/s",
+    "30 t/s",
+    "17 t/s"
+   ],
+   [
+    "Decode, oMLX (oQ8e)",
+    "56 t/s",
+    "53 t/s",
+    "51 t/s"
+   ],
+   [
+    "Prefill, llama.cpp",
+    "1,622 t/s",
+    "1,393 t/s",
+    "1,069 t/s"
+   ],
+   [
+    "Prefill, oMLX",
+    "1,714 t/s",
+    "1,555 t/s",
+    "1,365 t/s"
+   ]
+  ]
+ },
+ {
+  "n": 3,
+  "name": "mtp_dspark",
+  "title": "MTP and DSpark",
+  "header": [
+   "",
+   "Code",
+   "Reasoning",
+   "JSON",
+   "Prose"
+  ],
+  "rows": [
+   [
+    "Qwen MTP (oMLX), temp 0",
+    "1.97x",
+    "2.09x",
+    "2.28x",
+    "1.53x"
+   ],
+   [
+    "Qwen MTP, Qwen's recommended sampling",
+    "1.89x",
+    "1.89x",
+    "2.16x",
+    "1.38x"
+   ],
+   [
+    "DeepSeek DSpark (oMLX)",
+    "1.53x",
+    "1.54x",
+    "1.51x",
+    "1.00x"
+   ]
+  ]
+ },
+ {
+  "n": 4,
+  "name": "overnight_agents",
+  "title": "Overnight agent sessions: speed and quality",
+  "header": [
+   "Run",
+   "Final context",
+   "Steps/hour",
+   "Hidden tests passed"
+  ],
+  "rows": [
+   [
+    "DeepSeek, oMLX + kernels + DSpark (3 h)",
+    "421k",
+    "348",
+    "52/54"
+   ],
+   [
+    "DeepSeek, llama.cpp + DSpark (3 h)",
+    "436k",
+    "241",
+    "49/54"
+   ],
+   [
+    "Qwen, oMLX + MTP (1 h)",
+    "201k",
+    "181",
+    "23/24"
+   ],
+   [
+    "Qwen, llama.cpp (1 h)",
+    "106k",
+    "91",
+    "19/19"
+   ],
+   [
+    "Qwen, llama.cpp + pi harness (1 h)",
+    "134k",
+    "118",
+    "45/45"
+   ]
+  ]
+ },
+ {
+  "n": 5,
+  "name": "replay_engines",
+  "title": "Same 181 requests replayed on both engines",
+  "header": [
+   "Same 181 requests, Qwen 8-bit, MTP off",
+   "oMLX",
+   "llama.cpp"
+  ],
+  "rows": [
+   [
+    "Total time",
+    "18.5 min (~19.5 adj.)",
+    "29.7 min"
+   ],
+   [
+    "Time to first token, 150-200k",
+    "2.4 s",
+    "1.6 s"
+   ],
+   [
+    "Decode, 150-200k",
+    "52 t/s",
+    "22 t/s"
+   ]
+  ]
+ },
+ {
+  "n": 6,
+  "name": "ltx_video",
+  "title": "Bonus: LTX-2.5 video in ComfyUI",
+  "header": [
+   "LTX-2.5, 121 frames, 5 s with audio",
+   "Time"
+  ],
+  "rows": [
+   [
+    "1280x704, template defaults, first run (includes model load)",
+    "135 s"
+   ],
+   [
+    "1280x704, template defaults, warm",
+    "122 s"
+   ],
+   [
+    "1280x704, `--gpu-only`",
+    "109 s"
+   ],
+   [
+    "1280x704, `--gpu-only` + full-frame VAE decode",
+    "**92 s**"
+   ],
+   [
+    "1920x1088, `--gpu-only`, template tiles (512)",
+    "269 s"
+   ],
+   [
+    "1920x1088, `--gpu-only`, bigger tiles (1024)",
+    "**244 s**"
+   ]
+  ]
+ },
+ {
+  "n": 7,
+  "name": "deepseek_1m",
+  "title": "DeepSeek V4 Flash to 1M tokens (oMLX + kernels)",
+  "header": [
+   "Context",
+   "Cold wait",
+   "Prefill",
+   "Decode",
+   "Next turn (cached)",
+   "Hidden facts",
+   "Chip power"
+  ],
+  "rows": [
+   [
+    "300k",
+    "7.6 min",
+    "660 t/s",
+    "26.3 t/s",
+    "13.3 s",
+    "3/3",
+    "137 W"
+   ],
+   [
+    "500k",
+    "17.2 min",
+    "485 t/s",
+    "24.2 t/s",
+    "21.6 s",
+    "3/3",
+    "138 W"
+   ],
+   [
+    "750k",
+    "34.3 min",
+    "365 t/s",
+    "20.8 t/s",
+    "32.9 s",
+    "3/3",
+    "136 W"
+   ],
+   [
+    "**1M**",
+    "**57.2 min**",
+    "291 t/s",
+    "21.6 t/s",
+    "44.2 s",
+    "**2/3**",
+    "135 W"
+   ]
+  ]
+ },
+ {
+  "n": 8,
+  "name": "deepseek_replay",
+  "title": "Same real 418k-token DeepSeek agent session, both engines",
+  "header": [
+   "Context (median per band)",
+   "oMLX time to first token",
+   "oMLX decode",
+   "llama.cpp time to first token",
+   "llama.cpp decode"
+  ],
+  "rows": [
+   [
+    "0-100k",
+    "3.7 s",
+    "34 t/s",
+    "4.1 s",
+    "31 t/s"
+   ],
+   [
+    "100-200k",
+    "4.6 s",
+    "31 t/s",
+    "6.8 s",
+    "27 t/s"
+   ],
+   [
+    "200-300k",
+    "5.4 s",
+    "30 t/s",
+    "9.6 s",
+    "24 t/s"
+   ],
+   [
+    "300-420k",
+    "7.3 s",
+    "29 t/s",
+    "16.6 s",
+    "21 t/s"
+   ],
+   [
+    "**Whole session**",
+    "**46 min**",
+    "",
+    "**73 min**",
+    ""
+   ]
+  ]
+ }
+]

@@ -49,6 +49,7 @@ QUEUE = [
 # next night: dsh on DeepSeek, omp and pi on both models
 LATER = [
     {"label": "dsv4v-llama-dspark-dsh", **DS_LLAMA, "agent": "dsh", "context_window": 1048576, "hours": 3.0},
+    {"label": "qwen-omlx-mtp-omp", **QWEN_OMLX, "agent": "omp", "context_window": 262144, "hours": 1.0},
 ]
 
 
@@ -197,7 +198,7 @@ def main():
     ap.add_argument("--only", help="comma-separated labels to run")
     args = ap.parse_args()
     LOGDIR.mkdir(parents=True, exist_ok=True)
-    queue = [r for r in QUEUE if not args.only or r["label"] in args.only.split(",")]
+    queue = ([r for r in QUEUE + LATER if r["label"] in args.only.split(",")] if args.only else QUEUE)
     event(f"QUEUE {'smoke ' if args.smoke else ''}{[r['label'] for r in queue]}")
     for run in queue:
         run_one(run, args.smoke)

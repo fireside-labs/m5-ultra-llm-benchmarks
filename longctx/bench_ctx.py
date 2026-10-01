@@ -46,6 +46,7 @@ def main():
     ap.add_argument("--repeats", type=int, default=3)
     ap.add_argument("--repeats-large", type=int, default=1, help="repeats for depths >= --large")
     ap.add_argument("--large", type=int, default=300000)
+    ap.add_argument("--template-kwargs", help="JSON merged into chat_template_kwargs, e.g. '{\"reasoning_effort\": \"low\"}'")
     ap.add_argument("--think", action="store_true", help="leave thinking on (default: ask the template to disable it)")
     ap.add_argument("--out", default=str(pathlib.Path.home() / "bench-results"))
     args = ap.parse_args()
@@ -58,6 +59,8 @@ def main():
     extra = {"cache_prompt": True}
     if not args.think:
         extra["chat_template_kwargs"] = {"enable_thinking": False, "thinking": False}
+    if args.template_kwargs:
+        extra.setdefault("chat_template_kwargs", {}).update(json.loads(args.template_kwargs))
     if args.engine == "llama.cpp":
         extra["ignore_eos"] = True  # fixed output length for fair decode numbers
 

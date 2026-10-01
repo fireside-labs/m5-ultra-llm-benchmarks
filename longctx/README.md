@@ -5,6 +5,7 @@ All commands from `longctx/` with `P=python` (a venv with the packages in `../re
 ## Files
 - `build_corpus.py` builds `corpus/books.txt` (10 Gutenberg novels, ~5.1M tokens) and `corpus/code.txt` (llama.cpp source, ~8M tokens). The manifests record sources + sha256 so others can rebuild identical prompts.
 - `bench_ctx.py` runs, per depth, a **cold** prompt (nonce at the start, so no cache can hit) and **warm** agent-style steps (previous turn + answer + 64 / 4096 new tokens). Records TTFT, prefill t/s, decode t/s, and cached/processed tokens.
+- `bench_1m.py`: very long context (300k to 1M) with three hidden needles (each next to a near-identical decoy), one cold prompt per depth plus one warm step, and chip power sampled with `macmon` if installed. `--template-kwargs` passes extra chat-template options (also available in `bench_ctx.py`).
 - `mtp_compare.py`: `record` with MTP off, `record` with MTP on, then `compare`. Reports speedup and where outputs first diverge.
 - `serve_llama.sh`: starts llama-server with fixed settings (port 8080, 1 slot, flash attention, all layers on GPU).
 - `llama_bench_depth.sh`: llama.cpp's built-in `-d` depth test, to cross-check the warm numbers.

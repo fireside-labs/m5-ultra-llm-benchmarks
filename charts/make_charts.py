@@ -5,8 +5,8 @@ Usage:  python charts/make_charts.py      (from the repo root; BENCH_RESULTS ove
 
 Reads   results/longctx/*.jsonl, results/mtp/*.jsonl (labels starting "test-" ignored;
         the newest file wins when a label appears in more than one file) and the newest
-        results/replay/*-qwen-replay-{omlx,llama}.jsonl
-Writes  01_*.png ... 09_*.png next to this script, at 2x (figsize in inches x 200 dpi).
+        results/replay/*-{qwen,ds}-replay-{omlx,llama}.jsonl
+Writes  01_*.png ... 10_*.png next to this script, at 2x (figsize in inches x 200 dpi).
 Pure CPU / file reading - never contacts a server.
 """
 import glob
@@ -368,10 +368,11 @@ def chart5():
     ax.legend(loc="upper left")
     hot_dev = max(abs(hot[d] / om[d] - 1) for d in hot) * 100
     noc = by_depth(DK_NOC, "warm", "ttft_s", 64)
-    frame(fig, ax, f"DeepSeek warm step: llama.cpp <{max(y1) + 0.05:.1f} s to 500k, oMLX +{slope * 1000:.0f} ms "
-                   f"per 1k tokens",
-          DS_SETUP + "\nWarm step = same conversation + 64 new tokens. A 32 GB hot cache did not change the oMLX "
-                     f"curve (within {hot_dev:.0f}%, i.e. run-to-run noise).",
+    frame(fig, ax, f"Synthetic tiny follow-ups only: llama.cpp <{max(y1) + 0.05:.1f} s to 500k. Real ~2k-token "
+                   f"agent turns reverse this (chart 10)",
+          DS_SETUP + "\nSynthetic test: one giant prompt, then a 64-token follow-up; oMLX grows "
+                     f"+{slope * 1000:.0f} ms per 1k tokens. In a real 418k replay oMLX started every turn faster. "
+                     f"A 32 GB hot cache did not change the oMLX curve (within {hot_dev:.0f}%).",
           f"{HW}\n{PROMPTS}\n{DS_CAVEAT} {DS_BUILD} With the oMLX block cache off the warm step re-prefills "
           f"everything ({noc[50000]:.0f}\u00a0s at 50k, {noc[100000]:.0f}\u00a0s at 100k). oMLX 1k point omitted: no cache hit "
           f"at that size.\nSource: {fname(DL)}, {fname(DK_SHORT)}, {fname(DK_DEPTH)}, {fname(DK_HOT)}, {fname(DK_NOC)}")
@@ -542,8 +543,8 @@ def chart8():
     save(fig, "08_deepseek_what_each_fix_bought.png")
 
 
-def replay_rows(engine):
-    path = sorted(glob.glob(os.path.join(ROOT, "replay", f"*-qwen-replay-{engine}.jsonl")))[-1]
+def replay_rows(engine, model="qwen"):
+    path = sorted(glob.glob(os.path.join(ROOT, "replay", f"*-{model}-replay-{engine}.jsonl")))[-1]
     return path, [r for r in read_jsonl(path) if r.get("type") == "replay"]
 
 
@@ -620,6 +621,95 @@ def chart9():
     save(fig, "09_qwen_replay_engines.png")
 
 
+DS_BANDS = [(0, 100000, "0-100k"), (100000, 200000, "100-200k"), (200000, 300000, "200-300k"),
+            (300000, 420000, "300-420k")]
+
+
+def ds_replay():
+    """DeepSeek real-session replay: per engine rows, cumulative minutes, per-band medians."""
+    out = {}
+    for key in ("llama", "omlx"):
+        path, rows = replay_rows(key, "ds")
+        rows.sort(key=lambda r: r["i"])
+        cum, t = [], 0.0
+        for r in rows:
+            t += r["total_s"]
+            cum.append(t / 60)
+        dec = [r for r in rows if r.get("decode_tps")]  # null/0 = server buffered the output: no decode rate
+        bands = {}
+        for lo, hi, name in DS_BANDS:
+            bt = [r["ttft_s"] for r in rows if lo <= r["prompt_tokens"] < hi]
+            bd = [r["decode_tps"] for r in dec if lo <= r["prompt_tokens"] < hi]
+            bands[name] = (statistics.median(bt), statistics.median(bd) if bd else None, len(bt), len(bd))
+        out[key] = dict(path=path, rows=rows, dec=dec, cum=cum, x=[r["prompt_tokens"] / 1000 for r in rows],
+                        bands=bands)
+    return out
+
+
+def chart10():
+    data = ds_replay()
+    L, O = data["llama"], data["omlx"]
+    L.update(name="llama.cpp Vision-Exp UD-Q8_K_XL", col=C_LLAMA)
+    O.update(name="oMLX kernel build, 0731 oQ4e", col=C_OMLX)
+    n = len(O["rows"])
+    fig, axes = plt.subplots(1, 3, figsize=(10, 5.8))
+    short_o = sum(1 for r in O["rows"] if r["completion_tokens"] < 256)
+    out_o = sum(r["completion_tokens"] for r in O["rows"])
+    out_l = sum(r["completion_tokens"] for r in L["rows"])
+    nodec_l, nodec_o = n - len(L["dec"]), len(O["rows"]) - len(O["dec"])
+    bl, bo = L["bands"]["300-420k"], O["bands"]["300-420k"]
+    ly = frame(fig, axes, f"DeepSeek, one real 418k-token agent session: oMLX starts and writes every turn faster, "
+                          f"{O['cum'][-1]:.0f} vs {L['cum'][-1]:.0f} min",
+               f"DeepSeek-V4-Flash, DSpark off · the same {n} requests (every 5th step of a real 1,044-step agent "
+               f"session, ~2k new tokens each, up to 256 output tokens) sent in order to each engine.\n"
+               f"At 300-420k: TTFT {bo[0]:.1f} s (oMLX) vs {bl[0]:.1f} s (llama.cpp); decode {bo[1]:.0f} vs "
+               f"{bl[1]:.0f} t/s. Real turns reverse the synthetic 64-token result in chart 05.",
+               f"{HW}\n{DS_CAVEAT} oMLX = 0731 oQ4e, kernel build; llama.cpp = Vision-Exp UD-Q8_K_XL. "
+               f"Dots = individual requests; lines = rolling median over 15 consecutive requests. Both servers start "
+               f"with an empty cache; each request reuses the previous request's prefix. Decode panel omits requests "
+               f"where the server buffered its output (no decode rate: llama.cpp {nodec_l}, oMLX {nodec_o}). oMLX was "
+               f"not sent ignore_eos and stopped early on {short_o} of {n} requests ({out_o:,} vs {out_l:,} output "
+               f"tokens), so compare TTFT and t/s; elapsed time slightly favours oMLX.\nSource: results/replay/"
+               f"{os.path.basename(L['path'])}, {os.path.basename(O['path'])}",
+               legend_rows=1, ax_titles=True, left=0.6, right=0.75, wspace=0.34)
+    panels = [("ttft_s", "Time to first token", lambda v, _: f"{v:g} s"),
+              ("decode_tps", "Decode speed", lambda v, _: f"{v:.0f} t/s")]
+    for ax, (field, title, fmt) in zip(axes[:2], panels):
+        top = 0
+        for d in (L, O):
+            src = d["dec"] if field == "decode_tps" else d["rows"]
+            xs, ys = [r["prompt_tokens"] / 1000 for r in src], [r[field] for r in src]
+            ax.plot(xs, ys, ls="none", marker="o", ms=3, mfc=d["col"], mec="none", alpha=0.3, zorder=2)
+            rm = rolling_median(xs, ys)
+            ax.plot(xs, rm, color=d["col"], lw=LW, solid_capstyle="round", solid_joinstyle="round", zorder=3)
+            fs = "{:.1f} s" if field == "ttft_s" else "{:.0f} t/s"
+            note(ax, xs[-1], rm[-1], fs.format(rm[-1]), dx=4)
+            top = max(top, max(rm))
+        ax.set_ylim(0, top * 1.6 if field == "ttft_s" else top * 1.35)
+        ax.yaxis.set_major_formatter(FuncFormatter(fmt))
+        ax.set_title(title, loc="left", fontsize=10.5, color=INK, weight="bold")
+    ax = axes[2]
+    for d in (L, O):
+        ax.plot(d["x"], d["cum"], color=d["col"], lw=LW, solid_capstyle="round", solid_joinstyle="round", zorder=3)
+        ax.plot(d["x"][-1], d["cum"][-1], marker="o", ms=MS, mfc=d["col"], mec=SURFACE, mew=RING, zorder=4)
+        note(ax, d["x"][-1], d["cum"][-1], f"{d['cum'][-1]:.1f} min", dx=6)
+    ax.set_ylim(0, max(L["cum"][-1], O["cum"][-1]) * 1.15)
+    ax.yaxis.set_major_formatter(FuncFormatter(lambda v, _: f"{v:.0f} min"))
+    ax.set_title("Cumulative elapsed time", loc="left", fontsize=10.5, color=INK, weight="bold")
+    for ax in axes:
+        ax.set_xlim(0, 500)
+        ax.set_xticks([0, 100, 200, 300, 400])
+        kfmt(ax)
+        ax.set_xlabel("Prompt tokens")
+    h = [Line2D([], [], color=d["col"], lw=LW) for d in (L, O)]
+    fig.legend(h, [L["name"], O["name"]], loc="upper left", bbox_to_anchor=(0.2 / 10, ly), ncol=2,
+               borderaxespad=0)
+    save(fig, "10_deepseek_replay_engines.png")
+    for k in ("omlx", "llama"):
+        print(k, {b: v for b, v in data[k]["bands"].items()}, f"total {data[k]['cum'][-1]:.1f} min",
+              "requests", len(data[k]["rows"]))
+
+
 if __name__ == "__main__":
-    for fn in (chart1, chart2, chart3, chart4, chart5, chart6, chart7, chart8, chart9):
+    for fn in (chart1, chart2, chart3, chart4, chart5, chart6, chart7, chart8, chart9, chart10):
         fn()
