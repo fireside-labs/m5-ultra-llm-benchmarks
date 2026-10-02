@@ -1,0 +1,237 @@
+90ee65146a475eee61d3c1a3d6554281d201b6cd1790862927milestone 1: project scaffold
+
+4	0	.gitignore
+28	0	README.md
+12	0	index.html
+1497	0	package-lock.json
+18	0	package.json
+22	0	src/main.ts
+8	0	tests/scaffold.test.ts
+20	0	tsconfig.json
+9	0	vite.config.ts
+8	0	vitest.config.ts
+0fcab265536a03d19b3351664e20821b4b01fd6d1790862952milestone 2: seeded rng
+
+54	0	src/rng.ts
+42	0	src/types.ts
+105	0	tests/rng.test.ts
+1e9c20db17ef14b1463003a635291364963857b71790862983milestone 3: tile map model
+
+105	0	src/map.ts
+143	0	tests/map.test.ts
+a18d909d8577a23cc816565884d06bc56a7983e81790863064milestone 4: BSP dungeon generator
+
+5	0	check.sh
+225	0	src/dungeon.ts
+85	0	tests/dungeon.test.ts
+998281fc1688be17bfa36664ed5451bad2e682061790863116milestone 5: canvas renderer with camera
+
+46	0	src/camera.ts
+25	0	src/game.ts
+8	3	src/main.ts
+179	0	src/render.ts
+52	0	tests/camera.test.ts
+7d0ea8a07cdd1f344491b788d2d7577be0248f281790863144milestone 6: player movement and keyboard input
+
+13	0	src/game.ts
+68	0	src/input.ts
+21	0	src/movement.ts
+99	0	tests/movement.test.ts
+26fc6cb5635c747d57685be20c70535649f2f4631790863290milestone 7: FOV shadowcasting and fog of war
+
+116	0	src/fov.ts
+14	3	src/game.ts
+129	0	tests/fov.test.ts
+87a7558dee686ae0b2d42a98f2461ed4e83f3b2e1790863330milestone 8: entities and components
+
+121	0	src/entity.ts
+41	0	src/inventory.ts
+110	0	tests/entity.test.ts
+04c3216c662e809fda0e63f6102381d09b4ca21a1790863456milestone 9: monsters with five behaviours
+
+153	0	src/ai.ts
+39	0	src/fov.ts
+51	2	src/game.ts
+107	0	src/monsters.ts
+212	0	tests/ai.test.ts
+3a3dc1050c1efeadcf3f81dd7fd3f803d044de5f1790863546milestone 10: A* pathfinding used by chasers
+
+2	0	src/game.ts
+114	0	src/pathfinding.ts
+19	0	tests/ai.test.ts
+150	0	tests/pathfinding.test.ts
+ca6c5674c418a38803bc2df5c3e82c084cd27dc91790863592milestone 11: turn scheduler with speed energy
+
+60	0	src/scheduler.ts
+102	0	tests/scheduler.test.ts
+04e2bc52a8b8a0be6a35d2534b97f1c3911faa301790863698milestone 12: combat and message log
+
+37	0	src/combat.ts
+212	0	src/engine.ts
+41	79	src/game.ts
+58	0	src/log.ts
+12	0	src/main.ts
+145	0	tests/combat.test.ts
+312effbd46398ed19ba4fbf303952e3bf0086db91790863855milestone 13: items, equip and use
+
+161	4	src/engine.ts
+4	0	src/input.ts
+41	0	src/inventory.ts
+51	0	src/items.ts
+171	0	tests/inventory.test.ts
+1cd1b7c8620712c61490eb83b4d0b46f36e77a501790863903milestone 14: inventory UI with keyboard navigation
+
+32	1	src/engine.ts
+30	0	src/game.ts
+59	0	src/menu.ts
+116	0	src/ui.ts
+58	0	tests/menu.test.ts
+f61c74b6c8cb619c77b2c24a8163e318be8899431790864008milestone 15: multi-level dungeons with stairs and persistence
+
+81	42	src/engine.ts
+10	3	src/game.ts
+72	0	src/levels.ts
+1	1	tests/inventory.test.ts
+115	0	tests/levels.test.ts
+a0e51cbf2e1ebdde31daccef7be1654aaa31a3301790864130milestone 16: versioned save/load with migrations
+
+123	4	src/engine.ts
+16	0	src/game.ts
+7	0	src/rng.ts
+137	0	src/save.ts
+121	0	tests/save.test.ts
+e9fc0661e8168286619892db8a8b7c65c802a3e71790864294milestone 17: status effects with durations
+
+48	2	src/engine.ts
+3	0	src/entity.ts
+58	0	src/status.ts
+130	0	tests/status.test.ts
+27bdaca89cabf0054a357da25bc9cc68bde512b31790864400milestone 18: hidden traps with search and disarm
+
+61	2	src/engine.ts
+3	0	src/game.ts
+2	0	src/save.ts
+106	0	src/traps.ts
+188	0	tests/traps.test.ts
+42a97ba6f54e98ce9b9b4eff6b95853385ab7fa51790864498milestone 19: shops every third level with gold economy
+
+70	3	src/engine.ts
+35	0	src/game.ts
+3	1	src/input.ts
+4	0	src/save.ts
+46	0	src/shop.ts
+108	0	tests/shop.test.ts
+316a3345236192119363d9cd8762598453a684471790864664milestone 20: xp, levelling and three classes
+
+194	0	src/classes.ts
+162	7	src/engine.ts
+7	1	src/input.ts
+16	1	src/save.ts
+94	0	src/targeting.ts
+128	0	tests/classes.test.ts
+2	2	tests/inventory.test.ts
+4ed09a9ad4e4c00eaf87bd3c45b00db4e0c430f71790864700milestone 21: skill targeting (line, cone, radius) and cooldowns
+
+1	1	src/targeting.ts
+137	0	tests/targeting.test.ts
+0fe13f4aca7ba44a7b621553906081cb1aaae9531790864775milestone 22: level 10 boss with phases
+
+78	0	src/boss.ts
+45	3	src/engine.ts
+2	0	src/save.ts
+90	0	tests/boss.test.ts
+4a3bcb5b62a466669761355445d5ac98e56692251790864816milestone 23: webaudio sound synthesis with mute
+
+134	0	src/audio.ts
+18	0	src/game.ts
+2	0	src/input.ts
+41	0	tests/audio.test.ts
+fbbce6e0a7c390a8c645401206cad894b76ceef51790864867milestone 24: settings screen (keybindings, themes, text size)
+
+25	3	src/game.ts
+2	0	src/input.ts
+6	0	src/render.ts
+58	0	src/settings.ts
+111	0	src/settingsUi.ts
+33	0	tests/settings.test.ts
+5ef6b8eebf10e70918408439347b1056d46c94c41790864919milestone 25: accessibility (keyboard play, screen-reader log)
+
+65	0	src/a11y.ts
+42	0	src/game.ts
+11	0	src/main.ts
+53	0	tests/a11y.test.ts
+b838b7d3e7530212d9a5cbe623fd5fac9aa49c6b1790864966milestone 26: achievements with persistence
+
+59	0	src/achievements.ts
+17	0	src/engine.ts
+11	0	src/game.ts
+3	0	src/save.ts
+43	0	tests/achievements.test.ts
+03595f85d273bcc09cdbc233590017cee1b3f6561790865020milestone 27: deterministic replay system
+
+53	0	src/replay.ts
+79	0	tests/replay.test.ts
+f6d5c8758452544a0903795e3804813350fc71c11790865088milestone 28: performance pass with benchmark test
+
+18	3	src/ai.ts
+20	3	src/engine.ts
+16	0	src/pathfinding.ts
+65	0	tests/perf.test.ts
+4e04ca7ce07510aec383a871281d9baacc7fa39d1790865158milestone 29: headless end-to-end tests (20 seeds x 1000 turns)
+
+124	0	tests/e2e.test.ts
+4416bdd34704aff72a7203d900ec2770570a45d41790865219milestone 30: documentation (architecture, contributing, changelog)
+
+12	4	README.md
+73	0	docs/ARCHITECTURE.md
+53	0	docs/CHANGELOG.md
+48	0	docs/CONTRIBUTING.md
+22	1	tests/audio.test.ts
+94e9fd79a2d02ad222a7f94761ce29ef4b2c14851790865350pass 2: bat/ogre/spider monsters, speed-energy turns, boss fire breath
+
+42	1	src/engine.ts
+36	0	src/monsters.ts
+2	0	src/save.ts
+35	2	tests/ai.test.ts
+30	0	tests/pass2.test.ts
+1	0	tests/shop.test.ts
+93b7a5e5668734b5ec418e02482f1e41e141c43e1790865432pass 2: haste/fireball/frost content, teleport trap, more achievements
+
+3	0	src/achievements.ts
+60	3	src/engine.ts
+3	0	src/inventory.ts
+7	0	src/items.ts
+6	2	src/traps.ts
+82	0	tests/pass2b.test.ts
+a18d7aa248b1b7ba484384f0dde1c060993a4f8c1790865563pass 2: fov robustness tests, item/trap/achievement extensions
+
+50	0	tests/fov.test.ts
+ab21fbc4c7cbaf8f3aea82c49d2804a6d3ef736f1790865739pass 2: stats sidebar + skill targeting cursor in shell, depth spawn tables
+
+4	3	src/engine.ts
+115	0	src/game.ts
+16	0	src/monsters.ts
+28	1	tests/pass2.test.ts
+a26e47329388c94e909a7aaf8b6e131e42d59dbe1790865778pass 2: shop selling (v menu), sales stat, depth content scaling
+
+22	0	src/engine.ts
+28	0	src/game.ts
+29	0	tests/pass2b.test.ts
+4518ab37422039760de68fb413edd011ca3a5c771790865819pass 2: dungeon variety tests (seed uniqueness, floor ratios, multi-size reachability)
+
+34	0	tests/dungeon.test.ts
+f116b08a64d294587415d3a2c78af2bf55336ff91790865868pass 2: shared tickEnergy ledger in scheduler, used by engine monster loop
+
+4	5	src/engine.ts
+19	0	src/scheduler.ts
+17	1	tests/scheduler.test.ts
+9b0f85c283d2225cefc857cbc7d869bafad105b71790865888pass 2: changelog for pass-2 extensions
+
+27	0	docs/CHANGELOG.md
+9b2ba1e77a67c5fb51b38484e1024e8260a5b8c81790865919pass 2: A* optimality vs BFS on random maps, combat statistical bands
+
+22	0	tests/combat.test.ts
+40	0	tests/pathfinding.test.ts
+ebe6000e6bbbfbdb9784984e53f5a96f281201c31790865942pass 2: multi-level expedition e2e (stairs, shop depth, revisit persistence)
+
+48	0	tests/e2e.test.ts

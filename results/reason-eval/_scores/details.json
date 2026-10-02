@@ -1,0 +1,2264 @@
+{
+ "dsv4_r1": {
+  "R01": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 14,
+   "units_over_cap": 0,
+   "answer_words": 731,
+   "items_hit": {
+    "G1": "3. **The cost analysis is misleading because it uses year-1 price only.** The scoring matrix gives Tallis a 9 for price based on $182k, but that includes a 40% first-year discount. Over 3 years: Talli",
+    "G2": "1. **Tallis cannot handle the core union payroll rules today.** Ferncliff has 4 of 9 sites unionized, and payroll errors are the #1 source of HR grievances. The sandbox test showed Corvane and Meridew",
+    "G3": "2. **The references are completely mismatched to Ferncliff's scale and complexity.** Tallis's three references are 60, 140, and 190 employees, all single-site and non-union. Ferncliff has 1,400 employ",
+    "G4": "2. **The references are completely mismatched to Ferncliff's scale and complexity.** Tallis's three references are 60, 140, and 190 employees, all single-site and non-union. Ferncliff has 1,400 employ",
+    "G5": "4. **The uptime score of 10 is based on marketing, not contract.** Tallis reports 99.99% on its marketing page, but its draft contract offers no uptime SLA—only \"commercially reasonable efforts.\" Corv",
+    "G6": "5. **Vendor viability and lock-in risk are severe.** Tallis is 3 years old, has 40 employees, and is \"raising its next round this quarter\" (i.e., not yet profitable). Its contract includes a terminati",
+    "G7": "5. **Vendor viability and lock-in risk are severe.** Tallis is 3 years old, has 40 employees, and is \"raising its next round this quarter\" (i.e., not yet profitable). Its contract includes a terminati",
+    "G8": "7. **The scoring weights sum to 110% (30+25+20+15+10+10).** The relative ranking happens to hold, but this is a mathematical error that signals sloppy analysis. It also means the \"weighted total\" scor",
+    "G9": "The recommendation does not stand. Tallis fails the core functional requirement (union rules), has irrelevant references, no contractual uptime SLA, a worse 3-year total cost, and poses a significant "
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "G2": "1. **Confirm whether Tallis can deliver the union shift-differential and overtime-averaging rules at go-live, not \"Q3 ro",
+    "G1": "2. **Re-run the cost comparison over a 3-year horizon including implementation fees and annual increases.** The year-1 d"
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1",
+    "D2",
+    "D3"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 94.4
+  },
+  "R02": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 15,
+   "units_over_cap": 0,
+   "answer_words": 762,
+   "items_hit": {
+    "G1": "1. **Simpson's paradox: the headline effect reverses within risk tiers.** The report's own table shows the program group has *higher* readmission rates in both tiers — 5.0% vs 4.0% (low risk) and 25.0",
+    "G2": "2. **Selection bias plus removal of non-completers (as-treated analysis).** Enrollment required answering the first call *and* agreeing, and then 140 patients who left before completing all 3 calls we",
+    "G3": "2. **Selection bias plus removal of non-completers (as-treated analysis).** Enrollment required answering the first call *and* agreeing, and then 140 patients who left before completing all 3 calls we",
+    "G4": "5. **Meds-to-beds confound at Northgate.** Northgate launched a bedside medication-delivery service in February 2025, and 85% of program patients came from Northgate vs 40% of the comparison group. Pr",
+    "G5": "6. **Spanish-language \"100% reduction\" is sampling noise.** 2 of 10 vs 0 of 9 is a total of 19 patients and 2 events. The apparent 20% → 0% drop is indistinguishable from chance, yet the report recomm",
+    "G6": "3. **Expansion forecast confuses sensitivity with positive predictive value.** The report claims a flagged patient is \"90% likely to be readmitted\" because sensitivity is 90%. That is wrong. With prev",
+    "G7": "4. **Timing confound from the July 1 measure change.** On July 1 the readmission definition narrowed from \"any\" to \"unplanned\" readmission, so comparison patients discharged before July 1 were counted",
+    "G8": "3. **Expansion forecast confuses sensitivity with positive predictive value.** The report claims a flagged patient is \"90% likely to be readmitted\" because sensitivity is 90%. That is wrong. With prev"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "G1": "1. **The within-tier reversal (Simpson's paradox).** The program shows no benefit — slightly worse outcomes — within bot",
+    "G2": "2. **Selection bias and non-completer removal.** The groups are not comparable (80% low-risk vs 80% high-risk), and drop",
+    "G3": "2. **Selection bias and non-completer removal.** The groups are not comparable (80% low-risk vs 80% high-risk), and drop",
+    "G6": "3. **The expansion forecast is built on a statistical error.** Sensitivity (90%) was mistaken for PPV (~31%), and the 50"
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1",
+    "D2"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  },
+  "R03": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 17,
+   "units_over_cap": 0,
+   "answer_words": 882,
+   "items_hit": {
+    "G1": "1. **The fee cannot reach the population driving the no-show problem.** Medicaid is 34% of the payer mix with a 27% no-show rate, and the contracts explicitly forbid billing members for missed appoint",
+    "G2": "4. **The 60-day notice period violates two commercial contracts.** The fact sheet states two commercial contracts require 90 days' written notice to the plan before any new patient-facing fee. The mem",
+    "G3": "3. **Text-only reminders will reduce coverage for the highest-risk patients.** 41% of patients lack the required opt-in, 15% have no mobile number, and 22% prefer Spanish while the vendor sends Englis",
+    "G4": "7. **The 18%→8% no-show target has no basis.** The recorded reasons for no-show are transportation (38%), forgot (24%), and work/childcare conflict (19%). A fee doesn't fix transportation or childcare",
+    "G5": "7. **The 18%→8% no-show target has no basis.** The recorded reasons for no-show are transportation (38%), forgot (24%), and work/childcare conflict (19%). A fee doesn't fix transportation or childcare",
+    "G6": "2. **The $90k revenue estimate is not credible.** The fact sheet says collection rate on patient-responsibility charges under $100 is 31%. So each $75 fee nets roughly $23, not $75. And with 34% of pa",
+    "G7": "5. **Double-booking the first slot will worsen an already-late operation.** 61% of sessions already end more than 20 minutes late. Guaranteeing two patients in the first slot means every session start",
+    "G8": "8. **The hardship waiver is under-specified.** \"Documented hardship\" with front-desk lead discretion means inconsistent application, potential for conflict at the check-in desk, and no clear appeal pa"
+   },
+   "items_missed": [
+    "G9"
+   ],
+   "priorities_hit": {
+    "G6": "1. **Redesign the no-show fee.** As written, it can't touch the highest no-show group (Medicaid, 27%) and its revenue pr",
+    "G3": "2. **Fix the reminder plan before going text-only.** The clinic must close the opt-in, mobile-number, and Spanish-langua"
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 85.7
+  },
+  "R04": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 16,
+   "units_over_cap": 0,
+   "answer_words": 708,
+   "items_hit": {
+    "G1": "8. **Single point of failure for a paying pilot.** One 8-GPU server means any hardware failure takes down Harrow's endpoint. Two 4-GPU servers give redundancy, which matters for a pilot with contractu",
+    "G2": "4. **The purchase is justified by 3% of jobs.** 85% of GPU jobs use 1–2 GPUs and 12% use 4; only the quarterly fine-tune uses 8. The median 3-hour queue wait comes from small jobs serializing on a 4-G",
+    "G3": "3. **Lead time makes Option A impossible for the pilot.** The 8-GPU server takes 16 weeks; the Harrow pilot starts in 6 weeks. Option B arrives in 3 weeks. Option A cannot support the pilot on schedul",
+    "G4": "1. **The 8-GPU server cannot physically go in the existing rack.** It draws 10.2 kW under load; the rack is capped at 8 kW with 1.5 kW already used, leaving only 6.5 kW. The memo says \"It goes in our ",
+    "G5": "2. **The plan violates the Harrow contract.** Harrow requires dedicated hardware not shared with any other workload, with access logs on request. The memo plans to run training jobs *and* Harrow infer",
+    "G6": "6. **The cloud math is wrong.** The memo claims ~$41k/month for equivalent capacity, but the note says $98/hour on demand — that's ~$71.5k/month. The break-even claim of 8 months is unsupported. And t",
+    "G7": "5. **Resale value flips the cost comparison.** 4-GPU servers retain ~55% of purchase price after 2 years; 8-GPU systems ~40% with fewer buyers. On $330k vs $310k, the resale delta is ~$57.5k — more th",
+    "G8": "7. **Cash and board flexibility are ignored.** Runway is 14 months and the board asked for capital flexibility until Series A closes. A $310k+ commitment with a 16-week lead time is a large, irreversi"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "G3": "1. **Harrow contract compliance and pilot timing.** The pilot starts in 6 weeks, requires dedicated hardware, and Option",
+    "G5": "1. **Harrow contract compliance and pilot timing.** The pilot starts in 6 weeks, requires dedicated hardware, and Option",
+    "G4": "2. **Physical and power constraints.** The 8-GPU server doesn't fit the existing rack; both options need a second rack. ",
+    "G2": "3. **Total cost of ownership including resale and workload fit.** The 4-GPU option is cheaper over 2 years, matches the "
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  },
+  "R05": {
+   "empty": false,
+   "sections_found": [
+    "variables",
+    "priorities",
+    "mind"
+   ],
+   "n_units": 20,
+   "units_over_cap": 0,
+   "answer_words": 891,
+   "items_hit": {
+    "V1": "1. **Payer mix and reimbursement rates in the catchment.** Drives revenue per visit. Site B (high Medicaid/uninsured) likely yields the lowest net revenue; Site A (growing suburban) likely the highest",
+    "V2": "1. **Payer mix and reimbursement rates in the catchment.** Drives revenue per visit. Site B (high Medicaid/uninsured) likely yields the lowest net revenue; Site A (growing suburban) likely the highest",
+    "V3": "4. **Urgent care demand and competitive saturation.** Urgent care is a volume driver and needs visibility/access. Site C has a competitor across the street; Site A has highway interchange visibility; ",
+    "V4": "2. **Incremental volume vs. cannibalization.** Site C sits 1 mile from an existing Harlow Valley clinic—high risk of simply shifting patients, not adding net new volume. Sites A and B are likely new m",
+    "V5": "7. **Staffing recruitment and retention.** Clinical staff are scarce. Site C's proximity to the hospital may ease recruitment (shared float pools) but could also create internal competition for shifts",
+    "V6": "3. **Capital cost and time-to-open.** Site B needs major renovation—delays revenue, ties up capital, and adds execution risk. Site C is ready to occupy; Site A is a new build-out with typical retail f",
+    "V7": "3. **Capital cost and time-to-open.** Site B needs major renovation—delays revenue, ties up capital, and adds execution risk. Site C is ready to occupy; Site A is a new build-out with typical retail f",
+    "V8": "11. **Referral and integration with hospital services.** Site C's proximity to the hospital enables easy referrals for admissions, advanced imaging, and specialists. Sites A/B would need to build refe",
+    "V9": "5. **Mission alignment and access to underserved populations.** As a non-profit, serving the uninsured/Medicaid population (Site B) is core, but it must be financially sustainable. *Measure:* social v",
+    "V10": "4. **Urgent care demand and competitive saturation.** Urgent care is a volume driver and needs visibility/access. Site C has a competitor across the street; Site A has highway interchange visibility; ",
+    "V11": "9. **Long-term demographic growth.** Site A is in the fastest-growing part of the region—future volume upside. Site B is dense but stable; Site C is near the hospital (stable). *Measure:* 5-10 year po",
+    "V13": "9. **Long-term demographic growth.** Site A is in the fastest-growing part of the region—future volume upside. Site B is dense but stable; Site C is near the hospital (stable). *Measure:* 5-10 year po"
+   },
+   "items_missed": [
+    "V12"
+   ],
+   "priorities_hit": {
+    "V2": "1. **Payer mix and reimbursement rates (Variable 1).** This is the financial crux. A non-profit that loses money on ever",
+    "V9": "1. **Payer mix and reimbursement rates (Variable 1).** This is the financial crux. A non-profit that loses money on ever",
+    "V4": "2. **Incremental volume vs. cannibalization (Variable 2).** Opening Site C may just redistribute existing patients from "
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 96.1
+  },
+  "R06": {
+   "empty": false,
+   "sections_found": [
+    "variables",
+    "priorities",
+    "mind"
+   ],
+   "n_units": 20,
+   "units_over_cap": 0,
+   "answer_words": 1136,
+   "items_hit": {
+    "V1": "4. **Security threat model (real vs. perceived risk)**: The CISO's premise may be a perception issue, not a technical one. Self-hosting introduces new risks: misconfigured network access, unpatched GP",
+    "V2": "1. **Model quality and accuracy on medical/legal text**: Open-weight models often underperform frontier commercial APIs on complex medical summarization and formal decision-letter drafting. An error h",
+    "V3": "1. **Model quality and accuracy on medical/legal text**: Open-weight models often underperform frontier commercial APIs on complex medical summarization and formal decision-letter drafting. An error h",
+    "V4": "4. **Security threat model (real vs. perceived risk)**: The CISO's premise may be a perception issue, not a technical one. Self-hosting introduces new risks: misconfigured network access, unpatched GP",
+    "V5": "2. **Total Cost of Ownership (TCO) including peak scaling**: Cloud API is pay-per-use and scales elastically. Self-hosting requires buying GPUs sized for quarter-end peak (likely 2–3x average), meanin",
+    "V6": "5. **Operational burden on the two engineers**: These engineers currently maintain an API integration (simple). Self-hosting means managing model servers, GPU drivers, OS patching, model versioning, f",
+    "V7": "2. **Total Cost of Ownership (TCO) including peak scaling**: Cloud API is pay-per-use and scales elastically. Self-hosting requires buying GPUs sized for quarter-end peak (likely 2–3x average), meanin",
+    "V9": "1. **Model quality and accuracy on medical/legal text**: Open-weight models often underperform frontier commercial APIs on complex medical summarization and formal decision-letter drafting. An error h",
+    "V10": "1. **Model quality and accuracy on medical/legal text**: Open-weight models often underperform frontier commercial APIs on complex medical summarization and formal decision-letter drafting. An error h",
+    "V11": "1. **Model quality and accuracy on medical/legal text**: Open-weight models often underperform frontier commercial APIs on complex medical summarization and formal decision-letter drafting. An error h",
+    "V13": "6. **Liability and error handling**: With a commercial API, the vendor typically provides SLA uptime and may indemnify against certain failures. Self-hosted, Northfold bears 100% liability for any err"
+   },
+   "items_missed": [
+    "V8",
+    "V12"
+   ],
+   "priorities_hit": {
+    "V2": "1. **Model quality and accuracy** — If the open-weight model produces even 1% more errors in claim decisions, the financ",
+    "V3": "1. **Model quality and accuracy** — If the open-weight model produces even 1% more errors in claim decisions, the financ",
+    "V5": "2. **Total Cost of Ownership and operational burden** — The economic crux. The cloud bill is likely a fraction of the co"
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 91.9
+  },
+  "R07": {
+   "empty": false,
+   "sections_found": [
+    "for",
+    "against",
+    "cruxes",
+    "mind",
+    "lean"
+   ],
+   "n_units": 22,
+   "units_over_cap": 0,
+   "answer_words": 1234,
+   "items_hit": {
+    "F1": "2. **Safety and health improve for everyone, including drivers.** Fewer private cars mean fewer vehicle-pedestrian conflicts, lower noise, and reduced local air pollution. The people who benefit most ",
+    "F2": "2. **Safety and health improve for everyone, including drivers.** Fewer private cars mean fewer vehicle-pedestrian conflicts, lower noise, and reduced local air pollution. The people who benefit most ",
+    "F3": "1. **Reclaiming space for people increases economic yield per square foot.** When you remove cars, you convert parking lanes and travel lanes into seating, trees, and pedestrian space. People who are ",
+    "F4": "1. **Reclaiming space for people increases economic yield per square foot.** When you remove cars, you convert parking lanes and travel lanes into seating, trees, and pedestrian space. People who are ",
+    "F6": "2. **Safety and health improve for everyone, including drivers.** Fewer private cars mean fewer vehicle-pedestrian conflicts, lower noise, and reduced local air pollution. The people who benefit most ",
+    "A1": "2. **It risks hollowing out the commercial core.** Many businesses depend on drive-by traffic, spontaneous visits, or customers who need to carry bulky purchases. Removing cars does not automatically ",
+    "A2": "1. **It punishes people who have no viable alternative.** A 600,000-person city has many residents in outer neighborhoods with infrequent or nonexistent transit. For them, the car is not a luxury—it i",
+    "A3": "1. **It punishes people who have no viable alternative.** A 600,000-person city has many residents in outer neighborhoods with infrequent or nonexistent transit. For them, the car is not a luxury—it i",
+    "A4": "3. **The problem is displaced, not solved.** Cars do not vanish; they go around. The surrounding streets—often residential—will absorb the diverted traffic, bringing congestion, noise, and pollution t",
+    "A5": "5. **Implementation costs are real and often underestimated.** Enforcement, exemption permits (for residents, deliveries, disabled), loading zones, street redesign, and signage all cost money. That mo",
+    "A6": "4. **Transit capacity is a hard constraint.** If the main bus interchange is already at capacity, or if the bus network cannot absorb a significant share of the displaced car trips, the ban simply str"
+   },
+   "items_missed": [
+    "F5"
+   ],
+   "cruxes_hit": {
+    "C1": "3. **Empirical: What is the spare capacity of the surrounding road network and the bus interchange?** If the interchange is at 90% capacity and the ring roads are already congested, the ban just moves",
+    "C2": "2. **Empirical: What is the elasticity of demand for downtown visits?** If people substitute to other destinations when they cannot drive, the economic case collapses. If they switch modes instead, th"
+   },
+   "cruxes_missed": [
+    "C3",
+    "C4"
+   ],
+   "balance": {
+    "recall_for": 0.9,
+    "recall_against": 1.0,
+    "words_for": 374,
+    "words_against": 380
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 88.6
+  },
+  "R08": {
+   "empty": false,
+   "sections_found": [
+    "for",
+    "against",
+    "cruxes",
+    "mind",
+    "lean"
+   ],
+   "n_units": 22,
+   "units_over_cap": 0,
+   "answer_words": 1045,
+   "items_hit": {
+    "F1": "2. **Deep work and output** — Software, finance modeling, and operations analysis are cognitively demanding tasks that require long, uninterrupted blocks of time. A three-day office mandate fragments ",
+    "F2": "1. **Talent and retention** — Removing the geographic constraint widens the applicant pool to the entire country or globe, and it eliminates a major cause of attrition: forced relocation or a long com",
+    "F3": "1. **Talent and retention** — Removing the geographic constraint widens the applicant pool to the entire country or globe, and it eliminates a major cause of attrition: forced relocation or a long com",
+    "F4": "1. **Talent and retention** — Removing the geographic constraint widens the applicant pool to the entire country or globe, and it eliminates a major cause of attrition: forced relocation or a long com",
+    "F5": "5. **Cost and agility** — Real estate, utilities, and facilities management are large fixed costs. Reducing office footprint frees capital for product development or hiring. It also allows the company",
+    "A1": "1. **Loss of serendipity** — Innovation and problem-solving in software and finance often come from unplanned interactions: overhearing a conversation, bumping into a colleague from another team, or a",
+    "A2": "2. **Mentorship and tacit knowledge** — Junior staff learn by observing how seniors approach problems, negotiate, and make judgment calls. Remote work makes this deliberate and slower. If onboarding t",
+    "A3": "3. **Cultural cohesion and trust** — Shared norms, a sense of mission, and psychological safety are built through physical presence. Remote-by-default risks fragmentation into silos, weaker cross-team",
+    "A4": "1. **Loss of serendipity** — Innovation and problem-solving in software and finance often come from unplanned interactions: overhearing a conversation, bumping into a colleague from another team, or a",
+    "A5": "5. **Managerial variance** — Not all managers are skilled at leading remote teams. A default policy exposes this variance, potentially widening the gap between high- and low-performing teams. The thre",
+    "A6": "6. **The default effect** — Making remote the default sets a high psychological bar for choosing to meet in person. Teams will under-invest in face-to-face time even when it is clearly valuable (e.g.,"
+   },
+   "items_missed": [
+    "F6"
+   ],
+   "cruxes_hit": {
+    "C1": "1. **Empirical: What is the net productivity/innovation effect of unplanned in-person interaction versus deep-work focus for *this specific mix* of software, finance, and ops?** If the office generate",
+    "C3": "3. **Value: Should the company optimize primarily for individual autonomy and output, or for collective cohesion and serendipity?** This is not a factual question. It depends on whether leadership bel",
+    "C4": "3. **Value: Should the company optimize primarily for individual autonomy and output, or for collective cohesion and serendipity?** This is not a factual question. It depends on whether leadership bel"
+   },
+   "cruxes_missed": [
+    "C2"
+   ],
+   "balance": {
+    "recall_for": 0.9,
+    "recall_against": 1.0,
+    "words_for": 283,
+    "words_against": 291
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 91.0
+  },
+  "R09": {
+   "empty": false,
+   "sections_found": [
+    "steps",
+    "measure",
+    "kill",
+    "priorities"
+   ],
+   "n_units": 20,
+   "units_over_cap": 0,
+   "answer_words": 1053,
+   "items_hit": {
+    "G1": "1. **Pull 15-minute interval call volume, staffing, and abandonment data for the last 4 weeks, with special focus on Monday 8:00–11:00.** Why now: The 22%-of-weekly-calls stat is a red flag. If that w",
+    "G2": "3. **Map the 7-option IVR and trace the 26% transfer rate.** Why now: Transfers double-handle calls. If refill status (31% of calls) is buried behind 3 menus or routes to a human who then transfers, w",
+    "G3": "4. **Fast-track a manual callback process today (even before the $40k add-on is approved).** Why now: The board is angry *now*. A 9-minute hold is unacceptable. Agents can take a name/number and call ",
+    "G4": "2. **Interview all 12 remaining agents (15 min each) about the new EHR's specific friction points.** Why now: Handle time jumped 1.5 min (37%). If it's a missing macro, a double-entry screen, or a kno",
+    "G5": "1. **Pull 15-minute interval call volume, staffing, and abandonment data for the last 4 weeks, with special focus on Monday 8:00–11:00.** Why now: The 22%-of-weekly-calls stat is a red flag. If that w",
+    "G6": "3. **Map the 7-option IVR and trace the 26% transfer rate.** Why now: Transfers double-handle calls. If refill status (31% of calls) is buried behind 3 menus or routes to a human who then transfers, w",
+    "G7": "1. **Average speed of answer and abandonment rate by 15-minute interval, especially Monday 8–11.** *Decision:* Whether hiring 4 full-time 8–5 agents (proposal a) actually helps, or whether we need sta",
+    "G9": "4. **Fast-track a manual callback process today (even before the $40k add-on is approved).** Why now: The board is angry *now*. A 9-minute hold is unacceptable. Agents can take a name/number and call ",
+    "G10": "4. **Of the 31% refill-status callers, how many have portal access and how many actually use it?** *Decision:* Whether to invest in pushing portal adoption/automated refill texts (kills 31% of volume)"
+   },
+   "items_missed": [
+    "G8"
+   ],
+   "priorities_hit": {
+    "G1": "1. **Fix the Monday 8–11 capacity crunch via staggered shifts and part-time Monday coverage.** This is the single bigges",
+    "G4": "2. **Claw back the 1.5-minute EHR handle-time increase via macros, training, or system fixes.** This is equivalent to ad",
+    "G2": "3. **Deflect the 31% refill-status calls (and the 18% repeat callers) via IVR automation and portal/text notifications.*",
+    "G3": "3. **Deflect the 31% refill-status calls (and the 18% repeat callers) via IVR automation and portal/text notifications.*"
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 94.8
+  },
+  "R10": {
+   "empty": false,
+   "sections_found": [
+    "chain",
+    "result",
+    "priorities",
+    "recommendation"
+   ],
+   "n_units": 16,
+   "units_over_cap": 0,
+   "answer_words": 553,
+   "items_hit": {
+    "F1": "2. **EVs in 2030 (midpoint):** State projection 8–16%, take 12% midpoint → 416,500 × 0.12 ≈ **50,000 EVs**. (Low: 33,300; high: 66,600.)",
+    "F2": "3. **Split by home charging:** Assume 30% of EV owners lack home charging (midpoint of 25–35%) → 15,000 without, 35,000 with home charging.",
+    "F3": "4. **Annual miles per driver:** 200 miles/week × 52 weeks = **10,400 miles/year**.",
+    "F4": "3. **Split by home charging:** Assume 30% of EV owners lack home charging (midpoint of 25–35%) → 15,000 without, 35,000 with home charging.",
+    "F5": "7. **Fleet sessions:** 1,500 EVs × 5 sessions/week × 52 weeks = **390,000 sessions/year**.",
+    "F6": "9. **Port throughput at 25% utilization:** 0.25 × 24 hours = 6 hours/day; 40 min/session = 0.667 hours → 6 ÷ 0.667 = 9 sessions/day/port; × 365 = **3,285 sessions/year/port**.",
+    "F7": "ESTIMATE: 600\nRANGE: 425 - 780\nDECISION: $12M is not enough; at $140k–$220k per port it builds only 55–86 new ports, covering roughly 10–15% of the total need (or about 10–15% of the ~554 additional p",
+    "F8": "ESTIMATE: 600\nRANGE: 425 - 780\nDECISION: $12M is not enough; at $140k–$220k per port it builds only 55–86 new ports, covering roughly 10–15% of the total need (or about 10–15% of the ~554 additional p",
+    "F9": "Treat the $12M as a first tranche, not the full solution: build the 55–86 ports it funds in locations that serve the highest-need users first — near multi-unit housing, along major corridors, and at f",
+    "F10": "Treat the $12M as a first tranche, not the full solution: build the 55–86 ports it funds in locations that serve the highest-need users first — near multi-unit housing, along major corridors, and at f"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "F1": "1. **EV adoption rate (8–16%):** This single input swings the EV count from 33,300 to 66,600, driving the port need from",
+    "F2": "2. **Share of EV owners lacking home charging (25–35%):** This group uses DC fast chargers ~2× as often as home-charging",
+    "F4": "2. **Share of EV owners lacking home charging (25–35%):** This group uses DC fast chargers ~2× as often as home-charging",
+    "F6": "3. **Port utilization ceiling (25%) and session time (40 min):** These set port throughput at ~3,285 sessions/year. If r"
+   },
+   "estimate": {
+    "value": 600.0,
+    "range": [
+     425.0,
+     780.0
+    ],
+    "decision": "$12m is not enough; at $140k–$220k per port it builds only 55–86 new ports, covering roughly 10–15% of the total need (or about 10–15% of the ~554 additional ports beyond the existing 46).",
+    "point_score": 1.0,
+    "decision_ok": true
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  }
+ },
+ "dsv4_r2": {
+  "R01": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 17,
+   "units_over_cap": 0,
+   "answer_words": 932,
+   "items_hit": {
+    "G1": "2. **The price scoring is based on a misleading year-1 discount, making Tallis the most expensive option, not the cheapest.** Tallis's $182k includes a 40% first-year discount. Over 3 years: Tallis = ",
+    "G2": "1. **Tallis fails a core functional requirement: union rules.** The memo's stated #1 problem is payroll errors and grievances, and 4 of 9 sites are unionized. Yet in sandbox tests, Tallis could not co",
+    "G3": "4. **The references are not representative of Ferncliff's scale or complexity.** Tallis's three references are 60, 140, and 190 employees, all single-site and non-union (Appendix 3). Ferncliff is 1,40",
+    "G4": "7. **The end users have not seen the product.** The 6-person payroll team that will run the system daily has not seen any demos (Appendix 7). \"Ease of use\" is weighted 20%, yet the Director scored it ",
+    "G5": "3. **The uptime score is fiction because Tallis has no contractual SLA.** The memo scores Tallis 10/10 for 99.99% uptime, but that figure comes from a marketing page (Appendix 2). Tallis's draft contr",
+    "G6": "5. **Vendor lock-in and exit risk are ignored.** Tallis exports historical payroll data only in its own format and charges a termination fee equal to 6 months of fees (Appendix 5). This makes it extre",
+    "G7": "6. **Vendor viability is a material risk for a mission-critical system.** Tallis is 3 years old, has 40 employees, and is \"raising its next round this quarter\" (Appendix 6). Payroll is non-negotiable—",
+    "G9": "9. **The urgency is false and manufactured.** The memo says to sign \"this week to lock in the year-1 price, which expires Friday.\" But the current system has 11 months of support left. There is no ope"
+   },
+   "items_missed": [
+    "G8"
+   ],
+   "priorities_hit": {
+    "G2": "1. **Resolve the union-rules gap before any signature.** Require Tallis to demonstrate a working configuration of the un",
+    "G1": "2. **Recalculate the total cost of ownership over 3 years for all vendors**, including implementation fees, year-2+ pric"
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1",
+    "D2",
+    "D3"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 89.4
+  },
+  "R02": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 17,
+   "units_over_cap": 0,
+   "answer_words": 814,
+   "items_hit": {
+    "G1": "1. **The headline result is reversed within risk tiers (Simpson's paradox).** Among low-risk patients the program rate is 5.0% vs 4.0% for comparison; among high-risk, 25.0% vs 22.0%. In *both* tiers ",
+    "G2": "2. **Enrollment is self-selected, so the comparison is not a control.** Nurses enrolled patients who answered the first call and agreed; the comparison group is everyone else, including non-answerers ",
+    "G3": "3. **Dropping 140 non-completers biases the program group upward.** This is per-protocol, not intention-to-treat. Patients who leave a 3-call program often leave because they are readmitted or too sic",
+    "G4": "5. **Hospital confounding: Northgate's meds-to-beds service.** 85% of program patients came from Northgate vs 40% of comparison. Northgate launched a bedside medication-delivery program in February 20",
+    "G5": "7. **The Spanish-language \"100% reduction\" is noise.** 0 of 9 vs 2 of 10 — 19 patients total. A 100% reduction on n=19 is statistically meaningless and cannot support prioritizing Spanish-language nur",
+    "G6": "4. **The expansion forecast confuses sensitivity with positive predictive value.** Sensitivity 90% does not mean a flagged patient is 90% likely to be readmitted. With 13% prevalence and 70% specifici",
+    "G7": "6. **Timing confound with a definition change.** 70% of program patients were discharged July–December vs 50% of comparison. On July 1 the measure changed from \"any readmission within 30 days\" to \"unp",
+    "G8": "4. **The expansion forecast confuses sensitivity with positive predictive value.** Sensitivity 90% does not mean a flagged patient is 90% likely to be readmitted. With 13% prevalence and 70% specifici"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "G1": "1. **Risk-tier confounding (Simpson's paradox):** the stratified data show the program is associated with *higher* readm",
+    "G2": "2. **Selection and attrition bias:** non-random enrollment plus dropping 140 non-completers means the program group is n",
+    "G3": "2. **Selection and attrition bias:** non-random enrollment plus dropping 140 non-completers means the program group is n",
+    "G6": "3. **The forecast's PPV error:** the \"90% likely to be readmitted\" claim is wrong (~31%), so the 5,400 prevented-readmis"
+   },
+   "decoys_hit": {
+    "D3": "8. **The balance check is misleading.** Age and sex being similar says nothing when the groups differ massively on the variable that drives readmissions: risk t"
+   },
+   "decoys_recognised": [
+    "D1",
+    "D2"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 94.4
+  },
+  "R03": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 18,
+   "units_over_cap": 0,
+   "answer_words": 838,
+   "items_hit": {
+    "G1": "1. **The no-show fee is unenforceable against the group with the highest no-show rate.** The Medicaid managed-care contracts state: \"Provider shall not bill members for missed appointments.\" Medicaid ",
+    "G2": "4. **The 90-day written-notice requirement in two commercial contracts is unaddressed.** The memo's 60-day patient notice is not the same as 90 days' written notice to the plans. Implementing the fee ",
+    "G3": "2. **Replacing reminder calls with texts will reduce reminder coverage, not just save staff time.** The vendor requires documented opt-in; 41% of patients have none on file, and another 15% have no mo",
+    "G4": "2. **Replacing reminder calls with texts will reduce reminder coverage, not just save staff time.** The vendor requires documented opt-in; 41% of patients have none on file, and another 15% have no mo",
+    "G5": "5. **Spanish-speaking patients (22%) get English-only texts.** The vendor sends English-only templates. For a population whose top no-show reasons are transportation (38%) and work/childcare (19%), an",
+    "G6": "1. **The no-show fee is unenforceable against the group with the highest no-show rate.** The Medicaid managed-care contracts state: \"Provider shall not bill members for missed appointments.\" Medicaid ",
+    "G7": "6. **Double-booking the first slot will worsen an already-late schedule.** 61% of sessions already end more than 20 minutes late. If both first-slot patients show, the session starts behind and latene",
+    "G8": "2. **Replacing reminder calls with texts will reduce reminder coverage, not just save staff time.** The vendor requires documented opt-in; 41% of patients have none on file, and another 15% have no mo"
+   },
+   "items_missed": [
+    "G9"
+   ],
+   "priorities_hit": {
+    "G1": "1. **Resolve the Medicaid question before anything else.** Either exclude Medicaid patients from the fee (and redo all r",
+    "G4": "1. **Resolve the Medicaid question before anything else.** Either exclude Medicaid patients from the fee (and redo all r",
+    "G3": "2. **Fix the reminder plan before cutting calls.** Obtain opt-ins for the 41% missing them, decide how to handle the 15%",
+    "G6": "3. **Rebuild the financial and impact model with realistic inputs.** Exclude Medicaid from fee revenue, apply the 31% co"
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 91.3
+  },
+  "R04": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 17,
+   "units_over_cap": 0,
+   "answer_words": 730,
+   "items_hit": {
+    "G2": "3. **Workload mismatch: 97% of jobs use ≤4 GPUs.** The 8-GPU node is only for the quarterly fine-tune (3% of jobs). Two 4-GPU nodes provide two independent schedulers, directly attacking the 3-hour me",
+    "G3": "1. **Lead time makes Option A infeasible for the Harrow pilot.** The pilot starts in 6 weeks; the 8-GPU configuration has a 16-week lead time, while the 4-GPU servers ship in 3 weeks. Ordering Option ",
+    "G4": "2. **Power limit contradicts the memo's placement claim.** The existing rack has an 8 kW limit with 1.5 kW used (6.5 kW free). Option A draws 10.2 kW, so it cannot go in the existing rack as the memo ",
+    "G5": "1. **Lead time makes Option A infeasible for the Harrow pilot.** The pilot starts in 6 weeks; the 8-GPU configuration has a 16-week lead time, while the 4-GPU servers ship in 3 weeks. Ordering Option ",
+    "G6": "5. **The 1.6x interconnect slowdown is trivial to mitigate.** The quarterly fine-tune takes 30 hours; split across two servers it takes 48 hours (18 hours extra). Renting an 8-GPU cloud instance for t",
+    "G7": "4. **Resale value flips the cost advantage.** 8-GPU systems resell at 40% ($124k), while 4-GPU systems resell at 55% ($181.5k for two). Net cost over 2 years: Option A = $186k, Option B = $148.5k. Opt",
+    "G8": "7. **Cash runway and board flexibility constraint.** Runway is 14 months, and the board asked for capital flexibility until Series A closes. Option B's higher resale value and the ability to sell one "
+   },
+   "items_missed": [
+    "G1"
+   ],
+   "priorities_hit": {
+    "G3": "1. **Meet the Harrow pilot deadline (6 weeks).** Only Option B (3-week lead time) or cloud rental can achieve this; Opti",
+    "G2": "2. **Match hardware to actual workload (97% ≤4 GPUs).** Two 4-GPU nodes reduce queue wait and avoid paying for an 8-GPU "
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1",
+    "D2"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 89.4
+  },
+  "R05": {
+   "empty": false,
+   "sections_found": [
+    "variables",
+    "priorities",
+    "mind"
+   ],
+   "n_units": 19,
+   "units_over_cap": 0,
+   "answer_words": 924,
+   "items_hit": {
+    "V1": "2. **Unmet demand and service-area volume** – A clinic only works if enough people will actually come. Site A has growth but may be overserved; Site B is dense but may already have safety-net clinics;",
+    "V2": "1. **Payer mix and net reimbursement per visit** – This drives financial sustainability. Site B's dense, low-income population likely means high Medicaid/uninsured share (lower reimbursement), while S",
+    "V3": "3. **Accessibility and transportation** – Urgent care and primary care depend on easy arrival. Site B's bus lines are critical for its population; Site A's highway access serves car owners; Site C's o",
+    "V4": "5. **Time to operational readiness** – Delay costs revenue and lets competitors entrench. Site C can open in weeks; Site A in months; Site B in a year+. Measure: permitting timelines, construction sch",
+    "V5": "2. **Unmet demand and service-area volume** – A clinic only works if enough people will actually come. Site A has growth but may be overserved; Site B is dense but may already have safety-net clinics;",
+    "V6": "5. **Time to operational readiness** – Delay costs revenue and lets competitors entrench. Site C can open in weeks; Site A in months; Site B in a year+. Measure: permitting timelines, construction sch",
+    "V7": "4. **Capital expenditure and operating cost profile** – Site B needs a major renovation (high upfront, likely asbestos/plumbing issues); Site A has low rent but may need build-out for X-ray/lab; Site ",
+    "V8": "6. **Cannibalization and integration with existing assets** – Site C is 2 miles from your hospital and 1 mile from your clinic. This could steal your own patients (lower net new volume) or create refe",
+    "V9": "1. **Payer mix and net reimbursement per visit** – This drives financial sustainability. Site B's dense, low-income population likely means high Medicaid/uninsured share (lower reimbursement), while S",
+    "V10": "2. **Unmet demand and service-area volume** – A clinic only works if enough people will actually come. Site A has growth but may be overserved; Site B is dense but may already have safety-net clinics;",
+    "V11": "12. **Long-term growth and demographic trends** – Site A is in the fastest-growing part of the region, which could mean future volume but also future competition. Site B may be stable or declining. Me",
+    "V13": "12. **Long-term growth and demographic trends** – Site A is in the fastest-growing part of the region, which could mean future volume but also future competition. Site B may be stable or declining. Me"
+   },
+   "items_missed": [
+    "V12"
+   ],
+   "priorities_hit": {
+    "V2": "1. **Payer mix and net reimbursement per visit** – Without a sustainable margin, the clinic fails regardless of mission.",
+    "V9": "1. **Payer mix and net reimbursement per visit** – Without a sustainable margin, the clinic fails regardless of mission.",
+    "V1": "2. **Unmet demand and service-area volume** – Even with good reimbursement, a clinic needs enough patients. Site A's gro"
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 96.1
+  },
+  "R06": {
+   "empty": false,
+   "sections_found": [
+    "variables",
+    "priorities",
+    "mind"
+   ],
+   "n_units": 20,
+   "units_over_cap": 0,
+   "answer_words": 727,
+   "items_hit": {
+    "V1": "1. **Actual risk differential vs. the DPA** — The CISO's \"sensitive data\" claim is the stated reason for the change, but a signed DPA may already cover the exposure. Measure: a gap analysis of the DPA",
+    "V2": "1. **Actual risk differential vs. the DPA** — The CISO's \"sensitive data\" claim is the stated reason for the change, but a signed DPA may already cover the exposure. Measure: a gap analysis of the DPA",
+    "V3": "4. **Output quality parity** — Open-weight models may underperform on medical summarization and decision-letter drafting; errors in claim decisions have direct financial and legal consequences. Measur",
+    "V4": "2. **Engineering capacity** — Two engineers maintain the integration today; running an on-prem GPU cluster (model updates, monitoring, failover, retraining, security patching) is a materially larger o",
+    "V5": "3. **TCO including peak provisioning** — 40k documents/month with quarter-end peaks. Cloud API is per-token opex with elastic scaling; on-prem requires GPU capex sized for peak or a cloud fallback any",
+    "V6": "2. **Engineering capacity** — Two engineers maintain the integration today; running an on-prem GPU cluster (model updates, monitoring, failover, retraining, security patching) is a materially larger o",
+    "V7": "3. **TCO including peak provisioning** — 40k documents/month with quarter-end peaks. Cloud API is per-token opex with elastic scaling; on-prem requires GPU capex sized for peak or a cloud fallback any",
+    "V9": "8. **Model update and maintenance cadence** — Commercial APIs improve continuously; open-weight models require manual version upgrades, re-validation, and prompt re-tuning. Measure: how often the vend",
+    "V10": "4. **Output quality parity** — Open-weight models may underperform on medical summarization and decision-letter drafting; errors in claim decisions have direct financial and legal consequences. Measur",
+    "V11": "4. **Output quality parity** — Open-weight models may underperform on medical summarization and decision-letter drafting; errors in claim decisions have direct financial and legal consequences. Measur",
+    "V12": "8. **Model update and maintenance cadence** — Commercial APIs improve continuously; open-weight models require manual version upgrades, re-validation, and prompt re-tuning. Measure: how often the vend",
+    "V13": "6. **Operational reliability** — The cloud API has a vendor SLA; on-prem needs its own redundancy and failover or the claims pipeline stops at quarter-end. Measure: required uptime, blast radius of an"
+   },
+   "items_missed": [
+    "V8"
+   ],
+   "priorities_hit": {
+    "V1": "1. **Actual risk differential** — It is the stated reason for the change; if the DPA already covers the exposure, the en",
+    "V5": "3. **TCO including peak provisioning** — The economic crux: cloud scales elastically, on-prem does not, and quarter-end "
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 89.3
+  },
+  "R07": {
+   "empty": false,
+   "sections_found": [
+    "for",
+    "against",
+    "cruxes",
+    "mind",
+    "lean"
+   ],
+   "n_units": 23,
+   "units_over_cap": 0,
+   "answer_words": 1267,
+   "items_hit": {
+    "F1": "3. **Improves safety and public health for the densest population.** The downtown has offices, shops, and housing. Removing cars eliminates the most common cause of severe pedestrian injuries and redu",
+    "F2": "3. **Improves safety and public health for the densest population.** The downtown has offices, shops, and housing. Removing cars eliminates the most common cause of severe pedestrian injuries and redu",
+    "F3": "2. **Increases economic yield per square foot of downtown land.** Drivers pass through; pedestrians dwell. Shoppers on foot visit more stores, linger longer, and spend more per visit than those who pa",
+    "F4": "2. **Increases economic yield per square foot of downtown land.** Drivers pass through; pedestrians dwell. Shoppers on foot visit more stores, linger longer, and spend more per visit than those who pa",
+    "F6": "1. **Eliminates the congestion externality at the core.** Private cars impose delays on everyone else—buses, pedestrians, and other drivers. Removing them from the 1.5 sq mi core makes the main bus in",
+    "A1": "1. **It is regressive and excludes the mobility-impaired.** For the elderly, disabled, and those carrying heavy loads, walking to a bus stop or cycling is not a viable option. A blanket ban on private",
+    "A2": "1. **It is regressive and excludes the mobility-impaired.** For the elderly, disabled, and those carrying heavy loads, walking to a bus stop or cycling is not a viable option. A blanket ban on private",
+    "A3": "1. **It is regressive and excludes the mobility-impaired.** For the elderly, disabled, and those carrying heavy loads, walking to a bus stop or cycling is not a viable option. A blanket ban on private",
+    "A4": "3. **It displaces, rather than solves, the traffic problem.** Cars don't disappear; they just stop at the boundary. The perimeter roads and adjacent residential streets will absorb the through-traffic",
+    "A5": "5. **It complicates emergency and service access.** While emergency vehicles are typically exempt, the physical design of a car-free zone—bollards, narrow lanes, restricted curb access—can slow respon",
+    "A6": "4. **The transit alternative may not have the capacity.** The main bus interchange is a bottleneck, not a solution. If the ban forces a 20-30% mode shift to buses, the interchange and the local road n"
+   },
+   "items_missed": [
+    "F5"
+   ],
+   "cruxes_hit": {
+    "C1": "2. **Empirical: What is the elasticity of mode shift?** When cars are banned, do people switch to buses/bikes/park-and-ride, or do they simply stop coming to downtown? This depends on the quality of t",
+    "C4": "3. **Value: How do we weigh individual convenience/access against collective benefits?** This is the crux of the moral disagreement. The collective benefits (cleaner air, safer streets, more public sp"
+   },
+   "cruxes_missed": [
+    "C2",
+    "C3"
+   ],
+   "balance": {
+    "recall_for": 0.9,
+    "recall_against": 1.0,
+    "words_for": 361,
+    "words_against": 380
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 86.1
+  },
+  "R08": {
+   "empty": false,
+   "sections_found": [
+    "for",
+    "against",
+    "cruxes",
+    "mind",
+    "lean"
+   ],
+   "n_units": 22,
+   "units_over_cap": 0,
+   "answer_words": 1856,
+   "items_hit": {
+    "F1": "2. **Focus is the core input of knowledge work, and the office fragments it.** Software engineering, financial modeling, and operations analysis all require long, uninterrupted blocks of concentrated ",
+    "F2": "1. **Talent and retention are the binding constraint, and geography is the tax.** For a 4,000-person software/finance/ops firm, the scarce resource is skilled people who fit the culture and can do the",
+    "F3": "6. **Resilience and cost are real, if secondary, wins.** Remote-by-default eliminates most commuting, which is dead time for the employee and a real cost in energy and carbon. It reduces real estate n",
+    "F4": "1. **Talent and retention are the binding constraint, and geography is the tax.** For a 4,000-person software/finance/ops firm, the scarce resource is skilled people who fit the culture and can do the",
+    "F5": "6. **Resilience and cost are real, if secondary, wins.** Remote-by-default eliminates most commuting, which is dead time for the employee and a real cost in energy and carbon. It reduces real estate n",
+    "A1": "1. **The company's real knowledge is mostly tacit, and the office is the only channel that transmits it.** The most valuable thing a 4,000-person company has is not its documents; it is the accumulate",
+    "A2": "2. **Onboarding and junior development will quietly degrade.** Early-career people learn by watching: how a senior analyst structures a model, how a lead frames a problem, how a team argues and settle",
+    "A3": "3. **The \"unless\" clause is a coordination trap.** The proposal says teams *may* choose to meet in person. But arranging an in-person day requires someone to propose it, coordinate it, and justify it ",
+    "A4": "3. **The \"unless\" clause is a coordination trap.** The proposal says teams *may* choose to meet in person. But arranging an in-person day requires someone to propose it, coordinate it, and justify it ",
+    "A5": "6. **Proximity bias will create a two-tier workforce, even with good intentions.** The people who live near an office, or who choose to come in, will get more visibility, more informal mentorship, mor",
+    "A6": "6. **Proximity bias will create a two-tier workforce, even with good intentions.** The people who live near an office, or who choose to come in, will get more visibility, more informal mentorship, mor"
+   },
+   "items_missed": [
+    "F6"
+   ],
+   "cruxes_hit": {
+    "C1": "1. **Empirical: How much of this company's critical knowledge is tacit, and how much can be made explicit?** If most coordination can be written down, documented, and made asynchronous without losing ",
+    "C2": "3. **Value: Is the company optimizing for individual productivity and retention, or for collective cohesion and long-term capability?** These can conflict directly. Remote-by-default likely wins on th",
+    "C3": "2. **Empirical: What is the actual value of serendipity and informal contact in this specific firm?** Both sides have priors. The pro side says it is overrated; the con side says it is the hidden engi",
+    "C4": "3. **Value: Is the company optimizing for individual productivity and retention, or for collective cohesion and long-term capability?** These can conflict directly. Remote-by-default likely wins on th"
+   },
+   "cruxes_missed": [],
+   "balance": {
+    "recall_for": 0.9,
+    "recall_against": 1.0,
+    "words_for": 519,
+    "words_against": 582
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 96.0
+  },
+  "R09": {
+   "empty": false,
+   "sections_found": [
+    "steps",
+    "measure",
+    "kill",
+    "priorities"
+   ],
+   "n_units": 20,
+   "units_over_cap": 0,
+   "answer_words": 1012,
+   "items_hit": {
+    "G1": "1. **Pull the raw call data: calls per 30-minute interval, per day, and abandonment by interval.** Why now: the Monday 8:00–11:00 spike (22% of weekly calls in 6.7% of hours) is almost certainly what ",
+    "G2": "2. **Shadow 6–8 agents for a morning, timing each step of a call, especially refill-status and appointment booking.** Why now: handle time jumped 37% (4.1 → 5.6 min) after the EHR switch; you need to ",
+    "G3": "5. **Investigate the 18% repeat callers: are they unresolved first calls, or the same issue re-checked?** Why now: if first-call resolution is poor, you're paying for the same call twice. Track resolu",
+    "G4": "2. **Shadow 6–8 agents for a morning, timing each step of a call, especially refill-status and appointment booking.** Why now: handle time jumped 37% (4.1 → 5.6 min) after the EHR switch; you need to ",
+    "G5": "1. **Pull the raw call data: calls per 30-minute interval, per day, and abandonment by interval.** Why now: the Monday 8:00–11:00 spike (22% of weekly calls in 6.7% of hours) is almost certainly what ",
+    "G6": "3. **Quantify the refill-status calls: can the IVR, portal, or an automated text answer \"where is my refill?\"** Why now: 31% of calls are refill status — the most automatable reason. If you can deflec",
+    "G7": "6. **Stand up a daily dashboard: wait time, abandonment, handle time, calls/hour, by interval.** Why now: you need to see week-over-week movement on the actual target metric, not anecdotes. Needs: IT ",
+    "G8": "- **Proposal (a) — hire 4 agents:** Kill it if the data shows the Monday 8–11 spike is the bottleneck and 4 agents on the same 8–17 shift still can't cover it (they'd be idle the rest of the week). Ki",
+    "G9": "3. **Abandonment rate by time of day, and the actual wait experienced by abandoners.** Decision: where the real pain is, and whether a callback feature would convert abandoners into satisfied callers "
+   },
+   "items_missed": [
+    "G10"
+   ],
+   "priorities_hit": {
+    "G4": "1. **Fix the EHR-driven handle time.** Recovering the 1.5 min/call (5.6 → 4.1 min) is a ~27% capacity gain for near-zero",
+    "G1": "2. **Deflect the 31% refill-status calls via IVR, portal, or automated text.** This cuts total volume by up to a third, ",
+    "G2": "2. **Deflect the 31% refill-status calls via IVR, portal, or automated text.** This cuts total volume by up to a third, "
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 94.8
+  },
+  "R10": {
+   "empty": false,
+   "sections_found": [
+    "chain",
+    "result",
+    "priorities",
+    "recommendation"
+   ],
+   "n_units": 15,
+   "units_over_cap": 0,
+   "answer_words": 384,
+   "items_hit": {
+    "F1": "2. **EVs in 2030**: 416,500 × 12% (midpoint of 8–16% state projection) = **~50,000 EVs**.",
+    "F2": "3. **Split by home-charging access**: 30% (midpoint of 25–35%) lack home charging = **15,000 drivers**; 70% have home charging = **35,000 drivers**.",
+    "F3": "3. **Split by home-charging access**: 30% (midpoint of 25–35%) lack home charging = **15,000 drivers**; 70% have home charging = **35,000 drivers**.",
+    "F4": "6. **Sessions from drivers with home charging**: 2 sessions/month × 12 = 24 sessions/year. Total = 35,000 × 24 = **840,000 sessions/year**.",
+    "F5": "7. **Fleet sessions**: 1,500 EVs × 5 sessions/week × 52 weeks = **390,000 sessions/year**.",
+    "F6": "9. **Port capacity at 25% utilization**: 24 h/day × 365 days × 25% ÷ (40 min ÷ 60 min/h) = **3,285 sessions/port/year**.",
+    "F7": "10. **Ports needed**: 1,957,500 ÷ 3,285 = **596 ports** (existing 46 ports; ~550 additional).",
+    "F8": "ESTIMATE: 596\nRANGE: 424 - 780\nDECISION: $12M is not enough; at $140k–$220k/port it buys 55–85 new ports, roughly 10–15% of the ~550 additional ports needed.",
+    "F9": "Treat the $12M as a first tranche, not the full answer. Build 55–85 ports now, prioritizing sites that serve ride-hail/delivery fleets, multi-unit buildings, and high-traffic corridors where demand is",
+    "F10": "Treat the $12M as a first tranche, not the full answer. Build 55–85 ports now, prioritizing sites that serve ride-hail/delivery fleets, multi-unit buildings, and high-traffic corridors where demand is"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "F1": "1. **EV adoption share (8–16%)** – a factor of 2 swing in EV count, directly scaling all private-driver sessions and the",
+    "F4": "2. **Home-charging drivers' DC fast usage (2×/month assumption)** – this is the single largest session block (~840k sess",
+    "F2": "3. **Utilization ceiling (25%)** – a design parameter that directly scales port count; raising it to 30% cuts required p",
+    "F6": "3. **Utilization ceiling (25%)** – a design parameter that directly scales port count; raising it to 30% cuts required p"
+   },
+   "estimate": {
+    "value": 596.0,
+    "range": [
+     424.0,
+     780.0
+    ],
+    "decision": "$12m is not enough; at $140k–$220k/port it buys 55–85 new ports, roughly 10–15% of the ~550 additional ports needed.",
+    "point_score": 1.0,
+    "decision_ok": true
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  }
+ },
+ "glm53_r1": {
+  "R01": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 16,
+   "units_over_cap": 0,
+   "answer_words": 957,
+   "items_hit": {
+    "G1": "2. **The price score measures the wrong year, inverting the real ranking.** Price (25% weight) was scored on the discounted year-1 subscription only. On 3-year total cost, Tallis is ≈ $277k in year 1 ",
+    "G2": "1. **Tallis cannot yet run union payroll rules — the memo's own #1 pain point.** Shift-differential and overtime-averaging are \"on the roadmap for Q3\" (App. 4), not shipped. With 4 of 9 sites unionize",
+    "G3": "4. **The references prove nothing about Ferncliff's profile.** Tallis's three references have 60–190 employees, are single-site and non-union; Ferncliff is 1,400 employees across 9 sites, 4 unionized.",
+    "G4": "6. **The scoring process is single-scorer, script-dependent, and arithmetically wrong.** The recommending Director scored all demos alone, using each vendor's own demo script — a method that systemati",
+    "G5": "3. **The uptime score rewards marketing, not contract.** Tallis got 10/10 for a 99.99% figure from its marketing page while its draft contract contains no uptime SLA (\"commercially reasonable efforts\"",
+    "G6": "5. **Vendor viability and exit costs are unpriced.** Tallis is 3 years old, has 40 employees, and is raising its next round; its contract carries a 6-month-fee termination charge and exports historica",
+    "G7": "5. **Vendor viability and exit costs are unpriced.** Tallis is 3 years old, has 40 employees, and is raising its next round; its contract carries a 6-month-fee termination charge and exports historica",
+    "G8": "6. **The scoring process is single-scorer, script-dependent, and arithmetically wrong.** The recommending Director scored all demos alone, using each vendor's own demo script — a method that systemati",
+    "G9": "8. **The Friday deadline is vendor leverage, not a Ferncliff constraint.** Signing this week locks a 40%-off teaser year (saving only ~$32–54k against the alternatives' year 1) while leaving uncapped "
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "G2": "1. **Make union payroll capability a contractual go/no-go.** Before any signature, Tallis must commit shift-differential",
+    "G1": "2. **Re-score price on 3-year total cost** (subscriptions + escalators + implementation fees). Tallis is the most expens"
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1",
+    "D2",
+    "D3"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 94.4
+  },
+  "R02": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 17,
+   "units_over_cap": 0,
+   "answer_words": 949,
+   "items_hit": {
+    "G1": "1. **Simpson's paradox — the headline reverses within every risk tier.** Within low-risk patients the program does *worse* (5.0% vs 4.0%), and within high-risk patients it also does *worse* (25.0% vs ",
+    "G2": "3. **Self-selection plus deleting dropouts makes the program group a healthy-completer cohort.** Enrollment required answering a call and consenting; sicker patients are harder to reach and less likel",
+    "G3": "3. **Self-selection plus deleting dropouts makes the program group a healthy-completer cohort.** Enrollment required answering a call and consenting; sicker patients are harder to reach and less likel",
+    "G4": "5. **Site-level confound: meds-to-beds at Northgate.** 85% of program patients vs 40% of the comparison came from Northgate, which launched a readmission-reducing service in February 2025. Any benefit",
+    "G5": "6. **The Spanish-language recommendation rests on 19 patients and 2 events.** 0/9 vs 2/10 is a two-event difference (two-sided Fisher p ≈ 0.5; the CI on 0/9 extends to ~34%). Calling this a \"100% redu",
+    "G6": "2. **The expansion forecast confuses sensitivity with positive predictive value.** At 13% prevalence with 90% sensitivity and 70% specificity, PPV = (0.90×0.13)/(0.90×0.13 + 0.30×0.87) ≈ **31%**, not ",
+    "G7": "4. **The July 1 measure change is a confound, not an \"other finding.\"** After July 1, planned readmissions no longer count, mechanically lowering measured rates. 70% of program patients vs 50% of the ",
+    "G8": "9. **The forecast assumes an invalid effect transfers unchanged to every partner hospital and that \"every flagged patient\" can be enrolled.** The 50% estimate comes from a self-selected cohort at two "
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "G1": "1. **Simpson's paradox.** The report's own tier table shows the program does no better — point estimates slightly worse ",
+    "G6": "2. **The sensitivity/PPV error in the forecast.** The 5,400-readmissions figure is wrong by roughly 3x even on its own a",
+    "G2": "3. **The selection/attrition design.** Answer-and-consent enrollment plus deleting 140 non-completers explains the tier ",
+    "G3": "3. **The selection/attrition design.** Answer-and-consent enrollment plus deleting 140 non-completers explains the tier "
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1",
+    "D2"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  },
+  "R03": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 17,
+   "units_over_cap": 0,
+   "answer_words": 921,
+   "items_hit": {
+    "G1": "1. **The no-show fee is contractually prohibited for the patients who no-show most.** The Medicaid contracts bar billing members for missed appointments, and Medicaid is 34% of patients with a 27% no-",
+    "G2": "3. **January 1 is not a lawful effective date for the fee.** Two commercial contracts require **90 days' written notice to the plan** before a new patient-facing fee. The memo's 60-day notice is to th",
+    "G3": "5. **Text reminders reach roughly half of patients, not a replacement for calls.** 41% lack opt-in (the vendor simply won't text them), 15% have no mobile number, and English-only templates miss the 2",
+    "G4": "2. **The 18%→8% target is arithmetically unreachable if Medicaid no-shows don't move.** Even if commercial and Medicare no-shows fell to 8%, the weighted rate would be 0.34×27% + 0.66×8% ≈ **14.5%**. ",
+    "G5": "2. **The 18%→8% target is arithmetically unreachable if Medicaid no-shows don't move.** Even if commercial and Medicare no-shows fell to 8%, the weighted rate would be 0.34×27% + 0.66×8% ≈ **14.5%**. ",
+    "G6": "1. **The no-show fee is contractually prohibited for the patients who no-show most.** The Medicaid contracts bar billing members for missed appointments, and Medicaid is 34% of patients with a 27% no-",
+    "G7": "8. **Double-booking worsens an existing lateness problem and is aimed at the wrong slots.** 61% of sessions already run >20 minutes late; with an 18% no-show rate, both patients show ~82% of the time,",
+    "G8": "9. **Front-desk time converts rather than disappears, and the rollout has config gaps.** Waiver decisions, fee disputes, payment conversations at every balance-held booking, opt-in capture, and Spanis"
+   },
+   "items_missed": [
+    "G9"
+   ],
+   "priorities_hit": {
+    "G1": "1. **Fix the legal perimeter of the no-show fee before approving anything.** Build the Medicaid carve-out into the billi",
+    "G3": "2. **Rebuild the expected-impact section on defensible numbers.** Re-based fee revenue (payer carve-outs, waiver, 31% co",
+    "G4": "2. **Rebuild the expected-impact section on defensible numbers.** Re-based fee revenue (payer carve-outs, waiver, 31% co",
+    "G6": "2. **Rebuild the expected-impact section on defensible numbers.** Re-based fee revenue (payer carve-outs, waiver, 31% co"
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 91.3
+  },
+  "R04": {
+   "empty": false,
+   "sections_found": [
+    "issues"
+   ],
+   "n_units": 1,
+   "units_over_cap": 0,
+   "answer_words": 27,
+   "items_hit": {
+    "G5": "1. **The plan breaches the Harrow contract.** The contract requires Harrow's data on \"dedicated hardware that is not shared with any other workload,\" but"
+   },
+   "items_missed": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G6",
+    "G7",
+    "G8"
+   ],
+   "priorities_hit": {},
+   "decoys_hit": {},
+   "decoys_recognised": [],
+   "sections_missing": [
+    "priorities",
+    "bottom"
+   ],
+   "missing_file": false,
+   "task_score": 28.7
+  },
+  "R05": {
+   "empty": false,
+   "sections_found": [
+    "preamble",
+    "variables",
+    "priorities",
+    "mind"
+   ],
+   "n_units": 22,
+   "units_over_cap": 0,
+   "answer_words": 1019,
+   "items_hit": {
+    "V1": "The real-estate brief describes buildings, but this is a demand-and-economics decision with a mission overlay — and the service mix pulls in different directions: primary care follows where people liv",
+    "V2": "The real-estate brief describes buildings, but this is a demand-and-economics decision with a mission overlay — and the service mix pulls in different directions: primary care follows where people liv",
+    "V3": "The real-estate brief describes buildings, but this is a demand-and-economics decision with a mission overlay — and the service mix pulls in different directions: primary care follows where people liv",
+    "V4": "2. **Incremental vs cannibalised demand.** A clinic one mile from HVH's existing primary-care clinic (C) mostly relocates patients rather than adding them. Check: overlay 10-minute drive-time catchmen",
+    "V5": "9. **Staffing availability and recruitment pull.** The clinic fails without providers, MAs, and an X-ray tech willing to work at that location. Check: commute-time analysis for likely hires, local lab",
+    "V6": "5. **Population size and growth inside the service area.** Visit volume starts with people — A has the growth tailwind, B has density today. Check: ACS population within a 10-minute drive-time isochro",
+    "V7": "4. **All-in occupancy cost per projected visit.** Rent per square foot is a vanity metric — B's \"major renovation,\" A's retail-to-medical conversion, and C's ready-to-occupy status dominate the real c",
+    "V9": "The real-estate brief describes buildings, but this is a demand-and-economics decision with a mission overlay — and the service mix pulls in different directions: primary care follows where people liv",
+    "V10": "4. **All-in occupancy cost per projected visit.** Rent per square foot is a vanity metric — B's \"major renovation,\" A's retail-to-medical conversion, and C's ready-to-occupy status dominate the real c",
+    "V13": "5. **Population size and growth inside the service area.** Visit volume starts with people — A has the growth tailwind, B has density today. Check: ACS population within a 10-minute drive-time isochro"
+   },
+   "items_missed": [
+    "V8",
+    "V11",
+    "V12"
+   ],
+   "priorities_hit": {
+    "V2": "1. **Net revenue per visit (payer mix).** The widest spread across the three sites sits here — it can swing the whole bu",
+    "V3": "1. **Net revenue per visit (payer mix).** The widest spread across the three sites sits here — it can swing the whole bu",
+    "V9": "1. **Net revenue per visit (payer mix).** The widest spread across the three sites sits here — it can swing the whole bu",
+    "V4": "2. **Net-new visits, net of cannibalisation and competitive capture.** Volume × revenue per visit is the entire top line"
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 88.4
+  },
+  "R06": {
+   "empty": false,
+   "sections_found": [
+    "variables",
+    "priorities",
+    "mind"
+   ],
+   "n_units": 20,
+   "units_over_cap": 0,
+   "answer_words": 953,
+   "items_hit": {
+    "V1": "2. **Residual data exposure under the cloud API.** This is what on-prem would actually remove: vendor retention, training on customer data, subprocessors, breach history, jurisdiction. *Check: vendor ",
+    "V2": "1. **The unmet risk the CISO is actually fixing.** The DPA already satisfies the customers' stated requirements, so the case for self-hosting rests entirely on risks that remain *after* it; if none ar",
+    "V3": "3. **Output quality parity on Northfold's documents.** These outputs are medical summaries and decision letters affecting people's benefits; a weaker model means wrong decisions, appeals, and liabilit",
+    "V4": "2. **Residual data exposure under the cloud API.** This is what on-prem would actually remove: vendor retention, training on customer data, subprocessors, breach history, jurisdiction. *Check: vendor ",
+    "V5": "5. **Three-year total cost of ownership.** API fees versus GPU capex, power, support contracts, and extra headcount — the honest comparison is rarely made before such projects start. *Check: build bot",
+    "V6": "5. **Three-year total cost of ownership.** API fees versus GPU capex, power, support contracts, and extra headcount — the honest comparison is rarely made before such projects start. *Check: build bot",
+    "V7": "4. **Peak-to-average volume ratio.** On-prem hardware must be sized for quarter-end peaks and idles the rest of the time, while cloud is elastic — this is often the whole economic argument, and the ra",
+    "V9": "6. **Engineering capacity.** Two engineers maintain an API integration today; running inference infrastructure (serving, model upgrades, monitoring, failover, GPU ops) is a different and much larger j",
+    "V10": "2. **Residual data exposure under the cloud API.** This is what on-prem would actually remove: vendor retention, training on customer data, subprocessors, breach history, jurisdiction. *Check: vendor ",
+    "V11": "3. **Output quality parity on Northfold's documents.** These outputs are medical summaries and decision letters affecting people's benefits; a weaker model means wrong decisions, appeals, and liabilit",
+    "V12": "11. **Migration and validation cost.** Re-prompting, re-validation, parallel running, and possibly insurers approving a changed decision process. *Check: engineering estimate for migration and paralle",
+    "V13": "7. **Reliability and disaster recovery.** A single data centre is a single point of failure for an SLA-bound claims pipeline; the cloud vendor provides multi-region redundancy Northfold would have to "
+   },
+   "items_missed": [
+    "V8"
+   ],
+   "priorities_hit": {
+    "V2": "1. **The unmet risk (variables 1–2).** The CISO's stated reason — \"the data is sensitive\" — is already contractually add",
+    "V3": "2. **Quality parity (variable 3).** The model's output drives claim decisions, so a modest accuracy drop is more expensi",
+    "V4": "2. **Quality parity (variable 3).** The model's output drives claim decisions, so a modest accuracy drop is more expensi"
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 95.9
+  },
+  "R07": {
+   "empty": false,
+   "sections_found": [
+    "for",
+    "against",
+    "cruxes",
+    "mind",
+    "lean"
+   ],
+   "n_units": 23,
+   "units_over_cap": 0,
+   "answer_words": 1116,
+   "items_hit": {
+    "F1": "5. **Safety.** Severe pedestrian injuries concentrate where vehicles and crowds mix. A ban removes the conflict rather than managing it — every other measure (signals, humps, speed limits) only modera",
+    "F3": "4. **The retail fear inverts at street level.** Car-borne customers may spend more per trip, but they arrive less often, dwell less, and see storefronts through glass at speed. Footfall, dwell time, a",
+    "F4": "1. **Space arithmetic.** Downtown street space is finite, and cars consume most of it while carrying a minority of the people arriving — much of the time parked or crawling. Removing them converts the",
+    "F6": "2. **The interchange makes the benefit network-wide.** The main bus interchange sits inside the zone, so core congestion is the bottleneck for bus routes serving the *whole* city, not just downtown tr",
+    "A1": "3. **The transition cost falls on marginal businesses.** If much of the revenue arrives by car, receipts drop immediately while replacement footfall builds over years. Vacancy during that gap can kill",
+    "A2": "4. **A blanket ban hits those with no substitute.** Disabled residents and visitors, the elderly, parents with small children, and tradespeople and deliveries lose the only feasible mode. Each exempti",
+    "A3": "1. **It taxes the periphery.** A 600,000-person city's downtown serves a regional catchment, and transit outside the core is likely thin. A large share of car arrivals may have no realistic alternativ",
+    "A4": "2. **Displacement lands on the boundary, not the core.** Banned traffic queues on ring roads, cuts through residential edge streets, and parks in adjacent neighborhoods. The political blowback will co",
+    "A5": "4. **A blanket ban hits those with no substitute.** Disabled residents and visitors, the elderly, parents with small children, and tradespeople and deliveries lose the only feasible mode. Each exempti",
+    "A6": "2. **Displacement lands on the boundary, not the core.** Banned traffic queues on ring roads, cuts through residential edge streets, and parks in adjacent neighborhoods. The political blowback will co"
+   },
+   "items_missed": [
+    "F2",
+    "F5"
+   ],
+   "cruxes_hit": {
+    "C1": "2. **(Empirical)** Does the bus network have peak headroom, and is the core the binding constraint on it? If yes, mode shift is physically possible and the network-wide benefit is large; if no, the ba",
+    "C2": "3. **(Empirical)** How car-dependent is downtown business revenue, and how fast does other-mode footfall replace it? *Settled by* customer intercept surveys (arrival mode × spend × frequency) and, dec",
+    "C4": "4. **(Value)** Whose access counts, and how much do transition losers weigh? Even with points 1–3 settled, one must decide whether it is acceptable to make trips harder for peripheral, elderly, and di"
+   },
+   "cruxes_missed": [
+    "C3"
+   ],
+   "balance": {
+    "recall_for": 0.8,
+    "recall_against": 1.0,
+    "words_for": 282,
+    "words_against": 300
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 87.3
+  },
+  "R08": {
+   "empty": false,
+   "sections_found": [
+    "for",
+    "against",
+    "cruxes",
+    "mind",
+    "lean"
+   ],
+   "n_units": 24,
+   "units_over_cap": 0,
+   "answer_words": 1167,
+   "items_hit": {
+    "F1": "2. **The current mandate probably buys neither density nor flexibility.** Three mandated days with staggered attendance means many people commute to sit on video calls — enough people to be distractin",
+    "F2": "3. **Talent in, attrition down.** For software and finance staff the binding constraint is the labour market. Remote default widens the geographic and demographic pool (caregivers, people who have mov",
+    "F3": "1. **The default is the policy.** Under the proposal, teams that benefit from being together keep that; teams that don't stop paying the commute tax. The current three-day rule forces everyone to the ",
+    "F4": "2. **The current mandate probably buys neither density nor flexibility.** Three mandated days with staggered attendance means many people commute to sit on video calls — enough people to be distractin",
+    "F5": "5. **Footprint cost.** 4,000 desks plus facilities is a large fixed cost that remote default can shrink at lease renewal. (Assumption: the lease structure permits this; if the company is locked in for",
+    "F6": "3. **Talent in, attrition down.** For software and finance staff the binding constraint is the labour market. Remote default widens the geographic and demographic pool (caregivers, people who have mov",
+    "A1": "2. **Cross-team ties are a commons no team owns.** Under team-level opt-in, every team rationally chooses remote; weak ties across 4,000 people decay; the firm becomes a federation of silos. The main ",
+    "A2": "1. **Apprenticeship decays silently.** Juniors learn by watching and being corrected in real time; remote default makes mentorship scheduled and scarce, and the damage surfaces 12–24 months later as a",
+    "A3": "6. **Culture and control environment.** At this scale, norms are transmitted by observation and enforced by presence — especially in finance and operations, where process discipline matters. Remote de",
+    "A4": "4. **Ambiguous work is faster in a room.** Incidents, contentious design calls, finance close problems: a room compresses a two-week async negotiation into an afternoon, while async coordination burns",
+    "A5": "3. **\"The team chooses\" means the manager chooses.** You will get office-favouring and remote-favouring teams with unequal promotion exposure (out of sight, out of mind), plus steady pressure toward l",
+    "A6": "3. **\"The team chooses\" means the manager chooses.** You will get office-favouring and remote-favouring teams with unequal promotion exposure (out of sight, out of mind), plus steady pressure toward l"
+   },
+   "items_missed": [],
+   "cruxes_hit": {
+    "C2": "2. **(Empirical)** How large and how lagged is the junior-development penalty, and can the company replace hallway osmosis with deliberate apprenticeship? If yes, the strongest argument against mostly",
+    "C3": "1. **(Empirical)** What do the current three office days actually produce? If most of that time is solo work or video calls from an office desk, the mandate is buying little and remote default is near",
+    "C4": "4. **(Value)** Whose interests dominate: incumbents' flexibility and the enlarged hiring pool, or long-run cohesion — given that remote default's benefits accrue mostly to seniors while its costs fall"
+   },
+   "cruxes_missed": [
+    "C1"
+   ],
+   "balance": {
+    "recall_for": 1.0,
+    "recall_against": 1.0,
+    "words_for": 304,
+    "words_against": 313
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 95.0
+  },
+  "R09": {
+   "empty": false,
+   "sections_found": [
+    "preamble",
+    "steps",
+    "measure",
+    "kill",
+    "priorities"
+   ],
+   "n_units": 21,
+   "units_over_cap": 0,
+   "answer_words": 1108,
+   "items_hit": {
+    "G1": "**The crux first:** this is not primarily a headcount problem, and neither proposal as written fixes it. Since March, handle time rose 37% (4.1→5.6 min), which at 12 working agents cut throughput from",
+    "G2": "7. **Launch deflection quick wins on the top reasons.** IVR/portal messaging on refill status (31% of all calls), portal-enrollment push at check-in for the 65% not activated, and ask clinics/pharmacy",
+    "G3": "**The crux first:** this is not primarily a headcount problem, and neither proposal as written fixes it. Since March, handle time rose 37% (4.1→5.6 min), which at 12 working agents cut throughput from",
+    "G4": "**The crux first:** this is not primarily a headcount problem, and neither proposal as written fixes it. Since March, handle time rose 37% (4.1→5.6 min), which at 12 working agents cut throughput from",
+    "G5": "2. **Pull the arrival curve: offered calls (including abandons) by 30-minute interval, last 8 weeks.** The 9-minute figure covers answered calls only, so the board is seeing a flattering number; recom",
+    "G6": "**The crux first:** this is not primarily a headcount problem, and neither proposal as written fixes it. Since March, handle time rose 37% (4.1→5.6 min), which at 12 working agents cut throughput from",
+    "G8": "1. **Fill the two vacant positions this week.** +17% capacity, already budgeted, no decision needed — and the fact they've sat open for a month while the board fumes is itself a finding. *HR, immediat",
+    "G9": "3. **Lock the metric definition with the COO in one meeting.** \"Under 2 minutes\" for answered calls only, or time-to-human including callbacks and abandonment? Proposal (b) can \"win\" on paper purely b",
+    "G10": "7. **Launch deflection quick wins on the top reasons.** IVR/portal messaging on refill status (31% of all calls), portal-enrollment push at check-in for the 65% not activated, and ask clinics/pharmacy"
+   },
+   "items_missed": [
+    "G7"
+   ],
+   "priorities_hit": {
+    "G4": "1. **Recover the lost handle time.** The EHR switch deleted ~3 agents' worth of throughput in March; buying it back at ~",
+    "G1": "2. **Match capacity to the peak and stop the abandonment.** Stagger shifts into Monday 8–11 and run the callback pilot t",
+    "G2": "3. **Cut demand at the source.** 69% of calls (refill status, booking, reschedule/cancel — trending toward 80% with test",
+    "G3": "3. **Cut demand at the source.** 69% of calls (refill status, booking, reschedule/cancel — trending toward 80% with test"
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 94.8
+  },
+  "R10": {
+   "empty": false,
+   "sections_found": [
+    "chain",
+    "result",
+    "priorities",
+    "recommendation"
+   ],
+   "n_units": 17,
+   "units_over_cap": 0,
+   "answer_words": 551,
+   "items_hit": {
+    "F1": "2. **EVs in 2030:** take the midpoint of the state's 8–16% projection (assumption: the city tracks the state) → 416,500 × 0.12 ≈ **50,000 EVs**.",
+    "F2": "3. **Split by home charging:** midpoint of staff's 25–35% → 50,000 × 0.30 = **15,000 without home charging**, 35,000 with.",
+    "F3": "4. **Sessions per no-home driver:** (200 mi/week ÷ 150 mi/session) × 70% DCFC share = 1.33 × 0.7 ≈ 0.93 sessions/week → 15,000 × 0.93 ≈ **14,000 sessions/week**. (Check: 14,000 × 150 mi = 2.1M mi/week",
+    "F4": "5. **Sessions per home-charging driver:** 2/month × 12 ÷ 52 ≈ 0.46/week → 35,000 × 0.46 ≈ **16,200 sessions/week**. (Assumption: \"twice a month\" holds even as the network grows.)",
+    "F5": "6. **Fleets:** 1,500 × 5 = **7,500 sessions/week**. (Assumption: all on public ports; depot charging would cut this.)",
+    "F6": "9. **Usable hours per port:** 168 h/week × 25% utilization ceiling = **42 h/week** (assumption: the 24-hour ceiling works as a weekly average).",
+    "F7": "5. **Sessions per home-charging driver:** 2/month × 12 ÷ 52 ≈ 0.46/week → 35,000 × 0.46 ≈ **16,200 sessions/week**. (Assumption: \"twice a month\" holds even as the network grows.)",
+    "F8": "12. **Cost:** closing a 550-port gap at the $180k midpoint ≈ $99M; $12M buys 12,000,000 ÷ $140k–220k ≈ **54–86 ports**."
+   },
+   "items_missed": [
+    "F9",
+    "F10"
+   ],
+   "priorities_hit": {
+    "F1": "1. **EV adoption (8–16%):** every downstream number scales with it, and the state's range alone spans ~425–780 ports — a",
+    "F2": "2. **Sustainable utilization and session length:** ports needed = weekly port-hours ÷ (168 × utilization); at a 15% ceil",
+    "F6": "2. **Sustainable utilization and session length:** ports needed = weekly port-hours ÷ (168 × utilization); at a 15% ceil",
+    "F4": "3. **Charging that stays off the public fast network:** home-charging drivers at 2×/month generate ~43% of all sessions "
+   },
+   "estimate": {
+    "value": 600.0,
+    "range": [
+     425.0,
+     780.0
+    ],
+    "decision": "no — $12m buys only ~55–85 ports against the ~380–740 new ports needed, covering roughly 10–15% of the gap.",
+    "point_score": 1.0,
+    "decision_ok": true
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 91.9
+  }
+ },
+ "glm53_r2": {
+  "R01": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 18,
+   "units_over_cap": 0,
+   "answer_words": 948,
+   "items_hit": {
+    "G1": "2. **The price score uses a discounted year 1; over three years Tallis is the most expensive.** Tallis: $182k + $303k + up to $327k + $95k implementation ≈ **$883–907k**. Corvane: **$708k** all-in. Me",
+    "G2": "1. **Tallis cannot run Ferncliff's union payroll rules today.** Shift-differential and overtime-averaging are \"on the roadmap for Q3\" (Appendix 4) — a promise, not a capability — while 4 of 9 sites ar",
+    "G3": "4. **References and vendor viability don't match Ferncliff's profile.** Tallis's three references have 60–190 employees, single-site, non-union (Appendix 3); Ferncliff is 1,400 employees, 9 sites, 4 u",
+    "G4": "5. **The scoring process is one person scoring vendor-scripted demos.** Using each vendor's own demo script tests what the vendor chooses to show; a polished demo is a sales skill, not a feature. The ",
+    "G5": "3. **The uptime score rewards marketing, not contracts.** Tallis's 99.99% comes from its marketing page, and its draft contract offers no SLA — \"commercially reasonable efforts\" — while Corvane and Me",
+    "G6": "6. **Exit terms and lock-in are absent from the evaluation.** Tallis exports historical payroll data only in its own format and charges a termination fee of 6 months' fees (~$150k at list rates) (Appe",
+    "G7": "4. **References and vendor viability don't match Ferncliff's profile.** Tallis's three references have 60–190 employees, single-site, non-union (Appendix 3); Ferncliff is 1,400 employees, 9 sites, 4 u",
+    "G9": "7. **The Friday deadline is a discount tactic, not a decision constraint.** Signing Friday \"locks in\" a one-time saving of ~$121k (list $303k vs $182k) while committing to roughly $175–215k more over "
+   },
+   "items_missed": [
+    "G8"
+   ],
+   "priorities_hit": {
+    "G1": "1. **Do not sign Friday.** Treat the price expiry as a sales tactic. Re-score the matrix on 3-year total cost and contra",
+    "G2": "2. **Make union-rules capability a pass/fail gate.** Require Tallis to configure Ferncliff's actual shift-differential a",
+    "G3": "3. **Re-run the evaluation with real users and matched evidence.** Ferncliff-scripted demos scored by the 6-person payro"
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1",
+    "D2",
+    "D3"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 94.9
+  },
+  "R02": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 16,
+   "units_over_cap": 0,
+   "answer_words": 926,
+   "items_hit": {
+    "G1": "1. **The report's own risk-tier table refutes the headline (Simpson's paradox).** Within both strata the program does *worse*: low risk 5.0% vs 4.0%, high risk 25.0% vs 22.0%. The program group is 80%",
+    "G2": "3. **The program group was filtered twice; the comparison group not at all.** Enrollment required answering the phone and consenting (a health-and-engagement filter), then the 140 patients who didn't ",
+    "G3": "3. **The program group was filtered twice; the comparison group not at all.** Enrollment required answering the phone and consenting (a health-and-engagement filter), then the 140 patients who didn't ",
+    "G4": "4. **Site confound: Northgate's meds-to-beds service.** 85% of program patients vs 40% of the comparison came from Northgate, which launched a readmission-reducing service in February 2025. Part of th",
+    "G5": "6. **The Spanish-language recommendation rests on 19 patients and 2 events.** 0/9 vs 2/10 is indistinguishable from noise — two events either way flips the conclusion — and no test is reported. Priori",
+    "G6": "2. **The expansion forecast confuses sensitivity with positive predictive value.** Sensitivity 90% means 90% of *readmitted* patients get flagged, not that 90% of *flagged* patients get readmitted. Wi",
+    "G7": "5. **The outcome definition changed mid-year, and exposure to the change is unbalanced.** From July 1, planned readmissions no longer count, so the same patient has a lower *measured* rate after that ",
+    "G8": "1. **Simpson's paradox (issue 1):** the stratified results show no benefit — slightly *worse* within both tiers — so the 50% reduction is pure case mix. Every downstream claim, including the forecast,"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "G1": "1. **Simpson's paradox (issue 1):** the stratified results show no benefit — slightly *worse* within both tiers — so the",
+    "G6": "2. **The forecast arithmetic (issue 2):** sensitivity is not PPV; correct PPV ≈ 31%, and even granting the unproven 50% ",
+    "G2": "3. **Double filtering of the program group (issues 3 and 9):** consent selection plus deleting 140 dropouts, with no fun",
+    "G3": "3. **Double filtering of the program group (issues 3 and 9):** consent selection plus deleting 140 dropouts, with no fun"
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1",
+    "D2"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  },
+  "R03": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 18,
+   "units_over_cap": 0,
+   "answer_words": 1187,
+   "items_hit": {
+    "G1": "1. **The no-show fee is contractually prohibited for the patients who no-show most.** Medicaid managed care is 34% of the panel, and those contracts state the clinic \"shall not bill members for missed",
+    "G2": "2. **The January 1 date breaches two commercial contracts.** Two commercial contracts require 90 days' written notice *to the plan* before any new patient-facing fee; the memo provides only 60-day not",
+    "G3": "4. **Text-only reminders aim the fine at patients who were never reachable.** 41% lack the opt-in the vendor requires, 15% have no mobile number, and 22% prefer Spanish against English-only templates;",
+    "G4": "7. **The hold's exemption redirects the problem, and the $410k itself is unverified.** Urgent/same-day visits are never held, so balance-carrying patients will either forgo non-urgent care or present ",
+    "G5": "5. **The 18%→8% target has no mechanism behind it.** The top recorded reason is transportation (38%) — fees don't create bus fare, and neither do texts; the highest-no-show group (Medicaid, 27%) can't",
+    "G6": "3. **The $90k fee projection fails three haircuts the clinic's own data supplies.** A $75 fee is a sub-$100 patient-responsibility charge, and the clinic collects only 31% of those. Stack the Medicaid",
+    "G7": "8. **Blanket first-slot double-booking contradicts the fee and worsens lateness.** If the fee works, double-booking guarantees two-show days; if it doesn't, double-booking is a permanent crutch — the ",
+    "G8": "9. **The 30-hours-a-week saving won't survive contact with the policy.** Someone must still call the ~40–50% who can't be texted and the Spanish-preferring patients; curing the 41% opt-in gap is a pro"
+   },
+   "items_missed": [
+    "G9"
+   ],
+   "priorities_hit": {
+    "G1": "1. **Put the fee through a compliance gate before any approval.** Confirm the scope of the Medicaid prohibition across a",
+    "G6": "2. **Rebuild the business case from the clinic's own numbers.** Apply the 31% collection rate and first-miss waiver to f",
+    "G3": "3. **Sequence the changes instead of flipping them all on January 1.** Run the opt-in and mobile-capture campaign and ad"
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 91.3
+  },
+  "R04": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 17,
+   "units_over_cap": 0,
+   "answer_words": 806,
+   "items_hit": {
+    "G1": "8. **Single point of failure for the first paying customer.** Under the memo's plan, Harrow's endpoint shares a machine with training jobs — reboots, crashes, driver updates — and next-business-day su",
+    "G2": "5. **The purchase is mis-sized for the workload.** 85% of jobs use 1–2 GPUs and 12% use 4; only 3% need 8. Eight owned GPUs is built for the rarest job, while 4-GPU-class capacity (bought one server a",
+    "G3": "2. **Option A arrives ~10 weeks after the pilot starts.** Lead time is 16 weeks; Harrow starts in 6. \"Order this week\" cannot put the 8-GPU server under the pilot, and the memo offers no stopgap for w",
+    "G4": "3. **The 8-GPU server cannot go in the existing rack.** It draws 10.2 kW against 6.5 kW free (8 kW limit − 1.5 kW existing). Both options actually need the second rack ($1.1k/month ≈ $39.6k over the 3",
+    "G5": "1. **The plan breaches the Harrow contract on day one.** The contract requires Harrow's data to run on hardware \"not shared with any other workload,\" but the plan runs training and Harrow inference on",
+    "G6": "4. **The cloud comparison is a strawman, and the fine-tune costs ~$3k to rent.** Break-even is computed against 24/7 rental ($41k/month), but the only 8-GPU job is the quarterly fine-tune: 30 h × $98/",
+    "G7": "7. **Residual-value risk is worse for A.** After 2 years a 4-GPU returns ~55% (−$74k on $165k) versus ~40% for the 8-GPU (−$186k on $310k), \"with fewer buyers.\" If the roadmap shifts post-Series A, B ",
+    "G8": "3. **The 8-GPU server cannot go in the existing rack.** It draws 10.2 kW against 6.5 kW free (8 kW limit − 1.5 kW existing). Both options actually need the second rack ($1.1k/month ≈ $39.6k over the 3"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "G3": "1. **Harrow launch: compliant dedicated hardware on site within 6 weeks.** This alone rules out Option A as written (16-",
+    "G5": "1. **Harrow launch: compliant dedicated hardware on site within 6 weeks.** This alone rules out Option A as written (16-",
+    "G2": "3. **Right-sizing: own 4-GPU-class capacity, rent the 8-GPU spike.** A workload that is 85% 1–2-GPU jobs, with one quart"
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  },
+  "R05": {
+   "empty": false,
+   "sections_found": [
+    "variables",
+    "priorities",
+    "mind"
+   ],
+   "n_units": 21,
+   "units_over_cap": 1,
+   "answer_words": 940,
+   "items_hit": {
+    "V1": "*No financial or demographic figures were provided, so every item below is framed as a check rather than a conclusion. I assume a ~10-minute drive-time catchment for primary care (walkable for Site B)",
+    "V2": "1. **What the clinic is actually for.** Growth, safety-net access, and cheap consolidation each favour a different site, so every other variable's weight is undefined until the board fixes the primary",
+    "V3": "*No financial or demographic figures were provided, so every item below is framed as a check rather than a conclusion. I assume a ~10-minute drive-time catchment for primary care (walkable for Site B)",
+    "V4": "4. **Net-new vs. cannibalised volume.** C sits 1 mile from an existing Harlow clinic, so it would largely re-home current patients, and the competitor urgent care across the street both validates and ",
+    "V5": "6. **Staffing feasibility.** Clinics fail on recruitment more often than on rent; C's hospital proximity eases shared staffing and urgent-care transfers — though neither actually requires co-location.",
+    "V6": "5. **Competitive supply already in each catchment.** Fast-growth corridors attract every urgent-care chain and primary-care group, and if an FQHC already covers B, the marginal access gain there shrin",
+    "V7": "3. **Payer mix in the catchment.** Revenue per visit, not visit count, pays the rent — B's uninsured/Medicaid base means low reimbursement and charity-care drag, while A likely skews commercial. *Chec",
+    "V8": "- **Patient-origin data on Site C.** If the ZIPs around C already send most volume to Harlow's existing clinic, that confirms C adds roughly zero net-new patients; but if those ZIPs show heavy leakage",
+    "V9": "1. **What the clinic is actually for.** Growth, safety-net access, and cheap consolidation each favour a different site, so every other variable's weight is undefined until the board fixes the primary",
+    "V10": "1. **What the clinic is actually for.** Growth, safety-net access, and cheap consolidation each favour a different site, so every other variable's weight is undefined until the board fixes the primary"
+   },
+   "items_missed": [
+    "V11",
+    "V12",
+    "V13"
+   ],
+   "priorities_hit": {
+    "V9": "1. **The clinic's intended role (variable 1).** Each site is \"best\" for a different objective — A for net-new commercial",
+    "V1": "2. **Net-new demand × payer mix (variables 2–3).** Incremental patients times payment per visit is the entire economic e",
+    "V2": "2. **Net-new demand × payer mix (variables 2–3).** Incremental patients times payment per visit is the entire economic e",
+    "V4": "2. **Net-new demand × payer mix (variables 2–3).** Incremental patients times payment per visit is the entire economic e"
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 88.4
+  },
+  "R06": {
+   "empty": false,
+   "sections_found": [
+    "variables",
+    "priorities",
+    "mind"
+   ],
+   "n_units": 20,
+   "units_over_cap": 0,
+   "answer_words": 914,
+   "items_hit": {
+    "V1": "6. **Residual vendor risk.** What actually remains with the cloud — vendor breach, sub-processors, retention, training use, jurisdiction — is the risk the CISO is really pointing at. *Check:* run a ve",
+    "V2": "1. **Whether a real compliance or contractual gap exists.** \"The data is sensitive\" only justifies the switch if the cloud vendor leaves some obligation unmet — the signed DPA suggests it may already ",
+    "V3": "2. **Quality parity on Northfold's actual tasks.** Summaries and letters feed real claim decisions, so a regression is a liability and complaint risk, and open-weight models vary widely on long medica",
+    "V4": "6. **Residual vendor risk.** What actually remains with the cloud — vendor breach, sub-processors, retention, training use, jurisdiction — is the risk the CISO is really pointing at. *Check:* run a ve",
+    "V5": "3. **Full TCO including peak sizing.** Owned GPUs must be sized for quarter-end peaks and idle the rest of the month, and capex, power, and redundancy land on Northfold instead of being amortised acro",
+    "V6": "3. **Full TCO including peak sizing.** Owned GPUs must be sized for quarter-end peaks and idle the rest of the month, and capex, power, and redundancy land on Northfold instead of being amortised acro",
+    "V7": "3. **Full TCO including peak sizing.** Owned GPUs must be sized for quarter-end peaks and idle the rest of the month, and capex, power, and redundancy land on Northfold instead of being amortised acro",
+    "V10": "8. **Hybrid and redaction options.** Stripping identifiers before the cloud call, or running a small on-prem model for triage while the cloud drafts letters, may capture most of the risk reduction at ",
+    "V11": "2. **Quality parity on Northfold's actual tasks.** Summaries and letters feed real claim decisions, so a regression is a liability and complaint risk, and open-weight models vary widely on long medica",
+    "V12": "2. **Quality parity on Northfold's actual tasks.** Summaries and letters feed real claim decisions, so a regression is a liability and complaint risk, and open-weight models vary widely on long medica",
+    "V13": "6. **Residual vendor risk.** What actually remains with the cloud — vendor breach, sub-processors, retention, training use, jurisdiction — is the risk the CISO is really pointing at. *Check:* run a ve"
+   },
+   "items_missed": [
+    "V8",
+    "V9"
+   ],
+   "priorities_hit": {
+    "V2": "1. **Whether a real compliance or contractual gap exists.** This is the crux: if the DPA and attestations already satisf",
+    "V3": "2. **Quality parity.** The model's output is Northfold's product; no security gain compensates for worse claim decisions",
+    "V5": "3. **Full TCO with peak sizing and staffing.** With two engineers and quarter-end spikes, this is where self-hosting mos"
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 91.9
+  },
+  "R07": {
+   "empty": false,
+   "sections_found": [
+    "for",
+    "against",
+    "cruxes",
+    "mind",
+    "lean"
+   ],
+   "n_units": 26,
+   "units_over_cap": 0,
+   "answer_words": 1074,
+   "items_hit": {
+    "F1": "4. **Safety and street-level environment improve at the source.** Severe pedestrian injuries come from vehicle conflicts; removing vehicles removes the kinetic energy, the noise, and the exhaust where",
+    "F2": "4. **Safety and street-level environment improve at the source.** Severe pedestrian injuries come from vehicle conflicts; removing vehicles removes the kinetic energy, the noise, and the exhaust where",
+    "F4": "1. **The core's binding constraint is street space, and cars are the least efficient user of it.** A lane moving people by bus or on foot carries far more people per hour than the same lane carrying p",
+    "F6": "1. **The core's binding constraint is street space, and cars are the least efficient user of it.** A lane moving people by bus or on foot carries far more people per hour than the same lane carrying p",
+    "A1": "1. **In a 600,000-person metro, the core is small and most of its users live where the bus doesn't usefully go.** For car-dependent workers and shoppers, the ban is a price increase on downtown — and ",
+    "A2": "4. **The core runs on goods and services, not just visitors.** Restaurant supply, construction, trades, waste — every necessary exemption (delivery windows, permits, residents, disability access) adds",
+    "A3": "5. **A blanket rule is blunt about real differences in need.** Older and disabled people cannot all \"park at the edge and walk in\" (my assumption: the walk from realistic edge parking is several hundr",
+    "A4": "3. **Displacement, not disappearance.** Through-traffic and parking demand move to the boundary ring, which gets the congestion and circling while receiving none of the benefits. The council would be ",
+    "A5": "2. **Sequencing risk: prohibit before alternatives exist and you risk a death spiral.** If bus frequency, edge parking, and loading aren't ready first, access worsens → footfall drops → shops close → ",
+    "A6": "2. **Sequencing risk: prohibit before alternatives exist and you risk a death spiral.** If bus frequency, edge parking, and loading aren't ready first, access worsens → footfall drops → shops close → "
+   },
+   "items_missed": [
+    "F3",
+    "F5"
+   ],
+   "cruxes_hit": {
+    "C1": "2. **Can the alternatives absorb the shift in months, not years?** Spare peak bus capacity, headways, edge park-and-ride, drop-off space. If yes, the \"against\" case reduces to transition friction; if ",
+    "C2": "3. **Is demand destination-elastic?** Do car-dependent users switch modes to keep coming downtown, or switch destinations? Settled by a pilot with before/after footfall, vacancy, and boundary retail i",
+    "C4": "*Value question:*"
+   },
+   "cruxes_missed": [
+    "C3"
+   ],
+   "balance": {
+    "recall_for": 0.7,
+    "recall_against": 1.0,
+    "words_for": 287,
+    "words_against": 287
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 83.5
+  },
+  "R08": {
+   "empty": false,
+   "sections_found": [
+    "for",
+    "against",
+    "cruxes",
+    "mind",
+    "lean"
+   ],
+   "n_units": 24,
+   "units_over_cap": 0,
+   "answer_words": 1207,
+   "items_hit": {
+    "F1": "4. **Remote default makes interaction intentional, which raises its average quality.** Scheduled, purposeful contact replaces ambient interruption; decisions get written down; meetings shrink to those",
+    "F2": "3. **The mandate's talent cost is real but invisible.** A three-day rule narrows hiring to the commute-shed and pushes out the people with the best outside options — senior engineers, experienced fina",
+    "F3": "2. **The current mandate likely buys presence, not collaboration.** With 4,000 people, your three office days only help if the people you actually work with are in on the same days — and cross-team co",
+    "A1": "2. **Weak ties carry novel information, and remote default starves them.** In a 4,000-person org, most useful knowledge crosses team boundaries and travels through acquaintances formed by unplanned co",
+    "A2": "3. **Apprenticeship breaks.** Junior engineers, analysts, and ops staff learn by watching and overhearing; remote makes learning explicit and rationed, so ramp times lengthen and the skill floor drops",
+    "A3": "4. **Cross-function trust degrades at exactly the seams where this company is fragile.** Software, finance, and ops have different incentives and vocabularies; trust between them is built through repe",
+    "A4": "1. **The opt-out mechanism is a coordination trap — the proposal's specific flaw.** The value of going in depends on who else goes in. If each team chooses independently, interdependent teams won't al",
+    "A5": "4. **Cross-function trust degrades at exactly the seams where this company is fragile.** Software, finance, and ops have different incentives and vocabularies; trust between them is built through repe",
+    "A6": "4. **Cross-function trust degrades at exactly the seams where this company is fragile.** Software, finance, and ops have different incentives and vocabularies; trust between them is built through repe"
+   },
+   "items_missed": [
+    "F4",
+    "F5",
+    "F6"
+   ],
+   "cruxes_hit": {
+    "C1": "1. **(Empirical) Is this company's performance driven more by unplanned cross-team interaction and apprenticeship, or by focused individual work plus well-run sync points?** Most of the debate is real",
+    "C3": "1. **(Empirical) Is this company's performance driven more by unplanned cross-team interaction and apprenticeship, or by focused individual work plus well-run sync points?** Most of the debate is real",
+    "C4": "4. **(Value) What trade-off between individual flexibility and collective cohesion is leadership willing to make, and who bears the cost?** Is preserving a co-located culture worth imposing commute an"
+   },
+   "cruxes_missed": [
+    "C2"
+   ],
+   "balance": {
+    "recall_for": 0.6,
+    "recall_against": 1.0,
+    "words_for": 343,
+    "words_against": 325
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 79.0
+  },
+  "R09": {
+   "empty": false,
+   "sections_found": [
+    "steps",
+    "measure",
+    "kill",
+    "priorities"
+   ],
+   "n_units": 20,
+   "units_over_cap": 0,
+   "answer_words": 1098,
+   "items_hit": {
+    "G1": "1. **Build the hour-by-hour load picture.** Pull calls arriving per hour (including abandoned) × current AHT, against agents on seat, for every operating hour. *Why now:* every decision — hire, callba",
+    "G2": "5. **Trace the refill-status wave upstream.** Ask clinic/pharmacy ops why 31% of calls are \"where's my refill\": turnaround times, notification gaps. *Why now:* it's the largest call type and probably ",
+    "G3": "5. **Trace the refill-status wave upstream.** Ask clinic/pharmacy ops why 31% of calls are \"where's my refill\": turnaround times, notification gaps. *Why now:* it's the largest call type and probably ",
+    "G4": "1. **Build the hour-by-hour load picture.** Pull calls arriving per hour (including abandoned) × current AHT, against agents on seat, for every operating hour. *Why now:* every decision — hire, callba",
+    "G5": "1. **Build the hour-by-hour load picture.** Pull calls arriving per hour (including abandoned) × current AHT, against agents on seat, for every operating hour. *Why now:* every decision — hire, callba",
+    "G6": "3. **Spend half a day on the floor with agents and supervisors.** *Why now:* AHT jumped 37% in March — the agents know where the time went (screens, logins, workarounds) and why 26% of calls get trans",
+    "G8": "2. **Start backfilling the 2 vacant positions today.** *Why now:* it's the only capacity lever that lands within the quarter, the positions already existed, and recruiting takes weeks. *Needs:* HR and",
+    "G9": "1. **Build the hour-by-hour load picture.** Pull calls arriving per hour (including abandoned) × current AHT, against agents on seat, for every operating hour. *Why now:* every decision — hire, callba",
+    "G10": "6. **Portal capability audit:** can the portal actually book appointments, request refills, and release results — and where is activation lowest? *Informs:* whether self-service deflection (45% appoin"
+   },
+   "items_missed": [
+    "G7"
+   ],
+   "priorities_hit": {
+    "G4": "1. **Recover the AHT regression and cut transfer double-handling.** AHT +37% since March while capacity fell ~14% (2 vac",
+    "G2": "2. **Deflect the refill-status wave at the source.** 31% of calls, plus a likely share of repeat callers: proactive stat",
+    "G3": "2. **Deflect the refill-status wave at the source.** 31% of calls, plus a likely share of repeat callers: proactive stat",
+    "G1": "3. **Reshape capacity to the demand curve, not a flat block.** Backfill the 2 vacancies now; use the load data to add ta"
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 94.8
+  },
+  "R10": {
+   "empty": false,
+   "sections_found": [
+    "chain",
+    "result",
+    "priorities",
+    "recommendation"
+   ],
+   "n_units": 15,
+   "units_over_cap": 0,
+   "answer_words": 536,
+   "items_hit": {
+    "F1": "2. **EVs in 2030:** 416,500 × 12% (midpoint of the state's 8–16%) ≈ **50,000 EVs**.",
+    "F2": "3. **Split by charging access:** 30% (midpoint of 25–35%) lack home charging → **15,000 without, 35,000 with**.",
+    "F3": "4. **Sessions per week:**\n- No home charging: 200 mi ÷ 150 mi/session = 1.33 session-equivalents/week; × 70% DC-fast share = 0.93 sessions/week each → 15,000 × 0.93 ≈ **14,000/week**.\n- With home char",
+    "F4": "4. **Sessions per week:**\n- No home charging: 200 mi ÷ 150 mi/session = 1.33 session-equivalents/week; × 70% DC-fast share = 0.93 sessions/week each → 15,000 × 0.93 ≈ **14,000/week**.\n- With home char",
+    "F5": "4. **Sessions per week:**\n- No home charging: 200 mi ÷ 150 mi/session = 1.33 session-equivalents/week; × 70% DC-fast share = 0.93 sessions/week each → 15,000 × 0.93 ≈ **14,000/week**.\n- With home char",
+    "F6": "6. **Usable capacity per port:** 168 h/week × 25% utilization ceiling = **42 port-hours/week**. The 25% rule is what converts average demand into a port count — it builds in headroom for evening/weeke",
+    "F7": "7. **Ports needed:** 26,000 ÷ 42 ≈ **620 total ports**; minus the 46 existing → **~575 to build**.",
+    "F8": "9. **What $12M buys:** $12M ÷ $180k ≈ 67 ports ≈ **11% of the 620 total** (~12% of the 575-port gap).",
+    "F9": "Treat the $12M as a down payment, not the program: fund ~60–70 ports at the highest-demand sites — clusters of multi-unit and street-parked households, plus corridors ride-hail and delivery drivers ac",
+    "F10": "Treat the $12M as a down payment, not the program: fund ~60–70 ports at the highest-demand sites — clusters of multi-unit and street-parked households, plus corridors ride-hail and delivery drivers ac"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "F6": "1. **The 25% utilization ceiling:** port count scales inversely with it — every 5 percentage points moves the total ~±20",
+    "F1": "2. **EV share in 2030 (8–16%):** scales all driver demand linearly; this uncertainty alone spans most of the 440–810 ran"
+   },
+   "estimate": {
+    "value": 620.0,
+    "range": [
+     440.0,
+     810.0
+    ],
+    "decision": "no — $12m buys only ~55–85 ports against a ~$100m program, covering roughly 10% of the ~620 ports needed.",
+    "point_score": 1.0,
+    "decision_ok": true
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 94.4
+  }
+ },
+ "qwen38_r1": {
+  "R01": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 18,
+   "units_over_cap": 0,
+   "answer_words": 1426,
+   "items_hit": {
+    "G1": "2. **The cost comparison is misleading because it uses year-1 price only and ignores implementation and multi-year cost.**\n- **What it is:** Tallis is scored as cheapest because its year-1 subscriptio",
+    "G2": "1. **The recommended vendor cannot currently handle union payroll rules.**\n- **What it is:** Tallis has not demonstrated that it can configure Ferncliff’s union shift-differential and overtime-averagi",
+    "G3": "5. **Tallis references do not match Ferncliff’s size, union status, or multi-site complexity.**\n- **What it is:** Tallis references are three customers with 60, 140, and 190 employees, all single-site",
+    "G4": "1. **The recommended vendor cannot currently handle union payroll rules.**\n- **What it is:** Tallis has not demonstrated that it can configure Ferncliff’s union shift-differential and overtime-averagi",
+    "G5": "4. **The uptime score is based on marketing claims, not contractual protection.**\n- **What it is:** Tallis is scored 10 for “99.99% uptime,” but that figure is from a marketing page, and Tallis’s draf",
+    "G6": "7. **Integration testing was too narrow to validate payroll-critical data flows.**\n- **What it is:** IT tested only a sample payroll journal export and confirmed prebuilt ERP connectors.\n- **Why it ma",
+    "G7": "2. **The cost comparison is misleading because it uses year-1 price only and ignores implementation and multi-year cost.**\n- **What it is:** Tallis is scored as cheapest because its year-1 subscriptio",
+    "G8": "9. **The scoring model is not decision-grade and gives false precision.**\n- **What it is:** The weights sum to 110%, support is mentioned in the rationale but not scored, and high-weight criteria such",
+    "G9": "10. **The Friday price deadline is being used as an artificial forcing function.**\n- **What it is:** The memo recommends signing this week to lock in the year-1 price before it expires Friday.\n- **Why"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "G2": "1. **Require Tallis to prove union-rule capability before signing.**\nThe payroll team, not just the director, must lead ",
+    "G1": "2. **Re-run the financial evaluation on true three-year total cost, not discounted year-1 subscription.**\nCompare implem"
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1",
+    "D2",
+    "D3"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 94.4
+  },
+  "R02": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues"
+   ],
+   "n_units": 12,
+   "units_over_cap": 0,
+   "answer_words": 782,
+   "items_hit": {
+    "G1": "1. **The headline result is Simpson’s paradox: the groups have opposite risk mixes.**\nThe program group is mostly low risk (800/1,000 low risk), while the comparison group is mostly high risk (800/1,0",
+    "G2": "3. **The program group is self-selected and analyzed as completers only, while the comparison group is “all other patients.”**\nProgram patients had to answer the first call and agree to participate; t",
+    "G3": "3. **The program group is self-selected and analyzed as completers only, while the comparison group is “all other patients.”**\nProgram patients had to answer the first call and agree to participate; t",
+    "G4": "4. **Northgate’s “meds-to-beds” service is a major unadjusted confounder.**\n85% of program patients came from Northgate, versus 40% of comparison patients. Northgate opened a bedside medication-delive",
+    "G5": "7. **No uncertainty is shown, and tiny subgroup results are treated as actionable findings.**\nThe report provides no confidence intervals or significance tests for the tier differences (5.0% vs 4.0%; ",
+    "G6": "2. **The expansion forecast confuses sensitivity with positive predictive value and overstates preventable readmissions.**\nSensitivity 90% is P(flag | readmitted), not P(readmitted | flag). With 13% r",
+    "G7": "5. **The readmission definition changed mid-year, and the program group is concentrated after the change.**\n70% of program patients were discharged July–December, versus 50% of comparison patients. On",
+    "G8": "1. **The headline result is Simpson’s paradox: the groups have opposite risk mixes.**\nThe program group is mostly low risk (800/1,000 low risk), while the comparison group is mostly high risk (800/1,0"
+   },
+   "items_missed": [],
+   "priorities_hit": {},
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1",
+    "D2"
+   ],
+   "sections_missing": [
+    "priorities",
+    "bottom"
+   ],
+   "missing_file": false,
+   "task_score": 79.6
+  },
+  "R03": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 18,
+   "units_over_cap": 0,
+   "answer_words": 974,
+   "items_hit": {
+    "G1": "1. **The no-show fee conflicts with payer contracts.**\nWhat: The $75 fee is expressly prohibited for Medicaid managed-care members and may violate commercial notice terms.\nWhy: Billing prohibited pati",
+    "G2": "1. **The no-show fee conflicts with payer contracts.**\nWhat: The $75 fee is expressly prohibited for Medicaid managed-care members and may violate commercial notice terms.\nWhy: Billing prohibited pati",
+    "G3": "2. **Text-only reminders will miss many patients.**\nWhat: Replacing staff calls with English-only automated texts assumes patients have mobile numbers, documented opt-in, and English.\nWhy: If reminder",
+    "G4": "4. **Balance holds may suppress visits rather than collect balances.**\nWhat: Requiring payment over $200 before non-urgent booking may turn patients away before collecting.\nWhy: Patients who cannot pa",
+    "G5": "3. **No-show and fee-revenue targets are overstated.**\nWhat: The memo assumes no-shows fall to 8% and fees yield $90k/year.\nWhy: Medicaid has the highest no-show rate but cannot be billed; first misse",
+    "G6": "1. **The no-show fee conflicts with payer contracts.**\nWhat: The $75 fee is expressly prohibited for Medicaid managed-care members and may violate commercial notice terms.\nWhy: Billing prohibited pati",
+    "G7": "5. **Double-booking will worsen already-late sessions.**\nWhat: Adding a second patient to the first slot creates overbooking without a capacity model.\nWhy: If both patients show, wait times, provider ",
+    "G8": "2. **Text-only reminders will miss many patients.**\nWhat: Replacing staff calls with English-only automated texts assumes patients have mobile numbers, documented opt-in, and English.\nWhy: If reminder",
+    "G9": "10. **No pilot or net-impact model is defined.**\nWhat: The memo lacks baseline volume, patient mix, denominator, and net revenue/access metrics.\nWhy: Partners cannot verify whether $90k fee revenue, $"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "G1": "1. **Get written payer/legal clearance for the no-show fee and balance hold before approval.** Confirm whether Medicaid ",
+    "G3": "2. **Replace “text only” with a reachable reminder system before cutting calls.** Add Spanish templates, opt-in capture,",
+    "G9": "2. **Replace “text only” with a reachable reminder system before cutting calls.** Add Spanish templates, opt-in capture,",
+    "G6": "3. **Delay January 1 and run a 90-day pilot with net metrics.** Test the fee only on contractually eligible patients and"
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  },
+  "R04": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 16,
+   "units_over_cap": 0,
+   "answer_words": 888,
+   "items_hit": {
+    "G1": "7. **One 8-GPU server creates a single point of failure for both training and the pilot.**\nThe memo treats “one machine” as simpler, but if the server fails, both training and Harrow’s live demo are d",
+    "G2": "5. **The cloud break-even claim assumes unrealistic utilization.**\nThe memo compares $310k to $41k/month and concludes ~8-month break-even, but that assumes around-the-clock use of equivalent capacity",
+    "G3": "2. **Option A’s 16-week lead time misses the Harrow pilot.**\nHarrow starts in 6 weeks, but the 8-GPU configuration takes 16 weeks. Ordering Option A this week cannot support the first paying customer ",
+    "G4": "1. **Option A cannot go in the existing rack as planned.**\nThe rack limit is 8 kW, existing gear uses 1.5 kW, and the 8-GPU server draws 10.2 kW. Total draw would be 11.7 kW, 3.7 kW over the limit. Th",
+    "G5": "2. **Option A’s 16-week lead time misses the Harrow pilot.**\nHarrow starts in 6 weeks, but the 8-GPU configuration takes 16 weeks. Ordering Option A this week cannot support the first paying customer ",
+    "G6": "5. **The cloud break-even claim assumes unrealistic utilization.**\nThe memo compares $310k to $41k/month and concludes ~8-month break-even, but that assumes around-the-clock use of equivalent capacity",
+    "G7": "4. **The $310k spend conflicts with runway and board guidance.**\nCash runway is 14 months, and the board asked to keep capital spending flexible until the Series A closes. Without the monthly burn num",
+    "G8": "4. **The $310k spend conflicts with runway and board guidance.**\nCash runway is 14 months, and the board asked to keep capital spending flexible until the Series A closes. Without the monthly burn num"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "G5": "1. **Harrow contract and timing:** satisfy the 6-week start date, dedicated-hardware requirement, access-log obligation,",
+    "G4": "2. **Physical and financial feasibility:** respect the 8 kW rack limit, the 10.2 kW 8-GPU draw, the $1.1k/month second-r",
+    "G2": "3. **Actual capacity need and exit optionality:** buy for the real workload mix—85% small jobs, 12% 4-GPU jobs, 3% 8-GPU"
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1",
+    "D2"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  },
+  "R05": {
+   "empty": false,
+   "sections_found": [
+    "variables",
+    "priorities",
+    "mind"
+   ],
+   "n_units": 19,
+   "units_over_cap": 0,
+   "answer_words": 702,
+   "items_hit": {
+    "V1": "1. **Net incremental demand for the service mix** — The clinic must add primary-care, urgent-care, imaging, and lab volume after accounting for Harlow Valley’s existing clinic and the competitor urgen",
+    "V2": "2. **Payer mix and reimbursement risk** — Uninsured/Medicaid-heavy neighborhoods may align with mission but can strain margins; check payer mix by ZIP, Medicaid managed-care participation, commercial ",
+    "V3": "3. **Access, equity, and mission fit** — A non-profit should weigh travel time, transit, language, safety, and unmet need; check bus frequency, drive/bus/walk times, uninsured density, community healt",
+    "V4": "1. **Net incremental demand for the service mix** — The clinic must add primary-care, urgent-care, imaging, and lab volume after accounting for Harlow Valley’s existing clinic and the competitor urgen",
+    "V5": "4. **Financial viability and capital risk** — Rent, renovation, staffing, and payer mix determine whether the clinic can be sustained; check a 5-year pro forma, breakeven visits, sensitivity to volume",
+    "V6": "5. **Physical suitability and patient flow** — A former bank, retail center, and office park differ for waiting rooms, private exam rooms, lab draws, X-ray shielding, infection control, and privacy; c",
+    "V7": "4. **Financial viability and capital risk** — Rent, renovation, staffing, and payer mix determine whether the clinic can be sustained; check a 5-year pro forma, breakeven visits, sensitivity to volume",
+    "V8": "1. **Net incremental demand for the service mix** — The clinic must add primary-care, urgent-care, imaging, and lab volume after accounting for Harlow Valley’s existing clinic and the competitor urgen",
+    "V9": "2. **Payer mix and reimbursement risk** — Uninsured/Medicaid-heavy neighborhoods may align with mission but can strain margins; check payer mix by ZIP, Medicaid managed-care participation, commercial ",
+    "V10": "5. **Physical suitability and patient flow** — A former bank, retail center, and office park differ for waiting rooms, private exam rooms, lab draws, X-ray shielding, infection control, and privacy; c",
+    "V11": "12. **Future growth and flexibility** — The fastest-growing area may mature, while saturated areas may not add value; check lease expansion options, adjacent space, area development plans, 5-year popu",
+    "V13": "10. **Community trust and local partnerships** — Adoption depends on trust, especially in older neighborhoods or new retail areas; check community advisory feedback, local health-department/FQHC partn"
+   },
+   "items_missed": [
+    "V12"
+   ],
+   "priorities_hit": {
+    "V1": "1. **Net incremental demand and payer mix** — If the site does not attract enough net-new patients with a reimbursement ",
+    "V2": "1. **Net incremental demand and payer mix** — If the site does not attract enough net-new patients with a reimbursement ",
+    "V4": "1. **Net incremental demand and payer mix** — If the site does not attract enough net-new patients with a reimbursement ",
+    "V3": "2. **Access/equity and mission fit** — For a non-profit, the best site should reduce travel burden and serve unmet need,",
+    "V9": "2. **Access/equity and mission fit** — For a non-profit, the best site should reduce travel burden and serve unmet need,",
+    "V5": "3. **Financial viability and capital/staffing risk** — The clinic must survive realistic renovation, staffing, safety, a"
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 96.1
+  },
+  "R06": {
+   "empty": false,
+   "sections_found": [
+    "variables",
+    "priorities",
+    "mind"
+   ],
+   "n_units": 19,
+   "units_over_cap": 0,
+   "answer_words": 617,
+   "items_hit": {
+    "V1": "2. Security-control equivalence: moving sensitive claim data in-house creates new risks around model weights, prompts, logs, GPU access, and secrets; check data-flow threat model, encryption, IAM, log",
+    "V2": "1. Customer and regulator permission: cloud DPA acceptance may not mean self-hosting is allowed or required for every insurer; check contracts, security schedules, data-residency clauses, approved-pro",
+    "V3": "3. Model quality and legal risk: poor medical summaries or claim letters can cause wrongful benefit denials, appeals, and regulatory exposure; check blind evaluation on representative docs, hallucinat",
+    "V4": "4. Operational capacity and staffing: two engineers cannot realistically run GPU infrastructure, security patching, incident response, model updates, and evaluation at 40,000 documents/month plus peak",
+    "V5": "5. Total cost and capital feasibility: GPUs, power, cooling, storage, colo, MLOps, security, and model updates may exceed API costs and lock capital; check 3-year TCO using token volumes, peak sizing,",
+    "V6": "4. Operational capacity and staffing: two engineers cannot realistically run GPU infrastructure, security patching, incident response, model updates, and evaluation at 40,000 documents/month plus peak",
+    "V7": "4. Operational capacity and staffing: two engineers cannot realistically run GPU infrastructure, security patching, incident response, model updates, and evaluation at 40,000 documents/month plus peak",
+    "V8": "10. Model provenance and update risk: open-weight models require license review, provenance, security scanning, alignment/fine-tuning, and drift monitoring; check model card, license, CVE scans, prove",
+    "V10": "2. Security-control equivalence: moving sensitive claim data in-house creates new risks around model weights, prompts, logs, GPU access, and secrets; check data-flow threat model, encryption, IAM, log",
+    "V11": "3. Model quality and legal risk: poor medical summaries or claim letters can cause wrongful benefit denials, appeals, and regulatory exposure; check blind evaluation on representative docs, hallucinat",
+    "V13": "3. Operational and capital feasibility: with two engineers and quarter-end peaks, the decision should fail if Northfold cannot support the infrastructure, meet throughput, absorb cost, or maintain sec"
+   },
+   "items_missed": [
+    "V9",
+    "V12"
+   ],
+   "priorities_hit": {
+    "V2": "1. Customer/legal constraints: if contracts or regulators do not require self-hosting, and the signed cloud DPA satisfie",
+    "V3": "2. Material risk reduction: self-hosting should be pursued only if it demonstrably improves privacy/security controls an"
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 85.2
+  },
+  "R07": {
+   "empty": false,
+   "sections_found": [
+    "for",
+    "against",
+    "cruxes",
+    "mind",
+    "lean"
+   ],
+   "n_units": 26,
+   "units_over_cap": 0,
+   "answer_words": 1675,
+   "items_hit": {
+    "F1": "3. **It reduces street-level danger and fear, especially around a busy interchange.** A downtown with offices, shops, restaurants, housing, and a bus interchange will have many pedestrians, including ",
+    "F2": "5. **It can improve local air quality, noise, and livability for residents and workers.** If private cars are removed but buses remain, the result is not zero pollution, but it can still reduce exhaus",
+    "F3": "1. **It reallocates scarce downtown land from private cars to people.** A 1.5-square-mile core with offices, shops, restaurants, housing, and a bus interchange is high-value space. If private cars are",
+    "F4": "1. **It reallocates scarce downtown land from private cars to people.** A 1.5-square-mile core with offices, shops, restaurants, housing, and a bus interchange is high-value space. If private cars are",
+    "F6": "1. **It reallocates scarce downtown land from private cars to people.** A 1.5-square-mile core with offices, shops, restaurants, housing, and a bus interchange is high-value space. If private cars are",
+    "A1": "2. **It may hurt businesses that rely on deliveries and customers with goods.** Shops, restaurants, and offices need loading, unloading, and customers who arrive by car for larger purchases or off-pea",
+    "A2": "1. **It risks excluding people who genuinely need door-to-door car access.** Disabled residents, older people, parents with young children, shift workers, tradespeople, and people with medical needs m",
+    "A3": "1. **It risks excluding people who genuinely need door-to-door car access.** Disabled residents, older people, parents with young children, shift workers, tradespeople, and people with medical needs m",
+    "A4": "3. **Cars may not disappear; they may shift harm to adjacent streets.** A ban inside the core can move congestion, parking pressure, and pollution into surrounding neighborhoods. If the surrounding st",
+    "A5": "1. **It risks excluding people who genuinely need door-to-door car access.** Disabled residents, older people, parents with young children, shift workers, tradespeople, and people with medical needs m",
+    "A6": "5. **Enforcement could become complex, unfair, and politically corrosive.** A private-car ban will need rules for buses, taxis, emergency vehicles, deliveries, residents, disabled permits, deliveries,"
+   },
+   "items_missed": [
+    "F5"
+   ],
+   "cruxes_hit": {
+    "C1": "1. **Empirical: Can buses, walking, cycling, deliveries, and accessible transport absorb the trips that private cars would otherwise make?** If the non-car system is already strong enough, a ban is mo",
+    "C2": "3. **Value: Should the downtown core prioritize pedestrians, buses, and public space over the convenience of private car users?** If both sides agree the core should mainly be a place for people and h",
+    "C3": "2. **Empirical: Does the ban push congestion, parking pressure, pollution, and delivery burdens into surrounding streets and neighborhoods?** If displacement is small or manageable, the downtown may b",
+    "C4": "3. **Value: Should the downtown core prioritize pedestrians, buses, and public space over the convenience of private car users?** If both sides agree the core should mainly be a place for people and h"
+   },
+   "cruxes_missed": [],
+   "balance": {
+    "recall_for": 0.9,
+    "recall_against": 1.0,
+    "words_for": 489,
+    "words_against": 435
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 96.2
+  },
+  "R08": {
+   "empty": false,
+   "sections_found": [
+    "for",
+    "against",
+    "cruxes",
+    "mind",
+    "lean"
+   ],
+   "n_units": 24,
+   "units_over_cap": 0,
+   "answer_words": 1796,
+   "items_hit": {
+    "F1": "1. **Remote-by-default recovers time and energy that currently go to commuting and office friction.**\nIn a 4,000-person software, finance, and operations company, much of the work is screen-based: cod",
+    "F2": "3. **The hiring pool and retention pool can expand beyond the commuting zone.**\nIf remote work is the default, the company can hire people who are excellent but cannot or do not want to commute three ",
+    "F3": "1. **Remote-by-default recovers time and energy that currently go to commuting and office friction.**\nIn a 4,000-person software, finance, and operations company, much of the work is screen-based: cod",
+    "F4": "1. **Remote-by-default recovers time and energy that currently go to commuting and office friction.**\nIn a 4,000-person software, finance, and operations company, much of the work is screen-based: cod",
+    "F5": "6. **Real estate and business-continuity benefits can be material if handled deliberately.**\nA remote default does not require abandoning offices, but it can turn offices from mandatory attendance cen",
+    "F6": "1. **Remote-by-default recovers time and energy that currently go to commuting and office friction.**\nIn a 4,000-person software, finance, and operations company, much of the work is screen-based: cod",
+    "A1": "1. **Cross-team coordination and weak ties may decay, and the damage may not show up in individual productivity metrics.**\nIn a 4,000-person company, much of the real work depends on informal coordina",
+    "A2": "2. **Onboarding, mentoring, and tacit knowledge transfer may slow, especially for new hires and junior staff.**\nSoftware teams, finance teams, and operations teams often transmit knowledge through obs",
+    "A3": "3. **Culture, trust, and shared norms can weaken if office use becomes merely optional rather than intentionally designed.**\nA remote default can work if in-person time is used deliberately for relati",
+    "A4": "1. **Cross-team coordination and weak ties may decay, and the damage may not show up in individual productivity metrics.**\nIn a 4,000-person company, much of the real work depends on informal coordina",
+    "A5": "1. **Cross-team coordination and weak ties may decay, and the damage may not show up in individual productivity metrics.**\nIn a 4,000-person company, much of the real work depends on informal coordina",
+    "A6": "2. **Onboarding, mentoring, and tacit knowledge transfer may slow, especially for new hires and junior staff.**\nSoftware teams, finance teams, and operations teams often transmit knowledge through obs"
+   },
+   "items_missed": [],
+   "cruxes_hit": {
+    "C1": "1. **Empirical:** For this company’s actual mix of software, finance, and operations work, does remote-by-default improve output, hiring, and retention enough to outweigh losses in cross-team coordina",
+    "C2": "2. **Empirical:** Can the company build management systems good enough to make remote-by-default safe: outcome-based goals, documented decisions, fair performance calibration, intentional in-person on",
+    "C3": "2. **Empirical:** Can the company build management systems good enough to make remote-by-default safe: outcome-based goals, documented decisions, fair performance calibration, intentional in-person on",
+    "C4": "3. **Value:** How much should the company prioritize employee autonomy, flexibility, and access to a broader talent pool versus the benefits of in-person cohesion, informal learning, and shared cultur"
+   },
+   "cruxes_missed": [],
+   "balance": {
+    "recall_for": 1.0,
+    "recall_against": 1.0,
+    "words_for": 529,
+    "words_against": 547
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  },
+  "R09": {
+   "empty": false,
+   "sections_found": [
+    "steps",
+    "measure",
+    "kill",
+    "priorities"
+   ],
+   "n_units": 20,
+   "units_over_cap": 0,
+   "answer_words": 1196,
+   "items_hit": {
+    "G1": "1. **Redefine the metric to include abandoned calls, not just answered wait.**\n**What:** Build a one-page daily scorecard: calls offered by 30-minute interval, answered wait, abandonment rate by wait ",
+    "G2": "4. **Map the journey for the three biggest voice drivers.**\n**What:** For prescription refill status, new appointment, and reschedule/cancel, map the current IVR path, portal path, agent steps, EHR st",
+    "G3": "4. **Map the journey for the three biggest voice drivers.**\n**What:** For prescription refill status, new appointment, and reschedule/cancel, map the current IVR path, portal path, agent steps, EHR st",
+    "G4": "1. **Redefine the metric to include abandoned calls, not just answered wait.**\n**What:** Build a one-page daily scorecard: calls offered by 30-minute interval, answered wait, abandonment rate by wait ",
+    "G5": "1. **Redefine the metric to include abandoned calls, not just answered wait.**\n**What:** Build a one-page daily scorecard: calls offered by 30-minute interval, answered wait, abandonment rate by wait ",
+    "G6": "1. **Redefine the metric to include abandoned calls, not just answered wait.**\n**What:** Build a one-page daily scorecard: calls offered by 30-minute interval, answered wait, abandonment rate by wait ",
+    "G7": "1. **Redefine the metric to include abandoned calls, not just answered wait.**\n**What:** Build a one-page daily scorecard: calls offered by 30-minute interval, answered wait, abandonment rate by wait ",
+    "G8": "2. **Validate the staffing math and immediately cover the Monday 8:00–11:00 peak.**\n**What:** Confirm whether “14 positions” means 14 FTE and how many are actually staffed; model required agent-hours ",
+    "G9": "7. **Pilot callback/virtual hold as an overflow tool, not a full solution.**\n**What:** Run a 2-week test for non-urgent or overflow calls only; measure callback abandonment, callback answer time, agen",
+    "G10": "5. **Launch a fast refill/appointment deflection test.**\n**What:** Use IVR messaging, portal activation during clinic visits, secure messaging, self-scheduling, and targeted outreach to existing porta"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "G1": "1. **Fix the Monday 8:00–11:00 peak and the true arrival curve.**\nThis is the fastest visible lever: 22% of weekly calls",
+    "G4": "2. **Restore capacity lost to EHR handle time and transfer waste.**\nAHT rising from 4.1 to 5.6 minutes is equivalent to ",
+    "G2": "3. **Move refill, appointment, reschedule, and test-result calls out of the voice queue.**\nRefills and new appointments "
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  },
+  "R10": {
+   "empty": false,
+   "sections_found": [
+    "chain"
+   ],
+   "n_units": 9,
+   "units_over_cap": 0,
+   "answer_words": 323,
+   "items_hit": {
+    "F1": "2. Household EVs in 2030: use the midpoint of the state range, 12% (range 8–16%).\nMidpoint household EVs = 416,500 × 0.12 = 49,980 EVs.\nLow = 416,500 × 0.08 = 33,320 EVs.\nHigh = 416,500 × 0.16 = 66,64",
+    "F2": "3. EV owners lacking home charging: use the midpoint of the staff range, 30% (range 25–35%).\nMidpoint no-home EVs = 49,980 × 0.30 = 14,994 EVs.\nMidpoint home-charged EVs = 49,980 − 14,994 = 34,986 EVs",
+    "F3": "4. DC fast sessions per household EV per week:\nNo-home charging: 200 miles/week × 70% DC fast energy / 150 miles per session = 0.933 sessions/week.\nHome charging: 2 sessions/month × 12 months / 52 wee",
+    "F4": "4. DC fast sessions per household EV per week:\nNo-home charging: 200 miles/week × 70% DC fast energy / 150 miles per session = 0.933 sessions/week.\nHome charging: 2 sessions/month × 12 months / 52 wee",
+    "F5": "6. Fleet public DC fast sessions per week = 1,500 fleet EVs × 5 sessions/week = 7,500 sessions/week.\nAssumption: these fleet fast-charge sessions use public DC fast ports rather than dedicated depot c",
+    "F6": "5. Resident public DC fast sessions per week:\nMidpoint = 14,994 × 0.933 + 34,986 × 0.462 = 30,142 sessions/week.\nLow, using 8% EVs and 25% no-home charging = 19,309 sessions/week.\nHigh, using 16% EVs ",
+    "F8": "4. DC fast sessions per household EV per week:\nNo-home charging: 200 miles/week × 70% DC fast energy / 150 miles per session = 0.933 sessions/week.\nHome charging: 2 sessions/month × 12 months / 52 wee"
+   },
+   "items_missed": [
+    "F7",
+    "F9",
+    "F10"
+   ],
+   "priorities_hit": {},
+   "estimate": {
+    "value": null,
+    "range": null,
+    "decision": null,
+    "point_score": 0.0,
+    "decision_ok": false
+   },
+   "sections_missing": [
+    "result",
+    "priorities",
+    "recommendation"
+   ],
+   "missing_file": false,
+   "task_score": 50.3
+  }
+ },
+ "qwen38_r2": {
+  "R01": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 18,
+   "units_over_cap": 0,
+   "answer_words": 966,
+   "items_hit": {
+    "G1": "2. **The price score is materially wrong because it uses a misleading year-1 number.**\nTallis’s $182k year-1 subscription includes a 40% discount, but it also has a $95k implementation fee, $303k year",
+    "G2": "1. **Tallis has not proven the payroll rules that drive Ferncliff’s biggest risk.**\nFerncliff is 60% hourly warehouse staff, has 4 unionized sites, and says payroll errors are the #1 source of HR grie",
+    "G3": "4. **Tallis’s references do not resemble Ferncliff’s environment.**\nTallis’s three references are 60, 140, and 190 employees, all single-site and non-union. Ferncliff has 1,400 employees, 9 sites, and",
+    "G4": "7. **The evaluation excluded the people who will actually run payroll daily.**\nThe payroll team, 6 people who would use the system daily, has not seen any demos. The memo author scored the demos alone",
+    "G5": "3. **Uptime scoring rewards marketing while the contract removes enforceable reliability.**\nTallis scored 10 for “99.99% uptime,” but that figure is from vendor marketing, and the draft contract offer",
+    "G6": "2. **The price score is materially wrong because it uses a misleading year-1 number.**\nTallis’s $182k year-1 subscription includes a 40% discount, but it also has a $95k implementation fee, $303k year",
+    "G7": "5. **Tallis’s vendor viability is a serious continuity risk for payroll.**\nTallis was founded 3 years ago, has 40 employees, and says it is raising its next round this quarter. Corvane and Meridew are",
+    "G9": "9. **The memo asks for signature before contract and due diligence are complete.**\nThe recommendation is to sign this week, but key terms remain risky: no uptime SLA, separate implementation fee, rene"
+   },
+   "items_missed": [
+    "G8"
+   ],
+   "priorities_hit": {
+    "G2": "1. **Make union/hourly payroll fit a pass/fail gate before any signature.**\nRequire Tallis to demonstrate Ferncliff’s un",
+    "G1": "2. **Re-score on total cost and enforceable risk, not year-1 subscription price.**\nRebuild the model with implementation",
+    "G3": "3. **Complete user, reference, and exit validation before signing.**\nThe payroll team must test the platform, Ferncliff "
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1",
+    "D2",
+    "D3"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 94.9
+  },
+  "R02": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 17,
+   "units_over_cap": 0,
+   "answer_words": 1070,
+   "items_hit": {
+    "G1": "1. **The headline comparison is confounded by risk mix, and the risk-tier table reverses the conclusion.**\nThe program group is mostly low-risk, while the comparison group is mostly high-risk. That al",
+    "G2": "2. **Program assignment is self-selected, not randomized.**\nOnly patients who answered the first nurse call and agreed to participate entered the program; the comparison group includes everyone else, ",
+    "G3": "3. **Removing 140 program dropouts biases the program group.**\nThe program group is analyzed as patients who completed all three calls, not as patients offered/enrolled in the program. Evidence: “Pati",
+    "G4": "5. **Northgate’s meds-to-beds service is a concurrent intervention concentrated in the program group.**\nNorthgate opened a discharge medication-delivery service that likely reduces readmissions, and t",
+    "G5": "9. **The Spanish-language cohort conclusion is statistically meaningless.**\nThe recommendation to prioritize Spanish-language nurses is based on two small groups with almost no events. Evidence: 0 of ",
+    "G6": "6. **The expansion forecast treats sensitivity as positive predictive value, which is a major arithmetic error.**\nWith 13% readmission prevalence, 90% sensitivity, and 70% specificity, the probability",
+    "G7": "4. **The outcome definition changed during the study period, and the program group is more exposed to the stricter definition.**\nOn July 1, the measure changed from “any readmission” to “unplanned rea",
+    "G8": "7. **The forecast also assumes the invalid 50% effect and generalizes it across all hospitals.**\nThe forecast multiplies flagged patients by a 50% reduction taken from the headline result. Evidence: t"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "G1": "1. **Reanalyze the program effect with risk adjustment before trusting any causal claim.**\nThe current comparison is dom",
+    "G4": "2. **Account for the July 1 outcome-definition change and the Northgate meds-to-beds service.**\nThe program group is mor",
+    "G7": "2. **Account for the July 1 outcome-definition change and the Northgate meds-to-beds service.**\nThe program group is mor",
+    "G6": "3. **Correct the expansion forecast before making any scale-up decision.**\nThe model’s PPV is about 31%, not 90%, and th"
+   },
+   "decoys_hit": {
+    "D3": "8. **The balance check is far too narrow.**\nSimilar age and sex do not make the groups comparable when the key readmission driver—discharge risk—is wildly imbal"
+   },
+   "decoys_recognised": [
+    "D1",
+    "D2"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 94.4
+  },
+  "R03": {
+   "empty": true,
+   "missing_file": false,
+   "task_score": 0.0
+  },
+  "R04": {
+   "empty": false,
+   "sections_found": [
+    "issues"
+   ],
+   "n_units": 5,
+   "units_over_cap": 0,
+   "answer_words": 491,
+   "items_hit": {
+    "G2": "4. **The cloud break-even calculation is not supported by the actual workload pattern.**\nWhat: The memo says cloud is $41k/month and purchase breaks even in about 8 months, but that assumes around-the",
+    "G3": "2. **Option A arrives 10 weeks after the pilot starts.**\nWhat: The 8-GPU server has a 16-week lead time, but Harrow starts in 6 weeks.\nWhy it matters: Option A cannot support the pilot on time. That f",
+    "G4": "3. **Option A exceeds the existing rack power as written.**\nWhat: The existing rack has 8 kW total and 1.5 kW already used, leaving 6.5 kW available. The 8-GPU server draws about 10.2 kW under load.\nW",
+    "G5": "1. **Harrow’s dedicated-hardware clause kills the “same machine” plan.**\nWhat: The memo proposes running training and Harrow’s live demo/inference on the same server, but Harrow’s contract requires de",
+    "G6": "4. **The cloud break-even calculation is not supported by the actual workload pattern.**\nWhat: The memo says cloud is $41k/month and purchase breaks even in about 8 months, but that assumes around-the",
+    "G8": "3. **Option A exceeds the existing rack power as written.**\nWhat: The existing rack has 8 kW total and 1.5 kW already used, leaving 6.5 kW available. The 8-GPU server draws about 10.2 kW under load.\nW"
+   },
+   "items_missed": [
+    "G1",
+    "G7"
+   ],
+   "priorities_hit": {},
+   "decoys_hit": {},
+   "decoys_recognised": [],
+   "sections_missing": [
+    "priorities",
+    "bottom"
+   ],
+   "missing_file": false,
+   "task_score": 69.4
+  },
+  "R05": {
+   "empty": false,
+   "sections_found": [
+    "variables",
+    "priorities",
+    "mind"
+   ],
+   "n_units": 20,
+   "units_over_cap": 0,
+   "answer_words": 879,
+   "items_hit": {
+    "V1": "1. **Net demand and payer mix** — Why: the site must generate enough primary-care panel, urgent-care walk-ins, X-ray orders, and lab draws across commercial, Medicare, Medicaid, and self-pay patients;",
+    "V2": "1. **Net demand and payer mix** — Why: the site must generate enough primary-care panel, urgent-care walk-ins, X-ray orders, and lab draws across commercial, Medicare, Medicaid, and self-pay patients;",
+    "V3": "1. **Net demand and payer mix** — Why: the site must generate enough primary-care panel, urgent-care walk-ins, X-ray orders, and lab draws across commercial, Medicare, Medicaid, and self-pay patients;",
+    "V4": "1. **Net demand and payer mix** — Why: the site must generate enough primary-care panel, urgent-care walk-ins, X-ray orders, and lab draws across commercial, Medicare, Medicaid, and self-pay patients;",
+    "V5": "4. **Total occupancy and operating economics** — Why: lowest rent at A does not equal lowest cost if renovation at B, staffing, equipment, or marketing are higher; ready-to-occupy C reduces risk but m",
+    "V6": "5. **Building suitability and medical-code feasibility** — Why: primary care, urgent care, lab draw, and X-ray require different layouts, shielding, ventilation, storage, plumbing, ADA routes, and was",
+    "V7": "4. **Total occupancy and operating economics** — Why: lowest rent at A does not equal lowest cost if renovation at B, staffing, equipment, or marketing are higher; ready-to-occupy C reduces risk but m",
+    "V8": "3. **Urgent-care competition and referral flow** — Why: urgent care is convenience-driven; C has a competitor across the street and hospital proximity, A may be underserved, and B may have local compe",
+    "V9": "1. **Net demand and payer mix** — Why: the site must generate enough primary-care panel, urgent-care walk-ins, X-ray orders, and lab draws across commercial, Medicare, Medicaid, and self-pay patients;",
+    "V10": "5. **Building suitability and medical-code feasibility** — Why: primary care, urgent care, lab draw, and X-ray require different layouts, shielding, ventilation, storage, plumbing, ADA routes, and was",
+    "V11": "1. **Net demand and payer mix** — Why: the site must generate enough primary-care panel, urgent-care walk-ins, X-ray orders, and lab draws across commercial, Medicare, Medicaid, and self-pay patients;",
+    "V13": "2. **Strategic access versus cannibalization** — the site should fill a real access gap, especially for Medicaid/uninsured patients, rather than merely duplicate Harlow Valley’s existing hospital or c"
+   },
+   "items_missed": [
+    "V12"
+   ],
+   "priorities_hit": {
+    "V1": "1. **Sustainable demand and payer mix** — the site must attract enough patients and the right payer mix to cover urgent-",
+    "V2": "1. **Sustainable demand and payer mix** — the site must attract enough patients and the right payer mix to cover urgent-",
+    "V3": "2. **Strategic access versus cannibalization** — the site should fill a real access gap, especially for Medicaid/uninsur",
+    "V4": "2. **Strategic access versus cannibalization** — the site should fill a real access gap, especially for Medicaid/uninsur",
+    "V5": "3. **Total cost and buildability** — the site must be affordable and feasible to open next quarter, including renovation"
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 96.1
+  },
+  "R06": {
+   "empty": false,
+   "sections_found": [
+    "variables",
+    "priorities",
+    "mind"
+   ],
+   "n_units": 20,
+   "units_over_cap": 0,
+   "answer_words": 625,
+   "items_hit": {
+    "V1": "1. **Customer and regulatory permission** — The signed data-protection agreement may already satisfy the insurers, but each customer or applicable law may still bar cloud processing, require data resi",
+    "V2": "1. **Customer and regulatory permission** — The signed data-protection agreement may already satisfy the insurers, but each customer or applicable law may still bar cloud processing, require data resi",
+    "V3": "2. **Model quality and claims decision risk** — Summaries and draft decision letters can cause wrongful denials, underpayments, appeals, or litigation; benchmark on representative monthly documents wi",
+    "V4": "3. **Operational and security feasibility of self-hosting** — Two engineers would own GPUs, inference, security patching, model updates, monitoring, and incident response at quarter-end peaks; estimat",
+    "V5": "7. **Total cost and capital efficiency** — Self-hosting may require GPU capex and idle capacity for peaks; model 3-year cost per document including GPUs, facilities, staff, model updates, support, and",
+    "V6": "3. **Operational and security feasibility of self-hosting** — Two engineers would own GPUs, inference, security patching, model updates, monitoring, and incident response at quarter-end peaks; estimat",
+    "V7": "3. **Operational and security feasibility of self-hosting** — Two engineers would own GPUs, inference, security patching, model updates, monitoring, and incident response at quarter-end peaks; estimat",
+    "V8": "9. **Model governance and upgrade path** — Open-weight models change behavior across versions and require revalidation; check model registry, evaluation gates, rollback plan, license terms, security p",
+    "V9": "9. **Model governance and upgrade path** — Open-weight models change behavior across versions and require revalidation; check model registry, evaluation gates, rollback plan, license terms, security p",
+    "V10": "5. **Data minimization, redaction, and access controls** — Moving the model does not reduce exposure if full medical records are still stored, logged, and broadly accessible; inventory PII/medical fie",
+    "V11": "2. **Model quality and claims decision risk** — Summaries and draft decision letters can cause wrongful denials, underpayments, appeals, or litigation; benchmark on representative monthly documents wi",
+    "V12": "9. **Model governance and upgrade path** — Open-weight models change behavior across versions and require revalidation; check model registry, evaluation gates, rollback plan, license terms, security p"
+   },
+   "items_missed": [
+    "V13"
+   ],
+   "priorities_hit": {
+    "V2": "1. **Customer/regulatory permission**: if cloud is contractually prohibited, on-prem may be mandatory; if the signed DPA",
+    "V3": "2. **Claims decision risk**: any replacement must show equal or lower hallucination/omission/error impact on representat"
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 89.3
+  },
+  "R07": {
+   "empty": false,
+   "sections_found": [
+    "for",
+    "against",
+    "cruxes",
+    "mind",
+    "lean"
+   ],
+   "n_units": 25,
+   "units_over_cap": 0,
+   "answer_words": 1591,
+   "items_hit": {
+    "F1": "3. **Safety and public health benefits are concentrated in the busiest public places.**\nCars create collision risk, noise, exhaust, and psychological stress, especially where pedestrians, bus users, c",
+    "F2": "3. **Safety and public health benefits are concentrated in the busiest public places.**\nCars create collision risk, noise, exhaust, and psychological stress, especially where pedestrians, bus users, c",
+    "F3": "1. **Public space is the binding constraint in a 1.5-square-mile core.**\nPrivate cars use a large share of valuable street space for movement and storage while carrying relatively few people per hour ",
+    "F4": "1. **Public space is the binding constraint in a 1.5-square-mile core.**\nPrivate cars use a large share of valuable street space for movement and storage while carrying relatively few people per hour ",
+    "F6": "1. **Public space is the binding constraint in a 1.5-square-mile core.**\nPrivate cars use a large share of valuable street space for movement and storage while carrying relatively few people per hour ",
+    "A1": "5. **The benefits and burdens are not distributed equally.**\nThe gains may go to pedestrians, residents, businesses with street frontage, property owners, and people without cars. The costs may fall o",
+    "A2": "1. **Private cars still provide essential door-to-door access for many users.**\nSome customers, workers, clients, visitors, and residents depend on cars because of distance, timing, bulky goods, disab",
+    "A3": "2. **Traffic does not vanish; it is displaced.**\nRemoving private cars from 1.5 square miles may simply reroute them through surrounding neighborhoods, creating congestion, parking pressure, noise, an",
+    "A4": "2. **Traffic does not vanish; it is displaced.**\nRemoving private cars from 1.5 square miles may simply reroute them through surrounding neighborhoods, creating congestion, parking pressure, noise, an",
+    "A5": "3. **Deliveries, trades, and emergency access are difficult to manage without cars.**\nRestaurants, shops, offices, and buildings need deliveries, contractors, tradespeople, equipment, moving services,",
+    "A6": "3. **Deliveries, trades, and emergency access are difficult to manage without cars.**\nRestaurants, shops, offices, and buildings need deliveries, contractors, tradespeople, equipment, moving services,"
+   },
+   "items_missed": [
+    "F5"
+   ],
+   "cruxes_hit": {
+    "C2": "1. **Empirical:** Does the ban increase net downtown accessibility and activity, or does it reduce access more than it improves the public realm?\nIf both sides agreed on the answer to this, much of th",
+    "C3": "1. **Empirical:** Does the ban increase net downtown accessibility and activity, or does it reduce access more than it improves the public realm?\nIf both sides agreed on the answer to this, much of th",
+    "C4": "4. **Value:** How much concentrated harm to car-dependent users, outer-suburban workers, trades, disabled people, or car-serving businesses is acceptable to gain benefits for pedestrians, transit user"
+   },
+   "cruxes_missed": [
+    "C1"
+   ],
+   "balance": {
+    "recall_for": 0.9,
+    "recall_against": 1.0,
+    "words_for": 493,
+    "words_against": 415
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 91.1
+  },
+  "R08": {
+   "empty": false,
+   "sections_found": [
+    "for",
+    "against",
+    "cruxes",
+    "mind",
+    "lean"
+   ],
+   "n_units": 25,
+   "units_over_cap": 0,
+   "answer_words": 1390,
+   "items_hit": {
+    "F1": "1. **More protected production time.**\nFor software engineers, analysts, and operations staff, much of the highest-value work is concentrated: writing code, debugging, modeling, reconciling, designing",
+    "F2": "2. **A wider and stickier talent pool.**\nRemote-by-default makes it easier to hire and retain people who cannot or do not want to live near an office, including caregivers, people with disabilities, p",
+    "F3": "1. **More protected production time.**\nFor software engineers, analysts, and operations staff, much of the highest-value work is concentrated: writing code, debugging, modeling, reconciling, designing",
+    "F4": "2. **A wider and stickier talent pool.**\nRemote-by-default makes it easier to hire and retain people who cannot or do not want to live near an office, including caregivers, people with disabilities, p",
+    "F5": "3. **Lower real estate and operating cost without giving up knowledge work.**\nThe company has no frontline or physical roles, so the office is not the place where production happens. It is mainly a pl",
+    "F6": "2. **A wider and stickier talent pool.**\nRemote-by-default makes it easier to hire and retain people who cannot or do not want to live near an office, including caregivers, people with disabilities, p",
+    "A1": "1. **Coordination may become slower and more brittle.**\nSoftware architecture, financial close, compliance investigations, and operations incidents often require rapid clarification, joint troubleshoo",
+    "A2": "2. **The office baseline may erode culture and weak ties.**\nThree office days a week already preserve some incidental contact. Making remote the default can make in-person work feel optional rather th",
+    "A3": "2. **The office baseline may erode culture and weak ties.**\nThree office days a week already preserve some incidental contact. Making remote the default can make in-person work feel optional rather th",
+    "A4": "1. **Coordination may become slower and more brittle.**\nSoftware architecture, financial close, compliance investigations, and operations incidents often require rapid clarification, joint troubleshoo",
+    "A5": "3. **Junior talent and sponsorship may be starved.**\nNew software engineers, analysts, and operations staff often learn by watching, asking quick questions, and receiving informal coaching. Remote-by-",
+    "A6": "3. **Junior talent and sponsorship may be starved.**\nNew software engineers, analysts, and operations staff often learn by watching, asking quick questions, and receiving informal coaching. Remote-by-"
+   },
+   "items_missed": [],
+   "cruxes_hit": {
+    "C1": "1. **Empirical:** Does remote-by-default materially harm coordination, innovation, junior development, or controls for this company’s most important work, or can those effects be mitigated by better m",
+    "C2": "1. **Empirical:** Does remote-by-default materially harm coordination, innovation, junior development, or controls for this company’s most important work, or can those effects be mitigated by better m",
+    "C3": "1. **Empirical:** Does remote-by-default materially harm coordination, innovation, junior development, or controls for this company’s most important work, or can those effects be mitigated by better m",
+    "C4": "3. **Value:** Does leadership believe in-person presence is a core control and culture mechanism, or is the office mainly an optional collaboration tool?\nIf leaders see the office as essential to trus"
+   },
+   "cruxes_missed": [],
+   "balance": {
+    "recall_for": 1.0,
+    "recall_against": 1.0,
+    "words_for": 398,
+    "words_against": 350
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  },
+  "R09": {
+   "empty": false,
+   "sections_found": [
+    "steps",
+    "measure",
+    "kill",
+    "priorities"
+   ],
+   "n_units": 20,
+   "units_over_cap": 0,
+   "answer_words": 1093,
+   "items_hit": {
+    "G1": "1. **What:** Rebase the wait metric to include abandonment, not just answered calls. Pull true average/median wait, abandonment rate, and service level by 15-minute interval, day, call reason, and IVR",
+    "G2": "4. **What:** Simplify the phone menu and routing rules. Collapse the 7 options into 3–4 direct paths for the biggest reasons: prescription refill status, appointment booking/reschedule, test results, ",
+    "G3": "5. **What:** Attack the 31% prescription-refill-status call volume with self-service. Make the portal the first-choice path for refill status; add a secure IVR status check or callback option; activat",
+    "G4": "2. **What:** Do the capacity math before approving either proposal. Calculate weekly calls, calls per hour, AHT by reason, occupancy, shrinkage, and required FTEs for all-day versus Monday 8:00–11:00.",
+    "G5": "1. **What:** Rebase the wait metric to include abandonment, not just answered calls. Pull true average/median wait, abandonment rate, and service level by 15-minute interval, day, call reason, and IVR",
+    "G6": "1. **What:** Rebase the wait metric to include abandonment, not just answered calls. Pull true average/median wait, abandonment rate, and service level by 15-minute interval, day, call reason, and IVR",
+    "G7": "1. **What:** Rebase the wait metric to include abandonment, not just answered calls. Pull true average/median wait, abandonment rate, and service level by 15-minute interval, day, call reason, and IVR",
+    "G8": "3. **What:** Backfill the 2 vacancies immediately and create Monday-morning flex coverage. Start expedited hiring for the 2 open positions; approve overtime or a trained float pool for Monday 7:00–12:",
+    "G9": "5. **What:** Attack the 31% prescription-refill-status call volume with self-service. Make the portal the first-choice path for refill status; add a secure IVR status check or callback option; activat",
+    "G10": "5. **What:** Attack the 31% prescription-refill-status call volume with self-service. Make the portal the first-choice path for refill status; add a secure IVR status check or callback option; activat"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "G1": "1. **Staff the Monday 8:00–11:00 spike first.** 22% of weekly calls arrive in 3 hours, with only 12 filled agents and on",
+    "G2": "2. **Deflect prescription-refill status and routine appointment traffic.** 31% refill status + 24% new appointments + 14",
+    "G3": "2. **Deflect prescription-refill status and routine appointment traffic.** 31% refill status + 24% new appointments + 14",
+    "G4": "3. **Cut AHT and transfers created by the EHR and phone menu.** AHT rose from 4.1 to 5.6 minutes and 26% of answered cal"
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  },
+  "R10": {
+   "empty": true,
+   "missing_file": false,
+   "task_score": 0.0
+  }
+ }
+}

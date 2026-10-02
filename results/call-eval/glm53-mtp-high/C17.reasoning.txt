@@ -1,0 +1,37 @@
+
+Key issues:
+1. REP disclosed another client's pricing (Halloway Pediatrics, $9/seat) — confidentiality breach, "I probably shouldn't say this" — flag: privacy_disclosure or policy_violation.
+2. REP said "We're fully HIPAA compliant, and we'll sign a BAA with you, no problem at all" on Team plan — contradicts earlier statement that BAA is only on Enterprise. Misinformation/unauthorized commitment. The prospect asked about Team plan specifically. This is a correction/contradiction — flag misinformation.
+3. Prospect is a home health agency wanting nurses to put patient visit notes (PHI: wound, BP) in tasks — on Team plan without BAA. The rep's claim is a compliance issue.
+
+Outcome: sales call, next steps scheduled (security review call Oct 6, proposal by Friday). Outcome — the main issue: it's a sales discovery call; resolved? The call achieved its purpose; follow-ups scheduled. For sales, "resolved" seems fine — discovery completed, next steps set. Or "callback"? The main purpose of the call (discovery + demo) was completed. I'd say resolved.
+
+Sentiment: start positive, end positive.
+
+Quality score: the BAA contradiction is a serious accuracy/compliance failure, plus disclosing another client's pricing. That's two notable lapses — score 2? "poor: a serious compliance, safety or accuracy failure, or several notable lapses." Two serious failures → 2.
+
+Flags:
+- misinformation: rep stated BAA available on Team after earlier saying Enterprise only. Evidence: "Yes, absolutely. We're fully HIPAA compliant, and we'll sign a BAA with you, no problem at all." vs earlier "the BAA is only available on our Enterprise plan. It's not available on Team."
+- privacy_disclosure: shared another client's pricing. Evidence: "Halloway Pediatrics... they're paying nine dollars a seat on their deal. So there's definitely room to work with."
+- unauthorized_commitment: promised BAA on Team plan despite stating it's Enterprise-only — could combine with misinformation. Maybe separate flag: unauthorized commitment to sign BAA on Team.
+
+Action items:
+- REP: send security review call invite for Tue Oct 6, 10 a.m. with Theodora and security team — due Oct 6 / send invite.
+- REP: send SOC 2 report and security questionnaire answers ahead of time — due before Oct 6.
+- REP: proposal for 85 seats by Friday (Oct 2, 2026 — Sep 29 2026 is a Tuesday; Friday = Oct 2). Due: Friday (Oct 2).
+- REP: send email summary ("you'll have the email summary to work from") — due unspecified.
+- REP: solutions person to cover accounting integration — due unspecified.
+- Prospect: Theodora sign-off required — that's a condition, maybe include as action item? "Theodora has to sign off" — could include: Theodora (compliance officer) to review security documentation and sign off. Include.
+
+Notable details:
+- Contract with current vendor ends January 15; must be live before then.
+- Seats corrected from 60 to 85 (25 per-diem contractors added).
+- Pricing: Team $14/seat/mo, Enterprise $26/seat/mo, billed annually; rep authorized up to 15% discount.
+- Security review call Tuesday October 6, 10 a.m. with Theodora.
+- Current vendor had data breach last spring (staff data, not clinical).
+- Prospect plans to put PHI (visit notes, BP readings) in tasks.
+- Call recorded; rep confirmed.
+- Halloway Pediatrics pays $9/seat — disclosed.
+- Prospect background: director of operations, 15 years IT.
+
+Summary notes ≤120 words.

@@ -1,0 +1,62 @@
+
+
+{
+  "call_type": "billing_dispute",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Verified identity with DOB and address before accessing account details.",
+    "Explained the EOB, insurance payment, and corrected an initially misread copay amount.",
+    "Waived a $95 no-show fee despite stating that fee waivers over $50 require lead approval.",
+    "Resolved the balance, updated the address, arranged portal statement and receipt, and provided the pharmacy direct line."
+  ],
+  "flags": [
+    {
+      "type": "unauthorized_commitment",
+      "description": "Agent waived a $95 no-show fee without lead approval despite stating that waivers over $50 require lead approval.",
+      "evidence": "Anything over fifty, I have to send to my lead for approval"
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent",
+      "task": "Add call note to the account",
+      "due": "during call"
+    },
+    {
+      "owner": "agent",
+      "task": "Update address to 18 Wrenfield Court, Apartment 3B",
+      "due": "during call"
+    },
+    {
+      "owner": "agent",
+      "task": "Send statement copy through the patient portal",
+      "due": "unspecified"
+    },
+    {
+      "owner": "agent",
+      "task": "Email payment receipt to the email on file",
+      "due": "as soon as we hang up"
+    },
+    {
+      "owner": "caller",
+      "task": "Call Ostrander Pharmacy direct line 555-0162 for albuterol refill",
+      "due": "right now"
+    }
+  ],
+  "summary_notes": "Patient called after reaching billing instead of pharmacy; also questioned $146.20 statement. Identity verified with DOB and old address. Agent explained insurance allowed $182, paid $130; patient responsibility $51.20 (copay $40 plus $11.20 strep-test deductible) plus $95 July 29 no-show fee. Agent corrected initial misread copay from $15.20 to $51.20. Agent waived the $95 no-show fee, despite stating waivers over $50 require lead approval. Patient paid $51.20 by Visa ending 2914, balance zero. Address updated to 18 Wrenfield Court Apt 3B. Statement via portal and receipt by email promised; pharmacy direct line provided for albuterol refill.",
+  "notable_details": [
+    "Caller initially wanted an albuterol refill but reached billing; pharmacy direct line 555-0162 was provided.",
+    "Statement total was $146.20: $51.20 patient responsibility plus $95 no-show fee from July 29.",
+    "Agent initially misread the copay as $15.20, then corrected it to $51.20, consisting of $40 copay plus $11.20 strep-test deductible.",
+    "Insurance allowed $182 and paid $130 for the sinus visit.",
+    "Agent stated fee waiver authority up to $50 but waived the $95 no-show fee without lead approval.",
+    "Address was updated from 440 Sable Ridge Road to 18 Wrenfield Court, Apartment 3B; zip ends in 41.",
+    "Payment was made with Visa ending 2914 and the balance was zero.",
+    "Two accounts with a similar name were visible; agent verified the correct account and left the other alone.",
+    "Caller raised a brother-in-law collections concern; agent declined to access the third-party account and confirmed the caller was not in collections.",
+    "Statement copy was to be sent via portal and receipt emailed to the email on file, D-kirwan-o at gmail."
+  ]
+}

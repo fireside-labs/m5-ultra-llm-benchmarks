@@ -1,0 +1,405 @@
+
+We need answer user's request. Need produce final with sections exactly: ## Variables, ## Top 3 priorities, ## What would change my mind. Need be concise but thorough. Need think through scenario.
+
+We are senior generalist advisor. Need name variables, most important first, at most 12. For each: one line why matters here, how measure/check. Need top 3 exactly 3 numbered. What would change my mind 2-5 bullets.
+
+Need reason from facts: Northfold Claims Services fictional 300-person company processes disability/injury insurance claims for several insurers. Uses commercial cloud LLM API to summarize medical records and draft claim decision letters. 40k docs/month, peaks quarter end. API vendor signed data-protection agreement customers require. Two engineers maintain integration. New CISO proposes replacing cloud API with open-weight model hosted in own data center because data sensitive. CEO asks variables.
+
+We need answer likely not immediately replace. Need consider actual sensitivity, contractual/customer requirements, regulatory (HIPAA? maybe not US? disability/injury insurance claims medical records). Data protection agreement signed may satisfy. Need compare cloud vs on-prem risk, cost, capability, ops capacity, latency, throughput, peak, model quality, hallucinations, PII, redaction, access controls, audit, incident response, data residency, subprocessors, DPA, insurance contracts, customer approval, switching cost, vendor lock-in, security posture of own DC, open-weight model security, prompt injection, output validation, human review, legal liability. Need variables with measurement.
+
+Need variables most important first. Maybe:
+1. Customer contractual/regulatory constraints on data location and model use. Why: customers require DPA; may allow cloud if DPA signed; moving may require re-approval. Check: review customer contracts, DPAs, insurance regulations, data residency clauses, insurer security questionnaires, legal opinion.
+2. Actual sensitivity and risk profile of records and failure modes. Why: sensitive medical/claims data but cloud already contracted; risk includes disclosure, hallucination causing denied claims. Measure: data classification, threat model, incidents, PII/PHI volume, redaction needs, regulatory breach thresholds.
+3. Model performance on Northfold tasks (medical summarization/decision drafts) vs cloud API. Why: wrong summaries or drafts cause claim errors, appeals, legal exposure. Measure: benchmark on representative 40k sample, human evaluation, hallucination/omission rates, redaction accuracy, decision consistency, latency.
+4. Operational capacity and TCO for two engineers to run open-weight model at scale. Why: 40k docs/month peaks, GPU infra, updates, monitoring, security patching. Measure: capacity planning, GPU inference throughput, ops hours, incident MTTR, total cost (capex/opex, staff), peak headroom.
+5. Security controls of own data center vs cloud vendor. Why: on-prem not automatically secure; open-weight may lack vendor protections. Measure: control mapping (NIST/ISO/SOC2/HIPAA), access controls, encryption, logging, DLP, pen tests, breach history, red team.
+6. Data protection and privacy design: minimization, redaction, tokenization, retention, access. Why: sensitive data; moving model doesn't fix broad access. Measure: data flow mapping, field-level PII, redaction coverage, retention schedules, access logs, DPIA.
+7. Throughput/latency and peak handling. Why: quarter-end peaks, claims SLA. Measure: documents per minute, tokens per sec, p95 latency, queue depth under 2-3x peak, autoscaling.
+8. Cost and capital plan. Why: GPUs expensive, utilization variable, peak-driven overprovisioning. Measure: cost per doc for cloud vs amortized GPU + staff + facilities + model updates; compare 3-year TCO.
+9. Vendor lock-in vs model governance. Why: open-weight avoids vendor but adds model selection/upgrades. Measure: abstraction layer, model compatibility, switching cost, open-weight license, evaluation cadence.
+10. Human-in-the-loop and decision accountability. Why: claim decision letters legal; LLM drafts need review. Measure: review workflow, error rates, correction time, legal signoff, audit trails.
+11. Compliance/auditability and evidence. Why: insurers/auditors need proof. Measure: audit logs, model versioning, prompt/version records, retention, regulator/customer audits.
+12. Incident response and resilience. Why: outage or breach affects claims. Measure: SLAs, RTO/RPO, failover tests, incident response plan, cyber insurance.
+
+Need at most 12. Maybe combine some. Need one line why matters and how measure/check. Ensure each variable numbered 1-12.
+
+Top 3 priorities: 1 customer/regulatory constraints and contractual permission, 2 model quality/risk on claims decisions, 3 ability to operate securely/cost-effectively at scale with 2 engineers. Or maybe data sensitivity risk vs cloud. Need dominate. Since cloud vendor signed DPA required by customers, moving may not be needed for compliance. Need top 3: customer requirements/legal constraints; actual risk and model performance; operational feasibility/cost/security. Could include security controls as priority. Need exactly 3 numbered items.
+
+What would change my mind: 2-5 bullets. Findings flip decision one way or other. E.g. If customer contracts prohibit cloud processing of medical records or DPA insufficient, lean on-prem. If open-weight model matches/exceeds cloud on benchmark and can be operated within 2-engineer capacity with proven security controls and lower TCO, lean on-prem. If own DC cannot meet peak throughput/latency or two engineers cannot manage GPU/model security, keep cloud. If cloud vendor has access controls, encryption, no-training, regional processing, and audit evidence, keep cloud. If records can be redacted/tokenized so model sees minimal sensitive data, cloud less risky.
+
+Need maybe mention not enough facts: need numbers. But answer variables. Could state assumptions? The prompt says when need a number not given, say so and state assumption. We don't need numbers except maybe peak multiple. Could mention "peak multiple not given; assume 2-3x". But maybe avoid. Need be concrete.
+
+Need ensure exactly headings. Could include brief intro? They ask respond with these sections. Use exactly headings. No extra text outside? Probably only sections. Need Markdown.
+
+Need be careful: "open-weight model hosted in Northfold's own data center". Need consider data sensitivity: cloud API vendor signed DPA customers require. Need challenge CISO's rationale: data sensitivity not sole; sensitivity means controls, not location. Need variables: whether data actually leaves controlled environment? Cloud may have subprocessors, data residency. Need check vendor architecture, retention, training, access, encryption keys.
+
+Need maybe include "claims decision risk" as variable. Summaries and draft decision letters can cause adverse decisions. Need measure error rates on decisions, appeal rates, legal exposure.
+
+Potential variables:
+1. Customer and regulatory constraints on use/location of PHI/claims data. Why: if customers only require DPA signed, cloud may be permitted; if strict residency/no third-party, on-prem forced. Check: contracts, DPAs, security addenda, insurer policies, HIPAA/GDPR/insurance regulations, legal review.
+2. Risk of model errors in medical summaries and decision drafts. Why: hallucinated omission can deny/underpay claims, appeals, litigation. Check: benchmark on representative sample with clinician/claims reviewer; measure omission, hallucination, citation accuracy, clinical safety, decision variance.
+3. Operational capacity to run open-weight model securely at 40k/month plus peaks. Why: two engineers cannot own GPU cluster, model updates, security, monitoring. Check: ops workload estimate, incident history, staffing model, capacity plan, test under 2-3x peak.
+4. Security control equivalence between cloud and own data center. Why: on-prem may be worse than signed DPA cloud; open-weight doesn't solve exfiltration/insider risk. Check: control mapping, pen tests, SOC2/ISO/HIPAA, access logs, encryption, DLP, vulnerability management, breach tests.
+5. Data minimization/redaction architecture. Why: moving model doesn't reduce exposure if full records still stored/accessed; redaction reduces risk anywhere. Check: PII/PHI field inventory, redaction accuracy, tokenization, model input logging, retention.
+6. Total cost and capital efficiency. Why: GPUs for peak may be idle; cloud pay-as-you-go. Check: 3-year TCO with GPUs, facilities, staff, model updates; cost per doc at baseline and peak.
+7. Throughput/latency and quarter-end peak headroom. Why: claims backlog affects customer SLAs. Check: tokens/doc, p95 latency, queueing, peak multiplier, autoscaling/failover.
+8. Model governance and upgrade path. Why: open-weight versions change behavior, require revalidation. Check: model registry, evaluation gates, rollback plan, license, vendor/community support.
+9. Human review workflow and accountability. Why: drafts need adjuster/medical reviewer; LLM should not be final. Check: review coverage, correction rates, time per claim, audit trail, legal signoff.
+10. Vendor trust and contractual protections. Why: cloud vendor already signed DPA; need verify actual controls. Check: subprocessors, data location, training opt-out, deletion, audit rights, certifications, breach history.
+11. Business continuity and incident response. Why: outage or breach disrupts claims and legal duties. Check: SLAs, RTO/RPO, failover tests, incident response plan, cyber insurance, notification obligations.
+12. Migration switching cost and option value. Why: premature replacement may lock in worse model/ops. Check: abstraction layer, pilot cost, fallback plan, phased migration, contract termination.
+
+Need one line for each. Could be concise.
+
+Top 3 priorities: 1 Customer/regulatory constraints. 2 Model error risk/quality. 3 Operating capability/security/cost at scale. Could combine security with ops. Need "variables that should dominate" likely from list. Use numbered.
+
+What would change my mind: bullets. Need maybe 4 bullets. Include flip one way or other.
+
+Need ensure no extra headings. Use exactly requested headings.
+
+Potential final:
+
+## Variables
+1. **Customer and regulatory constraints** — ... Check ...
+...
+
+Need "one line on why it matters here, and how you would measure or check it." Could do each line with why and check separated by semicolon. Ensure not too long.
+
+Need maybe mention "data protection agreement signed customers require" in variable 1/10. Need not say "PHI" if not US? Use medical/claims data. Could mention HIPAA/GDPR/insurance regulations depending jurisdiction.
+
+Need "most important first". Let's order:
+1. Customer/regulatory constraints and contractual permission. Because decision may be forced.
+2. Claims decision risk / model performance. Because core business.
+3. Operational capacity and security control equivalence? Need maybe separate. But top 3 would be 1-3. If 3 is operational capacity, security maybe 4. But top 3 should dominate: customer constraints, model quality/risk, ability to operate securely at scale with 2 engineers. Could make 3 "operational and security capacity to run open-weight model". Then list security separately? Maybe combine to avoid 12. But variables list can have 3 as "operational feasibility with two engineers", 4 as "security control equivalence". Top 3: 1,2,3? But security important. Could make variable 3 "operational and security feasibility" combining. Then top 3: customer constraints, model quality, operational/security feasibility. But list separate might be clearer. Need at most 12, can have 12.
+
+Maybe variable 3: "Operational capacity to run open-weight model at scale" with security controls? We can include security under variable 4. Top 3 could be 1,2,4? Need most important first. If top 3 are variables 1,2,3? If 3 not security, maybe weird. Could reorder variable 3 as "Security control equivalence and operational capacity" combine. Let's design list:
+1. Customer/regulatory permission.
+2. Model quality and claims decision risk.
+3. Security control equivalence and operational capacity with two engineers.
+4. Data minimization/redaction and access controls.
+5. Throughput/latency/peak.
+6. Cost/TCO.
+7. Vendor trust and contractual protections.
+8. Model governance/upgrades.
+9. Human-in-the-loop and accountability.
+10. Business continuity/incident response.
+11. Data residency/subprocessor risk? Could be in 1/7.
+12. Migration option value.
+
+Need each one line. Maybe variable 3 combine too broad but okay: why matters and check. But user asked variables; each variable should be distinct. Could have 12 distinct.
+
+Need top 3 priorities exactly 3 numbered items. They can reference variables. E.g.
+1. Customer/regulatory constraints: if cloud is contractually prohibited, no debate.
+2. Claims decision risk: model must not hallucinate or omit; benchmark before any move.
+3. Operating capacity/security: two engineers and peak volume make self-hosting high burden; prove controls and headroom.
+
+What would change my mind bullets:
+- If customer contracts/regulators prohibit cloud processing or require data residency/no third-party, lean on-prem.
+- If open-weight model matches cloud on representative benchmark, redaction works, and can run within two-engineer capacity with proven security and lower TCO, lean on-prem.
+- If cloud vendor provides encryption, no-training, regional processing, audit evidence, and DPA covers customers, keep cloud.
+- If own DC cannot handle quarter-end peak or two engineers cannot manage GPU/model security updates, keep cloud.
+- If records can be redacted/tokenized so model sees minimal data, location matters less; choose based on quality/cost.
+
+Need maybe mention assumptions: peak multiple not given. Could include in variable 5: "peak multiplier not given; measure actual peak and assume 2-3x until measured." But not necessary? The instruction says when you need a number not given, say so and state your assumption. We might not need numbers. If we mention 2-3x, state assumption. Could write "peak multiplier is not given; measure actual and use a stress test (e.g., 2-3x baseline only as an assumption until measured)." That satisfies. But maybe overkill.
+
+Need be concrete: 40k docs/month, peaks quarter end, two engineers. Need mention quarter-end. Need maybe "medical records and claim decision letters" legal. Need mention "several insurers" customer requirements may vary. Need mention DPA signed. Need mention "open-weight" license, model updates, GPU. Need mention "own data center" controls. Need mention "sensitive data" not automatically justifies migration.
+
+Potential final:
+
+## Variables
+1. **Customer and regulatory permission** — The signed DPA may already satisfy customers, but contracts may still prohibit cloud processing, require residency, or need per-insurer approval; check all customer contracts, DPAs, security addenda, insurer questionnaires, and applicable medical/insurance privacy laws.
+2. **Claims decision risk from model errors** — Summaries and draft decision letters can cause wrongful denials, underpayments, or appeals; benchmark on representative sampled claims with claims/medical reviewers for hallucinations, omissions, citation accuracy, and error impact.
+3. **Operational capacity to run open-weight model at 40k docs/month and peaks** — Two engineers must own GPUs, inference, security patching, model updates, monitoring, and incident response; estimate ops hours, staffing model, incident MTTR, and test under measured peak load (peak multiplier not given; assume 2-3x only until measured).
+4. **Security control equivalence vs cloud** — On-prem is not automatically safer; check encryption, key custody, access controls, logging, DLP, vulnerability management, pen tests, certifications, and breach history against cloud vendor controls and customer requirements.
+5. **Data minimization and redaction design** — Moving the model does not fix broad access to full medical records; inventory PII/PHI fields, test redaction/tokenization accuracy, and verify what is stored, logged, retained, and accessible.
+6. **Throughput, latency, and peak handling** — Quarter-end backlogs can breach insurer SLAs; measure tokens per document, p95 latency, queue depth, and autoscaling/failover capacity at measured peak.
+7. **Total cost and capital efficiency** — Self-hosting may require GPU capex and idle capacity for peaks; model 3-year TCO per document including GPUs, facilities, staff, model updates, and support versus cloud API pricing.
+8. **Vendor trust and contractual protections** — The DPA is necessary but not sufficient; verify subprocessors, data location, no-training/deletion terms, audit rights, certifications, incident notification, and actual enforcement.
+9. **Model governance and upgrade path** — Open-weight models change behavior across versions and require revalidation; maintain model registry, evaluation gates, rollback plan, license review, and security patching cadence.
+10. **Human review and accountability** — Claim decision letters need adjuster/medical/legal review; measure review coverage, correction rates, time per claim, audit trail completeness, and final signoff controls.
+11. **Business continuity and incident response** — Outage or breach disrupts claims and may trigger notification duties; test RTO/RPO, failover, incident response, cyber insurance, and regulatory/customer notification timelines.
+12. **Migration option value and switching costs** — Premature replacement may lock Northfold into worse model/ops; check abstraction layer, pilot cost, fallback to cloud, contract termination, and phased migration plan.
+
+Need ensure each one line? It says one line on why it matters here, and how measure/check. My bullets have long line but okay. Could be one sentence? Maybe each line contains why and check. Good.
+
+Top 3 priorities:
+1. Customer/regulatory permission: if cloud is contractually prohibited, on-prem decision forced; if signed DPA covers all customers, sensitivity alone does not justify migration.
+2. Claims decision risk: model must demonstrate lower/equal errors on medical summaries and decision drafts; benchmark before any migration.
+3. Operational/security feasibility: with two engineers, self-hosting must prove it can run securely at peak without increasing failure risk or staffing burden.
+
+Need exactly 3 numbered items. Good.
+
+What would change my mind bullets:
+- If any major customer contract/regulation prohibits cloud processing of medical claims data or demands data residency, I would move to on-prem/private hosting, subject to capability testing.
+- If open-weight model matches/exceeds cloud on representative benchmark, redaction works, and can be operated within two-engineer capacity with proven security controls and lower 3-year TCO, I would support replacement.
+- If cloud vendor evidence shows encryption, no-training, regional processing, strong audit rights, and the signed DPA satisfies all insurers, I would keep cloud and invest in redaction/human review instead.
+- If own data center cannot meet measured quarter-end peak/latency or two engineers cannot manage GPU/model security updates, I would keep cloud.
+- If full records are not needed by model and PII can be redacted/tokenized, I would treat location as secondary to quality, cost, and operational risk.
+
+Need maybe "2-5 bullets" yes 5. Need no extra. Ensure headings exactly. Use Markdown. Good.
+
+Double-check "Answer in Markdown and use exactly the section headings the request asks for, in that order." So only those headings. Could not add intro. Good.
+
+Need maybe avoid "PHI" if not known. Use medical/claims data. Fine.
+
+Need consider if "data protection agreement Northfold's customers require" means vendor signed. Need highlight that CISO's "because data sensitive" is insufficient. Good.
+
+Potential issue: variable 3 includes assumption "assume 2-3x only until measured" maybe number not given. Good. Could avoid to keep concise. But instruction says if you need a number not given, say so and state assumption. We don't need to assume. But if we mention peak multiplier not given, okay. Maybe in variable 3: "peak multiplier is not given; measure actual peak and stress-test accordingly." No assumption. But instruction says when need a number not given, say so and state assumption. We can say "peak multiplier is not given; use measured peak, or if unknown assume 2-3x until measured." That's okay.
+
+Need maybe include "40,000 documents a month" in variables. Good.
+
+Need maybe mention "several insurers" in customer constraints. Good.
+
+Could refine variable 1: "The DPA may satisfy customers, but each insurer may have different restrictions." Good.
+
+Need maybe mention "open-weight model hosted in own data center" risks: open-weight may have weaker safety, less red teaming, license. Could include in model governance or security. Need maybe variable "open-weight model safety and support". Could merge with model governance. But maybe important: open-weight may not have vendor safety filters, could output unsafe content, prompt injection. Need include? Variables list at most 12, can add. But model quality covers. Maybe model governance includes safety/updates. Could mention prompt injection. Need maybe variable "prompt injection and malicious document handling" because medical records can contain adversarial text. Important for LLM summarization of untrusted docs. Need include? Could be under security control equivalence or model quality. But maybe add as variable? We have 12. Need maybe replace some. The most important variables should include prompt injection/adversarial content. We can incorporate in variable 2/4/5. But maybe variable 4 security control equivalence includes prompt injection? Could add "test prompt injection via malicious documents". Better: variable 5 data minimization maybe not. Need maybe variable "untrusted input handling" because documents from claimants can contain prompt injection. That's a real problem. Could make variable 4 "Security control equivalence and prompt-injection risk". Hmm.
+
+Let's consider top variables for LLM summarizing medical records:
+- Data privacy/regulatory.
+- Model performance and hallucination.
+- Prompt injection from documents (untrusted content) causing data exfiltration, manipulation, harmful output.
+- Security controls and data handling (logs, access, redaction).
+- Operational capacity/cost/peak.
+- Vendor trust.
+- Human review.
+
+Need at most 12. Could include prompt injection separately. Maybe variable 4: "Prompt-injection and malicious document handling" why matters: medical records may contain adversarial text; check red-team, input sanitization, output guards, logs. Then security control equivalence variable 5? Need keep 12. Let's revise list:
+1 Customer/regulatory permission.
+2 Claims decision risk/model quality.
+3 Operational capacity at scale with two engineers.
+4 Security control equivalence.
+5 Prompt injection/malicious document handling.
+6 Data minimization/redaction/access.
+7 Throughput/latency/peak.
+8 Cost/TCO.
+9 Vendor trust/contract protections.
+10 Model governance/upgrades.
+11 Human review/accountability.
+12 Business continuity/incident response.
+
+Migration option value maybe omitted? Could include in 3/10. Need 12. This list has 12. Good. Top 3 still 1,2,3? Security/prompt injection maybe priority? But top 3 could be 1,2,3 operational/security feasibility. But if variable 3 is ops only, top 3 maybe 1,2,4? Need most important first. Could set variable 3 "Operational and security feasibility" to include security controls and prompt injection? But then list less distinct. Or top 3 can be 1,2,4? But variable 3 ops is important too. Could top 3: customer constraints, model quality, ability to operate securely at scale (combining ops/security). It doesn't need match first three list variables exactly. But likely should. Need not strict.
+
+Maybe reorder list to make top three variables 1,2,3:
+1 Customer/regulatory permission.
+2 Model quality and claims decision risk.
+3 Ability to operate securely at scale (ops+security+prompt injection) with two engineers.
+Then other variables more specific. But user asks variables; can be broad. Need measure/check. Could make variable 3: "Operational and security feasibility of self-hosting" — why: two engineers, 40k/month, peaks, GPUs, security; check ops workload, security control mapping, peak stress test, incident MTTR. Then separate variables for prompt injection? But if security feasibility includes prompt injection, okay. Need avoid too broad? Fine.
+
+Let's craft list with 12 distinct but top three first:
+1. Customer and regulatory permission.
+2. Model quality and claims decision risk.
+3. Operational and security feasibility of self-hosting at scale.
+4. Prompt-injection and malicious document handling.
+5. Data minimization, redaction, and access controls.
+6. Throughput, latency, and quarter-end peak capacity.
+7. Total cost and capital efficiency.
+8. Vendor trust and contractual protections.
+9. Model governance and upgrade path.
+10. Human review and accountability.
+11. Business continuity and incident response.
+12. Migration option value and switching costs.
+
+Need variable 3 measure: "estimate GPU/inference ops burden, map controls to cloud/customer requirements, stress-test peak, review staffing." Good. But prompt injection separate. Need variable 4 measure: red-team with adversarial medical docs, test output guards, logs, data exfiltration. Good.
+
+Need variable 6 throughput maybe overlaps variable 3 peak. But okay.
+
+Need each one line. Could be long but okay.
+
+Top 3 priorities: 1 customer constraints, 2 model quality, 3 operational/security feasibility. Good.
+
+What change mind: include prompt injection? Maybe bullet: "If medical documents cannot be sanitized and red-team shows prompt injection can manipulate decisions/exfiltrate data, neither cloud nor on-prem is safe without redesign." But bullets need flip decision. Could include. Need 2-5. Maybe 5 bullets.
+
+Need maybe not too long. But desired oververbosity 9; user asked specific. Need high quality.
+
+Let's think deeper: The CEO asks "what variables must we consider before deciding?" Need maybe answer as advisor, not final decision. Need maybe mention "sensitive data" is not enough; compare marginal risk reduction vs added risk. Need variables. Good.
+
+Need ensure "one line" per variable. Could be one sentence with em dash. Use bold variable. Good.
+
+Potential final text:
+
+## Variables
+1. **Customer and regulatory permission** — The signed DPA may already satisfy the insurers, but some customers or laws may bar cloud processing or require residency; check every customer contract, DPA, security addendum, insurer questionnaire, and applicable privacy/insurance regulation.
+2. **Model quality and claims decision risk** — Summaries and draft decision letters can cause wrongful denials, underpayments, or appeals; benchmark on a representative sample of 40k monthly documents with claims/medical reviewers for hallucinations, omissions, citation accuracy, and downstream error impact.
+3. **Operational and security feasibility of self-hosting** — Two engineers would own GPU infrastructure, model updates, security patching, monitoring, and incident response at quarter-end peaks; estimate ops hours, map controls to customer requirements, and stress-test measured peak load (peak multiplier not given; use measured data, not assumed).
+4. **Prompt-injection and malicious document handling** — Medical/claim documents can contain adversarial text that manipulates summaries or decision drafts; red-team with poisoned documents and measure exfiltration, instruction override, and output manipulation rates.
+5. **Data minimization, redaction, and access controls** — Moving the model does not reduce exposure if full medical records are still stored, logged, and broadly accessible; inventory PII/medical fields, test redaction/tokenization accuracy, and review access, logging, retention, and deletion.
+6. **Throughput, latency, and quarter-end peak capacity** — Claims backlogs can breach insurer SLAs; measure tokens per document, p95 latency, queue depth, and autoscaling/failover capacity at measured peak.
+7. **Total cost and capital efficiency** — Self-hosting may require GPU capex and idle capacity for peaks; model 3-year cost per document including GPUs, facilities, staff, model updates, support, and cloud API fees.
+8. **Vendor trust and contractual protections** — A DPA is necessary but not sufficient; verify subprocessors, data location, no-training/deletion terms, audit rights, certifications, breach history, and incident notification obligations.
+9. **Model governance and upgrade path** — Open-weight models change behavior across versions and require revalidation; check model registry, evaluation gates, rollback plan, license terms, security patching cadence, and support options.
+10. **Human review and accountability** — Claim decision letters need adjuster/medical/legal review; measure review coverage, correction rates, time per claim, audit trail completeness, and final signoff controls.
+11. **Business continuity and incident response** — Outage or breach disrupts claims and may trigger notification duties; test RTO/RPO, failover, incident response, cyber insurance, and regulatory/customer notification timelines.
+12. **Migration option value and switching costs** — Premature replacement may lock Northfold into worse model/ops; check abstraction layer, pilot cost, fallback to cloud, contract termination, and phased migration plan.
+
+Need variable 3: "peak multiplier not given; use measured data, not assumed" no assumption. But instruction says if need number not given, say so and state assumption. We say not given, use measured. That's okay? It says "when you need a number that is not given, say so and state your assumption." We don't need number. Could avoid. Maybe include "peak multiplier is not given; assume 2-3x only for initial stress-test until measured." That explicitly states assumption. But could be seen as unnecessary. Could include in variable 6: "peak multiplier is not given; assume 2-3x until measured." Need one line. Let's incorporate: "peak multiplier is not given; assume 2-3x for initial stress-test until measured." Good. But maybe not needed.
+
+Top 3:
+1. **Customer/regulatory permission**: if cloud is contractually prohibited, on-prem may be mandatory; if signed DPA covers all insurers, sensitivity alone does not justify replacement.
+2. **Claims decision risk**: any replacement must show equal or lower hallucination/omission/error impact on representative claims before migration.
+3. **Operational/security feasibility**: with two engineers and quarter-end peaks, self-hosting must prove it can run securely, reliably, and within cost/staffing limits.
+
+What would change my mind:
+- If major customers/regulators prohibit cloud processing or demand data residency, lean on-prem/private hosting.
+- If open-weight model matches/exceeds cloud on benchmark, prompt-injection/redaction controls work, and two engineers can operate it within measured peak/cost, support replacement.
+- If cloud vendor evidence shows encryption, no-training, regional processing, audit rights, and signed DPA satisfies all insurers, keep cloud and invest in redaction/human review.
+- If own DC cannot meet measured peak/latency or two engineers cannot manage GPU/model security updates, keep cloud.
+- If adversarial documents can manipulate outputs or exfiltrate data in either architecture, pause and redesign input controls before deciding.
+
+Need maybe "pause" not flip one way? It says findings that would flip decision one way or other. Last bullet says redesign, not flip. Could change to "If self-hosting cannot prevent prompt injection but cloud has stronger vendor guardrails, keep cloud; if cloud cannot, on-prem with hardened controls." But bullet can be finding that would flip. Maybe: "If red-teaming shows the cloud vendor has materially stronger prompt-injection safeguards than Northfold could build, keep cloud; if Northfold can isolate/redact documents and prove stronger controls, lean on-prem." Good.
+
+Need maybe include "data can be redacted" bullet. Could replace last. Need 2-5. Maybe 5 bullets:
+1 contracts prohibit -> on-prem.
+2 open-weight matches + ops/security + cost -> on-prem.
+3 cloud evidence strong and DPA satisfies -> keep cloud.
+4 own DC cannot peak/ops -> keep cloud.
+5 records can be redacted/tokenized -> location secondary; choose based on quality/cost (could flip to cloud if cloud better). Good.
+
+Need ensure no extra. Good.
+
+Double-check "exactly 3 numbered items" in Top 3. Use 1. 2. 3. Good.
+
+Need maybe "Variables" list at most 12. Yes.
+
+Need maybe use "data-protection agreement" phrase. Good.
+
+Could there be issue with "one line" if variable line wraps? In Markdown it's one paragraph. Fine.
+
+Need maybe avoid "medical/claims" if fictional. Good.
+
+Need maybe mention "40,000 documents a month" in variable 2 or 3. Good.
+
+Need maybe mention "quarter end" in variable 3/6. Good.
+
+Need maybe mention "two engineers" in variable 3. Good.
+
+Need maybe mention "several insurers" in variable 1. Good.
+
+Need maybe mention "open-weight" in variable 9. Good.
+
+Need maybe mention "own data center" in variable 3/4. Good.
+
+Potential nuance: Data protection agreement signed by API vendor customers require. If customers require DPA, it may cover cloud. But CISO says sensitive. Need variable: "marginal risk reduction from moving data to own DC". Could be included in security control equivalence. Maybe variable 4: "Security control equivalence". Good.
+
+Need maybe mention "data exfiltration via model logs/API prompts". Good.
+
+Need maybe mention "model can be used for training by vendor?" Check no-training. Good.
+
+Need maybe mention "customer may require not only DPA but model not used for training, no human review by vendor". Good.
+
+Need maybe mention "claims decision letters may be legally significant; model cannot be sole author". Good.
+
+Need maybe mention "insurance/medical privacy laws may vary by jurisdiction". Good.
+
+Need maybe mention "cost per document" with 40k docs/month. Good.
+
+Let's think if there are any hidden traps: The CISO's proposal is based solely on "data is sensitive". Need challenge: cloud vendor signed DPA, already handling. Need variables: actual risk vs perceived, security controls, compliance, cost, model capability, maintenance. Good.
+
+Need maybe mention "open-weight model may require more engineering than two engineers can handle". Good.
+
+Need maybe mention "model hosted in own data center may still be cloud-like virtualization, not necessarily more secure". Good.
+
+Need maybe mention "quarter-end peaks: on-prem capacity sized for peak is expensive; cloud scales". Good.
+
+Need maybe mention "if using open-weight, you inherit responsibility for vulnerability management, model safety, content filters". Good.
+
+Need maybe mention "data center security may be worse than hyperscaler". Good.
+
+Need maybe mention "customer may not approve new model without validation". Good.
+
+Need maybe mention "auditability: need retain prompts/outputs/model versions for claims disputes". Good.
+
+Need maybe mention "model may mis-summarize medical evidence; need citation to source". Good.
+
+Need maybe mention "document types 40k/month; need throughput, token count". Good.
+
+Could include "model selection: open-weight may be inferior to commercial API; need benchmark". Good.
+
+Need maybe mention "human review capacity: if model errors increase, review time may increase". Good.
+
+Now final. Ensure headings exactly. No extra. Use numbered list in Variables. Good.
+
+Potential final with 12 variables. Need be careful not to exceed one line? It's okay. But "For each: one line on why it matters here, and how you would measure or check it." Could each be a single sentence. Let's make each bullet one sentence with semicolon. That is one line conceptually. Use bold. Good.
+
+Let's craft final carefully.
+
+## Variables
+1. **Customer and regulatory permission** — ...; check ...
+2. **Model quality and claims decision risk** — ...; benchmark ...
+3. **Operational and security feasibility of self-hosting** — ...; estimate ...
+4. **Prompt-injection and malicious document handling** — ...; red-team ...
+5. **Data minimization, redaction, and access controls** — ...; inventory ...
+6. **Throughput, latency, and quarter-end peak capacity** — ...; measure ...
+7. **Total cost and capital efficiency** — ...; model ...
+8. **Vendor trust and contractual protections** — ...; verify ...
+9. **Model governance and upgrade path** — ...; check ...
+10. **Human review and accountability** — ...; measure ...
+11. **Business continuity and incident response** — ...; test ...
+12. **Migration option value and switching costs** — ...; check ...
+
+Need maybe variable 6 includes peak multiplier assumption: "peak multiplier is not given; assume 2-3x for initial stress-test until measured". That is a number assumption. Good. But if we say assume 2-3x, one line. Good.
+
+Top 3 priorities:
+1. **Customer/regulatory permission**: ...
+2. **Claims decision risk**: ...
+3. **Operational/security feasibility**: ...
+
+What would change my mind:
+- If ...
+- If ...
+- If ...
+- If ...
+- If ...
+
+Need maybe "one way or the other" explicitly? Could phrase each with lean. Good.
+
+Let's ensure bullet count 5. Good.
+
+Need maybe include "CEO" not necessary.
+
+Potential final:
+
+## Variables
+1. **Customer and regulatory permission** — The signed data-protection agreement may already satisfy the insurers, but each customer or law may still bar cloud processing or require residency; check all contracts, DPAs, security addenda, insurer questionnaires, and applicable privacy/insurance regulations.
+2. **Model quality and claims decision risk** — Summaries and draft decision letters can cause wrongful denials, underpayments, or appeals; benchmark on representative monthly documents with claims/medical reviewers for hallucinations, omissions, citation accuracy, and downstream error impact.
+3. **Operational and security feasibility of self-hosting** — Two engineers would own GPUs, inference, security patching, model updates, monitoring, and incident response at quarter-end peaks; estimate ops hours, map controls to customer requirements, and stress-test measured peak load.
+4. **Prompt-injection and malicious document handling** — Medical/claim documents can contain adversarial text that manipulates summaries or drafts; red-team with poisoned documents and measure instruction override, output manipulation, and data-exfiltration attempts.
+5. **Data minimization, redaction, and access controls** — Moving the model does not reduce exposure if full medical records are still stored, logged, and broadly accessible; inventory PII/medical fields, test redaction/tokenization accuracy, and review access, logging, retention, and deletion.
+6. **Throughput, latency, and quarter-end peak capacity** — Claims backlogs can breach insurer SLAs; measure tokens per document, p95 latency, queue depth, and autoscaling/failover capacity at measured peak (peak multiplier is not given; assume 2-3x only until measured).
+7. **Total cost and capital efficiency** — Self-hosting may require GPU capex and idle capacity for peaks; model 3-year cost per document including GPUs, facilities, staff, model updates, support, and cloud API fees.
+8. **Vendor trust and contractual protections** — A DPA is necessary but not sufficient; verify subprocessors, data location, no-training/deletion terms, audit rights, certifications, breach history, and incident notification obligations.
+9. **Model governance and upgrade path** — Open-weight models change behavior across versions and require revalidation; check model registry, evaluation gates, rollback plan, license terms, security patching cadence, and support options.
+10. **Human review and accountability** — Claim decision letters need adjuster/medical/legal review; measure review coverage, correction rates, time per claim, audit trail completeness, and final signoff controls.
+11. **Business continuity and incident response** — Outage or breach disrupts claims and may trigger notification duties; test RTO/RPO, failover, incident response, cyber insurance, and regulatory/customer notification timelines.
+12. **Migration option value and switching costs** — Premature replacement may lock Northfold into worse model/ops; check abstraction layer, pilot cost, fallback to cloud, contract termination, and phased migration plan.
+
+Top 3:
+1. **Customer/regulatory permission**: if cloud is contractually prohibited, on-prem may be mandatory; if the signed DPA covers all insurers, sensitivity alone does not justify replacement.
+2. **Claims decision risk**: any replacement must show equal or lower hallucination/omission/error impact on representative claims before migration.
+3. **Operational/security feasibility**: with two engineers and quarter-end peaks, self-hosting must prove it can run securely, reliably, and within cost/staffing limits.
+
+What would change my mind:
+- If any major customer contract or regulator prohibits cloud processing or demands data residency, I would lean on-prem/private hosting, subject to capability testing.
+- If an open-weight model matches or exceeds the cloud API on a representative benchmark, prompt-injection/redaction controls work, and two engineers can operate it within measured peak and cost, I would support replacement.
+- If the cloud vendor provides evidence of encryption, no-training, regional processing, strong audit rights, and the signed DPA satisfies all insurers, I would keep cloud and invest in redaction/human review instead.
+- If Northfold’s data center cannot meet measured quarter-end peak/latency or two engineers cannot manage GPU/model security updates, I would keep cloud.
+- If records can be redacted/tokenized so the model sees minimal sensitive data, I would treat data location as secondary to model quality, cost, and operational risk.
+
+Need maybe "measured peak" in variable 3 and 6. Good.
+
+Check if "one line" for variable 3: it's long but one sentence. Good.
+
+Need maybe "data-protection agreement" hyphen. Good.
+
+Could there be a need to mention "customers require DPA signed" as fact. Yes.
+
+Need maybe "open-weight model hosted in own data center" might require model weights storage, GPU security. Good.
+
+Need maybe "several insurers" means multiple customer requirements. Good.
+
+Potential improvement: In variable 1, "signed DPA may already satisfy" but if customers require DPA, vendor signed. Need also check whether customers require explicit approval of AI model or data processing location. Good.
+
+Potential improvement: Top 3 priority #3 should include security controls, not just operational. It does. Good.
+
+Need maybe mention "sensitive data" in top 3 #1: sensitivity alone. Good.
+
+Now final. Ensure no extra text. Use exact headings. final.

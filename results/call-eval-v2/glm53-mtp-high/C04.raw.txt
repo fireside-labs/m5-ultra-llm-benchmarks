@@ -1,0 +1,47 @@
+{
+  "call_type": "billing_dispute",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 4,
+  "quality_reasons": [
+    "Identity fully verified (name, DOB, phone) before discussing account details",
+    "Accurately explained the pending authorization hold versus a real double charge and gave a clear fallback if it doesn't drop off",
+    "Correctly refused an early controlled-substance fill (zolpidem 26 days early) while offering a legitimate vacation-override path",
+    "Proactively caught and corrected the pickup location error (Millbrook to Eastgate)",
+    "Excessive background noise, eating on the call, and multiple computer/system switches made the call feel disorganized"
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "pharmacist (Oluwaseun)",
+      "task": "Send vacation override request for early zolpidem fill to Dr. Abernathy-Coles",
+      "due": "today (2026-09-18)"
+    },
+    {
+      "owner": "patient (Lionel)",
+      "task": "Call or check the app a few days before October 9 to see if the vacation override was approved",
+      "due": "a few days before 2026-10-09"
+    },
+    {
+      "owner": "patient (Lionel)",
+      "task": "Call back if the pending $12.50 authorization hold is still on the account after 5 business days so billing can push the release",
+      "due": "after 5 business days (~2026-09-25)"
+    },
+    {
+      "owner": "pharmacist (Oluwaseun)",
+      "task": "Move yesterday's app order (vitamin D 50,000-unit and fluticasone spray) from Millbrook to Eastgate counter pickup; patient will receive a text when ready",
+      "due": "ready tomorrow morning (2026-09-19)"
+    }
+  ],
+  "summary_notes": "Patient Lionel Ferreira-Quist (DOB 6/30/1990, phone 555-0148) called upset about an apparent double charge of $12.50 x2 for an app order. Verified identity; only one posted charge plus a pending authorization hold from a newly saved card, which drops off in 3-5 business days. Fluticasone spray covered at $0 copay; $12.50 is vitamin D 50,000-unit. Patient requested early zolpidem refill before travel departing October 9 for three weeks; denied (due October 14, 26 days early) per controlled-substance policy; vacation override request to be sent to Dr. Abernathy-Coles today. App order pickup corrected from Millbrook to Eastgate, ready 2026-09-19 morning with text notification.",
+  "notable_details": [
+    "The 'double charge' is one posted $12.50 payment plus a pending authorization hold from a newly saved card; hold drops off in 3-5 business days",
+    "The $12.50 charge is for vitamin D 50,000-unit; the fluticasone allergy spray went through insurance at $0 copay",
+    "Zolpidem refill not due until October 14; request was 26 days early and correctly declined per controlled-substance law/policy",
+    "Patient travels for work October 9 for three weeks; vacation override requested from Dr. Abernathy-Coles (female prescriber, 'she')",
+    "App order was mistakenly set for Millbrook pickup; corrected to Eastgate counter, ready 2026-09-19 morning",
+    "The authorization hold only occurs on the first payment with a newly saved card; patient chose to keep the card saved",
+    "Patient identity verified with name, DOB 6/30/1990, and profile phone 555-0148 before account discussion"
+  ]
+}

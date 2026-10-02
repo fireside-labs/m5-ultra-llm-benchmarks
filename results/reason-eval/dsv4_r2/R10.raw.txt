@@ -1,0 +1,28 @@
+## Estimate chain
+
+1. **Total light vehicles**: 245,000 households × 1.7 vehicles/household = **416,500 light vehicles**.
+2. **EVs in 2030**: 416,500 × 12% (midpoint of 8–16% state projection) = **~50,000 EVs**.
+3. **Split by home-charging access**: 30% (midpoint of 25–35%) lack home charging = **15,000 drivers**; 70% have home charging = **35,000 drivers**.
+4. **Annual miles per driver**: 200 miles/week × 52 weeks = **10,400 miles/year**.
+5. **Sessions from drivers without home charging**: 70% of energy from DC fast = 7,280 miles/year ÷ 150 miles/session = 48.5 sessions/year. Total = 15,000 × 48.5 = **727,500 sessions/year**.
+6. **Sessions from drivers with home charging**: 2 sessions/month × 12 = 24 sessions/year. Total = 35,000 × 24 = **840,000 sessions/year**.
+7. **Fleet sessions**: 1,500 EVs × 5 sessions/week × 52 weeks = **390,000 sessions/year**.
+8. **Total annual sessions**: 727,500 + 840,000 + 390,000 = **1,957,500 sessions/year**.
+9. **Port capacity at 25% utilization**: 24 h/day × 365 days × 25% ÷ (40 min ÷ 60 min/h) = **3,285 sessions/port/year**.
+10. **Ports needed**: 1,957,500 ÷ 3,285 = **596 ports** (existing 46 ports; ~550 additional).
+
+## Result
+
+ESTIMATE: 596  
+RANGE: 424 - 780  
+DECISION: $12M is not enough; at $140k–$220k/port it buys 55–85 new ports, roughly 10–15% of the ~550 additional ports needed.
+
+## Key sensitivities
+
+1. **EV adoption share (8–16%)** – a factor of 2 swing in EV count, directly scaling all private-driver sessions and the final port count by roughly ±180 ports.
+2. **Home-charging drivers' DC fast usage (2×/month assumption)** – this is the single largest session block (~840k sessions, 43% of total); if it were 1×/month instead, needed ports drop by ~130.
+3. **Utilization ceiling (25%)** – a design parameter that directly scales port count; raising it to 30% cuts required ports by ~20%, lowering it to 20% increases them by ~25%.
+
+## Recommendation
+
+Treat the $12M as a first tranche, not the full answer. Build 55–85 ports now, prioritizing sites that serve ride-hail/delivery fleets, multi-unit buildings, and high-traffic corridors where demand is most certain, and design for easy expansion. Revisit the key assumptions annually — especially EV adoption, home-charging access, and fast-charge frequency — and adjust the buildout accordingly. Consider pricing and reservation systems to push utilization above 25% without long queues, and pursue state/federal grants and public-private partnerships to close the remaining ~$65–$110M gap.

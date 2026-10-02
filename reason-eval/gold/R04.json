@@ -1,0 +1,322 @@
+{
+ "task_id": "R04",
+ "title": "GPU server purchase memo (one big vs two small)",
+ "category": "A",
+ "sections": [
+  "issues",
+  "priorities",
+  "bottom"
+ ],
+ "items": [
+  {
+   "id": "G1",
+   "text": "Single point of failure: one box runs both training and the paying customer's live endpoint; any failure or maintenance takes everything down (with next-business-day repair)",
+   "importance": "normal",
+   "match": [
+    [
+     "single point of failure",
+     "\\bspof\\b",
+     "redundan",
+     "fail.?over",
+     "goes down",
+     "outages?",
+     "downtime",
+     "resilien",
+     "no backup",
+     "if (it|the server|the machine|the box|that box) (fails|dies|breaks|goes down)",
+     "hardware failure",
+     "maintenance window",
+     "all eggs"
+    ]
+   ],
+   "paraphrases": [
+    "Single point of failure: if the one server dies, both training and Harrow's live endpoint go down.",
+    "No redundancy - with next-business-day repair, an outage could last days.",
+    "Two servers give failover for the customer endpoint; one box doesn't."
+   ]
+  },
+  {
+   "id": "G2",
+   "text": "Utilization mismatch: 85% of jobs use 1-2 GPUs and only 3% use 8, so the interconnect advantage rarely matters while two boxes reduce queueing between users",
+   "importance": "high",
+   "match": [
+    [
+     "85%",
+     "1.?(-|to|–)?.?2 gpus?",
+     "small jobs",
+     "job (mix|sizes?|log|profile)",
+     "utiliz",
+     "contention",
+     "queu",
+     "concurren",
+     "\\b3%",
+     "rarely",
+     "multi.?user",
+     "one (user|job) at a time",
+     "wait for (one another|each other)",
+     "workload (mix|profile|shape)"
+    ]
+   ],
+   "paraphrases": [
+    "The job log shows 85% of jobs use 1-2 GPUs; the 8-GPU fabric only helps the 3% quarterly fine-tune.",
+    "Two separate boxes cut queue contention for a team that already waits 3 hours for each other's jobs.",
+    "Optimizing for the rare 8-GPU job ignores the actual workload mix."
+   ]
+  },
+  {
+   "id": "G3",
+   "text": "Lead time: the 8-GPU server takes 16 weeks to arrive, but the paying pilot starts in 6 weeks (4-GPU servers ship in 3)",
+   "importance": "high",
+   "match": [
+    [
+     "lead.?time",
+     "16 weeks",
+     "16.week",
+     "delivery",
+     "arriv",
+     "ship(s|ping)?\\b",
+     "in time"
+    ],
+    [
+     "pilot",
+     "6 weeks",
+     "six weeks",
+     "harrow",
+     "deadline",
+     "customer",
+     "in time",
+     "late",
+     "3 weeks",
+     "too long",
+     "miss"
+    ]
+   ],
+   "paraphrases": [
+    "Lead time: Option A arrives in 16 weeks but the Harrow pilot starts in 6.",
+    "The 4-GPU servers ship in 3 weeks; the 8-GPU box would miss the pilot deadline.",
+    "Delivery timing makes Option A unable to serve the customer in time."
+   ]
+  },
+  {
+   "id": "G4",
+   "text": "Power: the 8-GPU server draws ~10.2 kW but the rack has only 6.5 kW free (8 kW limit minus 1.5 kW), so it needs a second rack too",
+   "importance": "high",
+   "match": [
+    [
+     "power",
+     "\\bkw\\b",
+     "\\d ?kw",
+     "rack",
+     "electric",
+     "circuit",
+     "amps?\\b",
+     "cooling"
+    ],
+    [
+     "limit",
+     "exceed",
+     "8 ?kw",
+     "10\\.2",
+     "6\\.5",
+     "(doesn'?t|won'?t|does not|will not|can'?t|cannot) fit",
+     "over\\b",
+     "budget",
+     "capacity",
+     "second rack",
+     "another rack",
+     "rack power",
+     "power (draw|budget|limit|headroom)",
+     "headroom"
+    ]
+   ],
+   "paraphrases": [
+    "Power: the 8-GPU server draws 10.2 kW but our rack only has 6.5 kW free - it won't fit.",
+    "It exceeds the 8 kW rack limit, so Option A also needs a second rack at $1.1k/month.",
+    "Rack power capacity rules out putting Option A in the existing rack."
+   ]
+  },
+  {
+   "id": "G5",
+   "text": "The Harrow contract requires dedicated hardware not shared with any other workload; one shared box for training and Harrow violates it, whereas one of two servers can be dedicated",
+   "importance": "high",
+   "match": [
+    [
+     "isolat",
+     "dedicated",
+     "not shared",
+     "shared (hardware|machine|server|box)",
+     "(sharing|share) (the |one |a )?(machine|server|box|hardware)",
+     "segregat",
+     "access logs?",
+     "mix(ing|es)? (customer|harrow|training|workloads)",
+     "same (machine|server|box) (as|for) (training|harrow)"
+    ]
+   ],
+   "paraphrases": [
+    "The Harrow contract requires dedicated hardware; running training on the same box would breach it.",
+    "Customer data must be isolated - with two servers one can be dedicated to Harrow.",
+    "Sharing one machine between internal training and Harrow's workload violates the pilot contract."
+   ]
+  },
+  {
+   "id": "G6",
+   "text": "Rent the rare 8-GPU fine-tune in the cloud (~30 h x $98 = ~$3k per quarter) instead of buying for it",
+   "importance": "normal",
+   "match": [
+    [
+     "cloud",
+     "\\brent",
+     "on.?demand",
+     "burst"
+    ],
+    [
+     "quarterly",
+     "occasional",
+     "rare",
+     "once a quarter",
+     "8.gpu (job|run|fine.?tune|workload)",
+     "fine.?tun",
+     "\\$?98",
+     "30 hours",
+     "\\$?2[.,]9k?",
+     "\\$?3k",
+     "burst"
+    ]
+   ],
+   "paraphrases": [
+    "Rent an 8-GPU cloud instance for the quarterly fine-tune: 30 hours at $98/h is about $3k.",
+    "Burst to the cloud for the rare 8-GPU job instead of sizing the purchase around it.",
+    "On-demand rental covers the quarterly fine-tune for a fraction of the cost difference."
+   ]
+  },
+  {
+   "id": "G7",
+   "text": "Resale value: 4-GPU servers keep ~55% after 2 years vs ~40% for 8-GPU systems with fewer buyers",
+   "importance": "normal",
+   "match": [
+    [
+     "resale",
+     "resell",
+     "residual",
+     "liquid",
+     "55%",
+     "40%",
+     "depreciat",
+     "exit value",
+     "sell (them|it) (later|on)",
+     "secondary market"
+    ]
+   ],
+   "paraphrases": [
+    "Resale: 4-GPU servers keep about 55% of their value vs 40% for the 8-GPU box.",
+    "Two smaller servers are more liquid if we need to sell later.",
+    "Depreciation/residual value favors Option B."
+   ]
+  },
+  {
+   "id": "G8",
+   "text": "Capital flexibility: with 14 months of runway and a board request to keep capex flexible, buying one 4-GPU server now and a second later is possible only with Option B",
+   "importance": "normal",
+   "match": [
+    [
+     "runway",
+     "14 months",
+     "series a",
+     "cash",
+     "capex",
+     "capital (spend|expenditure|flexib|commitment|outlay)",
+     "flexib",
+     "staged",
+     "staging",
+     "phas(e|ed|ing)",
+     "increment",
+     "buy one (now|first)",
+     "one now",
+     "second (one )?later"
+    ]
+   ],
+   "paraphrases": [
+    "Board wants flexible capex with 14 months of runway: buy one 4-GPU server now and the second later.",
+    "Option B can be staged; Option A is an all-or-nothing $310k commitment.",
+    "Cash runway argues for a phased purchase."
+   ]
+  }
+ ],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Networking between two servers for distributed training was not considered",
+   "why_not": "The memo includes 200 GbE NICs and switch in the $330k and measured the 1.6x multi-node slowdown.",
+   "match": [
+    [
+     "network",
+     "interconnect",
+     "200 ?gbe",
+     "switch",
+     "\\bnics?\\b",
+     "fabric",
+     "distributed training",
+     "multi.?node",
+     "infiniband",
+     "nvlink",
+     "bandwidth"
+    ]
+   ],
+   "paraphrases": [
+    "Two servers need a fast network between them; the memo ignores interconnect costs.",
+    "Multi-node training needs 200 GbE switching, which isn't budgeted.",
+    "Bandwidth between nodes will bottleneck distributed training."
+   ]
+  },
+  {
+   "id": "D2",
+   "text": "Warranty / hardware support not considered",
+   "why_not": "Both quotes include 3 years of next-business-day on-site support.",
+   "match": [
+    [
+     "warrant",
+     "support (contract|plan|coverage)",
+     "hardware support",
+     "maintenance contract",
+     "service contract",
+     "vendor support"
+    ]
+   ],
+   "paraphrases": [
+    "No warranty or vendor support plan is mentioned.",
+    "Hardware support contract should be compared.",
+    "Need a maintenance contract for the servers."
+   ]
+  },
+  {
+   "id": "D3",
+   "text": "The memo doesn't compare buying with renting cloud capacity",
+   "why_not": "The memo compares 24/7 rental at $41k/month and computes an ~8-month break-even.",
+   "match": [
+    [
+     "cloud",
+     "\\brent",
+     "\\blease",
+     "hosted gpus?"
+    ],
+    [
+     "compar",
+     "cost",
+     "cheaper",
+     "break.?even",
+     "versus",
+     "\\bvs\\.?",
+     "instead",
+     "alternative",
+     "steady",
+     "\\$?41k"
+    ]
+   ],
+   "paraphrases": [
+    "The memo never compares buying hardware with renting cloud GPUs.",
+    "Cloud may be cheaper than owning - break-even analysis needed.",
+    "Leasing or hosted GPUs as an alternative to purchase are not evaluated."
+   ]
+  }
+ ]
+}

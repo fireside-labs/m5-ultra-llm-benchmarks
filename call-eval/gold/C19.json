@@ -1,0 +1,33 @@
+{
+  "call_id": "C19",
+  "call_type": "saas_support",
+  "call_type_accept": ["billing_dispute"],
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_start_accept": ["negative"],
+  "sentiment_end": "positive",
+  "quality_score": 5,
+  "quality_reasons": [
+    {"id": "Q1", "text": "Verified via emailed code, checked the actual purchase date against the 14-day policy instead of accepting the customer's estimate", "match": [["verif", "purchase date", "11 days", "eleven days", "14-day", "fourteen", "window", "policy"]]},
+    {"id": "Q2", "text": "Explained refund-to-original-card policy clearly; used a secure link instead of taking card numbers by phone; set up the intended plan", "match": [["original", "secure link", "card", "monthly", "team plan", "three seats", "3 seats"]]}
+  ],
+  "flags": [],
+  "decoys": [
+    {"id": "D1", "text": "Refund granted outside the 14-day refund policy", "why_not": "Customer guessed 'two weeks or more' but the purchase was Aug 15, 11 days earlier - within the window.", "evidence": "So the purchase was on August fifteenth. Today's the twenty-sixth, so that's eleven days.", "match": [["refund"], ["outside", "polic", "14", "fourteen", "window", "exception", "late"]]}
+  ],
+  "acceptable_flags": [
+    {"id": "OK1", "text": "Refund to a card being cancelled", "match": [["original card", "cancel", "2209", "old card"]]},
+    {"id": "OK2", "text": "Checkout UX led to accidental annual purchase", "match": [["accident", "mistake", "ux", "checkout", "confus"]]}
+  ],
+  "action_items": [
+    {"id": "A1", "owner": "billing / agent", "task": "Full refund of annual Business plan to original Visa ending 2209", "due": "5-7 business days", "match": [["refund"]]},
+    {"id": "A2", "owner": "customer", "task": "Tell bank to expect the refund on the card being cancelled", "due": "unspecified", "match": [["bank"]]},
+    {"id": "A3", "owner": "agent", "task": "Team monthly plan, 3 seats, activated on new card (done); email confirmations sent", "due": "today", "match": [["team", "monthly", "3 seats", "three seats", "confirmation"]]}
+  ],
+  "subtle_facts": [
+    {"id": "S1", "text": "Purchase was Aug 15, 11 days before the call - within the 14-day window despite customer saying 'two weeks or more'", "evidence": "so that's eleven days", "match": [["11 days", "eleven days", "aug(ust)?\\.? ?15", "8/15", "within"]]},
+    {"id": "S2", "text": "Refund must go to original Visa ending 2209 (being cancelled), not the new card ending 5530", "evidence": "the Visa ending in two-two-zero-nine", "match": [["2209", "original (card|payment)"]]},
+    {"id": "S3", "text": "Customer actually wanted monthly Team plan for 3 seats (bought annual Business for 10 by mistake)", "evidence": "Monthly, three seats, on the Team plan.", "match": [["3 seats", "three seats", "three people", "3 people", "3 users", "three users"]]}
+  ],
+  "themes": []
+}

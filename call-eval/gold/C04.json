@@ -1,0 +1,214 @@
+{
+ "call_id": "C04",
+ "call_type": "pharmacy_refill",
+ "outcome": "callback",
+ "outcome_accept": [
+  "resolved"
+ ],
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 4,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Verified identity (name, DOB, address) before discussing the profile",
+   "match": [
+    [
+     "verif",
+     "identit",
+     "dob",
+     "date of birth"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Proactively solved the gap: prescriber request plus pharmacist-approved 3-day emergency supply",
+   "match": [
+    [
+     "emergency",
+     "three-day",
+     "3-day",
+     "bridge",
+     "supply"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "Placed caller on hold without asking permission (minor)",
+   "match": [
+    [
+     "hold"
+    ]
+   ]
+  }
+ ],
+ "flags": [],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Technician disclosed medication information before verifying identity",
+   "why_not": "The caller named the medication herself in her opening request; the technician verified name, DOB and address before reading the profile.",
+   "evidence": "I need a refill on my lisinopril",
+   "match": [
+    [
+     "verif",
+     "identit",
+     "dob",
+     "date of birth",
+     "authenticat"
+    ]
+   ]
+  },
+  {
+   "id": "D2",
+   "text": "Dispensing an emergency supply / dose change without a valid prescription",
+   "why_not": "The pharmacist (not the tech) approved a standard emergency supply of the existing prescription; the dose increase is being requested from the prescriber.",
+   "evidence": "she can do a three-day emergency supply",
+   "match": [
+    [
+     "emergency",
+     "without (a )?(valid )?prescription",
+     "unauthori[sz]ed (dose|refill)"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "New 20 mg prescription was never received from the prescriber / patient nearly out of medication",
+   "match": [
+    [
+     "20",
+     "twenty",
+     "dose",
+     "run(ning)? out",
+     "out of",
+     "missing prescription",
+     "not received",
+     "never (sent|received)"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "pharmacy tech",
+   "task": "Send request to Dr. Lindqvist-Mbeki's office for a new lisinopril 20 mg once-daily prescription",
+   "due": "today",
+   "match": [
+    [
+     "request",
+     "send",
+     "contact",
+     "fax"
+    ],
+    [
+     "prescri",
+     "doctor",
+     "office",
+     "lindqvist"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "pharmacy",
+   "task": "Have 3-day emergency supply ready at Harbor Road after 4 pm",
+   "due": "2026-05-19 16:00",
+   "match": [
+    [
+     "emergency",
+     "three-day",
+     "3-day",
+     "supply"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "pharmacy",
+   "task": "Fill the 20 mg prescription at Harbor Road and text the patient when ready",
+   "due": "when prescriber responds",
+   "match": [
+    [
+     "text",
+     "notif"
+    ]
+   ]
+  },
+  {
+   "id": "A4",
+   "owner": "patient",
+   "task": "Call the prescriber's office if no update by tomorrow afternoon",
+   "due": "2026-05-20 afternoon",
+   "match": [
+    [
+     "patient",
+     "caller",
+     "she",
+     "her"
+    ],
+    [
+     "call",
+     "nudge",
+     "contact",
+     "follow"
+    ],
+    [
+     "doctor",
+     "office",
+     "prescriber",
+     "lindqvist"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Dose was increased to 20 mg two weeks ago (patient taking two 10 mg tablets); profile still shows 10 mg and no new prescription was received",
+   "evidence": "bumped me up to twenty milligrams",
+   "match": [
+    [
+     "20 ?mg",
+     "twenty milligram",
+     "20-mg",
+     "dose (was )?(increase|change)",
+     "increased"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Pickup changed from Ferris Avenue to the Harbor Road location (staying with sister)",
+   "evidence": "can it be the Harbor Road one?",
+   "match": [
+    [
+     "harbor"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Patient has only two tablets left: out after tomorrow morning",
+   "evidence": "two pills left",
+   "match": [
+    [
+     "two pills",
+     "2 pills",
+     "two tablets",
+     "2 tablets",
+     "out after",
+     "run out",
+     "running out",
+     "tomorrow"
+    ]
+   ]
+  }
+ ],
+ "themes": []
+}

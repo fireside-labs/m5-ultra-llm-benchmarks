@@ -1,0 +1,35 @@
+## Missed issues
+
+1. **The report's own risk-tier table refutes the headline (Simpson's paradox).** Within both strata the program does *worse*: low risk 5.0% vs 4.0%, high risk 25.0% vs 22.0%. The program group is 80% low-risk (800/1,000) while the comparison is 80% high-risk (800/1,000), so the entire crude gap (9.0% vs 18.4%) is patient mix, not the intervention. On like-for-like patients the effect flips sign — "cuts readmissions in half" is contradicted by the table sitting directly beneath it.
+
+2. **The expansion forecast confuses sensitivity with positive predictive value.** Sensitivity 90% means 90% of *readmitted* patients get flagged, not that 90% of *flagged* patients get readmitted. With 13% prevalence, 90% sensitivity and 70% specificity: per 1,000 discharges, 117 true positives + 261 false positives = 378 flagged, so a flagged patient's readmission risk is ≈31%, not 90%. The 12,000 flagged patients contain ~3,700 future readmissions, not 10,800 — and the ×50% effect is the discredited headline number. Corrected, prevented readmissions ≈ 3,700 × (true effect), which per issue 1 is plausibly ~zero, not 5,400.
+
+3. **The program group was filtered twice; the comparison group not at all.** Enrollment required answering the phone and consenting (a health-and-engagement filter), then the 140 patients who didn't complete all 3 calls (12% of the 1,140 enrolled) were deleted from the program arm. The comparison still contains everyone the program screened out — the too-sick or too-disorganized to answer a phone. Removing dropouts after the fact guarantees only full-dose completers are counted; this must be re-analyzed intention-to-treat.
+
+4. **Site confound: Northgate's meds-to-beds service.** 85% of program patients vs 40% of the comparison came from Northgate, which launched a readmission-reducing service in February 2025. Part of the "program effect" is another program, plus any case-mix difference between the two hospitals. The comparison isn't like-for-like even within site.
+
+5. **The outcome definition changed mid-year, and exposure to the change is unbalanced.** From July 1, planned readmissions no longer count, so the same patient has a lower *measured* rate after that date. 70% of program patients vs 50% of the comparison were discharged in July–December, so the program arm is disproportionately measured under the more forgiving definition. The direction of bias favors the program; the magnitude can't be computed from the report (the planned-readmission share isn't given — that number is needed).
+
+6. **The Spanish-language recommendation rests on 19 patients and 2 events.** 0/9 vs 2/10 is indistinguishable from noise — two events either way flips the conclusion — and no test is reported. Prioritizing Spanish-language nurses on this evidence, out of all the subgroups one could have examined, is cherry-picking.
+
+7. **Excluding 30-day deaths conditions on a post-discharge outcome.** Patients who die cannot be readmitted, so deleting them discards the worst outcomes. If enrollment correlates with survival (you must be alive and well enough to answer a nurse's call), the exclusion trims the two groups differently. Standard fix: a combined "readmission or death within 30 days" endpoint.
+
+8. **The balance check is false reassurance.** Age (67 vs 68) and sex (54% vs 55% female) are irrelevant when the variables that actually drive readmission — risk tier (80/20 vs 20/80), site (85% vs 40% Northgate), and half-year of discharge (70% vs 50%) — are grossly unbalanced. "Demographics do not explain the difference" is technically true and beside the point.
+
+9. **No enrollment-funnel denominators.** The report never states how many patients were eligible, approached, or refused — only 1,140 enrolled and 1,000 completing. Without that, leadership cannot judge how severe the healthy-volunteer filter was, nor model cost per enrolled patient when scaling.
+
+## Looks like a problem but isn't
+
+- Using statewide all-payer claims is a strength: readmissions to *any* hospital are captured, so the outcome isn't undercounted for either group.
+- Counting only each patient's first 2025 discharge correctly prevents repeat discharges from being treated as separate index events.
+- The crude gap would easily pass a significance test (~90 vs ~184 events, n=1,000 each) — the problem is confounding, not noise, so demanding a p-value on the headline misses the point.
+
+## Top 3 priorities
+
+1. **Simpson's paradox (issue 1):** the stratified results show no benefit — slightly *worse* within both tiers — so the 50% reduction is pure case mix. Every downstream claim, including the forecast, inherits this refuted effect size.
+2. **The forecast arithmetic (issue 2):** sensitivity is not PPV; correct PPV ≈ 31%, and even granting the unproven 50% effect the estimate drops from 5,400 to ~1,850 prevented readmissions — and the report's own tier data suggest ~0. The ROI case as written is wrong by roughly its entire magnitude.
+3. **Double filtering of the program group (issues 3 and 9):** consent selection plus deleting 140 dropouts, with no funnel denominators, is the mechanism that produced the tier imbalance and cannot be repaired by the current design. It requires an intention-to-treat re-analysis or, better, randomization.
+
+## Bottom line
+
+The report does not show that nurse calls reduce readmissions: by its own risk-tier table, enrolled patients did no better (slightly worse) than comparable non-enrolled patients, and the headline halving is fully explained by who got enrolled, with site, timing, and dropout-deletion biases all pointing the same way. The 5,400-readmissions-per-year forecast is arithmetically wrong (sensitivity misread as PPV) and rests on an effect size the data contradict. Leadership should not expand next quarter; instead, re-run the analysis intention-to-treat with adjustment for risk tier, site, and calendar half, use a readmission-or-death endpoint, and — if a scaling decision is genuinely needed — randomize eligible patients at two or three hospitals before committing.

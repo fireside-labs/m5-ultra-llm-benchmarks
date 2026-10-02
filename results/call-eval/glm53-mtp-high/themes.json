@@ -1,0 +1,107 @@
+{
+  "themes": [
+    {
+      "theme": "Identity verification and privacy failures",
+      "description": "Agents repeatedly disclose protected account, clinical, or pricing information without proper identity verification or authorization, and accept weak verification (vague DOB, phone-number-only lookup).",
+      "call_ids": [
+        "C02",
+        "C10",
+        "C14",
+        "C15",
+        "C17",
+        "C20"
+      ],
+      "evidence": "C02 disclosed balance/card details after phone-number-only lookup; C10 agent read out a customer's password and named another customer's incident; C14 disclosed husband's account with no authorization on file; C15 disclosed medication list with no verification at all; C17 disclosed another client's confidential pricing; C20 disclosed appointment details to a separated spouse and changed the patient's number with no release form.",
+      "recommended_action": "Enforce mandatory multi-factor identity verification before any account disclosure and prohibit sharing any third-party or cross-customer information, with compliance review of flagged calls."
+    },
+    {
+      "theme": "ClearPay duplicate copay charges",
+      "description": "The ClearPay portal, live since end of February, auto-drafts copays that patients already paid at the desk, producing duplicate charges across many patients, one of which escalated to collections.",
+      "call_ids": [
+        "C02",
+        "C05",
+        "C09",
+        "C14",
+        "C18"
+      ],
+      "evidence": "C02 $45 doubled; C05 two $30 desk copays re-drafted (known issue, vendor fix in progress); C09 duplicate $45 raised in passing; C14 three duplicate pairs totaling $135 with wrongful collections referral; C18 duplicate $40 after desk payment.",
+      "recommended_action": "Suspend or patch ClearPay auto-drafting until the vendor fix is verified, proactively audit and refund all affected accounts, and block collections referrals on accounts with open billing disputes."
+    },
+    {
+      "theme": "Agents making unauthorized commitments",
+      "description": "Front-line staff promise refunds, credits, reimbursements, or contract terms they lack authority to guarantee, setting up broken expectations and policy violations.",
+      "call_ids": [
+        "C02",
+        "C05",
+        "C10",
+        "C12",
+        "C17"
+      ],
+      "evidence": "C02 promised 48-hour refund vs 7-10 day policy; C05 waived a $310 balance requiring supervisor approval; C10 promised a month of free credit handled under SLA by the account manager; C12 agent promised lost-wage reimbursement the supervisor could not honor; C17 rep promised a BAA on a plan she said does not offer one.",
+      "recommended_action": "Train and gate agents on commitment authority limits and require supervisor sign-off for refunds, credits, or contractual promises beyond defined thresholds."
+    },
+    {
+      "theme": "Conflicting pre-procedure fasting/prep instructions",
+      "description": "Mailed prep packets say nothing after midnight while automated texts permit clear liquids until 2 hours before arrival, and patients get contradictory guidance that has already caused cancelled procedures.",
+      "call_ids": [
+        "C03",
+        "C07",
+        "C12",
+        "C16"
+      ],
+      "evidence": "C03 surgery cancelled after apple juice per text; C12 colonoscopy cancelled after black coffee per text, with grievance filed; C07 nurse guessed which instruction to follow; C16 agent correctly escalated and noted this was the third such inquiry that week.",
+      "recommended_action": "Immediately reconcile the packet and text templates with anesthesia's actual protocol and re-issue corrected instructions to all patients with upcoming procedures."
+    },
+    {
+      "theme": "Clinical red flags not escalated",
+      "description": "Staff move past patient-reported warning symptoms without clinical escalation or red-flag counseling, in contrast to calls where escalation was done correctly.",
+      "call_ids": [
+        "C03",
+        "C12",
+        "C14",
+        "C15"
+      ],
+      "evidence": "C03 possible DVT signs (calf pain, swelling, warmth) managed with elevation advice only; C12 insulin-dependent diabetic guessed doses during prep with no guidance; C14 patient skipping BP medication every other day for financial reasons was not addressed; C15 technician cleared combining alprazolam with zolpidem without pharmacist review.",
+      "recommended_action": "Mandate nurse escalation or warm-transfer protocols whenever callers report red-flag symptoms or medication safety concerns during non-clinical calls."
+    },
+    {
+      "theme": "Confusing, misrouting phone menu",
+      "description": "Callers across multiple call types report that IVR menu options route them somewhere unexpected, forcing them to press 0 repeatedly to reach a live agent.",
+      "call_ids": [
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C07"
+      ],
+      "evidence": "C02 option 2 sent caller somewhere odd; C03 and C04 option presses misrouted with 0 pressed to reach an agent; C05 option 3 misrouted; C07 option 4 misroutes.",
+      "recommended_action": "Audit and fix the IVR routing map for options 2, 3, and 4 and test with realistic caller scenarios."
+    },
+    {
+      "theme": "Agent IT and system friction",
+      "description": "Agents routinely battle slow systems, forced 30-day password resets, idle-time logouts mid-call, dead headsets, and glitchy hardware, slowing calls and risking errors.",
+      "call_ids": [
+        "C01",
+        "C03",
+        "C08",
+        "C12",
+        "C15",
+        "C16",
+        "C19"
+      ],
+      "evidence": "C01 four non-integrated screens, 30-day password resets, slow systems; C03 screen logged out mid-call and dead mouse battery; C08 glitchy headset; C12 two-minute idle logout and headset issues; C15 logged out mid-call and 30-day password changes; C16 recurring headset issues; C19 forced password change and slow system.",
+      "recommended_action": "Escalate the systemic IT ticket covering password policy, session timeouts, and hardware replacement rather than leaving issues with individual IT 'looking into it' requests."
+    },
+    {
+      "theme": "Outdated contact information on file",
+      "description": "Old phone numbers and email addresses on file cause patients to miss appointment reminders and appointment-change notifications.",
+      "call_ids": [
+        "C01",
+        "C06",
+        "C16"
+      ],
+      "evidence": "C01 phone ending 8802 was outdated and replaced; C06 reminder texts went to an old phone so the patient missed the appointment; C16 appointment change notification went to an outdated email, leaving the patient with wrong time and location.",
+      "recommended_action": "Add a standard contact-info confirmation step to every inbound and outbound call and re-verify contact details before any appointment change is communicated."
+    }
+  ]
+}

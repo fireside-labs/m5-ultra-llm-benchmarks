@@ -1,0 +1,106 @@
+{
+  "themes": [
+    {
+      "theme": "Incorrect or contradictory information",
+      "description": "Agents repeatedly give wrong or conflicting information about patient status, copays, appointment locations, due dates, network status, and compliance terms.",
+      "call_ids": [
+        "C01",
+        "C02",
+        "C06",
+        "C08",
+        "C10",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "evidence": "Wrong new-patient status, incorrect copay, incorrect late-fee reversal, wrong appointment location, conflicting apixaban hold, wrong PA denial, wrong network status, and wrong BAA guidance.",
+      "recommended_action": "Require agents to verify key facts in the system and read back critical details before ending the call."
+    },
+    {
+      "theme": "Call routing and transfer failures",
+      "description": "Calls are frequently misrouted, stuck in long holds, or returned to menus, delaying care, billing, and pharmacy support.",
+      "call_ids": [
+        "C02",
+        "C03",
+        "C05",
+        "C07",
+        "C08",
+        "C11",
+        "C14"
+      ],
+      "evidence": "Billing instead of pharmacy, 29-minute pharmacist hold, 19-minute nurse hold with technical issues, failed payer transfer, long referral hold, IVR misrouting, and transfer to appointments instead of coding.",
+      "recommended_action": "Audit IVR paths, transfer queues, and hold times, and provide direct routing for common requests."
+    },
+    {
+      "theme": "Privacy and identity verification failures",
+      "description": "Agents disclose protected or account information before verification or share confidential details without proper authorization.",
+      "call_ids": [
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C14"
+      ],
+      "evidence": "PHI disclosed to unverified third party, account email disclosed and changed before verification, mental-health medication disclosed to payer, confidential adolescent visit disclosed to parent, and account details discussed before verification.",
+      "recommended_action": "Enforce verification before disclosure and require explicit authorization for sensitive or third-party information."
+    },
+    {
+      "theme": "Billing and charge confusion",
+      "description": "Customers encounter unexpected or incorrect charges due to system bugs, duplicate subscriptions, pending holds, and coding or statement errors.",
+      "call_ids": [
+        "C02",
+        "C04",
+        "C06",
+        "C12",
+        "C14"
+      ],
+      "evidence": "No-show fee and copay confusion, duplicate $125 pending hold, late fees charged before due dates, duplicate $49 subscriptions, and incorrect coding/statement date causing a $1,284 dispute.",
+      "recommended_action": "Review billing system logic, subscription duplication controls, and coding/statement validation before customer-facing charges."
+    },
+    {
+      "theme": "Clinical safety and contradictory medical advice",
+      "description": "Clinical staff provide unsafe or conflicting instructions about medications, activity, and post-procedure care.",
+      "call_ids": [
+        "C03",
+        "C10",
+        "C11"
+      ],
+      "evidence": "Technician gave unsupervised low-BP reassurance and missed ibuprofen review, nurse changed apixaban hold timing, and nurse recommended a bath despite no-tub-bath instructions while not warning about acetaminophen limits.",
+      "recommended_action": "Require pharmacist or nurse escalation for clinical questions and use standardized post-procedure medication and activity checklists."
+    },
+    {
+      "theme": "Prior authorization fax and transmission failures",
+      "description": "Prior authorization requests are sent to retired or incorrect payer fax numbers or otherwise not received, delaying needed medications and procedures.",
+      "call_ids": [
+        "C03",
+        "C07",
+        "C13"
+      ],
+      "evidence": "Lisinopril PA not received despite two faxes, MRI PA sent to retired Halvard fax, and inhaler PA sent to retired fax causing urgent exacerbation and complaint.",
+      "recommended_action": "Immediately update payer fax/portal directories, audit recent PA submissions, and confirm receipt for urgent requests."
+    },
+    {
+      "theme": "Unauthorized commitments and policy violations",
+      "description": "Agents or managers make financial or policy commitments beyond their authority or state incorrect policy outcomes.",
+      "call_ids": [
+        "C02",
+        "C13",
+        "C14"
+      ],
+      "evidence": "$95 fee waived without required lead approval, manager promised urgent-care bill coverage despite committee requirement, and billing rep incorrectly said disputes would not prevent collections.",
+      "recommended_action": "Reinforce approval thresholds and require agents to state only verified policy outcomes."
+    },
+    {
+      "theme": "Missed follow-up commitments",
+      "description": "Agents promise callbacks, direct lines, transfers, or clinical reviews that are not completed during or after the call.",
+      "call_ids": [
+        "C03",
+        "C05",
+        "C13",
+        "C14"
+      ],
+      "evidence": "Pharmacist review of ibuprofen not addressed, promised direct line not provided, nurse failed to call back about PA, and promised coding transfer reached appointments.",
+      "recommended_action": "Track promised actions in the CRM and require closure notes or automatic follow-up tasks before call wrap-up."
+    }
+  ]
+}

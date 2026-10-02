@@ -1,0 +1,39 @@
+## Variables
+
+1. **Actual risk differential vs. the DPA** — The CISO's "sensitive data" claim is the stated reason for the change, but a signed DPA may already cover the exposure. Measure: a gap analysis of the DPA against regulatory obligations (HIPAA, state insurance regs, GDPR) and a concrete list of threat scenarios the cloud creates that on-prem eliminates, with likelihood and impact.
+
+2. **Engineering capacity** — Two engineers maintain the integration today; running an on-prem GPU cluster (model updates, monitoring, failover, retraining, security patching) is a materially larger operational burden that could break the pipeline. Measure: current engineer utilization, what breaks if one leaves, and a realistic hiring plan and timeline.
+
+3. **TCO including peak provisioning** — 40k documents/month with quarter-end peaks. Cloud API is per-token opex with elastic scaling; on-prem requires GPU capex sized for peak or a cloud fallback anyway. Measure: current API spend, projected hardware/power/cooling/staff costs, and the peak-to-average volume ratio.
+
+4. **Output quality parity** — Open-weight models may underperform on medical summarization and decision-letter drafting; errors in claim decisions have direct financial and legal consequences. Measure: a blind benchmark of both models on a sample of real (de-identified) documents, scored by claims professionals.
+
+5. **Compliance and customer contracts** — Insurers may have requirements beyond Northfold's DPA; some may accept cloud, some may not. Measure: review all customer contracts and ask the insurers directly what they require for PHI processing.
+
+6. **Operational reliability** — The cloud API has a vendor SLA; on-prem needs its own redundancy and failover or the claims pipeline stops at quarter-end. Measure: required uptime, blast radius of an outage, and the current cloud API SLA vs. what on-prem could realistically deliver.
+
+7. **Data residency and jurisdiction** — Where the cloud vendor processes data matters; a DPA may not solve cross-border issues. Measure: vendor data center locations and the sub-processor list.
+
+8. **Model update and maintenance cadence** — Commercial APIs improve continuously; open-weight models require manual version upgrades, re-validation, and prompt re-tuning. Measure: how often the vendor ships improvements that matter, and how often Northfold would need to update an on-prem model.
+
+9. **Vendor dependency and contract risk** — The cloud API is a dependency, but so are the GPU hardware vendor and the open-weight model maintainer. Measure: contract terms, price escalation clauses, and exit options on both sides.
+
+10. **Security posture of Northfold's own data center** — Running a GPU cluster in-house may be less secure than the cloud vendor's hardened infrastructure. Measure: a current security audit of Northfold's data center, patching cadence, and access controls.
+
+11. **Migration and transition cost** — Rebuilding prompts, pipelines, evaluation harnesses, and testing takes engineering time and risks regression. Measure: an engineering estimate in person-weeks and the regression risk to the live claims process.
+
+12. **Audit and explainability requirements** — Insurance decisions must be explainable and auditable; both options can log, but on-prem may offer more control. Measure: current logging/audit requirements and whether the cloud API's logging meets them.
+
+## Top 3 priorities
+
+1. **Actual risk differential** — It is the stated reason for the change; if the DPA already covers the exposure, the entire proposal is moot and the CEO can stop the discussion early.
+2. **Engineering capacity** — Two engineers is the binding constraint; an on-prem LLM operation could consume them entirely and break the claims pipeline, regardless of any other benefit.
+3. **TCO including peak provisioning** — The economic crux: cloud scales elastically, on-prem does not, and quarter-end peaks force over-provisioning that may erase any cost advantage.
+
+## What would change my mind
+
+- If the DPA gap analysis reveals the cloud vendor can use the data for model training or passes it to sub-processors without adequate controls, on-prem becomes clearly justified.
+- If a benchmark shows an open-weight model matches or beats the commercial API on Northfold's actual documents **and** the team can hire at least two more engineers, the on-prem case strengthens substantially.
+- If the cloud API's cost trajectory is steep (volume growth, price increases) and on-prem TCO is lower even when sized for peak, the economics flip.
+- If insurers explicitly require on-prem hosting or refuse to accept the cloud DPA, the decision is made for Northfold regardless of cost or effort.
+- If the cloud vendor has had a breach or the DPA is not enforceable in the relevant jurisdiction, that alone would justify moving.

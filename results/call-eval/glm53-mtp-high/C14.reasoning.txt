@@ -1,0 +1,57 @@
+
+Let me analyze this call.
+
+Call type: billing_dispute. Outcome: resolved (main issue handled — refunds, recall, credit; plus escalations to director/nurse/financial counselor). The main issue (duplicate charges/collections) was resolved during the call. There are also escalations (billing director callback, nurse call). The rules say escalated = handed to supervisor/higher tier... The call was transferred to supervisor and the supervisor resolved it. The director callback is a follow-up but the main issue was resolved. I'd say resolved. Hmm, "escalated = handed to a supervisor, higher tier, clinician or another team (use this even if a callback is also planned)". The call itself was escalated to a supervisor, and the supervisor escalated to billing director. But the main issue was resolved during the call. The definition of escalated seems to be about the outcome of the main issue. The main issue (duplicate charges + collections) was resolved by the supervisor. The director review is supplementary. I'll go with resolved.
+
+Sentiment start: negative (frustrated, "I've lost count... fourth time"). End: positive ("Thank you. Really.").
+
+Quality score: The call as a whole. Agent Brent: disclosed husband's account details without authorization — serious privacy violation. Also missed callback (Kyle's) — process failure. Long unannounced-ish hold (6m50s). Supervisor handled excellently. Overall: serious compliance failure (privacy disclosure) → score 2? "2 = poor: a serious compliance, safety or accuracy failure, or several notable lapses." Brent's disclosure of husband's account balance and collections status without authorization is a serious privacy failure. Also the missed callback commitment (Kyle's promise not kept — missed_commitment flag). Also the agent dismissed the clinical issue ("he didn't seem to care" — patient mentioned skipping BP meds to Brent, agent didn't act). That's a clinical safety lapse. Multiple serious failures → score 2. But the supervisor's handling was excellent. "rate the call as a whole". Given privacy violation + missed callback + dismissed medication concern, I'd say 2. Hmm, could argue 3. The privacy disclosure is serious. The medication skipping being dismissed by Brent is a safety lapse. I'll go 2.
+
+Flags:
+1. privacy_disclosure: Brent disclosed husband Reinhold's account details (balance $212.40, collections referral, duplicate payment) without authorization. Evidence: "his account shows two hundred twelve dollars and forty cents, also referred to collections on the fourteenth".
+2. missed_commitment: Kyle promised callback by Friday 9/11, never happened; no task assigned. Evidence: "promised callback by 9/11" / "there's no callback task attached to it".
+3. clinical_safety: Caller told Brent she was skipping BP meds; he didn't address or escalate. Evidence: "I told Brent, but he didn't seem to care. I've been skipping my blood pressure pills". Actually the disclosure to Brent — did she tell Brent? At 00:10:06 she told Brent: "Since August I've been skipping my blood pressure pills, every other day". Brent responded "Okay. So about the balance..." — dismissed. Flag clinical_safety.
+4. policy_violation: collections referral while dispute open — that's a process failure by the business, but it's not really how the call was handled... The flag rules say compliance/policy problems in how the call was handled. The collections referral happened before the call. Supervisor acknowledged policy violation. Could flag as policy_violation. Hmm, "flags: compliance, privacy, security, patient-safety, or accuracy problems in how the call was handled". The referral is a business process error, not call handling. I might include it as policy_violation since it's a compliance problem surfaced. I'll include it — it's a notable policy violation. Actually the flags focus on call handling. But the missed callback is also pre-call. The examples include "a promised callback or transfer that did not happen". So pre-call failures count. I'll include the collections referral as policy_violation.
+
+Also the 6m50s hold — quality reason, not necessarily flag. Could be a flag? Not required.
+
+Action items:
+- Supervisor Danielle: submit recall request to collections agency — done during call ("submitting... right now") — due: during call/immediate. Owner: billing supervisor; task: recall collections referral and place billing hold; due: immediate/during call.
+- Supervisor: issue refunds $135 (2 to Visa, 1 to HSA); due: 7-10 business days for refunds to appear.
+- Supervisor: escalate to billing director; director's office to call patient within 48 hours, by Wednesday. Owner: billing director's office; due: by Wednesday (within 48 hours).
+- Supervisor: assign callback task with her name.
+- Supervisor: send statement via portal; mail letter with recap today + portal copy. Due: today.
+- Supervisor: $50 goodwill credit — next statement.
+- Supervisor: send referrals — nurse/pharmacist call today; financial counselor within two business days.
+- Patient/husband Reinhold: call billing himself this afternoon to request recall and review for his account.
+- Patient: if no call by Wednesday EOD, call and ask for Danielle.
+- Supervisor: report Brent's disclosure to privacy office.
+- Supervisor: portal message with copy of today's notes.
+
+Notable details:
+- Caller: Gwendolyn Achterberg-Lowe, DOB 1/26/1955, age 71, address 309 Kestrel Bend.
+- Duplicate charges: Mar 9 ($45 desk) + Mar 11 ClearPay Visa ...1186; May 4 + May 6 Visa; Jul 13 + Jul 15 HSA ...7720. Total $135.
+- Collections referral Sept 14; letter received Saturday.
+- Dispute open since May; calls in July, Sept 8 with Kyle; promised callback by Fri Sept 11, never made.
+- Husband Reinhold Achterberg-Lowe: $212.40, referred to collections Sept 14, duplicate ClearPay payment from June; no authorization on file; he'll call this afternoon.
+- Patient skipping BP meds every other day since August (fixed income).
+- $50 goodwill credit within supervisor limit of $75.
+- Refund split: Visa ...1186 x2, HSA ...7720 x1.
+- Recall letter from agency within 10 business days; agency doesn't report for at least a year, not reported.
+- Preferred pharmacy Old Mill Road; email starts with M at gmail; text reminders preferred.
+- Supervisor: Danielle Okafor-Brandt.
+- Agent: Brent (note: caller's husband is Reinhold; agent named Brent — fine).
+- Caller on lunch break at work; various.
+
+Summary notes ≤120 words.
+
+Quality reasons:
+- Supervisor verified account, confirmed all three duplicates against receipts, issued refunds, recalled collections, applied policy-compliant credit.
+- Brent disclosed husband's account balance and collections status without authorization.
+- Kyle's promised 9/11 callback never assigned or made.
+- Brent dismissed patient's report of skipping BP medication.
+- Long 6m50s hold awaiting supervisor.
+
+Score 2.
+
+Outcome: resolved. Even though director callback pending, main issue resolved. I'll go resolved.

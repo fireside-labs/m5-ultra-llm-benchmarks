@@ -1,0 +1,112 @@
+
+
+{
+  "call_type": "no_show_followup",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Verified patient identity before most PHI and appropriately escalated fasting glucose 240 to nurse.",
+    "Rebooked missed visit, updated insurance, and arranged strips and earlier nurse follow-up.",
+    "Disclosed diabetes/A1c appointment details to an unverified third party before verification.",
+    "Promised direct line was not provided, and transfer hold was very long with technical issues."
+  ],
+  "flags": [
+    {
+      "type": "privacy_disclosure",
+      "description": "The care coordinator disclosed the patient's diabetes appointment and A1c recheck details to an unverified third party before patient verification.",
+      "evidence": "I'm calling for Harlan about his missed diabetes appointment on Tuesday, the A1c recheck with Dr. Ruiz-Pakula. Is he around?"
+    },
+    {
+      "type": "missed_commitment",
+      "description": "The care coordinator promised to provide a direct line to avoid the billing menu but did not provide it during the call.",
+      "evidence": "before we hang up I'll give you the direct line so you don't get stuck in billing again."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "care coordinator",
+      "task": "Send appointment confirmation text to patient's cell number 555-0191.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "care coordinator",
+      "task": "Send appointment reminder text two days before the October 6 visit.",
+      "due": "two days before October 6"
+    },
+    {
+      "owner": "care coordinator",
+      "task": "Update insurance information to Halvard Health Plan member ID H220846, group WHS9110.",
+      "due": "during call"
+    },
+    {
+      "owner": "care coordinator",
+      "task": "Provide direct line to patient to avoid billing menu.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "nurse",
+      "task": "Send TrueStep strips and lancets to Ostrander Millbrook.",
+      "due": "today"
+    },
+    {
+      "owner": "nurse",
+      "task": "Schedule nurse visit for Monday, September 21 at 8:00 a.m.",
+      "due": "during call"
+    },
+    {
+      "owner": "patient",
+      "task": "Check blood glucose twice daily, upon waking and before main meal, and write down number and time.",
+      "due": "ongoing until nurse visit"
+    },
+    {
+      "owner": "patient",
+      "task": "Seek urgent care or ER same day if glucose is over 300 or if vomiting, belly pain, confusion, or shortness of breath occurs.",
+      "due": "same day if red flags occur"
+    },
+    {
+      "owner": "patient",
+      "task": "Call nurse line if unsure about symptoms or readings.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "patient",
+      "task": "Attend nurse visit Monday, September 21 at 8:00 a.m. at Millbrook and bring glucose log or meter.",
+      "due": "2026-09-21 08:00"
+    },
+    {
+      "owner": "patient",
+      "task": "Get A1c lab draw at Millbrook lab any morning before October 6; no appointment needed.",
+      "due": "before 2026-10-06"
+    },
+    {
+      "owner": "patient",
+      "task": "Attend Dr. Ruiz-Pakula appointment Tuesday, October 6 at 8:15 a.m. at Millbrook second floor.",
+      "due": "2026-10-06 08:15"
+    },
+    {
+      "owner": "patient",
+      "task": "Take metformin with first meal and big meal, do not skip on days off, and discuss night-shift schedule with Dr. Ruiz-Pakula.",
+      "due": "ongoing"
+    }
+  ],
+  "summary_notes": "Outbound no-show follow-up for Harlan Brecken-Ayodele. Identity verified. Missed Sep 15 A1c recheck; no-show fee waived per first-miss policy. Rebooked Dr. Ruiz-Pakula Tue Oct 6 8:15 a.m. at Millbrook; A1c lab active, no fasting. Insurance updated to Halvard member H220846, group WHS9110. Patient reported fasting glucose 240 and no test strips; escalated to nurse. Nurse sent TrueStep strips/lancets to Ostrander Millbrook, gave red-flag instructions, and scheduled nurse visit Mon Sep 21 8 a.m. Patient to log glucose twice daily. Initial PHI disclosed to unverified third party; promised direct line not provided.",
+  "notable_details": [
+    "Patient verified: Harlan Brecken-Ayodele, DOB February 2, 1978, 44 Tannery Row Apt 2.",
+    "Missed appointment was Tuesday at 9:00 a.m. with Dr. Ruiz-Pakula for endocrinology follow-up and A1c recheck.",
+    "No-show fee of $40 was waived automatically because it was the first missed visit in 12 months.",
+    "Rebooked appointment corrected to Tuesday, October 6 at 8:15 a.m. with Dr. Ruiz-Pakula at Millbrook second floor; agent initially read 8:50 before correcting to 8:15.",
+    "A1c lab order is active, no appointment needed, and no fasting is required for A1c by itself.",
+    "Insurance updated to Halvard Health Plan, member ID H220846, group WHS9110; patient switched through warehouse in August.",
+    "Best contact number corrected to cell 555-0191; current number is house/roommate phone.",
+    "Fasting glucose corrected from 140 to 240 this morning.",
+    "Patient has been out of test strips since the weekend; meter is TrueStep Mini.",
+    "Nurse sent TrueStep strips, 100 count, and lancets to Ostrander Millbrook.",
+    "Nurse visit scheduled for Monday, September 21 at 8:00 a.m.; patient should bring log or meter.",
+    "Red-flag instructions: glucose over 300 or vomiting, belly pain, confusion, or shortness of breath requires urgent care or ER same day.",
+    "Patient works nights, schedule flips, takes metformin twice daily mostly, no insulin, and takes blood pressure medication.",
+    "Care coordinator promised a direct line to avoid billing menu but did not provide it.",
+    "Transfer to nurse line involved a long hold of approximately 19 minutes and technical issues."
+  ]
+}

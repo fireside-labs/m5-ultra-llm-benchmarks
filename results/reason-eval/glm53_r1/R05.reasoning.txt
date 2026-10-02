@@ -1,0 +1,287 @@
+
+Let me think about this carefully. The task: Harlow Valley Health, non-profit health system, wants ONE new outpatient clinic in a metro of ~900,000. Services: primary care, walk-in urgent care, basic imaging (X-ray), lab draw station. Board chooses between three sites next quarter. They ask which variables the site decision must take into account. Everything else about candidates is open; reason from general principles.
+
+I'm a senior generalist advisor steering others' work: name the variables that actually drive the outcome, spot what's missed, separate real problems from appearances, prioritise ruthlessly, find the crux. Reason from facts given plus general reasoning; when a number isn't given, say so and state assumption. Concrete and specific, not generic. Fewer, sharper points. Most important first.
+
+Sections required, in order:
+1. ## Variables — numbered list, at most 12 variables, most important first. For each: one line on why it matters here, and how to measure/check it.
+2. ## Top 3 priorities — exactly 3 numbered items: variables that should dominate, most important first.
+3. ## What would change my mind — 2–5 bullets: findings that would flip which site favoured or change top priorities.
+
+Let me think about the substance.
+
+Key strategic facts:
+- Non-profit health system → mission matters, community benefit, payer mix (Medicaid/uninsured) has financial implications; nonprofit may have obligations or strategic interest in serving underserved populations; also charity care/community benefit reporting.
+- Service mix: primary care + urgent care + imaging + lab. Primary care is a longitudinal, relationship-driven service — patients choose near home/work. Urgent care is episodic, convenience-driven — visibility, drive-by traffic, hours, parking matter, and competitive overlap matters. Imaging/lab are ancillary — they follow from primary care referrals and urgent care volume; low marginal value of standalone location.
+- The system already has a hospital (Site C is 2 miles from it) and at least one existing primary-care clinic (1 mile from Site C). So Site C is in the system's existing catchment — risk of cannibalisation of its own PC clinic 1 mile away, plus competitor urgent care across street. That's a big deal: cannibalisation means the new clinic doesn't add volume, just splits it; competitor across street means urgent care share fight.
+- Site A: fast-growing suburb, highway interchange, ample parking, lowest rent per sq ft. Growth means future demand; but "fastest-growing" may also attract competitor capacity; retail center = visibility for urgent care; but is there primary care shortage there? Rent per sq ft is the wrong metric — total occupancy cost and cost per patient visit matter; also fit-out costs for medical use (retail conversion: plumbing, HVAC, accessibility) — "lowest rent per sq ft" can be misleading.
+- Site B: older dense neighborhood, two bus lines, many uninsured/Medicaid residents, moderate rent, major renovation needed. Mission alignment and likely underserved access; but payer mix: Medicaid reimbursement often below cost, uninsured = charity care; financial sustainability question. Renovation = capex, time, risk (older buildings: hazmat, structural, code). But dense neighborhood + transit = good for primary care access; urgent care demand may be lower or different (ED diversion actually — urgent care can divert low-acuity from the ED; wait, the hospital is presumably somewhere; if B is far from the hospital, less ED diversion synergy).
+- One clinic only: the decision is about where the marginal clinic adds most — incremental demand, not total demand. Cannibalisation matters.
+
+Variables that actually drive the outcome:
+
+1. Payer mix / net revenue per visit by site catchment. This is the single biggest financial driver for a non-profit: commercial vs Medicare vs Medicaid vs uninsured mix determines net revenue per visit and whether the clinic covers its costs. Measure: ZIP-level payer mix from census/state all-payer claims data, system's own patient data; model net revenue per visit per site.
+
+2. Incremental (net-new) demand vs cannibalisation — overlap with existing hospital/PC clinic 1 mile from Site C. Measure: patient-origin analysis (drive-time overlap of existing clinics' catchments), estimate % of projected volume already served.
+
+3. Competition — competitor urgent care across street from C; market share, urgent care density, PCP supply (shortage?). Measure: competitor locations, market share data, HRSA HPSA scores, PCP-to-population ratios.
+
+4. Access/transportation for target patients — transit, drive times. Primary care needs proximity to home; urgent care needs convenience. Measure: drive-time isochrones, transit GTFS analysis, % of catchment within 15 min.
+
+5. Total occupancy cost over lease term, not rent/sq ft: fit-out/capex (B's major renovation; A's retail-to-medical conversion), TI allowances, operating costs, and amortised per-visit cost. Measure: full pro forma: rent + fit-out amortised + opex / projected visits.
+
+6. Demand size & growth — population, growth rate, age distribution, projected visits. A: fastest-growing. Measure: census projections, building permits, visit forecasting.
+
+7. Capacity/throughput fit of the building — size, floor plate, exam-room count, zoning/permitting for medical use (retail center may need use permits; bank building renovation). Measure: space program fit (how many exam rooms), zoning check, permit timelines.
+
+8. Staffing availability — can you recruit PCPs, MAs, radiology techs to that location? Measure: labor market data, commute patterns.
+
+9. Mission / community benefit & equity — non-profit: serving Medicaid/uninsured (B) supports community benefit obligations and possibly grant/340B? Actually 340B relates to pharmacies/clinics serving Medicaid populations — could be relevant but maybe too deep. Community benefit reporting, payer mix goals. Measure: mission fit scoring, community health needs assessment (CHNA) alignment — nonprofit hospitals must do CHNA; clinic siting can align.
+
+10. Urgent care visibility/parking/retail co-tenancy — urgent care is convenience retail; A's highway interchange and parking help; B's transit helps primary care but urgent care users often drive. Measure: traffic counts, co-tenant mix, signage rights.
+
+11. Time-to-open / disruption risk — C ready to occupy (fastest revenue), B major renovation (delay, cost overrun risk), A fit-out. Measure: schedule with contingency, NPV of delayed revenue.
+
+12. Referral network effects — proximity to hospital (C) enables lab/imaging handoff, provider coverage, shared call; but also cannibalisation. Hmm, this is double-edged with variable 2. Maybe fold into cannibalisation/synergy.
+
+13. Payer/network requirements — insurance network adequacy rules may require access standards; Medicaid managed care networks. Maybe too deep.
+
+14. ED diversion — urgent care near the hospital can divert low-acuity ED visits; B far away? We don't know where the hospital is relative to A/B. C is 2 miles from hospital — urgent care there could cannibalise ED? Actually urgent care across from competitor... The ED diversion value: low-acuity ED visits are a cost center-ish; urgent care can capture them at lower cost. But 2 miles from hospital, urgent care might cannibalise ED revenue? Non-profit — ED diversion is often a system goal. Hmm, but I don't know where the hospital is relative to A and B. Keep general.
+
+Let me also think: what's the crux? The crux is probably: is this clinic primarily a financial growth vehicle (A), a mission/access play (B), or a network-density play (C)? And the board hasn't stated the objective. The single most important variable is the objective function: what is the clinic for? But they asked for variables of the site decision — I could include "strategic objective/role of the clinic" as a variable? Hmm, that's more of a framing point. The instructions say name variables that actually drive the outcome. I think I can put payer mix first, or strategic role first. Actually for a site decision among three sites, the variables should be measurable site-level things. But the #1 thing driving the outcome is arguably the definition of success (financial sustainability vs access vs growth). I could include it as a variable: "Definition of success / strategic role" — but that's a bit meta. Alternatively, put "net revenue per visit / payer mix" first since it dominates feasibility.
+
+Let me think about what a sharp senior advisor would say. The trap in the real-estate framing: they described sites in real-estate terms (rent/sq ft, parking, building condition) when the decision is a healthcare demand/strategy decision. The variables that actually drive outcome: payer mix, incremental demand, competition, access, total cost of occupancy, fit-out, staffing, growth. Also "lowest rent per sq ft" is a vanity metric — cost per visit is what matters.
+
+Also: X-ray and lab draw are ancillary — they don't drive site choice much; they ride on primary/urgent volume. So don't overweight them. Maybe worth a line: the service mix means the site must serve two different demand logics (longitudinal primary care near home vs episodic urgent care near traffic/retail). That's a real tension: B is great for primary care (transit, dense, underserved), A is great for urgent care (highway, parking, retail visibility). C is... mediocre at both and cannibalises. That's a nice crux insight: the service mix pulls toward different sites, so the board must decide which service the site is really for — or weight them.
+
+Urgent care economics: urgent care is largely cash/commercial/self-pay? Actually urgent care payer mix includes commercial, some Medicare, self-pay; Medicaid varies. Primary care in Medicaid-heavy area = low margins but possible FQHC-like economics; non-profit may get grants, enhanced Medicaid rates? Not necessarily. Keep general: Medicaid reimbursement typically below commercial; uninsured = charity. State assumption: assume Medicaid rates near or below cost, commercial above.
+
+Also: A is "fastest-growing part of region" — but growing suburbs also attract competitors; first-mover advantage matters. And retail center next to highway interchange: great visibility for urgent care; primary care patients may not like retail strip? Actually retail-based clinics are common. Ample parking helps.
+
+B: major renovation — big risk variables: unknowns behind walls (asbestos, structure), historical? former bank — could have vault, lobby; renovation cost could blow up. But moderate rent + owned? No, rent. Also B serves Medicaid/uninsured — for a non-profit, this could be mission-central and could support community benefit narrative, grants, and possibly better political/community goodwill. But financial sustainability: need to model whether volume × Medicaid rate covers cost. Dense neighborhood = high visit density potential; two bus lines = access for zero-car households.
+
+C: ready to occupy = fastest to revenue, lowest capex; but 1 mile from own PC clinic = cannibalisation; competitor urgent care across street = share fight in urgent care; 2 miles from hospital = staff sharing, on-call, lab courier synergy. Also C is in system's home turf — maybe defensive: keep competitors out? If competitor urgent care across street is taking share, co-locating could defend. Hmm — but building a duplicate clinic 1 mile from your own is odd unless the existing clinic is full. Need to check: existing clinic capacity/utilisation. If the existing PC clinic is at capacity, C adds capacity in a proven demand zone; if not, it cannibalises.
+
+Measurement approaches (concrete):
+- Payer mix: use US Census/ACS insurance data by ZIP; state all-payer claims (APCD) if available; internal patient-origin data (which ZIPs do our patients come from and what are their payers?).
+- Incremental demand: patient-origin mapping, drive-time isochrones (e.g., 10-min), overlap with existing sites; estimate leakage (residents going elsewhere) via claims data.
+- Competition: count of urgent cares/PCPs within 10-min drive; market share from APCD; Google review volumes as proxy.
+- Access: drive time from population-weighted centroids; transit GTFS headways; % households without a car (ACS).
+- Cost: full occupancy cost = base rent + NNN/opex + amortised fit-out over lease term; divide by forecast visits → cost per visit. Check zoning/use permits.
+- Demand size: ACS population, building permits, school enrollment trends, employer announcements.
+- Building fit: space program (e.g., need ~X exam rooms for Y visits; rule of thumb: a primary care provider needs ~3 exam rooms; visits per exam room per year ~2,000–2,500? I should avoid fake precision; state assumption). Floor plate shape, plumbing for lab, X-ray shielding (lead lining) requirements, ADA.
+- Staffing: commute-time analysis for staff, local labor market for MAs/radiology techs.
+- Time to open: permitting timelines, landlord approvals, construction schedule; NPV of 6–12 month delay.
+- Mission/CHNA: align with system's Community Health Needs Assessment; quantify charity care expectation.
+- Urgent care visibility: traffic counts (AADT), signage rights, co-tenants, evening/weekend hours viability.
+
+Now, at most 12 variables. Let me draft the list, most important first:
+
+1. Net revenue per visit (payer mix) in each catchment — determines whether the clinic is financially viable; Medicaid/uninsured-heavy B vs commercial-heavy A. Measure: ACS insurance by ZIP + internal patient-origin payer data + model net revenue per visit at assumed rates (state assumption: Medicaid below commercial).
+
+2. Incremental vs cannibalised demand — a clinic 1 mile from an existing PC clinic mostly moves patients, not adds them. Measure: patient-origin drive-time overlap; % of forecast visits already served by HVH.
+
+3. Competitive intensity for urgent care — urgent care is a share fight; across-street competitor at C, and growing suburbs attract entrants at A. Measure: competitor count within 10 min, share estimates, hours/brand strength.
+
+4. Total occupancy cost per projected visit (not rent/sq ft) — fit-out (B renovation, A retail conversion, C ready) dominates differences; amortise capex over lease. Measure: full pro forma per site ÷ forecast visits.
+
+5. Population size and growth within the primary service area — demand base; A fastest-growing; B dense. Measure: ACS counts + building permits/school enrollment as leading indicators; 10-min drive-time population.
+
+6. Physical access for the target patients (car vs transit) — primary care = proximity to home; zero-car households need transit. Measure: drive-time isochrones; GTFS transit times; ACS % no vehicle.
+
+7. Building capacity & medical fit-out feasibility — exam-room count from floor plate, X-ray lead shielding, lab plumbing, ADA; zoning/use approval for medical in retail center (A) and renovation unknowns (B). Measure: space program test-fit, zoning code check, environmental/structural assessment of B.
+
+8. Time to opening and revenue delay — C opens now; B renovation could slip a year; NPV impact. Measure: schedule with contingency; NPV of delayed revenue.
+
+9. Staffing/recruitment feasibility — providers and MAs must accept the location; techs for X-ray. Measure: commute analysis, local wage/labor availability, candidate survey.
+
+10. Urgent-care siting physics: visibility, parking, hours traffic — urgent care is convenience retail; A's interchange + parking; B's transit works for primary care but less for urgent. Measure: AADT counts, signage rights, parking ratio, co-tenancy.
+
+11. Mission/community-benefit alignment (non-profit) — CHNA priorities, access for underserved; B scores high; affects grants, reputation, maybe 340B eligibility. Measure: CHNA alignment scoring; grant/340B eligibility check (state assumption: 340B possible if clinic qualifies).
+
+12. Network/synergy with existing campus (hospital 2 mi from C) — shared call, lab courier, provider coverage, ED diversion — but weigh against cannibalisation. Measure: operational overlap assessment; courier times; cross-coverage plan.
+
+That's 12. Good. But maybe I should also consider "strategic role of the clinic / definition of success" — I could weave it into the intro or top 3. The section constraints: Variables list max 12; Top 3 exactly 3; What would change my mind 2–5 bullets.
+
+Hmm, is payer mix #1 or is incremental demand #1? For a non-profit, financial viability is a constraint, mission is the purpose. The board asked "which variables must the decision take into account" — I think the sharpest ordering: (1) payer mix/net revenue per visit because it's the biggest swing in economics across these three specific sites (B Medicaid-heavy vs A commercial suburb), (2) cannibalisation because C is nearly disqualified by it unless existing clinic is full, (3) competition. Actually, let me think about which is truly most important for choosing among THESE three.
+
+The three sites differ most on: payer mix (B vs A/C), cannibalisation/competition (C bad on both), capex/time (B bad, C good, A medium), growth (A good), access/modality fit (B primary care, A urgent care).
+
+The single variable with the widest spread across sites is probably payer mix (net revenue per visit could differ 2–3× between a Medicaid-heavy urban catchment and a commercial suburb). Cannibalisation could take C's incremental volume near zero. So both are top. I'd put payer mix #1, incremental demand #2, competition #3... or incremental demand #1? Hmm.
+
+Actually, think: the question is where to put ONE clinic. The demand-side triangle: how many net-new visits (incremental demand), at what revenue per visit (payer mix), against what competition (share capture). Then supply-side: cost per visit, fit-out, time, staffing. I'll order: 1) net revenue per visit/payer mix; 2) incremental demand vs cannibalisation; 3) competition. Then 4) total cost per visit; 5) population/growth; 6) access; 7) building fit; 8) time to open; 9) staffing; 10) urgent care visibility/parking; 11) mission alignment; 12) campus synergy.
+
+Wait — should mission alignment be higher for a non-profit? The board of a non-profit cares about mission, but the site decision must be financially informed; mission alignment is a tiebreaker/weight. I'll keep it at 11 but flag in top 3 or change-mind that if the board's objective is access/mission, B rises. Actually the "What would change my mind" section can carry that: if the board states the clinic's purpose is access for underserved (CHNA priority), B becomes favourite despite economics. That's a legitimate mind-changer.
+
+Top 3 priorities: exactly 3. I'd say:
+1. Net revenue per visit (payer mix) — because the spread across these catchments is the largest single economic swing; B may not cover cost without subsidy; decide consciously whether the board will subsidise mission.
+2. Incremental (net-new) visits vs cannibalisation — kills C unless existing clinic is full; A and B likely net-new.
+3. Total cost per visit including fit-out and time-to-revenue — rent/sq ft is a vanity metric; B's renovation and A's conversion could invert the "lowest rent" claim; C's ready building is its main virtue.
+
+Hmm, but competition is also crucial. Maybe fold competition into #2 (net-new demand = demand minus overlap minus competitive share capture). Actually incremental demand inherently includes competition (share capture). I could define priority 2 as "net-new visits: catchment demand × capture rate, net of cannibalisation and competition." Then top 3: economics per visit, net-new volume, all-in cost per visit. That's clean: volume × margin − cost. Actually that's the whole business case: visits × net revenue/visit − cost/visit. Good crux framing: "the decision is which site maximises (net-new visits × net revenue per visit) − all-in cost per visit, subject to the mission weight the board assigns."
+
+Alternatively top 3 could be: 1) strategic objective definition... no, keep it concrete.
+
+Let me reconsider: is "access/transportation" more important than competition? For primary care, access drives utilisation; for B's Medicaid population, transit access is existential (many no-car households). But access is embedded in demand capture. I'll keep it in the list at 6 and mention in change-mind bullets.
+
+What would change my mind (2–5 bullets):
+- If the existing PC clinic 1 mile from C is at/over capacity with wait times, C stops being cannibalisation and becomes the cheapest fast capacity add — C rises sharply (ready building, campus synergy). Conversely if that clinic has open panels, C is near-disqualified.
+- If the board defines success as access/mission (CHNA priority on underserved access) and is willing to subsidise ~$X/yr, B becomes favourite; quantify the subsidy via the pro forma.
+- If B's renovation assessment comes back with structural/hazmat costs that push all-in cost per visit above A's, or permitting pushes opening beyond ~12 months (state assumption), B drops.
+- If A's catchment already has urgent-care/PCP entrants announced or the retail center can't get medical use approval/signage, A's first-mover advantage evaporates.
+- If payer-mix data shows the "uninsured/Medicaid" neighborhood actually has high Medicaid managed-care penetration with decent rates (state assumption: rates near cost), B's economics improve materially — check the actual Medicaid managed-care rates rather than assuming.
+
+That's 5 bullets; good. Maybe trim to 4-5.
+
+Also I should note the assumption flags: numbers not given — I must say so and state assumptions. E.g., "no visit forecasts or payer rates were given; I assume Medicaid reimburses materially below commercial and that the board has not yet set a subsidy tolerance." Also assumption about exam rooms/visit capacity — avoid fake numbers, or clearly label as assumptions.
+
+Also the request says "at most 12 variables" — I'll do 10–12. Each with one line why + how to measure. Keep each tight: "Why: ... Check: ..." Format could be "**Name.** Why ... Check ..." One line each — they said "one line on why it matters here, and how you would measure or check it." So each variable gets a compact line covering both. I'll use bold variable name, then a sentence with "Why:" and "Check:" clauses. Keep it genuinely one line-ish (maybe two clauses separated by an em dash or semicolon).
+
+Intro: The persona says look at whole problem before details. A short preamble (1-3 sentences) before Variables is fine — headings must be exactly as requested and in order; a brief intro before the first heading should be acceptable. The instruction: "use exactly the section headings the request asks for, in that order." It doesn't forbid a preamble. A short framing paragraph adds value: name the crux — the real-estate team described buildings; the decision is a demand/economics/mission decision; the service mix pulls toward different sites (primary care → B, urgent care → A, C is the default but cannibalises). Keep it to 2-3 sentences.
+
+Let me also double check the cannibalisation logic for C: "2 miles from existing hospital and 1 mile from one of its existing primary-care clinics." Yes — a new clinic offering primary care 1 mile from an existing HVH primary-care clinic will largely split the same catchment. Unless the existing clinic is full or the new one adds urgent care the PC clinic lacks (it does add urgent care + X-ray + lab). But the competitor urgent care across the street already serves urgent demand there. So C's incremental value = overflow capacity + maybe defensive positioning. That's the sharpest site-specific insight.
+
+A's risk: fastest-growing suburb attracts competitors; also check whether HVH already has presence there; retail center zoning for medical use (usually allowed but parking/hours OK); noise: X-ray in retail fine. Also highway interchange = 10-min drive-time catchment can be big. Retail co-tenancy drives urgent care footfall.
+
+B's risks: renovation capex unknown ("major renovation" stated), timeline, Medicaid rates, but dense + transit + underserved = high visit potential and mission fit; urgent care in such neighborhood can divert ED? Distance to hospital unknown — don't assume.
+
+Also lab draw + X-ray: these are attach services; their site logic follows primary/urgent. Don't let the real-estate team overweight X-ray shielding etc. beyond feasibility.
+
+One more variable candidate: "payer network adequacy / contracting" — insurance networks require the clinic be added; Medicaid managed care contracts. Probably fold into payer mix check. Skip.
+
+Another: "safety/perception" for B? Older dense neighborhood — safety perception affects staffing and patient choice; but that edges into stereotype; skip or fold into staffing. Skip.
+
+Another: "signage/visibility" folded into urgent care siting physics. Good.
+
+Another: "lease terms/flexibility" — escalation, renewal options, exclusivity (retail center might lease to a competitor clinic!). Ooh — co-tenancy risk: retail landlord could lease next door to a competing urgent care or pharmacy clinic. That's a real risk for A. Fold into #10 check: "lease exclusivity clauses." Nice concrete touch.
+
+Now, measurement specifics — keep them practical:
+1. Payer mix → ACS insured/uninsured by ZIP; internal patient-origin data by payer; model $/visit under stated assumption (Medicaid ≈ or below cost — flag as assumption to verify with actual contracts).
+2. Incremental demand → map 10-min drive-time catchments of existing sites vs candidates; % overlap; estimate net-new visits.
+3. Competition → inventory urgent care/retail clinics/PCP supply within 10 min; APCD or claims-based share if available; review volumes as proxy.
+4. All-in cost per visit → rent + NNN + amortised fit-out (B renovation, A medical conversion incl. lead-lined X-ray room, plumbing) over lease term ÷ forecast visits.
+5. Population & growth → ACS counts in isochrone; building permits, school enrollment, utility hookups as leading indicators.
+6. Access → drive-time isochrones; transit GTFS door-to-door times; ACS % zero-vehicle households.
+7. Building/zoning fit → test-fit space program (exam rooms, X-ray room with shielding, lab, waiting); zoning use approval for A; Phase I/structural survey for B.
+8. Time to open → permit + landlord consent + build schedule; NPV of each quarter of delay at forecast margin.
+9. Staffing → commute-time analysis for likely hires; local market for MAs/X-ray techs; recruitment survey.
+10. Urgent-care siting physics → AADT, signage rights, parking ratio, evening/weekend traffic, co-tenancy + exclusivity clause in lease.
+11. Mission/CHNA → map site against CHNA priority areas; quantify expected charity care/uncompensated cost; check grant or 340B eligibility (flag assumption).
+12. Campus synergy → courier/turnaround times to hospital lab, shared call/coverage, ED low-acuity diversion potential; weigh against #2.
+
+Ordering check: Is all-in cost per visit (#4) more important than population growth (#5)? Yes — cost certainty beats demand growth optimism. Is access (#6) above building fit (#7)? Arguably building fit is binary (if it doesn't fit, dead), but access drives demand. Keep as is. Actually maybe building fit should be higher because it's a feasibility gate: if B's building can't host X-ray/lab or A's zoning fails, the site dies. Feasibility gates often rank high. But the "most important first" should reflect impact on the decision; a gate that kills an option is important. Hmm. I'll keep access at 6 and fit at 7 but the change-mind bullets cover B's renovation risk and A's zoning. Fine.
+
+Actually, let me reconsider whether "time to open" (8) should outrank staffing (9). Yes, delay NPV is usually bigger than staffing nuance. Keep.
+
+Should I include a variable about "the board's objective / role of clinic"? I think the preamble can state the crux: the board hasn't said what the clinic is FOR (growth vs mission vs network density), and the service mix pulls toward different sites. That's the disagreement crux. Then the change-mind bullet about board objective covers it.
+
+Length: 12 variables × ~2 lines + 3 priorities + 5 bullets + short preamble. Reasonable, not bloated. The persona says fewer sharper points; 12 is the max allowed and each is distinct and site-relevant. Could trim to 10. Let me see if any are weak: #12 campus synergy — real but could fold into #2/#8. #11 mission — important for non-profit. #10 urgent care physics — distinct and site-relevant (A vs B). #9 staffing — real. I'll keep 12 but make each tight. Actually, maybe cut to 11 by merging campus synergy into the cannibalisation/competition discussion? No — synergy is the counterweight to cannibalisation for C; keep it, it's site-specific (C is 2 miles from hospital). Keep 12.
+
+Hmm, one more consideration: "at most 12" — I'll do exactly 12 but ensure each earns its place. Alternatively 10 for sharpness. Let me evaluate: variables 1-8 are clearly core. 9 (staffing), 10 (urgent care physics), 11 (mission), 12 (synergy) — all site-relevant. Keep 12. The instruction says don't pad lists; each of these is genuinely distinct and material. OK.
+
+Now the "one line" constraint: I'll format as:
+
+1. **Net revenue per visit (payer mix).** Why: ... Check: ...
+
+Each as a single bullet-ish numbered item with bold name. Keep why+check in one line each (semicolons). Good.
+
+Assumptions to state explicitly (persona: "when you need a number that is not given, say so and state your assumption"):
+- No payer rates, visit forecasts, or renovation costs given. Assume Medicaid reimburses at or below cost and commercial above it (typical, must be verified against HVH's managed-care contracts).
+- Assume the existing PC clinic near C has normal capacity (unknown) — flagged as the key unknown.
+- Delay value: each quarter of delay forfeits roughly a quarter of the clinic's contribution margin (assumption).
+- No subsidy tolerance given.
+
+I'll weave these inline with "(assumption: ...)" flags rather than a separate section, since sections are fixed. Maybe a brief note in preamble: "No financials were provided; where I need numbers I flag the assumption."
+
+Top 3 priorities — write as:
+1. **Net revenue per visit / payer mix.** The spread across these three catchments is the largest single swing in the business case (commercial suburb vs Medicaid-heavy district); decide explicitly whether the board will subsidise mission volume, and by how much.
+2. **Net-new visits, net of cannibalisation and competitive capture.** C mostly reshuffles existing patients next to a competitor; A and B add coverage. Volume × revenue/visit is the whole top line.
+3. **All-in cost per visit (fit-out + lease + delay), not rent/sq ft.** "Lowest rent" (A) and "moderate rent" (B) are vanity metrics until conversion/renovation capex is amortised; C's ready building is its one decisive advantage.
+
+And maybe a closing line in top 3 or preamble: the crux — A is the urgent-care/growth site, B is the primary-care/mission site, C is the convenience/default site; the board must first decide the clinic's primary job. I'll put the crux in the preamble (2-3 sentences) to keep sections clean.
+
+What would change my mind — bullets:
+- Existing PC clinic near C is full (long wait times, closed panels) → C flips from cannibalisation to fastest cheapest capacity; combined with campus synergy, C could win despite the competitor.
+- Board states the clinic's job is underserved access (CHNA priority) and approves an explicit annual subsidy → B wins; the pro forma converts the debate into "is the mission worth $X/yr."
+- B's structural/hazmat assessment blows up cost or schedule (e.g., opening slips past ~12 months, assumption) → B drops to third regardless of mission fit.
+- A's zoning/medical-use or signage fails, or landlord won't grant clinic exclusivity (competitor could lease next door), or data shows 2+ urgent-care entrants announced in that suburb → A's first-mover urgency collapses.
+- Medicaid managed-care rates in B's area turn out materially better than assumed (or enhanced/FQHC-adjacent funding available) → B's economics improve enough to compete with A on pure finance.
+
+That's 5 bullets. Good.
+
+Preamble draft:
+"The real-estate brief describes buildings; the decision is about demand, payer economics, and what job the board wants this clinic to do. Note the built-in tension: the service mix pulls toward different sites — longitudinal primary care follows where people live (favouring B), urgent care follows traffic and parking (favouring A), and C mostly re-sites services HVH already offers a mile away. No financials were provided; assumptions are flagged inline."
+
+That's good and sharp. Maybe trim.
+
+Check heading names exactly: "## Variables", "## Top 3 priorities", "## What would change my mind". Yes, match request exactly (case as given: "## Top 3 priorities" — request shows "## Top 3 priorities" with lowercase p; and "## What would change my mind"). I'll replicate exactly.
+
+Now write the variables with tight one-liners:
+
+1. **Net revenue per visit (payer mix) in each catchment.** Why: the biggest economic difference between these sites — a commercial-heavy suburb (A) and a Medicaid/uninsured district (B) can differ several-fold in revenue per visit; check: ACS insurance rates by ZIP + HVH's own patient-origin payer data, then model $/visit under actual managed-care contracts (assumption to verify: Medicaid pays at or below cost).
+
+2. **Incremental vs cannibalised demand.** Why: a clinic 1 mile from HVH's existing primary-care clinic (C) mostly relocates patients rather than adding them; check: overlay 10-minute drive-time catchments of existing sites against each candidate and estimate the share of forecast visits already served by HVH.
+
+3. **Competitive intensity, especially urgent care.** Why: urgent care is a convenience share fight — C faces one across the street and fast-growing suburbs (A) attract entrants quickly; check: inventory urgent cares/retail clinics/PCP supply within 10 minutes, plus announced entrants and (if available) all-payer-claims market share.
+
+4. **All-in occupancy cost per projected visit.** Why: rent/sq ft is a vanity metric — B's "major renovation," A's retail-to-medical conversion (X-ray shielding, plumbing, HVAC), and C's ready-to-occupy status dominate the comparison; check: full pro forma (rent + opex + amortised fit-out over the lease term) ÷ forecast visits.
+
+5. **Population size and growth inside the primary service area.** Why: visit volume starts with people — A has the growth tailwind, B has density today; check: ACS population within a 10-minute drive-time isochrone, plus leading indicators (building permits, school enrolment).
+
+6. **Physical access matching how patients travel.** Why: primary care lives or dies on proximity — transit-dependent, zero-car households (likely over-represented in B) need bus access, while A's catchment is car-borne; check: drive-time isochrones, GTFS door-to-door transit times, ACS zero-vehicle-household rates.
+
+7. **Building feasibility: capacity, zoning, medical fit-out.** Why: a site that can't host the program is dead regardless of demand — exam-room count, lead-lined X-ray room, lab plumbing, ADA; check: test-fit the space program against each floor plate, confirm medical use is permitted at the retail center (A), commission structural/hazmat survey of the bank building (B).
+
+8. **Time to opening and the cost of delay.** Why: C earns from day one; B's renovation could slip a year, deferring all revenue; check: permit + landlord-consent + construction schedule per site, and NPV of each quarter of delay at forecast margin (assumption: a quarter's delay forfeits roughly a quarter's annual contribution).
+
+9. **Staffing availability and recruitment pull.** Why: the clinic fails without providers, MAs and an X-ray tech willing to work there; check: commute-time analysis for likely hires, local labor-market data for clinical support roles, test postings before committing.
+
+10. **Urgent-care siting physics: visibility, parking, hours, co-tenancy.** Why: urgent care behaves like convenience retail — A's interchange, parking and retail neighbours fit it; B's transit strength matters less for episodic drive-in demand; check: traffic counts, signage rights, parking ratio, evening/weekend activity, and whether the lease grants clinic-use exclusivity (otherwise a competitor can lease next door at A).
+
+11. **Mission and community-benefit alignment.** Why: as a non-profit, HVH's CHNA and charity-care commitments give B's underserved catchment strategic weight beyond its payer mix; check: map each site against CHNA priority areas, quantify expected uncompensated care, test grant or 340B eligibility (assumption: none confirmed).
+
+12. **Operational synergy with the existing campus.** Why: C's proximity to the hospital buys lab courier speed, shared call and coverage, and possible ED low-acuity diversion — the counterweight to its cannibalisation problem; check: courier turnaround modelling, coverage/on-call plan, and ED triage data on low-acuity visits that could divert.
+
+That's 12, tight. Each has why + check. Good.
+
+Top 3 priorities:
+
+1. **Net revenue per visit (payer mix).** The widest spread across the three sites sits here — it can swing the whole business case more than rent or fit-out; the board must decide explicitly whether it will subsidise mission volume at B and how much (no tolerance has been stated — assumption).
+2. **Net-new visits, net of cannibalisation and competitive capture.** Volume × revenue per visit is the entire top line; C's overlap with an existing HVH clinic plus an across-street competitor makes its incremental volume the most suspect, while A and B look genuinely additive.
+3. **All-in cost per visit, including fit-out and delay.** This is where the real-estate framing misleads: A's "lowest rent" and B's "moderate rent" are meaningless until conversion/renovation capex is amortised, and C's ready building is its single decisive advantage.
+
+Then maybe one line: "Everything else — growth, synergy, staffing — is a tiebreaker against these three." Good.
+
+What would change my mind:
+
+- **The existing clinic near C is full.** If it has closed panels or long wait times, C stops being cannibalisation and becomes the fastest, cheapest capacity add in a proven demand zone — with campus synergy on top, C could win outright.
+- **The board defines success as access, not margin.** If underserved access is a stated CHNA priority and the board approves an explicit annual subsidy, B becomes the favourite and the debate collapses to "is the mission worth $X per year."
+- **B's renovation survey comes back ugly.** Structural or hazmat costs that push all-in cost per visit above A's, or push opening beyond ~a year (assumption), demote B regardless of mission fit.
+- **A's convenience advantages prove fragile.** Failure to get medical-use approval or clinic exclusivity, or evidence that competing urgent-care entrants are already announced in that suburb, would erase A's first-mover case.
+- **Medicaid economics in B's area are better than assumed.** If managed-care rates or grant/FQHC-style funding make B's payer mix near-breakeven, B competes with A on pure finance — verify actual contracts before treating B as a charity case.
+
+Good — 5 bullets, each concrete and site-specific.
+
+Preamble: keep to ~3 sentences. Something like:
+
+"The real-estate brief describes buildings, but this is a demand-and-economics decision with a mission overlay — and the service mix pulls in different directions: primary care follows where people live (favouring B), urgent care follows traffic and parking (favouring A), and C largely re-sites services HVH already provides a mile away. No financials, visit forecasts or rates were provided, so assumptions are flagged inline."
+
+That's the crux statement. Good.
+
+Formatting: Markdown, headings exactly as requested. Numbered lists. Bold variable names. Keep lines tight.
+
+Double-check constraints:
+- "A numbered list of at most 12 variables" — 12 ✓, most important first ✓, one line why + measure ✓.
+- "Exactly 3 numbered items" ✓.
+- "2–5 bullets" — 5 ✓.
+- Headings exact and in order ✓.
+- Assumptions flagged ✓.
+- Concrete, site-specific ✓.
+
+One more sanity check on ordering of variables: Is payer mix really #1 over incremental demand? For a non-profit board choosing among sites, the financial viability gate is payer mix; B could be economically unviable without subsidy, which changes the whole decision framing. Incremental demand #2 is about which site adds most. I'm comfortable. Alternatively some would put "strategic objective" first, but I handle that in preamble + change-mind bullet.
+
+Also note: X-ray/lab are attach services — worth one clause somewhere? Maybe in preamble or variable 7. I'll add a half-clause in the preamble or in variable 7 ("X-ray/lab are attach services that follow primary/urgent volume — don't let them drive siting beyond feasibility"). Could add to variable 7's why. Let me add: in variable 7 why: "...the imaging/lab components are attach services that follow primary and urgent volume, so they're a feasibility constraint, not a siting driver." Good, that's a sharp advisor point.
+
+Also "900,000 metro" — three sites in a 900k metro; isochrones of 10-min make sense. Fine.
+
+Write final answer now. Keep it crisp.

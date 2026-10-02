@@ -1,0 +1,228 @@
+{
+ "call_id": "C06",
+ "call_type": "no_show_followup",
+ "call_type_accept": [
+  "scheduling"
+ ],
+ "outcome": "escalated",
+ "sentiment_start": "neutral",
+ "sentiment_start_accept": [
+  "negative"
+ ],
+ "sentiment_end": "positive",
+ "sentiment_end_accept": [
+  "neutral"
+ ],
+ "quality_score": 5,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Recognised fainting with head strike as needing same-day clinical review and did a warm transfer to the nurse line with a clear handoff",
+   "match": [
+    [
+     "faint",
+     "pass(ed)? out",
+     "syncope",
+     "head",
+     "dizz"
+    ],
+    [
+     "escalat",
+     "transfer",
+     "nurse",
+     "triage"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Verified identity, updated the stale phone number, applied first-time fee waiver policy correctly",
+   "match": [
+    [
+     "verif",
+     "phone",
+     "number",
+     "fee",
+     "waiv"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "Offered ride program to address root cause of the no-show",
+   "match": [
+    [
+     "ride",
+     "transport"
+    ]
+   ]
+  }
+ ],
+ "flags": [],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Agent waived the no-show fee outside policy",
+   "why_not": "Agent states the policy itself waives the fee for a first missed appointment, and this is the patient's first.",
+   "evidence": "the policy waives it the first time",
+   "match": [
+    [
+     "fee",
+     "waiv",
+     "\\$25",
+     "twenty-five"
+    ]
+   ]
+  },
+  {
+   "id": "D2",
+   "text": "Patient reported fainting/head injury and it was not escalated",
+   "why_not": "Agent escalated immediately via warm transfer to the nurse line with 911 safety-net advice.",
+   "evidence": "Is it okay if I transfer you to our nurse line right now?",
+   "match": [
+    [
+     "faint",
+     "pass(ed)? out",
+     "syncope",
+     "head",
+     "dizz"
+    ],
+    [
+     "not escalat",
+     "fail",
+     "ignor",
+     "dismiss",
+     "did not (escalat|refer|act)",
+     "didn't (escalat|refer|act)",
+     "missed (the )?(red|symptom|escalat)"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Patient fainted and hit her head (clinical risk, appropriately escalated)",
+   "match": [
+    [
+     "faint",
+     "pass(ed)? out",
+     "syncope",
+     "head",
+     "dizz",
+     "fall",
+     "fell"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Reminder texts went to an outdated phone number",
+   "match": [
+    [
+     "phone",
+     "number",
+     "reminder"
+    ]
+   ]
+  },
+  {
+   "id": "OK3",
+   "text": "Transportation barrier",
+   "match": [
+    [
+     "ride",
+     "transport"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "agent",
+   "task": "Warm transfer to nurse line for triage of fainting with head strike",
+   "due": "now",
+   "match": [
+    [
+     "nurse",
+     "triage"
+    ],
+    [
+     "faint",
+     "transfer",
+     "head",
+     "dizz",
+     "warm"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "agent",
+   "task": "Submit ride program request",
+   "due": "today",
+   "match": [
+    [
+     "ride",
+     "transport"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "agent",
+   "task": "Call patient back tomorrow morning to reschedule with Dr. Ferreira-Holm",
+   "due": "2026-06-04 morning",
+   "match": [
+    [
+     "call",
+     "reschedul",
+     "rebook"
+    ],
+    [
+     "tomorrow",
+     "ferreira"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Reminder texts were going to an old number ending 3350; new number ends 0926",
+   "evidence": "zero-nine-two-six",
+   "match": [
+    [
+     "0926",
+     "zero-nine-two-six"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Patient hit her head on a cabinet when she fainted (small bump)",
+   "evidence": "I bumped my head on the cabinet",
+   "match": [
+    [
+     "head",
+     "bump",
+     "cabinet"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Missed visit was a follow-up on low iron levels",
+   "evidence": "a follow-up on your iron levels",
+   "match": [
+    [
+     "iron",
+     "anemi",
+     "anaemi"
+    ]
+   ]
+  }
+ ],
+ "themes": []
+}

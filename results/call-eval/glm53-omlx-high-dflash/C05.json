@@ -1,0 +1,48 @@
+{
+  "call_type": "billing_dispute",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Verified identity with DOB and ZIP before opening the account",
+    "Empathetic and transparent about the known ClearPay double-draft issue",
+    "Created refund ticket and provided reference number, though it was initially transposed",
+    "Zeroed out the $310 MRI balance despite stating he needed supervisor approval for adjustments over $100"
+  ],
+  "flags": [
+    {
+      "type": "unauthorized_commitment",
+      "description": "Agent waived the entire $310 MRI balance himself after explicitly stating that adjustments over $100 require supervisor approval.",
+      "evidence": "anything over a hundred I'd need my supervisor to approve ... I'm just going to take care of the three-ten for you. I'll zero it out right now."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "billing team",
+      "task": "Process refund ticket CP-58871 for $60 in duplicate copay charges (Mar 5 and Mar 12 ClearPay drafts) back to the caller's card",
+      "due": "7-10 business days"
+    },
+    {
+      "owner": "customer",
+      "task": "Withdraw the credit card dispute for the March 5 charge with the card company",
+      "due": "tomorrow"
+    },
+    {
+      "owner": "agent",
+      "task": "Email a call summary with the ticket number to the email on file",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Patient Ignatius Fairweather-Oduya (DOB 4/29/1982, ZIP 97214) reported duplicate $30 copay charges for PT visits on 3/3 and 3/10; front-desk payments were auto-drafted again by ClearPay on 3/5 and 3/12 (known issue since late February). Refund ticket CP-58871 opened for $60; refunds in 7-10 business days. Patient will withdraw his credit card dispute for the 3/5 charge. Separate $310 January MRI balance denied for missing prior authorization was zeroed out by the agent without supervisor approval (policy allows only $100 courtesy adjustments). Account note added; summary email promised.",
+  "notable_details": [
+    "Refund reference number corrected from CP-58817 to CP-58871 (agent transposed digits)",
+    "Duplicate charges: $30 desk payments on 3/3 and 3/10, duplicated by ClearPay on 3/5 and 3/12; total $60",
+    "ClearPay double-draft issue dates to the portal's rollout at the end of February; vendor fix in progress",
+    "Patient already disputed the March 5 charge with his credit card company last week and agreed to withdraw it",
+    "MRI balance was $310 from a January scan denied because the prior authorization was not attached to the claim, despite the doctor's office telling the patient it was done",
+    "Patient said he had called three times previously about these issues and asked that account notes be visible to future agents",
+    "Agent mentioned IT is investigating computer glitches affecting billing screens all morning",
+    "Patient reported the phone menu option 3 routed him incorrectly; he pressed 0 to reach an agent"
+  ]
+}

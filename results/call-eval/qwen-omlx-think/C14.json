@@ -1,0 +1,132 @@
+{
+  "call_type": "billing_dispute",
+  "outcome": "escalated",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Serious privacy violation: Brent disclosed husband’s account details without authorization.",
+    "Missed callback commitment from Kyle was never assigned, contributing to collections referral.",
+    "Initial agent failed to escalate medication nonadherence and placed a 6m50s hold.",
+    "Supervisor later resolved many issues with refunds, recall, escalation, and clinical referrals."
+  ],
+  "flags": [
+    {
+      "type": "privacy_disclosure",
+      "description": "Brent disclosed the husband’s account balance, collections status, and duplicate payment without authorization on file.",
+      "evidence": "his account shows two hundred twelve dollars and forty cents, also referred to collections on the fourteenth, and it looks like there's also a duplicate ClearPay payment from June on his"
+    },
+    {
+      "type": "missed_commitment",
+      "description": "Kyle promised a billing callback by September 11, but no callback task was assigned and no callback occurred.",
+      "evidence": "But there's no callback task attached to it. It was never assigned to anyone."
+    },
+    {
+      "type": "clinical_safety",
+      "description": "Patient disclosed skipping blood pressure medication due to cost; the initial agent did not escalate or refer for clinical assistance.",
+      "evidence": "Since August I've been skipping my blood pressure pills, every other day, because I can't afford the pills and these double charges both."
+    },
+    {
+      "type": "policy_violation",
+      "description": "The account was referred to collections while an open billing dispute should have placed it on hold.",
+      "evidence": "That should never have happened while you had an open dispute. Our policy is that accounts with an open billing dispute are on hold and can't be referred."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "Supervisor",
+      "task": "Submit recall request to collections agency and place billing hold on patient account",
+      "due": "now"
+    },
+    {
+      "owner": "Collections agency",
+      "task": "Close recalled account and send confirmation letter to patient",
+      "due": "within ten business days"
+    },
+    {
+      "owner": "Supervisor",
+      "task": "Issue refunds for three duplicate copay charges totaling $135, two to Visa ending 1186 and one to HSA ending 7720",
+      "due": "seven to ten business days"
+    },
+    {
+      "owner": "Billing director's office",
+      "task": "Call patient about escalated billing dispute",
+      "due": "within forty-eight hours, by Wednesday"
+    },
+    {
+      "owner": "Supervisor",
+      "task": "Assign and monitor billing director callback task",
+      "due": "by Wednesday end of day"
+    },
+    {
+      "owner": "Patient",
+      "task": "Call back and ask for Danielle if no billing director callback is received",
+      "due": "Wednesday end of day"
+    },
+    {
+      "owner": "Supervisor",
+      "task": "Apply $50 goodwill credit to account",
+      "due": "next statement"
+    },
+    {
+      "owner": "Nurse or pharmacist",
+      "task": "Call patient about blood pressure medication and lower-cost options",
+      "due": "today"
+    },
+    {
+      "owner": "Financial counselor",
+      "task": "Call patient about medication and bill assistance programs",
+      "due": "within two business days"
+    },
+    {
+      "owner": "Patient's husband",
+      "task": "Call billing himself or sign authorization so patient can manage his account",
+      "due": "this afternoon"
+    },
+    {
+      "owner": "Privacy office",
+      "task": "Review unauthorized disclosure of husband's account information by Brent",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Supervisor",
+      "task": "Review process failure that left callback task unassigned",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Supervisor",
+      "task": "Mail recap letter and put copy in patient portal",
+      "due": "today"
+    },
+    {
+      "owner": "Supervisor",
+      "task": "Send statement copy via patient portal",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Supervisor",
+      "task": "Send copy of today's notes to patient portal",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Supervisor",
+      "task": "Update contact preferences: electronic preferred, text reminders, email on file",
+      "due": "now"
+    }
+  ],
+  "summary_notes": "Patient reported three duplicate ClearPay copay charges (Mar 9, May 4, Jul 13; $45 each, $135 total) and collections referral on Sep 14 despite open dispute. Supervisor recalled collections, placed billing hold, initiated refunds (two to Visa, one to HSA), applied $50 goodwill credit, and escalated to billing director for callback by Wednesday. Patient disclosed skipping BP meds since August; nurse/pharmacist referral today and financial counseling within two business days. Husband's account was improperly disclosed by prior agent; privacy office notified. Husband must call or authorize. Statement/notes will be sent electronically; text reminders preferred.",
+  "notable_details": [
+    "Patient: Gwendolyn Achterberg-Lowe; DOB 01/26/1955; address 309 Kestrel Bend.",
+    "Duplicate copay charges: Mar 9 front desk $45 Visa ending 1186 and ClearPay Mar 11 $45; May 4 front desk $45 Visa and ClearPay May 6 $45; Jul 13 front desk $45 Visa and ClearPay Jul 15 $45 HSA ending 7720; total $135.",
+    "Collections referral: $135 referred Sep 14; patient received letter Saturday.",
+    "Dispute open since May; Kyle promised callback by Friday Sep 11, but no callback task was assigned.",
+    "Husband Reinhold Achterberg-Lowe: account $212.40 referred collections Sep 14 and possible June duplicate; no authorization on file, so he must call or sign authorization.",
+    "Patient reported skipping blood pressure pills every other day since August due to cost.",
+    "Supervisor recalled collections, placed billing hold, initiated refunds, applied $50 goodwill credit, escalated to billing director, and referred to nurse/pharmacist and financial counseling.",
+    "Collections had not been reported to credit; recall should prevent reporting.",
+    "Contact preferences updated: electronic preferred, text reminders, email on file starts with M at gmail; portal account exists but password unknown.",
+    "Brent's disclosure of husband's account was reported to privacy office.",
+    "Preferred pharmacy Old Mill Road; emergency contact unchanged; no interpreter/accommodations needed.",
+    "Call included a 6m50s hold before supervisor joined."
+  ]
+}

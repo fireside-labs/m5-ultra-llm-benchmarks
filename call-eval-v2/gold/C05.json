@@ -1,0 +1,460 @@
+{
+ "call_id": "C05",
+ "call_type": "no_show_followup",
+ "outcome": "resolved",
+ "outcome_accept": [
+  "escalated"
+ ],
+ "sentiment_start": "negative",
+ "sentiment_start_accept": [
+  "neutral"
+ ],
+ "sentiment_end": "positive",
+ "quality_score": 3,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Coordinator disclosed the missed diabetes appointment to the roommate who answered, before verifying identity",
+   "match": [
+    [
+     "roommate",
+     "before verif",
+     "prior to verif",
+     "third.party",
+     "person who answered",
+     "whoever answered",
+     "unverified",
+     "without verif"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Coordinator was empathetic about the phone-menu problem, waived the fee per policy, rebooked promptly and did a warm transfer",
+   "match": [
+    [
+     "empath",
+     "warm",
+     "friendly",
+     "apolog",
+     "understanding",
+     "handoff",
+     "hand-off",
+     "rebook",
+     "resched",
+     "polite",
+     "kind"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "Nurse did a thorough symptom triage with clear safety-net instructions (urgent care if over 300 or symptoms)",
+   "match": [
+    [
+     "nurse",
+     "triage",
+     "safety.net",
+     "symptom",
+     "urgent care",
+     "red flag",
+     "300",
+     "three hundred"
+    ]
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "id": "F1",
+   "type": "privacy_disclosure",
+   "text": "Coordinator told the roommate who answered that she was calling about Harlan's missed diabetes appointment (A1c recheck) before verifying who she was speaking to",
+   "evidence": "I'm calling for Harlan about his missed diabetes appointment on Tuesday, the A1c recheck with Dr. Ruiz-Pakula.",
+   "paraphrases": [
+    "PHI (diabetes appointment details) disclosed to a third party who answered the phone before identity verification.",
+    "The agent revealed the patient's missed endocrinology visit to his roommate prior to verifying identity.",
+    "Health information shared with an unverified person on the outbound call."
+   ],
+   "negatives": [
+    "Coordinator verified the patient's date of birth and address before discussing the appointment."
+   ],
+   "match": [
+    [
+     "roommate",
+     "third.party",
+     "person who answered",
+     "whoever answered",
+     "someone (else )?who answered",
+     "other person",
+     "household member",
+     "before verif",
+     "prior to verif",
+     "before (confirming|checking|establishing) (his |the patient'?s? )?identity",
+     "unverified",
+     "not the patient",
+     "before (the patient|harlan) (came|got) on"
+    ],
+    [
+     "diabet",
+     "a1c",
+     "endocrin",
+     "appointment",
+     "missed",
+     "disclos",
+     "reveal",
+     "privacy",
+     "phi",
+     "health information"
+    ]
+   ]
+  },
+  {
+   "id": "F2",
+   "type": "missed_commitment",
+   "text": "Coordinator promised to give the patient the direct line before hanging up so he would not get stuck in billing again, but never gave it (she transferred him to the nurse line and left)",
+   "evidence": "before we hang up I'll give you the direct line so you don't get stuck in billing again",
+   "paraphrases": [
+    "Promise to provide a direct phone number was not kept before the call ended.",
+    "The coordinator said she would share the direct number to avoid the menu problem but never did.",
+    "Committed to giving a direct line; it was never provided."
+   ],
+   "negatives": [
+    "Coordinator gave the patient the direct line before the call ended."
+   ],
+   "match": [
+    [
+     "direct (line|number|phone)",
+     "phone number",
+     "number to (call|bypass|avoid)",
+     "bypass"
+    ],
+    [
+     "never",
+     "not (given|provided|shared|kept|fulfilled)",
+     "didn't",
+     "did not",
+     "fail",
+     "forgot",
+     "without (giving|providing)",
+     "missed",
+     "unfulfilled",
+     "not followed",
+     "wasn't"
+    ]
+   ]
+  }
+ ],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Fasting glucose of 240 handled by the nurse without sending the patient to the ER",
+   "why_not": "The nurse triaged properly (no vomiting, confusion, abdominal pain or breathing trouble), gave clear thresholds (over 300 or symptoms -> urgent care/ER same day), sent strips, and booked a nurse visit Monday. Correct escalation.",
+   "evidence": "If you see anything over three hundred, or if you start vomiting, or get belly pain, or feel confused, or really short of breath, you go to urgent care or the ER that same day",
+   "paraphrases": [
+    "A blood sugar of 240 was not treated as an emergency; the nurse only advised home monitoring.",
+    "Hyperglycemia (glucose 240) was dismissed instead of urgent evaluation.",
+    "Nurse should have sent the patient to urgent care for the high sugar reading."
+   ],
+   "match": [
+    [
+     "240",
+     "two.forty",
+     "glucose",
+     "blood sugar",
+     "hyperglyc",
+     "sugar"
+    ]
+   ]
+  },
+  {
+   "id": "D2",
+   "text": "Coordinator waived the $40 no-show fee",
+   "why_not": "She states policy: the fee is waived automatically for the first missed visit in 12 months.",
+   "evidence": "it's your first missed visit in twelve months, so per our policy that's waived automatically",
+   "paraphrases": [
+    "The agent removed the forty-dollar no-show fee without approval.",
+    "No-show fee was waived outside policy."
+   ],
+   "match": [
+    [
+     "no.?show fee",
+     "\\$40",
+     "forty.dollar",
+     "\\bfee\\b",
+     "waive"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Phone menu routes refill callers to billing / patient could not cancel",
+   "match": [
+    [
+     "menu",
+     "press",
+     "phone tree",
+     "ivr",
+     "rout",
+     "billing",
+     "could not cancel",
+     "couldn't cancel",
+     "tried to cancel"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Patient out of test strips / inconsistent metformin / missed appointment",
+   "match": [
+    [
+     "strip",
+     "metformin",
+     "adheren",
+     "night shift",
+     "no.?show",
+     "missed (the |his )?appointment"
+    ]
+   ]
+  },
+  {
+   "id": "OK3",
+   "text": "Long hold during the transfer",
+   "match": [
+    [
+     "hold",
+     "wait"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "care coordinator",
+   "task": "Text the appointment confirmation to the patient's cell 555-0191; reminder two days before",
+   "due": "today",
+   "match": [
+    [
+     "confirm",
+     "reminder",
+     "text"
+    ],
+    [
+     "oct\\w*\\.? 6",
+     "8:15",
+     "appointment",
+     "0191"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "nurse",
+   "task": "Send TrueStep test strips (100) and lancets to Ostrander Pharmacy Millbrook",
+   "due": "today",
+   "match": [
+    [
+     "strip",
+     "lancet"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "patient",
+   "task": "Check blood sugar twice a day and log it; go to urgent care/ER if over 300 or symptoms; call nurse line if unsure",
+   "due": "ongoing",
+   "match": [
+    [
+     "twice",
+     "two times",
+     "2x",
+     "\\blog\\b",
+     "300",
+     "three hundred",
+     "check (his |blood )?(sugar|glucose)",
+     "monitor",
+     "urgent care"
+    ]
+   ]
+  },
+  {
+   "id": "A4",
+   "owner": "patient",
+   "task": "Get the A1c drawn at the Millbrook lab (walk-in) before October 6",
+   "due": "before 2026-10-06",
+   "match": [
+    [
+     "a1c",
+     "\\blab"
+    ]
+   ]
+  },
+  {
+   "id": "A5",
+   "owner": "patient",
+   "task": "Attend nurse visit Monday September 21 at 8:00 a.m. with glucose log/meter",
+   "due": "2026-09-21 08:00",
+   "match": [
+    [
+     "nurse visit",
+     "september 21",
+     "sept\\.? 21",
+     "9/21",
+     "21st",
+     "monday"
+    ]
+   ]
+  },
+  {
+   "id": "A6",
+   "owner": "patient",
+   "task": "Attend rescheduled appointment with Dr. Ruiz-Pakula, Tuesday October 6 at 8:15 a.m., Millbrook 2nd floor",
+   "due": "2026-10-06 08:15",
+   "match": [
+    [
+     "october 6",
+     "oct\\.? 6",
+     "10/6",
+     "8:15",
+     "eight.fifteen",
+     "ruiz",
+     "endocrin",
+     "resched",
+     "rebook"
+    ]
+   ]
+  },
+  {
+   "id": "A7",
+   "owner": "care coordinator",
+   "task": "Give the patient the direct line (promised, not done)",
+   "due": "before end of call",
+   "match": [
+    [
+     "direct (line|number|phone)",
+     "phone number"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "New appointment is Tuesday October 6 at 8:15 a.m. (agent first misread 8:50)",
+   "evidence": "Tuesday, October sixth, eight-fifteen a.m., Dr. Ruiz-Pakula",
+   "negatives": [
+    "Rebooked for October 6 at 8:50 a.m."
+   ],
+   "match": [
+    [
+     "8:15",
+     "8\\.15",
+     "eight.fifteen",
+     "815 ?a"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Fasting glucose this morning was 240 (patient first said 140)",
+   "evidence": "No, I wrote it down, it was two-forty. Two hundred forty this morning.",
+   "negatives": [
+    "Fasting blood sugar was 140 this morning."
+   ],
+   "match": [
+    [
+     "\\b240\\b",
+     "two.forty",
+     "two hundred (and )?forty"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Patient has been out of test strips since the weekend; strips and lancets sent to Ostrander Millbrook",
+   "evidence": "Uh, since, like, Saturday? Sunday?",
+   "match": [
+    [
+     "strip"
+    ],
+    [
+     "ostrander",
+     "millbrook",
+     "refill",
+     "sent",
+     "out of",
+     "ran out",
+     "since the weekend",
+     "no strips"
+    ]
+   ]
+  },
+  {
+   "id": "S4",
+   "text": "Patient tried to cancel: pressed 3 for prescriptions and was routed to billing, then the transfer rang out and hung up",
+   "evidence": "And I end up in billing.",
+   "match": [
+    [
+     "press",
+     "menu",
+     "option",
+     "phone tree",
+     "ivr",
+     "rout"
+    ],
+    [
+     "billing",
+     "financial"
+    ]
+   ]
+  },
+  {
+   "id": "S5",
+   "text": "Insurance changed in August to a new Halvard plan through his employer: member ID H220846, group WHS9110",
+   "evidence": "Member ID is H, then, uh, two-two-zero-eight-four-six.",
+   "match": [
+    [
+     "220846",
+     "220-846",
+     "two.two.zero.eight.four.six",
+     "whs.?9110"
+    ]
+   ]
+  },
+  {
+   "id": "S6",
+   "text": "Nurse added a nurse visit on Monday September 21 at 8:00 a.m.",
+   "evidence": "Eight o'clock, Monday September twenty-first, nurse visit at Millbrook.",
+   "match": [
+    [
+     "nurse visit",
+     "september 21",
+     "sept\\.? 21",
+     "9/21",
+     "21st"
+    ]
+   ]
+  },
+  {
+   "id": "S7",
+   "text": "Patient now works night shifts at a warehouse (since August), so early-morning appointments work best and meal/medication timing is irregular",
+   "evidence": "I started on nights at the warehouse in August",
+   "match": [
+    [
+     "night shift",
+     "nights",
+     "overnight",
+     "works night",
+     "night work",
+     "night schedule"
+    ]
+   ]
+  }
+ ],
+ "themes": [
+  "T_IVR_MISROUTE"
+ ]
+}

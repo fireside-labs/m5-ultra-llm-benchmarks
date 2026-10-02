@@ -1,0 +1,206 @@
+<title>Reasoning Eval Answers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* Layout: reviewer's desk. Header + run summary, task tabs, planted checklist grid, two answer panes side by side. */
+:root {
+  --paper: #f6f7f5;
+  --sheet: #ffffff;
+  --ink: #1d2320;
+  --ink-soft: #56605b;
+  --rule: #dfe3df;
+  --pen: #b4372b;          /* reviewer's red pen: misses, decoys, cut-offs */
+  --ok: #2f7a4a;
+  --glm: #0f6f6a;
+  --qwen: #4b54c9;
+  --dsv4: #a5610f;
+  --chip-bg: #eef1ee;
+  --f-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-read: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #141816; --sheet: #1b201e; --ink: #e5e9e6; --ink-soft: #a3ada8; --rule: #2e3532;
+    --pen: #ef7b6e; --ok: #6fc28c; --glm: #4cc2b9; --qwen: #9aa1ff; --dsv4: #e6a24f; --chip-bg: #252b28;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #141816; --sheet: #1b201e; --ink: #e5e9e6; --ink-soft: #a3ada8; --rule: #2e3532;
+  --pen: #ef7b6e; --ok: #6fc28c; --glm: #4cc2b9; --qwen: #9aa1ff; --dsv4: #e6a24f; --chip-bg: #252b28;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font: 15px/1.5 var(--f-ui); padding-inline: 20px; padding-block: 24px 64px; }
+.wrap { max-width: 1320px; margin: 0 auto; display: grid; gap: 22px; }
+h1 { font-size: 26px; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+h2 { font-size: 19px; margin: 0; text-wrap: balance; }
+h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); margin: 0 0 8px; font-weight: 600; }
+.sub { color: var(--ink-soft); max-width: 75ch; margin: 6px 0 0; }
+.top { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; justify-content: space-between; }
+.toggle { display: inline-flex; gap: 8px; align-items: center; font-size: 14px; cursor: pointer; user-select: none; }
+.toggle input { width: 16px; height: 16px; accent-color: var(--pen); }
+.panel { background: var(--sheet); border: 1px solid var(--rule); border-radius: 8px; padding: 16px; }
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; font-size: 14px; }
+th { font-weight: 600; color: var(--ink-soft); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+td.num, th.num { text-align: right; font-family: var(--f-mono); }
+td.mark, th.mark { text-align: center; width: 64px; font-family: var(--f-mono); }
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 7px; vertical-align: 1px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.tab { font: inherit; font-size: 13.5px; border: 1px solid var(--rule); background: var(--sheet); color: var(--ink); border-radius: 6px; padding: 6px 10px; cursor: pointer; display: inline-flex; gap: 6px; align-items: baseline; }
+.tab b { font-family: var(--f-mono); font-weight: 500; color: var(--ink-soft); }
+.tab[aria-selected="true"] { border-color: var(--ink); box-shadow: inset 0 -2px 0 var(--ink); }
+.tab:focus-visible, select:focus-visible, summary:focus-visible { outline: 2px solid var(--pen); outline-offset: 2px; }
+.cat { font-size: 12px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+.chip { display: inline-block; font: 500 11.5px/1 var(--f-mono); padding: 4px 6px; border-radius: 4px; background: var(--chip-bg); color: var(--ink-soft); white-space: nowrap; }
+.chip.high { color: var(--ink); }
+.chip.warn { background: transparent; color: var(--pen); border: 1px solid var(--pen); }
+.hit { color: var(--ok); font-weight: 600; }
+.miss { color: var(--ink-soft); opacity: 0.55; }
+.bait { color: var(--pen); font-weight: 600; }
+.why { color: var(--ink-soft); font-size: 13px; }
+details > summary { cursor: pointer; font-weight: 500; }
+.prompt { font-family: var(--f-read); font-size: 15.5px; line-height: 1.6; max-width: 80ch; }
+.panes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr)); gap: 16px; align-items: start; }
+.pane { display: grid; gap: 12px; }
+.pane select { font: inherit; padding: 6px 8px; border: 1px solid var(--rule); border-radius: 6px; background: var(--sheet); color: var(--ink); width: 100%; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font: 13px var(--f-mono); color: var(--ink-soft); }
+.meta strong { color: var(--ink); font-weight: 500; }
+.answer { font-family: var(--f-read); font-size: 15.5px; line-height: 1.62; overflow-wrap: anywhere; }
+.answer h1, .answer h2, .answer h3 { font-family: var(--f-ui); text-transform: none; letter-spacing: 0; color: var(--ink); }
+.answer h1 { font-size: 19px; } .answer h2 { font-size: 17px; margin: 18px 0 6px; } .answer h3 { font-size: 15.5px; margin: 14px 0 4px; }
+.answer table { font-size: 13.5px; } .answer pre { overflow-x: auto; background: var(--chip-bg); padding: 10px; border-radius: 6px; font-size: 13px; }
+.answer code { font-family: var(--f-mono); font-size: 0.9em; }
+.empty { color: var(--pen); font-family: var(--f-ui); font-weight: 500; }
+.trace { white-space: pre-wrap; font: 12.5px/1.5 var(--f-mono); color: var(--ink-soft); max-height: 520px; overflow: auto; background: var(--chip-bg); padding: 10px; border-radius: 6px; margin-top: 8px; }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; color: var(--ink-soft); }
+@media (prefers-reduced-motion: no-preference) { .tab { transition: border-color .12s; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Reasoning Eval Answers</h1>
+      <p class="sub">Ten self-contained critical-thinking tasks. Each one hides a checklist of things a careful reader should catch, plus decoys that look like problems but aren't. Read the answers side by side and judge for yourself.</p>
+    </div>
+    <label class="toggle"><input type="checkbox" id="blind"> Hide model names</label>
+  </header>
+
+  <section class="panel">
+    <h3>Runs</h3>
+    <div class="scroll"><table id="runs"></table></div>
+  </section>
+
+  <nav class="tabs" id="tabs" role="tablist" aria-label="Tasks"></nav>
+
+  <section class="panel" id="task"></section>
+
+  <section class="panel">
+    <h3>What was planted, and who caught it</h3>
+    <div class="legend"><span><span class="hit">✓</span> caught</span><span><span class="miss">·</span> missed</span><span><span class="bait">✗</span> fell for a decoy</span><span>Scores come from keyword matching, so a ✓ can miss nuance. That's what the answers below are for.</span></div>
+    <div class="scroll" id="grid" style="margin-top:10px"></div>
+  </section>
+
+  <section class="panes">
+    <div class="pane panel" id="paneA"></div>
+    <div class="pane panel" id="paneB"></div>
+  </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+<script id="data" type="application/json">/*__DATA__*/{}</script>
+<script>
+const DATA = JSON.parse(document.getElementById("data").textContent);
+const COLORS = { glm53: "var(--glm)", qwen38: "var(--qwen)", dsv4: "var(--dsv4)" };
+const base = l => l.replace(/_r\d+$/, "");
+const bases = [...new Set(DATA.runs.map(r => base(r.label)))];
+const LETTERS = Object.fromEntries(bases.map((b, i) => [b, "Model " + "ABCDEF"[i]]));
+let state = { task: DATA.tasks[0]?.id, a: null, b: null, blind: false };
+try { const s = JSON.parse(localStorage.getItem("reason-viewer") || "{}"); Object.assign(state, s); } catch (e) {}
+const save = () => { try { localStorage.setItem("reason-viewer", JSON.stringify(state)); } catch (e) {} };
+
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const md = s => {
+  const html = window.marked ? marked.parse(s || "") : `<pre>${esc(s)}</pre>`;
+  return window.DOMPurify ? DOMPurify.sanitize(html) : esc(s);
+};
+const name = r => state.blind ? `${LETTERS[base(r.label)]}, run ${r.rep}` : `${r.model}, run ${r.rep}`;
+const dot = r => `<span class="dot" style="background:${state.blind ? "var(--ink-soft)" : (COLORS[base(r.label)] || "var(--ink-soft)")}"></span>`;
+const fmt = (x, d = 0) => x == null ? "–" : Number(x).toLocaleString(undefined, { maximumFractionDigits: d, minimumFractionDigits: d });
+const score = x => x == null ? "–" : fmt(x, 0);
+
+function runsTable() {
+  const rows = DATA.runs.map(r => {
+    const ts = Object.values(r.tasks);
+    const sc = ts.map(t => t.score).filter(x => x != null);
+    const mean = sc.length ? sc.reduce((a, b) => a + b, 0) / sc.length : null;
+    const cut = ts.filter(t => t.truncated).length;
+    return `<tr><td>${dot(r)}${esc(name(r))}</td><td class="num">${score(mean)}</td><td class="num">${ts.length}/${DATA.tasks.length}</td><td class="num">${cut ? `<span class="chip warn">${cut} cut off</span>` : "0"}</td></tr>`;
+  }).join("");
+  document.getElementById("runs").innerHTML = `<thead><tr><th>Run</th><th class="num">Mean task score</th><th class="num">Tasks answered</th><th class="num">Hit the 16k-token limit</th></tr></thead><tbody>${rows}</tbody>`;
+}
+
+function tabs() {
+  document.getElementById("tabs").innerHTML = DATA.tasks.map(t =>
+    `<button class="tab" role="tab" aria-selected="${t.id === state.task}" data-id="${t.id}"><b>${t.id}</b>${esc(t.title)}</button>`).join("");
+  document.querySelectorAll(".tab").forEach(b => b.onclick = () => { state.task = b.dataset.id; save(); render(); });
+}
+
+function taskPanel(t) {
+  document.getElementById("task").innerHTML = `
+    <div class="cat">${esc(t.category)}</div>
+    <h2 style="margin:4px 0 12px">${t.id} · ${esc(t.title)}</h2>
+    <details><summary>Read the prompt the models saw</summary><div class="prompt answer" style="margin-top:10px">${md(t.prompt)}</div></details>`;
+}
+
+function grid(t) {
+  const runs = DATA.runs;
+  const head = `<tr><th>Planted item</th>${runs.map(r => `<th class="mark" title="${esc(name(r))}">${dot(r)}${state.blind ? LETTERS[base(r.label)].slice(-1) : r.label.replace(/_r(\d+)$/, " r$1").replace("glm53", "GLM").replace("qwen38", "Qwen").replace("dsv4", "DS")}</th>`).join("")}</tr>`;
+  const cell = (r, id, key) => {
+    const rt = r.tasks[t.id];
+    if (!rt) return `<td class="mark miss">n/a</td>`;
+    return rt[key].includes(id) ? `<td class="mark hit">✓</td>` : `<td class="mark miss">·</td>`;
+  };
+  const row = (i, key, label) => `<tr><td>${label}${esc(i.text)}</td>${runs.map(r => cell(r, i.id, key)).join("")}</tr>`;
+  let body = t.items.map(i => row(i, "hit", `<span class="chip ${i.importance === "high" ? "high" : ""}">${i.importance === "high" ? "key" : "minor"}${i.side ? " · " + esc(i.side) : ""}</span> `)).join("");
+  if (t.cruxes.length) body += `<tr><th colspan="${runs.length + 1}">Cruxes (the real point of disagreement)</th></tr>` + t.cruxes.map(c => row(c, "cruxes_hit", `<span class="chip high">crux</span> `)).join("");
+  if (t.decoys.length) body += `<tr><th colspan="${runs.length + 1}">Decoys (look like problems, aren't)</th></tr>` + t.decoys.map(d =>
+    `<tr><td><span class="chip warn">decoy</span> ${esc(d.text)}<div class="why">Why it's fine: ${esc(d.why_not)}</div></td>${runs.map(r => {
+      const rt = r.tasks[t.id]; if (!rt) return `<td class="mark miss">n/a</td>`;
+      return rt.decoys_hit.includes(d.id) ? `<td class="mark bait">✗</td>` : `<td class="mark miss">·</td>`; }).join("")}</tr>`).join("");
+  document.getElementById("grid").innerHTML = `<table><thead>${head}</thead><tbody>${body}</tbody></table>`;
+}
+
+function pane(el, key, t) {
+  const opts = DATA.runs.map(r => `<option value="${r.label}" ${r.label === state[key] ? "selected" : ""}>${esc(name(r))}</option>`).join("");
+  const r = DATA.runs.find(x => x.label === state[key]) || DATA.runs[0];
+  const rt = r && r.tasks[t.id];
+  let body;
+  if (!rt) body = `<p class="empty">This run hasn't answered ${t.id} yet.</p>`;
+  else {
+    const ans = (rt.answer || "").trim();
+    body = `<div class="meta"><span>score <strong>${score(rt.score)}</strong></span><span><strong>${fmt(rt.words)}</strong> words</span><span><strong>${fmt(rt.tokens)}</strong> tokens incl. thinking</span><span><strong>${fmt(rt.seconds)}</strong> s</span>${rt.truncated ? `<span class="chip warn">hit the 16k-token limit</span>` : ""}</div>
+      ${ans ? `<div class="answer">${md(ans)}</div>` : `<p class="empty">No answer. The model spent its whole token budget thinking. Open the trace below to see where it got stuck.</p>`}
+      ${rt.reasoning ? `<details><summary>Thinking trace (${fmt(rt.reasoning_chars)} characters${rt.reasoning_chars > rt.reasoning.length ? ", first " + fmt(rt.reasoning.length) + " shown" : ""})</summary><div class="trace">${esc(rt.reasoning)}</div></details>` : ""}`;
+  }
+  el.innerHTML = `<label for="sel-${key}" class="cat">Answer</label><select id="sel-${key}">${opts}</select>${body}`;
+  el.querySelector("select").onchange = e => { state[key] = e.target.value; save(); render(); };
+}
+
+function render() {
+  if (!state.a || !DATA.runs.some(r => r.label === state.a)) state.a = DATA.runs[0]?.label;
+  if (!state.b || !DATA.runs.some(r => r.label === state.b)) state.b = (DATA.runs.find(r => base(r.label) !== base(state.a)) || DATA.runs[1] || DATA.runs[0])?.label;
+  const t = DATA.tasks.find(x => x.id === state.task) || DATA.tasks[0];
+  state.task = t.id;
+  document.getElementById("blind").checked = state.blind;
+  runsTable(); tabs(); taskPanel(t); grid(t);
+  pane(document.getElementById("paneA"), "a", t);
+  pane(document.getElementById("paneB"), "b", t);
+}
+document.getElementById("blind").onchange = e => { state.blind = e.target.checked; save(); render(); };
+render();
+</script>

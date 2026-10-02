@@ -1,0 +1,52 @@
+{
+  "call_type": "sales",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "neutral",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Claimed 30% fuel savings were 'guaranteed' with money back, then admitted the guarantee is not in the contract",
+    "Told the prospect there were no long contracts and he could 'cancel anytime', then revealed a 36-month agreement with an early termination fee equal to the remaining balance",
+    "Handled prospect's interruptions (hold, background noise, tech issues) politely and kept the call moving",
+    "Correctly identified decision-maker (CFO) and set concrete next steps: written proposal and scheduled demo"
+  ],
+  "flags": [
+    {
+      "type": "misinformation",
+      "description": "Representative overstated the fuel-savings guarantee as a money-back guarantee, then conceded it is not part of the contract.",
+      "evidence": "If you don't save thirty percent, we'll give you your money back. ... it's not in the contract, specifically."
+    },
+    {
+      "type": "misinformation",
+      "description": "Representative initially claimed there were no long contracts and cancellation was allowed anytime, which was contradicted by the 36-month agreement with an early termination fee equal to the remaining balance.",
+      "evidence": "Oh, totally, no long contracts with us. You can cancel anytime. ... There's just an early termination fee if you cancel before the thirty-six months are up."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "REP (Sofia)",
+      "task": "Send written proposal including real contract terms to Rufus",
+      "due": "by Thursday"
+    },
+    {
+      "owner": "REP (Sofia)",
+      "task": "Send calendar invite for demo to Rufus, who will forward it to CFO Priscilla Kranz-Albright",
+      "due": "unspecified"
+    },
+    {
+      "owner": "REP (Sofia) / solutions person",
+      "task": "Demo with Rufus and Priscilla Kranz-Albright, including accounting integration coverage",
+      "due": "next Tuesday at 2:00"
+    }
+  ],
+  "summary_notes": "Inbound sales follow-up to web inquiry from Rufus, operations manager at Kranz and Daughters, a plumbing company. Fleet corrected to 32 vehicles (25 vans plus 7 refrigerated box trucks). Priorities: fuel cost reduction, dispatch visibility, and handoffs when staff are out; needs calendar sync and offline capability for rural areas. Pricing quoted: free hardware, $32/vehicle/month on a 36-month agreement. Prospect is not the signer; contracts go to CFO Priscilla Kranz-Albright, who requires terms in writing. Rep committed to a written proposal by Thursday and a demo next Tuesday at 2:00. Caution: rep's 'guaranteed 30% savings' and 'cancel anytime' claims were walked back during the call.",
+  "notable_details": [
+    "Fleet size corrected from 25 vans to 32 total vehicles: 25 vans plus 7 refrigerated box trucks for commercial water-heater installs",
+    "Pricing: hardware free, $32 per vehicle per month on a standard 36-month agreement; early termination fee is the remaining balance of the agreement",
+    "Decision-maker/signer is CFO Priscilla Kranz-Albright; Rufus only forwards the invite",
+    "Prospect's main pain points: handoffs when someone is out, then knowing who's where; fuel costs are the biggest cost concern",
+    "Prospect needs offline functionality for rural areas and calendar sync ('the big calendar everyone uses'); accounting integration is lower priority",
+    "Rep promised the 30% fuel savings money-back guarantee is not in the contract, only 'very, very likely'",
+    "Prospect previously said he was 'burned' on a phone contract and is sensitive to long commitments"
+  ]
+}

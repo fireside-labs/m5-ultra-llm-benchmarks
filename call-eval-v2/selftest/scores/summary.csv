@@ -1,0 +1,4 @@
+label,model,headline,parse_rate,strict_json_rate,call_type,outcome,sentiment,quality_pm1,quality_reasons,flag_recall,flag_precision,decoy_avoidance,action_recall,subtle_recall,themes,themes_found,summary_le_120_rate,median_total_s,median_ttft_s,median_decode_tps,total_completion_tokens,errors
+mock_perfect,mock_perfect (synthetic mock),100.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,T_IVR_MISROUTE T_PA_FAX T_SAAS_DUE,1.0,,,,,
+mock_sloppy,mock_sloppy (synthetic mock),35.02,0.875,0.562,0.625,0.625,0.469,0.625,0.073,0.448,0.106,0.0,0.2,0.228,0.25,T_PA_FAX DECOY:D_DOUBLE_CHARGE,0.0,,,,,
+mock_shuffled,mock_shuffled (synthetic mock),29.96,1.0,1.0,0.125,0.625,0.844,0.562,0.031,0.25,0.25,1.0,0.016,0.029,0.0,,1.0,,,,,

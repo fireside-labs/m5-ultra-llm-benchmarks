@@ -1,0 +1,35 @@
+{
+ "call_type": "scheduling",
+ "outcome": "resolved",
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 5,
+ "quality_reasons": [
+  "Verified the patient's identity directly with him and asked his permission before discussing details with his daughter",
+  "Caught and corrected her own new-patient mistake, updated the contact number and confirmed the date, lab prep and medication list"
+ ],
+ "flags": [],
+ "action_items": [
+  {
+   "owner": "agent",
+   "task": "Send confirmation text to the patient's new cell 555-0173",
+   "due": "today"
+  },
+  {
+   "owner": "patient",
+   "task": "Arrive 20 minutes early for fasting blood draw (nothing to eat after midnight)",
+   "due": "2026-10-15"
+  },
+  {
+   "owner": "daughter",
+   "task": "Bring a current medication list to the visit",
+   "due": "2026-10-15"
+  }
+ ],
+ "summary_notes": "Mock summary for C01.",
+ "notable_details": [
+  "Appointment booked for Thursday October 15 at 10:40 (not the 14th)",
+  "Patient's new cell number is 555-0173 (daughter first said 0137); old landline removed",
+  "Fasting labs (cholesterol and A1c) - arrive 20 minutes early, nothing after midnight"
+ ]
+}

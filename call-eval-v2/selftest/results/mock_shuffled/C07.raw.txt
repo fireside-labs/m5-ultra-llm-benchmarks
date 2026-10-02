@@ -1,0 +1,70 @@
+{
+ "call_type": "scheduling",
+ "outcome": "resolved",
+ "sentiment_start": "negative",
+ "sentiment_end": "positive",
+ "quality_score": 3,
+ "quality_reasons": [
+  "Friendly and efficient: booked both visits, updated insurance, sent a refill request, arranged referral help and the cancellation list",
+  "Privacy lapse: mentioned the son's confidential adolescent-clinic visit to the father",
+  "Told the caller his visit was at Eastgate ('same place') after booking it at Harbor Street"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Agent disclosed to the father that his 15-year-old son had a confidential adolescent-clinic visit with Dr. Sato on Sept 3 (a follow-up), information marked confidential",
+   "evidence": "it's marked confidential, adolescent clinic, so I can't really\u2014 well, it was just a follow-up"
+  },
+  {
+   "type": "other",
+   "description": "Agent told the caller his Oct 12 appointment was at the 'same place as always, Eastgate' although she had booked it at Harbor Street because Eastgate adult medicine is closed for renovation",
+   "evidence": "Yep, same place, you'll be all set."
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "front desk (Tamsin)",
+   "task": "Send text confirmations for both appointments to the caller's cell; reminders two days before",
+   "due": "today / 2 days before each visit"
+  },
+  {
+   "owner": "caller",
+   "task": "Bring the green athletic pre-participation (sports physical) form signed on the parent page",
+   "due": "Oct 22 visit"
+  },
+  {
+   "owner": "front desk / Dr. Sato's nurse team",
+   "task": "Send albuterol inhaler refill request for Ezra to Dr. Sato's nurses, to Ostrander Eastgate pharmacy",
+   "due": "1-2 days"
+  },
+  {
+   "owner": "referrals (Paloma) / Dr. Lindqvist",
+   "task": "Orthopedics referral to Corran Orthopedics after the Oct 12 visit if the doctor agrees; Corran calls to schedule within 5 business days",
+   "due": "after Oct 12"
+  },
+  {
+   "owner": "front desk",
+   "task": "Update insurance to new Halvard card H-77310 (group B-442) for caller and son; eligibility check overnight",
+   "due": "today"
+  },
+  {
+   "owner": "caller",
+   "task": "Arrive 15 minutes early to the Oct 12 visit for site check-in form",
+   "due": "Oct 12"
+  },
+  {
+   "owner": "front desk",
+   "task": "Put Ezra on Dr. Sato's Thursday cancellation list; text if earlier slot opens",
+   "due": "ongoing"
+  }
+ ],
+ "summary_notes": "Mock summary for C08.",
+ "notable_details": [
+  "Son's sports physical: Thursday Oct 22 at 3:30 pm with Dr. Sato at Eastgate pediatrics (3:00 was offered first, declined)",
+  "Father's own visit is Monday Oct 12, 9:20 am with Dr. Lindqvist at the Harbor Street office (Eastgate adult side closed for renovation)",
+  "New Halvard member ID H-77310 (first misread as 77301), group B-442",
+  "Must bring the green athletic pre-participation form signed by the parent",
+  "Caller first pressed 3 for refills in the phone menu and was routed to billing",
+  "Ortho referral can only be sent after the Oct 12 primary-care visit; it goes to Corran Orthopedics"
+ ]
+}

@@ -1,0 +1,111 @@
+@id C14
+@date 2026-09-21 10:02
+@line Corrowind Health Partners - Patient Billing (transferred to Billing Supervisor)
+@direction inbound
+@target 11400
+@speaker A AGENT = billing representative
+@speaker C CALLER = patient
+@speaker S SUPERVISOR = billing supervisor
+---
+A: Billing, this is Brent.
+C: Hi, Brent. My name is Gwendolyn Achterberg-Lowe, and I am calling for the— I've lost count. The fourth time? The fifth? About the same problem.
+A: Okay. Date of birth?
+C: January twenty-sixth, nineteen fifty-five.
+A: And the address?
+C: Three-oh-nine Kestrel Bend.
+A: Okay. What's the problem?
+C: The problem is your ClearPay system keeps charging me twice for my copays. It's happened three times now. And instead of fixing it, you sent me to collections. I got a collections letter on Saturday. Collections! I have never been in collections in my life. I'm seventy-one years old.
+A: Okay, so, let me look at the account. [typing] So I see a balance that was referred to an outside agency on, uh, September fourteenth, one hundred thirty-five dollars.
+C: That's the three copays you charged me twice! That's not a balance I owe, that's money you owe me!
+A: Well, it's showing as past due on my screen.
+C: I've had a dispute open since May. May! I called in May, someone opened a ticket. I called in July. I called on September eighth, two weeks ago, and I talked to a young man named Kyle, very polite, and he said, "Billing will call you back by Friday." That was Friday the eleventh. Nobody called. Nobody. And then three days later, you send me to collections.
+A: Okay. I don't see a callback here.
+C: Of course you don't.
+#fill billing_lookup
+A: So, which charges are you saying are duplicates?
+C: I have them all written down. March ninth, forty-five dollars at the desk, forty-five dollars from ClearPay two days later. May fourth, same thing. And July thirteenth, same thing, except that one ClearPay took from my HSA card, the health savings card, not my Visa. The HSA card ends in seven-seven-two-zero. The Visa ends in one-one-eight-six.
+A: Okay. So I do see three ClearPay auto-payments. I can't really tell from here if they're duplicates or not, the system just shows payments.
+C: They're duplicates! I paid at the desk each time, I have the receipts!
+A: Okay, okay. Ma'am, I just need to—
+C: Don't "ma'am" me, I've been very patient—
+A: [crosstalk] —I just need to look at the—
+C: [crosstalk] —five months, Brent.
+A: I understand. Let me look.
+#fill billing_lookup smalltalk
+C: And while you're looking. My husband got a letter too. Reinhold Achterberg-Lowe. Same last name. Can you check his? I bet it's the same thing.
+A: Sure. [typing] Reinhold... okay, his account shows two hundred twelve dollars and forty cents, also referred to collections on the fourteenth, and it looks like there's also a duplicate ClearPay payment from June on his.
+C: Unbelievable. Both of us.
+A: Yeah.
+C: And honestly, Brent, I'll tell you something. Since August I've been skipping my blood pressure pills, every other day, because I can't afford the pills and these double charges both. I'm on a fixed income. I'm stretching them.
+A: Okay. So about the balance, what I can do is put in another dispute ticket.
+C: Another ticket? I've got tickets! I want to talk to someone who can actually do something. I want a supervisor.
+A: I can put in the ticket, that's really all I can—
+C: Supervisor. Please.
+A: Fine. Hold on.
+#hold 410
+#fill transfer_wait
+S: Hello, Mrs. Achterberg-Lowe? This is Danielle Okafor-Brandt, I'm the billing supervisor. I'm so sorry for the wait, and I'm sorry you're dealing with all of this.
+C: Thank you. Are you going to make me tell the whole story again?
+S: Brent gave me a summary, but I'd like to hear it from you, so I get it right. I promise this is the last time you'll have to tell it.
+C: [sighs] Okay. Since your new ClearPay thing started, every time I go in, I pay my forty-five dollar copay at the desk, and then ClearPay charges it again a couple of days later. March ninth, May fourth, July thirteenth. The July one went on my HSA card, the others on my Visa. I opened a dispute in May. I called again in July. I called on September eighth and Kyle told me billing would call me back by Friday the eleventh. Nobody called. Then on the fourteenth you sent me to collections for a hundred thirty-five dollars, which is exactly the three duplicates. I got the letter Saturday.
+S: Thank you. That's very clear, and you're right on every point. I'm looking at the account now. [typing] I see Kyle's note from September eighth. It says, "Patient requests callback from billing re: duplicate ClearPay payments, promised callback by 9/11." But there's no callback task attached to it. It was never assigned to anyone. That's on us, and I apologize.
+C: So he just didn't do it.
+S: The note was written, but the task never went to the team. That's a process failure, and I'm going to make sure it's looked at.
+#fill billing_lookup escalation_hold @A=S
+S: Okay, first things first. The collections referral. That should never have happened while you had an open dispute. Our policy is that accounts with an open billing dispute are on hold and can't be referred. I'm submitting a recall request to the agency right now, so they'll close it out and it won't be reported anywhere. And I'm putting a billing hold on your account, so nothing else goes out while this is open.
+C: Okay. Okay. That's— thank you. That letter really scared me.
+S: I'm sorry it did. You'll get a letter from the agency confirming the account was recalled, usually within ten business days.
+C: Okay.
+C: Will this hurt my credit? That's what my husband keeps asking. He's been reading things on the internet.
+S: Medical debt that's recalled before it's reported shouldn't appear on your credit at all. I can see the agency received it on the fourteenth, and their process is not to report for at least a year, so it hasn't been reported. When I send the recall, it closes on their end.
+C: Oh, that's a relief. He'll be happy to hear that.
+S: And if you ever see anything on a credit report about this, call me and I'll send you a letter you can use to dispute it.
+C: Okay. Thank you.
+#fill clinic_admin escalation_hold @A=S
+S: Now, I want to go through the charges one at a time with you, so we're looking at exactly the same thing. You said you have your receipts?
+C: Right here. In my folder. I keep everything.
+S: Wonderful. Let's start with March. On my screen I see a front-desk payment on March ninth, forty-five dollars, on a Visa ending one-one-eight-six. Does your receipt match?
+C: Let me see. March ninth... yes. Forty-five dollars. Visa. It says "copay, paid in full."
+S: Paid in full, good. And then I see a ClearPay automatic payment on March eleventh, forty-five dollars, same Visa.
+C: Yes, that's on my credit card statement. I circled it.
+S: Okay. That's duplicate number one. Now May. Front-desk payment May fourth, forty-five dollars, Visa ending one-one-eight-six.
+C: May fourth... yes, here it is.
+S: And ClearPay on May sixth, forty-five dollars, same card.
+C: Circled. Yes.
+S: Duplicate number two. And July. Front desk July thirteenth, forty-five dollars on the Visa. And then ClearPay on July fifteenth, forty-five dollars, but on a different card, the one ending seven-seven-two-zero.
+C: That's my HSA card. I don't know why it picked that one. I had it saved in the portal from a pharmacy payment, I think.
+S: That would explain it. The portal charges whatever card is set as the default. Okay, so that's duplicate number three. Three duplicates, all matching your receipts.
+C: Finally someone sees it.
+S: I see it. And I'm sorry it took this long.
+#fill billing_lookup @A=S
+S: Second, the duplicates. I can see all three. Forty-five dollars each, a hundred thirty-five total. I'm issuing refunds for all three now. The two on the Visa will go back to the Visa ending one-one-eight-six. The July one has to go back to the HSA card ending seven-seven-two-zero, it's a separate refund because HSA payments go through a different process. Refunds take seven to ten business days.
+C: Separate. Okay. As long as it goes back.
+S: It will. And I'm opening an escalation with our billing director, because a dispute open since May without resolution needs a director's review. The director's office will call you within forty-eight hours, by Wednesday.
+C: Wednesday. Will they actually call?
+S: I'm assigning the callback task myself, and I'm putting my name on it. If you don't hear by Wednesday end of day, call this number and ask for me directly. Danielle.
+C: Danielle. Okay.
+#fill smalltalk escalation_hold @A=S
+S: And because of the trouble and the time you've put in, I'm applying a fifty-dollar goodwill credit to your account. Supervisors can do courtesy credits up to seventy-five dollars, so this is within what I can approve today.
+C: Well. That's nice. Thank you.
+S: It'll show up on your next statement.
+C: Now, my husband. Brent looked at his account and said it's also in collections, two hundred and twelve dollars. Can you fix his too?
+S: Hold on. Brent looked up your husband's account and read you the details?
+C: Yes. Is that a problem?
+S: Does your husband have an authorization on file allowing us to discuss his account with you?
+C: I don't think so. We never did any forms. Why?
+S: I'm sorry, Mrs. Achterberg-Lowe, I can't discuss his account with you without his authorization, and I'm afraid Brent shouldn't have shared that information. I need to report that to our privacy office, that's our rule. It's nothing you did wrong. If your husband can call us himself, or sign an authorization form so you can manage it, I'll make sure his account gets the same treatment, the recall and the review.
+C: Okay. He'll call. He's at the senior center right now. He'll call this afternoon.
+S: Perfect. Have him ask for me.
+#fill billing_lookup smalltalk @A=S
+S: Is there anything else I should know?
+C: Well. I told Brent, but he didn't seem to care. I've been skipping my blood pressure pills, every other day, since August. To make them last. Because with the double charges, money's been very tight.
+S: Oh. I'm really glad you told me. Mrs. Achterberg-Lowe, please don't skip your blood pressure medication. I'm not a nurse, but I don't want you to be at risk. Two things. We have a financial counseling program, and they can look at assistance programs for your medications and your bills. And I'd like to have one of our pharmacists or a nurse call you today about your blood pressure medication, to see if there's a lower-cost option. Is that okay?
+C: Yes. I didn't know that was a thing.
+S: It is. I'm sending both referrals now. The financial counselor will call within two business days, and the nurse line today.
+C: Okay. Thank you, Danielle. You're the first person who's actually done anything.
+#fill escalation_hold smalltalk @A=S
+S: Let me recap. One: the collections referral is being recalled and your account is on billing hold. Two: refunds for all three duplicates, a hundred thirty-five total, two to your Visa, one to your HSA card, seven to ten business days. Three: the billing director's office calls you by Wednesday. Four: a fifty-dollar goodwill credit. Five: a nurse or pharmacist calls you today about your blood pressure medicine, and a financial counselor within two business days. And six: your husband calls us himself about his account.
+C: That's a lot. Can you send me that in writing?
+S: Yes, I'll mail you a letter with all of it today, and I'll put a copy in your patient portal.
+C: Thank you. Really.
+S: You're welcome. And again, I'm sorry. Take care, Mrs. Achterberg-Lowe.

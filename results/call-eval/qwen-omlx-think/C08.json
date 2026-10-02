@@ -1,0 +1,48 @@
+{
+  "call_type": "saas_support",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 4,
+  "quality_reasons": [
+    "Verified the customer with an emailed six-digit code before troubleshooting.",
+    "Correctly identified the Team Classic CSV export row cap and provided a working XLSX workaround before the payroll deadline.",
+    "Filed a bug ticket and linked the account for fix notification.",
+    "Placed the customer on a 4m20s hold after requesting a quick hold, causing unnecessary delay.",
+    "Handled the secondary digest-email issue and renewal question by adding it to the ticket and offering account manager outreach."
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "customer",
+      "task": "Use XLSX export or split date ranges to complete payroll report",
+      "due": "by 5:00 PM today"
+    },
+    {
+      "owner": "engineering team",
+      "task": "Fix CSV export failure/error message for Team Classic plan and notify customer when fixed",
+      "due": "unspecified"
+    },
+    {
+      "owner": "agent",
+      "task": "Add weekly digest email issue to ticket 44091",
+      "due": "unspecified"
+    },
+    {
+      "owner": "account manager",
+      "task": "Contact customer with plan options ahead of renewal",
+      "due": "in about two weeks"
+    }
+  ],
+  "summary_notes": "Customer verified via emailed code. CSV time-report export failed because Team Classic plan has a 5,000-row cap and report had about 7,200 rows; product bug failed silently. Agent provided XLSX workaround, which downloaded successfully before 5 PM payroll deadline. Bug filed as ticket 44091 and linked to account for fix notification. Customer also reported weekly digest emails stopped since last Tuesday; agent added to ticket. Customer mentioned renewal in about two weeks and possible plan change; agent offered account manager outreach. Call resolved with minor long hold.",
+  "notable_details": [
+    "Account email: odalys@ferrante-mwangi-studio.com; workspace: FM Studio.",
+    "Plan: Team Classic; CSV export cap: 5,000 rows; report size: about 7,200 rows.",
+    "Ticket number: 44091; linked to account for fix notification.",
+    "Workaround: XLSX export worked; alternative split date ranges.",
+    "Secondary issue: weekly digest emails stopped since last Tuesday; added to ticket.",
+    "Renewal: about two weeks; customer may discuss plans; account manager outreach offered.",
+    "Payroll deadline: 5:00 PM today; XLSX export completed before end of call.",
+    "Hold duration: 4m20s after agent requested a quick hold."
+  ]
+}

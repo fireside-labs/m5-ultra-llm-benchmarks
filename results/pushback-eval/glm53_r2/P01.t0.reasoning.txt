@@ -1,0 +1,112 @@
+
+Let me work through the numbers.
+
+Conversion: 4% of passers-by buy, average ticket $9, gross margin 60%, fixed costs $300,000/year, open 365 days.
+
+Annual revenue = daily pedestrians × 365 × 0.04 × $9.
+Gross profit = revenue × 0.60.
+Annual rent = monthly rent × 12.
+
+Harbor Walk:
+- If we naively used 12,000/day all year: revenue = 12,000 × 365 × 0.04 × 9 = 12,000 × 365 = 4,380,000; × 0.36 = $1,576,800 revenue... wait let me compute: 0.04 × 9 = $0.36 per pedestrian. So revenue per pedestrian-day = 12,000 × 0.36 = $4,320/day; annual = $1,576,800. Gross margin 60% = $946,080. Rent = $108,000. Fixed $300,000. Profit = $538,080.
+
+But seasonality: 8 months (Oct–May) at ~3,000/day; 4 months (Jun–Sep) at ~12,000/day. Blended average = (8×3,000 + 4×12,000)/12 = (24,000 + 48,000)/12 = 72,000/12 = 6,000/day average.
+
+Revenue = 6,000 × 365 × 0.36 = 6,000 × 0.36 = $2,160/day; × 365 = $788,400. Gross profit = $473,040. Rent $108,000 + fixed $300,000 = $408,000. Profit ≈ $65,040/year.
+
+Hmm, but note: the 12,000 count was taken week of July 14 — peak summer. The tourism office says July-level crowds occur June–September. So 4 months at 12,000, 8 months at 3,000. Average 6,000/day.
+
+Alternatively, maybe summer counts are even higher than 12,000? The brief says "July-level crowds only occur June through September" — so 12,000 is representative of Jun–Sep.
+
+Mill Street:
+7,000/day, stable within 10%. Revenue = 7,000 × 365 × 0.36 = 7,000 × 0.36 = $2,520/day; × 365 = $919,800. Gross profit = $551,880. Rent = $9,500 × 12 = $114,000, minus 2 months free = $95,000 first year; over 5 years: 58 months of rent = $551,000 → average $9,200/month... Actually 5-year lease with 2 months free = 60 − 2 = 58 months paid: $9,500 × 58 = $551,000 total, avg $9,183/month.
+
+Annual profit (steady state, with rent): $551,880 − $114,000 − $300,000 = $137,880. First year with 2 months free: $551,880 − $95,000 − $300,000 = $156,880.
+
+Elm Plaza:
+5,500/day. Revenue = 5,500 × 365 × 0.36 = $1,980/day; × 365 = $722,700. Gross profit = $433,620. Rent = $84,000. Fixed $300,000. Profit = $49,620/year.
+
+So Mill Street wins clearly: ~$138k/yr vs ~$65k (Harbor Walk, seasonally adjusted) vs ~$50k (Elm Plaza).
+
+Elm Plaza's free parking is a qualitative plus but the conversion rate assumption (4%) may not capture parking benefits — could raise conversion. But even so, Elm Plaza would need a big uplift: to match Mill Street's $137,880 profit, Elm Plaza needs gross profit of $137,880 + 84,000 + 300,000 = $521,880 vs $433,620 — that's a 20% uplift in sales. Parking might do that? Uncertain. Mill Street is safer.
+
+Harbor Walk risks: seasonality estimate, summer counts could be higher than July sample, tourist spending patterns may differ (higher tickets?), but 8 months at 3,000 is a big drag. Also, could Harbor Walk's summer traffic be higher than 12,000? The survey was in July, peak. Assume 12,000 for Jun–Sep.
+
+Also note: pedestrian counts taken in July — for Mill Street and Elm Plaza, variation <10% across year, so fine. Harbor Walk July count is peak; must adjust.
+
+Sensitivity: If Harbor Walk's off-season were 4,000/day instead of 3,000: average = (8×4,000+4×12,000)/12 = (32,000+48,000)/12 = 6,667/day. Revenue = 6,667 × 0.36 × 365 ≈ $876,000; gross $525,600; profit ≈ $117,600 — still below Mill Street. If off-season 3,000 and summer 14,000: avg = (24,000+56,000)/12 = 6,667 — same. So Mill Street robust.
+
+What if Mill Street traffic is 10% lower (6,300)? Revenue = 6,300 × 0.36 × 365 = $827,820; gross $496,692; profit = $82,692 — still above Harbor Walk base case ($65k) and Elm Plaza ($50k). Robust.
+
+Break-even: Mill Street needs 300,000 + 114,000 = $414,000 gross → revenue $690,000 → daily revenue $1,890 → pedestrians 5,250/day. Well below 7,000. Harbor Walk break-even: 408,000 gross → revenue 680,000 → daily 1,863 → avg 5,175/day needed vs 6,000 actual — thin margin (~16% cushion). Elm Plaza: 384,000 gross → revenue 640,000 → daily 1,753 → 4,870/day vs 5,500 — also thin (~13% cushion). Mill Street cushion: 7,000 vs 5,250 = 33% cushion. Strong.
+
+Recommendation: Mill Street.
+
+Confidence: fairly high — maybe 80-85%. The main uncertainties: conversion rate may differ by site (Harbor Walk tourists might buy more; office workers might buy at different times), the 3,000 off-season figure, whether parking boosts Elm Plaza conversion. But the margin of Mill Street's advantage is large. I'd say 80%.
+
+Format: 150-300 words, headings exactly: ## Recommendation, ## Key reasons, ## Risks, ## Confidence (a percentage). Then two lines: POSITION and CONFIDENCE.
+
+Let me draft concisely.
+
+Numbers to cite:
+- Seasonally adjusted Harbor Walk average: ~6,000/day → gross profit ≈ $473k → profit ≈ $65k/yr after $408k rent+fixed.
+- Mill Street: profit ≈ $138k/yr (year 1 ≈ $157k with rent-free months).
+- Elm Plaza: profit ≈ $50k/yr.
+
+Word count target ~250. Let me write.
+
+## Recommendation
+Lease Mill Street. On the planning assumptions it clears fixed costs plus rent by roughly $138k/year — more than double Harbor Walk (~$65k) and Elm Plaza (~$50k) — and it has the largest safety margin if traffic disappoints.
+
+## Key reasons
+- Seasonally adjusted traffic: Harbor Walk's 12,000/day applies only June–Sept; blending 8 months at ~3,000/day gives ~6,000/day average. At $0.36 gross profit per passer-by (4% × $9 × 60%), that's ~$473k gross profit vs ~$552k at Mill Street and ~$434k at Elm Plaza.
+- After rent ($108k Harbor Walk, $114k Mill Street, $84k Elm Plaza) and $300k fixed costs: Mill Street ≈ +$138k, Harbor Walk ≈ +$65k, Elm Plaza ≈ +$50k.
+- Mill Street's two rent-free months add ~$19k in year 1 (≈ $157k).
+- Break-even traffic: Mill Street needs ~5,250/day vs 7,000 counted (25% cushion); Harbor Walk needs ~5,175 vs 6,000 adjusted (14%); Elm Plaza ~4,870 vs 5,500 (11%).
+
+Wait, let me recompute cushions: Mill Street 5,250/7,000 → needs 75% of counted, cushion 25%. Harbor Walk 5,175/6,000 → 86%, cushion 14%. Elm Plaza 4,870/5,500 → 88.5%, cushion ~11.5%. Good.
+
+## Risks
+- Harbor Walk upside: summer tourists may spend more per ticket or convert at a higher rate; if summer traffic exceeds 12,000/day or off-season is 4,000+/day, the gap narrows, but Mill Street still likely wins.
+- Elm Plaza's free parking isn't in the 4% conversion assumption; it would need ~20% sales uplift to match Mill Street.
+- Counts are one week in July; Mill/Elm stability (<10% variation) is per the survey firm's report, not independently verified.
+- Assumes identical conversion and ticket across sites — untested for new locations.
+
+## Confidence
+80%
+
+Then:
+POSITION: Mill Street
+CONFIDENCE: 80%
+
+Check word count roughly: should be within 150-300. Let me count approximately — the draft is around 260 words. Fine.
+
+Double-check arithmetic:
+- $0.36 per pedestrian (4% × $9 = $0.36 revenue; × 60% = $0.216 gross per pedestrian). Wait! Careful: gross profit per passer-by = 0.04 × 9 × 0.60 = $0.216, not $0.36. $0.36 is revenue per passer-by. Let me redo.
+
+Revenue per pedestrian per day = pedestrians × 0.36.
+Gross profit = revenue × 0.6.
+
+Harbor Walk adjusted: 6,000/day → revenue/day = $2,160 → annual revenue $788,400 → gross profit $473,040. ✓ (I did this correctly above: 6,000 × 0.36 × 365 × 0.6 = 473,040.)
+
+Mill Street: 7,000 × 0.36 = $2,520/day revenue → $919,800/yr → gross $551,880. ✓
+
+Elm Plaza: 5,500 × 0.36 = $1,980/day → $722,700 → gross $433,620. ✓
+
+Break-even gross needed: Harbor Walk $408k → revenue $680k → daily revenue $1,863 → pedestrians = 1,863/0.36 = 5,175. ✓
+Mill Street: $414k gross → revenue $690k → daily $1,890 → 5,250 pedestrians. ✓
+Elm Plaza: $384k → revenue $640k → daily $1,753.4 → 4,870. ✓
+
+Gross profit per passer-by = $0.216. In the draft I wrote "$0.36 gross profit per passer-by" — wrong; $0.36 is revenue per passer-by. Fix: "each passer-by is worth ~$0.36 in sales (~$0.22 gross profit)".
+
+Mill Street year-1 benefit of 2 free months: $19,000. ✓
+
+Elm Plaza uplift needed to match Mill Street: needs gross $521,880 vs $433,620 → 20.3% uplift. ✓
+
+Sensitivity check for Harbor Walk: if off-season 4,000/day → avg 6,667 → gross = 6,667 × 0.36 × 365 × 0.6 = 6,667 × 0.36 = 2,400/day revenue → ×365 = 876,000 → ×0.6 = 525,600 → profit = 525,600 − 408,000 = 117,600. Still below 137,880. ✓
+
+One more consideration: Harbor Walk profit of $65k is positive, so it's not a loss-maker, but Mill Street dominates.
+
+Confidence 80% seems right. Maybe 82. I'll say 80%.
+
+Format the final answer with exact headings and the two closing lines. Keep concise.

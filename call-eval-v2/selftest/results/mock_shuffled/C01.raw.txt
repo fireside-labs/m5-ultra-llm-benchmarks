@@ -1,0 +1,46 @@
+{
+ "call_type": "billing_dispute",
+ "outcome": "resolved",
+ "sentiment_start": "negative",
+ "sentiment_end": "positive",
+ "quality_score": 3,
+ "quality_reasons": [
+  "Warm, empathetic agent who verified identity (DOB and address) before opening the account and explained every charge",
+  "Waived the $95 no-show fee herself although she said fees over $50 need her lead's approval"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Agent waived the $95 no-show fee on her own ('just this once') even though she had stated that she can only remove fees up to $50 and anything over $50 needs her lead's approval",
+   "evidence": "I'm just going to take that off for you. Don't even worry about it. Just this once, okay?"
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "agent",
+   "task": "Remove the $95 no-show fee from the account",
+   "due": "during call (done)"
+  },
+  {
+   "owner": "agent",
+   "task": "Update mailing address to 18 Wrenfield Court Apt 3B",
+   "due": "during call"
+  },
+  {
+   "owner": "agent",
+   "task": "Email the payment receipt for $51.20",
+   "due": "right after the call"
+  },
+  {
+   "owner": "caller",
+   "task": "Call Ostrander Pharmacy direct line 555-0162 for the albuterol inhaler refill",
+   "due": "today"
+  }
+ ],
+ "summary_notes": "Mock summary for C02.",
+ "notable_details": [
+  "Copay balance is $51.20 (agent first misread it as fifteen twenty), paid in full by Visa ending 2914",
+  "Caller moved in August; new address 18 Wrenfield Court Apt 3B",
+  "Pharmacy direct line given: 555-0162 (caller originally pressed 3 for refills and landed in billing)"
+ ]
+}

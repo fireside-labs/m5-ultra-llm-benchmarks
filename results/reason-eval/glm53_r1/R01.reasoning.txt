@@ -1,0 +1,184 @@
+
+Let me analyze this memo carefully as a senior advisor steering the decision.
+
+The memo recommends Tallis, but the appendix contains facts that undermine almost every pillar of the rationale. Let me work through it.
+
+**Key issues:**
+
+1. **Union/shift-differential capability missing (Appendix 4).** Tallis cannot currently configure union shift-differential and overtime-averaging rules — it's "on the roadmap for Q3." Ferncliff has 4 of 9 sites unionized, and payroll errors are the #1 source of grievances. This is a direct conflict: the vendor that can't handle union rules is being chosen by a company whose biggest pain point is payroll errors, with 40% unionized workforce. Roadmap promises are not contractual commitments. This is probably the single biggest disqualifier. If Tallis can't compute union differentials correctly at go-live, Ferncliff will be running manual workarounds for union sites — exactly the error source they're trying to fix.
+
+2. **Price comparison is misleading — year-1 price vs. total cost.** The memo scores price on year-1 subscription only: Tallis $182k (40% discount), list $303k from year 2 with up to 8% annual increases, plus $95k implementation. Corvane: $236k/year fixed 3 years, implementation included. Meridew: $214k with 3% cap, $30k implementation. Let me compute 3-year costs:
+
+- Tallis: Year 1: $182k + $95k impl = $277k. Year 2: $303k (assuming 0% increase; up to 8% → up to ~$327k). Year 3: $303k × up to 1.08 → up to ~$353k. So 3-year total: $277k + $303k + $327k (with 8% in yr 3? Let me be careful). "annual increases of up to 8%" — so year 2 could be $303k × 1.08 = $327.2k, year 3 = $327.2k × 1.08 = $353.4k. Actually the list price from year 2 is $303k, then annual increases of up to 8% — ambiguous whether year 2 is $303k or $303k×1.08. Let me present a range: minimum 3-year ≈ $277k + $303k + $303k = $883k (if no increases) up to ~$957k if 8% each year after year 2... Let me just compute: if year 2 = $303k and year 3 = $303k×1.08 = $327k, total = $277 + $303 + $327 = $907k. If increases apply from year 2: $277 + $327 + $353 = $957k. So roughly $880–960k.
+
+- Corvane: $236k × 3 = $708k, implementation included. Total $708k.
+
+- Meridew: $214k + $214k×1.03 + $214k×1.03² ≈ $214 + $220.4 + $227 = $661.5k + $30k impl = ~$691.5k.
+
+So Tallis is actually the MOST expensive over 3 years by a wide margin (~$190–250k more), despite scoring 9 on price. The price criterion is scored on the discounted year-1 teaser, which inverts the actual ranking. Meridew is cheapest, Corvane second. This is a huge scoring error — the 25% weight criterion is scored backwards.
+
+3. **Uptime criterion is vendor marketing, not contractual.** Tallis scored 10 for 99.99% uptime from its marketing page, but its contract has NO uptime SLA ("commercially reasonable efforts"). Corvane and Meridew have 99.9% SLAs with service credits. So the 15% weight criterion rewards unverifiable marketing and penalizes contractual commitments. Tallis's contractual uptime position is actually the worst of the three. Also, uptime matters for a payroll/scheduling platform — if scheduling is down Monday morning, 1,400 employees across 9 sites can't be scheduled; if payroll is down, payruns slip.
+
+4. **Reference profile mismatch.** Tallis's 3 references: 60, 140, 190 employees, single-site, non-union. Ferncliff: 1,400 employees, 9 sites, 4 unionized. Tallis has never been proven at Ferncliff's scale or complexity. Corvane has a 2,000-employee unionized distributor reference — directly on point. Meridew has multi-site retailers. The customer-references criterion (10%) scored Tallis 9, but the references are the least relevant of the three. Also Tallis is 3 years old, 40 employees, raising its next round — vendor viability risk for a system that must run payroll for 1,400 people. If Tallis fails or is acquired, the termination fee is 6 months of fees AND data export only in Tallis's proprietary format — exit costs are high and lock-in is real.
+
+5. **Features scored from demos using vendor's own demo scripts.** Scoring each vendor on its own demo script is not consistent comparison — it lets each vendor show what it's best at. The polished demo drove the 30% weight criterion, and the scorer was a single person (the recommending Director) — self-scoring with no checks. Also the payroll team (the 6 daily users) never saw any demo — ease-of-use scores (20% weight) came from whom? Presumably the Director alone. Ease of use scored 8 for Tallis and Corvane without the actual users involved.
+
+6. **Deadline pressure / price expiry.** "Sign this week to lock in year-1 price, expires Friday" — classic vendor-created urgency. The year-1 price is a 40% discount teaser; locking it in saves little relative to the 3-year delta. The expiry shouldn't drive a decision on a multi-year payroll platform. Also, end of support in 11 months gives real time — a proper evaluation with the payroll team, union-rule configuration testing, and contractual fixes can happen in weeks, not necessarily a year, but there's no need to sign by Friday.
+
+7. **Exit/lock-in terms.** Tallis: data export only in proprietary format + 6-month termination fee. For a payroll system, data portability is critical (you need historical payroll records for audits, grievances, tax). This compounds vendor-viability risk (item 6 of appendix: young company, fundraising).
+
+8. **Scoring math check.** Weighted total for Tallis: 0.30×9 + 0.25×9 + 0.20×8 + 0.15×10 + 0.10×9 + 0.10×8 = 2.7 + 2.25 + 1.6 + 1.5 + 0.9 + 0.8 = 9.75. ✓. Corvane: 0.3×7 + 0.25×6 + 0.2×8 + 0.15×8 + 0.1×7 + 0.1×8 = 2.1 + 1.5 + 1.6 + 1.2 + 0.7 + 0.8 = 7.9 ✓. Meridew: 0.3×6 + 0.25×7 + 0.2×7 + 0.15×8 + 0.1×8 + 0.1×7 = 1.8 + 1.75 + 1.4 + 1.2 + 0.8 + 0.7 = 7.65 ✓. Weights sum to 30+25+20+15+10+10 = 110%. The weights sum to 110%, not 100%! That's an error — the weighted totals are inflated. Actually wait: 30+25+20+15+10+10 = 110. Yes, 110%. So either a weight is wrong or the totals are inflated by 10%. Hmm, that's a real arithmetic/structural error worth flagging. If we renormalize, rankings might not change much, but the totals are wrong as stated. Also double-counting: price appears both as a criterion and... no. But note integration at 10% — fine. The 110% sum is a genuine error worth flagging, though not decision-driving by itself.
+
+Actually, let me double check: 30 + 25 = 55; 55 + 20 = 75; 75 + 15 = 90; 90 + 10 = 100; 100 + 10 = 110. Yes, 110%.
+
+9. **Single-scorer bias / no governance.** The Director scored demos alone, references alone presumably, and recommends. Payroll team uninvolved. For a system the payroll team runs daily, their absence is both a validity problem and an adoption/implementation risk.
+
+10. **Grievance pain point not mapped to criteria.** Payroll errors are #1 grievance source, yet there's no criterion for payroll accuracy/union rules configuration. The criteria don't reflect the stated business problem. Features at 30% from polished demos is the proxy, but Appendix 4 shows the actual differentiating capability (union rules) is absent in the recommended vendor.
+
+11. **Security check is fine** — SOC 2 Type II with no exceptions — that's a "looks like a problem but isn't" candidate? Actually IT reviewed and found no exceptions — that's handled. Integration: prebuilt connectors tested with sample export — handled adequately, though a sample journal export is thin vs. full parallel testing; but as a memo-level check it's okay. Support commitments in draft contracts — handled. These go in "looks like a problem but isn't."
+
+Also possible: uptime for a scheduling platform — do we need 99.99%? Probably 99.9% is fine; the issue is the absence of any SLA for Tallis, not the number itself.
+
+Another: "Ease of use 20%" — scored without end users; payroll team hasn't seen demos. That's part of governance issue.
+
+Also: the recommendation says "sign this week to lock in year-1 price" — but year-1 price is a teaser; the real cost exposure is years 2-3 and the renewal escalator up to 8%. Locking a discounted year 1 while leaving list-price escalators uncapped is backwards negotiating.
+
+Also: implementation fee $95k billed separately — not in the price score. And Tallis implementation timeline claims ("set up in six weeks" from a 60-employee single-site reference) don't extrapolate to 9 sites/1,400 employees.
+
+Prioritization — Top 3:
+
+1. Union payroll capability gap (Appendix 4) — direct conflict with the #1 business pain; roadmap promise ≠ contract. Must resolve via contractual commitment with remedies or disqualify.
+2. Price scored on teaser year-1; true 3-year TCO makes Tallis the most expensive (~$880–960k vs Corvane $708k, Meridue ~$690k). Re-score on multi-year TCO including implementation and escalators.
+3. Contract terms: no uptime SLA despite 15% weight on vendor-reported uptime; proprietary data export + 6-month termination fee + early-stage vendor viability. Either fix the contract or the score.
+
+Also the process fix: involve payroll team, re-run scoring with normalized weights (110% sum), multi-scorer. But top 3 must be the blockers.
+
+Hmm, which is more important: price scoring error or union rules? Union rules is a go/no-go functional gap for 4 unionized sites and the #1 grievance driver — that's #1. Price inversion is #2. Contract/exit/uptime/viability cluster is #3. The process issues (payroll team involvement, weights summing to 110%, self-scoring) fold into the bottom line: pause the Friday signature.
+
+Actually, maybe I should make the top 3:
+1. Tallis can't yet handle union shift-differential/overtime-averaging — go/no-go gap.
+2. Price criterion measures the wrong thing — 3-year TCO reverses the ranking (Tallis most expensive).
+3. Tallis contract terms contradict the scored rationale: no uptime SLA (scored 10 on marketing claim), proprietary export + 6-month termination fee, early-stage vendor raising its next round — lock-in + viability risk.
+
+And mention in bottom line: don't sign Friday; the expiry is a teaser discount on the least important year. Re-run scoring with payroll team, corrected weights (they sum to 110%), TCO, and references matched to scale/union complexity; Corvane/Meridew both clear the bar Tallis fails.
+
+Missed issues list (max 10, most important first):
+
+1. Union rules gap (App. 4) — roadmap vs. contract; 4 unionized sites; #1 grievance source is payroll errors. Disqualifying unless contractually committed with credits/remedies and proven in sandbox before signature.
+2. Price scored on discounted year 1; 3-year TCO inverts ranking. Numbers: Tallis ≈ $277k yr1 (incl. $95k impl), then $303k+ escalating up to 8% → ~$880–960k over 3 years; Corvane $708k all-in; Meridew ≈ $690k all-in. Tallis is ~$170–250k more expensive, yet got the best price score. Also "lock in price by Friday" locks a teaser while leaving uncapped escalators.
+3. Uptime score is marketing, not contract: Tallis 10 for 99.99% from marketing page while its draft contract has no SLA; Corvane/Meridew have 99.9% with credits. The scored advantage doesn't exist contractually; Tallis's enforceable uptime is worst.
+4. References don't match scale/complexity: Tallis refs 60–190 employees, single-site, non-union vs Ferncliff 1,400/9 sites/4 union. Corvane has 2,000-employee unionized distributor. "Set up in six weeks" from a 60-person site is not evidence for a 9-site rollout.
+5. Vendor viability + exit costs: Tallis 3 years old, 40 staff, raising a round; termination fee = 6 months' fees; data export only in proprietary format. Payroll history is needed for audits/grievances; lock-in plus young vendor = real continuity risk. Not scored anywhere.
+6. Scoring process validity: single scorer (the recommender) scored demos on each vendor's own script — inconsistent comparison favoring the most polished demo; weights sum to 110%, so totals are inflated/miscalculated; the 30%-weight "features" score is largely demo polish.
+7. Payroll team (6 daily users) excluded from demos — ease-of-use (20%) scored without them; adoption and config risk; also they are the people who know the union rules that need testing.
+8. Deadline is vendor-manufactured: year-1 discount expiry Friday is leverage on the least meaningful year; 11 months to EOS gives time for a 2–4 week validation (sandbox union rules, payroll team demos, contract fixes). No analysis of implementation timeline to meet EOS — 11 months is enough but Tallis's claims come from tiny references; no rollout plan risk assessment.
+9. Security/integration tested only superficially? Actually IT tested a sample journal export — for payroll, a sample export passing is adequate at this stage; I'd put "SOC 2 no exceptions" and "prebuilt connectors tested" in "looks like a problem but isn't." Maybe also 24/7 support commitment in draft contracts — handled.
+
+Hmm, also: "Features from vendor demo" — Tallis scored 9 on features while missing union rules, which suggests the demo script drove the score; that's folded into #6 and #1.
+
+Another possible missed issue: the memo's "ease of use" 8 for Tallis and Corvane — no evidence base given. Fold into 7.
+
+Also: no mention of what happens with the current system's data migration — Tallis exports historical data only in own format — that's inbound migration? Appendix 5 says "Tallis exports historical payroll data only in its own format" — I read this as: getting your historical data OUT of Tallis is only in its format (exit), or getting data INTO Tallis? "Exports historical payroll data only in its own format" — likely means when you export from Tallis, data comes out only in Tallis's format, i.e., exit lock-in. Could also mean migration in. Either way it's a portability issue; I'll frame as exit/lock-in since "termination fee" is mentioned in the same item.
+
+Let me also double-check the 3-year math more carefully for the memo claim:
+
+Tallis: Year 1 subscription $182k (40% off list $303k — check: 303 × 0.6 = 181.8 ≈ 182 ✓). Implementation $95k. Year 2: list $303k "with annual increases of up to 8%". Ambiguity: does the 8% apply starting year 2 or year 3? Conservative reading: year 2 = $303k, year 3 = $303k × up to 1.08 = up to $327k. Aggressive: year 2 = up to $327k, year 3 = up to $353k. So 3-year total ranges ~$277 + 303 + 327 = $907k to $277 + 327 + 353 = $957k. Say ≈ $0.9–0.96M. Even with zero escalators: $883k. Still > Corvane $708k by $175k+.
+
+Corvane: $236k × 3 = $708k, impl included.
+
+Meridew: $214k yr1, +3%/yr: yr2 $220.4k, yr3 $227.0k → $661.5k + $30k impl = $691.5k. So Meridew cheapest.
+
+So actual TCO ranking: Meridew < Corvane < Tallis. The memo's price scores (Tallis 9, Meridew 7, Corvane 6) are exactly inverted. With price at 25% weight, re-scoring would move the totals substantially. If we re-score price as Meridew 9, Corvane 8, Tallis 4 (say), Meridew gains ~0.5, Corvane ~0.5, Tallis loses ~1.25 — but I shouldn't fabricate a full re-score; just note the direction and magnitude of the cost gap.
+
+Also note the "lock in year-1 price" saves at most $121k vs Corvane year 1 ($236k) or $32k vs Meridew — trivial vs the 3-year gap, and the discount is a standard teaser.
+
+Also the weights sum to 110% — worth flagging as an error that undermines confidence in the totals. If corrected to 100% by trimming, Tallis still leads on the flawed inputs, so it's secondary to the input errors, but a reviewer should catch it.
+
+Also possible missed issue: no total cost of implementation/internal resources; no mention of parallel run or cutover plan before EOS in 11 months; no risk plan if Tallis's Q3 roadmap slips (Q3 is ~2–3 quarters away? "Q3" — if signing now, Q3 could be before or after go-live; with 11 months to EOS and a typical 4–6 month implementation, go-live might land around Q3 — the roadmap date might just barely precede or miss go-live; and roadmap dates slip). That's a good concrete point: even if Tallis delivers Q3, the union rules would be brand-new, unproven code at go-live for the sites where payroll errors cause grievances. Fold into #1.
+
+"Looks like a problem but isn't" candidates:
+- SOC 2 Type II with no exceptions across all three — handled.
+- Prebuilt ERP connectors with a tested sample payroll journal export — adequate at this stage (full parallel test can come later).
+- 24/7 support with 1-hour response for payroll-blocking issues, in draft contracts — handled.
+- End-of-support in 11 months — sounds urgent but is actually enough runway; the real urgency (Friday) is the manufactured one. Hmm, that's more of a missed issue than "looks like a problem but isn't." Maybe: "Corvane's higher year-1 price" looks bad but includes implementation and fixed 3-year pricing. That's part of the TCO issue though. I could include: "Tallis's polished demo" — no. Keep it short: SOC 2, integration test, support commitments, and maybe "price expiry Friday" is not a reason to rush — no, that's a problem. Maybe "60% hourly staff" — not a problem. I'll include three or four one-liners: SOC 2 clean; ERP connector sample test; support SLA in draft contracts; and possibly "weights sum to 110%" — no, that IS a problem. Maybe "Meridew's mid-pack demo score" — not needed. Keep 3.
+
+Actually one more possible "looks like a problem but isn't": the memo scoring itself being done by one person — no, that's a problem. Uptime 99.9% vs 99.99% difference being immaterial in practice — the real issue is SLA absence. Could say: "The 99.9% vs 99.99% gap itself is immaterial for payroll (a 0.09% difference ≈ ~8 hours/year vs ~53 min/year); the problem is Tallis has no contractual commitment at all." That's a nice nuance — put the nuance in missed issues #3.
+
+Top 3 priorities:
+1. Resolve the union-rules gap: require Tallis to contractually commit shift-differential/overtime-averaging with a delivery date ahead of go-live, penalties, and sandbox proof with our actual union rules before signature; otherwise disqualify. (Evidence: App. 4, 4 unionized sites, grievances.)
+2. Re-do the price score on 3-year TCO including implementation and escalators; Tallis is ~$175–250k more expensive, not cheapest; drop the Friday deadline as a decision driver (teaser discount).
+3. Fix the contract-vs-score contradictions and process: no-SLA uptime, proprietary export + 6-month termination fee, early-stage vendor; involve the 6-person payroll team in demos/scoring before any signature; correct the 110% weights.
+
+Hmm, top 3 should be crisp. Maybe:
+
+1. Union capability gap — go/no-go.
+2. Price scored wrong — TCO inversion; also kills the Friday urgency rationale.
+3. Contract/exit terms + no user validation — no SLA, proprietary export + termination fee, young vendor, payroll team excluded; don't sign until contract terms match the scored assumptions and users validate.
+
+Bottom line: Recommendation doesn't stand on the evidence as scored; Tallis's advantages are teaser price, marketing uptime, and demo polish, while it fails the one capability Ferncliff most needs (union payroll) and carries the worst contract and exit terms. Don't sign Friday; the expiry only locks a 40%-off year 1 while uncapped escalators follow. Spend 2–3 weeks: payroll team demos, union-rules sandbox proof, TCO re-score, contract fixes; Corvane (unionized reference, fixed 3-year price, SLA) and Meridew (cheapest TCO, capped escalators, SLA) both clear the bar Tallis fails. If Tallis can't contractually commit union rules pre-go-live, choose between Corvane and Meridew.
+
+Now, format: exactly the requested headings in order:
+## Missed issues (numbered, ≤10, most important first, each: what/why/evidence)
+## Looks like a problem but isn't (optional, one line each)
+## Top 3 priorities (exactly 3)
+## Bottom line (2–4 sentences)
+
+Keep it sharp and concrete. Use the numbers. Avoid padding. Maybe 8 missed issues. Let me draft.
+
+Missed issues:
+
+1. **Tallis cannot yet run union payroll rules — the memo's own top pain point.** What: shift-differential and overtime-averaging are "on the roadmap for Q3" (App. 4), not shipped. Why: 4 of 9 sites are unionized and payroll errors are the #1 grievance source; Ferncliff would go live on manual workarounds for exactly the sites where errors hurt most, and even if Q3 lands, it's unproven code at go-live. Roadmap promises are not contract terms. Evidence: App. 4; Context.
+
+2. **The price score measures the wrong year — the real 3-year ranking is inverted.** What: price (25% weight) was scored on the discounted year-1 subscription only. Why: Tallis's 3-year cost is ≈ $277k (yr 1 incl. $95k implementation) + $303k+ escalating up to 8% → roughly $880–960k, vs Corvane $708k all-in (fixed, implementation included) and Meridew ≈ $690k all-in (3% cap, $30k implementation). Tallis is the most expensive by ~$175–250k yet scored 9/10 on price; Meridew, the actual cheapest, scored 7. Evidence: App. 1 vs the matrix.
+
+3. **The uptime score rewards marketing, not contract.** What: Tallis got 10/10 for a 99.99% figure from its marketing page while its draft contract contains no uptime SLA ("commercially reasonable efforts"); Corvane and Meridew commit to 99.9% with service credits. Why: the 15%-weight advantage doesn't exist contractually — Tallis is the only vendor with no enforceable uptime commitment, for a system that schedules 1,400 people and runs payroll. Evidence: App. 2 vs matrix row "Uptime (vendor-reported)".
+
+4. **References prove none of Ferncliff's actual profile.** What: Tallis's three references have 60–190 employees, single-site, non-union; Ferncliff is 1,400 employees, 9 sites, 4 union. Why: "set up in six weeks; managers love the app" is evidence for a 60-person site, not a 9-site unionized rollout; Corvane's 2,000-employee unionized distributor and Meridew's multi-site retailers are the on-point references, yet Tallis scored highest on this criterion. Evidence: App. 3; Context.
+
+5. **Vendor viability and exit costs are unpriced.** What: Tallis is 3 years old, 40 employees, raising its next round; its contract charges a termination fee of 6 months' fees and exports historical payroll data only in its own format. Why: a payroll platform for 1,400 people must outlive the vendor's funding cycle, and Ferncliff needs portable historical payroll records for audits and grievances; worst-case cost of a Tallis failure (re-platforming mid-contract, proprietary data) appears nowhere in the scoring. Evidence: App. 5, 6.
+
+6. **The scoring process is single-scorer, script-dependent, and arithmetically wrong.** What: the recommending Director scored all demos alone, using each vendor's own demo script, and the weights sum to 110% (30+25+20+15+10+10), so the totals are inflated. Why: scoring each vendor on its own script systematically favors the most polished demo — which is where Tallis's 9 on the 30%-weight features criterion comes from — and the 110% sum means the headline totals (9.75/7.90/7.65) aren't valid as computed. Evidence: Rationale bullet 1; matrix weights.
+
+7. **The six people who will run the system daily never saw a demo.** What: the payroll team was excluded from all demos, yet "ease of use" carries 20%. Why: their scores would likely differ from the Director's, they are also the people who could validate union-rule configuration in a sandbox in days, and excluding daily users from a payroll-tool choice is an adoption and design-flaw risk. Evidence: App. 7; matrix.
+
+8. **The Friday deadline is vendor leverage, not a Ferncliff constraint.** What: the urgency is a year-1 discount expiry. Why: signing Friday locks a 40%-off teaser (saves ~$32–54k vs the alternatives' year 1) while leaving uncapped up-to-8% escalators in years 2–3 — the expensive years — un-negotiated; with 11 months to end-of-support there is time for 2–3 weeks of validation without jeopardizing the deadline. Evidence: Recommendation; App. 1; Context.
+
+That's 8. Good. Could add implementation timeline risk to meet EOS — fold into 8 or skip. I think 8 is enough; maybe add a 9th about no cutover/parallel-run plan? The memo doesn't discuss implementation plan at all — with 11 months to EOS, a 4-6 month implementation plus parallel payroll runs is needed; Tallis's "six weeks" claim comes from a 60-person site. That's partially covered in 4 and 8. I'll keep 8 to stay sharp. Actually, maybe include a short one: "No implementation/cutover plan despite 11-month EOS" — hmm, it overlaps. Keep 8.
+
+Looks like a problem but isn't:
+- SOC 2 Type II across all three with no exceptions — adequately handled at this stage.
+- ERP integration: prebuilt connectors plus a tested sample payroll journal export — reasonable evidence at selection stage (full parallel run belongs in implementation).
+- Support: 24/7 with 1-hour response for payroll-blocking issues, written into all three draft contracts — comparable and contractual.
+- Maybe: 99.9% vs 99.99% gap itself — the difference is ~8 hours/year vs ~53 minutes; immaterial for payroll cadence; the issue is the missing SLA, not the digits. That's a nice one-liner here. But it might muddy #3. I'll include it as a nuance line here — actually it fits "looks like a problem but isn't": the uptime digits difference isn't the problem. Hmm, but the memo treats uptime as an advantage, not a problem. A reviewer might flag "99.99 vs 99.9 — is that a real difference?" I can include the line: "The 99.99% vs 99.9% gap itself (~53 min vs ~8.8 h downtime/year) is immaterial for a payroll cadence — the real issue is that only two vendors put any number in the contract." That's useful. Keep 3-4 lines.
+
+Top 3 priorities:
+1. Make union payroll capability a contractual go/no-go: before any signature, Tallis must commit shift-differential and overtime-averaging to a pre-go-live date in the contract with remedies, and prove them in a sandbox configured with Ferncliff's actual union rules (payroll team involved). If it won't, disqualify Tallis.
+2. Re-score price on 3-year TCO (subscriptions + escalators + implementation): Tallis ≈ $0.9M vs Corvane $708k and Meridew ≈ $690k; this also removes the Friday-expiry rationale, which only locks the teaser year.
+3. Fix the contract-and-process gaps before decision: no-SLA uptime, proprietary-format export, 6-month termination fee, and an early-stage vendor must either be contracted around (SLA with credits, standard-format data export, escrow/successor terms) or reflected in the scores; and re-run scoring with corrected (100%) weights and the payroll team scoring ease-of-use.
+
+Bottom line: The recommendation doesn't stand: every Tallis advantage in the matrix (price, uptime, features, references) dissolves under the appendix — teaser pricing that becomes the most expensive 3-year cost, marketing uptime with no SLA, demo-polish-driven feature scores, and references from a different species of customer — while it lacks the one capability Ferncliff most needs (union payroll) and has the weakest exit terms. Don't sign Friday; the expiry only locks the discounted year 1. Spend the next 2–3 weeks on payroll-team demos, a union-rules sandbox test, a TCO re-score, and contract fixes, then decide — Corvane and Meridew both already clear the bar Tallis fails, so the fallback is safe.
+
+That's 3 sentences-ish; needs 2-4 sentences. Fine.
+
+Length: keep it tight. Use bold lead-ins for each numbered item. Make sure each missed issue has what/why/evidence compactly. The instruction says "For each: what it is, why it matters for this decision, and the evidence in the memo or appendix." I'll structure each as a bold title sentence plus 2-3 sentences covering why + evidence, or use inline labels. Bold lead-in with compact prose is fine; maybe use "Evidence:" tags sparingly. I'll write each as: **Title.** What/why. Evidence: ... — that satisfies the requirement clearly.
+
+Double-check numbers:
+- Tallis yr1: $182k + $95k = $277k. ✓
+- 3-yr Tallis: $277k + $303k + up to $327k ≈ $907k; with escalators from yr2: up to ~$957k. I'll say "roughly $0.9–0.96M". Even zero-escalator floor $883k. Say "at least ~$880k, likely ~$910–960k".
+- Corvane: $708k. ✓
+- Meridew: $214 + $220.4 + $227.0 = $661.4k + $30k = ~$691k. ✓
+- Gap: Tallis vs Corvane ≈ $175–250k; vs Meridew ≈ $190–265k. I'll say "~$175–250k more than Corvane and ~$190–265k more than Meridew" or just "the most expensive by roughly $180–250k". Keep simple: "roughly $0.9M vs $708k and ~$690k — Tallis is the most expensive by ~$180–250k."
+- Year-1 savings of locking Friday: vs Meridew $214k → $32k; vs Corvane $236k → $54k. ✓
+- Uptime: 99.9% → 8.76 h/yr downtime; 99.99% → 52.6 min/yr. ✓
+
+Weights: 110% — flag. ✓
+
+One more consideration: is there anything the memo got right that I should acknowledge? Security, integration, support — in "looks like a problem but isn't." Good.
+
+Also should I note that "ease of use 8" for both Tallis and Corvane has no stated basis? Covered in #7.
+
+Also the features criterion scored from demos where Tallis demonstrated on its own script — covered in #6. And the fact that Tallis scored 9 on features despite lacking union rules shows the criterion wasn't anchored to Ferncliff's requirements — that's a sharp point; fold into #1 or #6. I'll mention in #6: "a 9 on features for a product missing union rules shows the criterion wasn't anchored to Ferncliff's requirements."
+
+Order check for missed issues: I rank union gap #1, price #2, uptime/SLA #3, references #4, viability/exit #5, scoring process #6, payroll team #7, deadline #8. Reasonable. Some might argue the deadline should be higher because it forces a bad decision this week — but the substantive gaps are the core; the deadline is addressed in Top 3 #2 and bottom line. Fine.
+
+Now write it. Keep Markdown, exact headings. Aim for concise but complete.

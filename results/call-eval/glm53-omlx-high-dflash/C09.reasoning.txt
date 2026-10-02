@@ -1,0 +1,36 @@
+
+The call: outbound pre-registration for MRI, insurance verification. Main purpose: pre_procedure? It's imaging pre-registration, verifying insurance before scheduling MRI. Call type options: scheduling vs pre_procedure vs insurance_verification. The main purpose is insurance verification to enable scheduling. The agent says "Before we can schedule it, I need to verify your insurance." The call is primarily insurance verification. I'd pick insurance_verification.
+
+Outcome: agent will submit prior auth today and call back when decision received — pending follow-up contact. Not escalated (no handoff to another team... she said she'd transfer to billing at end of call, but the call ended without transfer — the call ended at 10:24 with goodbyes, no transfer happened). So the billing issue was promised a transfer that didn't happen — that's a missed commitment flag. Main issue (insurance/prior auth) pending callback → outcome: callback.
+
+Sentiment: start neutral, end positive.
+
+Quality: agent verified identity (DOB + ZIP), accurate info, empathetic. But: promised transfer to billing that didn't happen (call ended). Also lots of technical issues/small talk, but handled gracefully. Also agent said "Today I'm at home" after saying "In the office today" — minor inconsistency, not a flag. Also patient mentioned sticky note password — not agent's issue. Quality 4: good with minor issues (missed transfer commitment, long tech delays). Actually missed commitment is notable — maybe 3? The transfer to billing was promised "at the end of our call" but call ended without transfer. That's a notable lapse. I'd say 3 (mixed: generally competent but one notable lapse). Hmm, or 4. The missed transfer is a real commitment failure. I'll go 3.
+
+Flags:
+1. missed_commitment: promised transfer to billing for double-charged copay but call ended without transfer. Evidence: "I'll transfer you over to them at the end of our call so they can take care of it."
+2. Possibly security flag: agent discussed password change practices? Not really a violation. Patient's sticky note — not agent's fault. Skip.
+3. Agent said "In the office today. Today I'm at home" — contradictory, minor, not a flag type. Skip.
+
+Action items:
+- Agent: submit prior authorization to Granite Meridian with Dr. Kowalczyk-Nnamdi's notes — due today (2026-03-27).
+- Agent: call patient once authorization decision received to schedule MRI — due "as soon as we get a decision, probably next week" / unspecified.
+- Patient: upload photo of front and back of insurance card to portal — tonight.
+- Patient: optionally upload wife's secondary insurance card to portal — unspecified.
+- Billing team: address double-charged $45 copay — but transfer never happened; still it's a task stated? The commitment was transfer, not billing action. I could include "billing team: resolve duplicate $45 copay charge" — due unspecified. Hmm, the transfer didn't happen, so the task wasn't actually assigned. But the field says "every follow-up commitment or task stated in the call." The stated task was transfer. I'll include billing team task since it was raised and agent committed to having them take care of it. Actually safer: include it as billing team resolving duplicate charge, due unspecified.
+
+Notable details:
+- Member ID corrected: GMH-447-182-009 (last digit 9, not 6... actually corrected from 006 to 009).
+- Group number 70315.
+- Subscriber: patient, via new job; insurance effective January 1; old plan ended December.
+- Granite Meridian requires prior auth for MRI; typical 5-7 business days.
+- Duplicate $45 copay charge: paid at desk, then ClearPay charged again.
+- Emergency contact confirmed unchanged.
+- No interpreter/accessibility accommodations needed.
+- Secondary insurance: wife's work plan, card not available.
+- Ordering physician: Dr. Kowalczyk-Nnamdi, lumbar spine MRI.
+- DOB Dec 5, 1977; ZIP 97209.
+- Patient has back pain for two months.
+- Agent working from home despite saying "in the office" — minor.
+
+Summary notes ≤120 words.

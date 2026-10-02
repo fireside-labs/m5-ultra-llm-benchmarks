@@ -1,0 +1,164 @@
+
+Let me think about this carefully. The situation:
+
+- Northfold Claims Services: 300-person company, processes disability/injury insurance claims for insurers (B2B customers).
+- Uses commercial cloud LLM API to summarise medical records and draft claim decision letters.
+- ~40,000 documents/month, quarter-end peaks.
+- Vendor has signed the data-protection agreement (DPA) Northfold's customers require.
+- Two engineers maintain the integration.
+- New CISO proposes replacing cloud API with open-weight model hosted in Northfold's own data center "because the data is sensitive".
+- CEO asks: what variables must we consider before deciding?
+
+My role: senior generalist advisor. Name the variables that actually drive the outcome. Be concrete, prioritise ruthlessly, find the crux.
+
+The crux: The CISO's rationale ("data is sensitive") is largely already addressed by the DPA — the contractual/compliance risk is managed. Moving on-prem is a big operational bet for a company whose core competence is claims processing, not ML infrastructure, with only two engineers maintaining the integration. So the decision hinges on: (1) whether there's a real, unmitigated risk that on-prem would remove (and whether customers/regulators actually demand it), (2) quality/capability parity — a worse model drafting decision letters has direct business cost (accuracy, appeals, liability), (3) total cost and operational burden — capacity for quarter-end peaks, GPU capex, and whether two engineers can run inference infra reliably.
+
+Let me enumerate candidate variables:
+
+1. Customer/contractual requirements: Do any customers actually require on-prem or prohibit cloud LLM processing? The DPA is signed; is there any unmet requirement? Measure: review contracts and ask customers. If no customer demands it, the main justification evaporates.
+
+2. Residual data risk under current setup: What's the actual exposure? Vendor breach, retention, training on data, subprocessors, jurisdiction. Measure: review vendor security docs, SOC 2, subprocessor list, retention/training policies, incident history. Quantify sensitivity: is data already pseudonymised before sending?
+
+3. Model capability/quality parity: On-prem open-weight model may be weaker than frontier cloud model. Quality of summaries and decision letters affects claim accuracy, appeals, customer (insurer) satisfaction, regulatory exposure. Measure: blind eval on representative sample, error rates, human review scoring, track current cloud quality as baseline.
+
+4. Cost: cloud API costs (per-token) vs. on-prem: GPU capex, power, redundancy, plus engineering time. Measure: current monthly API spend; quote GPU cluster sized for peak; TCO over 3 years including people.
+
+5. Capacity/elasticity for quarter-end peaks: On-prem must be sized for peak, not average — 40k docs/month with quarter-end spikes means idle capacity most of the time or queueing at peak. Cloud scales elastically. Measure: peak-to-average ratio, latency/throughput SLOs, queueing tolerance.
+
+6. Engineering/operational capability: Two engineers maintain the integration. Running inference infra (serving, model updates, GPUs, monitoring, failover) is a different skill set and load. Measure: current time allocation, hiring plan, managed alternatives (e.g., hosted open-weight models in a VPC — a middle option).
+
+7. Availability/reliability: SLA for claims processing; on-prem single data center vs cloud multi-region. Downtime delays claims, breaches insurer SLAs. Measure: current availability, required uptime, DR capability.
+
+8. Regulatory/legal posture: Health data (disability/injury medical records) — possibly HIPAA if US, or GDPR if UK/Europe (Northfold sounds British). Data residency requirements. Does on-prem actually change compliance obligations? Measure: legal review of applicable regimes; whether DPA already covers.
+
+9. Security of the on-prem alternative: On-prem is not automatically more secure — model weights, prompt injection, access controls, the data center's security posture. Measure: threat model comparison; CISO's plan for securing inference stack.
+
+10. Migration cost and timeline: Rebuilding the integration, prompt re-tuning, validation, parallel running. Measure: engineering estimate, parallel-run duration.
+
+11. Vendor lock-in / concentration risk & negotiating leverage: Having a credible alternative improves cloud terms; but building one just for leverage is expensive. Measure: contract renewal terms, price trajectory.
+
+12. Opportunity cost / strategic focus: Northfold's edge is claims processing; is self-hosting AI core or distraction? Measure: roadmap impact.
+
+Also: latency requirements? Probably not critical for document summarisation batch work. Human-in-the-loop review: are drafts reviewed by humans before sending? That mitigates quality risk. Measure: what % of outputs get human review.
+
+Also: the middle option — open-weight model hosted in a private cloud/VPC, or cloud provider's dedicated instances — gets much of the data-control benefit without capex. That's a key point for the advisor: the decision is framed as binary but isn't.
+
+Also: data minimisation — can they de-identify before sending to the LLM? That could reduce sensitivity regardless of hosting.
+
+Now, at most 12 variables, most important first. Let me pick and order:
+
+1. What the change is meant to fix — the unmet risk. Does any customer contract, regulator, or identified incident actually require self-hosting? If the DPA covers requirements and no incident, the rationale is thin. Measure: contract review + customer survey + incident log.
+
+2. Residual data exposure under the cloud setup (what on-prem would actually remove): vendor retention, training use, subprocessors, breach history, jurisdiction. Measure: vendor security review, subprocessor list, ask whether data is de-identified pre-send.
+
+3. Output quality parity: decision letters and medical summaries affect claim correctness and liability. Measure: blind A/B eval on a few hundred representative documents, expert scoring, error taxonomy.
+
+4. Peak capacity economics: quarter-end spikes mean on-prem sized for peak sits idle; cloud is elastic. Measure: peak:average ratio; GPU sizing for peak throughput and latency SLO.
+
+5. Total cost of ownership: API spend vs capex+power+people. Measure: 3-year TCO both ways, including 2 engineers' time and any new hires.
+
+6. Operational/ML-engineering capacity: two engineers; self-hosting inference is a materially bigger job. Measure: estimate hours for build + run; compare with team capacity; hiring cost.
+
+7. Reliability/DR: single data center vs cloud SLA; claims SLAs with insurers. Measure: required uptime, current incident rates, DR plan.
+
+8. Regulatory applicability: which regime governs (HIPAA/GDPR/UK GDPR), whether on-prem changes obligations or just moves them. Measure: legal opinion; data flow mapping.
+
+9. Security of the on-prem stack itself: hosting in-house doesn't secure it; access control, prompt injection, weight handling. Measure: threat model, CISO's proposed controls and maturity.
+
+10. Middle options: VPC-hosted open-weight model or dedicated cloud instances, plus de-identification before the API. Measure: vendor offerings; feasibility of de-ID pipeline for medical records.
+
+11. Migration/validation cost and timeline: re-prompting, parallel run, insurer approval of changed process. Measure: engineering estimate; whether insurers must sign off on process changes.
+
+12. Lock-in/leverage: credible alternative improves renewal terms. Measure: current contract terms, price trends, renewal date.
+
+That's 12. Good.
+
+Top 3 priorities:
+1. The actual risk gap: what does self-hosting fix that the DPA + controls don't? (Customer requirements + residual exposure.) This is the crux — the CISO's stated reason is already largely mitigated.
+2. Quality parity — because the output is decision letters affecting people's benefits and Northfold's liability.
+3. Peak capacity + TCO + two engineers — the operational burden; I should combine or pick. Hmm, exactly 3 items. I'd say: (1) risk gap, (2) quality, (3) the build-and-run burden (engineering capacity + peak sizing + TCO as one operational-economics cluster). But the instruction says the top 3 should be variables from the list. I can reference the variables; maybe pick "Peak capacity economics" and fold TCO/engineering into it, or pick a combined framing. Better: Top 3 = (1) unmet requirement/risk gap, (2) quality parity, (3) peak-sized TCO including the two-engineer constraint. I can note these map to variables 1–2, 3, and 4–6.
+
+What would change my mind (2–5 bullets):
+- If a major insurer (say one representing a large share of revenue) makes on-prem processing a contractual condition, or threatens to leave — that flips to build.
+- If blind eval shows an open-weight model matches the cloud model on Northfold's documents (e.g., within noise on accuracy), the quality objection weakens; if it's materially worse, kill the project.
+- If a vendor incident/retention/training issue emerges (e.g., vendor trains on customer data or has a breach), risk calculus shifts.
+- If TCO shows on-prem is dramatically cheaper at current volume (or dramatically more expensive once peak sizing and staffing are counted).
+- If de-identification before the API is feasible, sensitivity drops and the whole argument weakens; conversely if data can't be de-identified and regulators flag it...
+
+Also: if a managed middle option (VPC-hosted open weights) satisfies the CISO's concerns at a fraction of the cost, the binary framing collapses.
+
+Keep bullets to 2–5. I'll do 4–5.
+
+Formatting: Markdown, exact headings in order: ## Variables, ## Top 3 priorities, ## What would change my mind.
+
+Variables: numbered list, at most 12, each with one line on why it matters here and how to measure/check it. Keep each entry tight — maybe two short lines or one line each for "why" and "measure". The prompt says "For each: one line on why it matters here, and how you would measure or check it." So each item: bolded name, then why, then measure. Keep concise.
+
+Let me draft.
+
+## Variables
+
+1. **The unmet risk the CISO is actually fixing.** The DPA already covers the customers' stated requirements, so the case for self-hosting rests on risks that remain after it; if none are concrete, the project is a solution looking for a problem. *Check: review the DPA and customer contracts clause by clause, log any requirement the cloud setup fails today, and ask the CISO to name the specific incident or clause self-hosting prevents.*
+
+2. **Residual data exposure under the cloud API.** What on-prem would actually remove — vendor retention, training use, subprocessors, breach history, jurisdiction. *Check: vendor SOC 2 / security review, subprocessor list, retention and training policies, whether records are de-identified before sending.*
+
+3. **Quality parity on Northfold's documents.** These outputs are medical summaries and decision letters; a weaker model means wrong decisions, appeals, and insurer liability. *Check: blind A/B eval of cloud vs candidate open-weight model on a few hundred representative (incl. difficult/long) records, scored by senior claims assessors.*
+
+4. **Peak-to-average volume ratio.** On-prem hardware must be sized for quarter-end peaks and idles otherwise; cloud is elastic — this is often the whole economic argument. *Check: weekly/monthly throughput data to compute peak:average; size the GPU fleet for peak throughput at required latency.*
+
+5. **Three-year TCO.** API fees vs GPU capex, power, support contracts, and extra headcount. *Check: build both 3-year TCOs; include the engineers' time and any hires; get real GPU quotes rather than assuming.*
+
+6. **Engineering capacity.** Two engineers maintain an API integration today; running inference infrastructure (serving, upgrades, monitoring, failover, GPU ops) is a different and larger job. *Check: estimate build + steady-state hours, compare to the team's current load and hiring plan.*
+
+7. **Reliability and DR.** A single data center is a single point of failure for an SLA-bound claims pipeline; cloud gives multi-region redundancy Northfold would have to build. *Check: uptime insurers require, current cloud SLA/incident history, Northfold's DR maturity.*
+
+8. **Regulatory applicability.** Which regime governs the medical data (e.g., UK GDPR / HIPAA depending on jurisdiction) and whether self-hosting changes obligations or merely relocates them. *Check: legal opinion plus a data-flow map; note self-hosting can increase duties (you now own the whole stack).*
+
+9. **Security of the on-prem stack itself.** "In our data center" ≠ secure; access control, prompt injection, and weight handling become Northfold's problem. *Check: have the CISO produce a threat model and control plan for the self-hosted design, and compare maturity with the vendor's.*
+
+10. **Middle options.** Open-weight models in a private cloud VPC or on dedicated instances, and de-identifying records before the API, capture much of the data-control benefit without capex. *Check: price and pilot a VPC-hosted open-weight deployment; assess whether medical records can be reliably de-identified for summarisation.*
+
+11. **Migration and validation cost.** Re-prompting, parallel running, and possibly insurers approving a changed process. *Check: engineering estimate for migration and parallel-run duration; ask top insurers whether a model change needs their sign-off.*
+
+12. **Lock-in and negotiating leverage.** A credible alternative changes renewal economics even if never built. *Check: current contract end date, price trajectory, and what terms a credible alternative would unlock.*
+
+That's 12. Good.
+
+## Top 3 priorities
+
+1. The unmet risk (variables 1–2). The stated rationale — sensitive data — is already contractually addressed; unless there's a concrete gap (customer demand, vendor incident, residual exposure), this project shouldn't proceed. Make the CISO name the specific risk.
+
+2. Quality parity (variable 3). Because the output drives claim decisions on people's livelihoods; a small accuracy drop is costlier than any infrastructure saving. No eval, no decision.
+
+3. Peak-sized operating burden (variables 4–6). Quarter-end peaks + two engineers is the practical killer: you'd buy peak capacity that idles and a 24/7 ops job a 2-person team can't carry. If this math fails, the decision makes itself.
+
+## What would change my mind
+
+- A top insurer (large revenue share) makes on-prem processing a contractual condition or signals churn — build it (or the VPC middle option).
+- Blind eval shows the open-weight model matches the cloud model on Northfold's records — the strongest objection disappears; if materially worse — kill it regardless of cost.
+- Evidence of residual cloud risk: vendor trains on customer data, subprocessor incident, or a breach — risk calculus flips toward control.
+- TCO shows on-prem is dramatically cheaper at 40k docs/month even with peak sizing and headcount — the economics alone could justify it.
+- A VPC-hosted open-weight deployment or a de-identification pipeline satisfies the CISO's concerns at a fraction of the cost — the binary framing collapses and neither "pure" option is needed.
+
+That's 5 bullets. Fine (2–5).
+
+Should I add a short framing sentence before the sections? The instruction says answer with exactly these sections in this order. I could add a one-line preamble before ## Variables? Risky — "use exactly the section headings the request asks for, in that order" — a preamble isn't a heading, so it's probably fine, but safest to start directly with the first heading. Maybe a single framing line inside the first section? I'll just start with ## Variables and perhaps put a one-sentence crux statement at the end of "What would change my mind"? No — keep clean. Actually a brief crux line could be valuable. I could open the Variables section with one italic line: "The crux: the CISO's stated reason is already largely mitigated by the DPA, so the real question is whether any unmitigated risk justifies taking on an infrastructure job a two-engineer team can't carry." Hmm, the section is specified as "A numbered list of at most 12 variables". Adding a preamble line inside might violate "respond with these sections" strictly? A one-line lead-in is common and helpful; I think it's acceptable and improves the answer as a senior advisor. But to be safe and disciplined, I could fold the crux into Top 3 priorities item 1. Let me put the crux there. Actually, I'll add a single short sentence at the top of Variables — no, keep it pure. The crux fits naturally as the first variable's "why" and in Top 3. I'll keep sections clean.
+
+One more consideration: numbers not given — I should flag assumptions where needed. E.g., peak ratio unknown ("measure it"); API spend unknown. I do say "get real GPU quotes rather than assuming" and "compute peak:average" — good. Maybe explicitly note one assumption: I'll note in variable 4 that the peak ratio isn't given and must be measured. Already do.
+
+Also the "how you would measure or check it" should be concrete. I think my checks are concrete.
+
+Length: keep tight. Each variable ~2 lines. Good.
+
+Let me also double check the count: exactly 12, within "at most 12". Top 3 exactly 3. Bullets 5, within 2–5.
+
+One refinement: variable 1's check — "ask the CISO to name the specific incident, threat, or clause self-hosting prevents" — good, that's the crux move.
+
+Also consider mentioning quarter-end peaks also stress the cloud API (rate limits) — but that's minor; elasticity is cloud's strength. Fine.
+
+Also consider latency — batch summarisation, not real-time, so latency is not a driver; I won't include it (keeps list tight).
+
+Also human-in-the-loop: whether drafts are reviewed before sending — that mitigates quality risk and belongs in variable 3's check. I'll add "and note what share of outputs get human review today" — good addition.
+
+Final polish on wording. Use British-ish spelling? "Northfold" sounds British; the prompt uses "summarise". I'll use British spellings (summarise, de-identified, behaviour) lightly.
+
+Write the final answer.

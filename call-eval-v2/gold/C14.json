@@ -1,0 +1,601 @@
+{
+ "call_id": "C14",
+ "call_type": "billing_dispute",
+ "call_type_accept": [
+  "complaint_escalation"
+ ],
+ "outcome": "callback",
+ "outcome_accept": [
+  "resolved",
+  "escalated"
+ ],
+ "sentiment_start": "negative",
+ "sentiment_end": "neutral",
+ "sentiment_end_accept": [
+  "positive"
+ ],
+ "quality_score": 2,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "First agent (Corwin) was curt and dismissive, skipped identity verification, wrongly said out of network and threatened collections despite the open dispute",
+   "match": [
+    [
+     "corwin",
+     "first (agent|rep)",
+     "initial (agent|rep)",
+     "billing rep",
+     "curt",
+     "dismissive",
+     "rude",
+     "unprofessional",
+     "no verification",
+     "without verif",
+     "collections"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Coding specialist (Ines) verified properly, found and corrected the coding error (99285 to 99214), network and date confusion, and explained clearly with empathy",
+   "match": [
+    [
+     "ines",
+     "specialist",
+     "coder",
+     "second (agent|rep)",
+     "recod",
+     "coding error"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "The promised account hold was never actually placed (summary read back shows no holds)",
+   "match": [
+    [
+     "hold"
+    ],
+    [
+     "never",
+     "not (actually )?(placed|applied|put)",
+     "no holds",
+     "none",
+     "didn't",
+     "wasn't",
+     "fail",
+     "promised"
+    ]
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "id": "F1",
+   "text": "Billing agent Corwin discussed the account and charges after the caller gave only his name; when the caller asked if he needed his birthday he said no - identity never verified",
+   "evidence": "Nah, you're fine, I got you.",
+   "paraphrases": [
+    "First agent disclosed balance and visit details without verifying the caller's identity (no DOB or address).",
+    "Identity verification skipped: Corwin declined to take the date of birth before discussing the account.",
+    "The rep accessed and discussed the patient's bill with name only, no authentication."
+   ],
+   "negatives": [
+    "Specialist verified the caller with DOB, address and phone digits before discussing the account."
+   ],
+   "match": [
+    [
+     "verif",
+     "birthday",
+     "date of birth",
+     "\\bdob\\b",
+     "identity",
+     "authenticat",
+     "name only",
+     "only (his |the |a )?name"
+    ],
+    [
+     "without",
+     "skip",
+     "didn't",
+     "did not",
+     "never",
+     "not verif",
+     "no verif",
+     "fail",
+     "lapse",
+     "only",
+     "nah",
+     "declin",
+     "bypass",
+     "unverified",
+     "no (dob|birthday|date of birth)",
+     "not (ask|take|request|need)"
+    ]
+   ]
+  },
+  {
+   "id": "F2",
+   "text": "Corwin told the caller the bill would go to collections if not paid by Friday although a billing dispute was open, contradicting the policy (stated in the phone greeting) that disputed accounts are on hold and not referred to collections; never retracted",
+   "evidence": "If it's not paid by Friday it goes to collections.",
+   "paraphrases": [
+    "Agent threatened collections by Friday Sept 25 despite an open dispute ticket.",
+    "Misinformation: caller was told the disputed balance would be sent to a collection agency, contrary to the dispute-hold policy.",
+    "Pressured the patient to pay or face a collections referral while the charge was under dispute."
+   ],
+   "negatives": [
+    "Agent offered a 12-month payment plan."
+   ],
+   "match": [
+    [
+     "collection",
+     "agency"
+    ],
+    [
+     "friday",
+     "threat",
+     "warn",
+     "told",
+     "said",
+     "dispute",
+     "misinform",
+     "incorrect",
+     "wrong",
+     "pressur",
+     "despite",
+     "contrary",
+     "while",
+     "policy"
+    ]
+   ]
+  },
+  {
+   "id": "F3",
+   "text": "Specialist Ines promised to put a hold on the account right away, but the account summary she later read back shows 'Status: active. Holds: none' and she did not notice - the hold was never placed",
+   "evidence": "Status: active. Holds: none.",
+   "paraphrases": [
+    "Promised account hold was not actually applied; the read-back shows no holds.",
+    "Ines said she was placing a billing hold, but the summary still lists the account as active with none, so the commitment was not kept.",
+    "Missed commitment: the collections-protecting hold was never put on the account."
+   ],
+   "negatives": [
+    "Specialist noted the 20% prompt-pay discount on the account."
+   ],
+   "match": [
+    [
+     "hold"
+    ],
+    [
+     "no hold",
+     "holds?:? none",
+     "never",
+     "not (actually )?(placed|applied|set|put|added|in place|done)",
+     "not on hold",
+     "isn't on hold",
+     "wasn't",
+     "was not",
+     "missing",
+     "fail",
+     "didn't",
+     "did not",
+     "still (shows |listed as |listing |showing )?(as )?active",
+     "status.{0,12}active",
+     "\\bnone\\b",
+     "unfulfilled",
+     "absent",
+     "not kept",
+     "never placed"
+    ]
+   ]
+  }
+ ],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Agent told the caller he was out of network",
+   "why_not": "Wrong, but the coding specialist explicitly corrected it in the same call: in network, the denial came from a coding error.",
+   "evidence": "And you were out of network, that's why it's so high.",
+   "paraphrases": [
+    "Corwin gave incorrect information that the urgent care visit was out-of-network.",
+    "Misinformation about network status: caller told the Brightwater urgent care was out of network."
+   ],
+   "match": [
+    [
+     "out.of.network",
+     "network"
+    ]
+   ]
+  },
+  {
+   "id": "D2",
+   "text": "Caller recorded the call",
+   "why_not": "The caller announced he was recording on his own end; nothing the staff did wrong.",
+   "evidence": "I'm recording this call, by the way.",
+   "paraphrases": [
+    "The call was being recorded by the patient and the agent just said 'fine, whatever'.",
+    "Recording of the conversation by the caller, consent not addressed by staff."
+   ],
+   "match": [
+    [
+     "record"
+    ]
+   ]
+  },
+  {
+   "id": "D3",
+   "text": "Specialist applied a 20% prompt-pay discount",
+   "why_not": "She cites the written financial policy: 20% off patient balances paid in full within 30 days; within her authority.",
+   "evidence": "if the patient balance is paid in full within thirty days of the statement date, it's twenty percent off",
+   "paraphrases": [
+    "Ines offered a twenty percent discount on the balance without authorization.",
+    "Unauthorized discount: prompt-pay 20% reduction promised to the caller."
+   ],
+   "match": [
+    [
+     "discount",
+     "20 ?%",
+     "twenty percent",
+     "prompt.?pay"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Phone menu option 3 (refills) routes callers to billing; also a misrouted transfer to appointments",
+   "match": [
+    [
+     "press",
+     "phone (menu|tree)",
+     "option",
+     "\\bivr\\b",
+     "misrout",
+     "wrong (line|department|transfer)",
+     "appointments"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Statement printed the wrong date of service (Sept 15 instead of Sept 5)",
+   "match": [
+    [
+     "date of service",
+     "wrong date",
+     "statement date",
+     "misprint",
+     "9/15",
+     "sept(ember)?\\.? 15"
+    ]
+   ]
+  },
+  {
+   "id": "OK3",
+   "text": "Visit miscoded as ER level 5 (99285) / wrong-side diagnosis code / scrubber location setup / skipped work queue",
+   "match": [
+    [
+     "99285",
+     "cod(e|ing)",
+     "level.?(5|five)",
+     "scrubber",
+     "location",
+     "queue",
+     "diagnosis",
+     "left wrist",
+     "mapping"
+    ]
+   ]
+  },
+  {
+   "id": "OK4",
+   "text": "First agent rude/dismissive",
+   "match": [
+    [
+     "rude",
+     "curt",
+     "dismissive",
+     "unprofessional",
+     "sarcas",
+     "tone",
+     "attitude"
+    ]
+   ]
+  },
+  {
+   "id": "OK5",
+   "text": "Long hold times / transfer problems",
+   "match": [
+    [
+     "long hold",
+     "wait",
+     "transfer",
+     "on hold for"
+    ]
+   ]
+  },
+  {
+   "id": "OK6",
+   "text": "Claim denied by Halvard / large bill",
+   "match": [
+    [
+     "denied",
+     "denial",
+     "1,?284",
+     "overbill",
+     "incorrect (bill|charge)"
+    ]
+   ]
+  },
+  {
+   "id": "OK7",
+   "text": "Desk copay payment not posted",
+   "match": [
+    [
+     "copay",
+     "desk",
+     "receipt",
+     "not posted"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "coding specialist (Ines)",
+   "task": "Recode visit 99285 to 99214, fix diagnosis to right wrist, submit replacement claim to Halvard in tonight's batch",
+   "due": "tonight",
+   "match": [
+    [
+     "recod",
+     "resubmit",
+     "corrected claim",
+     "replacement claim",
+     "re-?submit",
+     "99214",
+     "re-?bill"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "coding specialist (Ines)",
+   "task": "Call the caller back with Halvard's result within 10 business days",
+   "due": "by Oct 6",
+   "match": [
+    [
+     "call.?back",
+     "call (him|you|the (caller|patient)|thaddeus)",
+     "follow.?up",
+     "contact"
+    ],
+    [
+     "halvard",
+     "result",
+     "10 business days",
+     "ten business days",
+     "reprocess",
+     "claim",
+     "resubmi"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "billing",
+   "task": "Mail a corrected itemized statement after Halvard reprocesses",
+   "due": "after reprocessing",
+   "match": [
+    [
+     "itemi[sz]ed",
+     "corrected statement",
+     "new statement",
+     "updated statement",
+     "revised statement"
+    ]
+   ]
+  },
+  {
+   "id": "A4",
+   "owner": "caller",
+   "task": "Send photos of the urgent care discharge papers (and any copay receipt) via portal message to billing, attention Ines",
+   "due": "tonight",
+   "match": [
+    [
+     "discharge",
+     "after.?visit",
+     "paperwork",
+     "papers",
+     "receipt",
+     "upload"
+    ]
+   ]
+  },
+  {
+   "id": "A5",
+   "owner": "coding specialist (Ines)",
+   "task": "Note 20% prompt-pay discount to apply to the corrected statement if paid within 30 days",
+   "due": "on corrected statement",
+   "match": [
+    [
+     "prompt.?pay",
+     "20 ?%",
+     "twenty percent"
+    ]
+   ]
+  },
+  {
+   "id": "A6",
+   "owner": "coding specialist (Ines)",
+   "task": "Place a hold on the account while the claim is reprocessed",
+   "due": "immediately",
+   "match": [
+    [
+     "hold"
+    ]
+   ]
+  },
+  {
+   "id": "A7",
+   "owner": "coding specialist (Ines)",
+   "task": "Send a portal message confirming the corrected claim was submitted",
+   "due": "this afternoon",
+   "match": [
+    [
+     "in writing",
+     "written",
+     "claim (was |has been )?submitted",
+     "confirm"
+    ]
+   ]
+  },
+  {
+   "id": "A8",
+   "owner": "caller",
+   "task": "Fill out and return Halvard's accident questionnaire if one arrives by mail",
+   "due": "on receipt",
+   "match": [
+    [
+     "accident",
+     "questionnaire"
+    ]
+   ]
+  },
+  {
+   "id": "A9",
+   "owner": "caller",
+   "task": "Call the nurse line (option 4) for a blood-pressure (amlodipine) refill",
+   "due": "after the call",
+   "match": [
+    [
+     "blood.?pressure",
+     "\\bbp\\b",
+     "amlodipine",
+     "nurse line",
+     "option (4|four)"
+    ]
+   ]
+  },
+  {
+   "id": "A10",
+   "owner": "coding specialist (Ines)",
+   "task": "Report the statement date-printing error and the coding/location setup problem to her manager and the statement team",
+   "due": "unspecified",
+   "match": [
+    [
+     "manager",
+     "statement team",
+     "template",
+     "location (setup|code)",
+     "report"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Estimated balance after recode is about $184 ($75 copay + $109 x-ray coinsurance), not $1,284; caller misheard it as 148",
+   "evidence": "One-eight-four. A hundred eighty-four dollars.",
+   "negatives": [
+    "Estimated balance $148 after the corrected claim",
+    "Balance is one thousand two hundred eighty-four dollars"
+   ],
+   "match": [
+    [
+     "\\b184\\b",
+     "one.eighty.four",
+     "(one|a) hundred (and )?eighty.four"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Visit was miscoded as 99285 (ER level 5) and is being recoded to 99214",
+   "evidence": "The visit was coded, um, as a nine-nine-two-eight-five.",
+   "match": [
+    [
+     "99214",
+     "99285"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Date of service is Sept 5 (the statement misprinted Sept 15)",
+   "evidence": "Date of service September fifth.",
+   "negatives": [
+    "Date of service September 15",
+    "visit on 9/15"
+   ],
+   "match": [
+    [
+     "sept(ember)?\\.? 0?5\\b",
+     "september fifth",
+     "\\b9/0?5\\b",
+     "09-05",
+     "\\b5th\\b",
+     "nine.oh.five"
+    ]
+   ]
+  },
+  {
+   "id": "S4",
+   "text": "Original claim number 2609-33418",
+   "evidence": "It's two-six-oh-nine, dash, three-three-four-one-eight.",
+   "match": [
+    [
+     "33418",
+     "3-3-4-1-8",
+     "three.three.four.one.eight"
+    ]
+   ]
+  },
+  {
+   "id": "S5",
+   "text": "Specialist Ines's direct extension is 2271",
+   "evidence": "My extension is two-two-seven-one.",
+   "match": [
+    [
+     "2271",
+     "two.two.seven.one"
+    ]
+   ]
+  },
+  {
+   "id": "S6",
+   "text": "Caller pressed 3 for refills in the phone menu and landed in billing",
+   "evidence": "I pressed three for refills because I need my blood pressure pills renewed too",
+   "match": [
+    [
+     "press(ed|ing)? (3|three)",
+     "option (3|three)",
+     "refill (line|option)",
+     "phone (menu|tree)",
+     "\\bivr\\b"
+    ],
+    [
+     "billing",
+     "financial"
+    ]
+   ]
+  },
+  {
+   "id": "S7",
+   "text": "Diagnosis code also said left wrist; corrected to right wrist (S63.501A)",
+   "evidence": "the note says right wrist, the diagnosis code says left",
+   "negatives": [
+    "sprain of the left wrist"
+   ],
+   "match": [
+    [
+     "right wrist",
+     "s63\\.?501"
+    ]
+   ]
+  }
+ ],
+ "themes": [
+  "T_IVR_MISROUTE"
+ ]
+}

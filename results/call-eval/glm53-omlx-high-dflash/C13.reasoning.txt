@@ -1,0 +1,43 @@
+
+Let me analyze this call.
+
+Call type: insurance_verification primarily — verifying benefits and prior authorization for a sleep study. Also scheduling happened. Main purpose: insurance verification / prior auth. The enum includes insurance_verification. Scheduling also occurred. Main purpose seems insurance verification (benefits + PA), then scheduling. I'd say insurance_verification.
+
+Outcome: resolved — PA approved, appointment booked.
+
+Sentiment: start neutral, end positive.
+
+Quality score: The agent did well overall — verified identity, got consent before sharing info with payer, obtained PA, booked appointment. BUT there's a significant accuracy failure: agent told patient "you're fully covered... you won't owe anything out of pocket" when the payer explicitly said $1,500 deductible with $1,120 remaining and 20% coinsurance, in-network only. That's misinformation — a serious accuracy failure. Also agent booked at Ridgeline, which the payer said is out-of-network for sleep studies ("no out-of-network benefit"), and the authorization was for Westbrook only. That's a serious failure — scheduling the patient at an out-of-network facility with no out-of-network benefit, meaning patient could owe full cost. Also agent said "I think it's covered for the two" nights when payer approved only one night and second night requires separate auth. Multiple serious accuracy failures → quality score 2.
+
+Flags:
+1. misinformation: "you're fully covered... you won't owe anything out of pocket" contradicts deductible/coinsurance quoted.
+2. misinformation / clinical_safety? Booking at Ridgeline (out-of-network, no OON benefit) despite payer stating Westbrook is the in-network site and auth valid only for Westbrook. Type: misinformation or policy_violation. I'd use misinformation or "other". Maybe "misinformation" for scheduling out-of-network facility.
+3. misinformation: "I think it's covered for the two" nights vs payer approved one night only, second requires separate auth.
+
+Also identity verification: agent verified DOB and last 4 phone — done correctly, not flagged.
+
+Action items:
+- Agent: fax clinical notes to Thistlecrest within two business days (by ~April 23, 2026) — due "within two business days" / "today" per agent statement "I'll fax the clinical notes to Thistlecrest today". Payer said within two business days. Use "within two business days (by 2026-04-23)" — but don't invent date? Two business days from Apr 21 (Tue) = Apr 23. I can state "within two business days of 2026-04-21". Safer: "within two business days (stated on call)". Agent said "today". I'll say due: "today (2026-04-21); payer requires within two business days".
+- Agent: send sleep lab instructions via patient portal — due unspecified.
+- Agent: send copy of today's notes to portal — due unspecified.
+- Patient: bring photo ID, insurance card, medication list; no caffeine after noon, no naps on May 12 — that's patient prep, could be action item. Owner patient, due May 12 appointment.
+- Patient: reply to reminder text to cancel if needed — not really a task.
+- Payer: approval pending receipt of clinical notes — covered by fax task.
+
+Notable details:
+- New insurance: Thistlecrest Health Plan effective 2026-04-01; member ID THC-50288144.
+- PA number PA-2026-0441973, one night CPT 95810, Westbrook facility, valid through 2026-06-30.
+- Westbrook in-network; Ridgeline out-of-network (not contracted) — appointment booked at Ridgeline May 12 conflicts.
+- Deductible $1,500, met $380, $1,120 remaining, 20% coinsurance after.
+- Epworth 16, BMI 34, hypertension; Dr. Abernathy-Osei ordered; possible split-night titration; second night needs separate auth with results.
+- Appointment: Ridgeline Sleep Lab, Tue May 12, arrival 8:30 pm, done ~6 am.
+- Patient prefers text reminders, electronic communication; email J...@yahoo.com confirmed; pharmacy on Ferris Avenue confirmed; emergency contact unchanged.
+- Parking: garage east side level 2, skybridge; front desk validates parking.
+- Provider number for Thistlecrest: 1-800-555-0199.
+- Clinical notes fax within 2 business days required for approval to finalize.
+
+Summary notes: concise.
+
+Quality reasons: identity verified and consent obtained before three-way call; PA obtained successfully; but told patient fully covered despite deductible/coinsurance; booked out-of-network Ridgeline despite auth for Westbrook; misstated two-night coverage.
+
+Score: 2 (serious accuracy failures, multiple).

@@ -1,0 +1,42 @@
+
+Let me analyze.
+
+Call type: billing_dispute (main purpose became billing; the refill was misrouted). The caller's main issue: bill question / no-show fee dispute. billing_dispute.
+
+Outcome: resolved — no-show fee waived, balance paid, statement to portal, receipt emailed, address updated, pharmacy number given.
+
+Sentiment start: neutral (slightly confused/frustrated but neutral). End: positive.
+
+Quality score: agent verified identity properly, waived $95 no-show fee — within her stated authority? She said she can take off fees up to $50 herself; anything over $50 needs lead approval. She waived $95 without approval — unauthorized commitment / policy violation. That's a flag. Also she said "Just this once" — fine.
+
+Other flags? She disclosed that there are two accounts with Desmond name — minor, but she didn't open the other. She correctly refused to look into brother-in-law's account. Identity verification: name, DOB, address — done before discussing account. Good.
+
+Long holds: 35s, 1m, 1m15s — announced. Minor.
+
+Also she said she'd email receipt "as soon as we hang up" — commitment; action item. Portal statement — action item. Pharmacy number given.
+
+Action items:
+- Agent: email receipt to D-kirwan-o@gmail (email on file) — "as soon as we hang up" / unspecified.
+- Agent: send statement copy via portal messages — unspecified.
+- Caller: call Ostrander Pharmacy at 555-0162 for albuterol refill — right now.
+
+Flags:
+1. unauthorized_commitment / policy_violation: waived $95 no-show fee without lead approval despite stating limit of $50. Evidence: "I can take off fees up to fifty dollars myself. Anything over fifty, I have to send to my lead for approval" + "I'm just going to take that off for you."
+
+Maybe also misinformation: initially said copay part was $15.20, corrected to $51.20 — she self-corrected, not a flag really (corrected value used). Could flag as minor accuracy lapse but she corrected it herself. I'd not flag.
+
+Quality score: 3? Generally competent but one notable lapse (waiving $95 beyond authority). Or 4? The waiver is a policy violation — a notable lapse. Score 3 seems right. But she was empathetic, verified, resolved. The waiver breach is a compliance issue. I'd say 3.
+
+Notable details:
+- Copay portion initially misread as $15.20, corrected to $51.20 ($40 copay + $11.20 strep test deductible).
+- Statement total $146.20 = $51.20 + $95 no-show fee (July 29); no-show fee waived; $51.20 paid in full by Visa ending 2914; balance zero.
+- Insurance Halvard: allowed $182, paid $130 for sinus visit with Dr. Haverstock (August).
+- New address: 18 Wrenfield Court, Apt 3B, zip ends 41 (updated from 440 Sable Ridge Road).
+- Pharmacy: Ostrander Pharmacy direct line 555-0162.
+- No message from July 29 found in system; voicemail reliability issue.
+- Brother-in-law collections complaint — declined to look up, told him to call himself.
+- Phone menu misroutes refill calls to billing; agent says it's happening a lot.
+- Two accounts matched name; verified via DOB and old address.
+- Caller works from home? Agent said "in the office today. Today I'm at home" — contradictory; minor.
+
+Summary notes ≤120 words.

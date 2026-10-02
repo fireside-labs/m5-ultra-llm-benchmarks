@@ -1,0 +1,72 @@
+{
+  "call_type": "no_show_followup",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Identity properly verified with full name, DOB and address before any appointment details were discussed",
+    "Warm transfer to the nurse line with a complete clinical handoff (reading, medication, pharmacy preference)",
+    "Patient left on hold roughly 19 minutes during the transfer with no check-in from the agent",
+    "Agent promised the direct line to bypass the billing menu 'before we hang up' but never provided it before dropping off",
+    "Empathetic handling of the failed cancellation and correct policy-based waiver of the $40 no-show fee"
+  ],
+  "flags": [
+    {
+      "type": "missed_commitment",
+      "description": "The agent promised to give the patient a direct phone line before the call ended so he would not be misrouted to billing again, but the call was transferred and the agent dropped off without ever providing the number.",
+      "evidence": "before we hang up I'll give you the direct line so you don't get stuck in billing again"
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent (Wren, care coordination)",
+      "task": "Text appointment confirmation to patient's new cell number (555-0191); reminder to follow two days before the visit",
+      "due": "unspecified (confirmation after call; reminder two days before October 6)"
+    },
+    {
+      "owner": "nurse (Teodora, nurse line)",
+      "task": "Send TrueStep test strips (100 count) and lancets to Ostrander Pharmacy, Millbrook",
+      "due": "today (ready at pharmacy this afternoon or tomorrow morning)"
+    },
+    {
+      "owner": "nurse (Teodora, nurse line)",
+      "task": "Schedule nurse visit for patient at Millbrook to review glucose numbers",
+      "due": "Monday, September 21, 8:00 a.m."
+    },
+    {
+      "owner": "patient",
+      "task": "Check blood glucose twice a day (on waking and before main meal, adapted to night-shift schedule) and log readings with times",
+      "due": "ongoing"
+    },
+    {
+      "owner": "patient",
+      "task": "Go to urgent care or ER same day if any reading is over 300, or if vomiting, belly pain, confusion or shortness of breath occurs; call nurse line if unsure",
+      "due": "contingent / ongoing"
+    },
+    {
+      "owner": "patient",
+      "task": "Visit Millbrook lab any morning before October 6 for the A1c draw (no appointment needed, no fasting required); bring glucose log or meter to the Monday nurse visit",
+      "due": "before October 6"
+    },
+    {
+      "owner": "patient",
+      "task": "Raise the night-shift/day-off schedule flipping and metformin timing with Dr. Ruiz-Pakula at the October 6 visit",
+      "due": "October 6 visit"
+    }
+  ],
+  "summary_notes": "Outbound no-show follow-up for missed 9/15 A1c recheck with Dr. Ruiz-Pakula. Patient had tried to cancel Monday via phone menu but was misrouted to billing and disconnected (recurring system issue affecting multiple callers). $40 no-show fee waived per first-miss-in-12-months policy. Rebooked Tuesday Oct 6, 8:15 a.m., Millbrook 2nd floor. Insurance updated to new Halvard plan (ID H220846, group WHS9110). Patient out of test strips since the weekend; corrected fasting glucose reading 240 (initially misstated as 140). Warm-transferred to nurse Teodora: no red-flag symptoms, safety thresholds given, TrueStep strips and lancets sent to Ostrander Millbrook, nurse visit booked Monday Sept 21, 8:00 a.m. New cell number 555-0191 recorded. Agent's promised direct line for the billing-menu issue was never provided; ~19-minute hold during transfer.",
+  "notable_details": [
+    "Patient corrected his glucose reading from 'a hundred forty' to 240 fasting, verified twice (written on his hand)",
+    "New insurance: Halvard Health Plan through the warehouse employer (switched August when he went full-time); member ID H-2208-46, group W-H-S-9110",
+    "Best contact number is a new cell, 555-0191; the call was made to the house/roommate's phone",
+    "Agent initially misread available times (7:40, 8:50) and corrected to 8:15 a.m. and 2:30 p.m. on Tuesday, October 6",
+    "Phone menu misroutes the prescriptions option to Patient Financial Services; agent acknowledged multiple callers affected this week - systemic issue worth escalating",
+    "Patient works nights at a warehouse since August; mornings work best; days off flip to days for his 9-year-old daughter (every other weekend)",
+    "Meter is a TrueStep Mini; nurse confirmed TrueStep strips on last year's med list and is sending 100-count strips plus lancets",
+    "Medications: metformin twice daily ('mostly'), plus a blood pressure medication; no insulin",
+    "Millbrook parking: free lot behind the building; front lot belongs to the bank",
+    "Nurse visit Monday, September 21 at 8:00 a.m. (clinic starts at 8, not 7:30 as patient suggested)",
+    "Agent accidentally muted herself at one point, leaving the patient talking to silence"
+  ]
+}

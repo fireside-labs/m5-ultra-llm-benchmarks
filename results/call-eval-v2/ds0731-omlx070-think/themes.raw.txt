@@ -1,0 +1,60 @@
+{
+  "themes": [
+    {
+      "theme": "Misinformation by staff",
+      "description": "Staff provided incorrect information to customers/patients, leading to confusion or wrong expectations.",
+      "call_ids": ["C06", "C14", "C15", "C16"],
+      "evidence": "C06 Tier 1 said late fees can't be reversed; C14 Corwin said out-of-network and collections; C15 rep gave incorrect HIPAA advice; C16 agent said bug fixed when not.",
+      "recommended_action": "Implement training and verification protocols for staff responses."
+    },
+    {
+      "theme": "Billing errors and disputes",
+      "description": "Customers/patients received incorrect charges or billing statements, requiring corrections.",
+      "call_ids": ["C02", "C04", "C12", "C14"],
+      "evidence": "C02 no-show fee, C04 double charge, C12 duplicate subscription, C14 coding errors.",
+      "recommended_action": "Review billing processes and implement checks for common errors."
+    },
+    {
+      "theme": "Prior authorization delays/errors",
+      "description": "Prior authorizations were delayed or mishandled, causing treatment delays.",
+      "call_ids": ["C03", "C07", "C10"],
+      "evidence": "C03 PA required for lisinopril, C07 faxes to retired number, C10 authorization pending.",
+      "recommended_action": "Update fax numbers and streamline PA submission process."
+    },
+    {
+      "theme": "Medication safety concerns",
+      "description": "Patients were at risk due to medication errors or lack of clinical oversight.",
+      "call_ids": ["C03", "C11"],
+      "evidence": "C03 double dose of lisinopril and low BP not addressed; C11 potential acetaminophen overdose.",
+      "recommended_action": "Ensure pharmacists and nurses review medication regimens and interactions."
+    },
+    {
+      "theme": "Identity verification failures",
+      "description": "Staff discussed sensitive information without proper identity verification.",
+      "call_ids": ["C05", "C14"],
+      "evidence": "C05 revealed reason for call before verifying; C14 discussed account without verification.",
+      "recommended_action": "Enforce strict identity verification before discussing any account details."
+    },
+    {
+      "theme": "Missed commitments",
+      "description": "Staff promised actions but did not follow through.",
+      "call_ids": ["C03", "C05"],
+      "evidence": "C03 pharmacist didn't address ibuprofen question; C05 didn't provide direct line.",
+      "recommended_action": "Implement tracking of promises and follow-up."
+    },
+    {
+      "theme": "Pharmacy location mix-ups",
+      "description": "Prescriptions were sent to or picked up at wrong pharmacy locations.",
+      "call_ids": ["C04", "C11"],
+      "evidence": "C04 changed from Millbrook to Eastgate; C11 changed from Millbrook to Eastgate.",
+      "recommended_action": "Verify pharmacy location with patient at each interaction."
+    },
+    {
+      "theme": "Reminder date bug",
+      "description": "Known software bug causing reminder emails to show due dates one day early.",
+      "call_ids": ["C06", "C16"],
+      "evidence": "C06 and C16 both mention due date off by one day due to UTC conversion; fix in 7.4.2.",
+      "recommended_action": "Apply workaround and expedite fix in next release."
+    }
+  ]
+}

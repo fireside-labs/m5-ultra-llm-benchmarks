@@ -1,0 +1,43 @@
+{
+  "call_type": "pharmacy_refill",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Disclosed the patient's medication list without any identity verification beyond a stated name",
+    "Gave informal reassurance that combining alprazolam with newly prescribed zolpidem is safe instead of referring to the pharmacist",
+    "Resolved the early-refill request with a clear pickup plan, price, and ID requirement",
+    "Excessive small talk and repeated computer/login delays made a simple refill take nearly six minutes"
+  ],
+  "flags": [
+    {
+      "type": "privacy_disclosure",
+      "description": "The technician read out the patient's active medications after collecting only the caller's stated name, with no identity verification.",
+      "evidence": "I see you've got alprazolam, the point five, sertraline, and a cholesterol one."
+    },
+    {
+      "type": "clinical_safety",
+      "description": "The technician reassured the patient it is safe to combine alprazolam with newly prescribed zolpidem without consulting the pharmacist or prescriber, despite the patient noting the sleep doctor did not address it.",
+      "evidence": "I mean, lots of people take both. You should be fine."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "patient",
+      "task": "Pick up alprazolam 0.5 mg refill at the front counter and bring ID",
+      "due": "2026-08-17 15:00"
+    }
+  ],
+  "summary_notes": "Patient Lucan Merriweather-Daly called for an early refill of alprazolam 0.5 mg (last filled 2026-07-30, 30-day supply) ahead of a two-week vacation starting 2026-08-22. Technician approved the early fill; insurance may reject it, so patient will pay cash (~$12). Ready at front counter 3:00 PM same day; ID required. Patient mentioned a new zolpidem (Ambien) prescription from a sleep doctor, filled at another pharmacy, and asked about combining it with alprazolam; technician gave informal reassurance rather than a pharmacist consult - follow up on this interaction. No identity verification was performed before disclosing the medication profile.",
+  "notable_details": [
+    "Caller travels on vacation 2026-08-22 for two weeks and would run out of alprazolam while away",
+    "Alprazolam 0.5 mg last filled 2026-07-30 as a 30-day supply, not due until end of August",
+    "Cash price quoted as approximately $12 if insurance rejects the early fill",
+    "Caller recently started zolpidem (Ambien) via a sleep doctor, filled at a pharmacy near their workplace, so it is not in this pharmacy's profile",
+    "Caller asked whether alprazolam and zolpidem can be taken together; the sleep doctor did not say",
+    "ID required at pickup because alprazolam is a controlled substance",
+    "Technician reported recurring computer glitches and forced 30-day password changes; IT is 'looking into it'",
+    "Caller's dog is named Biscuit"
+  ]
+}

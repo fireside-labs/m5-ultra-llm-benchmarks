@@ -1,0 +1,72 @@
+
+Let me analyze this long call.
+
+Call type: billing_dispute (main purpose). There's also a refill issue mentioned in passing (amlodipine, 4 left) — caller told to call nurse line separately. Main purpose is billing dispute.
+
+Outcome: The billing dispute was resolved during the call (corrected claim submitted, hold placed, discount noted, callback promised by Oct 6). The specialist will call back with results — but the main issue (dispute of wrong bill) was handled: recoded, corrected claim submitted, hold on account. Is it "resolved" or "callback"? The dispute was resolved in that the error was identified and corrected claim submitted; the callback is a follow-up on insurance reprocessing. I'd say "resolved" — the main issue (wrong bill/out-of-network claim) was handled during the call. The callback is a planned follow-up but the core issue was addressed. Hmm, "callback = the main issue is pending a specific follow-up contact". The final balance depends on Halvard reprocessing; the specialist will call by Oct 6. But the dispute itself was resolved — error found, corrected, hold placed. I think "resolved" is defensible; but the caller's bill isn't final until Halvard reprocesses. The main issue was the disputed $1284 bill — that was handled (corrected claim submitted, hold preventing collections). I'll go with "resolved" since the dispute was handled during the call, with a follow-up call as confirmation. Actually the field rules: "escalated = handed to supervisor..." not applicable. "callback = the main issue is pending a specific follow-up contact". The main issue — the incorrect bill — was corrected during the call. The callback is informational. I'll say resolved.
+
+Sentiment: start negative (frustrated, "they're going to get a survey", on hold forever, "insane" bill). End positive (thanking Ines, "ready to fight" but now satisfied).
+
+Quality score: Corwin made serious errors: no identity verification ("Don't you need my birthday?" "Nah, you're fine"), told patient he was out of network (incorrect), said dispute doesn't stop collections clock, disclosed account details without verification, dismissed the date error, pushed payment plan/collections threat on a disputed bill. Ines was excellent: verified identity, found root cause, corrected claim, hold, discount, clear recap. Overall call as a whole: serious compliance/accuracy failures by Corwin → score 2? "2 = poor: a serious compliance, safety or accuracy failure, or several notable lapses." Corwin: identity verification failure (privacy/disclosure), misinformation (out of network), threatened collections despite open dispute (contradicting IVR message that disputes are placed on hold and not referred to collections!). The IVR at start says "accounts with an open billing dispute are placed on hold and are not referred to collections while the dispute is reviewed." Corwin said it goes to collections Friday — misinformation/policy violation. Also misrouted transfer to scheduler. Ines was excellent. Overall: 2 seems right given multiple serious failures (privacy disclosure without verification, misinformation, policy violation). Could argue 3 because Ines fixed it, but the rules say rate the call as a whole with serious failures → 2.
+
+Flags:
+1. privacy_disclosure / identity_verification: Corwin accessed and discussed account details without verifying identity; caller even prompted "Don't you need my birthday or something?" Evidence: "Nah, you're fine, I got you. There's only one of you in here."
+2. misinformation: told patient out of network at own urgent care. Evidence: "And you were out of network, that's why it's so high."
+3. policy_violation / misinformation: threatened collections despite open dispute (IVR says disputes are held from collections). Evidence: "Yeah, whatever, that doesn't stop the clock. If it's not paid by Friday it goes to collections."
+4. misrouted transfer to scheduler (minor — could be a flag? "a promised transfer that did not happen" — the transfer went to wrong department). Maybe include as other/policy_violation. It was corrected by Bree. Could flag as other: misrouted transfer added ~10 min hold. Evidence: "I think he hit the wrong line". I'll include it.
+5. Also Corwin pushed payment plan and card payment on a disputed bill — arguably unauthorized pressure but not a commitment. Skip or include? It's minor; the payment plan offer itself isn't a violation. Skip.
+
+Also spouse asked to check her account — specialist correctly declined without verification (handled correctly, don't flag).
+
+Action items:
+- Specialist (Ines): submit corrected claim (99214, right wrist S63.501A) to Halvard in tonight's batch — due tonight/today.
+- Ines: send portal message confirming corrected claim submitted — "this afternoon".
+- Ines: call patient with Halvard's reprocessing result — by October 6 (within 10 business days).
+- Ines: report statement date template error to statement team; note to manager about denial-code mapping skipping work queue; flag location/scrubber master data issue to manager — due unspecified.
+- Patient: send photo of urgent care discharge papers via portal message to billing, attention Ines — tonight.
+- Patient: look for receipt/card charge for $75 copay from Sept 5; send via portal if found — tonight/unspecified ("I'm going to look for the receipt tonight").
+- Patient: complete and return Halvard accident questionnaire when received — upon receipt.
+- Patient: pay corrected balance within 30 days of corrected statement for 20% prompt-pay discount — when corrected statement arrives.
+- Patient: call nurse line (option 4) for amlodipine refill — after this call.
+- Ines: note on account re: what Corwin told patient (out of network) — done during call? She said she'd put a note. That's done in-call, but could list. Maybe include as completed? Action items are follow-up commitments; the note was stated as an intention. I'll include key ones.
+- Ines: mail/emailed statement via portal — "I'll put it in your portal messages" — copy of statement. Include.
+
+Notable details:
+- Dispute ticket D-58812 opened Sept 10 with "Marisol" (name uncertain).
+- Original claim number 2609-33418.
+- Correct codes: 99285 → 99214; dx S63.502A (left, wrong) → S63.501A (right wrist); x-ray 73100 two views.
+- Date of service Sept 5 (statement wrongly printed Sept 15); claim to Halvard correct.
+- Insurance Halvard PPO; estimated responsibility ~$184 ($75 copay + $109 x-ray coinsurance); $75 copay payment on Sept 5 not posted — only Aug 2 $75 payment for physical with Dr. Okonjo.
+- Statement date Sept 18; next cycle Oct 18; balance $1284 pending adjustment.
+- Ines ext 2271.
+- Refill: amlodipine, ~4 doses left; caller mistakenly pressed 3 (billing) — menu misroute; nurse line is option 4.
+- Spouse (Lucia) has separate concern: August visit, never got a bill; declined verification.
+- IVR states open disputes are not sent to collections — contradicts Corwin.
+- Transfer misrouted to scheduler Bree.
+- Tuition payment due the first for Mateo (secondary, in passing) — maybe.
+- Family weekend is in October (corrected from Sunday? Caller said Sunday, spouse said October). Minor.
+- Recording: caller recording the call.
+- Three errors: wrong code, wrong date on statement, wrong laterality (left vs right wrist).
+
+Summary notes: concise.
+
+Quality reasons: 
+- Corwin accessed/discussed account without identity verification despite patient prompting.
+- Corwin gave incorrect out-of-network explanation and threatened collections despite open dispute (contradicting IVR policy).
+- Misrouted transfer to appointments added ~10 minutes.
+- Ines verified identity, diagnosed all three errors, corrected claim, placed hold, explained clearly.
+- Excessive small talk and very long call (~2h23m) with many holds.
+
+Score 2.
+
+Flags with evidence quotes:
+1. identity_verification: "Don't you need my birthday or something?" / "Nah, you're fine, I got you. There's only one of you in here." — description: Corwin accessed and discussed the patient's account details without verifying identity.
+2. misinformation: told patient out of network. Evidence: "And you were out of network, that's why it's so high."
+3. policy_violation: threatened collections on an open dispute contrary to stated policy. Evidence: "If it's not paid by Friday it goes to collections." (IVR: "accounts with an open billing dispute are placed on hold and are not referred to collections")
+4. other: misrouted transfer. Evidence: "I think he hit the wrong line, we're right next to each other on the transfer list."
+
+Outcome: resolved. Hmm, but there's a promised callback by Oct 6 — "use escalated even if callback also planned" only for escalation. Resolved vs callback: the dispute was resolved (error identified and corrected claim submitted, hold placed). I'll go resolved.
+
+Due dates: "tonight" for batch; "this afternoon" for portal message; "by October 6" for callback; "tonight" for patient papers; "unspecified" for receipt; "when received" for questionnaire; "within 30 days of corrected statement" for payment; "after this call" for refill.
+
+Write summary ≤120 words.

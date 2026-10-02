@@ -1,0 +1,76 @@
+1.  **Analyze the Request**:
+    *   Role: Advisor to a decision-maker.
+    *   Task: Recommend one of three sites for a new bakery (Crumb & Co.).
+    *   Constraints: 150-300 words. Use exactly the headings: "## Recommendation", "## Key reasons", "## Risks", "## Confidence" (with a percentage). End with exactly two lines: "POSITION: <option> <qualifier>" and "CONFIDENCE: <0-100>%".
+    *   Base analysis only on facts in the brief plus general reasoning. State assumptions if a number is missing.
+    *   Be concise, concrete, specific.
+
+2.  **Analyze the Data**:
+    *   Sites:
+        *   Harbor Walk: 12,000 ppl/day (July), Rent $9,000/mo. Note: Oct-May (8 months) avg 3,000 ppl/day. June-Sep (4 months) = 12,000 ppl/day. So annual average = (8*3000 + 4*12000)/12 = (24000 + 48000)/12 = 72000/12 = 6,000 ppl/day average.
+        *   Mill Street: 7,000 ppl/day (consistent, <10% variation). Rent $9,500/mo. 2 months rent-free. So effective annual rent = 10 months * $9,500 = $95,000. Monthly effective = $95,000/12 = $7,916.67.
+        *   Elm Plaza: 5,500 ppl/day (consistent). Rent $7,000/mo. Free parking.
+    *   Financials:
+        *   Conversion rate: 4%.
+        *   Average ticket: $9.
+        *   Gross margin: 60%.
+        *   Fixed costs: $300,000/year.
+        *   Open 365 days.
+    *   Calculate daily revenue and profit for each (annual basis):
+        *   Harbor Walk: Avg 6,000 ppl/day * 4% = 240 customers/day. * $9 = $2,160/day. * 365 = $788,400 revenue. Gross profit = 60% * $788,400 = $473,040. Fixed costs = $300,000. Rent = $9,000*12 = $108,000. Net profit = $473,040 - $300,000 - $108,000 = $65,040.
+        *   Mill Street: 7,000 ppl/day * 4% = 280 customers/day. * $9 = $2,520/day. * 365 = $919,800 revenue. Gross profit = 60% * $919,800 = $551,880. Fixed costs = $300,000. Rent = $9,500*10 = $95,000 (effective annual). Net profit = $551,880 - $300,000 - $95,000 = $156,880.
+        *   Elm Plaza: 5,500 ppl/day * 4% = 220 customers/day. * $9 = $1,980/day. * 365 = $722,700 revenue. Gross profit = 60% * $722,700 = $433,620. Fixed costs = $300,000. Rent = $7,000*12 = $84,000. Net profit = $433,620 - $300,000 - $84,000 = $49,620.
+    *   Comparison:
+        *   Mill Street has the highest net profit ($156,880) by a large margin.
+        *   Harbor Walk ($65,040) is second, Elm Plaza ($49,620) is third.
+    *   Wait, let's double check Harbor Walk. The note says "from October through May (8 months) Harbor Walk averages about 3,000 people/day; the July-level crowds only occur June through September." So 8 months * 3000 + 4 months * 12000 = 24000 + 48000 = 72000. /12 = 6000. Yes.
+    *   Let's check Mill Street rent. $9,500 * 12 = $114,000. Two months free = $9,500 * 2 = $19,000. Effective annual = $114,000 - $19,000 = $95,000. Monthly effective = $7,916.67. This makes it cheaper than Harbor Walk ($9,000) and slightly more than Elm Plaza ($7,000) but with much higher traffic.
+    *   Elm Plaza has free parking, but the traffic is lowest. The parking might attract a different demographic, but the traffic data is what it is. The conversion rate might be higher with parking, but we don't have data to assume that. We must stick to the given 4% conversion rate. We can mention parking as a potential upside but not quantitatively adjust.
+    *   Risks: Harbor Walk has massive seasonality, making cash flow lumpy. Elm Plaza has low traffic. Mill Street has high rent but effective rent is lower due to concession. Mill Street is stable traffic.
+
+3.  **Draft the Recommendation**:
+    *   Recommend Mill Street.
+    *   Key reasons: Highest projected net profit. Stable foot traffic. Effective rent is lower than Harbor Walk due to 2 months free (effective $7,917/mo vs $9,000). Annual net profit calculation.
+    *   Risks: Rent is nominally highest. No free parking (though Elm Plaza has it, traffic is too low to overcome). If the 4% conversion rate is lower for office/residential, it could hurt, but the variation is less than 10%.
+    *   Confidence: High, maybe 85%. The calculations are clear. The main uncertainty is the conversion rate and average ticket, but those are given as planning assumptions. The seasonality of Harbor Walk is a huge red flag. Let's calculate the exact numbers to present clearly.
+    *   Net profit Mill St: $156,880.
+    *   Net profit Harbor: $65,040.
+    *   Net profit Elm: $49,620.
+    *   Let's present these numbers.
+
+4.  **Format the Output**:
+    *   Ensure word count is 150-300.
+    *   Headings exactly as specified.
+    *   End with exact two lines.
+
+5.  **Refining the numbers**:
+    *   Harbor Walk annual avg traffic = (8*3000 + 4*12000)/12 = 6000.
+    *   Customers = 6000 * 0.04 = 240/day.
+    *   Revenue = 240 * 9 = $2160/day * 365 = $788,400.
+    *   Gross profit = $788,400 * 0.6 = $473,040.
+    *   Fixed costs = $300,000. Rent = $108,000. Total costs = $408,000. Net = $65,040.
+    *   Mill Street: 7000 * 0.04 = 280/day. Revenue = 280*9 = $2520/day * 365 = $919,800. Gross profit = $551,880. Rent effective = $95,000. Fixed = $300,000. Total = $395,000. Net = $156,880.
+    *   Elm Plaza: 5500 * 0.04 = 220/day. Revenue = 220*9 = $1980/day * 365 = $722,700. Gross profit = $433,620. Rent = $84,000. Fixed = $300,000. Total = $384,000. Net = $49,620.
+
+6.  **Write the response**:
+    *   ## Recommendation
+    *   Lease the Mill Street site.
+    *   ## Key reasons
+    *   - Highest projected annual net profit: $156,880 vs. $65,040 (Harbor Walk) and $49,620 (Elm Plaza).
+    *   - Stable foot traffic (7,000/day, <10% variation) ensures predictable revenue.
+    *   - The 2-month rent-free period lowers effective annual rent to $95,000 ($7,917/month), making it cheaper than Harbor Walk's nominal $9,000/month and only slightly above Elm Plaza's $7,000, despite far higher traffic.
+    *   - Harbor Walk's seasonality (3,000/day for 8 months) makes its annual average only 6,000/day, and its cash flow is highly volatile.
+    *   ## Risks
+    *   - Mill Street has the highest nominal rent ($9,500/month), though the concession mitigates this.
+    *   - It lacks Elm Plaza's free parking, which could slightly dampen conversion, but the traffic advantage outweighs this.
+    *   - Assumes the 4% conversion and $9 ticket hold true across all sites; if office/residential traffic converts lower, profit drops, but the margin of safety is large.
+    *   ## Confidence
+    *   85%
+    *   POSITION: Mill Street (highest net profit, stable traffic)
+    *   CONFIDENCE: 85%
+
+7.  **Check constraints**:
+    *   Word count: Let's count. ~200 words. Good.
+    *   Headings exactly: "## Recommendation", "## Key reasons", "## Risks", "## Confidence". Check.
+    *   End lines exactly: "POSITION: <the option you recommend, named as in the brief, plus a short qualifier if needed>" -> "POSITION: Mill Street (highest net profit, stable traffic)". "CONFIDENCE: <0-100>%" -> "CONFIDENCE: 85%". Check.
+    *   No extra text after the end lines. Check.

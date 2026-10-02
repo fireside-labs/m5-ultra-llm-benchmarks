@@ -1,0 +1,110 @@
+
+Let me analyze this call.
+
+Call type: post_procedure_followup (patient calling nurse line after gallbladder surgery with questions). Main purpose is post-op questions — post_procedure_followup.
+
+Outcome: The main issues were addressed: refill request promised (sent tonight), drain question escalated to surgical PA who conferenced in and resolved (drain check call tomorrow). The refill request is a follow-up commitment — but the main issue? Multiple issues. The drain question was resolved via escalation to PA. The refill is pending action by nurse/physician. Outcome options: resolved, escalated, callback. The drain question was escalated (PA conferenced in) — "use this even if a callback is also planned". The refill request is a callback-ish pending item. Hmm. The main issue was the pain pills question (first listed) plus drain plus feeling crummy. The refill request was sent to surgeon's team — pending. The drain was escalated to PA during the call and resolved with plan (office calls tomorrow). I'd say "escalated" since handed to surgical PA / surgeon team. Actually the PA conference happened during the call and answered the drain question. The refill is pending — a callback from Larkspur office tomorrow to schedule drain check, and refill request pending. Given escalation to PA occurred, "escalated" seems right per the rule "handed to... another team (use this even if a callback is also planned)".
+
+Sentiment start: negative (frustrated after long hold, third try). Actually first minutes are hold with sighs — negative-ish. "Oh thank God, a person" — relief. Start: negative (sighs, "It's always higher than normal"). End: positive ("I feel a lot better, honestly").
+
+Quality score: The nurse did well: verified identity (DOB, name spelling, address), authorized spouse disclosure, accurate info, appropriate escalation. But issues: the nurse recommended a warm bath — discharge instructions said "no tub baths for two weeks"! That's a clinical safety/accuracy failure — direct contradiction. At 00:27:36 nurse said "no tub baths, no hot tubs, no swimming for two weeks." Then at 01:57:44 nurse said "a nice warm bath would help with the soreness... treat yourself." Patient said "I'm taking a bath tonight." That's a serious misinformation/clinical safety flag. That drops quality to 3 (one notable lapse) or 2? It's a direct contradiction of discharge instructions — potentially harmful (bath with incisions/drain). I'd say 3: generally competent but one notable lapse. Actually it's a safety-relevant error — could argue 2. The rule: 2 = "a serious compliance, safety or accuracy failure, or several notable lapses." Recommending a bath against discharge instructions with an open drain site is a safety/accuracy failure. Hmm. It's one notable lapse but safety-relevant. I'll go with 3 — generally competent with one notable lapse; the bath advice is the lapse. But "serious safety failure" → 2. The bath advice contradicts explicit discharge instructions she herself read. That's fairly serious. I'll go 3, noting it as the notable lapse... Actually let me weigh: the instruction "no tub baths for two weeks" is standard post-cholecystectomy with drain. Telling her to take a bath tonight could risk infection. That's a genuine safety failure. Score 2? The rest of the call was excellent. The rubric: 3 = "generally competent but with one notable lapse." 2 = "a serious compliance, safety or accuracy failure." The bath recommendation is a safety failure. I'll score 2... Hmm, but it's arguably a slip in an otherwise excellent call. The rubric explicitly puts safety failures at 2. I'll go with 3? Let me decide: the lapse is significant (direct contradiction of the no-bath instruction, patient committed to taking a bath tonight). I'll score 3 — one notable lapse, otherwise excellent. Hmm, but "serious safety failure" → 2. The word "serious" — bath with healing incisions and a JP drain... risk of infection. I think 3 is defensible as "one notable lapse." I'll go 3.
+
+Also NyQuil with hydrocodone — nurse said okay but space out. NyQuil contains acetaminophen — patient also taking Extra Strength Tylenol. Combined acetaminophen could exceed dose. Nurse didn't catch that. NyQuil (the green one, nighttime cold medicine) contains acetaminophen ~650mg plus doxylamine. Patient taking hydrocodone/acetaminophen 5-325 (1-2 tabs q6h = up to 1300mg APAP) plus Extra Strength Tylenol 1000mg q6h = up to 2300mg... wait, 2 tabs q6h = 2000mg/day... Extra Strength 2×500=1000mg per dose, every 6h = 4000mg/day max. Plus hydrocodone APAP up to 2600mg/day if 2 tabs q6h. That's already potentially exceeding 4000mg/day! Nurse said "Tylenol's fine" without flagging total acetaminophen load. Plus NyQuil adds more APAP. That's another accuracy/safety issue. Hmm, but the transcript doesn't state doses precisely... it does: hydrocodone 5-325, 1-2 tablets every 6 hours; Tylenol Extra Strength 2 every 6 hours. 2×325×4 = 2600mg + 1000×4 = 4000mg → 6600mg/day potential. That's dangerous. The nurse said "Tylenol's fine." This is a missed acetaminophen duplication check. Should I flag it? The system prompt says be meticulous. Yes, flag as clinical_safety/misinformation: nurse confirmed Tylenol fine without accounting for acetaminophen already in hydrocodone, and later approved NyQuil (also containing acetaminophen). Evidence quotes.
+
+Also the long holds: initial hold ~18 min before nurse answered, plus 4m20s hold for PA conference (announced), plus additional holds. The initial 18-minute hold was IVR/queue, not nurse's fault. The PA conference hold was announced. Minor.
+
+Also IVR misrouting (press 3 → billing) — system issue, flag? "other" policy_violation? It's a technical issue causing misrouting; nurse acknowledged. Could flag as "other" — IVR menu misrouting refill calls to closed billing line. It's a business process issue. I'll include as flag type "other".
+
+Also identity verification: nurse verified DOB, name, address before discussing — good, no flag. Spouse disclosure authorized — no flag.
+
+Also the nurse said "I'll call you right back on the number we have" if disconnected — commitment, didn't need to happen.
+
+Also nurse said she'd send refill request "tonight" — action item.
+
+Action items:
+1. Nurse Felipe: send hydrocodone refill request to Dr. Vasquez-Lim's team via message line — tonight.
+2. Larkspur surgical office: call patient tomorrow (Friday) to schedule drain check, probably early next week — tomorrow, Friday.
+3. Patient/Rob: keep emptying and recording drain twice daily — ongoing.
+4. Patient: draw pen line around pink incision to monitor spreading — later/unspecified.
+5. Rob: pick up OTC polyethylene glycol laxative at Ostrander Eastgate tomorrow after work — tomorrow after work.
+6. Patient: call back if temp over 101, no BM by Saturday, incision spreading/pus, etc. — conditional.
+7. Patient: ask for work note at Oct 2 follow-up.
+8. Nurse: update preferred pharmacy to Ostrander Eastgate — done during call ("updated"). Completed, maybe not an action item. She said "I'll update that in your chart right now" and confirmed updated. Could include as completed or skip. I'll skip since completed during call, or include noting done. Action items = "every follow-up commitment or task stated in the call". The pharmacy update was a commitment fulfilled in-call. I'll include it? Probably fine to include with due "during call (completed)". Hmm, keep it simple — include tasks pending. I'll include the pharmacy update as completed during the call? I'll leave it out of action_items and put in notable_details. Actually the schema wants every follow-up commitment; completed ones aren't follow-ups. Skip.
+
+9. Patient: take bath tonight — that's the erroneous advice; not a business task. Skip (patient self-care).
+10. Drain check appointment — covered by Larkspur call.
+
+Flags:
+1. clinical_safety: nurse advised warm bath despite having told patient no tub baths for two weeks per discharge instructions. Evidence: "no tub baths, no hot tubs, no swimming for two weeks" vs "Honestly, a nice warm bath would help with the soreness." One flag with both quotes? Evidence must be short verbatim quote — use the bath advice quote, description mentions contradiction.
+2. clinical_safety/misinformation: acetaminophen stacking — nurse confirmed Extra Strength Tylenol "fine" while patient on hydrocodone-acetaminophen 5-325 up to 2 tabs q6h, and later approved NyQuil (contains acetaminophen) without flagging total APAP load. Evidence: "Yeah, lots of people do that. Tylenol's fine."
+3. other: IVR misrouting prescription refill option to closed billing line, causing two failed call attempts. Evidence: "it put me in, like, billing? And billing's closed". Type "other" or "policy_violation"? "other" fits.
+4. Maybe missed_commitment? Nurse said if disconnected she'd call back — didn't happen (no disconnection requiring it). No.
+5. Long unannounced holds? The PA conference hold was announced ("Is it okay if I put you on a brief hold?") but lasted 4m20s+ plus additional holds totaling ~20 min (01:16:45 to 01:37:52 = ~21 min on hold for the PA conference, announced as "brief"). That's a notable issue — "brief hold" became ~21 minutes. Flag? Quality reason, maybe flag "other" for unannounced/understated hold. I'll put it in quality_reasons rather than a flag. Actually the initial queue hold was 18 min — that's the phone system. The "brief hold" for PA took ~21 min. I'll note in quality_reasons.
+
+Quality score: given two safety-related accuracy issues (bath contradiction, acetaminophen stacking), maybe 2 is more apt. Rubric: 2 = "a serious compliance, safety or accuracy failure, or several notable lapses." The bath advice is a safety failure. Two safety issues → 2. Hmm. But the call overall was empathetic, thorough, good escalation. The bath contradiction is quite serious (patient announced she'd take a bath tonight, spouse agreed to run it). I'll go with 2? Or 3? The rubric's 3 says "generally competent but with one notable lapse." There are arguably two lapses (bath, APAP stacking). I'll score 2... Let me think about what a careful analyst would do. The bath recommendation directly contradicts the discharge instruction the nurse herself read 90 minutes earlier — that's a clear accuracy/safety failure. The acetaminophen issue: nurse didn't catch duplicate APAP — also safety relevant. Two safety lapses → score 2. I'll go 2.
+
+Hmm, but is the APAP thing over-reading? Hydrocodone/APAP 5-325: 1-2 tabs q6h → max 2600mg APAP. Extra Strength Tylenol 2×500 q6h → 4000mg. Combined max 6600mg — exceeds 4000mg limit. Nurse explicitly asked "Anything else for pain? Anything over the counter?" and patient said Tylenol ES 2 q6h, nurse said "Tylenol's fine... we want you using that." That's a real miss. And NyQuil also has APAP. Yes, flag it.
+
+Score 2.
+
+Sentiment start: negative (frustration, sighs during long hold). End: positive.
+
+Summary notes: concise.
+
+Notable details:
+- Surgery date corrected: patient first said "the twelfth" then corrected to Monday, September 21, 2026 (lap chole, Dr. Vasquez-Lim at Larkspur).
+- Fever: patient initially said 100.8 "this afternoon"; spouse corrected that last night it was 101.8; nurse used 100.8 afternoon value; threshold given: call if >101.
+- Drain outputs: Monday 110, Tue 70/60, Wed 55/50, Thursday morning 40 mL; protocol pull when <30 mL/24h two days running.
+- Preferred pharmacy changed from Ostrander Millbrook to Ostrander Eastgate (open till 9).
+- Follow-up appointment: Friday October 2, 1:15 PM at Larkspur with Dr. Vasquez-Lim (patient misremembered as "the twelfth").
+- Patient identity: Imogen Tessaro-Blythe, DOB April 3, 1981, 42 Aldergrove Lane.
+- Medications: hydrocodone/APAP 5-325 (Norco), docusate BID, Tylenol ES, levothyroxine 75 mcg, OCP, vitamin D gummies; penicillin allergy (hives). NyQuil at night.
+- IVR misrouting: option 3 (refills) routed to closed billing line twice.
+- Patient is a middle-school band teacher, off work ~2 weeks, sub through second week of October; needs work note at follow-up.
+- No ibuprofen per Larkspur (bleeding risk).
+- 9 hydrocodone tablets left.
+- JP drain question resolved by on-call PA Dana; drain check call Friday.
+- Billing question deferred — Larkspur bills separately; call number on statement.
+- Long holds: ~18 min initial queue; ~21 min hold for PA conference despite "brief hold".
+
+Summary notes (≤120 words): draft.
+
+"Post-op day 3 call after laparoscopic cholecystectomy 9/21/2026 at Larkspur (Dr. Vasquez-Lim). Caller Imogen Tessaro-Blythe, verified (DOB, name, address); husband Rob authorized to participate. Three issues: (1) running low on hydrocodone — nurse to send refill request to surgeon's team tonight; (2) JP drain removal question — on-call PA Dana conferenced in; output trending down (40 mL), office to call Friday to schedule drain check; (3) feeling 'crummy' with low-grade temp 100.8 — advised incentive spirometer, call back if >101. Pharmacy updated to Ostrander Eastgate. Concerns: nurse advised a warm bath despite two-week no-bath instruction, and approved Tylenol ES/NyQuil without addressing total acetaminophen load with hydrocodone/APAP. Long holds (~18 min queue; ~21 min for PA)."
+
+That's about 110 words. Good.
+
+Action items list:
+1. owner: "Nurse Felipe (Brightwater)" task: "Send hydrocodone refill request to Dr. Vasquez-Lim's team via message line" due: "tonight (2026-09-24)"
+2. owner: "Larkspur surgical office" task: "Call patient to schedule drain check, likely early next week" due: "tomorrow, Friday (2026-09-25)"
+3. owner: "Spouse (Rob)" task: "Pick up OTC polyethylene glycol laxative at Ostrander Eastgate" due: "tomorrow after work"
+4. owner: "Patient (Imogen)" task: "Draw a pen line around the pink incision edge to monitor for spreading" due: "later today / unspecified"
+5. owner: "Patient (Imogen)" task: "Continue emptying and recording JP drain output twice daily (morning and evening)" due: "ongoing"
+6. owner: "Patient (Imogen)" task: "Call Brightwater nurse line if temp exceeds 101°F, no bowel movement by Saturday, or incision spreads/pus" due: "as needed / by Saturday"
+7. owner: "Patient (Imogen)" task: "Request work note for school at the October 2 follow-up visit" due: "Friday, October 2"
+8. owner: "Patient (Imogen)" task: "Call 911 for sudden worsening shoulder pain with shortness of breath/chest pain, or one-leg swelling/sudden SOB" — that's safety-netting advice, maybe include. Could include as conditional. I'll include a combined one or skip. I'll include the key ones; maybe combine red-flag callbacks into one item. I'll keep items 6 covering callbacks. Add 911 one? It's advice, not a task commitment. Skip.
+
+Also nurse said "if we get disconnected I'll call you right back" — conditional commitment, didn't trigger. Skip.
+
+Flags:
+1. type: clinical_safety — "Nurse advised a warm bath for back soreness despite having read the discharge instruction of no tub baths for two weeks post-op with incisions and a JP drain." evidence: "Honestly, a nice warm bath would help with the soreness." (and patient: "Rob, I'm taking a bath tonight")
+2. type: clinical_safety — "Nurse confirmed Extra Strength Tylenol was fine and later approved NyQuil without accounting for the acetaminophen already in hydrocodone/APAP 5-325 taken up to two tablets every six hours, risking exceeding the daily acetaminophen limit." evidence: "Yeah, lots of people do that. Tylenol's fine."
+3. type: other — "IVR prescription-refill option (press 3) misrouted the caller to the closed billing line twice, delaying the call." evidence: "it put me in, like, billing? And billing's closed, so it just played a message about statements and hung up on me."
+
+Maybe also flag the "brief hold" that lasted ~21 minutes as missed_commitment? Not really a commitment violation; it's a service issue. Put in quality_reasons.
+
+Quality reasons:
+- "Thorough identity verification (DOB, spelled name, address) before any clinical discussion; spouse participation explicitly authorized and noted."
+- "Appropriate escalation: conferenced in Larkspur on-call PA for the drain question with a clear clinical handoff summary."
+- "Serious accuracy lapse: recommended a warm bath despite stating the discharge instruction of no tub baths for two weeks."
+- "Missed duplicate acetaminophen risk: approved Extra Strength Tylenol and NyQuil alongside hydrocodone/APAP 5-325 without flagging total acetaminophen load."
+- "Very long waits: ~18 minutes in queue before answer and a 'brief hold' for the PA that lasted about 21 minutes."
+
+Score 2 given two safety lapses. OK.
+
+Outcome: escalated (PA conferenced in; refill handed to surgeon's team; Larkspur callback tomorrow). Yes, "escalated".
+
+Call type: post_procedure_followup.
+
+Sentiment start: negative. End: positive.
+
+Write JSON.

@@ -1,0 +1,41 @@
+{
+ "call_type": "sales",
+ "outcome": "callback",
+ "sentiment_start": "neutral",
+ "sentiment_end": "negative",
+ "quality_score": 2,
+ "quality_reasons": [
+  "Made an unsupported 'guaranteed 30% fuel savings or money back' claim that she later admitted is not in the contract",
+  "Said 'no long contracts, cancel anytime' then quoted a 36-month agreement with an early-termination fee",
+  "Did secure next steps (written proposal + demo with the decision-maker)"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Rep claimed a guaranteed 30% fuel saving with money-back, then admitted it is not in the contract (unsupported/misleading claim)",
+   "evidence": "Our customers see thirty percent fuel savings. Guaranteed."
+  },
+  {
+   "type": "other",
+   "description": "Rep said 'no long contracts, cancel anytime' but the actual offer is a 36-month agreement with an early-termination fee equal to the remaining balance (misrepresented terms)",
+   "evidence": "There's just an early termination fee if you cancel before the thirty-six months are up."
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "rep",
+   "task": "Send written proposal with the real contract terms",
+   "due": "2026-07-23 (Thursday)"
+  },
+  {
+   "owner": "rep",
+   "task": "Send demo invite for Tuesday 2 pm with Rufus and CFO Priscilla Kranz-Albright",
+   "due": "2026-07-28 14:00"
+  }
+ ],
+ "summary_notes": "Mock summary for C11.",
+ "notable_details": [
+  "Fleet size corrected from 25 vans to 32 vehicles (25 vans + 7 refrigerated box trucks)",
+  "Decision-maker is the CFO, Priscilla Kranz-Albright, not the caller"
+ ]
+}

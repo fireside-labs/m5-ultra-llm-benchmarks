@@ -1,0 +1,41 @@
+{
+ "call_type": "pharmacy_refill",
+ "outcome": "resolved",
+ "sentiment_start": "negative",
+ "sentiment_end": "positive",
+ "quality_score": 5,
+ "quality_reasons": [
+  "Verified identity and clearly explained that the second charge is a pending authorization hold",
+  "Correctly declined the early controlled-substance refill per policy and offered a vacation override; fixed the pickup location"
+ ],
+ "flags": [],
+ "action_items": [
+  {
+   "owner": "pharmacist",
+   "task": "Send a vacation-override request for zolpidem to Dr. Abernathy-Coles",
+   "due": "today"
+  },
+  {
+   "owner": "caller",
+   "task": "Check that the pending $12.50 hold drops off; call back if still there after 5 business days",
+   "due": "3-5 business days"
+  },
+  {
+   "owner": "pharmacy",
+   "task": "Move order pickup to Eastgate and text when ready",
+   "due": "tomorrow morning"
+  },
+  {
+   "owner": "caller",
+   "task": "Check app / call a few days before leaving Oct 9 about the override fill",
+   "due": "before 2026-10-09"
+  }
+ ],
+ "summary_notes": "Mock summary for C04.",
+ "notable_details": [
+  "Patient travels for three weeks starting October 9",
+  "Order pickup switched from Millbrook to the Eastgate counter",
+  "Single real payment of $12.50; the other $12.50 is a pending hold",
+  "Zolpidem refill not due until Oct 14 (26 days early now); override would allow filling a few days before the Oct 9 departure"
+ ]
+}

@@ -1,0 +1,60 @@
+{
+  "call_type": "insurance_verification",
+  "outcome": "callback",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Identity properly verified with DOB and ZIP before discussing the account",
+    "Accurately captured corrected member ID (ending 009) and group number and ran an eligibility check",
+    "Clearly explained the prior-authorization requirement and why scheduling without it risks full patient billing",
+    "Promised transfer to billing for the duplicate copay charge but the call ended without the transfer occurring",
+    "Frequent technical interruptions (slow system, re-login, dead mouse) extended the call, though the patient stayed patient"
+  ],
+  "flags": [
+    {
+      "type": "missed_commitment",
+      "description": "The agent committed to transferring the patient to the billing team for the duplicate $45 copay charge at the end of the call, but the call ended without any transfer taking place.",
+      "evidence": "That's billing, so I'll transfer you over to them at the end of our call so they can take care of it."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent (Imani, imaging pre-registration)",
+      "task": "Submit prior authorization request to Granite Meridian with Dr. Kowalczyk-Nnamdi's notes",
+      "due": "today (2026-03-27)"
+    },
+    {
+      "owner": "agent (Imani, imaging pre-registration)",
+      "task": "Call patient as soon as authorization decision is received to schedule the lumbar spine MRI",
+      "due": "probably next week / as soon as decision received"
+    },
+    {
+      "owner": "patient",
+      "task": "Upload photo of front and back of Granite Meridian insurance card to patient portal",
+      "due": "tonight"
+    },
+    {
+      "owner": "patient",
+      "task": "Optionally upload wife's secondary insurance card to patient portal if located",
+      "due": "unspecified"
+    },
+    {
+      "owner": "billing team",
+      "task": "Resolve duplicate $45 copay charge (paid at desk, then charged again by ClearPay)",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Outbound pre-registration call for lumbar spine MRI ordered by Dr. Kowalczyk-Nnamdi. Identity verified (DOB 12/05/1977, ZIP 97209). Patient's old insurance ended in December; new Granite Meridian plan (member ID GMH-447-182-009, group 70315, patient as subscriber) effective 01/01 captured and eligibility confirmed active. Granite Meridian requires prior authorization for MRI; agent to submit request today with physician notes (typical 5-7 business days) and call patient to schedule once approved. Patient to upload card images to portal tonight. Secondary coverage via wife's plan noted, card not available. Patient reported a duplicate $45 copay charge (desk payment plus ClearPay); promised billing transfer did not occur before call ended - billing follow-up still needed. Emergency contact confirmed unchanged; no accommodations needed.",
+  "notable_details": [
+    "Member ID corrected during the call: GMH-447-182-009 (patient initially read the last digit as 6, then corrected to 9)",
+    "Group number: 70315; patient is the subscriber through his new job; new insurance effective January 1 after old plan ended in December",
+    "Duplicate charge detail: $45 copay paid at the desk, then charged again by 'ClearPay' a couple of days later",
+    "Prior authorization for MRI typically takes 5-7 business days per the agent",
+    "Secondary insurance exists through patient's wife's employer plan, but card was not available",
+    "Emergency contact confirmed as unchanged; no interpreter or accessibility accommodations needed",
+    "Patient has been dealing with back pain for two months",
+    "Agent gave contradictory statements about location ('In the office today. Today I'm at home'), suggesting work-from-home with background noise",
+    "Agent promised to call the patient back on the number on file if disconnected"
+  ]
+}

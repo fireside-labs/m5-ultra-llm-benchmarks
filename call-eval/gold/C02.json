@@ -1,0 +1,198 @@
+{
+ "call_id": "C02",
+ "call_type": "billing_dispute",
+ "outcome": "callback",
+ "outcome_accept": [
+  "unresolved",
+  "escalated"
+ ],
+ "sentiment_start": "negative",
+ "sentiment_end": "neutral",
+ "sentiment_end_accept": [
+  "positive"
+ ],
+ "quality_score": 2,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Disclosed balance and card last-four before verifying identity (DOB asked only afterwards)",
+   "match": [
+    [
+     "verif",
+     "identit",
+     "dob",
+     "date of birth"
+    ],
+    [
+     "before",
+     "prior",
+     "after",
+     "late",
+     "without"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Over-promised a 48-hour guaranteed refund contrary to stated 7-10 business-day review",
+   "match": [
+    [
+     "48",
+     "forty-eight",
+     "guarantee",
+     "promis"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "Refused to give a reference/ticket number",
+   "match": [
+    [
+     "reference",
+     "ticket",
+     "case number",
+     "confirmation number"
+    ]
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "id": "F1",
+   "text": "Disclosed account balance and card last-four digits before verifying caller identity",
+   "evidence": "your balance is showing ninety dollars right now, and there's two payments on the card ending in three-three-one-eight",
+   "match": [
+    [
+     "verif",
+     "identit",
+     "dob",
+     "date of birth",
+     "authenticat"
+    ],
+    [
+     "before",
+     "prior",
+     "without",
+     "after disclos",
+     "prematur",
+     "late"
+    ]
+   ]
+  },
+  {
+   "id": "F2",
+   "text": "Guaranteed a refund within 48 hours, outside the stated 7-10 business day billing review policy",
+   "evidence": "I'll make sure you get it back in forty-eight hours. Guaranteed.",
+   "match": [
+    [
+     "refund"
+    ],
+    [
+     "48",
+     "forty-eight",
+     "guarantee",
+     "polic",
+     "promis",
+     "timeline",
+     "unrealistic"
+    ]
+   ]
+  }
+ ],
+ "decoys": [],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Systemic duplicate-charge issue with the ClearPay portal (true, but an operational issue rather than an agent-conduct flag; neither rewarded nor penalised)",
+   "match": [
+    [
+     "double",
+     "duplicate",
+     "twice",
+     "clearpay",
+     "portal",
+     "auto.?pa"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Daughter's possible duplicate charge not followed up",
+   "match": [
+    [
+     "daughter"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "agent",
+   "task": "Submit refund request for the duplicate $45 ClearPay copay charge",
+   "due": "today",
+   "match": [
+    [
+     "refund"
+    ],
+    [
+     "request",
+     "submit",
+     "process",
+     "issue",
+     "flag"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "billing team",
+   "task": "Call the patient back to confirm the refund",
+   "due": "2026-03-20 (Friday)",
+   "match": [
+    [
+     "call",
+     "contact",
+     "phone"
+    ],
+    [
+     "back",
+     "friday",
+     "confirm",
+     "follow"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Duplicate charge amount is $45, not $40 (copay increased in January; agent initially read the old copay)",
+   "evidence": "No, it was forty-five. My copay went up in January.",
+   "match": [
+    [
+     "45",
+     "forty-five"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Caller mentioned her daughter (also a patient, same week) may have the same duplicate charge; not followed up by agent",
+   "evidence": "my daughter's also a patient there",
+   "match": [
+    [
+     "daughter",
+     "family member",
+     "second account",
+     "another account",
+     "relative"
+    ]
+   ]
+  }
+ ],
+ "themes": [
+  "T_DOUBLE_CHARGE"
+ ]
+}

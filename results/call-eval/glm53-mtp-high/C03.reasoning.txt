@@ -1,0 +1,49 @@
+
+Let me analyze.
+
+Call type: post_procedure_followup (outbound nurse follow-up after knee arthroscopy).
+
+Outcome: resolved — main issue (follow-up check) completed; PT referral changed to Eastgate; aspirin restart clarified. Resolved.
+
+Sentiment: start neutral/positive — patient is cheerful, "Pretty good, honestly." Start positive? First minutes: patient is upbeat, laughing. I'd say positive. End positive ("You've been great").
+
+Quality score: The nurse did well overall — verified DOB, checked authorization for spouse, gave accurate info, read back. But notable lapse: calf pain, swelling, warmth on operated side — potential DVT symptoms — dismissed as "pretty common after knee surgery... keep it propped up and it should settle down." That's a clinical safety concern. Warmth, swelling, achy calf post-op could indicate DVT; should have been escalated or at least monitored/flagged. That's a notable lapse → score 3? Or 2? The nurse dismissed a possible DVT sign. Per rubric: 3 = mixed, generally competent but with one notable lapse. 2 = poor: serious compliance, safety or accuracy failure. Dismissing possible DVT symptoms is a safety failure. Hmm. It's one notable lapse; she did advise ankle pumps and propping, but didn't escalate or advise warning signs for calf swelling (DVT). I'd say 3 — generally competent with one notable lapse. Actually the rubric says 2 = "a serious compliance, safety or accuracy failure". Dismissing possible DVT symptoms could be considered a safety failure. But it's borderline; calf achiness post-arthroscopy is common and she did give conservative advice. Many analysts would flag it as clinical_safety and score 3. I'll go with 3.
+
+Flags:
+1. clinical_safety: calf achiness, swelling, warmth on operated side not escalated; dismissed as common. Evidence: "the back of the calf, the left one... it's been kind of achy since yesterday... looks a little swollen... Kind of warm, maybe." Nurse: "that's pretty common after knee surgery... Just keep it propped up on a pillow and it should settle down."
+
+Any other flags? Identity verification: DOB verified — correct, not flagged. Spouse disclosure: verified on authorization form — correct. Missed commitment? She said she'd mention the pre-op instruction discrepancy to manager — that's an action item, not a flag (commitment within authority). The read-back: she said she'd read back things but then said "let me finish the rest first" — she did summarize at the end. Fine.
+
+Action items:
+- Nurse: change PT referral to Eastgate Rehab; Eastgate will call within 2-3 business days (owner: Eastgate Rehab / nurse). Task: send referral to Eastgate; due: referral sent, Eastgate to call within 2-3 business days.
+- Nurse: mention pre-op fasting instruction discrepancy (packet vs text message) to manager; due unspecified.
+- Spouse/patient: restart baby aspirin 81 mg once daily today; due today (2026-03-06).
+- Patient: remove big dressing tomorrow (day five, 2026-03-07) and apply Band-Aids; keep dry.
+- Patient: do ankle pumps every hour, ten at a time.
+- Patient: attend post-op visit Thursday March 12 at 1:30 with Dr. Okonjo-Reyes.
+- Patient: call after-hours line if fever >100.4 or incisions red/hot/draining pus.
+
+Summary notes ≤120 words.
+
+Notable details:
+- DOB verified: Feb 2, 1964.
+- Procedure: left knee arthroscopy with Dr. Okonjo-Reyes on Monday (call date 2026-03-06 Friday; Monday = 2026-03-02).
+- Pain 3-4/10; stopped oxycodone after first night (took two doses); Tylenol max 3000 mg/day.
+- Original surgery date Feb 23 cancelled morning-of due to apple juice (clear liquid) conflicting instructions; rescheduled following week.
+- PT referral originally Main Street, changed to Eastgate; Eastgate to call within 2-3 business days.
+- Post-op visit Thursday March 12 at 1:30.
+- Aspirin 81 mg restart day three — should have been yesterday, starting today; spouse unaware.
+- Amlodipine resumed Tuesday.
+- Ruth on HIPAA authorization form — verified.
+- Nurse tech issues: screen logout, mouse battery.
+- Patient mentioned roommate with the game on — earlier said wife Ruth at home; "my roommate has the game on" — inconsistency? Could be a friend/roommate. Notable detail maybe. Also patient said he's "in the hallway" when asked if calling from work — patient is at home; he said "yeah, I'm in the hallway" to "Are you calling from work?" — ambiguous. Not critical.
+- Calf symptoms: achy, swollen, warm left calf since yesterday.
+
+Quality reasons:
+- Verified DOB and confirmed spouse on authorization before discussing meds.
+- Dismissed calf swelling/warmth/achiness without escalation or DVT warning signs.
+- Accurate read-back of instructions at end of call.
+- Multiple technical interruptions (screen logout, mouse battery) lengthened call.
+- Empathetic and thorough post-op assessment.
+
+Score 3.

@@ -1,0 +1,29 @@
+
+
+## Variables
+
+1. Customer and regulator permission: cloud DPA acceptance may not mean self-hosting is allowed or required for every insurer; check contracts, security schedules, data-residency clauses, approved-processor lists, and counsel/DPO sign-off.
+2. Security-control equivalence: moving sensitive claim data in-house creates new risks around model weights, prompts, logs, GPU access, and secrets; check data-flow threat model, encryption, IAM, logging, retention, PII redaction, and compare controls with the cloud vendor.
+3. Model quality and legal risk: poor medical summaries or claim letters can cause wrongful benefit denials, appeals, and regulatory exposure; check blind evaluation on representative docs, hallucination/omission rates, citation accuracy, bias, and adverse-decision simulation vs current API and human review.
+4. Operational capacity and staffing: two engineers cannot realistically run GPU infrastructure, security patching, incident response, model updates, and evaluation at 40,000 documents/month plus peaks; check runbooks, on-call requirements, MTTR, support contracts, and staffing gap.
+5. Total cost and capital feasibility: GPUs, power, cooling, storage, colo, MLOps, security, and model updates may exceed API costs and lock capital; check 3-year TCO using token volumes, peak sizing, GPU utilization, power, support, hiring, and current API spend.
+6. Peak throughput and latency: quarter-end peaks and long medical records may overwhelm a small self-hosted deployment; check token-length distribution, concurrency, peak multiplier, p95 latency, batch completion time, and load tests at 2–3x normal volume.
+7. Data governance and auditability: prompts/outputs contain medical and legal data subject to customer-specific retention, deletion, access logging, and no-training rules; check data inventory, retention/deletion automation, immutable audit logs, access reviews, and DPA clause mapping.
+8. Integration and workflow compatibility: current API may support structured extraction, letter templates, case-management handoffs, and human-review UI; open-weight may lack equivalent features; check integration inventory, feature parity, structured-output validation, and end-to-end UAT.
+9. Reliability and fallback: a self-hosted outage could stall quarter-end claim decisions; cloud may provide SLA-backed redundancy; check required RPO/RTO, historical incident data, failover plan, manual fallback, and disaster-recovery test results.
+10. Model provenance and update risk: open-weight models require license review, provenance, security scanning, alignment/fine-tuning, and drift monitoring; check model card, license, CVE scans, provenance, eval drift, and patch cadence.
+11. Customer change-management burden: replacing the processor may trigger customer notice, re-certification, or insurer approval; check change-notice matrix, re-certification timeline, insurer approvals, and staff training/adoption needs.
+12. Human oversight and liability design: claim decisions cannot be fully automated; model drafts need accountable human review and appeal handling; check policy, human-review rate, appeal/reversal rates, legal indemnity, and audit sampling.
+
+## Top 3 priorities
+
+1. Customer/legal constraints: if contracts or regulators do not require self-hosting, and the signed cloud DPA satisfies customers, sensitivity alone is not a sufficient reason to replace the API.
+2. Material risk reduction: self-hosting should be pursued only if it demonstrably improves privacy/security controls and does not worsen model accuracy, claim-letter quality, or legal exposure.
+3. Operational and capital feasibility: with two engineers and quarter-end peaks, the decision should fail if Northfold cannot support the infrastructure, meet throughput, absorb cost, or maintain security and uptime.
+
+## What would change my mind
+
+- If customer contracts, regulators, or insurer security requirements explicitly prohibit cloud processing or require approved on-prem models, self-hosting becomes necessary despite cost and complexity.
+- If the cloud DPA and controls already satisfy all customers, and self-hosting offers no material control improvement, keep the cloud API and invest in better data minimization, logging, and human review.
+- If an open-weight model matches or beats the current API on blind claim-letter and medical-summary evaluation, and can run at quarter-end peak with acceptable cost and staffing, self-hosting may be justified.
+- If self-hosting requires hiring a security/MLOps team, fails peak load tests, or degrades claim-letter quality, reject full replacement and consider a limited hybrid pilot instead.

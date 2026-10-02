@@ -1,0 +1,286 @@
+{
+ "task_id": "R09",
+ "title": "Steering: reduce patient call-center wait times",
+ "category": "D",
+ "sections": [
+  "steps",
+  "measure",
+  "kill",
+  "priorities"
+ ],
+ "items": [
+  {
+   "id": "G1",
+   "text": "Staff to the arrival pattern: Monday 8-11 gets 22% of calls while everyone works an identical 8-5 shift; measure demand by interval and stagger/shift schedules",
+   "importance": "high",
+   "match": [
+    [
+     "monday",
+     "peak",
+     "by (the )?(hour|interval|half.hour|day of week)",
+     "interval",
+     "hour.by.hour",
+     "time.of.day",
+     "arrival (pattern|curve|rate)",
+     "22%",
+     "stagger",
+     "(shift|schedule)s? (pattern|start|change|realign|to match)",
+     "(re)?schedul(e|ing) (agents|staff|shifts)",
+     "staffing to (demand|volume)",
+     "forecast",
+     "erlang",
+     "workforce management"
+    ]
+   ],
+   "paraphrases": [
+    "Monday 8-11 is 22% of weekly volume but staffing is flat - realign shifts to the peak.",
+    "Pull call volume by 30-minute interval and stagger agent schedules to match the arrival pattern.",
+    "Staff to demand by interval (Erlang-style), not to a flat 8-5 shift."
+   ],
+   "negatives": [
+    "Hire more agents to reduce waits."
+   ]
+  },
+  {
+   "id": "G2",
+   "text": "Remove refill-status calls (31%) at the source: proactive text/portal status updates and pharmacy notifications",
+   "importance": "high",
+   "match": [
+    [
+     "refill",
+     "prescription",
+     "pharmacy",
+     "\\brx\\b",
+     "31%"
+    ],
+    [
+     "status",
+     "proactive",
+     "notif",
+     "\\btext",
+     "\\bsms",
+     "portal",
+     "deflect",
+     "automat",
+     "self.?serv",
+     "updates?",
+     "eliminat",
+     "root cause",
+     "why (patients|they) call",
+     "\\bivr\\b"
+    ]
+   ],
+   "paraphrases": [
+    "31% of calls ask about refill status - send proactive text updates so patients don't need to call.",
+    "Deflect prescription-status calls with automated pharmacy notifications or self-service.",
+    "Fix the refill workflow so status is visible in the portal."
+   ]
+  },
+  {
+   "id": "G3",
+   "text": "Failure demand: 18% call 2+ times about the same issue; find why first contact doesn't resolve it",
+   "importance": "high",
+   "match": [
+    [
+     "repeat (calls?|callers?)",
+     "18%",
+     "call(ed|ing|s)? (back|again|twice|multiple times|more than once)",
+     "2\\+? (or more )?times",
+     "failure demand",
+     "first.(contact|call) resolution",
+     "\\bfcr\\b",
+     "same issue",
+     "unresolved"
+    ]
+   ],
+   "paraphrases": [
+    "18% of callers call again about the same issue - that's failure demand to eliminate.",
+    "Improve first-contact resolution so people don't have to call back.",
+    "Repeat calls inflate volume; find why issues stay unresolved."
+   ]
+  },
+  {
+   "id": "G4",
+   "text": "Handle time rose from 4.1 to 5.6 min after the EHR switch (~37% more workload); fix EHR workflow/training",
+   "importance": "high",
+   "match": [
+    [
+     "handle time",
+     "handling time",
+     "\\baht\\b",
+     "5\\.6",
+     "4\\.1",
+     "call (length|duration)",
+     "talk time",
+     "after.call work",
+     "wrap.?up"
+    ]
+   ],
+   "paraphrases": [
+    "Average handle time jumped from 4.1 to 5.6 minutes after the EHR switch - a ~37% capacity loss.",
+    "Fix EHR workflows and training to bring handle time back down.",
+    "Longer calls since March explain much of the wait; target AHT."
+   ]
+  },
+  {
+   "id": "G5",
+   "text": "The 9-minute figure excludes the 21% who hang up: measure abandonment and true demand, not just answered-call wait",
+   "importance": "normal",
+   "match": [
+    [
+     "abandon",
+     "21%",
+     "hang(s|ing)? up",
+     "hung up",
+     "answered calls only",
+     "only (counts|covers|measures|includes) answered",
+     "surviv",
+     "true (demand|wait)",
+     "unanswered"
+    ]
+   ],
+   "paraphrases": [
+    "21% abandon before answer, so the 9-minute average understates the problem.",
+    "Track abandonment rate; the wait metric only covers answered calls.",
+    "True demand includes the callers who hung up."
+   ]
+  },
+  {
+   "id": "G6",
+   "text": "Menu and routing: 7 IVR options and 26% transfers waste capacity; simplify routing",
+   "importance": "normal",
+   "match": [
+    [
+     "\\bivr\\b",
+     "phone menu",
+     "menu",
+     "transfer",
+     "routing",
+     "misrout",
+     "26%",
+     "phone tree"
+    ]
+   ],
+   "paraphrases": [
+    "26% of calls get transferred - fix routing and simplify the 7-option menu.",
+    "Misrouting through the IVR adds handle time and repeat calls.",
+    "Simplify the phone tree."
+   ]
+  },
+  {
+   "id": "G7",
+   "text": "Define the target properly: service level by interval (e.g., % answered within X seconds) and abandonment, not an average",
+   "importance": "normal",
+   "match": [
+    [
+     "service level",
+     "percentile",
+     "90th",
+     "\\bp90\\b",
+     "distribution",
+     "% answered within",
+     "answered within",
+     "not (the |an )?average",
+     "\\bmedian\\b",
+     "\\btail\\b",
+     "define (the )?(goal|target|metric|success)",
+     "asa\\b",
+     "speed of answer",
+     "target metric",
+     "(agree|clarify|pin down) (on )?(the )?(target|goal|metric|success)"
+    ]
+   ],
+   "paraphrases": [
+    "Define success as a service level - e.g., 80% answered within 60 seconds - not an average.",
+    "Measure the wait distribution (90th percentile), not the mean.",
+    "Agree on the target metric with the COO first."
+   ]
+  },
+  {
+   "id": "G8",
+   "text": "Fill the 2 vacancies first and understand attrition before adding 4 new positions",
+   "importance": "normal",
+   "match": [
+    [
+     "vacan",
+     "unfilled",
+     "open (positions|roles|seats)",
+     "(2|two) (agents )?(left|positions|vacancies|open)",
+     "attrition",
+     "turnover",
+     "backfill",
+     "retention"
+    ]
+   ],
+   "paraphrases": [
+    "Backfill the 2 vacant positions before approving 4 new hires.",
+    "Understand why agents left - attrition will undo any hiring.",
+    "Fill unfilled seats first."
+   ]
+  },
+  {
+   "id": "G9",
+   "text": "Callback/virtual hold improves experience and abandonment but adds no capacity; work is deferred, not removed",
+   "importance": "normal",
+   "match": [
+    [
+     "callback",
+     "call.?back",
+     "virtual hold",
+     "virtual queue",
+     "add.?on"
+    ],
+    [
+     "workload",
+     "capacity",
+     "doesn'?t (reduce|remove|add|fix)",
+     "does not (reduce|remove|add|fix)",
+     "perceiv",
+     "abandon",
+     "queue",
+     "volume",
+     "same (work|calls|number)",
+     "defer",
+     "shifts?",
+     "experience",
+     "not (fix|solve)",
+     "underlying"
+    ]
+   ],
+   "paraphrases": [
+    "Callback reduces perceived wait and abandonment but adds no agent capacity.",
+    "Virtual hold just defers the same work into a callback queue.",
+    "The add-on doesn't fix the underlying volume."
+   ]
+  },
+  {
+   "id": "G10",
+   "text": "Portal deflection only reaches the 35% with active portals; activation and other channels matter (equity, older patients)",
+   "importance": "normal",
+   "match": [
+    [
+     "portal",
+     "35%"
+    ],
+    [
+     "adoption",
+     "activat",
+     "only",
+     "not everyone",
+     "equity",
+     "elderly",
+     "older",
+     "digital",
+     "65%",
+     "enrol"
+    ]
+   ],
+   "paraphrases": [
+    "Only 35% have activated the portal - deflection requires raising activation.",
+    "Portal-based fixes miss the 65% who aren't enrolled, often older patients.",
+    "Digital deflection has limited reach until portal adoption grows."
+   ]
+  }
+ ],
+ "decoys": []
+}

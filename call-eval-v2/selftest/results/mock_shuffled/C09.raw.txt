@@ -1,0 +1,77 @@
+{
+ "call_type": "pre_procedure",
+ "outcome": "resolved",
+ "sentiment_start": "neutral",
+ "sentiment_end": "neutral",
+ "quality_score": 2,
+ "quality_reasons": [
+  "Nurse gave two different apixaban (Eliquis) stop instructions - last dose Monday night early, 'stop Wednesday morning' in the recap - and never reconciled them",
+  "Nurse told the patient he was 'all set' with insurance although she had said the authorization was still pending",
+  "Otherwise thorough and warm: checked the wife was on the release form, detailed med review, clear prep, driver and fever instructions"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Contradictory anticoagulant instructions: nurse first said take the last apixaban dose Monday night (Oct 5), but in the recap said 'stop the Eliquis Wednesday morning'; the two stop dates were never reconciled",
+   "evidence": "stop the Eliquis Wednesday morning"
+  },
+  {
+   "type": "other",
+   "description": "Nurse told the patient he was 'all set' with insurance although earlier she said the Halvard authorization was still pending",
+   "evidence": "Yep, you're all set, nothing for you to do there."
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "patient",
+   "task": "Stop apixaban (Eliquis) before the procedure (nurse gave last dose Monday night Oct 5, recap said Wednesday morning); restart as the doctor directs",
+   "due": "before 2026-10-09"
+  },
+  {
+   "owner": "patient",
+   "task": "Take half the insulin glargine (20 units) Thursday night; skip metformin Friday morning; lisinopril with a sip of water; check sugar Friday morning and bring the meter",
+   "due": "2026-10-08 / 2026-10-09"
+  },
+  {
+   "owner": "patient",
+   "task": "Bowel prep: light breakfast before 9 a.m. Thursday then clear liquids; split-dose prep 6 p.m. Thursday and 1:45 a.m. Friday; nothing by mouth after 4:45 a.m.",
+   "due": "2026-10-08/09"
+  },
+  {
+   "owner": "patient",
+   "task": "Driver: neighbour Phil Haddad to stay in the waiting area and sign the driver form",
+   "due": "2026-10-09"
+  },
+  {
+   "owner": "patient",
+   "task": "Call Larkspur before Friday if fever 100.4 or higher, worsening cough or shortness of breath",
+   "due": "before 2026-10-09"
+  },
+  {
+   "owner": "patient",
+   "task": "Stop fish oil starting Friday October 2 (7 days before)",
+   "due": "2026-10-02"
+  },
+  {
+   "owner": "nurse",
+   "task": "Keep an eye on the pending Halvard authorization",
+   "due": "unspecified"
+  },
+  {
+   "owner": "scheduler",
+   "task": "Email the prep calendar and driver attestation form; text reminder Thursday; follow-up with Dr. Lindqvist-Amaro Thursday Oct 22 at 1:15 p.m.",
+   "due": "today / 2026-10-22"
+  }
+ ],
+ "summary_notes": "Mock summary for C10.",
+ "notable_details": [
+  "Arrival time is 6:45 a.m. (nurse first read 7:45 from an old template)",
+  "Driver is neighbour Phil Haddad (555-0139) because the wife is working Friday",
+  "Split-dose prep: first half 6 p.m. Thursday, second half at 1:45 a.m. finishing by 2:45; nothing by mouth after 4:45 a.m.",
+  "Patient had a cold last week with a lingering morning cough (no fever); anesthesia OK'd it, call if fever 100.4+",
+  "Halvard authorization still pending even though the office faxed it twice",
+  "Stop fish oil starting Friday October 2",
+  "Results follow-up with Dr. Lindqvist-Amaro on Thursday October 22 at 1:15 p.m. (scheduler first said 1:50)",
+  "Driver Phil's phone number is 555-0139 (patient first said 0138; wife corrected)"
+ ]
+}

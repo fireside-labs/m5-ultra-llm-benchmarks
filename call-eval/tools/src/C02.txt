@@ -1,0 +1,43 @@
+@id C02
+@date 2026-03-16 13:05
+@line Corrowind Health Partners - Patient Billing
+@direction inbound
+@target 2400
+@speaker A AGENT = billing representative
+@speaker C CALLER = patient
+---
+A: Billing, this is Marcus.
+C: Hi, yes, hi. Um, I'm calling because I got charged twice for the same visit and I'd like it fixed, please.
+A: Okay. What's the phone number on the account?
+C: It's five-five-five, three-zero-nine, one-one-eight-four.
+A: [typing] Okay, I've got an account here for a Leontyne Asare-Whitfield?
+C: Yes, that's me.
+A: Okay, so your balance is showing ninety dollars right now, and there's two payments on the card ending in three-three-one-eight, both from, um, the visit on the twenty-sixth.
+C: Yes! That's exactly it. Two payments. I paid at the desk when I checked in, and then I got an email from the new payment portal, the ClearPay thing, and it took it again. Automatically. I never even clicked anything.
+A: Mm-hm. Okay. And, uh, just for the record, can I get your date of birth?
+C: Oh. Sure. October ninth, nineteen eighty-eight.
+A: Okay, thanks. So, yeah, I see the two charges. Forty dollars each.
+C: Forty? No, it was forty-five. My copay went up in January. Hold on, I have the email right here. [pause] Yeah, forty-five dollars, "ClearPay automatic payment received," and the receipt from the desk says forty-five too.
+A: Oh, you're right, sorry, I was looking at the old copay line. Forty-five, forty-five. Yep.
+C: So I'm out forty-five dollars and, honestly, I'm kind of annoyed, because nobody told us the portal would just take money on its own.
+A: Yeah, I hear you. We switched to ClearPay at the end of February and, um, there's been some hiccups.
+C: Hiccups. [laughs] Okay.
+#fill billing_lookup smalltalk
+A: Okay, so what I'm going to do is put in a refund request for the duplicate.
+C: How long does that take? Because last time I had a refund from, um, from a different place it took two months.
+A: So it says here, um, refund requests are reviewed by the billing team, and it's seven to ten business days for review and then the card refund after that. But, honestly, don't worry about that, I'll make sure you get it back in forty-eight hours. Guaranteed.
+C: Really? Forty-eight hours?
+A: Yeah, I'll flag it. Forty-eight hours, you'll see it back on the card.
+C: Okay. Well, that's— that's better than I expected. Is there, um, a reference number or something? A ticket?
+A: Uh, no, it's all in the system, you don't really need one. If you call back just give them your phone number.
+C: Okay... I'd rather have a number but okay.
+A: And somebody from the billing team will give you a call back by Friday just to confirm it went through.
+C: This Friday?
+A: This Friday, yeah.
+#fill smalltalk
+C: Okay. Oh, and, um, this might be nothing, but my daughter's also a patient there, she was in the same week, and I think she might have the same thing on hers. I haven't looked yet.
+A: Okay. Yeah, if she sees it she can give us a call.
+C: Okay. Alright.
+A: Anything else?
+C: No. I guess that's it. Thanks.
+A: Alright, have a good one.

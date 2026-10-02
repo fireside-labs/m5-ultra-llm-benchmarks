@@ -1,0 +1,55 @@
+{
+ "call_id": "C01",
+ "call_type": "scheduling",
+ "outcome": "resolved",
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 5,
+ "quality_reasons": [
+  {"id": "Q1", "text": "Verified the patient's identity directly with him and asked his permission before discussing details with his daughter",
+   "match": [["verif", "consent", "permission", "authori[sz]", "identity", "date of birth", "dob"]]},
+  {"id": "Q2", "text": "Caught and corrected her own new-patient mistake, updated the contact number and confirmed the date, lab prep and medication list",
+   "match": [["correct", "updat", "confirm", "clarif", "accura", "lab", "fasting", "early"]]}
+ ],
+ "flags": [],
+ "decoys": [
+  {"id": "D1", "text": "Agent discussed the patient's appointment and lab details with his daughter (a third party)",
+   "why_not": "The patient was on the line, was verified, and explicitly consented: 'She can hear everything. She handles all my appointments'.",
+   "evidence": "She can hear everything. She handles all my appointments",
+   "paraphrases": ["Patient information was disclosed to the daughter without proper authorization.",
+                   "Privacy concern: details shared with a family member on the call.",
+                   "Agent shared PHI with the caller's daughter, a third party."],
+   "match": [["daughter", "third.party", "family member", "marisol", "relative"], ["disclos", "shar", "discuss", "privacy", "consent", "authori[sz]", "phi", "hipaa"]]},
+  {"id": "D2", "text": "Agent wrongly told the caller the doctor is not taking new patients",
+   "why_not": "She immediately corrected herself: the banner applies only to new patients and the patient is established.",
+   "evidence": "oh, sorry, you're right, I was reading the new-patient banner",
+   "paraphrases": ["Misinformation: agent said Dr. Okonkwo-Hale isn't accepting patients.",
+                   "Agent incorrectly stated that the physician was not taking new patients."],
+   "match": [["new.patient", "not taking", "not accepting", "isn't taking", "isn't accepting"]]}
+ ],
+ "acceptable_flags": [
+  {"id": "OK1", "text": "Outdated landline on file replaced", "match": [["landline", "phone number", "contact number", "outdated"]]}
+ ],
+ "action_items": [
+  {"id": "A1", "owner": "agent", "task": "Send confirmation text to the patient's new cell 555-0173", "due": "today",
+   "match": [["confirm", "text", "sms", "reminder"], ["text", "sms", "cell", "0173", "phone"]]},
+  {"id": "A2", "owner": "patient", "task": "Arrive 20 minutes early for fasting blood draw (nothing to eat after midnight)", "due": "2026-10-15",
+   "match": [["20.?min", "twenty.?min", "early", "fast", "midnight"], ["lab", "blood", "draw", "fast", "early", "midnight", "eat"]]},
+  {"id": "A3", "owner": "daughter", "task": "Bring a current medication list to the visit", "due": "2026-10-15",
+   "match": [["med"], ["list"]]}
+ ],
+ "subtle_facts": [
+  {"id": "S1", "text": "Appointment booked for Thursday October 15 at 10:40 (not the 14th)",
+   "evidence": "Thursday October fifteenth at ten-forty", 
+   "negatives": ["Appointment on Wednesday October 14 at 10:40"],
+   "match": [["oct\\w*\\.? 15", "10/15", "15th", "fifteenth"], ["10:40", "10\\.40", "ten.forty"]]},
+  {"id": "S2", "text": "Patient's new cell number is 555-0173 (daughter first said 0137); old landline removed",
+   "evidence": "Five-five-five, oh-one-seven-three",
+   "negatives": ["New cell number 555-0137"],
+   "match": [["0173", "zero.one.seven.three", "oh.one.seven.three"]]},
+  {"id": "S3", "text": "Fasting labs (cholesterol and A1c) - arrive 20 minutes early, nothing after midnight",
+   "evidence": "come about twenty minutes early for the blood draw",
+   "match": [["20.?min", "twenty.?min"]]}
+ ],
+ "themes": []
+}

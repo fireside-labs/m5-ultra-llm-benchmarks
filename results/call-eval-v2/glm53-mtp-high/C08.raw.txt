@@ -1,0 +1,76 @@
+{
+  "call_type": "scheduling",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Verified identity with DOB and address before accessing either account, and referrals re-verified DOB after transfer.",
+    "Resolved all requests in one call: two appointments booked, inhaler refill submitted, insurance updated, reminders and cancellation list set.",
+    "Serious accuracy lapse at the end: confirmed the Oct 12 appointment as 'Eastgate, same place' when it was booked at Harbor Street, despite the caller explicitly asking to avoid going to the wrong building.",
+    "Referenced Ezra's chart encounter flagged as confidential (adolescent clinic) to his father, disclosing its existence and nature ('just a follow-up').",
+    "Long hold (~13 minutes) after describing it as a short hold, plus extensive small talk that stretched the call to nearly an hour."
+  ],
+  "flags": [
+    {
+      "type": "misinformation",
+      "description": "The agent incorrectly confirmed the caller's October 12 appointment location as Eastgate when it had been booked at Harbor Street, and the caller wrote the wrong location on his calendar.",
+      "evidence": "CALLER: 'For my appointment on the twelfth— that's the same place as always, right? Eastgate?' AGENT: 'Yep, same place, you'll be all set.'"
+    },
+    {
+      "type": "privacy_disclosure",
+      "description": "The agent disclosed to the father the existence and general nature of Ezra's encounter flagged as confidential in the adolescent clinic.",
+      "evidence": "I see he was in on the third with Dr. Sato, too, the, um— oh, that one's flagged, it's marked confidential, adolescent clinic, so I can't really— well, it was just a follow-up"
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent (Tamsin) / Dr. Sato's nurse team",
+      "task": "Process albuterol HFA refill request and send to Eastgate (Ostrander) pharmacy",
+      "due": "within a day or two"
+    },
+    {
+      "owner": "agent (Tamsin) / front desk",
+      "task": "Text the caller if an earlier Thursday cancellation slot opens for Ezra's sports physical with Dr. Sato (Ezra on cancellation list)",
+      "due": "unspecified"
+    },
+    {
+      "owner": "agent (Tamsin)",
+      "task": "Send a copy of today's call notes to the caller's patient portal",
+      "due": "unspecified"
+    },
+    {
+      "owner": "caller (Gideon)",
+      "task": "Bring the green athletic pre-participation form with the parent page signed to Ezra's Oct 22 visit; arrive 15 minutes early for his own Oct 12 visit at Harbor Street",
+      "due": "Oct 22 (Ezra's visit) and Oct 12 (his visit)"
+    },
+    {
+      "owner": "referrals (Paloma)",
+      "task": "Watch for Dr. Lindqvist's Oct 12 visit note and, if orthopedics is warranted, send the referral electronically to Corran Orthopedics",
+      "due": "on/after Oct 12"
+    },
+    {
+      "owner": "Corran Orthopedics",
+      "task": "Call the patient to schedule the orthopedics appointment once the referral is sent",
+      "due": "within 5 business days of the referral being sent"
+    },
+    {
+      "owner": "system (Halvard eligibility check)",
+      "task": "Overnight eligibility verification after insurance update for both Gideon and Ezra",
+      "due": "overnight"
+    }
+  ],
+  "summary_notes": "Gideon Achebe-Lund (DOB 11/30/1978) called for himself and son Ezra (DOB 3/4/2011). Booked Ezra's sports physical with Dr. Sato, Eastgate pediatrics, Thu Oct 22 3:30 pm; green form signed by parent required; immunization record to be printed at visit; Ezra on cancellation list; reminders enabled for both parents (Celeste Achebe on account). Albuterol HFA refill sent to Dr. Sato's nurses for Eastgate pharmacy. Gideon booked with Dr. Lindqvist Mon Oct 12 9:20 am at Harbor Street (adult Eastgate closed for renovation) for left knee pain (~1 month, clicking, swelling with stairs). Halvard requires referral from the visit; Paloma will route to Corran Orthopedics. Insurance updated to new card (ID H-77310, group B-442). CAUTION: agent mistakenly confirmed the Oct 12 visit as Eastgate near call end.",
+  "notable_details": [
+    "Insurance member ID was initially read as H-77301 and corrected to H-77310; group B-442; new Halvard card after July plan change at caller's job; Ezra on same family plan (likely suffix -02).",
+    "Agent initially said Dr. Sato does physicals only on Tuesdays, then corrected herself: Dr. Sato added Thursday afternoons this fall for sports physicals; appointment booked Thursday Oct 22, 3:30 pm.",
+    "Ezra had a visit with Dr. Sato on 'the third' flagged confidential (adolescent clinic); father was unaware and assumed Ezra's mother took him; parents split the week.",
+    "Phone menu issue: option 3 (listed as refills on the caller's fridge card) routes to billing, not refills; the nurse line is option 4; caller was bounced to billing before reaching appointments.",
+    "Adult medicine at Eastgate is closed for renovation through approximately November; all adult visits go to Harbor Street (free parking lot behind); pediatrics remains at Eastgate first floor; Eastgate garage parking can be validated at the front desk.",
+    "Ezra's immunizations are up to date in the system (last at 11-year visit plus flu shot last October); the school lost his printed record twice last year (found in Coach Mbeki's folder).",
+    "Ezra's asthma is quiet; he uses the albuterol rescue inhaler before races sometimes.",
+    "Text confirmations go to the cell on file ending 8812 (caller's); reminders two days before appointments; both parents will receive the Oct 22 reminder.",
+    "Caller's stated household relationships are inconsistent across the call (wife/ex-wife Celeste, later 'my husband,' plus grandson, roommate, sisters, father), which a reviewer may want to reconcile.",
+    "Referral process for Halvard: must originate from the primary care visit; Corran Orthopedics is the practice's referral destination; Corran calls to schedule within 5 business days of referral submission."
+  ]
+}

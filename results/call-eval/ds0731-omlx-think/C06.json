@@ -1,0 +1,46 @@
+{
+  "call_type": "no_show_followup",
+  "outcome": "escalated",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 5,
+  "quality_reasons": [
+    "Verified patient identity before discussing any information",
+    "Recognized clinical red flags and escalated to nurse line",
+    "Updated contact information and offered ride program",
+    "Provided clear safety instructions and empathetic support"
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "Agent",
+      "task": "Update patient's phone number in system",
+      "due": "during call"
+    },
+    {
+      "owner": "Agent",
+      "task": "Submit ride program request",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Agent",
+      "task": "Call patient tomorrow morning to reschedule appointment with Dr. Ferreira-Holm",
+      "due": "tomorrow morning"
+    },
+    {
+      "owner": "Patient",
+      "task": "Call 911 if symptoms worsen (fainting, bad headache, confusion, vomiting)",
+      "due": "as needed"
+    }
+  ],
+  "summary_notes": "Outbound no-show follow-up for Marisol Quintanar-Bede. Missed appointment with Dr. Ferreira-Holm yesterday; first-time missed-appointment fee waived. Patient provided new phone number (555-448-0926) replacing old (ending 3350). Patient reported dizziness on standing and fainting Saturday with head bump; agent escalated to nurse line and gave 911 instructions. Ride program request submitted. Agent to call back tomorrow morning to reschedule.",
+  "notable_details": [
+    "New phone number: 555-448-0926 (old ending 3350)",
+    "Missed-appointment fee waived (first occurrence)",
+    "Patient fainted Saturday, hit head on cabinet, small bump",
+    "History of low iron",
+    "Transferred to Nurse Adeyemi-Strand",
+    "Ride program requested",
+    "Callback scheduled for tomorrow morning"
+  ]
+}

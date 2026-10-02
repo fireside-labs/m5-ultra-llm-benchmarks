@@ -1,0 +1,102 @@
+
+We need answer user's request: analyze transcript and return ONE JSON object conforming schema, no markdown. Need produce final JSON only. Need carefully analyze.
+
+Transcript: outbound missed appointment outreach. Agent Rosa calls patient Marisol. Verifies DOB. Patient missed appointment due ride. Agent says fee waived first time per policy. Updates phone number. Small talk. Patient reports dizziness, syncope, head bump. Agent not nurse, transfers to nurse line, gives red flags 911. Offers ride program request. Promises callback tomorrow morning to reschedule after nurse. Transfers to nurse, introduces, ends.
+
+Need choose call_type. Main purpose: no_show_followup (outreach after missed appointment). Although rescheduling and clinical escalation, main purpose missed appointment follow-up. outcome: escalated? The main issue? Caller's main issue? It's outbound; patient's issue? The call handled missed appointment and escalated clinical symptom to nurse. Also callback planned. Rule: escalated = handed to supervisor, higher tier, clinician or another team (use even if callback also planned). So outcome escalated.
+
+sentiment_start: patient says Hello? then sorry, neutral? At start after greeting, apologetic. Could be neutral. Not negative? "Oh, God, yes. I'm so sorry" maybe anxious but not negative. Use neutral. sentiment_end: patient says Thank you, Rosa. Really. positive.
+
+quality_score: likely 5. Verified identity, accurate policy waiver, updated contact, recognized clinical safety and escalated, offered ride, promised callback. Minor: agent said "In the office today. Today I'm at home" contradictory? Maybe small talk, not serious. Also hold 45s? It says caller placed on hold 45s, not unannounced? Agent said bring nurse on now, please stay on line. Good. Could score 5. Need quality_reasons 2-5.
+
+flags: Need compliance, privacy, security, patient-safety, accuracy problems, commitments made without authority or not kept. Do not flag handled correctly. Potential issues:
+- Agent says "I have one ending in three-three-five-zero" after identity verified? okay.
+- Agent says "In the office today. Today I'm at home" inconsistent but not compliance.
+- Agent says "if we get disconnected I'll call you right back on the number we have" but then updates number? okay.
+- Agent says "I'll call you back tomorrow morning" commitment. Not a flag unless missed? not known.
+- Clinical safety: patient reports syncope/head bump. Agent escalates to nurse, gives 911 red flags. Handled correctly, no flag.
+- Privacy: verified DOB before discussing appointment. okay.
+- Unauthorized commitment: fee waiver first time per policy, okay. Ride program request? likely okay.
+- Missed commitment? none.
+- Misinformation? Agent says "I have one ending..." then updates. okay.
+- Security? none.
+- Policy violation? none.
+Could there be flag for "identity_verification"? No, verification did happen. Do not flag.
+Could flag for "other" due agent disclosing work location? Not relevant.
+Maybe no flags. But need consider: Agent says "I'll call you back tomorrow morning to get your appointment ... after the nurse has talked to you." But then transfers to nurse and ends call. Is that a callback commitment? It's action item. Not flag.
+Could flag for "clinical_safety" because patient had syncope and head injury, but agent did escalate. No.
+Could flag for "privacy_disclosure" because agent introduced patient to nurse with details after verification? Authorized? Patient consented to transfer. okay.
+Could flag for "unauthorized_commitment" because agent promised no charge? Policy waives first time, okay.
+Could flag for "missed_commitment" because agent said "I'll be as quick as it lets me" and hold? no.
+Thus flags empty.
+
+action_items: owner agent: update phone number? Already done, not follow-up? Could include completed? "every follow-up commitment or task stated in the call" includes done? Maybe include only pending. But can include completed? Better include pending commitments:
+- owner: agent, task: submit ride program request for patient, due: unspecified (or during call? "I'll put the request in" likely immediate). Could due "during call" or unspecified. Schema due string. Use "during call" maybe.
+- owner: agent, task: call patient back tomorrow morning to reschedule appointment with Dr. Ferreira-Holm after nurse contact, due: tomorrow morning.
+- owner: nurse, task: assess patient's dizziness, syncope, head bump and determine need for same-day evaluation, due: during call (or today). Since transfer happened, nurse on line. Could due "during call".
+- owner: patient, task: call 911 if faintness, bad headache, confusion, or vomiting occur before nurse evaluation, due: immediately if symptoms occur.
+- owner: patient, task: speak with nurse on transferred call, due: during call.
+Need not overdo? Every follow-up commitment or task stated. Include ride request, callback, nurse assessment, patient red flags. Maybe update phone done not follow-up. Could include "agent update phone number" due during call, but it's completed. It's a task stated. But action_items likely follow-up commitments. Include completed? It says every follow-up commitment or task stated. Update phone is task stated and done. Could include owner agent, task update phone number to new number, due during call. But not necessary? To be safe include.
+Need owner names? "agent" or "Rosa". Use "agent". Nurse owner "nurse". Patient owner "patient".
+
+summary_notes <=120 words. Need concise. Include missed appointment, DOB verified, fee waived first time, phone updated, reported dizziness/syncope/head bump, transferred to nurse, ride request, callback tomorrow. Maybe mention Dr. Ferreira-Holm follow-up iron levels.
+
+notable_details: corrected phone number final: 555-448-0926? Transcript says five-five-five, four-four-eight, zero-nine-two-six. Use final. Old number ending 3350. Missed appointment yesterday afternoon with Dr. Ferreira-Holm. Date of call 2026-06-03, missed yesterday afternoon (2026-06-02). Fee $25 waived first time. Patient DOB 11/22/1990. Symptoms: dizzy on standing, passed out Saturday, son found, bumped head, small bump, no medical care. History low iron. Ride program free. Callback tomorrow morning. Nurse Adeyemi-Strand. Maybe patient ignored another call. Agent contradictory office/home? Not important. Need careful reviewer not miss: corrected phone, missed appointment date, fee waiver, clinical symptoms, red flags, ride request, callback. Use final values.
+
+Need ensure JSON valid, no markdown. Need all required fields. quality_reasons array strings. flags empty array. action_items array objects with owner task due.
+
+Double-check schema: additionalProperties false. call_type enum includes no_show_followup. outcome escalated. sentiment enums. quality_score int 1-5. quality_reasons array items string. flags array items object with type enum, description, evidence. If empty okay. action_items owner task due strings. summary_notes string. notable_details array strings.
+
+Potential nuance: call_type could be scheduling because main purpose reschedule? But line says Patient Outreach (missed appointments), direction outbound, agent says missed appointment and reschedule. The main purpose is no_show_followup. Good.
+
+Outcome: escalated because nurse transfer. Even if callback planned. Good.
+
+Sentiment start: patient first minute: "Hello?" neutral; after agent says missed appointment: "Oh, God, yes. I'm so sorry." Could be negative? They are apologetic, distressed about missing. But not negative toward business. Sentiment categories likely customer sentiment. Could be neutral or negative? "Oh, God, yes. I'm so sorry" indicates worry/guilt, maybe negative. But first minute includes greeting and verification. I'd choose neutral because not complaining. End positive.
+
+Quality score: 5. Need reasons: verified DOB before PHI; correctly waived fee per policy; updated phone; recognized syncope/head injury and escalated to nurse with red flags; offered ride program and scheduled callback. Maybe minor hold? 45s announced. 5 okay.
+
+Flags: none. But let's scrutinize for any compliance issue:
+- Agent says "I have one ending in three-three-five-zero" after verification. okay.
+- Agent says "I'll update that right now" then "It's still thinking. It's one of those days." Then later "Done." okay.
+- Agent says "In the office today. Today I'm at home" contradictory. Could be misinformation? Not material. Not flag.
+- Agent says "if we get disconnected I'll call you right back on the number we have." Then updates number. okay.
+- Agent says "I'll call you back tomorrow morning to get your appointment ... after the nurse has talked to you." But call ends after transfer; nurse may talk. okay.
+- Agent says "I'm not a nurse, but fainting and hitting your head is something I want a nurse to hear about today" good.
+- Did agent ask consent to transfer? "Is it okay if I transfer you" yes.
+- Did agent disclose to nurse after verification and consent? yes.
+- Did agent give medical advice? Only red flags, appropriate.
+- Did agent promise ride program free? "it's free for appointments" likely policy. okay.
+- Did agent make unauthorized commitment? no.
+Thus empty.
+
+Action items due: For ride request, due "during call" or "unspecified". Since agent says "I'll put the request in" immediate. Use "during call". For callback: "tomorrow morning". For nurse assessment: "during call". For patient red flags: "immediately if symptoms occur". For phone update: "during call". Need maybe include "agent submit ride program request" due "during call". Good.
+
+Summary notes word count: Let's draft: "Outbound missed-appointment follow-up for Marisol Quintanar-Bede. DOB verified. Patient missed Dr. Ferreira-Holm follow-up yesterday due to ride issue; $25 fee waived as first missed appointment. Old phone ending 3350 replaced with 555-448-0926. Patient reports dizziness on standing, syncope Saturday, head bump, and low iron history. Agent escalated to Nurse Adeyemi-Strand for same-day assessment and advised 911 for faintness, severe headache, confusion, or vomiting. Ride program request submitted. Agent will call tomorrow morning to reschedule after nurse contact." Count ~75. Good.
+
+Notable details: include final phone, old number, DOB, missed date, fee, symptoms, nurse, callback, ride. Need maybe "Saturday" relative to 2026-06-03? Saturday was 2026-05-30? Could mention "Saturday (reported)" not compute. Use final values. "Patient ignored another incoming call during call" maybe not important. "Agent said office/home inconsistently" maybe not. Need careful reviewer not miss: corrected phone, fee waiver, clinical symptoms, red flags, ride program, callback. Also "Dr. Ferreira-Holm follow-up on iron levels". Include.
+
+Need ensure no trailing commas. JSON only.
+
+Let's consider if outcome should be callback instead of escalated? Rule: escalated = handed to clinician (use even if callback also planned). So escalated.
+
+Could call_type be post_procedure_followup? No, missed appointment follow-up.
+
+Potential flag: "identity_verification" if agent verified DOB but did not verify name? Patient said "This is she" and agent asked DOB. okay.
+
+Potential flag: "privacy_disclosure" because agent disclosed appointment details before verification? At 00:00:24 after DOB verification. okay.
+
+Potential flag: "security" because agent says "It's on my screen right here" no.
+
+Potential flag: "policy_violation" because agent says "In the office today. Today I'm at home" maybe remote work policy? Not enough.
+
+Potential flag: "other" because agent made contradictory statement about location? Not compliance. No.
+
+Need maybe include flag for "clinical_safety" if patient reported syncope and head injury but agent did not directly instruct to seek emergency care? But agent escalated to nurse and gave red flags. That's appropriate. No.
+
+Need maybe include flag for "missed_commitment" because agent said "I'll stay on and introduce you so you don't have to wait in the queue" then placed on hold 45s and introduced. okay.
+
+Need maybe include action item "nurse to contact patient if needed"? Not stated.
+
+Need due for nurse assessment: "during call". Good.
+
+Let's produce final JSON. Ensure strings escaped? No special. Use double quotes. No markdown.

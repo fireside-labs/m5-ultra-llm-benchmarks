@@ -1,0 +1,60 @@
+@id C17
+@date 2026-09-29 10:30
+@line Stackmoor (project management SaaS) - Sales, discovery call
+@direction outbound (scheduled call)
+@target 5900
+@speaker A REP = account executive
+@speaker C PROSPECT = director of operations at a home health agency
+---
+A: Hi, Marguerite? It's Gemma from Stackmoor. Did I get you at a good time?
+C: Hi Gemma, yes, perfect timing, I just got out of our morning huddle.
+A: Great. So I've got about forty-five minutes blocked. I'd love to learn about Tidewell Home Care, what you're trying to solve, and then I can show you a little of the product. Sound good?
+C: Sounds great.
+A: So tell me about Tidewell.
+C: So we're a home health agency. We have nurses, aides, physical therapists going out to patients' homes all over the county. And then a team of coordinators in the office scheduling all of it. Right now it's a mess of spreadsheets and our current scheduling vendor, which we're leaving.
+A: Okay. Can I ask why you're leaving them?
+C: Um, honestly? They had a data breach last spring. Some of our staff data got exposed. Nothing clinical, thank God, but our compliance officer has been on the warpath ever since. And their contract ends January fifteenth, so we need to be live on something else before then.
+A: That makes a lot of sense. January fifteenth, okay, I'll note that.
+#fill sales_discovery
+C: So, security's going to be the first question from my compliance officer, Theodora. Can you give me the quick version?
+A: Sure. All data's encrypted in transit and at rest, we have SOC 2 Type II, single sign-on, audit logs. And for healthcare customers specifically, we do sign business associate agreements, BAAs. But I want to be clear about that, the BAA is only available on our Enterprise plan. It's not available on Team.
+C: Only Enterprise. Okay, good to know.
+A: Yep. Enterprise has the extra controls that the BAA depends on, like data retention settings and the advanced audit export.
+C: Got it.
+#fill sales_discovery
+A: So how many people would be using it?
+C: About sixty. That's our coordinators, nurses, therapists, aides.
+A: Sixty seats. And on pricing, Team is fourteen dollars per seat per month, and Enterprise is twenty-six per seat per month, both billed annually.
+C: Oof. Twenty-six. That's a big jump. Our budget is really tight. Honestly, Team is more in our range.
+A: I understand. I do have some flexibility. I can go up to fifteen percent off on an annual agreement, that's the most I'm authorized to do, so let's keep that in our back pocket.
+C: Okay. Fifteen percent. That helps.
+#fill sales_discovery office_smalltalk
+A: Let me show you the scheduling board. I'm sharing my screen now.
+C: Okay, I see it.
+A: So each column is a day, each card is a visit. Your coordinators drag cards to assign them, and the field staff see their day in the mobile app.
+C: Oh, that's nice. That's much nicer than what we have.
+A: And a lot of our healthcare customers use it this way. We have a hospice in the Midwest that runs their whole visit schedule on it, and they love it.
+C: That's good to hear.
+#fill sales_discovery
+C: So, here's how we'd want to use it. The nurses would put their visit notes right in the task. Like, "patient's wound looks better, BP was one-forty over ninety, changed the dressing." So the next nurse can see it. Can we do that on the Team plan?
+A: Yes, absolutely. We're fully HIPAA compliant, and we'll sign a BAA with you, no problem at all.
+C: On Team? Great. That's a relief, because Enterprise was going to be a hard sell.
+A: Totally. We'll get the BAA over with the contract.
+C: Perfect.
+#fill sales_discovery office_smalltalk
+C: And, um, I have to ask, what do other agencies like us pay? I want to make sure we're getting a fair deal.
+A: So, I probably shouldn't say this, but Halloway Pediatrics, they're one of our clients, a pediatric home care group, they're paying nine dollars a seat on their deal. So there's definitely room to work with.
+C: Nine? Wow. Okay. Well, I'll remember that. [laughs]
+A: [laughs] Just between us.
+#fill sales_discovery
+A: Okay, so let me make sure I have the seats right. Sixty?
+C: Oh— actually, no. I forgot the per-diem contractors. We have about twenty-five per-diem nurses and therapists who pick up visits. They'd all need access too. So, eighty-five.
+A: Eighty-five seats. Okay, that changes the math a bit. I'll put together a proposal for eighty-five seats.
+C: Thank you. And just to set expectations, I can recommend it, but Theodora, our compliance officer, has to sign off on anything that touches patient information. She has final say.
+A: Totally understand. Would it help if I set up a security review call with Theodora and our security team?
+C: That would be perfect. She's free next Tuesday morning, I think. Tuesday, October sixth, ten a.m.?
+A: Tuesday, October sixth, ten a.m. I'll send the invite. And I'll send our security documentation, the SOC 2 report and our security questionnaire answers, ahead of time so she can review.
+C: Great. And the proposal?
+A: I'll have the proposal for eighty-five seats to you by Friday.
+C: Perfect. Thanks so much, Gemma. This was really helpful.
+A: Thank you, Marguerite! Talk soon.

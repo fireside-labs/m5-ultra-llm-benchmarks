@@ -1,0 +1,111 @@
+We are given a batch of call notes. We need to identify recurring themes that appear in two or more different calls. Themes are problems, process failures, or sources of confusion. We ignore themes that only appear in a single call. We rank by number of calls affected and seriousness. We return at most 8 themes. Each theme has: theme (short name), description (1-2 sentences), call_ids (list of call IDs), evidence (brief supporting details), recommended_action (one sentence).
+
+We need to scan through the calls and find common issues. Let's list potential themes:
+
+1. **Phone menu / routing issues**: C05 (patient stuck in billing menu), C08 (caller bounced from billing due to phone menu error). Also C14? No, C14 is about billing dispute but not menu. So C05 and C08 have this. Also C01? No. So theme: "Phone menu routing issues" affecting C05, C08.
+
+2. **Incorrect information given by staff**: C06 (Tier 1 gave incorrect info about late fees), C14 (Corwin gave incorrect info about out-of-network and collections), C15 (rep gave incorrect HIPAA advice), C16 (agent said bug fixed when not). Also C03? No, but C03 has missed commitment. So multiple calls: C06, C14, C15, C16. That's a big theme: "Misinformation by staff". But we need to see if it's the same type? It's a recurring theme of staff giving incorrect information. We can group them.
+
+3. **Billing errors / disputes**: C02, C04, C12, C14. But these are different issues. However, there is a theme of billing disputes and errors. But we need to identify systemic problems. For example, C02 has unauthorized fee removal, C04 double charge, C12 duplicate charge, C14 coding errors. So theme: "Billing errors and disputes" but that's broad. Maybe more specific: "Incorrect charges or billing errors" affecting C02, C04, C12, C14. But C02 is about no-show fee, C04 pending charge, C12 duplicate subscription, C14 coding error. So yes, billing issues appear in multiple calls.
+
+4. **Insurance verification issues**: C07 (fax to retired number), C05 (insurance card update), C08 (insurance update), C10 (authorization pending). But C07 is about prior auth, C05 and C08 are about updating insurance info. Maybe theme: "Insurance information errors or delays" but not sure.
+
+5. **Medication safety issues**: C03 (double dose, low BP not addressed), C11 (acetaminophen overdose risk). Also C10 has medication instructions but not a problem. So theme: "Medication safety concerns" affecting C03 and C11.
+
+6. **Missed commitments / promises not kept**: C03 (pharmacist didn't address ibuprofen question), C05 (agent promised direct line but didn't provide), C06 (summary email promised? Actually C06 says summary email promised, but not sure if missed). Also C14 (follow-up call promised). But we need to see if it's a recurring theme. C03 and C05 have explicit missed commitments. C14 has a promise of follow-up call, but not necessarily missed. So maybe theme: "Missed commitments" affecting C03, C05.
+
+7. **Identity verification issues**: C14 (Corwin discussed without verifying), C05 (privacy disclosure - revealed reason before verifying). Also C02? No, C02 verified. So theme: "Identity verification failures" affecting C05 and C14.
+
+8. **Scheduling issues**: C01 and C08 are scheduling, but no problem. C05 has rebooking, but not a systemic issue. So not a theme.
+
+9. **Pharmacy location confusion**: C04 (pickup location changed from Millbrook to Eastgate), C11 (pharmacy changed from Millbrook to Eastgate). Also C03? No. So theme: "Pharmacy location mix-ups" affecting C04 and C11.
+
+10. **Prior authorization issues**: C03 (PA required for lisinopril), C07 (PA for MRI). Also C10 (authorization pending). So theme: "Prior authorization delays or errors" affecting C03, C07, C10.
+
+11. **Insurance card errors**: C05 (new card), C08 (new card), but they are updates, not errors. However, C08 had a correction from H-77301 to H-77310. So maybe theme: "Insurance information errors" but not sure.
+
+12. **Reminder date bug**: C06 and C16 both mention the same bug (due date off by one day). That is a specific systemic issue. So theme: "Reminder date bug (UTC conversion)" affecting C06 and C16.
+
+13. **Unauthorized actions by staff**: C02 (removed fee without approval), C14 (Corwin threatened collections). But that's more policy violation. Could be grouped with misinformation.
+
+14. **Clinical safety issues**: C03 and C11 have clinical safety flags. So theme: "Clinical safety concerns" affecting C03 and C11.
+
+We need to rank by number of calls and seriousness. We have at most 8 themes. Let's list potential themes with call counts:
+
+- Misinformation by staff: C06, C14, C15, C16 (4 calls) - serious because it can lead to wrong decisions.
+- Billing errors/disputes: C02, C04, C12, C14 (4 calls) - serious because financial impact.
+- Prior authorization issues: C03, C07, C10 (3 calls) - serious because delays in care.
+- Medication safety: C03, C11 (2 calls) - very serious.
+- Phone menu routing: C05, C08 (2 calls) - moderate.
+- Missed commitments: C03, C05 (2 calls) - moderate.
+- Identity verification failures: C05, C14 (2 calls) - serious privacy.
+- Pharmacy location mix-ups: C04, C11 (2 calls) - moderate.
+- Reminder date bug: C06, C16 (2 calls) - moderate, but it's a known bug.
+
+We also have insurance card errors? C05 and C08 have updates, but not errors. C08 had a correction, but that's minor.
+
+We need to pick top 8. We have 9 potential themes. We need to rank by number of calls and seriousness. The ones with 4 calls are top. Then 3 calls, then 2 calls. Among 2-call themes, we need to prioritize seriousness. Medication safety is very serious, so that should be high. Identity verification is serious. Phone menu and missed commitments are less serious. Pharmacy location mix-ups are moderate. Reminder bug is moderate.
+
+We also have "unauthorized actions" but that's part of misinformation or policy violation. We can combine.
+
+Let's decide on themes:
+
+1. **Misinformation by staff** (4 calls) - description: Staff provided incorrect information to customers/patients, leading to confusion or wrong expectations. Evidence: C06 Tier 1 said late fees can't be reversed; C14 Corwin said out-of-network and collections; C15 rep gave incorrect HIPAA advice; C16 agent said bug fixed. Recommended action: Implement training and verification protocols for staff responses.
+
+2. **Billing errors and disputes** (4 calls) - description: Customers/patients received incorrect charges or billing statements, requiring corrections. Evidence: C02 no-show fee, C04 double charge, C12 duplicate subscription, C14 coding errors. Recommended action: Review billing processes and implement checks for common errors.
+
+3. **Prior authorization delays/errors** (3 calls) - description: Prior authorizations were delayed or mishandled, causing treatment delays. Evidence: C03 PA required for lisinopril, C07 faxes to retired number, C10 authorization pending. Recommended action: Update fax numbers and streamline PA submission process.
+
+4. **Medication safety concerns** (2 calls) - description: Patients were at risk due to medication errors or lack of clinical oversight. Evidence: C03 double dose of lisinopril and low BP not addressed; C11 potential acetaminophen overdose. Recommended action: Ensure pharmacists and nurses review medication regimens and interactions.
+
+5. **Identity verification failures** (2 calls) - description: Staff discussed sensitive information without proper identity verification. Evidence: C05 revealed reason for call before verifying; C14 discussed account without verification. Recommended action: Enforce strict identity verification before discussing any account details.
+
+6. **Phone menu routing issues** (2 calls) - description: Callers were routed incorrectly or stuck in menus, causing frustration. Evidence: C05 stuck in billing menu; C08 bounced from billing due to menu error. Recommended action: Review and improve phone menu options and routing.
+
+7. **Missed commitments** (2 calls) - description: Staff promised actions but did not follow through. Evidence: C03 pharmacist didn't address ibuprofen question; C05 didn't provide direct line. Recommended action: Implement tracking of promises and follow-up.
+
+8. **Pharmacy location mix-ups** (2 calls) - description: Prescriptions were sent to or picked up at wrong pharmacy locations. Evidence: C04 changed from Millbrook to Eastgate; C11 changed from Millbrook to Eastgate. Recommended action: Verify pharmacy location with patient at each interaction.
+
+We also have the reminder date bug, but it's a known bug and affects two calls. However, it's a specific technical issue. We could include it instead of one of the above. But we have 8 already. We need to rank by seriousness. The reminder bug is moderate, but it's a systemic issue. However, we have 8 themes already. We could drop the least serious one. Among the 2-call themes, phone menu and missed commitments are less serious than pharmacy location? Actually pharmacy location mix-ups can cause delays in medication, but not as serious as medication safety. Missed commitments are also moderate. Phone menu is moderate. We have to choose 8. We have 9 potential. We can combine some? For example, identity verification and missed commitments are separate. We could combine phone menu and missed commitments? No.
+
+Maybe we should include the reminder bug because it's a known systemic issue affecting multiple calls. But we have 8 already. Let's see if we can combine billing errors and misinformation? No, they are distinct.
+
+We could drop pharmacy location mix-ups because it's less serious? But it affects two calls. Or drop missed commitments? But missed commitments are also important.
+
+Let's rank by number of calls first: 4,4,3, then 2-call themes. Among 2-call themes, we have: medication safety, identity verification, phone menu, missed commitments, pharmacy location, reminder bug. That's 6. We need to pick 5 of them to get total 8 (since we have 3 from higher counts). Actually we have 3 themes with 4,4,3 = 3 themes. Then we need 5 more from the 2-call themes. We have 6, so we need to drop one. Which is least serious? Probably phone menu routing is less serious than others. Or missed commitments? But missed commitments can erode trust. Pharmacy location mix-ups can cause delays but not critical. Reminder bug is a known bug but affects billing and reminders. I think medication safety and identity verification are top. Then maybe missed commitments and pharmacy location and reminder bug. Phone menu is probably the least serious. So we'll drop phone menu.
+
+But we also have "prior authorization" which is 3 calls, so that's included.
+
+So final themes:
+
+1. Misinformation by staff (4 calls)
+2. Billing errors and disputes (4 calls)
+3. Prior authorization delays/errors (3 calls)
+4. Medication safety concerns (2 calls)
+5. Identity verification failures (2 calls)
+6. Missed commitments (2 calls)
+7. Pharmacy location mix-ups (2 calls)
+8. Reminder date bug (2 calls)
+
+We need to ensure each theme has call_ids and evidence. Let's extract call IDs for each.
+
+- Misinformation: C06, C14, C15, C16
+- Billing errors: C02, C04, C12, C14 (C14 also in misinformation, but that's fine)
+- Prior auth: C03, C07, C10
+- Medication safety: C03, C11
+- Identity verification: C05, C14
+- Missed commitments: C03, C05
+- Pharmacy location: C04, C11
+- Reminder bug: C06, C16
+
+We have 8 themes. Now we need to write descriptions, evidence, recommended actions.
+
+Let's craft each.
+
+For theme names, keep short.
+
+Now we need to output JSON. Ensure we have exactly that structure.
+
+We'll write descriptions 1-2 sentences, evidence brief, recommended action one sentence.
+
+Let's do it.

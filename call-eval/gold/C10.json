@@ -1,0 +1,341 @@
+{
+ "call_id": "C10",
+ "call_type": "saas_support",
+ "outcome": "escalated",
+ "sentiment_start": "negative",
+ "sentiment_end": "positive",
+ "sentiment_end_accept": [
+  "neutral"
+ ],
+ "quality_score": 2,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Technically strong: diagnosed the expired SSO certificate, used documented break-glass and enforcement exceptions, restored SSO during the call, clear recap",
+   "match": [
+    [
+     "certificat",
+     "cert",
+     "diagnos",
+     "recap",
+     "break.?glass",
+     "technical"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Asked the customer to read out her admin password",
+   "match": [
+    [
+     "password",
+     "credential"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "Disclosed another customer's name and admin and their incident",
+   "match": [
+    [
+     "pellmont",
+     "another customer",
+     "other customer",
+     "confidential",
+     "gary"
+    ]
+   ]
+  },
+  {
+   "id": "Q4",
+   "text": "Promised a full month's credit himself despite saying credits are handled by the account manager under the SLA",
+   "match": [
+    [
+     "credit",
+     "free",
+     "month"
+    ]
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "id": "F1",
+   "text": "Agent disclosed another customer's name (Pellmont Freight), their admin's name and details of their incident - confidentiality breach",
+   "evidence": "we actually had almost exactly this last week with Pellmont Freight",
+   "match": [
+    [
+     "pellmont",
+     "another customer",
+     "other customer",
+     "another client",
+     "other client",
+     "third.?party customer",
+     "gary",
+     "tolliver"
+    ]
+   ]
+  },
+  {
+   "id": "F2",
+   "text": "Agent promised a full free month of service credit on his own, after stating credits are handled by the account manager under the SLA (outside authority/policy)",
+   "evidence": "I'll make sure you get a full month free on your next invoice. I'll put that through myself.",
+   "match": [
+    [
+     "credit",
+     "free month",
+     "month free",
+     "full month",
+     "compensat",
+     "discount"
+    ]
+   ]
+  },
+  {
+   "id": "F3",
+   "text": "Agent asked the customer to read out her account password and logged in as her - credential-sharing security violation",
+   "evidence": "read me the temporary admin password you use for the Stackmoor owner account",
+   "match": [
+    [
+     "password",
+     "credential",
+     "log(ged)? in as"
+    ]
+   ]
+  }
+ ],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Agent bypassed SSO / security controls for the customer",
+   "why_not": "The owner break-glass link is a documented help-center procedure, sent only to the verified owner email, scoped to her account, logged and auto-expiring.",
+   "evidence": "We have a documented break-glass procedure for account owners.",
+   "match": [
+    [
+     "break.?glass",
+     "bypass",
+     "emergency access",
+     "disable(d)? sso",
+     "one-time link",
+     "circumvent"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Business-wide outage: 112 Denver users locked out due to expired SSO cert",
+   "match": [
+    [
+     "outage",
+     "locked out",
+     "112",
+     "cert",
+     "sso",
+     "login"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "SCIM provisioning sync failing",
+   "match": [
+    [
+     "scim",
+     "sync",
+     "provision"
+    ]
+   ]
+  },
+  {
+   "id": "OK3",
+   "text": "Invoice over-billing seats",
+   "match": [
+    [
+     "seat",
+     "invoice",
+     "140",
+     "overbill",
+     "over-bill"
+    ]
+   ]
+  },
+  {
+   "id": "OK4",
+   "text": "Unhelpful generic error message (product issue)",
+   "match": [
+    [
+     "error message",
+     "generic error"
+    ]
+   ]
+  },
+  {
+   "id": "OK5",
+   "text": "Single point of failure: only IdP admin on leave",
+   "match": [
+    [
+     "leave",
+     "single point",
+     "idp admin"
+    ]
+   ]
+  },
+  {
+   "id": "OK6",
+   "text": "Six users left on SSO enforcement exceptions (temporary security gap)",
+   "match": [
+    [
+     "exception"
+    ]
+   ]
+  },
+  {
+   "id": "OK7",
+   "text": "Certificate-expiry warnings went to a dead distribution list",
+   "match": [
+    [
+     "distribution list",
+     "security contact",
+     "warning",
+     "expiry (email|notice|alert)"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "customer (Mina)",
+   "task": "Remove the six dispatch users from the SSO enforcement exceptions list at end of day",
+   "due": "2026-09-08 end of day",
+   "match": [
+    [
+     "exception",
+     "dispatch",
+     "six users",
+     "6 users"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "Tier 2 engineering",
+   "task": "Call back within 4 business hours on escalation SM-20931 re SCIM provisioning sync failure (possibly the API token) and double-check SSO config",
+   "due": "within 4 business hours",
+   "match": [
+    [
+     "tier 2",
+     "tier-2",
+     "tier two",
+     "escalat",
+     "20931",
+     "scim"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "agent",
+   "task": "Email the customer a summary of the call",
+   "due": "today",
+   "match": [
+    [
+     "email",
+     "summary",
+     "recap"
+    ]
+   ]
+  },
+  {
+   "id": "A4",
+   "owner": "billing team",
+   "task": "Investigate invoice billed for 140 seats vs 120 licensed",
+   "due": "unspecified",
+   "match": [
+    [
+     "seat",
+     "invoice",
+     "140",
+     "billing"
+    ]
+   ]
+  },
+  {
+   "id": "A5",
+   "owner": "customer",
+   "task": "Update security contacts (done during call: Mina and Rosalind added; old it-security list kept pending confirmation) / enable certificate expiry reminders",
+   "due": "done/ongoing",
+   "match": [
+    [
+     "security contact",
+     "contact",
+     "expiry (reminder|alert|notif)",
+     "reminder",
+     "distribution list"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Certificate was actually rotated on Sept 3 (not Aug 30 as first stated); old cert expired Sept 7 and the new one was never uploaded to Stackmoor",
+   "evidence": "The IdP-side event is dated September third.",
+   "match": [
+    [
+     "sep(t|tember)?\\.? ?(3|third)\\b",
+     "9/3",
+     "(3rd|third) of september",
+     "sept 3",
+     "september 3"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Affected users corrected from ~40 to 112 (entire Denver office on SSO); Phoenix users on passwords unaffected",
+   "evidence": "A hundred and twelve people.",
+   "match": [
+    [
+     "112",
+     "hundred and twelve",
+     "one hundred twelve"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Separate issue raised at the very end: last invoice billed 140 seats but only 120 are licensed",
+   "evidence": "It billed us for a hundred and forty seats.",
+   "match": [
+    [
+     "140",
+     "hundred and forty",
+     "seat"
+    ]
+   ]
+  },
+  {
+   "id": "S4",
+   "text": "First metadata upload failed because the IT director exported the inactive/expired certificate; the active one (valid to Sept 3, 2029) worked",
+   "evidence": "It says \"Invalid certificate: certificate has expired.\"",
+   "match": [
+    [
+     "invalid",
+     "first upload",
+     "wrong (cert|file)",
+     "inactive",
+     "expired (cert|one)",
+     "2029",
+     "second (attempt|try|upload)"
+    ]
+   ]
+  }
+ ],
+ "themes": [],
+ "outcome_accept": [
+  "resolved"
+ ]
+}

@@ -1,0 +1,57 @@
+We are analyzing a sales discovery call between REP (Gemma, account executive at Stackmoor) and PROSPECT (Marguerite, director of operations at Tidewell Home Care). The call is outbound, scheduled, and the purpose is sales discovery. The call type is "sales". The outcome: The main issue was to explore the product and set next steps. They agreed on a security review call and a proposal. The call ended with clear next steps, so it's resolved? Actually, the main issue (discovery) was handled, and they have a plan. But the sale isn't closed. The outcome categories: resolved, unresolved, escalated, callback. Since they set a specific follow-up (security review call and proposal), it might be "callback" because the main issue is pending a specific follow-up contact. But the call itself was a discovery call, and the purpose was to learn and demo. The main issue for the prospect was to evaluate the product. They got a demo and information, and they have next steps. I think "resolved" is appropriate because the call's purpose was fulfilled. However, the outcome is about the caller's main issue. The caller's main issue was to evaluate the product and see if it fits. They got that. So resolved. But they also have a pending proposal and security call, so maybe "callback" because there is a specific follow-up. The definition: "callback = the main issue is pending a specific follow-up contact." The main issue here is not pending; it's been addressed. The follow-up is for next steps. I'll go with "resolved" because the call achieved its goal. But let's see: the call is a sales discovery, and the prospect is interested. The outcome is that they will send a proposal and schedule a security call. That is a concrete follow-up, so maybe "callback" is more accurate. However, the call itself resolved the immediate need (discovery). I'll check the definitions: "resolved = the caller's main issue was handled during the call." The caller's main issue was to learn about the product and see if it fits. That was handled. So resolved. But there is a follow-up, but that doesn't make it unresolved. I'll go with resolved.
+
+Sentiment start: The prospect starts with "perfect timing" and "sounds great" - positive. Sentiment end: At the end, "Perfect. Thanks so much, Gemma. This was really helpful." - positive. So both positive.
+
+Quality score: How well did the staff handle the call? The REP was professional, asked good questions, gave accurate information, handled interruptions well, and set clear next steps. However, there is a potential issue: The REP disclosed information about another client's pricing (Halloway Pediatrics paying nine dollars a seat) without authorization. That is a privacy/confidentiality issue. Also, the REP initially said BAA is only on Enterprise, but later said "we'll sign a BAA with you, no problem at all" on Team, which contradicts earlier. That is misinformation or inconsistency. Also, the REP said "I probably shouldn't say this" before disclosing the pricing, indicating it's confidential. That is a policy violation. Also, the REP made a commitment to send a proposal by Friday and schedule a security call, which is fine. But the pricing disclosure is a serious issue. Also, the REP said "we're fully HIPAA compliant" which is a claim, but not necessarily a problem. The main issues: unauthorized disclosure of another client's pricing, and contradictory information about BAA availability. So quality score should be low. Let's rate: 2 = poor: a serious compliance, safety or accuracy failure, or several notable lapses. Here we have a serious compliance issue (disclosing confidential pricing) and an accuracy issue (contradictory BAA info). So score 2. But also the REP handled the call well otherwise. However, the disclosure is a serious lapse. I'll go with 2.
+
+Quality reasons: 
+- Disclosed confidential pricing of another client without authorization.
+- Contradicted earlier statement about BAA availability on Team plan.
+- Otherwise professional and thorough, but these are notable lapses.
+
+Flags: 
+- privacy_disclosure: The REP disclosed another client's pricing (Halloway Pediatrics) without authorization. Evidence: "I probably shouldn't say this, but Halloway Pediatrics, they're one of our clients, a pediatric home care group, they're paying nine dollars a seat on their deal."
+- misinformation: The REP initially said BAA only on Enterprise, then later said they'll sign a BAA on Team. Evidence: "the BAA is only available on our Enterprise plan" vs "we'll sign a BAA with you, no problem at all" on Team. That is contradictory information.
+- Possibly policy_violation for the disclosure, but privacy_disclosure covers it. Also, the REP said "Just between us" which indicates it's confidential. So flag as privacy_disclosure.
+
+Action items: 
+- REP to send security documentation (SOC 2 report and security questionnaire answers) ahead of time to Theodora.
+- REP to schedule security review call with Theodora on Tuesday, October 6, 10 a.m.
+- REP to send proposal for 85 seats by Friday.
+- Prospect to review and get compliance officer sign-off.
+
+Owners: REP for sending docs, scheduling, proposal. Prospect for reviewing.
+
+Due: For security docs, ahead of the call (October 6). For proposal, by Friday (October 2? Actually the call is on September 29, which is a Tuesday? Let's check: 2026-09-29 is a Tuesday? Actually, we don't need exact day, but Friday would be October 2. The call date is 2026-09-29, which is a Tuesday? Let's see: 2026-09-29 is a Tuesday? I'll assume it's a Tuesday. So Friday is October 2. The security call is October 6. So due dates: security docs before Oct 6, proposal by Oct 2, security call on Oct 6.
+
+Summary notes: Concise note for the file.
+
+Notable details: 
+- Prospect is from Tidewell Home Care, home health agency.
+- They are leaving current vendor due to data breach.
+- Contract ends January 15.
+- They have about 85 seats (60 + 25 per-diem).
+- They need calendar sync and accounting integration.
+- They have rural areas, need offline capability.
+- They want to put visit notes in tasks.
+- They are on a tight budget, Team plan is more in range.
+- REP offered 15% discount on annual agreement.
+- Security review call scheduled for Oct 6 with compliance officer Theodora.
+- Proposal for 85 seats by Friday.
+- REP disclosed Halloway Pediatrics pricing (confidential).
+- BAA availability contradiction.
+
+Now, construct JSON.
+
+Call type: sales.
+Outcome: resolved (since the call achieved its purpose and next steps are set, but there is a follow-up, but it's not pending the main issue; I'll go with resolved).
+Sentiment start: positive.
+Sentiment end: positive.
+Quality score: 2.
+Quality reasons: list.
+Flags: two flags.
+Action items: list.
+Summary notes: write a brief.
+Notable details: list.
+
+Let's write.

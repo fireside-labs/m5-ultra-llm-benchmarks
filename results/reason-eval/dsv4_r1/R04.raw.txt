@@ -1,0 +1,35 @@
+## Missed issues
+
+1. **The 8-GPU server cannot physically go in the existing rack.** It draws 10.2 kW under load; the rack is capped at 8 kW with 1.5 kW already used, leaving only 6.5 kW. The memo says "It goes in our existing colocation rack" — that is impossible. Both options actually need a second rack ($1.1k/month, $13.2k/year), a cost the memo omits entirely.
+
+2. **The plan violates the Harrow contract.** Harrow requires dedicated hardware not shared with any other workload, with access logs on request. The memo plans to run training jobs *and* Harrow inference on the same machine. That is a direct breach — and it kills Option A as planned regardless of price or performance.
+
+3. **Lead time makes Option A impossible for the pilot.** The 8-GPU server takes 16 weeks; the Harrow pilot starts in 6 weeks. Option B arrives in 3 weeks. Option A cannot support the pilot on schedule, period.
+
+4. **The purchase is justified by 3% of jobs.** 85% of GPU jobs use 1–2 GPUs and 12% use 4; only the quarterly fine-tune uses 8. The median 3-hour queue wait comes from small jobs serializing on a 4-GPU box. Two 4-GPU servers let small jobs run in parallel and directly attack that wait; one 8-GPU box does not help as much and creates a single bottleneck.
+
+5. **Resale value flips the cost comparison.** 4-GPU servers retain ~55% of purchase price after 2 years; 8-GPU systems ~40% with fewer buyers. On $330k vs $310k, the resale delta is ~$57.5k — more than double the $20k upfront price difference. Option B is cheaper on a 2-year total-cost basis.
+
+6. **The cloud math is wrong.** The memo claims ~$41k/month for equivalent capacity, but the note says $98/hour on demand — that's ~$71.5k/month. The break-even claim of 8 months is unsupported. And the quarterly fine-tune is only 30 hours (~$3k per run), so the cloud comparison should be based on actual usage, not 24/7 rental.
+
+7. **Cash and board flexibility are ignored.** Runway is 14 months and the board asked for capital flexibility until Series A closes. A $310k+ commitment with a 16-week lead time is a large, irreversible bet. Option B can be staged — buy one 4-GPU server now, add the second when the pilot or Series A justifies it.
+
+8. **Single point of failure for a paying pilot.** One 8-GPU server means any hardware failure takes down Harrow's endpoint. Two 4-GPU servers give redundancy, which matters for a pilot with contractual access-log and uptime expectations.
+
+9. **The 1.6x interconnect slowdown is a negligible cost.** The quarterly fine-tune takes ~30 hours; 1.6x slower adds ~18 hours, roughly $1.8k/quarter at cloud rates. That is trivial next to the $20k price difference and the other factors. The memo overweights it.
+
+## Looks like a problem but isn't
+
+- **Networking cost for Option B** — the memo states it's included in the $330k, and the note confirms; no hidden line item there.
+- **Support** — both quotes include 3-year next-business-day on-site; no differentiator to weigh.
+- **The 1.6x slowdown itself** — real, but it only affects 3% of jobs and costs ~$1.8k/quarter; a reviewer might treat it as decisive, but it isn't.
+
+## Top 3 priorities
+
+1. **Harrow contract compliance and pilot timing.** The pilot starts in 6 weeks, requires dedicated hardware, and Option A can't be ready in 16 weeks. This alone forces the decision.
+2. **Physical and power constraints.** The 8-GPU server doesn't fit the existing rack; both options need a second rack. Any plan that ignores this is invalid.
+3. **Total cost of ownership including resale and workload fit.** The 4-GPU option is cheaper over 2 years, matches the actual job mix, and can be staged to preserve cash flexibility.
+
+## Bottom line
+
+Recommend Option B, staged: order one 4-GPU server this week — it meets the 3-week lead time, fits the existing rack's power, and can be dedicated to Harrow per the contract. Rent cloud capacity for training (including the quarterly fine-tune at ~$3k/run) and buy the second 4-GPU server when the pilot or Series A justifies it. This avoids the power, lead-time, and contract violations of Option A, and the resale value makes it the cheaper choice over 2 years.

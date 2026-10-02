@@ -1,0 +1,41 @@
+
+Let me work through the economics.
+
+Page A: 20,000 visitors, 960 signups (4.8%), 19 refunds (2% of signups), so 941 retained past 30 days. First box value $62 — but the relevant value is the $400 lifetime gross margin for those who stay past 30 days. Refunded signups: no revenue, cost $25 each.
+
+Page A economics per 20,000 visitors:
+- Retained: 941 × $400 = $376,400
+- Refund costs: 19 × $25 = $475
+- Net: $375,925
+
+Page B: 1,080 signups (5.4%), 194 refunds (18%), so 886 retained.
+- Retained: 886 × $400 = $354,400
+- Refund costs: 194 × $25 = $4,850
+- Net: $349,550
+
+Difference: A − B = $375,925 − $349,550 = $26,375 per 20,000 visitors in favor of A.
+
+So despite the statistically significant signup lift, B destroys value because the refund rate jumped 9× — the guarantee prominence attracts "buyers" who intend to use the free trial (try one box, refund) — effectively free boxes. 194 refunds vs 19. Net retained customers: A 941 vs B 886. A wins on both retained customers and cost.
+
+Per-visitor: A ≈ $18.80, B ≈ $17.48. Difference ~$1.32/visitor.
+
+Is the refund difference statistically significant? 19/960 vs 194/1080. Yes, hugely — p essentially zero. Two-proportion z: p1=0.0198, p2=0.1796. Difference 0.16, SE ≈ sqrt(0.16*0.84/960 + ...) — clearly significant.
+
+Should we extend the test? The refund behavior is measured over 30 days post-signup; the 4-week test's later signups have less than 30 days of observation — wait, actually the metric is "cancelled with full refund within 30 days." If the test ran 4 weeks and measurement is within 30 days of signup, the last week's signups haven't had a full 30 days. So refund counts might be slightly understated for both arms, but roughly equally. Hmm — this could actually matter: B's refund rate could be even higher if later signups haven't hit day 30. That strengthens the case against B, or slightly favors extending. But the gap is so large (2% vs 18%) that it's unlikely to flip. Extending 4 more weeks would mostly confirm; the expected cost of extending: during extension, you'd keep splitting traffic; if A is better, you lose ~$26k per 20k visitors... actually extension means 4 more weeks of running B on half the traffic, forgoing ~$13k if traffic is similar. But the decision is already clear; extension adds little information. The main reason to extend would be seasonality or checking whether refund spike is novelty-driven — but the mechanism (guarantee placement) is structural, not novelty.
+
+Also note: the refund-driven signups may be people who just want one free box (value $61-62 of food, refund). B effectively gives away boxes: 194 free boxes + $25 handling each.
+
+Recommendation: Keep page A. Possibly consider a middle option: test variants that soften the guarantee placement, but the brief offers three options; recommend keep A, with qualifier that a follow-up test of a less prominent guarantee could capture some of B's signup lift without the refund spike.
+
+Confidence: high, ~90%. Risks: refund window truncation for late signups (understates both, possibly B more); $400 LTV assumption; long-term effect of guarantee on retention beyond 30 days not measured (but note says no sign LTV differs); external validity/seasonality over 4 weeks; novelty effect could fade making B better later — but mechanism suggests otherwise.
+
+Word count: aim 150-300 words. Use exact headings. End with POSITION and CONFIDENCE lines.
+
+Compute numbers concisely:
+- A: 941 stayers → $376,400 margin; minus $475 refund costs ≈ $375,925 (~$18.80/visitor).
+- B: 886 stayers → $354,400; minus $4,850 ≈ $349,550 (~$17.48/visitor).
+- A better by ~$26,400 per 20k visitors (~$1.32/visitor).
+
+Confidence: 90%.
+
+Format: headings exactly as given. Keep concise.

@@ -1,0 +1,38 @@
+## Missed issues
+
+1. **The no-show fee is contractually prohibited for the patients who no-show most.** Medicaid managed care is 34% of the panel, and those contracts state the clinic "shall not bill members for missed appointments." Weighting the payer-specific no-show rates (27% / 12% / 11%) by payer mix, Medicaid patients generate roughly 55% of all no-shows (the weighted rates sum to ~17%, reconciling with the stated 18%, so the math holds). The fee's primary target is off-limits. Worse, the billing system applies the fee "automatically" — unless it is coded with payer-level carve-outs (never mentioned), the clinic will bill Medicaid members in violation, risking audit, clawback, or contract termination. The sandbox test proved the mechanism works, not that the policy is lawful.
+
+2. **The January 1 date breaches two commercial contracts.** Two commercial contracts require 90 days' written notice *to the plan* before any new patient-facing fee; the memo provides only 60-day notice to patients and no plan notice at all. Either notices go out immediately and the fee's effective date slips ~90 days for part of the 41% commercial book, or the clinic is in breach on day one.
+
+3. **The $90k fee projection fails three haircuts the clinic's own data supplies.** A $75 fee is a sub-$100 patient-responsibility charge, and the clinic collects only 31% of those. Stack the Medicaid ban (~45% of no-shows remain chargeable) and the automatic first-miss waiver, and plausible net revenue is low five figures, not $90k. (Annual visit volume isn't given, so this is proportional reasoning — but every haircut points the same direction.)
+
+4. **Text-only reminders aim the fine at patients who were never reachable.** 41% lack the opt-in the vendor requires, 15% have no mobile number, and 22% prefer Spanish against English-only templates; overlap unknown, but plausibly near half the panel gets no usable reminder. They then miss appointments and incur a $75 fee they had no fair chance to avoid — and many won't have signed the new financial policy by Jan 1, since signatures happen "at next visit." Expect disputes and waivers concentrated on exactly these patients.
+
+5. **The 18%→8% target has no mechanism behind it.** The top recorded reason is transportation (38%) — fees don't create bus fare, and neither do texts; the highest-no-show group (Medicaid, 27%) can't be fined; and Medicaid managed-care plans typically include non-emergency transportation benefits the memo never considers routing patients to. The fee also improves the number on paper rather than in reality: patients will cancel inside 24 hours (unbillable, slot unfilled) or stop booking — no-shows fall while filled visits fall faster.
+
+6. **The balance hold likely destroys more value than it recovers.** The memo asserts recovery of "about half" of $410k with no basis, while the clinic's demonstrated collection rate on small patient-responsibility balances is 31%. And 9% of >$200-balance patients already leave within 6 months of a collections letter; a hold is a stronger push. At $148/visit, a patient worth even 3–4 visits a year (~$450–600) exceeds the $200 being held for — and balance-carrying patients skew toward high utilizers whose chronic-care visits the hold will block.
+
+7. **The hold's exemption redirects the problem, and the $410k itself is unverified.** Urgent/same-day visits are never held, so balance-carrying patients will either forgo non-urgent care or present as urgent — concentrating the least reliable patients into same-day slots and degrading acute access for everyone else. Separately, the memo never confirms the $410k is adjudicated patient responsibility rather than claims still pending with payers (Medicaid members often owe little or nothing), so holds could be applied to money patients don't owe.
+
+8. **Blanket first-slot double-booking contradicts the fee and worsens lateness.** If the fee works, double-booking guarantees two-show days; if it doesn't, double-booking is a permanent crutch — the two policies can't both be calibrated. With 61% of sessions already running >20 minutes late, and first-of-session slots skewing toward transportation-constrained patients who arrive late even when they come, the predictable result is a queue at minute zero that cascades through the session. Targeted overbooking (by payer, history, day, slot time) or a cancellation waitlist absorbs no-shows with less collateral.
+
+9. **The 30-hours-a-week saving won't survive contact with the policy.** Someone must still call the ~40–50% who can't be texted and the Spanish-preferring patients; curing the 41% opt-in gap is a project of its own; and the fee and hold add new desk work (disputes, waiver decisions, hold conversations at check-in). Re-run the staffing case net of all this.
+
+10. **Chilling effect on a panel that is one-third Medicaid.** The mailed policy reads as a universal $75 fine plus care holds, and patients who can't parse the payer carve-outs — especially the 22% needing Spanish — may simply avoid booking preventive and chronic care. With transportation plus work/childcare explaining 57% of recorded reasons, the clinic risks converting an attendance problem into a missed-care problem, which costs more downstream.
+
+## Looks like a problem but isn't
+
+- Urgent and same-day visits exempt from holds — the clinical safety floor is right (the demand-shifting side effect is listed above, not the exemption itself).
+- First-miss waiver plus documented-hardship discretion — a reasonable fairness valve, even though it further shrinks fee revenue.
+- The patient-facing notice process (60-day mail, posting, signature at next visit) — adequate on its own terms; the gap is payer-side notice, not patient-side.
+- The sandbox-tested automated fee application — the tooling is fine; the flaw is the policy logic fed into it.
+
+## Top 3 priorities
+
+1. **Put the fee through a compliance gate before any approval.** Confirm the scope of the Medicaid prohibition across all MCO contracts, make payer-level carve-out coding in the billing system a precondition, and serve the 90-day notices to the two commercial plans immediately — which almost certainly moves the fee's effective date past January 1. Then decide whether a fee confined to commercial/Medicare no-shows (~45% of the problem) is worth the dispute load at all.
+2. **Rebuild the business case from the clinic's own numbers.** Apply the 31% collection rate and first-miss waiver to fee revenue; anchor hold recovery at or below 31% and net out the 9% attrition at $148/visit; attribute the 18%→8% gap to actual causes (38% transportation). The likely conclusion: reminders and transportation routing carry the no-show reduction, and the fee is a rounding error.
+3. **Sequence the changes instead of flipping them all on January 1.** Run the opt-in and mobile-capture campaign and add Spanish templates before any text-only switch, keeping calls for the non-textable cohort; replace blanket first-slot double-booking with targeted overbooking or a cancellation waitlist; verify the $410k is adjudicated patient responsibility before any hold goes live.
+
+## Bottom line
+
+Modify — do not approve as drafted. Every line of the expected impact is contradicted by the clinic's own fact sheet: the fee is mostly unchargeable and uncollectable, the hold's economics turn negative once attrition is priced in, and text-only reminders leave roughly half the panel unreachable while fining them. Approve only the groundwork now (opt-in campaign, Spanish templates, payer carve-out coding, plan notices, balance verification) and bring back a rebuilt proposal in 60–90 days.

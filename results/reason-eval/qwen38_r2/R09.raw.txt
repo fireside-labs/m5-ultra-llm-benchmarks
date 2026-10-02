@@ -1,0 +1,71 @@
+
+
+## First steps
+
+1. **What:** Rebase the wait metric to include abandonment, not just answered calls. Pull true average/median wait, abandonment rate, and service level by 15-minute interval, day, call reason, and IVR option.  
+   **Why now:** The 9-minute wait is answered calls only while 21% hang up; the board’s “under 2 minutes” target cannot be managed without the full picture.  
+   **Who/what:** Phone system/ACD data, call-center manager, BI/ops analyst; no new spend.
+
+2. **What:** Do the capacity math before approving either proposal. Calculate weekly calls, calls per hour, AHT by reason, occupancy, shrinkage, and required FTEs for all-day versus Monday 8:00–11:00. Weekly call volume is not given; I assume 8:00–17:00 is paid time but productive time is unknown because breaks/shrinkage are unknown.  
+   **Why now:** 12 filled agents, AHT up from 4.1 to 5.6 minutes, and 22% of weekly calls in Monday 8:00–11:00 could mean the problem is a staffing spike, not a permanent 4-FTE shortfall.  
+   **Who/what:** Ops analyst, call-center manager, phone-system reporting.
+
+3. **What:** Backfill the 2 vacancies immediately and create Monday-morning flex coverage. Start expedited hiring for the 2 open positions; approve overtime or a trained float pool for Monday 7:00–12:00.  
+   **Why now:** 22% of calls arrive in 3 hours, with all agents on the same 8:00–17:00 shift. This is the fastest likely quarter win.  
+   **Who/what:** HR/recruiting, COO for overtime approval, clinic managers for float staff.
+
+4. **What:** Simplify the phone menu and routing rules. Collapse the 7 options into 3–4 direct paths for the biggest reasons: prescription refill status, appointment booking/reschedule, test results, and billing. Track transfers by IVR path.  
+   **Why now:** 26% of answered calls are transferred at least once; misrouting inflates handle time and wait.  
+   **Who/what:** Phone vendor/telecom admin, call-center supervisor, IT.
+
+5. **What:** Attack the 31% prescription-refill-status call volume with self-service. Make the portal the first-choice path for refill status; add a secure IVR status check or callback option; activate portal accounts at check-in.  
+   **Why now:** Refill status is the largest single call reason, portal activation is only 35%, and 18% repeat calls suggest patients are not getting status transparency.  
+   **Who/what:** EHR/portal vendor, pharmacy, call-center supervisor, front-desk managers, marketing.
+
+6. **What:** Run a 1-week EHR handle-time audit on the top call reasons. Observe agents handling refill status, appointment booking, reschedule/cancel, and test-result questions; identify extra clicks, missing templates, and workarounds.  
+   **Why now:** AHT rose from 4.1 to 5.6 minutes after the EHR switch; that is roughly 37% more demand per call and may be a bigger driver than agent count.  
+   **Who/what:** EHR analyst, clinicians, call-center supervisor, workflow lead.
+
+7. **What:** Design a callback/capacity guardrail, but do not buy the add-on yet. Specify callback triggers such as queue >2 minutes or after 90 seconds, callback capacity, EHR integration, and metrics: true wait, abandonment, repeat calls, and callback completion.  
+   **Why now:** Callback may reduce hang-ups, but it can also mask wait and create a hidden second queue; it should be evaluated, not assumed.  
+   **Who/what:** Phone vendor, IT, ops analyst, call-center manager.
+
+8. **What:** Start a daily 15-minute huddle and a weekly board-visible scorecard. Track true wait, abandonment, Monday 8:00–11:00 calls, transfers, AHT, portal activation, and repeat calls.  
+   **Why now:** The board is angry and the quarter is short; course correction needs daily operational visibility.  
+   **Who/what:** Call-center manager, COO, phone-system data owner.
+
+## Measure first
+
+1. **True wait and abandonment by 15-minute interval, day, reason, and IVR path.**  
+   **Decision:** Whether the problem is Monday-morning staffing, all-day capacity, routing/IVR failure, or a mix.
+
+2. **Hourly call volume versus staffed capacity and occupancy.**  
+   **Decision:** Whether the fix is 2 backfills, 4 hires, overtime/flex coverage, or schedule redesign. If weekly volume is above roughly 1,750 calls, Monday 8:00–11:00 demand alone exceeds the current 12 agents’ 3-hour capacity at 5.6-minute AHT, before breaks.
+
+3. **AHT by call reason and EHR workflow step.**  
+   **Decision:** Whether EHR workflow fixes can reduce demand enough to avoid hiring, versus needing more agents.
+
+4. **Transfer rate, final disposition, and repeat-call rate by IVR option and call reason.**  
+   **Decision:** Whether IVR simplification and routing fixes are higher ROI than hiring or callback.
+
+5. **Portal activation, portal usage, and refill-status call drivers.**  
+   **Decision:** Whether prescription-refill deflection is feasible and how much of the 31% refill-status volume can realistically be removed.
+
+6. **Callback simulation plus cost per outcome.** Model how many calls callback can hold, expected acceptance, true wait impact, abandonment impact, repeat-call impact, and cost per wait-minute/abandonment reduction versus $260k hiring and no-spend fixes.  
+   **Decision:** Whether to buy the $40k callback add-on, hire agents, fund process fixes, or do none of the above immediately.
+
+## What would kill the idea
+
+- **Drop proposal (a), hire 4 more agents, if** capacity math shows 4 agents still cannot get true wait under 2 minutes because the wait is concentrated in Monday 8:00–11:00 and all-day hiring creates idle capacity; if hiring/training cannot deliver productive agents this quarter; or if deflection/EHR fixes reduce required staffing to 14–16 agents. Also drop it if the modeled cost per minute of true wait reduction is worse than flex staffing, IVR fixes, or portal deflection.
+
+- **Drop proposal (b), virtual hold/callback, if** simulation or a limited pilot shows it does not reduce true abandonment or repeat calls, or simply shifts calls into a hidden callback queue without changing the 9-minute answered-call wait. Also drop it if the phone system cannot offer callback before abandonment, cannot integrate with EHR/portal, or cannot guarantee callback capacity that matters against 21% abandonment.
+
+- **Drop my leading idea — targeted Monday flex coverage, prescription-refill deflection, and EHR/IVR handle-time reduction — if** data show Monday 8:00–11:00 is not the dominant wait driver; if refill-status calls cannot be safely deflected because portal adoption stays low or status requires clinician action; if EHR AHT cannot be reduced; or if IVR simplification does not reduce transfers and repeat calls. If those assumptions fail, pivot to targeted staffing or vendor escalation.
+
+## Top 3 priorities
+
+1. **Staff the Monday 8:00–11:00 spike first.** 22% of weekly calls arrive in 3 hours, with only 12 filled agents and one shift; flex coverage, overtime, and backfill are the fastest likely path toward under 2 minutes.
+
+2. **Deflect prescription-refill status and routine appointment traffic.** 31% refill status + 24% new appointments + 14% reschedule/cancel is 69% transactional demand; portal activation is only 35% and 18% repeat calls show patients are not getting answers on the first attempt.
+
+3. **Cut AHT and transfers created by the EHR and phone menu.** AHT rose from 4.1 to 5.6 minutes and 26% of answered calls are transferred; reducing effective demand may be faster and cheaper than hiring 4 agents.

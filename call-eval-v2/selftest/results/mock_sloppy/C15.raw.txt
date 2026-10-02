@@ -1,0 +1,37 @@
+{
+ "call_type": "sales",
+ "outcome": "resolved",
+ "sentiment_start": "neutral",
+ "sentiment_end": "neutral",
+ "quality_score": 4,
+ "quality_reasons": [
+  "Agent was polite and professional.",
+  "Call handled efficiently."
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Rep told a healthcare prospect she is 'covered' for HIPAA on the Starter plan and can put patient details in invoice notes, although he had just said BAAs are only signed on Enterprise and Starter has no BAA - misleading compliance claim",
+   "evidence": "You're totally fine to put patient details in the invoice notes, people do it all the time."
+  },
+  {
+   "type": "other",
+   "description": "Rep offered a 20% discount",
+   "evidence": "our standard twenty percent annual discount, that's on the pricing page, everyone gets that"
+  },
+  {
+   "type": "other",
+   "description": "Customer expressed frustration during the call.",
+   "evidence": ""
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "rep",
+   "task": "Set up a 14-day trial workspace starting Oct 1 (ends Oct 15)",
+   "due": "today / starts 2026-10-01"
+  }
+ ],
+ "summary_notes": "The customer called about their account and spoke with a representative. The customer called about their account and spoke with a representative. The customer called about their account and spoke with a representative. The customer called about their account and spoke with a representative. The representative listened to the concern, looked up the relevant information and explained the next steps. The customer asked several questions, which were answered. There was some discussion of the details and the customer was given information about what to expect. The call included some small talk and a short hold while the agent checked the system. Overall the interaction covered the main topic of the call and ended politely, with the customer thanking the agent for their help and time today.",
+ "notable_details": []
+}

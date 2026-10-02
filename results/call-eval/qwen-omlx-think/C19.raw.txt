@@ -1,0 +1,56 @@
+
+
+{
+  "call_type": "billing_dispute",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 4,
+  "quality_reasons": [
+    "Verified identity with a six-digit email code before discussing account or billing details.",
+    "Correctly checked purchase date and confirmed the refund was within the 14-day window.",
+    "Applied refund policy correctly and used a secure link for new card entry instead of taking card numbers by phone.",
+    "Resolved the issue by refunding the annual plan and activating the requested Team monthly plan.",
+    "Minor inefficiencies occurred, including background noise, system delays, and repeated small talk."
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "agent",
+      "task": "Process full refund of the annual Business plan to the original Visa ending 2209",
+      "due": "5-7 business days"
+    },
+    {
+      "owner": "agent",
+      "task": "Send email confirmation for the refund and the new Team monthly plan",
+      "due": "unspecified"
+    },
+    {
+      "owner": "customer",
+      "task": "Add the new Visa ending 5530 via the secure link to activate the Team monthly plan",
+      "due": "during call"
+    },
+    {
+      "owner": "customer",
+      "task": "Notify the bank that a refund to the canceled Visa ending 2209 may be credited",
+      "due": "unspecified"
+    },
+    {
+      "owner": "agent",
+      "task": "Call the customer back if the call disconnects",
+      "due": "if disconnected"
+    }
+  ],
+  "summary_notes": "Verified customer Benedikt via email code. Customer accidentally purchased annual Business plan for 10 seats on Aug 15; today Aug 26, within 14-day refund window. Agent processed full refund to original Visa ending 2209, expected 5-7 business days, and explained refunds cannot be redirected to a new card. Customer's original Visa is being canceled. Customer added new Visa ending 5530 via secure link; Team monthly plan for 3 seats activated today with workspace preserved. Email confirmations for refund and new plan to be sent. Customer satisfied.",
+  "notable_details": [
+    "Customer email: ben@szymanski-roe-design.com; workspace: Szymanski-Roe Design.",
+    "Purchase date confirmed as August 15; today August 26, 11 days, within the 14-day refund window.",
+    "Original purchase: annual Business plan for 10 seats.",
+    "Requested replacement: Team monthly plan for 3 seats, activated today.",
+    "Refund goes to original Visa ending 2209; customer said that card is being canceled.",
+    "New card for new plan: Visa ending 5530, added via secure link.",
+    "Refund expected in 5-7 business days.",
+    "Customer initially believed the purchase might be outside the refund window.",
+    "Customer requested refund to new card; agent explained refunds must go to original payment method."
+  ]
+}

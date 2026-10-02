@@ -1,0 +1,58 @@
+
+
+{
+  "call_type": "pharmacy_refill",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Processed the refill request and provided a pickup time and ID requirement.",
+    "Gave unsafe advice about taking alprazolam and zolpidem together.",
+    "Did not escalate the medication interaction question to a pharmacist.",
+    "Disclosed medication information without documented identity verification beyond name.",
+    "Committed to an early controlled-substance refill without documented prescriber authorization."
+  ],
+  "flags": [
+    {
+      "type": "clinical_safety",
+      "description": "The technician reassured the patient about combining alprazolam and zolpidem without pharmacist or prescriber review.",
+      "evidence": "I mean, lots of people take both. You should be fine."
+    },
+    {
+      "type": "identity_verification",
+      "description": "The technician disclosed the patient's medication list after only asking for the caller's name, with no documented identity verification.",
+      "evidence": "I see you've got alprazolam, the point five, sertraline, and a cholesterol one."
+    },
+    {
+      "type": "unauthorized_commitment",
+      "description": "The technician committed to processing an early refill of a controlled substance without documented prescriber authorization or pharmacist approval.",
+      "evidence": "I can just push it through."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "pharmacy technician",
+      "task": "Prepare the alprazolam refill for pickup at the front counter.",
+      "due": "2026-08-17 15:00"
+    },
+    {
+      "owner": "patient",
+      "task": "Bring ID to pick up the alprazolam refill.",
+      "due": "2026-08-17 15:00"
+    }
+  ],
+  "summary_notes": "Inbound refill request for Lucan Merriweather-Daly. Patient requested early alprazolam 0.5 mg refill due vacation leaving Aug 22. Last filled July 30, 30-day supply, not due until end of month. Technician processed early refill as cash pay, about $12, ready at 3:00 PM with ID. Patient mentioned newly started zolpidem/Ambien filled elsewhere and asked about taking it with alprazolam; technician said lots of people take both and patient should be fine, without pharmacist review. No prescriber authorization or pharmacist escalation documented.",
+  "notable_details": [
+    "Patient name: Lucan Merriweather-Daly.",
+    "Requested medication: alprazolam 0.5 mg.",
+    "Last filled July 30 with a 30-day supply; refill not due until end of month.",
+    "Patient is leaving on vacation Aug 22 for two weeks.",
+    "Early refill processed as cash pay, about $12.",
+    "Refill ready at 3:00 PM; ID required at pickup.",
+    "Patient reported newly started zolpidem/Ambien filled at another pharmacy.",
+    "Patient asked whether alprazolam and zolpidem could be taken together.",
+    "Technician advised the patient would be fine without pharmacist review.",
+    "No reference number was provided."
+  ]
+}

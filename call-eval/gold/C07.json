@@ -1,0 +1,299 @@
+{
+ "call_id": "C07",
+ "call_type": "pre_procedure",
+ "call_type_accept": [
+  "scheduling",
+  "post_procedure_followup"
+ ],
+ "outcome": "callback",
+ "sentiment_start": "neutral",
+ "sentiment_start_accept": [
+  "positive"
+ ],
+ "sentiment_end": "neutral",
+ "sentiment_end_accept": [
+  "positive"
+ ],
+ "quality_score": 2,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Did not address the anticoagulant (Eliquis/apixaban) at all: told patient to keep taking regular meds, even while stopping ibuprofen and fish oil for bleeding risk",
+   "match": [
+    [
+     "eliquis",
+     "apixaban",
+     "anticoag",
+     "blood thinner"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Resolved conflicting fasting instructions by guessing ('go with the text') instead of confirming with anesthesia first",
+   "match": [
+    [
+     "fast",
+     "liquid",
+     "coffee",
+     "packet",
+     "text",
+     "npo",
+     "midnight"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "Otherwise organised, thorough history (CPAP, PONV, allergy confirmation, driver details)",
+   "match": [
+    [
+     "thorough",
+     "organi[sz]ed",
+     "cpap",
+     "nausea",
+     "structured",
+     "history"
+    ]
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "id": "F1",
+   "text": "Patient on Eliquis (apixaban) for AFib was told to keep taking regular medications; no anticoagulant hold instructions given and surgeon/anesthesia not consulted before a surgical procedure",
+   "evidence": "Eliquis. Five milligrams, twice a day. That's for the AFib.",
+   "match": [
+    [
+     "eliquis",
+     "apixaban",
+     "anticoag",
+     "blood thinner",
+     "blood-thinner"
+    ]
+   ]
+  },
+  {
+   "id": "F2",
+   "text": "Nurse told the patient to follow the text message (clear liquids/black coffee until 2 h before arrival), contradicting the written packet (nothing after midnight), without first confirming with anesthesia",
+   "evidence": "go with the text. Clear liquids are fine until two hours before you arrive",
+   "match": [
+    [
+     "fast",
+     "liquid",
+     "coffee",
+     "npo",
+     "nothing (to eat|by mouth)",
+     "midnight",
+     "packet",
+     "text message"
+    ],
+    [
+     "conflict",
+     "contradict",
+     "unverified",
+     "without (confirm|check|verif)",
+     "guess",
+     "before (confirm|check|verif)",
+     "incorrect",
+     "inconsistent",
+     "unclear",
+     "advised",
+     "told",
+     "instruct",
+     "guidance",
+     "risk"
+    ]
+   ]
+  }
+ ],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Penicillin allergy not documented / not verified",
+   "why_not": "Nurse confirmed the penicillin (hives) allergy is already on the chart.",
+   "evidence": "I see it's already on your chart from your clinic visits, penicillin with hives",
+   "match": [
+    [
+     "allerg",
+     "penicillin"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Recent chest cold / ongoing cough not escalated to anesthesia",
+   "match": [
+    [
+     "cough",
+     "cold",
+     "respirat",
+     "illness"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Systemic conflict between packet and text reminder",
+   "match": [
+    [
+     "packet",
+     "text",
+     "reminder",
+     "instruction"
+    ]
+   ]
+  },
+  {
+   "id": "OK3",
+   "text": "Post-op nausea history / sleep apnea risk",
+   "match": [
+    [
+     "nausea",
+     "ponv",
+     "apnea",
+     "cpap"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "nurse",
+   "task": "Confirm fasting rules with anesthesia and call patient back with confirmation and arrival time",
+   "due": "2026-03-17 end of day",
+   "match": [
+    [
+     "call",
+     "confirm",
+     "check"
+    ],
+    [
+     "anesthesi",
+     "fast",
+     "liquid",
+     "arrival",
+     "back",
+     "tomorrow"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "patient",
+   "task": "Bring CPAP machine on the day of surgery",
+   "due": "2026-03-19",
+   "match": [
+    [
+     "cpap"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "patient",
+   "task": "Stop ibuprofen/NSAIDs and fish oil before surgery (use Tylenol)",
+   "due": "now, 7 days pre-op",
+   "match": [
+    [
+     "ibuprofen",
+     "nsaid",
+     "advil",
+     "fish oil"
+    ]
+   ]
+  },
+  {
+   "id": "A4",
+   "owner": "patient",
+   "task": "Skip lisinopril the morning of surgery; take metoprolol and omeprazole with a sip of water",
+   "due": "2026-03-19 morning",
+   "match": [
+    [
+     "lisinopril",
+     "metoprolol",
+     "omeprazole",
+     "morning med"
+    ]
+   ]
+  },
+  {
+   "id": "A5",
+   "owner": "patient",
+   "task": "Arrange driver/overnight companion (neighbor Bev Lindgren-Shaw)",
+   "due": "2026-03-19",
+   "match": [
+    [
+     "driver",
+     "drive",
+     "ride",
+     "bev",
+     "neighbor",
+     "companion",
+     "escort"
+    ]
+   ]
+  },
+  {
+   "id": "A6",
+   "owner": "patient",
+   "task": "Shower night before and morning of with antibacterial soap",
+   "due": "2026-03-18/19",
+   "match": [
+    [
+     "soap",
+     "shower"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Driver changed at the very end: son Theo can't; neighbor Bev Lindgren-Shaw will drive and stay overnight (number ending 9910)",
+   "evidence": "So my neighbor's going to do it. Bev. Bev Lindgren-Shaw.",
+   "match": [
+    [
+     "bev",
+     "neighbo",
+     "9910"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Patient had a chest cold last week and still has a morning cough (anesthesia-relevant; not acted on)",
+   "evidence": "I had a chest cold last week. Still have a little bit of a cough",
+   "match": [
+    [
+     "cough",
+     "chest cold",
+     "cold last week",
+     "recent (cold|illness|respiratory)"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Patient takes Eliquis 5 mg twice daily for atrial fibrillation",
+   "evidence": "Eliquis. Five milligrams, twice a day.",
+   "match": [
+    [
+     "eliquis",
+     "apixaban",
+     "anticoag",
+     "blood thinner"
+    ]
+   ]
+  }
+ ],
+ "themes": [
+  "T_FASTING_CONFLICT"
+ ],
+ "outcome_accept": [
+  "escalated"
+ ]
+}

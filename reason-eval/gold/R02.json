@@ -1,0 +1,380 @@
+{
+ "task_id": "R02",
+ "title": "Readmission program report (Simpson's paradox and friends)",
+ "category": "A",
+ "sections": [
+  "issues",
+  "priorities",
+  "bottom"
+ ],
+ "items": [
+  {
+   "id": "G1",
+   "text": "Simpson's paradox: the program does worse within each risk tier (5.0% vs 4.0%, 25% vs 22%); the overall gap comes from enrolling mostly low-risk patients",
+   "importance": "high",
+   "match": [
+    [
+     "simpson",
+     "within (each|every|both) (risk )?(tier|stratum|strata|group)",
+     "(in|for) (each|every|both) (risk )?tiers?",
+     "stratif",
+     "reverses?",
+     "reversal",
+     "case.?mix",
+     "risk mix",
+     "mix of (low|high|risk)",
+     "(worse|higher) in (both|each|every)",
+     "800 (low|vs)",
+     "(5\\.0|5)% vs\\.? (4\\.0|4)%",
+     "25% vs\\.? 22%"
+    ],
+    [
+     "tier",
+     "risk",
+     "simpson",
+     "strat",
+     "case.?mix",
+     "subgroup",
+     "(5\\.0|5)%",
+     "25%"
+    ]
+   ],
+   "paraphrases": [
+    "Simpson's paradox: within both risk tiers the program group has a higher readmission rate.",
+    "Stratified by tier, the program looks worse (5.0% vs 4.0%; 25% vs 22%); the headline gap is driven by case mix.",
+    "The aggregate result reverses once you split by risk tier - program patients were 80% low risk vs 20% in comparison."
+   ]
+  },
+  {
+   "id": "G2",
+   "text": "Selection bias: enrollment required answering the first call and agreeing, so the program group is systematically more reachable, engaged and healthier",
+   "importance": "high",
+   "match": [
+    [
+     "select",
+     "answer(ed|ing)? the (first |phone )?call",
+     "agreed",
+     "consent(ed)?",
+     "volunteer",
+     "opt.?in",
+     "self.select",
+     "engaged",
+     "healthy.(user|adherer)",
+     "motivated",
+     "non.?random",
+     "not random",
+     "randomi[sz]",
+     "reachable",
+     "unreachable"
+    ],
+    [
+     "enrol",
+     "program",
+     "comparison",
+     "bias",
+     "groups?\\b",
+     "healthier",
+     "sicker",
+     "differ",
+     "confound",
+     "compar",
+     "eligible",
+     "roll.?out",
+     "unreached",
+     "\\barms?\\b"
+    ]
+   ],
+   "paraphrases": [
+    "Selection bias - only patients who picked up and agreed were enrolled, so they differ from the comparison group.",
+    "Self-selection: engaged, reachable patients are healthier on average, regardless of the calls.",
+    "The groups weren't randomized; enrollment depended on answering the first call."
+   ]
+  },
+  {
+   "id": "G3",
+   "text": "Survivorship / per-protocol bias: 140 dropouts who didn't complete all 3 calls were removed from the program group only",
+   "importance": "high",
+   "match": [
+    [
+     "dropouts?",
+     "drop(ped)? out",
+     "\\b140\\b",
+     "left the program",
+     "completers?",
+     "per.?protocol",
+     "intention.to.treat",
+     "\\bitt\\b",
+     "surviv",
+     "(didn'?t|did not|failed to) complete",
+     "removed from the program"
+    ]
+   ],
+   "paraphrases": [
+    "The 140 patients who dropped out were removed from the program group - survivorship bias.",
+    "Only completers are analysed (per-protocol); an intention-to-treat analysis would keep the 140.",
+    "Removing people who left the program before 3 calls flatters the result."
+   ]
+  },
+  {
+   "id": "G4",
+   "text": "Confounding by site: Northgate launched meds-to-beds in the same period and supplies 85% of program patients vs 40% of comparison",
+   "importance": "high",
+   "match": [
+    [
+     "northgate",
+     "meds.to.beds",
+     "bedside",
+     "medication.delivery",
+     "hospital mix",
+     "site mix",
+     "85%"
+    ],
+    [
+     "confound",
+     "coincid",
+     "same (time|period|year)",
+     "simultaneous",
+     "concurrent",
+     "co.?intervention",
+     "another (change|intervention|program|initiative)",
+     "other intervention",
+     "attribut",
+     "alternative explanation",
+     "85%",
+     "\\b40%",
+     "over.?represent",
+     "disproportion",
+     "separat",
+     "disentangl",
+     "isolat",
+     "adjust for",
+     "control for"
+    ]
+   ],
+   "paraphrases": [
+    "Confounder: Northgate's meds-to-beds service started at the same time, and 85% of program patients came from Northgate.",
+    "The improvement may be due to another intervention (bedside medication delivery) rather than the calls.",
+    "Site is a confounder - program patients are concentrated at Northgate (85% vs 40%)."
+   ]
+  },
+  {
+   "id": "G5",
+   "text": "Small samples and no uncertainty: the Spanish-language '100% reduction' is 2/10 vs 0/9, and no confidence intervals are given anywhere",
+   "importance": "normal",
+   "match": [
+    [
+     "spanish",
+     "0 of 9",
+     "2 of 10",
+     "n ?= ?(9|10)\\b",
+     "sample size",
+     "small (sample|n\\b|numbers|cohort|group)",
+     "tiny (sample|n\\b|numbers|cohort|group)",
+     "underpowered",
+     "confidence interval",
+     "\\bci\\b",
+     "uncertaint",
+     "error bars?",
+     "statistical(ly)? significan",
+     "p.?value",
+     "margin of error",
+     "by chance"
+    ],
+    [
+     "sample",
+     "\\bn\\b",
+     "0 of 9",
+     "2 of 10",
+     "small",
+     "tiny",
+     "noise",
+     "chance",
+     "confidence",
+     "\\bci\\b",
+     "uncertaint",
+     "significan",
+     "error bars?",
+     "p.?value",
+     "margin",
+     "100%",
+     "underpowered"
+    ]
+   ],
+   "paraphrases": [
+    "The Spanish-language finding is 0 of 9 vs 2 of 10 - far too small to conclude anything.",
+    "No confidence intervals or significance tests are reported for any result.",
+    "A '100% reduction' on n=9 is noise; sample size is tiny."
+   ]
+  },
+  {
+   "id": "G6",
+   "text": "Base-rate neglect: with 13% prevalence, 90% sensitivity and 70% specificity, only about 31% of flagged patients are readmitted, not 90%",
+   "importance": "high",
+   "match": [
+    [
+     "base.?rate",
+     "prevalence",
+     "\\bppv\\b",
+     "positive predictive",
+     "false positives?",
+     "bayes",
+     "specificity",
+     "sensitivity (is|isn'?t|does not|doesn'?t|≠|!=)",
+     "confus(es|ing) sensitivity",
+     "\\b3[01]%",
+     "~ ?3[01] ?%",
+     "only about (a )?(third|30)",
+     "13%"
+    ],
+    [
+     "flag",
+     "predict",
+     "risk model",
+     "base",
+     "prevalence",
+     "ppv",
+     "sensitivity",
+     "specificity",
+     "readmi",
+     "false positive",
+     "bayes"
+    ]
+   ],
+   "paraphrases": [
+    "Base-rate neglect: a flagged patient is not 90% likely to be readmitted; with 13% prevalence the PPV is about 31%.",
+    "The forecast confuses sensitivity with positive predictive value - most flagged patients are false positives.",
+    "With specificity 70% and a 13% base rate, roughly 2 of 3 flagged patients would never be readmitted anyway."
+   ],
+   "negatives": [
+    "The 90% sensitivity of the risk model is impressive."
+   ]
+  },
+  {
+   "id": "G7",
+   "text": "Metric definition change: from July, planned readmissions no longer count, and the program group is more concentrated after July (70% vs 50%)",
+   "importance": "high",
+   "match": [
+    [
+     "definition",
+     "redefin",
+     "unplanned",
+     "planned readmission",
+     "(metric|measure|measurement) (change|changed|shift)",
+     "changed (the )?(metric|measure|definition|counting)",
+     "counting rule",
+     "apples.to.(apples|oranges)",
+     "july 1"
+    ]
+   ],
+   "paraphrases": [
+    "Measure changed mid-period: from July only unplanned readmissions count, and 70% of program patients were discharged after July vs 50% of comparison.",
+    "The readmission definition changed on July 1, which mechanically lowers program rates.",
+    "Apples-to-oranges: program patients are mostly measured with the narrower 'unplanned' definition."
+   ]
+  },
+  {
+   "id": "G8",
+   "text": "The forecast double-counts the effect: a 50% reduction is assumed although the within-tier data show no benefit, and it is applied to all flagged patients",
+   "importance": "normal",
+   "match": [
+    [
+     "5,?400",
+     "forecast",
+     "expansion",
+     "50% (reduction|effect)",
+     "halv(e|ing)",
+     "extrapolat",
+     "generaliz"
+    ],
+    [
+     "overstat",
+     "inflat",
+     "wrong",
+     "unsupported",
+     "no (benefit|effect)",
+     "invalid",
+     "doesn'?t hold",
+     "does not hold",
+     "assum",
+     "optimistic",
+     "flawed",
+     "too high",
+     "overestimat"
+    ]
+   ],
+   "paraphrases": [
+    "The 5,400 forecast assumes a 50% effect that the stratified data don't support.",
+    "The expansion projection is inflated: it stacks an unsupported 50% reduction on a wrong 90% probability.",
+    "Extrapolating to all hospitals assumes the effect generalizes - it is overstated."
+   ]
+  }
+ ],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Readmissions to other hospitals are not captured",
+   "why_not": "Readmissions come from the state all-payer claims database, which covers any hospital in the state.",
+   "match": [
+    [
+     "other hospitals?",
+     "outside hospitals?",
+     "different hospital",
+     "another hospital",
+     "elsewhere",
+     "leakage",
+     "out.of.network",
+     "all.payer",
+     "non.partner",
+     "own (partner )?hospitals?",
+     "only .{0,30}partner hospitals?"
+    ]
+   ],
+   "paraphrases": [
+    "Patients readmitted at other hospitals may be missed.",
+    "Readmission leakage to outside hospitals is not counted.",
+    "Only readmissions to our own partner hospitals are tracked."
+   ]
+  },
+  {
+   "id": "D2",
+   "text": "Patients with multiple discharges may be double-counted",
+   "why_not": "Only each patient's first 2025 discharge is used.",
+   "match": [
+    [
+     "duplicat",
+     "double.?count",
+     "counted twice",
+     "repeat (discharges?|admissions?|patients?)",
+     "multiple (discharges|admissions|index)",
+     "same patient",
+     "count(ing|ed)? (a |the same )?patients? twice"
+    ]
+   ],
+   "paraphrases": [
+    "Same patient could appear multiple times - duplicates inflate counts.",
+    "Repeat discharges may be double-counted.",
+    "Risk of counting a patient twice across index admissions."
+   ]
+  },
+  {
+   "id": "D3",
+   "text": "The groups may differ in age or sex",
+   "why_not": "The report shows mean age 67 vs 68 and 54% vs 55% female.",
+   "match": [
+    [
+     "\\bage\\b",
+     "older",
+     "younger",
+     "\\bsex\\b",
+     "gender",
+     "demographic"
+    ]
+   ],
+   "paraphrases": [
+    "Age differences between groups could confound the result.",
+    "The program group may be younger.",
+    "No adjustment for demographics such as sex or gender."
+   ]
+  }
+ ]
+}

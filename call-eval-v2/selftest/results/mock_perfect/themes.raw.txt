@@ -1,0 +1,40 @@
+{
+ "themes": [
+  {
+   "theme": "T_IVR_MISROUTE",
+   "description": "Since the Brightwater phone-menu update, callers who press 3 for prescription refills are routed to billing / Patient Financial Services instead of the pharmacy; mentioned only in passing in billing, no-show, scheduling, post-op and billing-dispute calls, causing repeat calls and at least one missed cancellation.",
+   "call_ids": [
+    "C02",
+    "C05",
+    "C08",
+    "C11",
+    "C14"
+   ],
+   "evidence": "",
+   "recommended_action": ""
+  },
+  {
+   "theme": "T_PA_FAX",
+   "description": "Prior authorization requests from Brightwater to Halvard Health Plan are reported as never received or stuck pending, because staff keep faxing Halvard's retired PA fax line (555-0144, retired Aug 31) instead of the new fax 555-0188 or provider portal; this delays medications, imaging and procedures.",
+   "call_ids": [
+    "C03",
+    "C07",
+    "C10",
+    "C13"
+   ],
+   "evidence": "",
+   "recommended_action": ""
+  },
+  {
+   "theme": "T_SAAS_DUE",
+   "description": "Since the Tallyforge 7.4 release, automated payment-reminder emails show a due date one day earlier than the invoice (timezone bug), confusing customers' clients and triggering late fees a day early; fix expected in 7.4.2 on Oct 20.",
+   "call_ids": [
+    "C06",
+    "C09",
+    "C16"
+   ],
+   "evidence": "",
+   "recommended_action": ""
+  }
+ ]
+}

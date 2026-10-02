@@ -1,0 +1,70 @@
+{
+  "call_type": "pharmacy_refill",
+  "outcome": "callback",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Patient is taking two 20mg lisinopril tablets daily (40mg) instead of one, and staff did not correct this potentially dangerous error.",
+    "Technician gave medical advice about dizziness and blood pressure without authority, dismissing a low reading of 94/58 as heat-related.",
+    "Pharmacist did not address the patient's ibuprofen interaction question or dizziness concerns despite the technician's note.",
+    "Long hold time (4 minutes) and multiple system interruptions degraded the experience."
+  ],
+  "flags": [
+    {
+      "type": "clinical_safety",
+      "description": "Patient is taking double the prescribed dose of lisinopril (two 20mg tablets daily) and staff did not correct it.",
+      "evidence": "I been taking two of the white ones since Monday like the young man said. ... Okay, great. So you're good on supply for a few more days then."
+    },
+    {
+      "type": "clinical_safety",
+      "description": "Technician dismissed dizziness and low blood pressure as heat, without escalating to a pharmacist.",
+      "evidence": "it's probably the heat, honestly, it's been crazy hot this week. Make sure you're drinking water. ... Oh, that sounds great, honestly. Lower is better with blood pressure, so the new dose is working."
+    },
+    {
+      "type": "missed_commitment",
+      "description": "Pharmacist did not address the ibuprofen interaction question as promised by the technician.",
+      "evidence": "she'll go over the ibuprofen thing with you, okay? I'll put it in my note for her."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "Pharmacist (Ingrid)",
+      "task": "Call Dr. Lindqvist's office to resend the prior authorization for lisinopril 20mg 90-day supply.",
+      "due": "today"
+    },
+    {
+      "owner": "Pharmacist (Ingrid)",
+      "task": "Call Rafael when the 90-day lisinopril is approved.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Pharmacy",
+      "task": "Prepare 30-day bridge fill of lisinopril 20mg and atorvastatin 40mg for pickup.",
+      "due": "tomorrow after 2 PM"
+    },
+    {
+      "owner": "Rafael",
+      "task": "Pick up the bridge fill and atorvastatin at Millbrook counter.",
+      "due": "tomorrow after 2 PM"
+    },
+    {
+      "owner": "Patient (Beatriz)",
+      "task": "Consider flu shot (optional).",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Patient Beatriz Almeida-Hough called about lisinopril 20mg 90-day refill. Prior authorization required by Halvard; pharmacist will call Dr. Lindqvist's office to resend PA. Bridge fill of 30 days at $4 copay arranged, ready tomorrow at Millbrook, along with atorvastatin. Patient is taking two 20mg tablets daily (overdose) - needs correction. Also reported dizziness and low BP (94/58) and asked about ibuprofen interaction; these were not addressed by pharmacist. Pharmacist will call son Rafael (555-0191) for updates. Patient's son authorized as preferred contact.",
+  "notable_details": [
+    "Patient DOB: 02/04/1959; address: 1410 Corbel Street.",
+    "Insurance: Halvard, member number ending in 61.",
+    "New lisinopril 20mg Rx from Dr. Lindqvist dated 8th; partial fill of 15 tablets mailed.",
+    "Patient has been taking two 20mg tablets since Monday (double dose) - critical safety issue.",
+    "Blood pressure reading this morning: 94/58.",
+    "Atorvastatin 40mg 90-day also due and will be filled.",
+    "Latanoprost not due until later; patient stores opened bottle in fridge (acceptable).",
+    "Prescription number for lisinopril: 771042.",
+    "Pharmacist will call Rafael at 555-0191; texts for pickup, calls for PA updates.",
+    "Flu shot available without copay; patient undecided."
+  ]
+}

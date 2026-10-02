@@ -1,0 +1,75 @@
+// Payer phone-tree and hold chatter. A=clinic agent, C=patient (conferenced in), P=payer rep, I=payer IVR.
+I: Thank you for calling. For eligibility and benefits, press one. For claims, press two. For prior authorization, press three.
+A: [keypad tone] Three.
+I: Please enter or say the provider's tax identification number.
+A: [keypad tones]
+I: Thank you. Please hold while I locate that record.
+#pause 25
+===
+I: Your call is important to us. Due to high call volume, wait times may be longer than usual. You can also check status online at any time.
+C: Is it always like this?
+A: [laughs] Pretty much. I've got a whole playlist memorized.
+C: Oh no.
+#hold 120
+===
+I: Para continuar en español, oprima nueve. ... Please say or enter the member's date of birth.
+A: [keypad tones]
+I: I did not understand your entry. Please try again.
+A: Of course. [keypad tones]
+I: Thank you.
+===
+A: While we wait, um, these calls can take a while. Is your phone charged okay?
+C: Uh, it's at, um, about half. I'll plug it in. Hold on.
+A: Good idea.
+C: Okay. Plugged in. We're good.
+===
+I: All representatives are still assisting other callers. Please continue to hold. Your estimated wait time is... more than... ten... minutes.
+C: More than ten minutes. [laughs] That's specific.
+A: [laughs] It's always "more than ten."
+#hold 180
+===
+A: You still with me?
+C: I'm here. I put you on speaker and started folding laundry.
+A: [laughs] Multitasking. Smart.
+C: Might as well.
+===
+I: Please hold while we transfer your call.
+#pause 20
+I: Thank you for calling. Your call may be monitored or recorded for quality purposes.
+A: Here we go again.
+C: Didn't we just do this?
+A: [laughs] Different department. Same message.
+===
+I: Thank you. Please hold while I locate that record.
+#pause 30
+I: I'm sorry, I didn't find a match. Let's try again. Please say or enter the provider's NPI.
+A: [keypad tones]
+I: Thank you.
+===
+I: To help us serve you better, please stay on the line after your call for a brief survey.
+C: [laughs] I will not be doing that survey.
+A: [laughs] Me neither.
+#pause 30
+===
+#note hold music
+#pause 120
+C: Is it still going?
+A: Still going.
+===
+I: Your call is important to us. Please continue to hold.
+#pause 60
+I: Your call is important to us. Please continue to hold.
+C: If it was so important they'd answer. [laughs]
+A: [laughs] I've said that so many times.
+===
+A: While we wait, do you have any questions about the study itself? I can answer the scheduling side.
+C: Um, not really. I just want to know how long I'll be there.
+A: It's overnight, so you'll arrive in the evening and leave in the morning. We'll go over the details once it's approved.
+C: Okay.
+===
+I: Please say "representative" if you'd like to speak with someone.
+A: Representative.
+I: I'm sorry, I didn't get that. Please say "representative."
+A: Representative!
+I: Okay. Connecting you to a representative.
+#pause 25

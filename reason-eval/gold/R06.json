@@ -1,0 +1,370 @@
+{
+ "task_id": "R06",
+ "title": "Variables for replacing a cloud LLM API with a self-hosted model on sensitive data",
+ "category": "B",
+ "sections": [
+  "variables",
+  "priorities",
+  "mind"
+ ],
+ "items": [
+  {
+   "id": "V1",
+   "text": "The actual threat model: which specific risk does self-hosting remove (retention, training on data, subprocessors, breach) and can it be handled contractually (e.g., zero retention) instead",
+   "importance": "high",
+   "match": [
+    [
+     "threat model",
+     "what (specific )?risk",
+     "which risks?",
+     "retention",
+     "zero.?(data.)?retention",
+     "training on (our|customer|the) data",
+     "subprocessor",
+     "data (residency|location|sovereignty)",
+     "risk (does|would) (self.hosting|it) (remove|reduce|address)",
+     "actual risk",
+     "specific risk"
+    ]
+   ],
+   "paraphrases": [
+    "Threat model: what exactly is the risk with the API today - retention, training on our data, subprocessors?",
+    "Can zero-data-retention terms address the CISO's concern without moving infrastructure?",
+    "Identify the specific risk self-hosting would remove."
+   ]
+  },
+  {
+   "id": "V2",
+   "text": "Regulatory and contractual requirements: customer agreements, audits, data-protection obligations already satisfied by the vendor agreement",
+   "importance": "high",
+   "match": [
+    [
+     "regulat",
+     "complian",
+     "contract(ual)? (requirement|obligation)",
+     "customer (contract|agreement|requirement)",
+     "data.protection agreement",
+     "\\bdpa\\b",
+     "\\bbaa\\b",
+     "hipaa",
+     "audit",
+     "legal"
+    ],
+    [
+     "data",
+     "customer",
+     "insurer",
+     "medical",
+     "records?",
+     "vendor",
+     "agreement",
+     "contract",
+     "claims?"
+    ]
+   ],
+   "paraphrases": [
+    "Contractual requirements from insurer customers and the data-protection agreement already in place.",
+    "Regulatory and audit obligations for medical records.",
+    "Compliance: what do customer contracts actually require?"
+   ]
+  },
+  {
+   "id": "V3",
+   "text": "Output quality on Northfold's own tasks: summaries and decision letters must be evaluated against the current API on a representative test set",
+   "importance": "high",
+   "match": [
+    [
+     "quality",
+     "accura",
+     "performance gap",
+     "capabilit",
+     "eval(uation)? (set|suite|harness)",
+     "benchmark",
+     "test set",
+     "hallucinat",
+     "error rate",
+     "head.to.head",
+     "side.by.side",
+     "blind (review|comparison)"
+    ]
+   ],
+   "paraphrases": [
+    "Output quality: build an eval set of real summaries and letters and compare the open model with the API.",
+    "Accuracy and hallucination rate on medical-record summarization.",
+    "Capability gap between open-weight models and the current API on our tasks."
+   ]
+  },
+  {
+   "id": "V4",
+   "text": "Self-hosting moves security responsibility in-house: access control, patching, logging, insider risk; it is not automatically more secure",
+   "importance": "high",
+   "match": [
+    [
+     "attack surface",
+     "(own|in.house|internal) security",
+     "security (posture|operations|responsibility|burden)",
+     "patch",
+     "access control",
+     "insider",
+     "hardening",
+     "not (automatically|necessarily) (more )?secure",
+     "vulnerab",
+     "breach",
+     "secur(e|ing) the (stack|infrastructure|deployment|cluster|servers)"
+    ]
+   ],
+   "paraphrases": [
+    "Self-hosting isn't automatically safer: we take on patching, access control and insider risk.",
+    "Our own security posture for a GPU cluster vs the vendor's mature controls.",
+    "Attack surface moves in-house."
+   ]
+  },
+  {
+   "id": "V5",
+   "text": "Total cost of ownership: GPUs, power, data-center space, staff and on-call vs per-token API cost at 40k docs/month",
+   "importance": "high",
+   "match": [
+    [
+     "total cost",
+     "\\btco\\b",
+     "cost of ownership",
+     "capex",
+     "opex",
+     "gpus? (cost|purchase|hardware)",
+     "hardware (cost|purchase)",
+     "per.token",
+     "api (cost|spend|bill)",
+     "cost (comparison|per document)",
+     "break.?even"
+    ]
+   ],
+   "paraphrases": [
+    "Total cost of ownership: GPUs, power, staff and on-call vs the current API bill.",
+    "Break-even point at 40,000 documents a month.",
+    "Capex for hardware vs per-token opex."
+   ]
+  },
+  {
+   "id": "V6",
+   "text": "Operational capacity and skills: two engineers can't run a production GPU inference stack with 24/7 on-call, upgrades and monitoring",
+   "importance": "normal",
+   "match": [
+    [
+     "two engineers",
+     "2 engineers",
+     "\\bops\\b",
+     "operational (capacity|burden|expertise|load)",
+     "in.house expertise",
+     "skills?",
+     "talent",
+     "on.call",
+     "mlops",
+     "headcount",
+     "staffing"
+    ],
+    [
+     "engineer",
+     "\\bops\\b",
+     "on.call",
+     "gpu",
+     "inference",
+     "model",
+     "infrastructure",
+     "platform",
+     "stack",
+     "mlops",
+     "upgrades",
+     "monitoring"
+    ]
+   ],
+   "paraphrases": [
+    "Two engineers can't also run a GPU inference platform with on-call.",
+    "MLOps skills and headcount needed to operate the stack.",
+    "Operational burden: upgrades, monitoring, incidents."
+   ]
+  },
+  {
+   "id": "V7",
+   "text": "Capacity and latency at quarter-end peaks: sizing hardware for peak vs idle the rest of the time",
+   "importance": "normal",
+   "match": [
+    [
+     "peak",
+     "quarter.end",
+     "throughput",
+     "latency",
+     "capacity planning",
+     "scal(e|ing|ability)",
+     "burst",
+     "concurren",
+     "sizing"
+    ],
+    [
+     "quarter",
+     "gpu",
+     "hardware",
+     "\\bapi\\b",
+     "load",
+     "volume",
+     "documents?",
+     "inference",
+     "elastic",
+     "idle",
+     "tokens?"
+    ]
+   ],
+   "paraphrases": [
+    "Quarter-end peaks: owned hardware must be sized for peak volume and sits idle otherwise.",
+    "Throughput and latency under peak load.",
+    "Scalability vs the elastic cloud API."
+   ]
+  },
+  {
+   "id": "V8",
+   "text": "Model licence terms of the open-weight model (commercial-use restrictions, acceptable-use clauses)",
+   "importance": "normal",
+   "match": [
+    [
+     "licen[cs]",
+     "terms of use",
+     "acceptable.use",
+     "commercial use",
+     "open.weight terms",
+     "usage restrictions"
+    ],
+    [
+     "model",
+     "open.weight",
+     "weights",
+     "commercial",
+     "acceptable.use",
+     "claims"
+    ]
+   ],
+   "paraphrases": [
+    "Open-weight model licence terms and commercial-use restrictions.",
+    "Acceptable-use clauses in the model licence.",
+    "Licensing: can we legally use the model for claims decisions?"
+   ]
+  },
+  {
+   "id": "V9",
+   "text": "Model lifecycle: keeping up with better models, re-validation on every upgrade, lock-in to an aging model",
+   "importance": "normal",
+   "match": [
+    [
+     "lifecycle",
+     "upgrade",
+     "update cadence",
+     "fall(ing)? behind",
+     "obsolesc",
+     "stale",
+     "re.?validat",
+     "model refresh",
+     "keep(ing)? up",
+     "frontier",
+     "version",
+     "aging model",
+     "stuck (on|with)",
+     "outdated"
+    ]
+   ],
+   "paraphrases": [
+    "Model lifecycle: we'd have to upgrade and re-validate ourselves or fall behind the frontier.",
+    "Update cadence and re-validation burden for each new model version.",
+    "Risk of being stuck on an aging model."
+   ]
+  },
+  {
+   "id": "V10",
+   "text": "Hybrid options: redaction/de-identification before the API, routing only the most sensitive documents to a local model",
+   "importance": "normal",
+   "match": [
+    [
+     "hybrid",
+     "redact",
+     "de.?identif",
+     "anonymi[sz]",
+     "pseudonymi[sz]",
+     "mask",
+     "route (only )?(the )?(most )?sensitive",
+     "tiered",
+     "split (the )?workload"
+    ]
+   ],
+   "paraphrases": [
+    "Hybrid: de-identify or redact records before sending them to the API.",
+    "Route only the most sensitive documents to a local model.",
+    "Tiered approach instead of all-or-nothing."
+   ]
+  },
+  {
+   "id": "V11",
+   "text": "Decision-letter risk: errors in claim decisions affect people; human review, audit trails and explainability are needed whichever model is used",
+   "importance": "normal",
+   "match": [
+    [
+     "human (review|in the loop|oversight)",
+     "audit trail",
+     "explainab",
+     "accountab",
+     "decision letters?",
+     "claim decisions?",
+     "(adverse|wrong) decisions?",
+     "appeals?",
+     "liabil"
+    ]
+   ],
+   "paraphrases": [
+    "Claim decision letters affect claimants - human review and audit trails are needed regardless of hosting.",
+    "Liability for wrong decisions drafted by the model.",
+    "Explainability and appeals when letters contain errors."
+   ]
+  },
+  {
+   "id": "V12",
+   "text": "Migration effort and risk: re-engineering prompts and pipelines, regression testing, parallel run and rollback",
+   "importance": "normal",
+   "match": [
+    [
+     "migrat",
+     "switching cost",
+     "re.?engineer",
+     "prompt(s)? (rework|re.?tuning|changes)",
+     "regression",
+     "parallel run",
+     "rollback",
+     "cut.?over",
+     "transition"
+    ]
+   ],
+   "paraphrases": [
+    "Migration effort: prompts and pipelines must be reworked and regression-tested.",
+    "Run both in parallel with a rollback plan before cut-over.",
+    "Transition risk and switching cost."
+   ]
+  },
+  {
+   "id": "V13",
+   "text": "Vendor dependency/availability: outages, price changes or policy changes at the API vendor",
+   "importance": "normal",
+   "match": [
+    [
+     "vendor (lock.?in|dependency|risk|outage)",
+     "api (outage|availability|downtime)",
+     "price (change|increase)",
+     "dependen(ce|cy) on (the|a|one) vendor",
+     "availability",
+     "uptime",
+     "concentration risk"
+    ]
+   ],
+   "paraphrases": [
+    "Vendor dependency: API outages or price increases.",
+    "Availability and uptime of the API vs in-house.",
+    "Concentration risk on one vendor."
+   ]
+  }
+ ],
+ "decoys": []
+}

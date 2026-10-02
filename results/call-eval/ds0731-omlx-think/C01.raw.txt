@@ -1,0 +1,41 @@
+{
+  "call_type": "scheduling",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 5,
+  "quality_reasons": [
+    "Verified identity with name, DOB, and address before discussing account",
+    "Rescheduled appointment accurately and confirmed new date/time",
+    "Asked about new health concerns and gave appropriate safety advice",
+    "Updated contact number and read it back for confirmation",
+    "Friendly, empathetic, and patient despite system delays"
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "agent",
+      "task": "Send confirmation text to new number 555-216-4471",
+      "due": "next few minutes"
+    },
+    {
+      "owner": "agent",
+      "task": "Add note to account for therapist about cardiology clearance and inhaler",
+      "due": "before appointment"
+    },
+    {
+      "owner": "patient",
+      "task": "Bring updated insurance card to appointment",
+      "due": "April 16, 2026"
+    }
+  ],
+  "summary_notes": "Patient called to reschedule PT appointment. Original Friday Apr 10 2:15 moved to Thursday Apr 16 9:40 with same therapist (Dr. Haddad's team). Updated contact number to 555-216-4471. Patient mentioned chest tightness last month, cleared by cardiologist as asthma; agent advised to call 911 if symptoms return. Reminded to bring updated insurance card. Confirmation text to be sent.",
+  "notable_details": [
+    "Original appointment: Friday April 10 at 2:15; new appointment: Thursday April 16 at 9:40",
+    "Patient initially thought April 14 was Wednesday; corrected to Tuesday, then chose Thursday April 16",
+    "New phone number: 555-216-4471 (old ended in 8802)",
+    "Chest tightness last month, diagnosed as asthma, cleared by cardiologist, inhaler changed",
+    "Insurance card on file expired end of last year; patient has new cards since January",
+    "Agent had system issues (multiple screens, re-login) but handled professionally"
+  ]
+}

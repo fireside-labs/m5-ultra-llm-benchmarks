@@ -1,0 +1,67 @@
+
+Let me analyze this call.
+
+Call type: no_show_followup (outbound call about missed diabetes appointment). Main purpose is no-show follow-up, rebooking, plus clinical follow-up. no_show_followup fits.
+
+Outcome: resolved — appointment rebooked, insurance updated, strips sent, nurse visit scheduled. Resolved.
+
+Sentiment start: patient was a bit annoyed ("a little annoyed you're calling") — but that's at ~1:40, within first minutes. Start: negative? First minute he just answered; the annoyance appears early. I'd say neutral at very start (just "Hello, this is Harlan"), but the annoyance comes within first couple minutes. Sentiment_start: neutral or negative. The annoyance is expressed at 1:40. I'll say neutral... Actually "a little annoyed" — negative seems fair for early sentiment. Hmm. First minutes: he says "I'm a little annoyed you're calling". I'll go negative? It's mild. I'll pick neutral for start since it's mild annoyance and he's cooperative... The field says sentiment in first and last minutes. The annoyance is expressed in the first two minutes. I'll say negative (mild). End: positive ("Thank you. Honestly, thank you").
+
+Quality score: verification done properly, warm transfer, nurse gave good safety advice. Issues: long unannounced hold (~15 min hold for nurse line transfer, agent said "I'll stay on until they pick up" but apparently left? Actually warm transfer happened at 35:51 — agent stayed on hold queue? The patient was on hold from 16:48 to 35:51, ~19 minutes. Agent said "I'll stay on until they pick up" — the transfer was warm, so kept. But the hold was very long (~19 minutes) without check-ins. Also agent said "before we hang up I'll give you the direct line so you don't get stuck in billing again" — did she? I don't see the direct line given in the transcript. That's a missed commitment! She promised the direct line "before we hang up" but the call transferred to nurse line and agent dropped off — no direct line given. That's a missed_commitment flag.
+
+Also agent said "I'll text the confirmation there" — action item.
+
+Also the AGENT disclosed... verification was done before discussing appointment. Fine.
+
+Nurse: gave correct advice, escalation to nurse visit Monday. Good.
+
+Quality: 4 — good with minor issues (long hold ~19 min, missed commitment re direct line). Or 3? The hold was very long (16:48–35:51, ~19 minutes) with recorded messages, no check-in. Plus missed commitment about direct line. That could be "several notable lapses" → 3? I'd say 3: generally competent but notable lapses (long hold, unfulfilled promise of direct line). Hmm, the missed direct line promise is a notable lapse. Long hold is another. I'll go 3.
+
+Flags:
+1. missed_commitment: agent promised direct line before hangup, never provided. Evidence: "before we hang up I'll give you the direct line so you don't get stuck in billing again."
+2. Possibly flag the long hold? Not a compliance flag per se; quality reasons cover it. Flags are for compliance/privacy/security/accuracy/commitments. Long hold isn't a flag type. Skip.
+
+Any privacy issues? Agent left the call after warm transfer — fine. Patient verified. No.
+
+Action items:
+- Agent: text confirmation to new cell number, reminder two days before (due: unspecified / before Oct 6).
+- Nurse: send TrueStep strips (100 count) and lancets to Ostrander Millbrook (today — "I'm going to send the strips to Ostrander today").
+- Nurse: schedule nurse visit Monday September 21, 8:00 a.m. at Millbrook.
+- Patient: check blood sugar twice a day, log readings with times (ongoing).
+- Patient: go to urgent care/ER if >300 or symptoms (contingent).
+- Patient: attend lab draw for A1c any morning before Oct 6 (optional).
+- Patient: bring log/meter to Monday visit; discuss schedule flipping with Dr. Ruiz-Pakula on Oct 6.
+
+Note: date discrepancy — call date 2026-09-17, "Monday September twenty-first" — Sept 21, 2026 is a Monday? Sept 17 2026 is a Thursday? Actually Sept 17, 2026 is a Thursday. Monday would be Sept 21. Yes consistent. Appointment Tuesday October 6, 2026.
+
+Notable details:
+- Patient corrected glucose reading: initially said 140, corrected to 240 fasting.
+- New insurance: Halvard Health Plan through warehouse, member ID H220846, group WHS9110 — updated.
+- New cell number: 555-0191 (house phone is roommate's).
+- No-show fee $40 waived per first-missed-in-12-months policy.
+- Works nights at warehouse since August; mornings better.
+- Meter: TrueStep Mini; strips TrueStep 100 count + lancets.
+- Phone menu misrouting to billing — systemic issue, multiple callers affected.
+- Parking: rear lot free, front lot is bank's.
+- Patient initially thought reading was 140 — corrected to 240.
+- Appointment: Tuesday Oct 6, 8:15 a.m., Dr. Ruiz-Pakula, Millbrook 2nd floor.
+- Nurse visit Monday Sept 21, 8:00 a.m.
+- Agent initially misread times (7:40, 8:50 — corrected to 8:15, 2:30).
+- Patient's daughter, 9, every other weekend; schedule flips on days off.
+- Metformin twice daily, mostly; BP med.
+- Direct line promise not fulfilled.
+
+Summary notes (≤120 words): outbound no-show follow-up for missed A1c recheck. Patient attempted cancel via phone menu which misrouted to billing and dropped. Fee waived per policy. Rebooked Oct 6 8:15. Insurance updated. Fasting glucose 240 (corrected from 140), out of strips since weekend. Warm transfer to nurse Teodora: no red-flag symptoms, safety thresholds given, strips+lancets sent to Ostrander, nurse visit Mon Sept 21 8am. New cell number recorded. Agent promised direct line to bypass billing menu but never provided it; ~19-min hold during transfer.
+
+Quality reasons:
+- Identity verified with name, DOB, address before discussing appointment.
+- Warm transfer to nurse with clinical handoff; nurse gave appropriate safety guidance and escalated to Monday nurse visit.
+- ~19-minute hold during transfer with no check-in.
+- Promised direct line to avoid billing menu was never provided.
+- Empathetic handling of cancellation failure; correctly waived no-show fee per policy.
+
+Score 3 or 4? Two notable lapses (long hold, missed commitment). "3 = mixed: generally competent but with one notable lapse. 2 = poor: ... several notable lapses." Two lapses → could be 2? But they're minor-ish. The hold was very long (19 min) — that's notable. Missed commitment — notable. I'd say 3 is fair (between). Hmm, strictly "several notable lapses" = 2. Two lapses... I'll go 3, since overall handling was otherwise excellent and lapses were service-level not compliance. Actually the missed commitment is a compliance-ish flag. I'll go 3.
+
+Outcome: resolved.
+
+Sentiment start: negative (mild annoyance expressed early). End: positive.

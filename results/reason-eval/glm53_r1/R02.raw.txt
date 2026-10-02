@@ -1,0 +1,36 @@
+## Missed issues
+
+1. **Simpson's paradox — the headline reverses within every risk tier.** Within low-risk patients the program does *worse* (5.0% vs 4.0%), and within high-risk patients it also does *worse* (25.0% vs 22.0%). The overall 9.0% vs 18.4% gap exists only because the program group is 80% low-risk while the comparison is 80% high-risk. Applying the comparison's tier rates to the program's mix predicts 7.6% readmissions (800×4% + 200×22% = 76/1,000) vs the program's observed 9.0% — i.e., adjusted for case mix, the program looks ~1.4pp *worse*, not 9.4pp better. The "cuts readmissions in half" claim is a composition artifact.
+
+2. **The expansion forecast confuses sensitivity with positive predictive value.** At 13% prevalence with 90% sensitivity and 70% specificity, PPV = (0.90×0.13)/(0.90×0.13 + 0.30×0.87) ≈ **31%**, not 90% — nearly 38% of all discharges get flagged and most flags are false positives. Even granting the (discredited, see #1) 50% effect, the realistic ceiling is 12,000 × 31% × 50% ≈ **1,900 prevented readmissions**, not 5,400 — and the true expected benefit given the within-tier results is approximately zero.
+
+3. **Self-selection plus deleting dropouts makes the program group a healthy-completer cohort.** Enrollment required answering a call and consenting; sicker patients are harder to reach and less likely to enroll — the likely cause of the 800/200 vs 200/800 tier split. Then the 140 patients who didn't complete all 3 calls were removed from the program arm only; some presumably dropped out *because* they were readmitted. This violates intention-to-treat and compounds the selection bias. The study contrasts compliant volunteers with everyone else, so it cannot estimate the program's effect.
+
+4. **The July 1 measure change is a confound, not an "other finding."** After July 1, planned readmissions no longer count, mechanically lowering measured rates. 70% of program patients vs 50% of the comparison were discharged July–December, so the program's measured rate benefits more from the lenient definition (plus ordinary seasonality). This inflates the headline gap and was never adjusted for.
+
+5. **Site-level confound: meds-to-beds at Northgate.** 85% of program patients vs 40% of the comparison came from Northgate, which launched a readmission-reducing service in February 2025. Any benefit from that hospital-level service — and any baseline difference between the two hospitals — gets credited to the phone calls. With only two sites, hospital and group are entangled.
+
+6. **The Spanish-language recommendation rests on 19 patients and 2 events.** 0/9 vs 2/10 is a two-event difference (two-sided Fisher p ≈ 0.5; the CI on 0/9 extends to ~34%). Calling this a "100% reduction" and making it a rollout priority is exactly the overreach that makes the rest of the report hard to trust.
+
+7. **The comparison group's size contradicts its definition.** "All other patients discharged from the same two hospitals" over a full year cannot plausibly be exactly 1,000 — the program alone enrolled 1,140 (1,000 + 140 dropouts). Either the comparison was sampled or matched on something unstated, or the number is wrong. Until the report explains how the 1,000 were chosen, the reader doesn't know what was actually compared.
+
+8. **No statistical testing or adjustment anywhere, and the balance check misses the point.** Age (67 vs 68) and sex (54% vs 55%) are balanced, but the variables that matter — risk tier, hospital, calendar period — are massively imbalanced, so "demographics do not explain the difference" is true but irrelevant. Neither within-tier difference (1pp and 3pp) is statistically significant; the honest within-stratum conclusion is "no detectable effect," not a 50% cut.
+
+9. **The forecast assumes an invalid effect transfers unchanged to every partner hospital and that "every flagged patient" can be enrolled.** The 50% estimate comes from a self-selected cohort at two hospitals during an outcome-definition change; the program's own enrollment mechanics (answer the phone, consent) guarantee that real-world uptake will be lower and similarly self-selected — reproducing the very bias that produced the headline.
+
+## Looks like a problem but isn't
+
+- **State all-payer claims for readmissions:** counting readmissions at any hospital in the state is the *right* ascertainment; restricting to our own hospitals would undercount.
+- **First discharge in 2025 only:** a reasonable way to stop the same patient contributing multiple episodes.
+- **Excluding 30-day deaths:** applied symmetrically to both groups, so it doesn't manufacture the gap (a readmission-or-death composite would be better, but its absence isn't driving the result).
+- **The table arithmetic:** internally consistent (tiers sum to 90 and 184); the flaw is interpretation, not calculation.
+
+## Top 3 priorities
+
+1. **Simpson's paradox.** The report's own tier table shows the program does no better — point estimates slightly worse — within both risk strata. The core claim is a case-mix artifact, and no expansion decision can rest on it.
+2. **The sensitivity/PPV error in the forecast.** The 5,400-readmissions figure is wrong by roughly 3x even on its own assumptions (~1,900 is the ceiling with PPV ≈ 31%), and it inherits the invalid 50% effect size.
+3. **The selection/attrition design.** Answer-and-consent enrollment plus deleting 140 non-completers explains the tier skew and guarantees the bias recurs at scale; fixing it (intention-to-treat, stratification, or randomization) is the prerequisite for any credible reanalysis.
+
+## Bottom line
+
+The report does not show that the program works: within every risk tier the program group fared no better (slightly worse, not significantly), and the headline halving is entirely a case-mix artifact further inflated by the mid-year measure change and hospital mix. The 5,400-readmission forecast rests on confusing sensitivity with predictive value and overstates the benefit by roughly 3x even before that. Leadership should decline the quarter-next expansion and instead require a tier-stratified, intention-to-treat reanalysis (by site and pre/post-July 1), and if a signal survives, a randomized or risk-matched pilot before scaling.

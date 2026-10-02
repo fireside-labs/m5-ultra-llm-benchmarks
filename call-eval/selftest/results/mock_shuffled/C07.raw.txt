@@ -1,0 +1,35 @@
+{
+ "call_type": "saas_support",
+ "outcome": "resolved",
+ "sentiment_start": "negative",
+ "sentiment_end": "positive",
+ "quality_score": 4,
+ "quality_reasons": [
+  "Verified with an emailed one-time code, diagnosed the row-cap root cause and gave a working workaround",
+  "Long hold (~4 minutes) with no check-in, on a caller who asked for speed"
+ ],
+ "flags": [],
+ "action_items": [
+  {
+   "owner": "agent",
+   "task": "Bug filed for the CSV export failure (ticket 44091); customer linked for fix notification",
+   "due": "done"
+  },
+  {
+   "owner": "agent",
+   "task": "Add stopped weekly digest emails to the ticket and investigate",
+   "due": "unspecified"
+  },
+  {
+   "owner": "account manager",
+   "task": "Contact customer about plan options before renewal (~2 weeks)",
+   "due": "before renewal"
+  }
+ ],
+ "summary_notes": "Mock summary for C08.",
+ "notable_details": [
+  "Root cause: Team Classic plan caps CSV export at 5,000 rows; report is ~7,200 rows",
+  "Second issue raised in passing: weekly digest emails stopped arriving since last Tuesday",
+  "Renewal is in about two weeks; customer may reconsider plan"
+ ]
+}

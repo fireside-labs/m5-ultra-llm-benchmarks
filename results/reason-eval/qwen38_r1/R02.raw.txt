@@ -1,0 +1,36 @@
+
+
+## Missed issues
+
+1. **The headline result is Simpson’s paradox: the groups have opposite risk mixes.**  
+   The program group is mostly low risk (800/1,000 low risk), while the comparison group is mostly high risk (800/1,000 high risk). Within each tier, the program rate is *higher*: low risk 5.0% vs 4.0%; high risk 25.0% vs 22.0%. If the program group had the comparison group’s tier mix, its expected rate would be 0.2 × 5% + 0.8 × 25% = 21%, worse than the comparison’s 18.4%. This matters because the claimed 9.0% vs 18.4% benefit can be explained by case mix, not the nurse calls, and expansion to risk-flagged patients is especially unsupported because the high-risk program rate is worse.
+
+2. **The expansion forecast confuses sensitivity with positive predictive value and overstates preventable readmissions.**  
+   Sensitivity 90% is P(flag | readmitted), not P(readmitted | flag). With 13% readmission prevalence, 90% sensitivity, and 70% specificity, PPV = (0.9 × 0.13) / [(0.9 × 0.13) + (0.3 × 0.87)] ≈ 31%, not 90%. If 12,000 flagged patients are enrolled, the expected readmissions among them are about 12,000 × 31% ≈ 3,720; even a true 50% reduction would prevent about 1,860 readmissions, not 5,400. If 12,000 were total discharges instead, total readmissions at 13% would be only 1,560, making 5,400 impossible.
+
+3. **The program group is self-selected and analyzed as completers only, while the comparison group is “all other patients.”**  
+   Program patients had to answer the first call and agree to participate; the comparison group includes all other discharged patients. The report also removes 140 patients who left before completing all 3 calls. If the 1,000 program patients are after removing those 140, the original enrolled cohort was about 1,140, so roughly 12% of enrolled patients were excluded. This matters because reachable, consenting, and compliant patients may already have lower readmission risk, and excluding dropouts discards patients who may have failed or benefited less.
+
+4. **Northgate’s “meds-to-beds” service is a major unadjusted confounder.**  
+   85% of program patients came from Northgate, versus 40% of comparison patients. Northgate opened a bedside medication-delivery service in February 2025, which plausibly reduces readmissions. Without adjusting for hospital or pre/post implementation, the 9.4-percentage-point headline difference may partly or wholly reflect meds-to-beds, not nurse calls.
+
+5. **The readmission definition changed mid-year, and the program group is concentrated after the change.**  
+   70% of program patients were discharged July–December, versus 50% of comparison patients. On July 1, the measure changed from “any readmission within 30 days” to “unplanned readmission within 30 days,” so planned readmissions no longer count. This matters because the program group is more likely to be measured under the less stringent definition, which can lower its observed rate independently of the program.
+
+6. **The comparison group denominator is inconsistent and likely selected.**  
+   The report says the comparison group is “all other patients discharged,” but the table shows exactly 1,000 comparison patients, matching the program group. The tier counts (200 low risk, 800 high risk) also look like a selected or matched denominator rather than all remaining patients. If sampling, matching, trimming, or exclusion occurred, it is not described, so the comparison group’s baseline risk and construction are not trustworthy.
+
+7. **No uncertainty is shown, and tiny subgroup results are treated as actionable findings.**  
+   The report provides no confidence intervals or significance tests for the tier differences (5.0% vs 4.0%; 25.0% vs 22.0%) or the Spanish-language cohort. The Spanish finding is based on 0/9 program patients versus 2/10 comparison patients—only a two-event difference—and cannot support a “100% reduction” or a priority expansion recommendation.
+
+8. **External validity and operational capacity are not established.**  
+   The evidence comes from two hospitals and 2,000 analyzed patients, but the recommendation expands to all partner hospitals and about 12,000 flagged patients per year. At 3 calls per patient, that is about 36,000 calls per year, versus about 3,000 calls for the 1,000 analyzed program patients. The report does not show that the effect, risk model performance, staffing, or patient mix generalize.
+
+9. **Excluding deaths may bias the readmission comparison because death is a competing risk.**  
+   Patients who died within 30 days were excluded from both groups, but no death counts are given. If mortality or pre-discharge severity differs between groups, excluding deaths can change the denominator and observed readmission rates. For a program targeting high-risk patients, readmission and death should be analyzed together.
+
+## Looks like a problem but isn't
+
+- Using the state all-payer claims database to count readmissions to any hospital is appropriate and reduces missing-outcome bias.
+- Using each patient’s first 2025 discharge only avoids double-counting the same patient.
+- Reporting results by risk tier is good practice because it exposes the case-mix problem that the headline hides

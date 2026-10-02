@@ -1,0 +1,48 @@
+
+Key issues:
+1. REP disclosed another client's pricing (Halloway Pediatrics, $9/seat) — confidentiality/policy violation. Flag: privacy_disclosure or policy_violation. "I probably shouldn't say this" — unauthorized disclosure of client pricing.
+2. REP said BAA only on Enterprise, then later said "We're fully HIPAA compliant, and we'll sign a BAA with you, no problem at all" on Team — contradiction/misinformation. Flag: misinformation. The prospect asked "Can we do that on Team plan?" (visit notes with patient info) and REP said yes, BAA on Team — contradicting earlier statement. This is a misinformation/unauthorized commitment.
+3. Prospect put coworker on speaker without REP knowing — minor, not REP's fault.
+4. Call recorded — disclosed when asked, fine.
+
+Outcome: sales call, next steps: security review call Oct 6, proposal by Friday. Not resolved (no deal closed) — but "resolved" means caller's main issue handled during call? For sales, the discovery call completed with follow-ups scheduled. The main issue pending follow-up contact → callback? Or resolved? The call was a discovery call; commitments made: proposal by Friday, security review invite. I'd say "callback" since main issue (purchase decision) pending follow-up. Hmm, but the call itself was scheduled and completed its purpose. The schema: callback = main issue pending a specific follow-up contact. The proposal and security review are specific follow-ups. I'll go with callback. Actually escalated doesn't apply. Resolved could apply if we consider discovery call's goal achieved. But the deal isn't closed; follow-ups pending. "callback" seems best fit.
+
+Sentiment: start positive ("perfect timing"), end positive ("Perfect. Thanks so much").
+
+Quality score: good rapport, thorough discovery, but two notable issues: disclosed competitor/client pricing confidential info, and contradicted BAA plan availability (misinformation). That's a serious accuracy/compliance lapse plus another lapse → score 3? "3 = mixed: generally competent but with one notable lapse." Two lapses → 2? The pricing disclosure is a serious compliance failure; the BAA contradiction is a serious accuracy failure. Two serious failures → 2. Hmm. The BAA contradiction: she first said BAA only Enterprise, then said "we'll sign a BAA with you, no problem" when asked about Team. That's misinformation potentially leading to unauthorized commitment. I'd rate 2 given two serious compliance/accuracy failures. Or 3? The pricing disclosure is clearly a policy violation ("I probably shouldn't say this"). The BAA flip is misinformation. Both serious. Score 2.
+
+Actually, could the BAA statement be a correction? She said "the BAA is only available on our Enterprise plan. It's not available on Team." Then later "Yes, absolutely. We're fully HIPAA compliant, and we'll sign a BAA with you, no problem at all" in response to "Can we do that on the Team plan?" — clear contradiction, no correction. Misinformation flag.
+
+Action items:
+- REP: send security review call invite for Tue Oct 6, 10 a.m. with security team and Theodora — due Oct 6 / send invite (unspecified for invite, meeting Oct 6).
+- REP: send SOC 2 report and security questionnaire answers ahead of time — due before Oct 6.
+- REP: send proposal for 85 seats — due Friday (Oct 2, 2026? Sep 29 2026 is a Tuesday; Friday = Oct 2). Use "Friday" as stated.
+- REP: solutions person to cover accounting integration — implied "I'll make sure the solutions person covers the accounting piece" — task, due unspecified.
+- REP: send email summary ("you'll have the email summary to work from") — due unspecified.
+
+Notable details:
+- Current vendor contract ends January 15; must be live before then.
+- Vendor left due to data breach last spring (staff data, non-clinical).
+- Seats corrected from 60 to 85 (25 per-diem contractors added).
+- Pricing: Team $14/seat/mo, Enterprise $26/seat/mo, billed annually; up to 15% discount authorized.
+- Halloway Pediatrics pays $9/seat (disclosed in confidence).
+- Compliance officer Theodora has final sign-off; security review Tue Oct 6, 10 a.m.
+- Prospect background: 15 years IT, director of operations.
+- Offline sync needed for rural areas; handoffs biggest pain point.
+- Call recorded, disclosed on request.
+
+Flags:
+1. privacy_disclosure / policy_violation: disclosed another client's pricing. Type: privacy_disclosure? It's confidential business info, not personal privacy. "policy_violation" fits better — rep admitted shouldn't say. Use policy_violation.
+2. misinformation: contradicted BAA availability on Team.
+3. unauthorized_commitment: promised BAA on Team despite stating BAA is Enterprise-only. Could combine with #2. I'll include both misinformation and unauthorized_commitment? Maybe just misinformation covering it. I'll do two flags: policy_violation (pricing disclosure) and misinformation (BAA contradiction). Maybe also unauthorized_commitment for the BAA promise. Keep it to two-three. I'll add unauthorized_commitment as separate since she committed to signing a BAA on a plan she said doesn't support it.
+
+Summary notes ≤120 words.
+
+Quality reasons:
+- Built strong rapport and ran thorough discovery (pain points, seats, decision process).
+- Disclosed another client's confidential pricing ($9/seat Halloway Pediatrics), admitting she shouldn't.
+- Contradicted herself on BAA availability: stated Enterprise-only, later promised BAA on Team.
+- Clear next steps scheduled (security review Oct 6, proposal Friday).
+- Minor: frequent background distractions, but handled politely.
+
+Score 2.

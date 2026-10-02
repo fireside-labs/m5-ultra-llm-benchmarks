@@ -1,0 +1,37 @@
+{
+ "call_type": "billing_dispute",
+ "outcome": "resolved",
+ "sentiment_start": "neutral",
+ "sentiment_end": "neutral",
+ "quality_score": 4,
+ "quality_reasons": [
+  "Agent was polite and professional.",
+  "Call handled efficiently."
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Agent disclosed the account balance before verifying the caller's identity",
+   "evidence": "So before I open anything, can I get your date of birth?"
+  },
+  {
+   "type": "other",
+   "description": "Caller's brother-in-law was wrongly sent to collections",
+   "evidence": "my brother-in-law said you guys sent him to collections for no reason last year"
+  },
+  {
+   "type": "other",
+   "description": "Customer expressed frustration during the call.",
+   "evidence": ""
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "agent",
+   "task": "Remove the $95 no-show fee from the account",
+   "due": "during call (done)"
+  }
+ ],
+ "summary_notes": "The customer called about their account and spoke with a representative. The customer called about their account and spoke with a representative. The customer called about their account and spoke with a representative. The customer called about their account and spoke with a representative. The representative listened to the concern, looked up the relevant information and explained the next steps. The customer asked several questions, which were answered. There was some discussion of the details and the customer was given information about what to expect. The call included some small talk and a short hold while the agent checked the system. Overall the interaction covered the main topic of the call and ended politely, with the customer thanking the agent for their help and time today.",
+ "notable_details": []
+}

@@ -1,0 +1,71 @@
+{
+  "call_type": "pre_procedure",
+  "outcome": "callback",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 4,
+  "quality_reasons": [
+    "Nurse verified date of birth and confirmed procedure, surgeon and date with the patient before proceeding",
+    "Thorough medication review with correct perioperative instructions (stop ibuprofen and fish oil, skip lisinopril morning of surgery)",
+    "Caught and updated the driver change from son Theo to neighbor Bev Lindgren-Shaw with new phone number",
+    "Gave fasting guidance ('go with the text') before verifying with anesthesia, though she committed to confirm by callback",
+    "Frequent system glitches, logouts and small talk made a ~20-minute interview run long, but the nurse stayed courteous and kept the patient informed"
+  ],
+  "flags": [
+    {
+      "type": "misinformation",
+      "description": "Nurse advised the patient to follow the automated text's clear-liquid guideline over the written packet instructions before confirming with anesthesia, telling him black coffee is fine up to two hours before arrival.",
+      "evidence": "Honestly, I think the text is the newer guideline, so, um, go with the text. Clear liquids are fine until two hours before you arrive. Water, apple juice, black coffee, no milk."
+    },
+    {
+      "type": "clinical_safety",
+      "description": "Patient reported a recent chest cold with a lingering morning cough one week before surgery, which the nurse acknowledged without further assessment or a stated plan to flag for anesthesia.",
+      "evidence": "I had a chest cold last week. Still have a little bit of a cough, mostly in the mornings. ... NURSE: Okay. And, allergies?"
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "nurse",
+      "task": "Double-check clear-liquids fasting guideline with anesthesia and call patient back to confirm it along with the arrival time",
+      "due": "Tuesday 2026-03-17 by end of day"
+    },
+    {
+      "owner": "nurse",
+      "task": "Send copy of today's pre-admission notes to the patient's portal",
+      "due": "unspecified"
+    },
+    {
+      "owner": "patient",
+      "task": "Stop ibuprofen/NSAIDs (use Tylenol instead for back pain)",
+      "due": "for the seven days before surgery (from 2026-03-12)"
+    },
+    {
+      "owner": "patient",
+      "task": "Stop fish oil until after surgery",
+      "due": "unspecified"
+    },
+    {
+      "owner": "patient",
+      "task": "On morning of surgery: skip lisinopril; take metoprolol and omeprazole with a small sip of water; all other medications as usual",
+      "due": "Thursday 2026-03-19 morning"
+    },
+    {
+      "owner": "patient",
+      "task": "Bring CPAP machine, photo ID, insurance card, and antibacterial soap showers night before and morning of surgery; arrange driver Bev Lindgren-Shaw",
+      "due": "Thursday 2026-03-19"
+    }
+  ],
+  "summary_notes": "Outbound pre-admission interview completed for Cornelius Ashdown-Pike (DOB 8/30/1956) ahead of laparoscopic cholecystectomy with Dr. Vanterpool-Iyer on Thursday 2026-03-19; arrival 5:45 a.m., surgery 7:15 a.m. (to be confirmed). History: HTN, AFib (~2019/2020) on Eliquis, sleep apnea (bring CPAP), penicillin allergy (hives, confirmed on chart), recent chest cold with residual morning cough. Meds reviewed; hold ibuprofen and fish oil; skip lisinopril morning of surgery. Driver changed from son Theo to neighbor Bev Lindgren-Shaw (555-701-9910), staying overnight. Fasting instructions conflict (packet: NPO after midnight; text: clear liquids until 2 hours prior); nurse to verify with anesthesia and call back Tuesday with confirmation and arrival time. Notes to be sent to portal; text reminders preferred.",
+  "notable_details": [
+    "Surgery: laparoscopic cholecystectomy, Dr. Vanterpool-Iyer, Thursday 2026-03-19; arrival 5:45 a.m. at main entrance on Corrowind Parkway, surgery 7:15 a.m. - both subject to confirmation at callback",
+    "Driver changed late in call: son Theo Ashdown-Pike (555-701-2283) replaced by neighbor Bev Lindgren-Shaw (555-701-9910), who will also stay overnight",
+    "Fasting discrepancy: packet says nothing to eat or drink after midnight; automated text says clear liquids up to two hours before arrival - resolution pending nurse's callback",
+    "Patient reported chest cold last week with lingering morning cough, mentioned only in passing",
+    "AFib onset year uncertain - patient said 'twenty-nineteen? Twenty-twenty'",
+    "Penicillin allergy (hives) already on chart from clinic visits; nurse confirmed rather than re-entering",
+    "Parking guidance: patient garage north side, level 3, skybridge to building; front desk validates with ticket",
+    "Contact preferences: text reminders preferred; email starting with 'J' at yahoo kept on file for statements; electronic delivery preferred over mail",
+    "Preferred pharmacy on Ferris Avenue confirmed unchanged",
+    "Patient mentioned confusing phone menu (pressed 4, went somewhere wrong) and dated hold music - minor service feedback"
+  ]
+}

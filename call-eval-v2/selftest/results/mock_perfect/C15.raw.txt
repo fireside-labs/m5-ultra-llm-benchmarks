@@ -1,0 +1,52 @@
+{
+ "call_type": "sales",
+ "outcome": "callback",
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 3,
+ "quality_reasons": [
+  "Responsive, friendly rep with good discovery who initially explained correctly that BAAs are only signed on Enterprise",
+  "Then told the prospect she is 'covered' for HIPAA on Starter and can put patient details in invoice notes - misleading compliance claim"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Rep told a healthcare prospect she is 'covered' for HIPAA on the Starter plan and can put patient details in invoice notes, although he had just said BAAs are only signed on Enterprise and Starter has no BAA - misleading compliance claim",
+   "evidence": "You're totally fine to put patient details in the invoice notes, people do it all the time."
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "rep",
+   "task": "Set up a 14-day trial workspace starting Oct 1 (ends Oct 15)",
+   "due": "today / starts 2026-10-01"
+  },
+  {
+   "owner": "rep",
+   "task": "Send calendar invite for live walkthrough Tuesday Oct 6 at 11",
+   "due": "2026-10-06 11:00"
+  },
+  {
+   "owner": "rep",
+   "task": "Send a quote for 7 Starter seats with the annual discount",
+   "due": "unspecified"
+  },
+  {
+   "owner": "prospect",
+   "task": "Review the quote with her husband (does the books)",
+   "due": "unspecified"
+  },
+  {
+   "owner": "rep",
+   "task": "Check whether their booking system integrates and include it in the follow-up email",
+   "due": "follow-up email"
+  }
+ ],
+ "summary_notes": "Mock summary for C15.",
+ "notable_details": [
+  "7 seats needed (she first said 11, counting part-timers who don't bill)",
+  "Trial runs Oct 1 to Oct 15 (rep first said it would end Oct 8)",
+  "Walkthrough with the front-desk person on Tuesday Oct 6 at 11",
+  "Starter is $12 per seat per month"
+ ]
+}

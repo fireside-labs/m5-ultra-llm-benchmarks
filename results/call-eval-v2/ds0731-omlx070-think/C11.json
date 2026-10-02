@@ -1,0 +1,73 @@
+{
+  "call_type": "post_procedure_followup",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Contradictory bathing advice: initially said no tub baths for two weeks, later recommended a warm bath for back pain.",
+    "Failed to recognize potential acetaminophen overdose from combined hydrocodone/acetaminophen and extra-strength Tylenol.",
+    "Thorough and empathetic overall, with proper identity verification and coordination with the surgical PA.",
+    "Provided clear recap and updated pharmacy information."
+  ],
+  "flags": [
+    {
+      "type": "clinical_safety",
+      "description": "Nurse gave contradictory advice about bathing: initially said no tub baths for two weeks, later recommended a warm bath for back pain.",
+      "evidence": "no tub baths, no hot tubs, no swimming for two weeks ... a nice warm bath would help with the soreness."
+    },
+    {
+      "type": "clinical_safety",
+      "description": "Nurse did not recognize potential acetaminophen overdose from combined hydrocodone/acetaminophen and extra-strength Tylenol.",
+      "evidence": "I'm also taking regular Tylenol. The Extra Strength. Two every six hours ... Tylenol's fine."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "Nurse (Felipe)",
+      "task": "Send refill request for hydrocodone to Dr. Vasquez-Lim's team",
+      "due": "tonight"
+    },
+    {
+      "owner": "Larkspur office",
+      "task": "Call patient to set up drain check",
+      "due": "tomorrow (Friday)"
+    },
+    {
+      "owner": "Patient/Rob",
+      "task": "Continue emptying and recording JP drain output twice a day",
+      "due": "ongoing"
+    },
+    {
+      "owner": "Rob",
+      "task": "Pick up OTC laxative (polyethylene glycol) at Ostrander Eastgate pharmacy",
+      "due": "tomorrow after work"
+    },
+    {
+      "owner": "Patient/Rob",
+      "task": "Draw a line around pink incision to monitor for spreading",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Patient",
+      "task": "Use incentive spirometer ten times an hour while awake",
+      "due": "ongoing"
+    },
+    {
+      "owner": "Patient",
+      "task": "Call back if temperature exceeds 101°F or if belly becomes hard/swollen with vomiting",
+      "due": "as needed"
+    }
+  ],
+  "summary_notes": "Post-op day 3 from laparoscopic cholecystectomy (Sept 21) at Larkspur. Called with concerns about pain meds, JP drain, and feeling unwell. Nurse verified identity, discussed referred shoulder pain, bowel regimen, low-grade temp (100.8°F), incision care, and drain management. Coordinated with on-call surgical PA Dana, who gave drain removal criteria (<30 mL/24h for 2 days) and will call tomorrow to schedule drain check. Refill request for hydrocodone sent to surgeon's team. Pharmacy updated to Ostrander Eastgate. Follow-up visit confirmed for Oct 2 at 1:15 PM. Patient reassured and in good spirits at end. Note: contradictory bathing advice and potential acetaminophen overdose risk flagged.",
+  "notable_details": [
+    "Surgery date corrected to Monday Sept 21 (not 12th).",
+    "Follow-up visit is Friday Oct 2 at 1:15 PM (not 12th).",
+    "Pharmacy changed from Ostrander Millbrook to Ostrander Eastgate.",
+    "Drain output: Monday night 110 mL, Tuesday 70/60, Wednesday 55/50, Thursday morning 40 mL.",
+    "Temperature: 100.8°F this afternoon (husband reported 101.8 last night but patient corrected).",
+    "Patient on levothyroxine 75 mcg, birth control, vitamin D; allergy to penicillin (rash).",
+    "Patient is a music teacher; has a sub through second week of October.",
+    "Husband Rob is primary caregiver and maintains a notebook of drain output and medications."
+  ]
+}

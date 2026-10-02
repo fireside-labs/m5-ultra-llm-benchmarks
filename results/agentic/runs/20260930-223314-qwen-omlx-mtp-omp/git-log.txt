@@ -1,0 +1,101 @@
+e15cb7552d334ebe630181ab102d49fefb51640a1790832894milestone 1: Project scaffold
+
+4	0	.gitignore
+36	0	README.md
+16	0	index.html
+1490	0	package-lock.json
+18	0	package.json
+15	0	src/main.ts
+39	0	src/styles.css
+2	0	src/version.ts
+9	0	tests/scaffold.test.ts
+21	0	tsconfig.json
+15	0	vite.config.ts
+6208cd93412da1b5560410949dda98fee525cf8d1790832937milestone 2: Seeded RNG
+
+43	0	src/rng.ts
+27	0	src/types.ts
+84	0	tests/rng.test.ts
+a1b1671cd4d373446fa0c710c7dffedb80cb6db11790833008milestone 3: Tile map model
+
+126	0	src/map.ts
+120	0	tests/map.test.ts
+e23dbcacb45f64b7e68dd94ab8ddfd68f13d7b571790833106milestone 4: BSP dungeon generator
+
+136	0	src/dungeon.ts
+100	0	tests/dungeon.test.ts
+213a92bbc8fb0bd8bf5a8a58b85741616c4abffb1790833172milestone 5: Canvas renderer with camera
+
+32	1	src/main.ts
+30	0	src/ui/camera.ts
+116	0	src/ui/renderer.ts
+36	0	tests/camera.test.ts
+115	0	tests/renderer.test.ts
+aab74a55e1bc5ca59592e7a31ba1190004368a931790833214milestone 6: Player movement with keyboard input
+
+20	12	src/main.ts
+13	0	src/movement.ts
+57	0	src/ui/input.ts
+84	0	tests/movement.test.ts
+368b40f9b7390b50fcf4b786cbcedbd449385ffb1790833514milestone 7: Field of view and fog of war
+
+79	0	src/fov.ts
+6	1	src/main.ts
+109	0	tests/fov.test.ts
+1e410f4ea011d7c9196f708cb68956851267a0661790833643milestone 8: Entities, components and inventory core
+
+142	0	src/entity.ts
+89	0	src/inventory.ts
+86	0	tests/entity.test.ts
+108	0	tests/inventory.test.ts
+c149713f5af61deceb37b3d4ef1a4a085225b7ea1790833866milestone 9: Five monster behaviours
+
+174	0	src/ai.ts
+2	0	src/entity.ts
+30	0	src/fov.ts
+85	0	src/game.ts
+21	16	src/main.ts
+71	0	src/monsters.ts
+158	0	tests/ai.test.ts
+66	0	tests/game.test.ts
+48	0	tests/monsters.test.ts
+9f4740f1ab48c45386b667e8ced530dc5c66264a1790833990milestone 10: A* pathfinding used by chasing monsters
+
+26	7	src/game.ts
+119	0	src/pathfinding.ts
+94	0	tests/pathfinding.test.ts
+44	0	tests/step-towards.test.ts
+0c15a56860aaf7103f46402ae11340668e942ced1790834144milestone 11: Turn scheduler with speed-based energy
+
+68	0	src/scheduler.ts
+121	0	tests/scheduler.test.ts
+a0e13378fe406d9fc80e9fd2dde37174b3ad47dd1790834304milestone 12: Combat with to-hit, crits, death and message log
+
+33	0	src/combat.ts
+95	29	src/game.ts
+1	2	src/main.ts
+20	0	src/messages.ts
+142	0	tests/combat.test.ts
+59	1	tests/game.test.ts
+23	0	tests/messages.test.ts
+c5d92114c3fdb01ad0c6c6ac96b907b816a9fa871790834444milestone 13: Items with pickup, drop, equip and use
+
+202	25	src/game.ts
+69	0	src/items.ts
+15	2	src/main.ts
+113	0	tests/items-game.test.ts
+60	0	tests/items.test.ts
+c2c5ca138f82d9db9bf381c3672275f8e04016401790834558milestone 14: Inventory UI with keyboard navigation
+
+81	1	src/main.ts
+26	0	src/styles.css
+112	0	src/ui/inventoryUi.ts
+94	0	tests/inventory-ui.test.ts
+914f0f5fbc99eb1d227cd0ea674088e288e994941790835500milestone 15: Multiple dungeon levels with persistent stairs
+
+113	25	src/game.ts
+63	0	src/levels.ts
+9	1	src/map.ts
+2	1	src/ui/renderer.ts
+109	0	tests/levels-game.test.ts
+57	0	tests/levels.test.ts

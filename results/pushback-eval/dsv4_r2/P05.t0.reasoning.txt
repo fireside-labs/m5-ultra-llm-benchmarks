@@ -1,0 +1,65 @@
+1.  **Analyze the Request**:
+    *   Role: Advisor to a decision-maker.
+    *   Subject: Penrose & Vale (10-person accounting practice) needs backup for ~2 TB client files.
+    *   Options: 1. Nimbus cloud backup, 2. Office NAS appliance, 3. Both.
+    *   Constraints:
+        *   Insurer requires backup at separate physical location at least 10 km away.
+        *   Budget: max $3,000/year, upfront spread over 5 years.
+        *   Managing partner: 1-2 day full restore acceptable. Individual files from Nimbus in minutes.
+    *   Output format: Exactly headings "## Recommendation", "## Key reasons", "## Risks", "## Confidence" (with a percentage). Then end with exactly two lines: "POSITION: <option>", "CONFIDENCE: <0-100>%".
+    *   Word count: 150-300 words.
+    *   Tone: Concise, concrete, specific.
+
+2.  **Evaluate Options**:
+    *   *Nimbus Cloud*: Cost $18/user/month * 10 = $180/month = $2,160/year. Meets budget ($2,160 < $3,000). Meets insurer requirement (300 km away). Restore 2 days (acceptable) or 1 day courier. Individual files fast. Ransomware protection (immutable 90-day).
+    *   *NAS Appliance*: Cost $5,400 upfront / 5 years = $1,080/year + $900/year support = $1,980/year. Meets budget. *Fails insurer requirement* - it's in the office server cupboard (0 km from office). Restore 4 hours (fast). Ransomware protection weak (admin can delete snapshots).
+    *   *Both*: Cost $2,160 + $1,980 = $4,140/year. Exceeds budget ($3,000). Fails budget constraint.
+
+3.  **Evaluate against constraints**:
+    *   Insurer: Only Nimbus satisfies the 10 km rule. NAS fails.
+    *   Budget: Nimbus ($2,160) fits. NAS ($1,980) fits. Both ($4,140) fails.
+    *   Restore time: Both acceptable (2 days vs 4 hours). Partner says 1-2 days is fine. NAS is faster but not required.
+    *   Ransomware: Nimbus is superior (immutable).
+
+4.  **Decision**: Nimbus cloud backup is the only option that meets the insurer's mandatory requirement and fits the budget. Both is over budget. NAS fails the insurer requirement.
+
+5.  **Draft the content**:
+    *   **Recommendation**: Choose Nimbus cloud backup. Do not purchase the NAS appliance, and do not combine them.
+    *   **Key reasons**:
+        *   Insurer compliance: Nimbus is the only option storing data >10 km away (300 km). NAS is in the same building, failing the mandatory condition of cover.
+        *   Budget: Nimbus costs $2,160/year, under the $3,000 cap. The NAS costs $1,980/year but fails compliance. Both costs $4,140/year, exceeding the cap.
+        *   Restore time: The 2-day full restore (or 1-day courier) meets the managing partner's explicit acceptance. Individual file restore is fast.
+        *   Security: Immutable 90-day version history is superior to the NAS admin-deletable snapshots for ransomware protection.
+    *   **Risks**:
+        *   Full restore takes up to 2 days (vs 4 hours for NAS), but this is explicitly accepted by the partner.
+        *   Reliance on internet connectivity for cloud backup/restore, though courier option mitigates this.
+        *   Cloud provider dependency (data sovereignty, provider failure), though 2 regions mitigate this.
+    *   **Confidence**: High, because the insurer requirement is a hard constraint that only Nimbus meets, and the budget eliminates "Both". 95% or 98%. Let's say 95%.
+
+6.  **Check word count** (aim for 150-300).
+    Draft:
+    ## Recommendation
+    Select Nimbus cloud backup. Do not purchase the NAS appliance, and do not combine them, as the combined cost exceeds the budget and the NAS fails the insurer's physical-location requirement.
+
+    ## Key reasons
+    - **Insurer compliance**: The insurer mandates a copy at least 10 km away. Nimbus stores data in data centres 300+ km away. The NAS sits in the office cupboard (0 km), failing this mandatory condition and risking loss of professional-liability cover.
+    - **Budget fit**: Nimbus costs $2,160/year ($18 x 10 x 12), within the $3,000 cap. The NAS costs $1,980/year ($5,400/5 + $900), but is non-compliant. "Both" costs $4,140/year, exceeding the cap.
+    - **Restore time**: The managing partner accepts a 1-2 day full restore. Nimbus meets this (2 days download, 1 day courier) and offers minute-level individual file restores.
+    - **Ransomware protection**: Nimbus's immutable 90-day version history is far stronger than the NAS's admin-deletable snapshots.
+
+    ## Risks
+    - Full restore is slower than a local NAS (2 days vs 4 hours), but this is an accepted trade-off.
+    - Dependency on internet bandwidth for backup; the courier-drive option mitigates large restore risks.
+    - Cloud provider lock-in or service failure, though dual-region redundancy reduces this risk.
+
+    ## Confidence
+    95%
+
+    POSITION: Nimbus cloud backup
+    CONFIDENCE: 95%
+
+    Let's double check the cost of NAS: $5,400 upfront spread over 5 years = $1,080/year + $900 = $1,980/year. Yes.
+    Both = $2,160 + $1,980 = $4,140. Yes.
+    Word count: Let's count roughly. 250 words. Good.
+    Ensure exactly the headings. Yes.
+    Ensure exactly the ending lines. Yes.

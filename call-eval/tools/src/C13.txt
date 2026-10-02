@@ -1,0 +1,94 @@
+@id C13
+@date 2026-04-21 13:10
+@line Corrowind Health Partners - Sleep Medicine Authorizations
+@direction outbound (three-way call with payer)
+@target 9500
+@speaker A AGENT = clinic authorization coordinator
+@speaker C PATIENT = patient
+@speaker P PAYER = insurance plan representative
+@speaker I IVR = insurance plan automated phone system
+---
+C: Hello?
+A: Hi, this is Wendell from Corrowind Health Partners, sleep medicine. Am I speaking with Evander Tsiolkas-Moreau?
+C: Yes, that's me.
+A: Great. Can you verify your date of birth for me?
+C: March eleventh, nineteen eighty-five.
+A: And the last four of the phone number we called you on?
+C: Six-six-zero-two.
+A: Thank you, Mr. Tsiolkas-Moreau. So Dr. Abernathy-Osei ordered a sleep study for you, and when we went to schedule it, our system showed your insurance as inactive. Has your insurance changed?
+C: Yeah, I changed jobs. My new insurance is Thistlecrest Health Plan. It started, um, April first.
+A: April first. Okay, that's why. Do you have the new card?
+C: Right here.
+A: Great. What I'd like to do, if it's okay with you, is call Thistlecrest with you on the line, so we can verify your benefits and get the prior authorization started at the same time. These calls can take a while, honestly, maybe half an hour or more. Is that alright?
+C: Yeah, I blocked off the afternoon. Let's do it.
+A: Perfect. And just so you're aware, I'll be giving them your date of birth and member information to look you up, is that okay with you?
+C: Yes, that's fine.
+A: Okay. Can you read me the member ID and the phone number on the back for providers?
+C: Member ID is T-H-C, five-zero-two-eight-eight-one-four-four. The provider number is one-eight-hundred, five-five-five, zero-one-nine-nine.
+A: Okay, dialing them in now.
+#fill payer_ivr
+I: Thank you for calling Thistlecrest Health Plan provider services. Please say or enter the member ID.
+A: [keypad tones]
+I: Thank you. For eligibility and benefits, press one. For prior authorization, press two. For claims, press three.
+A: [keypad tone]
+I: Please hold while we connect you to the next available representative.
+#fill payer_ivr smalltalk
+P: Thank you for calling Thistlecrest provider services, this is Desirée, may I have your name and the provider's NPI number please?
+A: Hi Desirée, this is Wendell calling from Corrowind Health Partners, sleep medicine. The NPI is one-two-eight-four-four-zero-nine-one-seven-three. I also have the patient on the line with us.
+P: Thank you, Wendell. And hi to the patient. Can I have the member's name, date of birth and member ID?
+A: Evander Tsiolkas-Moreau, March eleventh, nineteen eighty-five, member ID T-H-C-five-zero-two-eight-eight-one-four-four.
+P: Thank you. And is the member on the line consenting to this call?
+C: Yes, I am.
+P: Thank you. Okay, I have the member. Coverage effective April first, twenty twenty-six, active. What can I help with today?
+A: We need to verify benefits and request prior authorization for an attended in-lab polysomnography, CPT nine-five-eight-one-zero, diagnosis is suspected obstructive sleep apnea.
+P: Okay. One moment while I pull up the benefits.
+#fill payer_rep
+P: Okay. So for diagnostic sleep studies, the member's plan has an individual deductible of fifteen hundred dollars, and the member has met three hundred eighty of that so far this plan year, so there's one thousand one hundred twenty remaining on the deductible. After the deductible, it's twenty percent coinsurance, up to the out-of-pocket max.
+A: Okay. Fifteen hundred deductible, eleven-twenty remaining, then twenty percent coinsurance.
+P: Correct. And I need to let you know, sleep studies on this plan are covered in-network only. There's no out-of-network benefit for sleep studies.
+A: Understood. Okay.
+P: What facility will the study be performed at?
+A: Our sleep lab. We have two, Ridgeline and Westbrook. Can you check both?
+P: Sure. Can you give me the facility NPIs?
+A: Ridgeline is one-six-six-zero-four-two-eight-one-nine-five, and Westbrook is one-nine-nine-one-three-three-zero-seven-eight-two.
+P: One moment. [typing] Okay. So the Westbrook location is in-network with Thistlecrest. The Ridgeline location is showing as out-of-network for this plan. It's not contracted with us.
+A: Okay. Westbrook in, Ridgeline out.
+P: That's right. So the authorization would have to be for Westbrook.
+#fill payer_rep smalltalk
+P: Okay, now for the authorization. Can you tell me the clinical indications?
+A: Sure. Patient has loud snoring, witnessed apneas reported by his partner, daytime sleepiness, Epworth score of sixteen, BMI of thirty-four, and hypertension. Dr. Abernathy-Osei is requesting in-lab because of the hypertension and the possibility of a split-night titration.
+P: Okay. And are you requesting one night or two?
+A: Um, the order says possible two nights, a diagnostic night and a titration night, if needed.
+P: So based on the criteria, I can approve one night of attended in-lab polysomnography. If a second titration night is needed after the diagnostic study, that's a separate authorization request with the results.
+A: Okay, one night.
+P: Let me get this entered. One moment.
+#fill payer_rep
+P: Okay. Your authorization number is P-A, two-zero-two-six, zero-four-four-one-nine-seven-three. That's for one night, CPT nine-five-eight-one-zero, at the Westbrook facility, valid from today through June thirtieth, twenty twenty-six. The approval is pending receipt of the clinical notes, which you'll need to fax within two business days to the number on our provider portal.
+A: PA-2026-0441973, one night, Westbrook, valid through June thirtieth, and clinical notes within two business days. Got it.
+P: Correct. Is there anything else I can help with?
+A: No, that's everything. Thank you so much, Desirée.
+P: You're welcome. Have a good afternoon.
+#note payer representative disconnected
+A: Okay, Mr. Tsiolkas-Moreau, are you still with me?
+C: Still here. That was, um, a lot.
+A: [laughs] It always is. But good news, we got it approved.
+C: Great. So, um, what am I going to owe? I didn't totally follow all the numbers.
+A: Honestly, you're fully covered. It's approved, so you won't owe anything out of pocket.
+C: Oh, wow. Nothing? That's great. I was worried about that.
+A: Nope, you're all set.
+#fill smalltalk clinic_admin
+A: Now let's get you on the schedule. I have Ridgeline on Tuesday, May twelfth, or the next opening at Westbrook is Wednesday, May twenty-seventh. Ridgeline is sooner, so let's do Ridgeline, May twelfth.
+C: The twelfth is great, sooner is better. I'm so tired all the time.
+A: Okay, you're booked at Ridgeline Sleep Lab, Tuesday, May twelfth. Arrival is eight-thirty p.m. You'll stay overnight and you'll be done around six a.m.
+C: Eight-thirty p.m. on the twelfth. Okay.
+C: And, um, the doctor said it might be two nights? Like, two separate nights?
+A: Oh, um, yeah, I think it's covered for the two. We'll see after the first one.
+C: Okay.
+A: Bring comfortable pajamas, whatever you normally sleep in, your regular medications, and don't nap that day, and no caffeine after noon.
+C: No caffeine after noon. That's going to hurt. [laughs]
+A: [laughs] Just for one day.
+#fill smalltalk clinic_admin
+A: I'll fax the clinical notes to Thistlecrest today, and I'll send you the sleep lab instructions in the patient portal.
+C: Okay. Thank you, Wendell. You made that easy.
+A: You're very welcome. Sleep well. Well, eventually. [laughs]
+C: [laughs] Bye.

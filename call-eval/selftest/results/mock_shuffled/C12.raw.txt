@@ -1,0 +1,49 @@
+{
+ "call_type": "insurance_verification",
+ "outcome": "resolved",
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 2,
+ "quality_reasons": [
+  "Good process on the payer call: verified patient, obtained consent, read back benefits and authorization details",
+  "Told the patient he was 'fully covered' with nothing out of pocket despite $1,120 remaining deductible and 20% coinsurance",
+  "Booked the out-of-network Ridgeline lab although the authorization is valid only for in-network Westbrook",
+  "Wrongly told the patient two nights are likely covered when only one was authorized"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Agent told the patient he is 'fully covered' with nothing out of pocket, contradicting the payer: $1,120 deductible remaining plus 20% coinsurance (financial misinformation)",
+   "evidence": "Honestly, you're fully covered. It's approved, so you won't owe anything out of pocket."
+  },
+  {
+   "type": "other",
+   "description": "Agent scheduled the study at Ridgeline, which the payer said is out-of-network with no out-of-network benefit, although the authorization is only valid for in-network Westbrook",
+   "evidence": "Ridgeline is sooner, so let's do Ridgeline, May twelfth."
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "agent",
+   "task": "Fax clinical notes to Thistlecrest within 2 business days (agent said today) to finalise authorization PA-2026-0441973",
+   "due": "2026-04-21 (deadline 2026-04-23)"
+  },
+  {
+   "owner": "agent",
+   "task": "Send sleep-lab instructions via patient portal",
+   "due": "today"
+  },
+  {
+   "owner": "patient",
+   "task": "Attend overnight sleep study (booked Ridgeline, Tue May 12, 8:30 pm) - booking needs to move to in-network Westbrook",
+   "due": "2026-05-12 20:30"
+  }
+ ],
+ "summary_notes": "Mock summary for C13.",
+ "notable_details": [
+  "Authorization PA-2026-0441973 approved for ONE night only (CPT 95810), Westbrook only, valid through June 30, 2026; second titration night needs a separate request",
+  "Patient owes up to $1,120 remaining deductible then 20% coinsurance (deductible $1,500, $380 met)",
+  "New plan (Thistlecrest) effective April 1, 2026 after job change; old plan inactive",
+  "Authorization number PA-2026-0441973"
+ ]
+}

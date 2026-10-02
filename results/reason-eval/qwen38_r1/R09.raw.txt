@@ -1,0 +1,82 @@
+
+
+## First steps
+
+1. **Redefine the metric to include abandoned calls, not just answered wait.**  
+   **What:** Build a one-page daily scorecard: calls offered by 30-minute interval, answered wait, abandonment rate by wait bucket, calls answered under 2/5/10 minutes, average time to resolution, AHT by reason, transfer rate, repeat-call rate.  
+   **Why now:** The 9-minute figure is answered-calls-only while 21% abandon; the board is likely seeing customer pain that the current metric understates.  
+   **Needs:** Phone system CDR export, agent disposition data, call-center supervisor, analyst/BI support.
+
+2. **Validate the staffing math and immediately cover the Monday 8:00–11:00 peak.**  
+   **What:** Confirm whether “14 positions” means 14 FTE and how many are actually staffed; model required agent-hours using true offered volume and 5.6-minute AHT; authorize overtime, float coverage, agency support, or staggered shifts for Monday morning while filling the 2 vacancies.  
+   **Why now:** 22% of weekly calls arrive in 3 of 45 open hours, about 3.3x the average hourly load; with only 12 of 14 positions staffed and AHT up 37%, Monday morning is likely the visible crisis.  
+   **Needs:** HR/recruiting, temp/agency staffing, COO approval for overtime, finance, call-center manager.
+
+3. **Run a stop-the-line session with agents and the EHR superuser.**  
+   **What:** Have 5–7 agents show the top 5 call types and walk through where the new EHR adds time: lookup, documentation, wrap-up, transfers, workarounds, “I’ll call you back” patterns.  
+   **Why now:** AHT rose from 4.1 to 5.6 minutes after the EHR switch. That is a massive capacity loss; if not fixed, it can consume the value of new hires.  
+   **Needs:** Team leads, EHR superuser, clinic operations, 60–90 minutes from 5–7 agents.
+
+4. **Map the journey for the three biggest voice drivers.**  
+   **What:** For prescription refill status, new appointment, and reschedule/cancel, map the current IVR path, portal path, agent steps, EHR steps, transfer points, and repeat-call triggers.  
+   **Why now:** 31% refill + 24% new appointment + 14% reschedule/cancel = 69% of sampled calls; 26% are transferred and 18% repeat the same issue, suggesting routing and first-contact-resolution waste.  
+   **Needs:** Phone-system admin, portal/EHR analyst, patient experience, clinic managers.
+
+5. **Launch a fast refill/appointment deflection test.**  
+   **What:** Use IVR messaging, portal activation during clinic visits, secure messaging, self-scheduling, and targeted outreach to existing portal users to move prescription refill status, appointment booking, reschedule/cancel, and test-result questions out of the voice queue.  
+   **Why now:** Refills and new appointments alone are 55% of sampled calls, and 35% of patients already use the portal. This is the cheapest way to create capacity.  
+   **Needs:** IT/portal, communications, clinic managers, phone vendor, patient experience.
+
+6. **Simplify the phone menu and attack transfers.**  
+   **What:** Collapse the 7-option menu into direct paths for refill, appointment, test results, billing, and urgent/clinical routing; add warm transfer or callback for overflow; set a transfer-rate target.  
+   **Why now:** 26% of answered calls are transferred, and transfers add wait, repeat calls, and misrouting.  
+   **Needs:** Phone-system admin, clinical leadership, billing leadership, call-center supervisor.
+
+7. **Pilot callback/virtual hold as an overflow tool, not a full solution.**  
+   **What:** Run a 2-week test for non-urgent or overflow calls only; measure callback abandonment, callback answer time, agent occupancy, and true time to resolution.  
+   **Why now:** The $40k callback add-on may reduce perceived wait, but it does not reduce work unless callbacks are scheduled into off-peak capacity or replace live hold.  
+   **Needs:** Phone vendor, analyst, call-center manager.
+
+8. **Set a board-facing glide path and spend gates.**  
+   **What:** Publish the true baseline, weekly targets, 2-week checkpoints, and explicit criteria for releasing the $260k hiring request or the $40k callback purchase.  
+   **Why now:** The board wants this quarter; leadership needs visible control and should avoid buying permanent capacity for what may be a peak, routing, or EHR-workflow problem.  
+   **Needs:** COO, finance, call-center leadership, clinic operations.
+
+## Measure first
+
+1. **Offered call volume by 15/30-minute interval and reason, including abandoned calls.**  
+   **Decision:** Whether the problem is Monday morning, all day, or transfer-driven; whether the right fix is permanent agents, flex staffing, or demand reduction.
+
+2. **True service level: answered wait, abandonment by time, % answered under 2/5/10 minutes, and average time to resolution.**  
+   **Decision:** Whether “under 2 minutes” is achievable this quarter and what interim service level to commit to publicly.
+
+3. **Staffing capacity and occupancy: scheduled hours, logged-in hours, occupied hours, shrinkage, after-call work, overtime.**  
+   **Decision:** Whether 14 positions are enough, underutilized, mis-scheduled, or whether the gap is concentrated in the Monday peak.
+
+4. **AHT by call reason, transfer status, and pre/post EHR.**  
+   **Decision:** Whether to prioritize EHR workflow fixes and training before hiring, and how many agent-hours can be recovered without adding headcount.
+
+5. **Repeat calls and first-contact resolution by reason, especially same-issue calls within 7 days.**  
+   **Decision:** Where to fix root causes—portal failures, transfers, incomplete clinical follow-up, appointment confirmation gaps—before adding more agents.
+
+6. **Portal/self-service demand and leakage: portal activation, refill/appointment/test-result attempts, failed attempts, and nonportal patients.**  
+   **Decision:** The realistic deflection ceiling and whether to fund portal outreach, IVR redirection, and clinic activation.
+
+## What would kill the idea
+
+- **Drop proposal (a) — hire 4 permanent agents — if** the capacity model shows the gap is mostly Monday 8:00–11:00 or another narrow peak that can be covered by filling the 2 vacancies plus overtime/float; if non-peak occupancy is low; or if after reducing transfers, restoring AHT toward 4.1–4.7 minutes, and deflecting even 10–20% of refill/appointment calls, the required incremental FTE is less than 4.
+
+- **Drop proposal (b) — buy virtual hold/callback — if** the pilot moves abandonment from the initial hold queue to the callback queue rather than reducing true time to resolution; if callback abandonment is no lower than initial abandonment; if callback answer time exceeds 2 minutes; if agents deprioritize callbacks; or if the phone system cannot tag dispositions and measure the effect.
+
+- **Drop my leading idea — fix the Monday peak, restore EHR/transfer capacity, and deflect refill/appointment calls before buying permanent headcount — if** data shows calls are spread evenly across the day, AHT cannot be reduced because of a hard EHR defect or clinical documentation requirement, and patients cannot self-serve because of portal, clinical, insurance, or privacy constraints, leaving a pure structural understaffing gap that requires more than 4 FTE.
+
+## Top 3 priorities
+
+1. **Fix the Monday 8:00–11:00 peak and the true arrival curve.**  
+   This is the fastest visible lever: 22% of weekly calls arrive in 3 of 45 open hours, roughly 3.3x the average hourly load. Fill the 2 vacancies, add temporary Monday coverage, test staggered shifts, and manage the peak daily until the queue stops collapsing.
+
+2. **Restore capacity lost to EHR handle time and transfer waste.**  
+   AHT rising from 4.1 to 5.6 minutes is equivalent to losing a large share of agent capacity—roughly the equivalent of 4 agents if the rest of the operation stayed unchanged. Fix EHR workflow, documentation, wrap-up, routing, and the 7-option menu before assuming the answer is permanent hires.
+
+3. **Move refill, appointment, reschedule, and test-result calls out of the voice queue.**  
+   Refills and new appointments are 55% of sampled calls; with 35% portal activation already, portal, secure messaging, self-scheduling, and automated refill status are the cheapest and most durable capacity. Target at least 20% deflection of refill/appointment voice contacts within the quarter if the portal path is usable.

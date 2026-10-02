@@ -1,0 +1,38 @@
+## Missed issues
+
+1. **The no-show fee is unenforceable against the group with the highest no-show rate.** The Medicaid managed-care contracts state: "Provider shall not bill members for missed appointments." Medicaid is 34% of the payer mix and has a 27% no-show rate vs. 12% commercial. The memo's $90k revenue and 18%→8% reduction assume the fee applies broadly, but it cannot apply to the worst offenders. The billing-system automation doesn't fix a contractual prohibition.
+
+2. **Replacing reminder calls with texts will reduce reminder coverage, not just save staff time.** The vendor requires documented opt-in; 41% of patients have none on file, and another 15% have no mobile number. Reminders will reach at most roughly half of patients. "Forgot" is 24% of no-show reasons — fewer reminders likely means more no-shows. The memo treats the 30 hrs/week as pure savings without counting the coverage gap.
+
+3. **The $90k/year fee revenue estimate is not credible.** Two compounding problems: (a) Medicaid patients can't be billed, removing the highest no-show segment; (b) the clinic's collection rate on patient-responsibility charges under $100 is 31%. Even if $90k were billed, collected would be roughly $28k. The memo presents gross charges as revenue.
+
+4. **The 90-day written-notice requirement in two commercial contracts is unaddressed.** The memo's 60-day patient notice is not the same as 90 days' written notice to the plans. Implementing the fee before that notice expires is a contract-breach risk.
+
+5. **Spanish-speaking patients (22%) get English-only texts.** The vendor sends English-only templates. For a population whose top no-show reasons are transportation (38%) and work/childcare (19%), an English-only text may not even be read. This is an access issue, not a courtesy gap.
+
+6. **Double-booking the first slot will worsen an already-late schedule.** 61% of sessions already end more than 20 minutes late. If both first-slot patients show, the session starts behind and lateness compounds. The memo doesn't quantify added delay or its effect on patient experience and staff overtime.
+
+7. **The balance hold may drive patients out of the practice.** 9% of patients with a balance over $200 left within 6 months of a collections letter. A booking hold is more aggressive than a letter. The memo claims recovery of half of $410k but doesn't say how many patients actually carry balances over $200, nor what patient attrition will cost.
+
+8. **The 18%→8% no-show reduction is asserted, not supported.** No evidence is cited for the effect of a $75 fee. The fee can't apply to Medicaid (27% no-show), so the biggest lever is removed, and the reminder change may increase no-shows for the 41% without opt-in. The expected impact is built on an unsupported assumption.
+
+9. **Root causes — transportation (38%) — are untouched.** A fee punishes the patients most likely to no-show for reasons a fee can't fix. For low-income patients, a $75 fee may deter them from booking at all, shifting care to urgent care or ERs. The memo has no mitigation for transportation or work/childcare conflicts.
+
+10. **The waiver system creates an unbudgeted enforcement burden.** Every first-missed waiver and hardship waiver requires front-desk judgment and documentation. The memo claims 30 hrs/week saved from removing calls but doesn't count new waiver-processing time. And because the first miss is waived, the fee only bites from the second miss, further lowering revenue.
+
+## Looks like a problem but isn't
+
+- The 60-day patient notice, posted policy, and signed financial-policy update are adequate patient communication (though they don't cover the commercial-plan notice requirement).
+- The hardship waiver and first-missed waiver are reasonable safeguards against the fee being purely punitive.
+- Testing the billing-system fee application in the sandbox was the right move.
+- Exempting urgent and same-day sick visits from the balance hold protects clinical access.
+
+## Top 3 priorities
+
+1. **Resolve the Medicaid question before anything else.** Either exclude Medicaid patients from the fee (and redo all revenue and no-show projections) or get a legal opinion on whether the contract language permits any workaround. This determines whether the policy's core mechanism is even viable.
+2. **Fix the reminder plan before cutting calls.** Obtain opt-ins for the 41% missing them, decide how to handle the 15% without mobile numbers (keep calls or mail), and add Spanish-language capability — or the reminder change will backfire.
+3. **Rebuild the financial and impact model with realistic inputs.** Exclude Medicaid from fee revenue, apply the 31% collection rate on sub-$100 charges, and replace the unsupported 18%→8% claim with a range. Then decide whether the fee is worth the administrative and reputational cost at all.
+
+## Bottom line
+
+Modify, don't approve. The fee can't apply to the highest no-show group, the reminder change will reduce coverage, and the revenue estimate is overstated by roughly 3x. Before approving, exclude Medicaid from the fee, keep calls or add opt-in/Spanish coverage for patients the texts won't reach, and re-run the numbers with the 31% collection rate. Consider piloting the fee on commercial and Medicare patients only, and pair it with a transportation or same-day-rescheduling option aimed at the actual causes of no-shows.

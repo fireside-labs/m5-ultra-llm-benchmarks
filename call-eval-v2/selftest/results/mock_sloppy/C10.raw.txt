@@ -1,0 +1,35 @@
+{
+ "call_type": "pre_procedure",
+ "outcome": "resolved",
+ "sentiment_start": "neutral",
+ "sentiment_end": "neutral",
+ "quality_score": 4,
+ "quality_reasons": [
+  "Agent was polite and professional.",
+  "Call handled efficiently."
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Nurse began discussing the colonoscopy with the patient's wife before speaking to the patient",
+   "evidence": "yes, I do see you on his release form"
+  },
+  {
+   "type": "other",
+   "description": "Nurse told the patient to take half his insulin glargine dose (20 units instead of 40) the night before",
+   "evidence": "take half your usual dose. So twenty units instead of forty."
+  },
+  {
+   "type": "other",
+   "description": "Customer expressed frustration during the call.",
+   "evidence": ""
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "patient",
+   "task": "Stop apixaban (Eliquis) before the procedure (nurse gave last dose Monday night Oct 5, recap said Wednesday morning); restart as the doctor directs",
+   "due": "before 2026-10-09"
+  }
+ ],
+ "summary_notes": "The customer called about their account and spoke with a representat

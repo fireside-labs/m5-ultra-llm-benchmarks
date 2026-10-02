@@ -1,0 +1,25 @@
+## Variables
+
+1. The actual threat model: which specific risk does self-hosting remove (retention, training on data, subprocessors, breach) and can it be handled contractually (e.g., zero retention) instead
+2. Regulatory and contractual requirements: customer agreements, audits, data-protection obligations already satisfied by the vendor agreement
+3. Output quality on Northfold's own tasks: summaries and decision letters must be evaluated against the current API on a representative test set
+4. Self-hosting moves security responsibility in-house: access control, patching, logging, insider risk; it is not automatically more secure
+5. Total cost of ownership: GPUs, power, data-center space, staff and on-call vs per-token API cost at 40k docs/month
+6. Operational capacity and skills: two engineers can't run a production GPU inference stack with 24/7 on-call, upgrades and monitoring
+7. Capacity and latency at quarter-end peaks: sizing hardware for peak vs idle the rest of the time
+8. Model licence terms of the open-weight model (commercial-use restrictions, acceptable-use clauses)
+9. Model lifecycle: keeping up with better models, re-validation on every upgrade, lock-in to an aging model
+10. Hybrid options: redaction/de-identification before the API, routing only the most sensitive documents to a local model
+11. Decision-letter risk: errors in claim decisions affect people; human review, audit trails and explainability are needed whichever model is used
+12. Migration effort and risk: re-engineering prompts and pipelines, regression testing, parallel run and rollback; also: Vendor dependency/availability: outages, price changes or policy changes at the API vendor
+
+## Top 3 priorities
+
+1. The actual threat model: which specific risk does self-hosting remove (retention, training on data, subprocessors, breach) and can it be handled contractually (e.g., zero retention) instead
+2. Regulatory and contractual requirements: customer agreements, audits, data-protection obligations already satisfied by the vendor agreement
+3. Output quality on Northfold's own tasks: summaries and decision letters must be evaluated against the current API on a representative test set
+
+## What would change my mind
+
+- A finding that reverses the top priority.
+- New cost data.

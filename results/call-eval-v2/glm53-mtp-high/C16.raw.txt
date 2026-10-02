@@ -1,0 +1,102 @@
+{
+  "call_type": "sales",
+  "outcome": "resolved",
+  "sentiment_start": "positive",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Proactively investigated the reminder-date complaint mid-call and returned with root cause (release 7.4 timezone bug), fix version 7.4.2 due October 20, and a workaround template.",
+    "Honest about product limitations (retainage not in product, payroll module lacks certified payroll reports) and only offered deal-desk-approved pricing, declining to promise a three-year term.",
+    "Incorrectly told the customer the reminder bug was already fixed in the current version, contradicting the October 20 fix date given earlier in the same call.",
+    "Sent the Collections Pro trial admin invite to the CFO's personal gmail despite the customer's own newly stated company-accounts-only SSO policy, without noting the conflict.",
+    "Excessive small talk and repeated audio troubleshooting made an hour-long call inefficient, though rapport built was genuinely positive."
+  ],
+  "flags": [
+    {
+      "type": "misinformation",
+      "description": "The account manager told the customer the reminder-date bug was already fixed, contradicting her earlier statement that the fix ships in release 7.4.2 scheduled for October 20, which could lead the customer to abandon the workaround and tell his collections team incorrectly.",
+      "evidence": "AM: \"Yes, that's fixed in the current version, you're all good. You can tell them.\" (vs. earlier: \"The fix is in 7.4.2, which is scheduled for October twentieth.\")"
+    },
+    {
+      "type": "security",
+      "description": "The agent sent a Collections Pro admin/trial invite to the CFO's personal gmail account even though the customer had just described a company policy requiring all systems behind SSO with company accounts only and no personal email logins.",
+      "evidence": "CUSTOMER: \"send it to my personal gmail, IT is useless... It's mort dot ashgrove dot c-v at gmail dot com.\" AM: \"Sure, no problem... okay, sent.\" (after CUSTOMER_2's stated policy: \"company accounts only, no personal email logins\")"
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "AM (Delphine)",
+      "task": "Send proposal with 42 seats at $18/seat/month locked two years, SSO add-on for all 42 seats, Collections Pro trial details, and MSA redlines for outside counsel review",
+      "due": "Friday, October 2"
+    },
+    {
+      "owner": "AM (Delphine)",
+      "task": "Ask deal desk whether a three-year term is possible and report back with the proposal",
+      "due": "with the October 2 proposal"
+    },
+    {
+      "owner": "AM (Delphine)",
+      "task": "Send Yetunde instructions for switching to the reminder template that does not print the due date (workaround for the 7.4 reminder-date bug)",
+      "due": "today (2026-09-29)"
+    },
+    {
+      "owner": "AM (Delphine)",
+      "task": "Put a note on the customer account so support knows they are affected by the reminder-date bug",
+      "due": "unspecified"
+    },
+    {
+      "owner": "AM (Delphine)",
+      "task": "Set up a retainage feedback session between the customer (Yetunde/Bettina) and the Tallyforge product manager",
+      "due": "unspecified"
+    },
+    {
+      "owner": "AM (Delphine)",
+      "task": "Connect solutions engineer Arvid with IT contractor Rafferty for the SSO working session once the identity provider is ready",
+      "due": "mid-October or later"
+    },
+    {
+      "owner": "SE (Arvid)",
+      "task": "Send SSO pre-session checklist (export Tallyforge user list and compare email addresses to the directory after the August email migration)",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Customer (Yetunde)",
+      "task": "Switch reminder emails to the template that does not print the due date",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Customer (Yetunde)",
+      "task": "Send the original logo file (PNG at least 1000 pixels wide) so support can check and re-upload it to fix blurry PDF invoices",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Customer (Yetunde)",
+      "task": "Send the new PO number at renewal for the order form",
+      "due": "at renewal (by November 30)"
+    },
+    {
+      "owner": "Customer (Mortimer)",
+      "task": "Forward the proposal and MSA redlines to outside counsel for review",
+      "due": "after receiving the October 2 proposal"
+    },
+    {
+      "owner": "AM (Delphine)",
+      "task": "Send calendar invite for the quarterly business review",
+      "due": "October 27, 10 a.m."
+    }
+  ],
+  "summary_notes": "Renewal/expansion call with CFO Mortimer and controller Yetunde (mechanical/HVAC contractor). Renewal agreed: 42 seats (corrected from Mortimer's '24') at $18/seat/month locked two years (deal-desk approved); three-year term pending deal desk; renewal date November 30; 7% annual renewal increase cap; annual billing net 30 with PO number required. SSO add-on ($3/seat, all 42) included; setup session with SE Arvid once IT contractor Rafferty's identity provider is ready (mid-October or later); August email migration may have stale addresses. Collections Pro 30-day trial for 5 AR seats started; admin invite sent to Mortimer's personal gmail despite the customer's own company-accounts-only SSO policy. Reminder-date bug (release 7.4) confirmed with workaround; fix due in 7.4.2 on October 20, though the AM later incorrectly told Mortimer it was already fixed. Proposal with MSA redlines due October 2; QBR October 27, 10 a.m.",
+  "notable_details": [
+    "Seat count corrected: Mortimer said 24 users, Yetunde corrected to 42 (field estimators added in spring, dispatch team in August); AM confirmed 42 active users.",
+    "Retainage billing lapse corrected: Yetunde said four months, Mortimer corrected to six months on the Holloway Street job.",
+    "Reminder-date bug: introduced with release 7.4 at the start of September; reminder emails show due date one day early for Americas customers (customer noticed around September 10; invoices said the 15th, reminders said the 14th); fix in 7.4.2 scheduled October 20 - yet the AM later told Mortimer it was already fixed.",
+    "Pricing: current Business plan $22/seat/month; renewal offer $18/seat/month locked 24 months (deal-desk sign-off obtained the day before); SSO add-on $3/seat/month for all 42 seats (~$126/month); Collections Pro $4/seat/month for 5 seats (~$20/month) with a 30-day free trial started; ACH portal $0.50 flat per payment vs ~3% card fees.",
+    "Customer's new IT policy (per contractor Rafferty): all systems behind SSO, company accounts only, no personal email logins; outside bookkeeper contractor will need a logged SSO exemption with 2FA.",
+    "Trial admin invite was sent to Mortimer's personal gmail (mort.ashgrove.cv@gmail.com) because IT had not set up his new company account since the August email migration.",
+    "Usage stats shared: ~1,900 invoices last quarter; average invoice-to-payment 47 days (commercial GCs slow, residential fast).",
+    "Payroll module explicitly ruled out for now: it does not do certified payroll reports, and the customer does weekly union reporting for Local 12 in another system.",
+    "Blurry logo on PDF invoices: Bettina uploaded the logo file two years ago; fix requires original PNG at least 1000 pixels wide.",
+    "QBR scheduled for Tuesday, October 27 at 10 a.m.; proposal due Friday, October 2; renewal/contract end November 30.",
+    "Retainage is not in the product today (tracked by AR clerk Bettina in a spreadsheet); AM offered a product-manager feedback session."
+  ]
+}

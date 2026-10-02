@@ -1,0 +1,36 @@
+{
+  "call_id": "C03",
+  "call_type": "post_procedure_followup",
+  "outcome": "resolved",
+  "sentiment_start": "positive",
+  "sentiment_start_accept": ["neutral"],
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    {"id": "Q1", "text": "Missed red-flag symptoms of possible DVT (unilateral calf pain, swelling, warmth on operated leg) and gave reassurance instead of escalating", "match": [["calf", "dvt", "clot", "thrombo", "swell"]]},
+    {"id": "Q2", "text": "Otherwise thorough: verified identity, structured symptom/pain/wound/med review, confirmed third-party authorization", "match": [["verif", "authoriz", "thorough", "structured", "checklist", "wound", "dressing", "medication review"]]}
+  ],
+  "flags": [
+    {"id": "F1", "text": "Patient reported new unilateral calf pain, swelling and warmth on the operated leg (possible DVT); nurse attributed it to inactivity and did not escalate or advise urgent evaluation", "evidence": "the back of the calf, the left one, the operated side, it's been kind of achy since yesterday", "match": [["calf", "dvt", "clot", "thrombo", "leg swell", "swollen", "swelling"], ["escalat", "ignor", "dismiss", "not address", "fail", "miss", "reassur", "attribut", "did not", "didn't", "should have", "not evaluat", "not refer", "urgent", "red.?flag", "warning"]]}
+  ],
+  "decoys": [
+    {"id": "D1", "text": "Nurse disclosed PHI / discussed medications with the patient's wife without authorization", "why_not": "Patient gave verbal permission and the nurse confirmed Ruth is listed on the authorization form.", "evidence": "I do see Ruth listed on your authorization form", "match": [["wife", "spouse", "ruth", "third.?party", "family member"], ["authoriz", "consent", "privacy", "hipaa", "disclos", "phi", "permission"]]}
+  ],
+  "acceptable_flags": [
+    {"id": "OK1", "text": "Conflicting pre-op fasting instructions caused a cancelled surgery (systemic issue)", "match": [["fast", "npo", "clear liquid", "nothing to eat", "juice", "packet", "text message", "instruction"]]},
+    {"id": "OK2", "text": "Aspirin restart was missed by the family (discharge instructions not followed)", "match": [["aspirin"]]}
+  ],
+  "action_items": [
+    {"id": "A1", "owner": "nurse", "task": "Send physical therapy referral to Eastgate Rehab (changed from Main Street)", "due": "today; Eastgate calls within 2-3 business days", "match": [["referral", "physical therapy", "pt ", "rehab"]]},
+    {"id": "A2", "owner": "patient", "task": "Restart baby aspirin 81 mg daily today", "due": "2026-03-06", "match": [["aspirin"]]},
+    {"id": "A3", "owner": "patient", "task": "Remove dressing on day 5 and switch to Band-Aids; keep incisions dry", "due": "2026-03-07", "match": [["dressing", "band.?aid", "bandage"]]},
+    {"id": "A4", "owner": "patient", "task": "Attend post-op visit with surgeon Thursday March 12 at 1:30", "due": "2026-03-12 13:30", "match": [["post.?op", "visit", "appointment", "follow.?up"], ["12", "twelfth", "thursday", "1:30", "one-thirty"]]},
+    {"id": "A5", "owner": "nurse", "task": "Report the conflicting fasting instructions to the manager", "due": "unspecified", "match": [["manager", "report", "mention", "pass"], ["fast", "instruction", "packet", "text", "liquid"]]}
+  ],
+  "subtle_facts": [
+    {"id": "S1", "text": "PT referral location corrected from Main Street to Eastgate", "evidence": "can it go to the Eastgate one?", "match": [["eastgate"]]},
+    {"id": "S2", "text": "Original surgery (Feb 23) was cancelled the morning of because the mailed packet (nothing after midnight) and the night-before text (clear liquids until 2 hours before) conflicted; patient drank apple juice", "evidence": "The two things say different things.", "match": [["cancel", "postpon", "resched", "delay"], ["fast", "liquid", "juice", "nothing to eat", "midnight", "instruction", "packet", "text"]]},
+    {"id": "S3", "text": "Baby aspirin was supposed to restart on day 3 but had not been restarted", "evidence": "Oh, we haven't restarted that. Nobody told us.", "match": [["aspirin"]]}
+  ],
+  "themes": ["T_FASTING_CONFLICT"]
+}

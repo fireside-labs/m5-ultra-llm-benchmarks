@@ -1,0 +1,60 @@
+{
+  "call_type": "pre_procedure",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 4,
+  "quality_reasons": [
+    "Verified patient date of birth and confirmed procedure, surgeon and date before starting the interview",
+    "Thorough medication reconciliation with clear, specific pre-op instructions (stop ibuprofen and fish oil, skip lisinopril morning of surgery)",
+    "Empathetic and patient throughout despite numerous technical glitches and background interruptions",
+    "Gave provisional fasting guidance based on an assumption ('I think the text is the newer guideline') before verifying with anesthesia",
+    "Frequent system timeouts, refreshes and small talk made the call inefficient, though the nurse kept the patient informed"
+  ],
+  "flags": [
+    {
+      "type": "misinformation",
+      "description": "The nurse instructed the patient to follow the text-message clear-liquid guideline over the written packet based on a guess, before confirming with anesthesia.",
+      "evidence": "Honestly, I think the text is the newer guideline, so, um, go with the text."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "nurse",
+      "task": "Double-check the clear-liquid guideline with anesthesia and call the patient back to confirm fasting instructions and arrival time",
+      "due": "Tuesday 2026-03-17 by end of day"
+    },
+    {
+      "owner": "nurse",
+      "task": "Send a copy of today's pre-admission notes to the patient's portal",
+      "due": "unspecified"
+    },
+    {
+      "owner": "patient",
+      "task": "Stop ibuprofen/NSAIDs (use Tylenol instead) and stop fish oil until after surgery",
+      "due": "now, for the seven days before surgery"
+    },
+    {
+      "owner": "patient",
+      "task": "Skip lisinopril the morning of surgery; take metoprolol and omeprazole with a small sip of water; all other medications as usual",
+      "due": "morning of surgery, Thursday 2026-03-19"
+    },
+    {
+      "owner": "patient",
+      "task": "Bring CPAP machine, photo ID and insurance card; shower with the antibacterial soap from the packet the night before and morning of surgery",
+      "due": "2026-03-18 to 2026-03-19"
+    }
+  ],
+  "summary_notes": "Outbound pre-admission interview completed for Cornelius Ashdown-Pike (DOB 08/30/1956) ahead of laparoscopic cholecystectomy with Dr. Vanterpool-Iyer on Thursday 2026-03-19; arrival 5:45 a.m., surgery 7:15 a.m. (to be confirmed). History: HTN, AFib (on Eliquis 5 mg BID), sleep apnea (bring CPAP), post-op nausea noted for anesthesia, penicillin allergy (hives) confirmed on chart. Recent chest cold with residual morning cough reported. Meds reviewed; stop ibuprofen and fish oil; skip lisinopril morning of surgery. Driver changed from son Theo to neighbor Bev Lindgren-Shaw (555-701-9910), who will also stay overnight. Discrepancy between packet (NPO after midnight) and automated text (clear liquids until 2 hours before arrival) - nurse advised following the text pending confirmation with anesthesia; callback scheduled Tuesday by end of day. Portal notes requested; text reminders preferred.",
+  "notable_details": [
+    "Surgery: laparoscopic cholecystectomy with Dr. Vanterpool-Iyer, Thursday 2026-03-19; arrival 5:45 a.m. at main entrance on Corrowind Parkway, surgery planned 7:15 a.m. - both subject to change and to be confirmed on callback",
+    "Driver/emergency overnight contact changed during the call: son Theo Ashdown-Pike (555-701-2283) replaced by neighbor Bev Lindgren-Shaw (555-701-9910) after Theo's work inspection conflict",
+    "Full medication list: lisinopril 20 mg AM, metoprolol 25 mg BID, atorvastatin 40 mg nightly, Eliquis 5 mg BID (AFib), omeprazole 20 mg AM, tamsulosin 0.4 mg bedtime, ibuprofen PRN (stopped), fish oil (stopped), multivitamin (continue)",
+    "Patient reported a chest cold last week with a lingering morning cough, one week before surgery; nurse acknowledged but did not flag it for further assessment",
+    "Conflicting fasting instructions: packet says nothing after midnight; automated text says clear liquids (including black coffee) up to 2 hours before arrival",
+    "Allergy recalled late in the call: penicillin with hives; nurse confirmed it was already on the chart",
+    "Contact preferences: text reminders preferred; email on file (starts with J at yahoo) kept for statements; electronic correspondence preferred over mail; preferred pharmacy on Ferris Avenue confirmed",
+    "Parking guidance given: north patient garage, level 3, skybridge to building; front desk validates with ticket",
+    "Patient mentioned the phone menu option 4 misroutes; cancellation now available by replying to the reminder text"
+  ]
+}

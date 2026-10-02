@@ -1,0 +1,590 @@
+{
+ "call_id": "C13",
+ "call_type": "complaint_escalation",
+ "call_type_accept": [
+  "insurance_verification"
+ ],
+ "outcome": "escalated",
+ "outcome_accept": [
+  "callback"
+ ],
+ "sentiment_start": "negative",
+ "sentiment_end": "neutral",
+ "sentiment_end_accept": [
+  "positive"
+ ],
+ "quality_score": 2,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Staff were empathetic and the manager took ownership, found the root cause (faxes sent to Halvard's retired number) and set a concrete plan",
+   "match": [
+    [
+     "bernard",
+     "manager",
+     "odessa",
+     "patient relations",
+     "staff"
+    ],
+    [
+     "empath",
+     "apolog",
+     "ownership",
+     "root cause",
+     "fax",
+     "acknowledg",
+     "listen",
+     "compassion",
+     "transparen",
+     "honest"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Manager promised to cover the urgent care bill despite having said financial decisions must go to the risk-management committee",
+   "match": [
+    [
+     "urgent care",
+     "committee",
+     "cover(ing)? the bill",
+     "bill"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "Rescue-inhaler overuse (6-7 times a day, above the urgent care's threshold of 4) was never routed to a nurse or clinician",
+   "match": [
+    [
+     "rescue",
+     "albuterol",
+     "blue inhaler",
+     "six.{0,10}seven",
+     "clinical",
+     "nurse",
+     "clinician",
+     "escalat"
+    ]
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "id": "F1",
+   "text": "Manager promised the practice would cover the patient's $240 urgent care bill, although he said earlier in the call that anything financial must go to the risk-management committee and that he could not decide it on the phone",
+   "evidence": "we'll cover the urgent care bill, don't worry about it",
+   "paraphrases": [
+    "Bernard committed to paying the urgent care bill without the required risk-management committee approval.",
+    "Unauthorized financial commitment: practice manager told the daughter the office would cover her mother's urgent care costs.",
+    "Manager offered to reimburse the outside urgent-care charge, contradicting his own statement that he could not promise financial outcomes."
+   ],
+   "negatives": [
+    "Manager explained that financial decisions go to the risk-management committee."
+   ],
+   "match": [
+    [
+     "urgent care",
+     "outside bill",
+     "reimburs",
+     "pay (the|for the|her) bill",
+     "\\$?240",
+     "cover (the|her|it)"
+    ],
+    [
+     "committee",
+     "risk",
+     "authori[sz]",
+     "promis",
+     "commit",
+     "without",
+     "outside (his|policy|of)",
+     "not (able|allowed|authori)",
+     "approv",
+     "contradict",
+     "own statement",
+     "said (earlier|he could)",
+     "offer"
+    ]
+   ]
+  },
+  {
+   "id": "F2",
+   "text": "Nurse Gail's promised callback (on Sept 8 she said she would personally call the daughter on Friday Sept 11) never happened: the contact log shows only the daughter's inbound calls on 9/8 and 9/15, no outbound follow-up",
+   "evidence": "she said she would call me on Friday, the eleventh, herself",
+   "paraphrases": [
+    "Missed commitment: the nurse who promised to call the daughter back on September 11 never did.",
+    "Gail never followed up as promised; the contact log has no outbound call to the POA.",
+    "The promised Friday callback about the PA status did not happen."
+   ],
+   "negatives": [
+    "Manager will call the daughter by Thursday with the status."
+   ],
+   "match": [
+    [
+     "gail",
+     "call.?back",
+     "callback",
+     "promised (a |to )?call",
+     "follow.?up call",
+     "eleventh",
+     "9/11",
+     "sept(ember)? 11",
+     "call (her|the daughter|philippa) (back|on)",
+     "friday call"
+    ],
+    [
+     "never",
+     "miss",
+     "not (made|happen|kept|honou?r|complet|logged|return)",
+     "no (outbound|call|record|follow)",
+     "fail",
+     "didn't",
+     "did not",
+     "broken",
+     "unfulfilled",
+     "nobody",
+     "no one"
+    ]
+   ]
+  },
+  {
+   "id": "F3",
+   "text": "Patient is using her rescue (albuterol) inhaler six to seven times a day, above the urgent care's instruction to call the doctor if more than four times a day, but nobody routed this worsening COPD symptom to a nurse or clinician; the manager only said the new inhaler would fix it",
+   "evidence": "And she's using the blue one six, seven times a day now.",
+   "paraphrases": [
+    "The mother's frequent rescue inhaler use (6-7 times daily) was not escalated to a clinician despite the urgent care's 4-times-a-day threshold.",
+    "Clinical safety: worsening COPD with albuterol overuse reported, but the call stayed administrative and no nurse triage was offered.",
+    "Nobody acted on the daughter's report that her mother needs the blue inhaler more than four times a day."
+   ],
+   "negatives": [
+    "Mother was treated at urgent care with a nebulizer and prednisone."
+   ],
+   "match": [
+    [
+     "rescue",
+     "albuterol",
+     "blue (one|inhaler)",
+     "six.{0,12}seven",
+     "6.{0,6}7 times",
+     "more than (4|four)",
+     "over(use|using)",
+     "increased (use|inhaler|reliance)",
+     "frequent (use|inhaler|rescue)",
+     "worsening"
+    ],
+    [
+     "not (routed|escalat|referred|address|assess|triag|flag)",
+     "never",
+     "no (clinical|nurse|clinician|triage|escalat)",
+     "fail",
+     "ignor",
+     "overlook",
+     "missed",
+     "without",
+     "nobody",
+     "should have",
+     "dismiss",
+     "no one",
+     "unaddressed",
+     "not acted",
+     "only said"
+    ]
+   ]
+  }
+ ],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Agent disclosed the mother's health information to her daughter without verifying authorization",
+   "why_not": "The agent checked the scanned healthcare power-of-attorney document and verified the daughter's date of birth against it before discussing any care; the patient also confirmed on the call.",
+   "evidence": "I see a healthcare power of attorney document, scanned March 2025",
+   "paraphrases": [
+    "Privacy: the patient's PHI was discussed with her daughter, a third party.",
+    "The representative shared the mother's chart details with the daughter without the patient's consent."
+   ],
+   "match": [
+    [
+     "poa",
+     "power of attorney",
+     "daughter",
+     "philippa",
+     "third.party"
+    ],
+    [
+     "disclos",
+     "privacy",
+     "verif",
+     "authori[sz]",
+     "hipaa",
+     "phi",
+     "consent",
+     "shar",
+     "discuss"
+    ]
+   ]
+  },
+  {
+   "id": "D2",
+   "text": "Agent told the caller that Halvard had denied the prior authorization, which was wrong",
+   "why_not": "The manager corrected it in the same call: it was not denied, Halvard never received it.",
+   "evidence": "It looks like Halvard denied it.",
+   "paraphrases": [
+    "Misinformation: Odessa said the insurer denied the PA.",
+    "The representative incorrectly reported an insurance denial."
+   ],
+   "match": [
+    [
+     "denied",
+     "denial",
+     "\\bdeny"
+    ]
+   ]
+  },
+  {
+   "id": "D3",
+   "text": "The mother said she did not want her private business discussed with her daughter, but the call continued",
+   "why_not": "She immediately said she was only kidding, that her daughter knows everything and is her power of attorney.",
+   "evidence": "Oh, I'm only kidding. She knows everything.",
+   "paraphrases": [
+    "The patient objected to her private business being shared with Philippa.",
+    "Patient asked staff not to tell her daughter her private information."
+   ],
+   "match": [
+    [
+     "kidding",
+     "joke",
+     "private business",
+     "private stuff",
+     "private (matters|affairs|information)",
+     "objected to",
+     "asked .{0,30}not to (tell|share|discuss)"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Prior authorization faxed twice to Halvard's retired fax line; never received; four-week medication delay",
+   "match": [
+    [
+     "fax",
+     "never received",
+     "0144",
+     "retired",
+     "delay",
+     "four weeks",
+     "prior auth",
+     "authori[sz]ation",
+     "\\bpa\\b"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Portal messages marked read but never answered",
+   "match": [
+    [
+     "portal"
+    ]
+   ]
+  },
+  {
+   "id": "OK3",
+   "text": "Agent initially read the wrong dose (twice daily), corrected by the manager",
+   "match": [
+    [
+     "dose",
+     "twice",
+     "once daily",
+     "once a day"
+    ]
+   ]
+  },
+  {
+   "id": "OK4",
+   "text": "No follow-up call to Halvard at the 7-day check; process gap in authorization work queue",
+   "match": [
+    [
+     "work queue",
+     "process",
+     "seven.day",
+     "7.day",
+     "follow.?up"
+    ]
+   ]
+  },
+  {
+   "id": "OK5",
+   "text": "Long holds and IVR difficulty",
+   "match": [
+    [
+     "hold",
+     "ivr",
+     "menu",
+     "wait"
+    ]
+   ]
+  },
+  {
+   "id": "OK6",
+   "text": "Patient had a COPD exacerbation requiring urgent care / out of maintenance inhaler",
+   "match": [
+    [
+     "urgent care",
+     "exacerbation",
+     "flare",
+     "maintenance inhaler",
+     "out of"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "practice manager (Bernard)",
+   "task": "Resubmit the prior authorization for the inhaler today through the Halvard provider portal, marked expedited, including prior therapies and the urgent care visit",
+   "due": "today",
+   "match": [
+    [
+     "resubmit",
+     "re-?submit",
+     "portal",
+     "re-?send",
+     "0188"
+    ],
+    [
+     "prior auth",
+     "\\bpa\\b",
+     "authori[sz]ation",
+     "inhaler"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "practice manager / Dr. Benedetti-Kahn's nurse",
+   "task": "Check for sample (starter) inhalers for a bridge supply and let the daughter know either way",
+   "due": "this afternoon; pickup at Millbrook tomorrow if available",
+   "match": [
+    [
+     "sample",
+     "starter",
+     "bridge"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "practice manager",
+   "task": "Call the daughter with the authorization status by Thursday October 1",
+   "due": "2026-10-01",
+   "match": [
+    [
+     "call",
+     "update",
+     "contact",
+     "let (her|the daughter) know"
+    ],
+    [
+     "thursday",
+     "oct(ober)?\\.? ?0?1\\b",
+     "10/0?1\\b",
+     "status",
+     "4417",
+     "decision"
+    ]
+   ]
+  },
+  {
+   "id": "A4",
+   "owner": "daughter",
+   "task": "Scan and send the $240 urgent care bill (and urgent care discharge papers) to Bernard",
+   "due": "tonight",
+   "match": [
+    [
+     "urgent care"
+    ],
+    [
+     "bill",
+     "invoice",
+     "statement",
+     "240"
+    ]
+   ]
+  },
+  {
+   "id": "A5",
+   "owner": "practice manager",
+   "task": "Update the Halvard PA fax number (555-0188 / portal) in the payer directory, notify staff at all sites, and list all Halvard PAs faxed to the old number since Sept 1",
+   "due": "today",
+   "match": [
+    [
+     "fax",
+     "directory",
+     "0188"
+    ],
+    [
+     "updat",
+     "correct",
+     "fix",
+     "chang",
+     "staff",
+     "list",
+     "number",
+     "notify"
+    ]
+   ]
+  },
+  {
+   "id": "A6",
+   "owner": "patient relations",
+   "task": "Formal complaint CR-26-1193 stays open; written response mailed to the daughter within 30 days",
+   "due": "within 30 days",
+   "match": [
+    [
+     "complaint",
+     "cr-?26",
+     "1193",
+     "grievance",
+     "written response"
+    ]
+   ]
+  },
+  {
+   "id": "A7",
+   "owner": "practice manager",
+   "task": "Request records from Corliss Street Urgent Care and add them to the authorization",
+   "due": "today",
+   "match": [
+    [
+     "record",
+     "corliss",
+     "urgent care note"
+    ]
+   ]
+  },
+  {
+   "id": "A8",
+   "owner": "daughter",
+   "task": "Call Ostrander once approved to confirm the fill and set up delivery to Linden Court; have the pharmacist teach the new dry-powder inhaler",
+   "due": "after approval",
+   "match": [
+    [
+     "ostrander",
+     "pharmac",
+     "deliver"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Both PA faxes (Sept 2 and Sept 10) went to 555-0144, Halvard's PA fax line retired Aug 31; new fax 555-0188 or provider portal",
+   "evidence": "That fax line, the oh-one-four-four line, was retired on August thirty-first.",
+   "match": [
+    [
+     "0144",
+     "oh.one.four.four",
+     "retired (fax|line|number)",
+     "old fax",
+     "outdated fax",
+     "defunct"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Urgent care visit was Saturday September 19 (not the 9th), at Corliss Street Urgent Care",
+   "evidence": "the nineteenth, Saturday the nineteenth",
+   "negatives": [
+    "Urgent care visit on September 9."
+   ],
+   "match": [
+    [
+     "(sept(ember)?\\.?|9/) ?19\\b",
+     "19th",
+     "nineteenth"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "New inhaler dose is one inhalation once daily (the agent's 'one puff twice a day' was the old inhaler's line)",
+   "evidence": "It's one inhalation, once daily. Not twice.",
+   "negatives": [
+    "New inhaler: one puff twice a day."
+   ],
+   "match": [
+    [
+     "once (a )?daily",
+     "once a day",
+     "once.daily",
+     "one (inhalation|puff) (daily|a day|per day|each day)",
+     "1 (inhalation|puff) ?/? ?(day|daily)",
+     "\\bqd\\b"
+    ]
+   ]
+  },
+  {
+   "id": "S4",
+   "text": "Manager's direct line is the main Millbrook number, extension 4417 (not 4470)",
+   "evidence": "Four-four-one-seven.",
+   "negatives": [
+    "Manager's extension is 4470."
+   ],
+   "match": [
+    [
+     "4417",
+     "four.four.one.seven",
+     "forty.four seventeen"
+    ]
+   ]
+  },
+  {
+   "id": "S5",
+   "text": "Mother moved in August to Linden Court Assisted Living, 900 Fallowfield Road, unit 214 (chart had the old Pell Street address)",
+   "evidence": "Linden Court Assisted Living, unit two-fourteen",
+   "match": [
+    [
+     "linden"
+    ]
+   ]
+  },
+  {
+   "id": "S6",
+   "text": "Formal complaint reference CR-26-1193",
+   "evidence": "C-R dash two-six dash one-one-nine-three",
+   "match": [
+    [
+     "1193"
+    ]
+   ]
+  },
+  {
+   "id": "S7",
+   "text": "Two portal messages (Sept 12 and 21) were marked read by the Millbrook nurse pool but never answered",
+   "evidence": "Both marked \"read.\" No reply from us on either.",
+   "match": [
+    [
+     "portal"
+    ],
+    [
+     "marked (as )?read",
+     "unanswered",
+     "no (reply|response)",
+     "never (answered|replied|responded)",
+     "ignored",
+     "not answered",
+     "without (a )?(reply|response)"
+    ]
+   ]
+  }
+ ],
+ "themes": [
+  "T_PA_FAX"
+ ]
+}

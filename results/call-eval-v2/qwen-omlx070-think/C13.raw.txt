@@ -1,0 +1,130 @@
+
+
+{
+  "call_type": "complaint_escalation",
+  "outcome": "escalated",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Odessa verified the healthcare power of attorney and caller identity before discussing care and updated the patient address.",
+    "Both staff members were empathetic, took the complaint seriously, and escalated to the Millbrook practice manager.",
+    "Bernard identified the retired fax number, corrected the inhaler dose, and arranged expedited resubmission and follow-up.",
+    "Odessa initially reported the prior authorization as denied, and Bernard later promised to cover the urgent care bill despite earlier stating financial decisions require risk-management committee approval."
+  ],
+  "flags": [
+    {
+      "type": "misinformation",
+      "description": "Odessa initially told the caller that Halvard had denied the prior authorization, although the manager later found that Halvard had never received the request.",
+      "evidence": "It looks like Halvard denied it."
+    },
+    {
+      "type": "unauthorized_commitment",
+      "description": "Bernard promised to cover the patient's urgent care bill after earlier stating that financial decisions must go to the risk-management committee and that he could not promise the outcome.",
+      "evidence": "we'll cover the urgent care bill, don't worry about it."
+    },
+    {
+      "type": "missed_commitment",
+      "description": "A nurse previously promised to call the caller back on September 11 about the prior authorization but did not do so.",
+      "evidence": "she said she would call me on Friday, the eleventh, herself, and let me know."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "Bernard Ashdown-Pryce (practice manager)",
+      "task": "Resubmit Ottoline Garrow's fluticasone-umeclidinium-vilanterol prior authorization through the Halvard provider portal, marked expedited.",
+      "due": "today (2026-09-29)"
+    },
+    {
+      "owner": "Bernard Ashdown-Pryce (practice manager)",
+      "task": "Request records from Corliss Street Urgent Care and attach the urgent care note when received.",
+      "due": "today (2026-09-29) for request; note when received"
+    },
+    {
+      "owner": "Bernard Ashdown-Pryce (practice manager)",
+      "task": "Ask Dr. Benedetti-Kahn's nurse to check for sample inhalers and inform the caller whether available.",
+      "due": "this afternoon (2026-09-29)"
+    },
+    {
+      "owner": "Bernard Ashdown-Pryce (practice manager)",
+      "task": "Call the caller with the authorization status whether or not it is approved.",
+      "due": "Thursday, 2026-10-01"
+    },
+    {
+      "owner": "Philippa Garrow-Nakamura (caller/POA)",
+      "task": "Send the urgent care bill to Bernard Ashdown-Pryce at the Millbrook office by scan, portal, mail, or drop-off.",
+      "due": "tonight (2026-09-29)"
+    },
+    {
+      "owner": "Bernard Ashdown-Pryce (practice manager)",
+      "task": "Process or arrange coverage of the urgent care bill after receiving it.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Bernard Ashdown-Pryce (practice manager)",
+      "task": "Update the Halvard prior-authorization fax number in the payer directory to the new fax number and portal link.",
+      "due": "today (2026-09-29)"
+    },
+    {
+      "owner": "Bernard Ashdown-Pryce (practice manager)",
+      "task": "Notify Millbrook authorization staff and copy Eastgate and Harbor Street about the retired Halvard fax number.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Bernard Ashdown-Pryce (practice manager)",
+      "task": "Pull a list of all Halvard prior authorizations faxed to the retired number since September 1, 2026.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Bernard Ashdown-Pryce (practice manager)",
+      "task": "Discuss the portal message pool and read-but-no-reply messages with the nurse team.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Bernard Ashdown-Pryce (practice manager)",
+      "task": "Review the follow-up process with Gail when she returns from vacation.",
+      "due": "when Gail returns (unspecified)"
+    },
+    {
+      "owner": "Philippa Garrow-Nakamura (caller/POA)",
+      "task": "Call Ostrander after approval to confirm the inhaler is queued for fill and arrange delivery to Linden Court.",
+      "due": "after authorization approval (unspecified)"
+    },
+    {
+      "owner": "Pharmacist or nurse",
+      "task": "Show the patient how to use the dry-powder inhaler and show the caller for reinforcement.",
+      "due": "when inhaler arrives or at next visit (unspecified)"
+    },
+    {
+      "owner": "Caller, patient, and Linden Court staff",
+      "task": "Seek emergency or urgent care if the patient's breathing worsens; do not wait for the office.",
+      "due": "if breathing worsens (unspecified)"
+    },
+    {
+      "owner": "Philippa Garrow-Nakamura (caller/POA)",
+      "task": "Upload or bring the urgent care discharge papers to add them to the patient chart.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Practice leadership",
+      "task": "Provide the written response to formal complaint CR-26-1193.",
+      "due": "within 30 days"
+    }
+  ],
+  "summary_notes": "Philippa Garrow-Nakamura, POA for mother Ottoline Garrow (84, COPD), complained that a fluticasone/umeclidinium/vilanterol inhaler PA submitted 9/1 was never received by Halvard because practice faxed to retired number. Patient had urgent care 9/19 for exacerbation and is using rescue inhaler 6-7 times/day. Odessa verified POA, updated address, opened complaint CR-26-1193, and escalated to Millbrook manager Bernard. Bernard resubmitted PA expedited, corrected dose to once daily, will check samples, request urgent care records, fix fax directory, audit other Halvard PAs, and call by 10/1. Caller will send urgent care bill; manager promised coverage despite earlier financial-authority caveat.",
+  "notable_details": [
+    "Patient: Ottoline Garrow, DOB 11/02/1941; caller/POA: Philippa Garrow-Nakamura, DOB 06/18/1973; POA document scanned March 2025.",
+    "Address updated from Pell Street to Linden Court Assisted Living, 900 Fallowfield Road, unit two-fourteen; caller also said 'two-one-four,' creating ambiguity.",
+    "Best callback: caller cell 555-0129; voicemail with care details authorized; written complaint response requested by mail to 61 Thornbury Way.",
+    "Complaint reference CR-26-1193; written response due within 30 days.",
+    "Prescription: fluticasone-umeclidinium-vilanterol prescribed 09/01/2026; dose corrected from Odessa's 'twice a day' to one inhalation once daily.",
+    "Patient out of old maintenance inhaler since 09/20; using albuterol rescue inhaler 6-7 times/day, exceeding urgent care instruction to call if more than 4 times/day.",
+    "Urgent care visit 09/19 at Corliss Street Urgent Care: nebulizer, prednisone 5 days, SpO2 86%.",
+    "PA faxed 09/02 and 09/10 to Halvard fax 555-0144, retired 08/31; correct fax 555-0188 or provider portal.",
+    "Halvard never received the PA; it was not a denial. Expedited resubmission planned; expedited turnaround 72 hours.",
+    "Portal messages sent 09/12 and 09/21 were marked read with no reply; Gail promised callback 09/11 but did not call.",
+    "Urgent care bill $240; manager promised to cover it despite earlier stating financial decisions require risk-management committee.",
+    "Manager direct extension 4417; callback promised by Thursday 10/01/2026.",
+    "Practice will update payer directory, notify Millbrook/Eastgate/Harbor Street, and audit Halvard PAs faxed to old number since 09/01."
+  ]
+}

@@ -1,0 +1,81 @@
+{
+ "call_type": "complaint_escalation",
+ "outcome": "escalated",
+ "sentiment_start": "negative",
+ "sentiment_end": "neutral",
+ "quality_score": 2,
+ "quality_reasons": [
+  "Staff were empathetic and the manager took ownership, found the root cause (faxes sent to Halvard's retired number) and set a concrete plan",
+  "Manager promised to cover the urgent care bill despite having said financial decisions must go to the risk-management committee",
+  "Rescue-inhaler overuse (6-7 times a day, above the urgent care's threshold of 4) was never routed to a nurse or clinician"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Manager promised the practice would cover the patient's $240 urgent care bill, although he said earlier in the call that anything financial must go to the risk-management committee and that he could not decide it on the phone",
+   "evidence": "we'll cover the urgent care bill, don't worry about it"
+  },
+  {
+   "type": "other",
+   "description": "Nurse Gail's promised callback (on Sept 8 she said she would personally call the daughter on Friday Sept 11) never happened: the contact log shows only the daughter's inbound calls on 9/8 and 9/15, no outbound follow-up",
+   "evidence": "she said she would call me on Friday, the eleventh, herself"
+  },
+  {
+   "type": "other",
+   "description": "Patient is using her rescue (albuterol) inhaler six to seven times a day, above the urgent care's instruction to call the doctor if more than four times a day, but nobody routed this worsening COPD symptom to a nurse or clinician; the manager only said the new inhaler would fix it",
+   "evidence": "And she's using the blue one six, seven times a day now."
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "practice manager (Bernard)",
+   "task": "Resubmit the prior authorization for the inhaler today through the Halvard provider portal, marked expedited, including prior therapies and the urgent care visit",
+   "due": "today"
+  },
+  {
+   "owner": "practice manager / Dr. Benedetti-Kahn's nurse",
+   "task": "Check for sample (starter) inhalers for a bridge supply and let the daughter know either way",
+   "due": "this afternoon; pickup at Millbrook tomorrow if available"
+  },
+  {
+   "owner": "practice manager",
+   "task": "Call the daughter with the authorization status by Thursday October 1",
+   "due": "2026-10-01"
+  },
+  {
+   "owner": "daughter",
+   "task": "Scan and send the $240 urgent care bill (and urgent care discharge papers) to Bernard",
+   "due": "tonight"
+  },
+  {
+   "owner": "practice manager",
+   "task": "Update the Halvard PA fax number (555-0188 / portal) in the payer directory, notify staff at all sites, and list all Halvard PAs faxed to the old number since Sept 1",
+   "due": "today"
+  },
+  {
+   "owner": "patient relations",
+   "task": "Formal complaint CR-26-1193 stays open; written response mailed to the daughter within 30 days",
+   "due": "within 30 days"
+  },
+  {
+   "owner": "practice manager",
+   "task": "Request records from Corliss Street Urgent Care and add them to the authorization",
+   "due": "today"
+  },
+  {
+   "owner": "daughter",
+   "task": "Call Ostrander once approved to confirm the fill and set up delivery to Linden Court; have the pharmacist teach the new dry-powder inhaler",
+   "due": "after approval"
+  }
+ ],
+ "summary_notes": "Mock summary for C13.",
+ "notable_details": [
+  "Both PA faxes (Sept 2 and Sept 10) went to 555-0144, Halvard's PA fax line retired Aug 31; new fax 555-0188 or provider portal",
+  "Urgent care visit was Saturday September 19 (not the 9th), at Corliss Street Urgent Care",
+  "New inhaler dose is one inhalation once daily (the agent's 'one puff twice a day' was the old inhaler's line)",
+  "Manager's direct line is the main Millbrook number, extension 4417 (not 4470)",
+  "Mother moved in August to Linden Court Assisted Living, 900 Fallowfield Road, unit 214 (chart had the old Pell Street address)",
+  "Formal complaint reference CR-26-1193",
+  "Two portal messages (Sept 12 and 21) were marked read by the Millbrook nurse pool but never answered"
+ ]
+}

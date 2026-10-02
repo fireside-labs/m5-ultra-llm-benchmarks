@@ -1,0 +1,138 @@
+// Neutral SaaS support chatter usable at any point after the probable cause is known.
+C: Sorry, my laptop fan is going crazy. Can you hear that?
+A: A little bit, it's fine.
+C: It's an old machine. IT keeps saying they'll replace it.
+A: [laughs] IT always says that.
+C: Every quarter.
+===
+A: Okay, I'm going to put you on a short hold while I check something with my teammate. Is that okay?
+C: Yeah, go ahead.
+#hold 140
+A: Thanks for waiting. Okay, so we looked at it together and we want to try a couple more things before we go further.
+C: Okay.
+===
+A: Bear with me, I'm writing up what we've tried so far so it's all in the ticket.
+C: Sure.
+A: [typing] Incognito, tried. Cache, ruled out. Network trace, captured... okay.
+C: It's a long list.
+A: It is, but it means nobody makes you do it all again.
+===
+C: Hang on, someone's at my desk. ... No, I'm on with support. ... Yes, still. ... I'll come find you. Sorry.
+A: No problem.
+C: Everyone's asking me when it'll be fixed.
+A: I understand. We'll get you there.
+===
+A: Bear with me, my session to the logging tool just expired, I have to sign back in.
+C: [laughs] At least it's not just me.
+A: [laughs] Exactly. Even we get logged out.
+#pause 18
+A: Okay, I'm back.
+===
+C: Can you, uh, can you send me a summary of everything afterward? I have to explain this to my boss.
+A: Yes, the ticket will have the full history and you'll get an email copy.
+C: Okay. That helps.
+===
+C: My coffee went cold. This is a, um, this is a two-coffee problem.
+A: [laughs] Go grab another, I'll stay on.
+C: No, it's fine, I'll suffer.
+===
+C: Sorry, I'm getting a message from a coworker asking if she should keep trying to log in.
+A: You can tell her to hold off for now, so she doesn't get locked out for too many attempts.
+C: Good point. [typing] "Stop trying, I'm on with support." Sent.
+===
+A: Bear with me, I'm writing an internal note so the engineering team can see what we've tried if we need them.
+C: Okay.
+A: [typing] "Customer verified, owner role, issue reproducible on multiple devices"... okay.
+===
+C: [sighs] I'm sorry, I'm kind of stressed. Everyone's looking at me.
+A: That's completely understandable. You're doing great, and you're giving me exactly what I need.
+C: Thanks. I appreciate that.
+===
+C: My boss just walked by and asked if it's fixed yet.
+A: [laughs] What did you tell him?
+C: I said "working on it" and pointed at the phone. [laughs]
+A: [laughs] Perfect answer.
+===
+C: Do you need me to send you anything? Screenshots or anything?
+A: The screenshots you shared are perfect. If I need anything else I'll ask.
+C: Okay.
+===
+A: Let me pull up the help article on this so I can walk through it with you step by step. One sec.
+C: Sure.
+#pause 15
+A: Okay, got it open.
+===
+A: I'm going to ask a teammate to take a second look at the logs with me, just a fresh pair of eyes. Is it okay if I mute for a minute?
+C: Sure.
+#hold 75
+A: I'm back. We agree on what we're seeing, which is good.
+===
+C: Is there a way to see how many people have tried to log in today? Like, a count?
+A: In the audit log, if you filter by "Authentication" and today's date, the count is at the top.
+C: Okay... filter... today... It says, um, a lot. Several hundred attempts.
+A: That's people retrying. It's expected when nobody can get in.
+===
+C: Sorry, I just need to answer one message. ... Okay. Sorry. It was the front desk asking if the issue is fixed.
+A: No problem at all.
+C: Everyone's asking.
+===
+A: Can you tell me whether anyone is able to log in successfully right now? Anyone at all?
+C: Um... people who use passwords, I think. I'm not sure. Let me check the audit log. [typing] Yeah, there are successful logins, but they're all password logins.
+A: That's a helpful detail.
+===
+A: Let me try to reproduce your exact configuration in my sandbox. I'll copy the settings you have, minus anything sensitive.
+C: Okay.
+#pause 40
+A: Okay, in my sandbox it works with a valid certificate and fails with an expired one, with the same error you're seeing. That's a strong match.
+===
+C: Can I ask a dumb question?
+A: There are no dumb questions on a day like this. [laughs]
+C: [laughs] Is my data okay? Like, nothing's lost, right? People just can't get in?
+A: Right, nothing's lost. Everything in your workspace is intact. It's only the sign-in step that's failing.
+C: Okay. That's a relief, honestly.
+===
+A: I'm going to send you a couple of help articles in the chat, just so you have them for reference later. One on SSO certificates and one on enforcement settings.
+C: Okay, I see them. Thank you.
+A: You don't need to read them now.
+===
+C: Hold on, I need to plug in my laptop, it's at five percent. ... Okay. Charging.
+A: [laughs] Good timing.
+C: That would have been the cherry on top.
+===
+C: You know what's funny? We moved to SSO to make things easier.
+A: [laughs] I hear that a lot. Usually it is easier. Until a certificate expires.
+C: [laughs] Noted.
+===
+A: Bear with me one more moment, the admin tools are timing out on me. I need to refresh my session.
+C: Sure.
+#pause 25
+A: Okay, I'm back in.
+===
+A: I'm going to look at the exact timestamps of the first failures. Can you hold on?
+C: Sure.
+#pause 30
+A: Okay, so the first failure in our logs is just after midnight, your time, on the morning it started. That's consistent with something expiring at a fixed time.
+C: Midnight. Huh.
+===
+C: Should I send an email to everyone telling them what's going on?
+A: That's probably a good idea. Something short, like, "We're aware of the login issue and working on it with the vendor."
+C: Okay. [typing] "We are aware... working with the vendor... please don't keep retrying." Sent.
+A: Perfect.
+===
+A: Can you open the SSO settings page and take a screenshot for me? Just the top section.
+C: Sure. ... Okay, pasted it in the chat.
+A: Got it. Thanks. That's exactly what I needed to see.
+===
+C: How do other companies deal with this? Like, keeping track of certificate dates?
+A: A lot of teams just put a reminder in a shared calendar, a month before. Some use their IdP's expiry alerts.
+C: Calendar reminder. I'm doing that today.
+===
+A: Can you scroll down on that page and tell me if "Allow IdP-initiated login" is on or off?
+C: Um... it's on.
+A: Okay. That's fine either way for this issue, I just want it in my notes.
+===
+A: Okay, I'm going to summarize what we've ruled out so far, just so we're on the same page.
+C: Please.
+A: Browser, cache, devices, network, DNS, clock, domain verification, NameID format. All fine.
+C: That's a lot of things.
+A: It is. Which is good, because it points us to one place.

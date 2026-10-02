@@ -1,0 +1,455 @@
+{
+ "task_id": "R07",
+ "title": "Debate: ban private cars from the downtown core",
+ "category": "C",
+ "sections": [
+  "for",
+  "against",
+  "cruxes",
+  "mind",
+  "lean"
+ ],
+ "items": [
+  {
+   "id": "F1",
+   "text": "Safety: far fewer traffic deaths and injuries, especially for pedestrians and cyclists",
+   "importance": "high",
+   "match": [
+    [
+     "safe",
+     "deaths?",
+     "fatalit",
+     "injur",
+     "collisions?",
+     "crash",
+     "pedestrian (risk|danger|death)",
+     "vision zero"
+    ]
+   ],
+   "paraphrases": [
+    "Safety: removing cars sharply cuts pedestrian injuries and deaths.",
+    "Fewer collisions and traffic fatalities downtown.",
+    "Streets become safe for children, older people and cyclists."
+   ],
+   "side": "for"
+  },
+  {
+   "id": "F2",
+   "text": "Public health: cleaner air and less noise in the densest part of the city",
+   "importance": "normal",
+   "match": [
+    [
+     "air (quality|pollution)",
+     "pollut",
+     "emission",
+     "noise",
+     "asthma",
+     "respiratory",
+     "particulate",
+     "exhaust",
+     "public health"
+    ]
+   ],
+   "paraphrases": [
+    "Cleaner air and less noise in the core.",
+    "Lower local exhaust pollution improves residents' respiratory health.",
+    "Public health gains from reduced air and noise pollution."
+   ],
+   "side": "for"
+  },
+  {
+   "id": "F3",
+   "text": "Economic vitality: more foot traffic, dwell time and spending; space for outdoor dining and events",
+   "importance": "high",
+   "match": [
+    [
+     "foot traffic",
+     "footfall",
+     "dwell",
+     "spend(ing)?",
+     "retail (sales|activity|vitality)",
+     "business(es)? (benefit|thrive|gain)",
+     "outdoor dining",
+     "vibran",
+     "vitality",
+     "economic (activity|benefit|vitality|gain)",
+     "customers? (linger|stay|return)",
+     "local business"
+    ]
+   ],
+   "paraphrases": [
+    "Pedestrianized streets increase foot traffic and dwell time, which boosts spending.",
+    "Downtown vitality: outdoor dining, events and more people lingering.",
+    "Local businesses benefit from more walkers who stay longer."
+   ],
+   "side": "for"
+  },
+  {
+   "id": "F4",
+   "text": "Space efficiency: road and parking space is reallocated to people, transit lanes, green space or housing",
+   "importance": "high",
+   "match": [
+    [
+     "space",
+     "land use",
+     "parking (lots?|garages?|spaces?)",
+     "reallocat",
+     "repurpos",
+     "public realm",
+     "green (space|areas?)",
+     "plaza",
+     "street space"
+    ]
+   ],
+   "paraphrases": [
+    "Street and parking space can be reallocated to people, plazas and green space.",
+    "Cars use the most land per traveller; repurposing that space is efficient.",
+    "Parking lots could become housing or public realm."
+   ],
+   "side": "for"
+  },
+  {
+   "id": "F5",
+   "text": "Climate: lower emissions and a nudge toward low-carbon travel",
+   "importance": "normal",
+   "match": [
+    [
+     "climate",
+     "carbon",
+     "co2",
+     "greenhouse",
+     "emissions? (target|reduction|cut)",
+     "decarboni[sz]",
+     "low.carbon"
+    ]
+   ],
+   "paraphrases": [
+    "Climate: cuts carbon emissions from short car trips.",
+    "Supports the city's greenhouse-gas reduction goals.",
+    "Encourages a shift to low-carbon modes."
+   ],
+   "side": "for"
+  },
+  {
+   "id": "F6",
+   "text": "Transit and mode shift: buses run faster and more reliably without car congestion, making transit and cycling more attractive",
+   "importance": "high",
+   "match": [
+    [
+     "transit",
+     "\\bbus(es)?\\b",
+     "mode shift",
+     "cycling",
+     "bik(e|ing)",
+     "walking"
+    ],
+    [
+     "faster",
+     "reliab",
+     "speed",
+     "congestion",
+     "attractive",
+     "shift",
+     "lanes?",
+     "frequen",
+     "improv",
+     "ridership"
+    ]
+   ],
+   "paraphrases": [
+    "Buses get faster and more reliable once cars are out of the core.",
+    "Mode shift: walking, cycling and transit become more attractive.",
+    "Dedicated bus lanes increase ridership."
+   ],
+   "side": "for"
+  },
+  {
+   "id": "A1",
+   "text": "Business harm: shops and restaurants lose customers who drive, especially suburban shoppers, and may relocate to malls",
+   "importance": "high",
+   "match": [
+    [
+     "business(es)?",
+     "retail",
+     "shops?",
+     "merchants?",
+     "restaurants?",
+     "customers?",
+     "shoppers?",
+     "sales",
+     "revenue"
+    ],
+    [
+     "lose",
+     "loss",
+     "harm",
+     "hurt",
+     "declin",
+     "drop",
+     "suffer",
+     "relocat",
+     "mall",
+     "suburb",
+     "drive in",
+     "who drive",
+     "close",
+     "fewer"
+    ]
+   ],
+   "paraphrases": [
+    "Downtown shops and restaurants lose customers who arrive by car.",
+    "Retail revenue may decline as suburban shoppers go to malls instead.",
+    "Small businesses could suffer or relocate."
+   ],
+   "side": "against"
+  },
+  {
+   "id": "A2",
+   "text": "Accessibility: disabled and elderly people and others with limited mobility depend on door-to-door car access",
+   "importance": "high",
+   "match": [
+    [
+     "disab",
+     "elderly",
+     "older (people|adults|residents)",
+     "mobility (impair|limit|needs|issues)",
+     "wheelchair",
+     "accessib",
+     "paratransit",
+     "door.to.door"
+    ]
+   ],
+   "paraphrases": [
+    "People with disabilities and the elderly depend on door-to-door car access.",
+    "Accessibility for people with limited mobility suffers.",
+    "Wheelchair users and paratransit need exemptions."
+   ],
+   "side": "against"
+  },
+  {
+   "id": "A3",
+   "text": "Equity: people from areas with poor transit, shift workers and lower-income commuters lose access to downtown jobs and services",
+   "importance": "high",
+   "match": [
+    [
+     "equity",
+     "equitab",
+     "low.income",
+     "lower.income",
+     "working.class",
+     "shift workers?",
+     "night shift",
+     "poor(er)? transit",
+     "regressive",
+     "fair(ness)?",
+     "outer neighbou?rhoods?",
+     "suburban (commuters|residents)",
+     "those who (can'?t|cannot)"
+    ]
+   ],
+   "paraphrases": [
+    "Equity: shift workers and lower-income commuters from areas with poor transit lose access to downtown jobs.",
+    "The ban is regressive for people who can't rely on transit.",
+    "Residents of outer neighborhoods bear the cost."
+   ],
+   "side": "against"
+  },
+  {
+   "id": "A4",
+   "text": "Displacement: traffic and parking pressure move to the surrounding neighborhoods and ring roads",
+   "importance": "high",
+   "match": [
+    [
+     "displac",
+     "spill.?over",
+     "divert",
+     "surrounding (neighbou?rhoods?|streets|areas)",
+     "ring road",
+     "perimeter",
+     "edge of the (zone|core)",
+     "push(es|ed)? traffic",
+     "shifts? (the )?(traffic|congestion)"
+    ]
+   ],
+   "paraphrases": [
+    "Traffic is displaced onto surrounding neighborhoods and the ring road.",
+    "Spillover parking and congestion at the edge of the zone.",
+    "The ban pushes traffic elsewhere rather than eliminating it."
+   ],
+   "side": "against"
+  },
+  {
+   "id": "A5",
+   "text": "Logistics and services: deliveries, trades, emergency vehicles and residents' needs are harder to serve",
+   "importance": "normal",
+   "match": [
+    [
+     "deliver",
+     "logistics",
+     "freight",
+     "loading",
+     "trades(people)?",
+     "contractors?",
+     "emergency (vehicles|services|access)",
+     "ambulance",
+     "fire (trucks|engines)",
+     "service vehicles"
+    ]
+   ],
+   "paraphrases": [
+    "Deliveries, freight and trades need vehicle access.",
+    "Emergency vehicles and service vehicles face complications.",
+    "Logistics for shops and residents get harder."
+   ],
+   "side": "against"
+  },
+  {
+   "id": "A6",
+   "text": "Transit readiness and implementation: without enough transit capacity first, access collapses; enforcement costs, political backlash",
+   "importance": "normal",
+   "match": [
+    [
+     "transit (capacity|isn'?t|is not|must|needs|readiness|alternatives?)",
+     "(capacity|alternatives?) (first|aren'?t|are not|isn'?t|is not|must)",
+     "insufficient (transit|alternatives)",
+     "backlash",
+     "enforcement",
+     "implementation",
+     "premature",
+     "before (the )?(alternatives|transit)",
+     "political"
+    ]
+   ],
+   "paraphrases": [
+    "Transit capacity must exist first; otherwise people simply can't get downtown.",
+    "Implementation risk: enforcement costs and political backlash.",
+    "Premature ban before alternatives are ready."
+   ],
+   "side": "against"
+  }
+ ],
+ "cruxes": [
+  {
+   "id": "C1",
+   "text": "Are the alternatives (transit, cycling, park-and-ride, accessible options) good enough that people who drive now can still reach downtown?",
+   "importance": "high",
+   "match": [
+    [
+     "transit",
+     "alternatives?",
+     "park.and.ride",
+     "bus",
+     "options"
+    ],
+    [
+     "adequa",
+     "good enough",
+     "sufficient",
+     "capacity",
+     "quality",
+     "reach",
+     "replace",
+     "substitut",
+     "can (still )?(get|reach)",
+     "viable"
+    ]
+   ],
+   "paraphrases": [
+    "Are transit and other alternatives good enough to replace car trips into the core?",
+    "Whether park-and-ride and bus capacity can substitute for driving.",
+    "Can people who currently drive still reach downtown by viable options?"
+   ]
+  },
+  {
+   "id": "C2",
+   "text": "What is the net effect on downtown businesses and the local economy in this specific city (more walkers vs fewer drivers)?",
+   "importance": "high",
+   "match": [
+    [
+     "business(es)?",
+     "retail",
+     "economic",
+     "economy",
+     "sales",
+     "revenue",
+     "foot traffic",
+     "spending"
+    ],
+    [
+     "net",
+     "effect",
+     "impact",
+     "outweigh",
+     "more or (less|fewer)",
+     "gain or lose",
+     "whether",
+     "empirical",
+     "depend"
+    ]
+   ],
+   "paraphrases": [
+    "Net economic effect: does gaining walkers outweigh losing drivers for downtown businesses?",
+    "Whether retail sales rise or fall after the ban is the empirical question.",
+    "The impact on the local economy depends on who currently shops downtown."
+   ]
+  },
+  {
+   "id": "C3",
+   "text": "Does car traffic disappear (mode shift / fewer trips) or just move to surrounding areas?",
+   "importance": "high",
+   "match": [
+    [
+     "disappear",
+     "evaporat",
+     "displac",
+     "spill.?over",
+     "divert",
+     "moves? (elsewhere|to)",
+     "fewer trips",
+     "induced demand",
+     "traffic (simply )?(shifts|relocates)"
+    ]
+   ],
+   "paraphrases": [
+    "Does traffic evaporate or just get displaced onto nearby streets?",
+    "Whether trips disappear through mode shift or spill over to the surroundings.",
+    "Is it induced demand in reverse, or diversion?"
+   ]
+  },
+  {
+   "id": "C4",
+   "text": "Values: how to weigh residents' and pedestrians' quality of life against access for people who drive in, and who bears the costs",
+   "importance": "normal",
+   "match": [
+    [
+     "values?",
+     "weigh",
+     "trade.?off",
+     "who (bears|pays|benefits|is downtown for)",
+     "priorit(y|ize|ise)",
+     "whose",
+     "distribution(al)?",
+     "fairness"
+    ],
+    [
+     "residents",
+     "pedestrians",
+     "drivers",
+     "commuters",
+     "quality of life",
+     "access",
+     "visitors",
+     "people who drive",
+     "costs?",
+     "benefits?"
+    ]
+   ],
+   "paraphrases": [
+    "Value question: how much to weigh residents' quality of life against access for commuters who drive.",
+    "Who bears the costs and who benefits - a distributional trade-off.",
+    "Whose downtown is it: people who live and walk there, or people who drive in?"
+   ]
+  }
+ ],
+ "decoys": []
+}

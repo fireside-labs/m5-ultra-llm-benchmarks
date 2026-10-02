@@ -1,0 +1,94 @@
+{
+  "call_type": "insurance_verification",
+  "outcome": "callback",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 4,
+  "quality_reasons": [
+    "Identity fully verified (DOB, address, member ID) before any details discussed, and patient consent obtained before conferencing the payer",
+    "Excellent persistence and empathy; root cause found (faxed to Halvard's retired UM fax line 555-0144) and a new expedited case opened with documents uploaded and confirmed",
+    "Attested to the payer that the ordering provider considers the MRI urgent when the order on file is marked 'Priority: routine' and no provider confirmation is shown",
+    "Volunteered the patient's antidepressant (sertraline for depression) to the payer though not relevant to an imaging review, prompting the patient to object",
+    "Very long call with roughly two hours of cumulative hold time, largely due to payer IVR failures and a failed transfer back to the main menu"
+  ],
+  "flags": [
+    {
+      "type": "unauthorized_commitment",
+      "description": "The agent attested to the payer that the ordering provider considers the MRI urgent, despite the order on file stating 'Priority: routine' and no evidence the provider was asked.",
+      "evidence": "PAYER_2: 'Is the ordering provider attesting that this is urgent?' AGENT: 'Yes. Yes, the doctor considers it urgent.'"
+    },
+    {
+      "type": "privacy_disclosure",
+      "description": "The agent disclosed the patient's depression medication (sertraline) to the payer even though the UM rep said it was not needed for an imaging review, and the patient objected.",
+      "evidence": "AGENT: 'she's also on, uh, sertraline for depression, if that matters' ... PATIENT: 'it's not really anybody's business, you know?'"
+    },
+    {
+      "type": "missed_commitment",
+      "description": "Halvard rep Carla's promised transfer to utilization management dumped the call back into the main IVR menu, forcing the parties to start over.",
+      "evidence": "PAYER: 'I'll put you through to their queue, they're usually pretty quick this time of day.' ... AGENT: 'The transfer dumped us back into the main menu. We're starting over.'"
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent (Yusuf)",
+      "task": "Call Larkspur imaging today with reference PA-2609-55170 so the October 8 MRI is not cancelled",
+      "due": "today, right after the call"
+    },
+    {
+      "owner": "agent (Yusuf)",
+      "task": "Send Dr. Okonjo-Reyes a message about the patient's toe tingling so her nurse calls the patient",
+      "due": "today"
+    },
+    {
+      "owner": "agent (Yusuf)",
+      "task": "Update the fax cover sheet template and clinic fax sheet to Halvard's new UM fax 555-0188, email the team, and inform supervisor; review other pending requests sent to the retired line",
+      "due": "right after the call / today"
+    },
+    {
+      "owner": "agent (Yusuf)",
+      "task": "Monitor the Halvard portal for the determination and call the patient; if no decision by Tuesday October 6, call the patient and move the MRI to the next open slot",
+      "due": "within 72 hours; fallback Tuesday, October 6"
+    },
+    {
+      "owner": "Halvard utilization management",
+      "task": "Issue expedited prior authorization determination for PA-2609-55170 and notify provider via portal and member by letter",
+      "due": "within 72 hours"
+    },
+    {
+      "owner": "patient",
+      "task": "Call Larkspur billing line for a cost estimate ($290 remaining deductible, then 20% coinsurance)",
+      "due": "unspecified"
+    },
+    {
+      "owner": "patient",
+      "task": "Complete the release/proxy form on the member portal so her husband can receive updates",
+      "due": "tonight"
+    },
+    {
+      "owner": "patient",
+      "task": "Ask husband's HR in November about adding secondary insurance during open enrollment",
+      "due": "November"
+    },
+    {
+      "owner": "patient",
+      "task": "Go to ER/urgent care immediately if numbness worsens, affects both legs, or bladder symptoms occur",
+      "due": "if symptoms occur"
+    }
+  ],
+  "summary_notes": "Nadia Prewitt-Okafor (DOB 11/27/1984, member HVD-6044-1829, Halvard Select PPO) called because Larkspur warned her 10/8 7:20 AM lumbar MRI (CPT 72148, Dr. Okonjo-Reyes) would be cancelled for lack of auth. Identity verified. Practice had faxed the PA twice to Halvard's retired UM fax line (555-0144, retired 8/31); it was never received. After lengthy holds, Halvard UM (Devon) opened expedited case PA-2609-55170 (72-hour decision); agent uploaded order, PT notes (7/31-9/11, 8 visits), and office note. Benefits: $1,500 deductible, $1,210 met, 80% after deductible; 22 PT visits remaining. Patient reported new toe tingling; message to physician planned, ER red flags reviewed. Agent to notify Larkspur, monitor portal, and call patient; husband needs proxy form.",
+  "notable_details": [
+    "Reference number corrected in-call: PA-2609-55170 (agent initially misheard '551-07'; rep corrected to 'five-five-one-seven-zero')",
+    "Deductible figure corrected: initially quoted $1,120 met, refreshed to $1,210 met, leaving $290 before 80% coinsurance",
+    "Root cause: Halvard UM fax 555-0144 was retired August 31; new fax is 555-0188; Brightwater's fax template still showed the old number ('updated March 2025'), so other pending requests may also be affected",
+    "Patient's name frequently misheard as 'Nadine Prewitt'; correct name is Nadia Prewitt-Okafor",
+    "MRI details: Thursday, October 8 at 7:20 AM at Larkspur Surgery and Endoscopy Center; Larkspur's cancellation deadline was Friday, October 2; next available slot otherwise November",
+    "Clinical picture: lumbar radiculopathy (M54.16) and lumbago with sciatica, left (M54.42); injury July lifting a crate of eggs at bakery work; order priority 'routine'; no red flags per note",
+    "New symptom raised in passing: tingling in the toes for the past week - agent appropriately escalated to the ordering provider rather than dismissing it",
+    "Work injury was never reported to workers' comp; Halvard confirmed it can be processed under the health plan",
+    "PT benefit: 30 visits/year combined, 8 used, 22 remaining, no referral needed, just a prescription",
+    "Expedited review (72 hours) vs standard (up to 15 calendar days); peer-to-peer and appeal explained as fallbacks",
+    "Husband is not on the patient's release form; patient agreed to add him via portal under 'authorizations and proxies'; until then only the patient can be spoken to",
+    "Patient's callback number confirmed as her cell ending 0166; member portal path for auth status is 'My Care' > 'Authorizations'",
+    "Patient keeps a notebook of every call on her sister's (a paralegal's) advice"
+  ]
+}

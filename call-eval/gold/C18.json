@@ -1,0 +1,272 @@
+{
+ "call_id": "C18",
+ "call_type": "post_procedure_followup",
+ "outcome": "escalated",
+ "sentiment_start": "positive",
+ "sentiment_end": "negative",
+ "sentiment_end_accept": [
+  "neutral"
+ ],
+ "quality_score": 5,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Recognised retinal-detachment red flags (new floaters, flashes, curtain) and escalated urgently with clear instructions and an ED fallback",
+   "match": [
+    [
+     "floater",
+     "flash",
+     "curtain",
+     "retina",
+     "detach"
+    ],
+    [
+     "escalat",
+     "urgent",
+     "recogni",
+     "immediate",
+     "same.?day",
+     "on-call",
+     "promptly"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Verified identity and documented verbal permission before speaking to the son",
+   "match": [
+    [
+     "verif",
+     "permission",
+     "consent",
+     "authoriz"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "Caught the steroid-drop frequency error by checking against discharge orders",
+   "match": [
+    [
+     "drop",
+     "prednisolone",
+     "frequency",
+     "four times",
+     "4 times",
+     "qid"
+    ]
+   ]
+  }
+ ],
+ "flags": [],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Nurse discussed PHI with the son without authorization",
+   "why_not": "Patient explicitly gave verbal permission, the nurse confirmed and documented it before speaking with the son.",
+   "evidence": "you're giving me permission to discuss your care with your son, Jules?",
+   "match": [
+    [
+     "son",
+     "jules",
+     "family",
+     "third.?party"
+    ],
+    [
+     "authoriz",
+     "consent",
+     "privacy",
+     "hipaa",
+     "disclos",
+     "phi",
+     "permission"
+    ]
+   ]
+  },
+  {
+   "id": "D2",
+   "text": "Retinal symptoms were not escalated",
+   "why_not": "They were escalated immediately (on-call ophthalmologist within the hour, ED fallback).",
+   "evidence": "That needs to be seen by an eye doctor within the hour.",
+   "match": [
+    [
+     "floater",
+     "flash",
+     "curtain",
+     "retina",
+     "detach",
+     "vision"
+    ],
+    [
+     "not escalat",
+     "fail",
+     "ignor",
+     "dismiss",
+     "did not",
+     "didn't",
+     "delay"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Possible retinal detachment after surgery (clinical risk, handled)",
+   "match": [
+    [
+     "floater",
+     "flash",
+     "curtain",
+     "retina",
+     "detach",
+     "vision"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Steroid drop frequency error at home",
+   "match": [
+    [
+     "drop",
+     "prednisolone",
+     "frequency",
+     "dosing"
+    ]
+   ]
+  },
+  {
+   "id": "OK3",
+   "text": "ClearPay duplicate copay",
+   "match": [
+    [
+     "clearpay",
+     "duplicate",
+     "double",
+     "twice",
+     "copay",
+     "charged again"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "nurse",
+   "task": "Call on-call ophthalmologist Dr. Achebe-Lindqvist to expect the patient",
+   "due": "immediately",
+   "match": [
+    [
+     "on.?call",
+     "ophthalmolog",
+     "achebe",
+     "doctor"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "son / patient",
+   "task": "Go to Corrowind Eye Clinic urgent entrance on Westbrook Road within the hour (ED if needed); bring drops and discharge papers; no bending/lifting",
+   "due": "within the hour",
+   "match": [
+    [
+     "clinic",
+     "urgent",
+     "emergency",
+     "seen",
+     "westbrook",
+     "eye doctor"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "son",
+   "task": "Correct prednisolone to four times daily on the home chart",
+   "due": "today",
+   "match": [
+    [
+     "prednisolone",
+     "steroid",
+     "four times",
+     "4 times",
+     "4x",
+     "qid",
+     "drop"
+    ]
+   ]
+  },
+  {
+   "id": "A4",
+   "owner": "nurse / billing team",
+   "task": "Pass the duplicate $40 ClearPay copay to billing and have them call the patient",
+   "due": "unspecified",
+   "match": [
+    [
+     "billing"
+    ],
+    [
+     "copay",
+     "clearpay",
+     "charge",
+     "refund",
+     "double",
+     "duplicate"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Raised at the very end: copay paid at the desk Tuesday, then ClearPay portal charged $40 again",
+   "evidence": "that ClearPay portal charged him again yesterday",
+   "match": [
+    [
+     "clearpay",
+     "portal",
+     "copay",
+     "double",
+     "twice",
+     "duplicate",
+     "charged again"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Prednisolone was being given 3x/day at home instead of the prescribed 4x/day",
+   "evidence": "I wrote three on the chart.",
+   "match": [
+    [
+     "prednisolone",
+     "steroid"
+    ],
+    [
+     "three",
+     "3",
+     "four",
+     "4",
+     "frequen"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Symptoms are in the operated right eye and began this morning (floaters, flashes, gray curtain from the side)",
+   "evidence": "a sort of gray shadow, like a curtain, coming in from the side",
+   "match": [
+    [
+     "curtain",
+     "shadow"
+    ]
+   ]
+  }
+ ],
+ "themes": [
+  "T_DOUBLE_CHARGE"
+ ]
+}

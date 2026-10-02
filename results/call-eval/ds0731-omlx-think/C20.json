@@ -1,0 +1,40 @@
+{
+  "call_type": "scheduling",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Disclosed protected health information (appointment details, procedure) before verifying caller identity",
+    "Accepted a vague, unverified date of birth as sufficient identity verification",
+    "Changed the patient's contact phone number without authorization or a release form on file",
+    "Did not confirm the caller's relationship or authority to receive PHI or make changes"
+  ],
+  "flags": [
+    {
+      "type": "privacy_disclosure",
+      "description": "Agent disclosed appointment date, time, provider, and procedure before verifying the caller's identity or authorization.",
+      "evidence": "She's on Thursday, the tenth, at two-forty, with Dr. Iwu-Castellano... It's her twenty-week anatomy ultrasound"
+    },
+    {
+      "type": "identity_verification",
+      "description": "Agent accepted an approximate date of birth without confirming exact details, failing to properly verify the caller's identity.",
+      "evidence": "March... ninety-four? Ninety-three. Something like that. ... Close enough."
+    },
+    {
+      "type": "policy_violation",
+      "description": "Agent updated the patient's primary phone number to the caller's number despite no release form being on file and without confirming authorization.",
+      "evidence": "I don't see anyone listed on her release form, but if you're driving her, that makes sense. ... Okay, it's updated as her main number."
+    }
+  ],
+  "action_items": [],
+  "summary_notes": "Caller (separated husband) called to confirm wife Annika Sorensen-Mbatha's appointment. Agent disclosed PHI (Thursday 10th at 2:40 PM with Dr. Iwu-Castellano, 20-week anatomy ultrasound) without verifying identity, accepted a vague DOB, and changed the patient's contact number to the caller's (555-827-3091) without authorization. Reminder text will go to the new number. No follow-up actions pending.",
+  "notable_details": [
+    "Appointment: Thursday, September 10 at 2:40 PM with Dr. Iwu-Castellano at Women's Health center on Alder Street",
+    "Procedure: 20-week anatomy ultrasound followed by doctor visit",
+    "Caller is separated from patient since spring, not authorized on release form",
+    "Phone number changed to caller's: 555-827-3091",
+    "Reminder text scheduled to go out tomorrow to new number",
+    "Agent accepted approximate DOB (March 1993/1994) as verification"
+  ]
+}

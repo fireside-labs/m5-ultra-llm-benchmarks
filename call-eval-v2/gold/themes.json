@@ -1,0 +1,51 @@
+{
+ "description": "Cross-call themes planted across several transcripts. A theme counts as found if any theme item the model returns (theme + description + evidence text) satisfies the matcher: every inner list is a group, at least one regex in each group must match (case-insensitive). v2 adds decoy_themes: a surface pattern that appears in 2 calls but is not a real systemic problem; a returned theme item that matches a decoy matcher and no real-theme matcher lowers the themes score to found / (3 + decoys reported).",
+ "themes": [
+  {
+   "id": "T_IVR_MISROUTE",
+   "text": "Since the Brightwater phone-menu update, callers who press 3 for prescription refills are routed to billing / Patient Financial Services instead of the pharmacy; mentioned only in passing in billing, no-show, scheduling, post-op and billing-dispute calls, causing repeat calls and at least one missed cancellation.",
+   "paraphrases": [
+    "Phone tree misrouting: the refill option sends patients to the billing department.",
+    "Patients choosing the pharmacy/refill option in the IVR end up in billing.",
+    "Callers pressing option three for prescriptions get transferred to billing instead."
+   ],
+   "calls": ["C02", "C05", "C08", "C11", "C14"],
+   "match": [["phone (menu|tree|system)", "ivr", "menu", "option", "press(ed|ing)? (3|three)", "routing", "rout(ed|es)", "transfer", "phone line", "call routing", "end(ed|s)? up in", "land(ed|s|ing)? in", "sent to"], ["billing", "financial services", "pfs"], ["refill", "pharmac", "prescription", "\\b3\\b", "three"]]
+  },
+  {
+   "id": "T_PA_FAX",
+   "text": "Prior authorization requests from Brightwater to Halvard Health Plan are reported as never received or stuck pending, because staff keep faxing Halvard's retired PA fax line (555-0144, retired Aug 31) instead of the new fax 555-0188 or provider portal; this delays medications, imaging and procedures.",
+   "paraphrases": [
+    "Insurance authorizations go missing: Halvard says it has no PA on file even though the office faxed it.",
+    "Prior auths delayed because they were sent to an outdated payer fax number.",
+    "Pre-authorizations remain pending for weeks; the insurer never receives the faxed requests."
+   ],
+   "calls": ["C03", "C07", "C10", "C13"],
+   "match": [["prior auth", "pre-?auth", "\\bpas?\\b", "authori[sz]ation", "\\bauth\\b"], ["fax", "never received", "not received", "no record", "nothing on file", "not on file", "no (pa|request|authori[sz]ation) on file", "pending", "lost", "missing", "delay", "stuck", "outdated", "retired", "old number", "wrong number"]]
+  },
+  {
+   "id": "T_SAAS_DUE",
+   "text": "Since the Tallyforge 7.4 release, automated payment-reminder emails show a due date one day earlier than the invoice (timezone bug), confusing customers' clients and triggering late fees a day early; fix expected in 7.4.2 on Oct 20.",
+   "paraphrases": [
+    "Tallyforge reminder emails list the wrong due date, a day before the actual invoice date.",
+    "Invoice reminders are off by one day since the 7.4 update.",
+    "Automated reminder notices show an earlier due date than the invoice, causing premature late fees."
+   ],
+   "calls": ["C06", "C09", "C16"],
+   "match": [["remind", "due date", "due.dates", "notice", "late fee"], ["day early", "day earlier", "one day", "1 day", "a day before", "off by", "wrong (due )?date", "incorrect (due )?date", "earlier", "timezone", "time zone", "mismatch", "doesn't match", "does not match", "premature", "early"]]
+  }
+ ],
+ "decoy_themes": [
+  {
+   "id": "D_DOUBLE_CHARGE",
+   "text": "Customers report being double charged / charged twice (pharmacy app and Tallyforge subscription).",
+   "why_not": "Both were explained in-call as non-issues with different causes: C04 a pending card pre-authorization hold that drops off; C12 the customer owned two separate paid workspaces. Not a systemic problem.",
+   "paraphrases": [
+    "Duplicate charges reported by customers in pharmacy and software billing.",
+    "Recurring complaints about being billed twice for the same thing."
+   ],
+   "calls": ["C04", "C12"],
+   "match": [["double", "twice", "duplicate", "two charges", "charged two"], ["charg", "bill", "payment", "transaction"]]
+  }
+ ]
+}

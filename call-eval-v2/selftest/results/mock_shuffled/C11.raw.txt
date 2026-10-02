@@ -1,0 +1,35 @@
+{
+ "call_type": "saas_support",
+ "outcome": "resolved",
+ "sentiment_start": "negative",
+ "sentiment_end": "positive",
+ "quality_score": 5,
+ "quality_reasons": [
+  "Verified the account owner with an emailed code and found the real cause (two separate workspaces)",
+  "Downgraded the archive to free read-only and refunded the latest $49 within the 30-day policy, clearly explaining limits"
+ ],
+ "flags": [],
+ "action_items": [
+  {
+   "owner": "agent",
+   "task": "Downgrade Halden Studio Archive to the free Read-Only tier",
+   "due": "during call (done)"
+  },
+  {
+   "owner": "agent",
+   "task": "Refund $49 to Mastercard ending 6604",
+   "due": "5-7 business days"
+  },
+  {
+   "owner": "agent",
+   "task": "Email confirmation of the downgrade and refund",
+   "due": "after call"
+  }
+ ],
+ "summary_notes": "Mock summary for C12.",
+ "notable_details": [
+  "Refund of $49 to the Mastercard ending 6604, 5-7 business days",
+  "The archive workspace ('Halden Studio Archive') had been billed since last November (10 months); now free/read-only",
+  "Only the most recent charge is refundable (30-day window); older months are not"
+ ]
+}

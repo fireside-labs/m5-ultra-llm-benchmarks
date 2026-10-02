@@ -1,0 +1,75 @@
+@id C03
+@date 2026-03-06 11:20
+@line Corrowind Ambulatory Surgery Center - Post-Op Nurse Follow-Up
+@direction outbound
+@target 5000
+@speaker A NURSE = post-operative follow-up nurse
+@speaker C PATIENT = patient
+@speaker W SPOUSE = patient's wife
+---
+C: Hello?
+A: Hi, good morning, this is Joan, I'm one of the nurses calling from the Corrowind surgery center. May I speak with Augustin Pereira-Lund?
+C: That's me. Hi.
+A: Hi, Mr. Pereira-Lund. Before we chat, can you confirm your date of birth for me?
+C: Uh, February second, nineteen sixty-four.
+A: Thank you. And I'm just calling to check in after your knee procedure on Monday. The left knee arthroscopy with Dr. Okonjo-Reyes. Is now an okay time?
+C: Sure, yeah, now's fine. I'm just, uh, sitting on the couch. That's all I do now. [laughs]
+A: [laughs] That's what you're supposed to be doing. So, overall, how are you feeling?
+C: Pretty good, honestly. Better than I expected. Knee's sore, but, you know. It's a knee.
+A: Okay. On a scale of zero to ten, zero no pain, ten the worst pain imaginable, where's the knee pain right now?
+C: Um, right now, maybe a three. Four when I get up.
+A: Okay, three to four. And what are you taking for it?
+C: The, um, the Tylenol, regular Tylenol, and I had the, uh, the oxycodone, but I only took two of those the first night. I don't like how they make me feel.
+A: That's completely fine. A lot of people stop those early. Make sure you don't go over three thousand milligrams of the Tylenol in a day, okay? It's on the sheet.
+C: Yeah, I saw that. My wife has it all on a, um, a chart on the fridge. She's very organized.
+A: [laughs] I love that. Okay, let's talk about the dressing. Is it still on? Any drainage coming through?
+C: Still on. There was a little pinkish spot the first day, but nothing since.
+A: That's normal. You can take the big dressing off tomorrow, day five, and put regular Band-Aids over the little incisions. Keep them dry, no soaking, no baths or pools until the doctor clears you at the post-op visit.
+C: Okay. Tomorrow. Band-Aids.
+#fill nurse_chat
+A: Any fevers? Chills? Anything over a hundred point four?
+C: No, no fever. I checked yesterday because my wife made me. Ninety-eight point something.
+A: Good. Any nausea, vomiting?
+C: No. The first night I was a little queasy but that was, uh, I think that was the anesthesia.
+A: Very common. And are you, um, are things moving okay? Bowels?
+C: [laughs] Yeah, that took a couple days but, uh, we're good now.
+A: Okay, good. The pain medicine can do that. Okay. And how's the leg overall, besides the knee itself?
+C: It's okay. I mean— the back of the calf, the left one, the operated side, it's been kind of achy since yesterday. And it's, uh, it looks a little swollen, like tighter than the other one. Kind of warm, maybe. I figured it's from lying around so much.
+A: Mm-hm, yeah, that's pretty common after knee surgery, you're not moving as much and you're wearing those stockings. Just keep it propped up on a pillow and it should settle down. Are you doing the ankle pumps they showed you?
+C: Uh, sometimes. I forget.
+A: Try to do them every hour while you're awake, ten at a time. Okay, and let me make sure the physical therapy referral is set. I have it going to our Main Street rehab location.
+C: Oh, no, can it go to the Eastgate one? Main Street's a forty-minute drive for us. Eastgate's like ten minutes.
+A: Absolutely. Eastgate. Let me change that. [typing] Okay, so I'm sending the referral to Eastgate Rehab, and they'll call you to schedule within two or three business days.
+C: Great.
+#fill smalltalk nurse_chat
+A: And I see your post-op visit with Dr. Okonjo-Reyes is on Thursday, March twelfth, at one-thirty.
+C: Yep. One-thirty. It's on the fridge.
+A: [laughs] Of course it is. Now, Mr. Pereira-Lund, I'd like to go over your medications quickly. Is it okay if— is your wife there? Sometimes it's easier with whoever manages the meds.
+C: Yeah, Ruth's right here. Is it okay if you talk to her? She's on my, uh, the privacy form, the HIPAA thing, from when I signed in. You can tell her whatever.
+A: Thank you. Yes, I do see Ruth listed on your authorization form. Go ahead and hand her the phone.
+C: Ruth— Ruth, it's the nurse, she wants to talk about the pills.
+W: Hi, this is Ruth.
+A: Hi Ruth, this is Joan from the surgery center. Augustin said it's okay to go over his medications with you, and I see you're on his authorization. So he's taking acetaminophen around the clock?
+W: Yes, five hundred milligrams, two tablets, every six hours. I have it written down. And he stopped the oxycodone after the first night.
+A: Perfect. And he's back on his usual blood pressure medicine, the amlodipine?
+W: Yes, since Tuesday. Same as always.
+A: Great. And the aspirin he was taking before surgery, the surgeon's note says he can restart the baby aspirin on day three, so that should have been yesterday.
+W: Oh, we haven't restarted that. Nobody told us.
+A: Okay, it's in the discharge paperwork, page two, but that's okay. He can start it again today, eighty-one milligrams once a day.
+W: Okay, I'll put it on the chart.
+#fill nurse_chat smalltalk
+W: Can I ask you something while I have you? It's not about this, exactly.
+A: Of course.
+W: So his surgery was supposed to be on the twenty-third, the week before, and it got cancelled the morning of. Because of the eating thing. The paper packet they mailed us said nothing to eat or drink after midnight, but then the text message the night before said he could have clear liquids up until two hours before. So he had some apple juice at like five in the morning, because the text said clear liquids were fine. And then the anesthesia doctor said, no, the packet says nothing after midnight, and they cancelled.
+A: Oh, I'm so sorry. That's really frustrating.
+W: It was! We'd taken the day off, my daughter drove in from two hours away. And nobody could tell us which one was right. Somebody should fix that, honestly. The two things say different things.
+A: I hear you. I'll mention it to our manager. For future reference, always follow what the surgeon's office tells you directly, okay?
+W: Well, that's the thing, we didn't know who to believe. Anyway. He got it done the next week, so.
+A: Yes, and it went well. Okay, can you put Augustin back on for a second?
+W: Sure. Augie!
+C: Hi, I'm back.
+A: Hi. So, Ruth has the aspirin restarting today. Tomorrow the dressing comes off. Eastgate will call about physical therapy. And your visit is Thursday the twelfth at one-thirty. Any other questions for me?
+C: No, I think that's it. You've been great.
+A: Okay, and if you have a fever over a hundred point four, or the incisions get red, hot or start draining pus, call the number on your discharge sheet, any time, day or night.
+C: Will do. Thanks, Joan.
+A: Take care, Mr. Pereira-Lund. Bye now.

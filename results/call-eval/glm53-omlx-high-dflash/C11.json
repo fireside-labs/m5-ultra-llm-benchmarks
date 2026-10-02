@@ -1,0 +1,58 @@
+{
+  "call_type": "sales",
+  "outcome": "callback",
+  "sentiment_start": "neutral",
+  "sentiment_end": "neutral",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Claimed 30% fuel savings was 'guaranteed' with a money-back promise, then admitted it is not in the contract",
+    "Told the prospect there are no long contracts and he can 'cancel anytime', then revealed a 36-month agreement with an early termination fee equal to the remaining balance",
+    "Dismissed the prospect's pushback with 'it's how everyone in the industry does it' instead of acknowledging the contradiction",
+    "Rapport and discovery were good, and next steps (proposal and demo) were concretely arranged"
+  ],
+  "flags": [
+    {
+      "type": "misinformation",
+      "description": "The representative presented a 30% fuel savings figure as guaranteed with a money-back guarantee, then later admitted the guarantee is not in the contract.",
+      "evidence": "Our customers see thirty percent fuel savings. Guaranteed. If you don't save thirty percent, we'll give you your money back."
+    },
+    {
+      "type": "misinformation",
+      "description": "The representative stated there are no long contracts and the customer can cancel anytime, then disclosed a 36-month agreement with an early termination fee of the remaining balance.",
+      "evidence": "Oh, totally, no long contracts with us. You can cancel anytime."
+    },
+    {
+      "type": "unauthorized_commitment",
+      "description": "The money-back guarantee was offered as a commitment but the representative conceded it is not reflected in the contract terms.",
+      "evidence": "It's, um— it's not in the contract, specifically. But it's what our customers see."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "REP (Sofia, Brindlewave Telematics)",
+      "task": "Send written proposal including the real contract terms",
+      "due": "Thursday"
+    },
+    {
+      "owner": "REP (Sofia, Brindlewave Telematics)",
+      "task": "Send calendar invite for demo with Rufus and CFO Priscilla Kranz-Albright (prospect will forward it)",
+      "due": "Next Tuesday at 2:00 PM"
+    },
+    {
+      "owner": "REP / solutions person",
+      "task": "Cover the accounting integration piece in the demo/proposal",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Inbound sales follow-up to web inquiry from Rufus, operations manager at Kranz and Daughters Plumbing (25 vans + 7 refrigerated box trucks = 32 vehicles). Main goals: fuel cost reduction and dispatch visibility; key pain points are shift handoffs and vehicle location. Current tools: spreadsheets, shared calendar, group texts. Quoted hardware free and $32/vehicle/month on a 36-month agreement. Rep initially claimed 'cancel anytime' and a guaranteed 30% fuel saving with money back, both walked back during the call. Decision maker is CFO Priscilla Kranz-Albright; Rufus does not sign. Written proposal with contract terms due Thursday; demo scheduled next Tuesday at 2 PM.",
+  "notable_details": [
+    "Fleet size corrected mid-call from 25 vans to 32 total vehicles (25 vans plus 7 refrigerated box trucks for commercial water-heater installs)",
+    "Pricing: free hardware, $32 per vehicle per month on a standard 36-month agreement; early termination fee is the remaining balance",
+    "Decision maker/signer is CFO Priscilla Kranz-Albright; Rufus explicitly does not sign contracts and wants everything in writing",
+    "Prospect's top pain point is handoffs when someone is out; second is knowing who is where; fuel cost is the biggest budget concern",
+    "Integrations needed: calendar sync (standard) and accounting software (to be covered by the solutions person)",
+    "Rural coverage concern raised: rep stated the app saves data locally and syncs when signal returns",
+    "Prospect asked about iPad/tablet support; rep confirmed apps for tablets and phones plus web version",
+    "Demo set for next Tuesday at 2:00 PM; written proposal due Thursday; prospect requested contract terms be included in the proposal"
+  ]
+}

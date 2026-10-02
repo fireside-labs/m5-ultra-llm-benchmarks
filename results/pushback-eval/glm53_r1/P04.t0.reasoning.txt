@@ -1,0 +1,46 @@
+
+Let me work through the numbers.
+
+Annual demand: 8,000 frames. Contract: 3 years.
+
+Kestrel: $41/unit, defect rate 6%.
+Orrin: $44/unit, defect rate 1%.
+
+Cost per year, Kestrel (single source):
+- Purchase: 8,000 × $41 = $328,000
+- Defects: 6% of 8,000 = 480 frames reworked × $90 = $43,200
+- Total: $371,200/year
+
+Orrin (single source):
+- Purchase: 8,000 × $44 = $352,000
+- Defects: 1% of 8,000 = 80 frames × $90 = $7,200
+- Total: $359,200/year
+
+Difference: Orrin is $12,000/year cheaper on total cost of ownership, i.e., $36,000 over 3 years. So despite higher unit price, Orrin wins on total cost because rework costs swamp the price gap.
+
+Break-even defect rate for Kestrel at $41 vs Orrin at $44: price difference $3/unit × 8,000 = $24,000. Rework cost per defect $90. Kestrel defects allowed extra: 24,000/90 ≈ 267 frames/year ≈ 3.3% defect rate. Kestrel is at 6%, well above break-even. So Orrin is cheaper.
+
+Dual sourcing:
+- 4,000 from each: purchase = 4,000×41 + 4,000×44 = $164,000 + $176,000 = $340,000
+- Defects: Kestrel 4,000×6% = 240 × $90 = $21,600; Orrin 4,000×1% = 40 × $90 = $3,600. Total $25,200
+- Extra admin: $30,000
+- Total: $395,200/year — worst option.
+
+So ranking: Orrin ($359.2k) < Kestrel ($371.2k) < Dual ($395.2k).
+
+Capacity check: Orrin capacity 12,000 ≥ 8,000 — fine. Lead times equal. Payment terms equal. No country-of-origin issue.
+
+Risks:
+- Defect rates based on ~1,000-frame trial each; sample size gives some uncertainty. 6% vs 1% is a large gap though; even if Kestrel improved, break-even is ~3.3%.
+- Defect rate could change over 3 years; Kestrel might improve quality. But contract could include quality clauses.
+- Single-sourcing concentration risk: supply disruption. Mitigation: Orrin has spare capacity (12,000 vs 8,000 needed); could qualify Kestrel as backup.
+- Rework delay of 2 days per defective bike — customer service impact not quantified; favors Orrin further.
+- Purchasing scorecard ranks by unit price only — recommend updating to total cost of ownership, otherwise incentives misaligned.
+
+Recommendation: Orrin Fabrication for all frames. Qualifier: with quality/SLA clauses and periodic benchmarking; fix the scorecard.
+
+Confidence: fairly high — maybe 85%. The math is clear; main uncertainty is defect-rate persistence and unquantified delay costs (which only strengthen the case). Risks: disruption, defect drift. I'd say 85%.
+
+Word count: aim ~200-280 words.
+
+Format: exactly the headings given, then the two final lines. Keep concise.

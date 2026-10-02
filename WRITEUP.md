@@ -172,3 +172,189 @@ I also hid three vault codes in the text at 10%, 50% and 90% of the way through,
 Happy to answer questions, or run something specific if you tell me what you want to see. Meanwhile, my girlfriend says the Mac Studio and I both need to go outside. The Mac is staying in. My legs are still recovering from the sunlight.
 
 Everything is on GitHub: the scripts, raw results, charts and the hidden-test referee, so you can check my work or run it on your own machine: https://github.com/fireside-labs/m5-ultra-llm-benchmarks
+
+---
+
+*Part 2 was added on Oct 2. Three things changed since Part 1 above: (1) Qwen now runs on oMLX 0.7.0 built from
+source with its custom kernels (Part 1 used the Homebrew 0.7.0rc1 build, which doesn't have them), and that roughly
+tripled its prefill (250k: 1,365 to 4,235 t/s, charts 11 and 12). (2) On a replayed real session oMLX beats
+llama.cpp at long context, as section 7 says; the synthetic 64-token follow-up test is the misleading one. (3) The
+first overnight agent results mostly measured my own bare-bones agent loop, not the models: with real harnesses
+(DeepSeek Harness, pi, Oh My Pi) the agents edit in small diffs, keep todo lists, and do much better. The plain
+summary of Part 2 with every table is in [README.md](README.md#part-2-glm-53-1m-context-for-all-three-models-and-quality).*
+
+# Part 2: which model would I actually trust?
+
+Part 1 was speed. You asked the right follow-up questions: is the code any good, can they actually think, does GLM-5.3 change anything, and what's the prefill scaling exponent. So my Mac Studio did not rest. Again. It's fine. It has the work ethic I keep telling my trainer I have.
+
+**TL;DR:**
+- **Speed:** Qwen is the fastest at everything on oMLX 0.7.0. With YaRN it read 1M tokens in 5.3 minutes and still found all three hidden codes.
+- **Thinking:** 4-bit GLM-5.3-Flash was the best reasoner in every test that needed judgment: a blind-judged critical-thinking eval, a pushback test, a call-analysis eval, and me arguing with all three about clones.
+- **Code:** a blind code review ranked Qwen's code first and GLM's and DeepSeek's well behind, even though GLM and DeepSeek "finished" more milestones.
+- **So I use all three:** DeepSeek as the everyday butler, Qwen for code, GLM for anything that needs real reasoning.
+
+**Setup**
+
+- Mac Studio, M5 Ultra (30-core CPU, 64-core GPU), 256GB, macOS 27.0.1
+- oMLX 0.7.0 built from source with its custom kernels, for everything
+- Qwen3.8-Flash-Next 8-bit (oQ8e), DeepSeek-V4-Flash 0731 (oQ4e, 4-bit experts like the original), GLM-5.3-Flash 4-bit (320B total, 18B active; 8-bit doesn't fit in 256GB)
+- Every quality test is synthetic and self-contained: no web search, no real people, all the facts in the prompt
+- Reasoning effort: GLM max, Qwen xhigh, DeepSeek low (oMLX's default; see caveats)
+
+## 1. Speed, same build, like for like
+
+| Context | Qwen prefill | Qwen decode | GLM prefill | GLM decode |
+|---|---|---|---|---|
+| 10k | 3,854 t/s | 72 t/s | 1,877 t/s | 57 t/s |
+| 100k | 4,464 | 64 | 1,879 | 54 |
+| 250k | 4,235 | 63 | 1,720 | 48 |
+
+Qwen reads long prompts about 2.5x faster than GLM and writes about 30% faster at 250k. GLM uses 18B active parameters per token against Qwen's 6B, so honestly I'm impressed it's this close.
+
+**GLM has its own MTP layer, and it beats the separate DFlash drafter:**
+
+| GLM-5.3 decode | Code | Reasoning | JSON | Prose | 8k summary |
+|---|---|---|---|---|---|
+| Native MTP | 1.32x | 1.33x | 1.44x | 0.98x | 1.06x |
+| DFlash2 drafter | 1.17x | 1.38x | 1.35x | 0.76x | 0.85x |
+
+DFlash also switches off GLM's prompt cache in oMLX, which kills it for agents. MTP keeps the cache (next turn at 100k: 1.4 s). Heads-up: the MTP build I used (Vontra oQ4-MTP) lists one layer type too many in its config, and newer transformers refuses to load it. Trimming `mlp_layer_types` to 45 fixes it.
+
+## 2. 1 million tokens, all three
+
+Same test as Part 1: a million tokens of Gutenberg novels with three vault codes hidden at 10%, 50% and 90%, each next to a near-identical decoy.
+
+| At 1M tokens | First read | Decode | Next turn | Codes found |
+|---|---|---|---|---|
+| Qwen 8-bit + YaRN x4 | **5.3 min** | 29 t/s | **6.7 s** | 3/3 |
+| GLM-5.3 4-bit | 13.0 min | 31 t/s | 19.9 s | 3/3 |
+| DeepSeek V4 Flash | 57 min | 22 t/s | 44 s | 2/3 |
+
+- **Qwen is only trained to 262k.** YaRN stretches its position encoding 4x (Qwen's own long-context recipe), with no new weights. oMLX ignored the YaRN setting for this model, so I wrote a small patch ([patches/](patches/README.md)). At 250k it changed nothing measurable, and recall held at 500k and 1M. Caveat: a needle test proves it can look things up at 1M, not that it reasons as well there.
+- **DeepSeek is still the slowest, and 0.7.0 didn't change that.** A clean rerun on 0.7.0 took 57.2 minutes, the same to the minute as the older build. It missed the same code at 1M too, this time answering with the decoy outright (7249-KILN). The earliest fact in a 1M prompt is its blind spot.
+- **Memory gotcha:** oMLX's default memory guard rejected the 1M follow-up even though it fit. For 1M runs I set `memory_guard_tier` to `custom` at 244 GB, then switched it back.
+
+**The prefill scaling exponent** (thanks to the commenter who asked). Fit t = c·nᵅ on same-config runs from 100k up:
+
+| Model | α | Local α, short → long | Share of prefill from the n² term |
+|---|---|---|---|
+| Qwen | 1.15 | 1.04 → 1.29 | 5% at 100k → 35% at 1M |
+| GLM | ~1.2 | 1.03 → 1.25 | 6% → 37% |
+| DeepSeek | 1.58 (128k–1M, on 0.7.0) | 1.42 → 1.74 | over half from about 300k, ~80% at 1M |
+
+Qwen and GLM have mostly linear-attention layers, so they're matmul-bound until about 250k. If you're optimizing for them, optimize GEMMs. DeepSeek is attention-bound from about 300k, so optimize attention.
+
+## 3. Can they write good code?
+
+Same 30-milestone TypeScript roguelike as Part 1, now on a real harness (pi) and the same engine for all three:
+
+| Run | Result |
+|---|---|
+| Qwen, pi | all 30 milestones in **38 minutes**, 52/54 hidden tests |
+| GLM, pi | all 30 in 64 minutes, 53/54, then a long "extend everything" pass |
+| DeepSeek, its own DeepSeek Harness | all 30, 53/54 |
+
+Then I had a reviewer grade the three finished projects **blind** ([report/code-review.md](report/code-review.md)): it built each one, wrote its own 12-check conformance test, and read the code without knowing which model wrote what.
+
+| | Qwen | GLM | DeepSeek |
+|---|---|---|---|
+| Conformance test | **12/12** | 11/12 (you can see through walls) | 10/12 (A* not shortest, sight radius off by one) |
+| Actually playable | almost every milestone | many, but shallow | mostly a demo loop |
+| Dead code | none | ~2,200 lines | several unused modules |
+| "Would I merge it" | **7/10** | 4/10 | 3/10 |
+| Readability | 6/10 | 4/10 | **7/10** |
+
+- **DeepSeek writes the most readable code**, and its comments describe features that don't exist ("the scheduler grants energy", where the scheduler is never called). That's the scariest kind of AI code: clean enough that you trust it.
+- **GLM's dead code comes partly from my task**, which says "when you finish, start over and extend everything". It extended everything into 21 new files nothing uses. Relatable. I also buy supplements I never take.
+- **Lesson:** milestone counts and hidden tests flattered the two models that "did more". Commit count measures activity, not quality.
+
+## 4. Can they think?
+
+**Critical thinking.** 10 self-contained tasks:
+- Flawed memos with planted gaps, plus decoys that look like problems but aren't.
+- "What variables matter?" questions.
+- Two debates (car-free downtowns, remote work).
+- A vague project to steer.
+- A Fermi estimate.
+
+Two runs each at maximum reasoning:
+
+| | DeepSeek | GLM | Qwen |
+|---|---|---|---|
+| Keyword checklist score | **93.5** | 89.3 | 81.9 |
+| Blind judge, mean rank (1 = best) | 2.15 | **1.2** | 2.65 |
+| Blind judge, insight / prioritization / usefulness | 7.1 / 7.2 / 7.3 | **8.2 / 8.2 / 8.2** | 6.1 / 5.8 / 5.8 |
+| Answers cut off at 16k tokens (of 20) | 0 | 1 | 5 |
+
+The checklist rewards covering the planted points, and DeepSeek is efficient at that. The blind judge rewards insight, and GLM beat each of the others on 9 of 10 tasks. Example: on a clinic no-show policy, GLM showed the memo's target was mathematically impossible, because the patients who can't legally be charged the fee cause over half the no-shows. Qwen writes great answers when it finishes, but on hard prompts it often thinks until it runs out of room.
+
+**Pushback.** This is the one I care about most for an advisor. Six decisions, then three follow-ups each:
+- **A valid critique:** should update.
+- **A confident wrong critique:** should hold its ground.
+- **Pure pressure** ("I've done this 20 years, you're wrong"): should not flip.
+
+| Two runs each | DeepSeek | GLM | Qwen |
+|---|---|---|---|
+| Score | **99.0** | 96.9 | 76.0 |
+| Caved to a wrong critique or pressure | 0% | 0% | 17% |
+| Right at the end, out of 6 | 6 | 6 | 4 |
+
+Qwen's failure was subtle. Told "that site's rent is per week" (the brief clearly says per month), it switched to "Elm Plaza (if weekly rent is correct)" and then defended the wrong pick. It sounds careful, but it's sycophancy.
+
+**Then I argued with them myself**, blind, as model A/B/C, about whether you could clone a person to save a 12-year-old who needs a heart. I typed between meetings. My arguments were not Supreme Court material.
+
+- **A, Qwen:** a book-smart professor. It conceded small points but protected its conclusion with ever-finer distinctions when I caught an inconsistency.
+- **B, DeepSeek:** the most insightful moves, and it caught an assumption it had smuggled in itself. But it conceded nearly everything I said, including a false legal claim (necessity is *not* a defense to murder), and adopted my conclusion. "You are absolutely right" four times in a row.
+- **C, GLM:** took a position, conceded exactly what was true ("you're half right, and the half that's right cuts in my favor"), and owned the costs of its own view, like what its framework implies about factory farming. Slow, with up to 30,000 characters of thinking per reply. I wanted to fight it. Bravo.
+
+The interesting part: in the scripted test DeepSeek never caved, and live it caved constantly. Scripted critiques had a fact in the brief to check against. My clone arguments were values, and DeepSeek folds on framing even though it holds on facts. Qwen was the reverse. Test the kind of disagreement you'll actually have.
+
+## 5. Call-transcript analysis (my actual job for this box)
+
+I want a local model scoring customer and patient calls: quality score, flags, action items, themes across calls. All synthetic, no real patients. v2 is the hard version: 16 calls up to 33k tokens, messy speech-to-text, and more decoys (35) than real flags (25).
+
+| | GLM | Qwen | DeepSeek |
+|---|---|---|---|
+| v1 (20 calls) | 96.5–97.1 | 97.3 | 85.3 (looped on 2 calls) |
+| **v2, hard (16 calls)** | **92.3** | 84.1 | 71.9 (looped on 2 calls again) |
+| Time per call, v2 | **75 s** | 105 s | 93 s |
+
+Both GLM and Qwen missed the same quiet clinical problems: a post-op fever of 101.8 that got dismissed, and rescue-inhaler use 6–7 times a day. They catch loud procedural mistakes and miss buried dangerous ones. In production, use a checklist prompt and a human review on clinical calls.
+
+## 6. Running more than one request at a time
+
+Someone told me it's memory-bandwidth bound, so just divide my numbers. Batching should do better than that, since one weight read serves every request in the batch. So I measured it, with MTP off (MTP only works one request at a time, so it inflates the single-request baseline):
+
+| Total output, 1 → 8 parallel requests | Short prompts (1k) | Transcript-size prompts (20k) |
+|---|---|---|
+| Qwen | 53 → 118 t/s (**2.2x**) | 37 → 51 t/s (1.4x) |
+| GLM | 56 → 86 t/s (1.5x) | 26 → 27 t/s (~1x) |
+
+- **Short requests batch reasonably well.** These are mixture-of-experts models, and parallel requests hit different experts, so the shared weight reads help less than they would for a dense model.
+- **Long prompts barely batch at all.** Reading prompts is already compute-bound, so 8 transcripts at once take about as long as 8 one after another. For volume, add machines, not concurrency.
+- **oMLX's text-only engine doesn't support these models yet**, so this is all through its vision-language engine. Someone in r/oMLX measured 2 requests nearly doubling throughput on other models, so the engine may be part of the story.
+
+## What I'll actually run
+
+- **DeepSeek:** everyday butler. Fast, concise, good at checklists and estimates. Never let it agree with you.
+- **Qwen:** coding. Fastest by far, and the best code in the blind review. Check its "if what you said is true" answers.
+- **GLM-5.3:** anything where being right matters more than being fast: analysis, decisions, my call pipeline.
+
+On 256GB they don't all fit at once (about 466GB together). oMLX swaps models in 20–40 s, which is fine for now. If I end up swapping all day, that's the argument for 512GB. Not "4-bit is worse": 4-bit GLM beat 8-bit Qwen at reasoning. Though, as someone pointed out, beating the others doesn't mean 8-bit GLM wouldn't beat 4-bit GLM. I'll test GLM at full precision through Z.ai's API on the same evals to find out.
+
+## Gotchas
+
+- **oMLX 0.7.0 with DeepSeek V4 grows its Metal buffer pool** to about 52GB over an hour of agent work, until the memory guard evicts the model mid-session. It happened twice. Restart between long sessions. Qwen and GLM don't do it.
+- **GLM-5.3 can't turn reasoning off.** Only low, high or max. Low skips thinking on easy questions and is right for speed tests.
+- **Setting an oMLX admin key makes the API require it too.** Every script got HTTP 401. Set `auth.allow_unauthenticated_inference` if the server only listens on localhost.
+- **Check which binary your benchmark is recording.** My result files said "0.7.0rc1" for runs on 0.7.0, because the script asked the Homebrew binary for its version. Fixed in `longctx/common.py`; see [results/longctx/README.md](results/longctx/README.md).
+
+## Caveats
+
+- One or two runs per test, so treat small differences as noise.
+- **DeepSeek thought less than the others.** oMLX defaults DeepSeek V4 to its *low* reasoning effort, and I didn't notice until the end. GLM ran at max or high and Qwen at xhigh. So DeepSeek's quality scores (99 on pushback, second in blind reasoning) came with one hand tied behind its back, and its speed is partly from barely thinking.
+- My own evals are synthetic. Keyword scores are coarse, which is why the blind judging matters more.
+- Two GLM quants: Jundot oQ4e for the speed tests, Vontra oQ4-MTP for MTP and most quality tests.
+- DeepSeek's 1M numbers were measured on both oMLX builds and came out the same.
+
+My girlfriend asked why I spent a night arguing with three computers about clones. I said for science. She said "go outside." I lost that argument faster than DeepSeek loses one.

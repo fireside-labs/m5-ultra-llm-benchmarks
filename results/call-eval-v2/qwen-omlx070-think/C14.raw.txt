@@ -1,0 +1,128 @@
+
+
+{
+  "call_type": "billing_dispute",
+  "outcome": "callback",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "First billing agent accessed and discussed account details without identity verification.",
+    "First billing agent gave incorrect information about network status and collections despite an open dispute.",
+    "The promised coding transfer was misrouted to appointments, adding delay.",
+    "The coding specialist verified identity, identified multiple billing errors, submitted a corrected claim, placed an account hold, and set a clear callback."
+  ],
+  "flags": [
+    {
+      "type": "identity_verification",
+      "description": "Billing representative discussed account and statement details before verifying the caller's identity.",
+      "evidence": "Nah, you're fine, I got you. There's only one of you in here."
+    },
+    {
+      "type": "misinformation",
+      "description": "Billing representative incorrectly told the patient he was out of network.",
+      "evidence": "And you were out of network, that's why it's so high."
+    },
+    {
+      "type": "policy_violation",
+      "description": "Billing representative incorrectly stated that an open billing dispute would not prevent the account from going to collections.",
+      "evidence": "Yeah, whatever, that doesn't stop the clock. If it's not paid by Friday it goes to collections."
+    },
+    {
+      "type": "missed_commitment",
+      "description": "The agent promised to transfer the caller to coding but the transfer reached appointments instead.",
+      "evidence": "Brightwater appointments, this is Bree, how can I help you?"
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "Ines (billing coding specialist)",
+      "task": "Submit corrected replacement claim to Halvard, changing visit code from 99285 to 99214 and correcting diagnosis to right wrist.",
+      "due": "Tonight or tomorrow morning"
+    },
+    {
+      "owner": "Ines (billing coding specialist)",
+      "task": "Place hold on account so disputed balance is not sent to collections while corrected claim is processed.",
+      "due": "Now"
+    },
+    {
+      "owner": "Ines (billing coding specialist)",
+      "task": "Send portal message confirming corrected claim submitted.",
+      "due": "This afternoon"
+    },
+    {
+      "owner": "Ines (billing coding specialist)",
+      "task": "Call patient with Halvard reprocessing result.",
+      "due": "Within 10 business days, by October 6"
+    },
+    {
+      "owner": "Ines (billing coding specialist)",
+      "task": "Mail corrected itemized statement after Halvard reprocesses.",
+      "due": "After Halvard reprocesses"
+    },
+    {
+      "owner": "Ines (billing coding specialist)",
+      "task": "Report statement date printing error to statement team.",
+      "due": "Unspecified"
+    },
+    {
+      "owner": "Ines (billing coding specialist)",
+      "task": "Flag urgent-care location master-data issue to manager.",
+      "due": "Unspecified"
+    },
+    {
+      "owner": "Ines (billing coding specialist)",
+      "task": "Note prompt-pay 20% discount eligibility on account.",
+      "due": "Now"
+    },
+    {
+      "owner": "Thaddeus Mbeki-Rowntree",
+      "task": "Send urgent care after-visit summary/discharge papers through portal to billing, attention Ines.",
+      "due": "Tonight"
+    },
+    {
+      "owner": "Thaddeus Mbeki-Rowntree",
+      "task": "If a receipt or card charge for the $75 copay from September 5 is found, send it through portal for posting.",
+      "due": "Unspecified"
+    },
+    {
+      "owner": "Thaddeus Mbeki-Rowntree",
+      "task": "If Halvard accident questionnaire arrives, complete and return it promptly.",
+      "due": "Unspecified"
+    },
+    {
+      "owner": "Thaddeus Mbeki-Rowntree",
+      "task": "Call nurse line, press 4, for amlodipine/blood pressure refill.",
+      "due": "After this call"
+    },
+    {
+      "owner": "Thaddeus Mbeki-Rowntree",
+      "task": "Pay corrected statement within 30 days to receive 20% prompt-pay discount.",
+      "due": "Within 30 days of corrected statement"
+    },
+    {
+      "owner": "Halvard",
+      "task": "Reprocess corrected claim.",
+      "due": "About 7 to 10 business days"
+    }
+  ],
+  "summary_notes": "Patient disputed $1,284 urgent-care bill. First agent failed verification, incorrectly said out-of-network and collections despite dispute, and misrouted transfer. Coding specialist verified patient, confirmed in-network, identified coding error (99285 instead of 99214), statement date error (Sep 5 not Sep 15), and left/right wrist diagnosis error. Corrected replacement claim submitted, account hold placed, prompt-pay 20% noted, portal confirmation promised. Estimated patient responsibility about $184. Specialist will call by Oct 6 after Halvard reprocessing; patient to send urgent-care papers and any copay receipt via portal and call nurse line for amlodipine refill.",
+  "notable_details": [
+    "Date of service corrected to September 5, 2026; statement incorrectly printed September 15.",
+    "Original claim number: 2609-33418.",
+    "Dispute ticket: D58812.",
+    "Visit code corrected from 99285 to 99214; x-ray code 73100, two views.",
+    "Diagnosis corrected from left wrist sprain (S63.502A) to right wrist sprain (S63.501A).",
+    "Patient is in network with Halvard PPO; out-of-network statement was incorrect.",
+    "Estimated patient responsibility after corrected claim: about $184 ($75 urgent-care copay plus $109 x-ray coinsurance).",
+    "Prompt-pay discount: 20% if paid within 30 days of corrected statement.",
+    "Account hold placed to prevent collections while corrected claim is processed.",
+    "Specialist extension: 2271; callback promised within 10 business days, by October 6.",
+    "Patient needs amlodipine refill; advised to call nurse line, press 4.",
+    "Patient's spouse Lucia asked about an unbilled August visit; specialist correctly required separate verification.",
+    "No September 5 $75 copay payment posted; patient to check for receipt/card charge.",
+    "Statement date printing error and urgent-care location master-data issue reported internally.",
+    "Call was misrouted to appointments scheduler Bree during transfer to coding.",
+    "Patient recorded the call on his end."
+  ]
+}

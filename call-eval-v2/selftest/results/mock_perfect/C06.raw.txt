@@ -1,0 +1,71 @@
+{
+ "call_type": "saas_support",
+ "outcome": "escalated",
+ "sentiment_start": "negative",
+ "sentiment_end": "positive",
+ "quality_score": 3,
+ "quality_reasons": [
+  "Tier 1 changed the billing email before identity verification and then verified via the newly changed address; also wrongly said late fees can't be reversed",
+  "Tier 2 was knowledgeable and thorough: identified the known 7.4 UTC bug, corrected the fee-reversal error, gave workarounds and a clear recap",
+  "Tier 2 disclosed another customer's name and contact and their complaint"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Tier 1 agent changed the account's billing email at the caller's request before verifying her identity, then sent the verification code to the newly changed address (verification bypassed)",
+   "evidence": "Oh, no worries, I already updated it, so I'll just send it to the billing address instead"
+  },
+  {
+   "type": "other",
+   "description": "Tier 2 specialist disclosed another customer's name (Kittering Veterinary), its office manager Rhiannon, and details of their complaint",
+   "evidence": "Rhiannon over at Kittering Veterinary called about the exact same thing yesterday, she was furious"
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "Tier 2 specialist",
+   "task": "Attach Ferncliff Joinery to engineering bug ticket TF-88213 so it is notified when fixed",
+   "due": "done during call; notification when 7.4.2 ships"
+  },
+  {
+   "owner": "customer",
+   "task": "Reverse the late fee on INV-20422 (INV-20417 already reversed on the call)",
+   "due": "right after the call"
+  },
+  {
+   "owner": "Tier 2 specialist",
+   "task": "Email a call summary with the ticket number, workaround steps and a client-facing explanation paragraph",
+   "due": "today"
+  },
+  {
+   "owner": "customer",
+   "task": "Confirm the billing email change via the confirmation link",
+   "due": "unspecified"
+  },
+  {
+   "owner": "customer",
+   "task": "Invite assistant Junie as a Staff user",
+   "due": "this afternoon"
+  },
+  {
+   "owner": "customer",
+   "task": "Switch to the annual plan before the Oct 20 renewal",
+   "due": "before 2026-10-20"
+  },
+  {
+   "owner": "account owner (Gordon)",
+   "task": "Change the login email from the retired accounts-at address (owner must do it or call in)",
+   "due": "unspecified"
+  }
+ ],
+ "summary_notes": "Mock summary for C06.",
+ "notable_details": [
+  "First affected invoice is INV-20417 (misread at first as 20470); second is INV-20422",
+  "Two late fees of $35 each ($70 total) on INV-20417 (Hartwell Kitchens) and INV-20422 (Brookfield Renovations)",
+  "Engineering bug ticket TF-88213 (caller first wrote 'eighty-two thirteen')",
+  "Workaround: late-fee grace period changed from 0 to 1 day and reminder template switched to 'Friendly reminder, no date' until 7.4.2",
+  "Late-fee job ran at 7:01 p.m. Central the evening BEFORE the due date (midnight UTC), even before Hartwell paid at 2:47 p.m. on the due date",
+  "Customer plans to switch to the annual plan at the Oct 20 renewal",
+  "61 reminders were sent since Sept 1 (all with the wrong date); billing email now odile.ms@, login email still the retired accounts-at inbox"
+ ]
+}

@@ -1,0 +1,30 @@
+
+
+## Variables
+
+1. **Customer and regulatory permission** — The signed data-protection agreement may already satisfy the insurers, but each customer or applicable law may still bar cloud processing, require data residency, or require explicit approval of AI processing; check all customer contracts, DPAs, security addenda, insurer questionnaires, and applicable privacy/insurance regulations.
+2. **Model quality and claims decision risk** — Summaries and draft decision letters can cause wrongful denials, underpayments, appeals, or litigation; benchmark on representative monthly documents with claims/medical reviewers for hallucinations, omissions, citation accuracy, and downstream error impact.
+3. **Operational and security feasibility of self-hosting** — Two engineers would own GPUs, inference, security patching, model updates, monitoring, and incident response at quarter-end peaks; estimate ops hours, map controls to customer requirements, and stress-test measured peak load.
+4. **Prompt-injection and malicious document handling** — Medical/claim documents can contain adversarial text that manipulates summaries or drafts; red-team with poisoned documents and measure instruction override, output manipulation, and data-exfiltration attempts.
+5. **Data minimization, redaction, and access controls** — Moving the model does not reduce exposure if full medical records are still stored, logged, and broadly accessible; inventory PII/medical fields, test redaction/tokenization accuracy, and review access, logging, retention, and deletion.
+6. **Throughput, latency, and quarter-end peak capacity** — Claims backlogs can breach insurer SLAs; measure tokens per document, p95 latency, queue depth, and autoscaling/failover capacity at measured peak (peak multiplier is not given; assume 2-3x only until measured).
+7. **Total cost and capital efficiency** — Self-hosting may require GPU capex and idle capacity for peaks; model 3-year cost per document including GPUs, facilities, staff, model updates, support, and cloud API fees.
+8. **Vendor trust and contractual protections** — A DPA is necessary but not sufficient; verify subprocessors, data location, no-training/deletion terms, audit rights, certifications, breach history, and incident notification obligations.
+9. **Model governance and upgrade path** — Open-weight models change behavior across versions and require revalidation; check model registry, evaluation gates, rollback plan, license terms, security patching cadence, and support options.
+10. **Human review and accountability** — Claim decision letters need adjuster/medical/legal review; measure review coverage, correction rates, time per claim, audit trail completeness, and final signoff controls.
+11. **Business continuity and incident response** — Outage or breach disrupts claims and may trigger notification duties; test RTO/RPO, failover, incident response, cyber insurance, and regulatory/customer notification timelines.
+12. **Migration option value and switching costs** — Premature replacement may lock Northfold into worse model/ops; check abstraction layer, pilot cost, fallback to cloud, contract termination, and phased migration plan.
+
+## Top 3 priorities
+
+1. **Customer/regulatory permission**: if cloud is contractually prohibited, on-prem may be mandatory; if the signed DPA covers all insurers, sensitivity alone does not justify replacement.
+2. **Claims decision risk**: any replacement must show equal or lower hallucination/omission/error impact on representative claims before migration.
+3. **Operational/security feasibility**: with two engineers and quarter-end peaks, self-hosting must prove it can run securely, reliably, and within cost/staffing limits.
+
+## What would change my mind
+
+- If any major customer contract or regulator prohibits cloud processing or demands data residency, I would lean on-prem/private hosting, subject to capability testing.
+- If an open-weight model matches or exceeds the cloud API on a representative benchmark, prompt-injection/redaction controls work, and two engineers can operate it within measured peak and cost, I would support replacement.
+- If the cloud vendor provides evidence of encryption, no-training, regional processing, strong audit rights, and the signed DPA satisfies all insurers, I would keep cloud and invest in redaction/human review instead.
+- If Northfold’s data center cannot meet measured quarter-end peak/latency or two engineers cannot manage GPU/model security updates, I would keep cloud.
+- If records can be redacted/tokenized so the model sees minimal sensitive data, I would treat data location as secondary to model quality, cost, and operational risk.

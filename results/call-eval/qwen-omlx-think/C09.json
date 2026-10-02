@@ -1,0 +1,60 @@
+{
+  "call_type": "insurance_verification",
+  "outcome": "callback",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Verified identity and corrected the member ID before proceeding.",
+    "Explained prior authorization requirement and set a callback expectation.",
+    "Maintained empathy and patience through system delays.",
+    "Failed to transfer the patient to billing for the duplicate copay as promised."
+  ],
+  "flags": [
+    {
+      "type": "missed_commitment",
+      "description": "Agent promised to transfer the patient to billing for a duplicate copay but did not complete the transfer before ending the call.",
+      "evidence": "I'll transfer you over to them at the end of our call so they can take care of it."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent",
+      "task": "Submit prior authorization request to Granite Meridian with Dr. Kowalczyk-Nnamdi's notes",
+      "due": "today"
+    },
+    {
+      "owner": "agent",
+      "task": "Call patient with prior authorization decision and schedule MRI",
+      "due": "as soon as decision is received, probably next week"
+    },
+    {
+      "owner": "patient",
+      "task": "Upload photo of front and back of insurance card to patient portal",
+      "due": "tonight"
+    },
+    {
+      "owner": "patient",
+      "task": "Upload secondary insurance card if obtained",
+      "due": "unspecified"
+    },
+    {
+      "owner": "agent",
+      "task": "Transfer patient to billing for duplicate $45 copay",
+      "due": "end of call"
+    }
+  ],
+  "summary_notes": "Outbound pre-registration for lumbar spine MRI ordered by Dr. Kowalczyk-Nnamdi. Patient verified with DOB/ZIP. New primary insurance Granite Meridian active; member ID corrected to GMH447182009, group 70315. Prior authorization required; agent will submit today with physician notes and call patient after decision, likely next week. Patient will upload insurance card photo tonight and secondary card if obtained. Patient reported duplicate $45 copay via ClearPay; agent promised billing transfer at end of call but no transfer occurred. No interpreter/accommodations needed; emergency contact unchanged.",
+  "notable_details": [
+    "Patient name: Bartholomew Szabo-Achebe, answered as Bart.",
+    "MRI ordered by Dr. Kowalczyk-Nnamdi.",
+    "New primary insurance: Granite Meridian Health Plan, active; old plan ended in December.",
+    "Member ID corrected to GMH447182009; group number 70315.",
+    "Prior authorization required for MRI; typical turnaround 5-7 business days.",
+    "Patient reported duplicate $45 copay charge via ClearPay; promised billing transfer did not occur.",
+    "Patient will upload insurance card photo tonight; secondary insurance through wife, card not available.",
+    "No interpreter or accessibility accommodations needed; emergency contact unchanged.",
+    "Patient forgot patient portal password; agent advised forgot-password link or front desk help.",
+    "Main entrance has blue awning; check-in inside to the left."
+  ]
+}

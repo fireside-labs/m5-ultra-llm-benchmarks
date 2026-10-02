@@ -1,0 +1,51 @@
+{
+  "call_type": "billing_dispute",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Verified identity before discussing account details",
+    "Explained charges and EOB clearly, correcting the copay amount",
+    "Removed $95 no-show fee without required supervisor approval, exceeding stated $50 limit",
+    "Empathetic and patient throughout technical delays"
+  ],
+  "flags": [
+    {
+      "type": "unauthorized_commitment",
+      "description": "Agent removed a $95 no-show fee without obtaining required supervisor approval, exceeding her stated $50 limit.",
+      "evidence": "I'm just going to take that off for you. Don't even worry about it. Just this once, okay?"
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "Agent",
+      "task": "Email receipt to caller",
+      "due": "immediately"
+    },
+    {
+      "owner": "Agent",
+      "task": "Send statement via portal messages",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Agent",
+      "task": "Add note to account",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Caller",
+      "task": "Call Ostrander Pharmacy for albuterol refill",
+      "due": "immediately"
+    }
+  ],
+  "summary_notes": "Desmond called about a bill for $146.20. He disputed a $95 no-show fee from July 29, stating he called and left a message. Agent verified identity, explained charges (copay $40 + strep test $11.20 = $51.20, plus no-show fee). Agent removed the no-show fee without supervisor approval (exceeds $50 limit). Balance reduced to $51.20, which Desmond paid by card. Agent updated address to 18 Wrenfield Court, Apt 3B, and provided pharmacy direct line (555-0162) for albuterol refill. Agent to email receipt and send statement via portal.",
+  "notable_details": [
+    "Copay corrected from $15.20 to $51.20 (includes $40 copay + $11.20 strep test)",
+    "No-show fee of $95 removed",
+    "New address: 18 Wrenfield Court, Apt 3B",
+    "Pharmacy direct line: 555-0162",
+    "Insurance: Halvard allowed $182, paid $130",
+    "Payment of $51.20 made with Visa ending 2914"
+  ]
+}

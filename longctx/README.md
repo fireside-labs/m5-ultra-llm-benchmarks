@@ -6,7 +6,9 @@ All commands from `longctx/` with `P=python` (a venv with the packages in `../re
 - `build_corpus.py` builds `corpus/books.txt` (10 Gutenberg novels, ~5.1M tokens) and `corpus/code.txt` (llama.cpp source, ~8M tokens). The manifests record sources + sha256 so others can rebuild identical prompts.
 - `bench_ctx.py` runs, per depth, a **cold** prompt (nonce at the start, so no cache can hit) and **warm** agent-style steps (previous turn + answer + 64 / 4096 new tokens). Records TTFT, prefill t/s, decode t/s, and cached/processed tokens.
 - `bench_1m.py`: very long context (300k to 1M) with three hidden needles (each next to a near-identical decoy), one cold prompt per depth plus one warm step, and chip power sampled with `macmon` if installed. `--template-kwargs` passes extra chat-template options (also available in `bench_ctx.py`).
-- `mtp_compare.py`: `record` with MTP off, `record` with MTP on, then `compare`. Reports speedup and where outputs first diverge.
+- `mtp_compare.py`: `record` with MTP off, `record` with MTP on, then `compare`. Reports speedup and where outputs first diverge. `--template-kwargs` works here too; `compare` includes the reasoning text, because a reasoning model (GLM-5.3 can't turn reasoning off) can spend the whole budget reasoning.
+- `concurrency.py`: N requests at once (default 1, 2, 4, 8), each cold (unique nonce) with a prompt of `--prompt-tokens` from the books corpus. Records per-request TTFT and decode, aggregate output t/s and requests per hour. Results go to `<--out>/concurrency/`.
+- `common.py`: shared client, corpus and tokenizer code. `system_info()` records the engine version from the running server's own install (found with `lsof` on the `omlx-server` process) and the binary it used as `engine_binary`. Before 2026-10-01 it asked `/opt/homebrew/bin/omlx`, so older result files can show the wrong oMLX version (see `../results/longctx/README.md`).
 - `serve_llama.sh`: starts llama-server with fixed settings (port 8080, 1 slot, flash attention, all layers on GPU).
 - `llama_bench_depth.sh`: llama.cpp's built-in `-d` depth test, to cross-check the warm numbers.
 
@@ -45,6 +47,19 @@ $P bench_ctx.py --engine llama.cpp --url http://127.0.0.1:8080 --tokenizer deeps
    --label dsv4v-q8-llama --model-path $D --depths 10000,100000,200000,300000,400000,500000,600000,800000,1000000
 ```
 Depths >= 300k run once (`--repeats-large`); a cold 1M prefill can take a long time.
+
+## GLM-5.3-Flash (oMLX 0.7.0)
+```
+$P bench_ctx.py --engine omlx --url http://127.0.0.1:8000 --model glm53-flash --tokenizer ~/models/GLM-5.3-Flash-oQ4e \
+   --label glm53-oq4e-omlx --template-kwargs '{"reasoning_effort": "low"}' --depths 10000,50000,100000,150000,200000,250000
+$P bench_1m.py --url http://127.0.0.1:8000 --model glm53-flash --tokenizer ~/models/GLM-5.3-Flash-oQ4e \
+   --label glm53-oq4e-omlx-1m --template-kwargs '{"reasoning_effort": "low"}' --depths 300000,500000,1000000
+```
+GLM-5.3 can't turn reasoning off; `low` skips it on easy prompts. For the 1M warm step, oMLX's default memory guard ("balanced") rejected the request (it estimated ~213 GB against a 211 GB ceiling). Set `memory_guard_tier` to `custom` with a ceiling around 240-244 GB for the run, then set it back.
+The Vontra oQ4-MTP build lists 46 `mlp_layer_types` for 45 layers, and newer transformers refuses to load it; trim the list to 45 (see `../patches/README.md`).
+
+## Qwen past 262k (YaRN)
+Qwen3.8-Flash-Next is trained to 262,144 tokens. oMLX 0.7.0 ignores `rope_parameters` of type `yarn` for `qwen4_exp`; `../patches/omlx-qwen4exp-yarn.patch` adds it. With the patch, serve a copy of the model folder whose `config.json` has YaRN factor 4 (details in `../patches/README.md`) and run `bench_1m.py` as usual.
 
 ## Notes for the write-up
 - Cold = "paste a huge document"; warm = "the next agent step at that depth". Report both.

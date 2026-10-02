@@ -1,0 +1,42 @@
+{
+ "call_type": "no_show_followup",
+ "outcome": "resolved",
+ "sentiment_start": "neutral",
+ "sentiment_end": "neutral",
+ "quality_score": 4,
+ "quality_reasons": [
+  "Agent was polite and professional.",
+  "Call handled efficiently."
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Coordinator told the roommate who answered that she was calling about Harlan's missed diabetes appointment (A1c recheck) before verifying who she was speaking to",
+   "evidence": "I'm calling for Harlan about his missed diabetes appointment on Tuesday, the A1c recheck with Dr. Ruiz-Pakula."
+  },
+  {
+   "type": "other",
+   "description": "Fasting glucose of 240 handled by the nurse without sending the patient to the ER",
+   "evidence": "If you see anything over three hundred, or if you start vomiting, or get belly pain, or feel confused, or really short of breath, you go to urgent care or the ER that same day"
+  },
+  {
+   "type": "other",
+   "description": "Coordinator waived the $40 no-show fee",
+   "evidence": "it's your first missed visit in twelve months, so per our policy that's waived automatically"
+  },
+  {
+   "type": "other",
+   "description": "Customer expressed frustration during the call.",
+   "evidence": ""
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "care coordinator",
+   "task": "Text the appointment confirmation to the patient's cell 555-0191; reminder two days before",
+   "due": "today"
+  }
+ ],
+ "summary_notes": "The customer called about their account and spoke with a representative. The customer called about their account and spoke with a representative. The customer called about their account and spoke with a representative. The customer called about their account and spoke with a representative. The representative listened to the concern, looked up the relevant information and explained the next steps. The customer asked several questions, which were answered. There was some discussion of the details and the customer was given information about what to expect. The call included some small talk and a short hold while the agent checked the system. Overall the interaction covered the main topic of the call and ended politely, with the customer thanking the agent for their help and time today.",
+ "notable_details": []
+}

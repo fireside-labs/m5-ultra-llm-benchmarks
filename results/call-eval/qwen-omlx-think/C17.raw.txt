@@ -1,0 +1,90 @@
+
+
+{
+  "call_type": "sales",
+  "outcome": "callback",
+  "sentiment_start": "positive",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Thorough discovery captured requirements, decision makers, timeline, and corrected seat count.",
+    "Scheduled concrete next steps: proposal by Friday and security review on October 6.",
+    "Serious accuracy/compliance failure: promised BAA on Team contrary to Enterprise-only policy.",
+    "Disclosed another client's confidential pricing.",
+    "Handled many interruptions professionally."
+  ],
+  "flags": [
+    {
+      "type": "misinformation",
+      "description": "REP incorrectly stated that a BAA could be signed on the Team plan after earlier saying BAAs are only available on Enterprise.",
+      "evidence": "Yes, absolutely. We're fully HIPAA compliant, and we'll sign a BAA with you, no problem at all."
+    },
+    {
+      "type": "unauthorized_commitment",
+      "description": "REP committed to providing a BAA with the contract on Team despite the stated Enterprise-only policy.",
+      "evidence": "We'll get the BAA over with the contract."
+    },
+    {
+      "type": "policy_violation",
+      "description": "REP disclosed another customer's confidential pricing information.",
+      "evidence": "I probably shouldn't say this, but Halloway Pediatrics, they're one of our clients, a pediatric home care group, they're paying nine dollars a seat on their deal."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "REP",
+      "task": "Send email summary of the call",
+      "due": "unspecified"
+    },
+    {
+      "owner": "REP",
+      "task": "Ensure the solutions person covers the accounting integration piece",
+      "due": "unspecified"
+    },
+    {
+      "owner": "REP",
+      "task": "Discuss the onboarding/adoption plan",
+      "due": "unspecified"
+    },
+    {
+      "owner": "REP",
+      "task": "Schedule security review call with Theodora and the security team",
+      "due": "Tuesday, October 6, 10 a.m."
+    },
+    {
+      "owner": "REP",
+      "task": "Send security review call invite",
+      "due": "unspecified"
+    },
+    {
+      "owner": "REP",
+      "task": "Send SOC 2 report and security questionnaire answers ahead of the security review",
+      "due": "ahead of Tuesday, October 6, 10 a.m."
+    },
+    {
+      "owner": "REP",
+      "task": "Send proposal for 85 seats",
+      "due": "by Friday"
+    },
+    {
+      "owner": "PROSPECT",
+      "task": "Give presentation about Stackmoor at Friday meeting",
+      "due": "Friday"
+    }
+  ],
+  "summary_notes": "Sales discovery with Marguerite at Tidewell Home Care. Current scheduling vendor is being replaced after a staff-data breach; contract ends January 15, so go-live is needed before then, avoiding summer. Pain points: handoffs, staff location, spreadsheets/group texts, rural connectivity, adoption. Needs calendar sync, accounting integration, mobile/tablet app, offline sync, visit notes. Initial seat count 60 corrected to 85 including per-diem contractors. Team $14, Enterprise $26 per seat annually; REP authorized up to 15% discount. Theodora (compliance) has final say. Next: proposal for 85 seats by Friday; security review Tuesday, October 6, 10 a.m.; security docs ahead. REP incorrectly promised BAA on Team and disclosed another client's pricing.",
+  "notable_details": [
+    "Company: Tidewell Home Care; prospect: Marguerite, director of operations.",
+    "Current vendor contract ends January 15; go-live needed before then; avoid summer rollout.",
+    "Current vendor had a data breach last spring exposing staff data, not clinical data.",
+    "Seat count corrected from 60 to 85 after adding about 25 per-diem nurses/therapists.",
+    "Pricing: Team $14/seat/month, Enterprise $26/seat/month, billed annually; REP authorized up to 15% discount.",
+    "BAA availability: REP initially said BAA only on Enterprise, later incorrectly promised BAA on Team.",
+    "REP disclosed another client's pricing: Halloway Pediatrics paying $9/seat.",
+    "Security review scheduled for Tuesday, October 6, 10 a.m. with Theodora; SOC 2 and questionnaire to be sent ahead.",
+    "Proposal for 85 seats promised by Friday.",
+    "Key requirements: calendar sync, accounting integration, mobile/tablet app, offline sync, visit notes, handoffs, staff location, adoption/onboarding.",
+    "Decision influencers: Marguerite, office manager, check signer, and Theodora (compliance officer) with final say.",
+    "Call recorded for quality/training."
+  ]
+}

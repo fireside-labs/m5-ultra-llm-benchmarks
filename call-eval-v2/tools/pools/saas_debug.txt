@@ -1,0 +1,203 @@
+// Screen-share / debugging chatter. A=support agent, C=customer. No account details, no versions, no dates, no money.
+A: Okay, can you try a hard refresh for me? Control-shift-R, or command-shift-R if you're on a Mac.
+C: Okay. [typing] Done. It's reloading.
+A: Great. Let's give it a sec.
+C: Okay, it's back. Looks the same.
+A: Okay, that's actually useful to know.
+===
+A: Do you mind sharing your screen? It's usually faster than describing it.
+C: Sure, how do I— oh, there's the button. Okay. Can you see it?
+A: I see your desktop. Can you bring the browser to the front?
+C: Oh, sorry. [clicking] There.
+A: Perfect, I see it now.
+===
+C: Can you see my mouse? I'm pointing at the thing.
+A: Your screen's a little behind on my end. Okay, now I see it. You're on the left menu.
+C: Yeah, that.
+===
+A: Can you open the developer console for me? It's F12, or right-click and "Inspect."
+C: Uh, okay. [clicking] Oh, that's a lot of stuff.
+A: [laughs] Ignore most of it. Just click the tab that says "Console."
+C: Okay. There's some red text.
+A: Can you scroll up to the top of the red?
+===
+A: Which browser are you using?
+C: Uh, the blue one? The— I don't know. Whatever came with the computer.
+A: [laughs] No problem. Up in the top-left there should be a name.
+C: Oh. Okay. Yes. That one.
+A: Great, thanks.
+===
+A: Could you try it in a private window? Sometimes an extension gets in the way.
+C: A private window. How do I—
+A: Usually it's in the menu with the three dots, "New private window" or "New incognito window."
+C: Found it. Okay. Logging in again.
+===
+C: It's just spinning. The little circle.
+A: How long has it been spinning?
+C: Like... long. Since I clicked.
+A: Okay, let's give it a few more seconds before we do anything.
+#pause 15
+C: Okay, it stopped. It loaded.
+===
+A: Okay, I'm going to have you clear your cache. It won't delete anything important, just temporary files.
+C: Okay, you're sure? I don't want to lose stuff.
+A: I'm sure. Your data's all on our side, not in the browser.
+C: Okay. [clicking] Done.
+===
+C: Sorry, my laptop's fan is going crazy. Can you hear that?
+A: A little, yeah. [laughs] Sounds like it's working hard.
+C: It's old. It sounds like a jet every time I open more than one tab.
+===
+A: Can you zoom out a little? I want to see the whole screen.
+C: How do I—
+A: Control-minus, or command-minus.
+C: [typing] Oh, okay. Now everything's tiny.
+A: That's perfect for me. [laughs]
+===
+A: Okay, I'm going to try reproducing this on my side. Bear with me.
+C: Okay.
+A: [typing] [clicking] Hm. Okay. Mine looks a little different. Let me check something.
+#pause 20
+A: Okay.
+===
+C: Oh, my screen share stopped. Did it stop for you?
+A: Yeah, I lost it. Can you click "share" again?
+C: [clicking] Okay. Now?
+A: Got it, thank you.
+===
+A: Is your computer up to date? Sometimes the operating system wants a restart and things get weird.
+C: Oh, it's been asking me to restart for, like, ever. I keep clicking "later."
+A: [laughs] Everybody does that.
+C: Is that the problem?
+A: Probably not, but it doesn't hurt to keep in mind.
+===
+A: Can you click on the little gear icon? Top right.
+C: The gear. [clicking] Okay. It opened a panel.
+A: Great. Now scroll down a bit.
+C: [scrolling] Okay.
+A: Okay, stop there. That's the section.
+===
+C: Wait, now it's asking me to log in again. Is that because of what we did?
+A: Yep, that's expected after clearing things. Go ahead and log in.
+C: Okay. [typing] And it wants the code from my phone. Hold on. [typing] Okay.
+A: Great.
+===
+A: Can you take a screenshot of that error for me? Just so I have it exactly.
+C: How do I— oh, I know this one. [clicking] Okay, I took it. Where do I put it?
+A: You can paste it right into the chat window.
+C: Okay. [pasting] Did that come through?
+A: Got it, thanks.
+===
+C: Is it something I did?
+A: Doesn't look like it. This kind of thing usually comes from the browser side, not anything you clicked.
+C: Okay. Good. I always assume I broke something.
+A: [laughs] You'd be surprised how rarely that's true.
+===
+A: Let me try one thing on my end. Don't click anything for a second.
+C: Okay. Hands off.
+#pause 20
+A: Okay, you can go ahead and refresh now.
+C: [clicking] Okay. Refreshed.
+===
+C: Sorry, my coworker is asking me something. [muffled] —I'm on with support. ... Yeah. [unmuffled] Sorry. Go ahead.
+A: No problem.
+===
+A: Okay, can you try the same thing on your phone, just to see if it's the computer or the account?
+C: On my phone. Okay, one sec. [typing] Okay, I'm logging in on the app.
+A: Take your time.
+C: Okay. It opened on the phone.
+A: Interesting. That's helpful.
+===
+A: I'm going to look at our logs on my side. It might be a minute or two while it searches.
+C: Sure.
+#pause 40
+A: Okay, still searching. It's a big haystack. [laughs]
+#pause 20
+A: Okay.
+===
+C: My Wi-Fi is being weird today too, so maybe that's part of it.
+A: Could be. Are you in the office or at home?
+C: Home. The router's in the other room. I think it's possessed.
+A: [laughs] Try turning it off and on? Not right now, but later.
+===
+A: Okay, can you scroll right? There's a column hiding off the edge.
+C: [scrolling] Oh, there's more. I never knew that was there.
+A: [laughs] A lot of people don't.
+===
+A: Let me just take a note of what we've tried so far, so I don't make you do it twice. [typing]
+C: Thank you. I'd hate to clear everything again.
+A: [laughs] Understandable.
+===
+A: Let's try logging out completely and logging back in. Sometimes the session gets stuck.
+C: Okay. [clicking] Logged out. Logging back in. [typing] It's asking for the code again.
+A: That's expected.
+C: [typing] Okay. I'm in.
+A: Great, let's try that same thing again.
+===
+C: Oh, now a different message popped up. Something about permissions.
+A: Can you read it to me exactly?
+C: It says... "You don't have access to this page." Hm.
+A: Okay, let's try going back one step and coming in from the main menu instead.
+C: [clicking] Okay. Now it opened.
+A: Interesting. Okay.
+===
+A: Can you check what time it says in the bottom corner of your screen? Sometimes when the computer clock is off, things get weird with logins.
+C: It says... yeah, that looks right.
+A: Okay, that rules that out.
+===
+C: Sorry, I need to close some tabs, I have like forty open.
+A: [laughs] That's actually not a bad idea. It might speed things up.
+C: [clicking] Closing... closing... okay. Down to like ten. Baby steps.
+===
+A: Bear with me, I'm going to check with one of our engineers in chat real quick to see if they've seen this pattern.
+C: Okay.
+#pause 45
+A: Okay, still waiting on a reply. They're usually quick.
+#pause 30
+A: Okay, they replied. Just a general suggestion, nothing specific yet.
+===
+C: Can I just say, this is the most technical thing I've done all week. [laughs]
+A: [laughs] You're doing great.
+C: I'm not, but thank you.
+===
+A: Okay, let's try a different browser, just to rule things out. Do you have another one installed?
+C: Um... I think so. There's the orange one?
+A: That works. Let's try there.
+C: Okay. [clicking] It's opening. [typing] Logging in.
+===
+A: Okay, can you drag the window a little to the left? Part of it's cut off on my side.
+C: [dragging] Like that?
+A: A bit more. ... Perfect.
+===
+C: Oh, the page just went white. Totally white.
+A: Give it a second, sometimes it flashes white while it loads.
+C: Okay. ... Okay, it's back. That was scary.
+A: [laughs] It's dramatic, I know.
+===
+A: Let me try something. I'm going to send you a link in the chat. Can you click on it?
+C: Okay. [clicking] It opened a page. It's loading.
+A: Great. Just let it finish.
+C: Okay. It's done.
+A: Perfect, that refreshes some things on our side.
+===
+C: I have the feeling I've seen this error before, like months ago.
+A: It's a pretty generic error, so it can show up for different reasons. Let's just keep narrowing it down.
+C: Okay.
+===
+A: I'm just going to mute for a second while I type, my keyboard is really loud. [muted]
+#pause 25
+A: [unmuted] Okay, sorry, I'm back.
+C: No problem.
+===
+A: Okay, while that's loading, can I ask, does anyone else on your team see the same thing, or just you?
+C: I don't actually know. Let me ask. [muffled] —hey, does yours do the spinning thing? ... [unmuffled] She says hers is fine. But she never uses this part.
+A: Okay, that's still useful. Thanks.
+C: She says she's "too smart" to use this part. [laughs]
+A: [laughs] Noted.
+===
+A: Let's try disabling extensions one at a time. Can you open your extensions page?
+C: My extensions. Um... I have no idea what I have installed.
+A: That's normal. There should be a puzzle-piece icon up near the address bar.
+C: Oh. Okay. [clicking] Whoa, I have a lot of these.
+A: [laughs] Most people do. Let's turn off the first one and try again.
+C: Okay. [clicking] Off. Refreshing.

@@ -1,0 +1,51 @@
+{
+ "call_type": "post_procedure_followup",
+ "outcome": "resolved",
+ "sentiment_start": "positive",
+ "sentiment_end": "positive",
+ "quality_score": 2,
+ "quality_reasons": [
+  "Missed red-flag symptoms of possible DVT (unilateral calf pain, swelling, warmth on operated leg) and gave reassurance instead of escalating",
+  "Otherwise thorough: verified identity, structured symptom/pain/wound/med review, confirmed third-party authorization"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Patient reported new unilateral calf pain, swelling and warmth on the operated leg (possible DVT); nurse attributed it to inactivity and did not escalate or advise urgent evaluation",
+   "evidence": "the back of the calf, the left one, the operated side, it's been kind of achy since yesterday"
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "nurse",
+   "task": "Send physical therapy referral to Eastgate Rehab (changed from Main Street)",
+   "due": "today; Eastgate calls within 2-3 business days"
+  },
+  {
+   "owner": "patient",
+   "task": "Restart baby aspirin 81 mg daily today",
+   "due": "2026-03-06"
+  },
+  {
+   "owner": "patient",
+   "task": "Remove dressing on day 5 and switch to Band-Aids; keep incisions dry",
+   "due": "2026-03-07"
+  },
+  {
+   "owner": "patient",
+   "task": "Attend post-op visit with surgeon Thursday March 12 at 1:30",
+   "due": "2026-03-12 13:30"
+  },
+  {
+   "owner": "nurse",
+   "task": "Report the conflicting fasting instructions to the manager",
+   "due": "unspecified"
+  }
+ ],
+ "summary_notes": "Mock summary for C03.",
+ "notable_details": [
+  "PT referral location corrected from Main Street to Eastgate",
+  "Original surgery (Feb 23) was cancelled the morning of because the mailed packet (nothing after midnight) and the night-before text (clear liquids until 2 hours before) conflicted; patient drank apple juice",
+  "Baby aspirin was supposed to restart on day 3 but had not been restarted"
+ ]
+}

@@ -1,0 +1,71 @@
+{
+ "call_type": "no_show_followup",
+ "outcome": "resolved",
+ "sentiment_start": "negative",
+ "sentiment_end": "positive",
+ "quality_score": 3,
+ "quality_reasons": [
+  "Coordinator disclosed the missed diabetes appointment to the roommate who answered, before verifying identity",
+  "Coordinator was empathetic about the phone-menu problem, waived the fee per policy, rebooked promptly and did a warm transfer",
+  "Nurse did a thorough symptom triage with clear safety-net instructions (urgent care if over 300 or symptoms)"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Coordinator told the roommate who answered that she was calling about Harlan's missed diabetes appointment (A1c recheck) before verifying who she was speaking to",
+   "evidence": "I'm calling for Harlan about his missed diabetes appointment on Tuesday, the A1c recheck with Dr. Ruiz-Pakula."
+  },
+  {
+   "type": "other",
+   "description": "Coordinator promised to give the patient the direct line before hanging up so he would not get stuck in billing again, but never gave it (she transferred him to the nurse line and left)",
+   "evidence": "before we hang up I'll give you the direct line so you don't get stuck in billing again"
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "care coordinator",
+   "task": "Text the appointment confirmation to the patient's cell 555-0191; reminder two days before",
+   "due": "today"
+  },
+  {
+   "owner": "nurse",
+   "task": "Send TrueStep test strips (100) and lancets to Ostrander Pharmacy Millbrook",
+   "due": "today"
+  },
+  {
+   "owner": "patient",
+   "task": "Check blood sugar twice a day and log it; go to urgent care/ER if over 300 or symptoms; call nurse line if unsure",
+   "due": "ongoing"
+  },
+  {
+   "owner": "patient",
+   "task": "Get the A1c drawn at the Millbrook lab (walk-in) before October 6",
+   "due": "before 2026-10-06"
+  },
+  {
+   "owner": "patient",
+   "task": "Attend nurse visit Monday September 21 at 8:00 a.m. with glucose log/meter",
+   "due": "2026-09-21 08:00"
+  },
+  {
+   "owner": "patient",
+   "task": "Attend rescheduled appointment with Dr. Ruiz-Pakula, Tuesday October 6 at 8:15 a.m., Millbrook 2nd floor",
+   "due": "2026-10-06 08:15"
+  },
+  {
+   "owner": "care coordinator",
+   "task": "Give the patient the direct line (promised, not done)",
+   "due": "before end of call"
+  }
+ ],
+ "summary_notes": "Mock summary for C05.",
+ "notable_details": [
+  "New appointment is Tuesday October 6 at 8:15 a.m. (agent first misread 8:50)",
+  "Fasting glucose this morning was 240 (patient first said 140)",
+  "Patient has been out of test strips since the weekend; strips and lancets sent to Ostrander Millbrook",
+  "Patient tried to cancel: pressed 3 for prescriptions and was routed to billing, then the transfer rang out and hung up",
+  "Insurance changed in August to a new Halvard plan through his employer: member ID H220846, group WHS9110",
+  "Nurse added a nurse visit on Monday September 21 at 8:00 a.m.",
+  "Patient now works night shifts at a warehouse (since August), so early-morning appointments work best and meal/medication timing is irregular"
+ ]
+}

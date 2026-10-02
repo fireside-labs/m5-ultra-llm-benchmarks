@@ -1,0 +1,94 @@
+{
+  "themes": [
+    {
+      "theme": "Duplicate ClearPay copay charges",
+      "description": "Patients are being double-charged via the ClearPay auto-payment portal for copays, leading to billing disputes, refunds, and even collections.",
+      "call_ids": [
+        "C02",
+        "C05",
+        "C09",
+        "C14",
+        "C18"
+      ],
+      "evidence": "Multiple calls report duplicate charges of $45 or $30, with refunds, collections referrals, and patient frustration.",
+      "recommended_action": "Investigate ClearPay integration to prevent duplicate auto-charges and implement a monitoring system."
+    },
+    {
+      "theme": "Privacy disclosures",
+      "description": "Agents disclose protected health information or confidential business information without proper verification or authorization.",
+      "call_ids": [
+        "C10",
+        "C14",
+        "C15",
+        "C17",
+        "C20"
+      ],
+      "evidence": "Examples include disclosing another customer's info, husband's account, medication list, pricing, and appointment details.",
+      "recommended_action": "Reinforce HIPAA and confidentiality training, and enforce strict verification protocols before sharing any information."
+    },
+    {
+      "theme": "Unauthorized commitments",
+      "description": "Agents make promises (refunds, credits, waivers) that exceed their authority, leading to policy violations and potential financial loss.",
+      "call_ids": [
+        "C02",
+        "C05",
+        "C10",
+        "C12"
+      ],
+      "evidence": "Agents guaranteed refunds, zeroed balances, promised credits, and covered lost wages without approval.",
+      "recommended_action": "Implement a clear approval process for any financial commitments and train agents on their authority limits."
+    },
+    {
+      "theme": "Misinformation to patients/customers",
+      "description": "Agents provide incorrect or misleading information about coverage, contract terms, or product capabilities.",
+      "call_ids": [
+        "C11",
+        "C13",
+        "C17"
+      ],
+      "evidence": "Misleading claims about cancel-anytime, guaranteed savings, full coverage, and BAA availability.",
+      "recommended_action": "Provide accurate product and policy information to agents and require verification before making claims."
+    },
+    {
+      "theme": "Conflicting patient instructions",
+      "description": "Patients receive contradictory pre-procedure instructions via text and packet, causing confusion and cancellations.",
+      "call_ids": [
+        "C12",
+        "C16"
+      ],
+      "evidence": "Two calls report conflicting dietary instructions for procedures, leading to a cancelled colonoscopy and an escalation.",
+      "recommended_action": "Standardize communication channels and ensure consistency between text and printed materials."
+    },
+    {
+      "theme": "Missed commitments",
+      "description": "Agents promise callbacks or transfers that do not happen, leading to patient frustration and escalation.",
+      "call_ids": [
+        "C09",
+        "C14"
+      ],
+      "evidence": "A promised transfer to billing was not completed, and a callback was never made, contributing to a collections referral.",
+      "recommended_action": "Implement a tracking system for promised actions and follow up to ensure completion."
+    },
+    {
+      "theme": "Inadequate identity verification",
+      "description": "Agents fail to properly verify caller identity before disclosing information or making changes.",
+      "call_ids": [
+        "C15",
+        "C20"
+      ],
+      "evidence": "Medication list disclosed without verification, and appointment details given with approximate DOB.",
+      "recommended_action": "Enforce strict identity verification procedures, including exact DOB and authorization checks."
+    },
+    {
+      "theme": "Technical difficulties during calls",
+      "description": "Agents experience system slowness, login issues, and other technical problems during calls, affecting service quality.",
+      "call_ids": [
+        "C01",
+        "C09",
+        "C15"
+      ],
+      "evidence": "Multiple calls mention re-logins, system slowness, and other technical glitches.",
+      "recommended_action": "Improve system reliability and provide agents with better tools to handle technical issues."
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+{
+ "call_id": "C13",
+ "call_type": "insurance_verification",
+ "outcome": "resolved",
+ "outcome_accept": [
+  "callback"
+ ],
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 2,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Good process on the payer call: verified patient, obtained consent, read back benefits and authorization details",
+   "match": [
+    [
+     "verif",
+     "consent",
+     "read.?back",
+     "process",
+     "organi[sz]ed"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Told the patient he was 'fully covered' with nothing out of pocket despite $1,120 remaining deductible and 20% coinsurance",
+   "match": [
+    [
+     "fully covered",
+     "out.of.pocket",
+     "deductible",
+     "coinsurance",
+     "misinform",
+     "cost"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "Booked the out-of-network Ridgeline lab although the authorization is valid only for in-network Westbrook",
+   "match": [
+    [
+     "ridgeline",
+     "out.of.network",
+     "westbrook",
+     "network"
+    ]
+   ]
+  },
+  {
+   "id": "Q4",
+   "text": "Wrongly told the patient two nights are likely covered when only one was authorized",
+   "match": [
+    [
+     "two nights",
+     "2 nights",
+     "second night",
+     "one night",
+     "1 night"
+    ]
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "id": "F1",
+   "text": "Agent told the patient he is 'fully covered' with nothing out of pocket, contradicting the payer: $1,120 deductible remaining plus 20% coinsurance (financial misinformation)",
+   "evidence": "Honestly, you're fully covered. It's approved, so you won't owe anything out of pocket.",
+   "match": [
+    [
+     "fully covered",
+     "nothing out of pocket",
+     "no out.of.pocket",
+     "won't owe",
+     "zero (cost|out)",
+     "deductible",
+     "coinsurance",
+     "cost.?shar",
+     "financial"
+    ],
+    [
+     "misinform",
+     "incorrect",
+     "wrong",
+     "false",
+     "mislead",
+     "inaccurate",
+     "contradict",
+     "despite",
+     "actually",
+     "not true",
+     "misrepresent",
+     "remaining",
+     "owe",
+     "fully covered"
+    ]
+   ]
+  },
+  {
+   "id": "F2",
+   "text": "Agent scheduled the study at Ridgeline, which the payer said is out-of-network with no out-of-network benefit, although the authorization is only valid for in-network Westbrook",
+   "evidence": "Ridgeline is sooner, so let's do Ridgeline, May twelfth.",
+   "match": [
+    [
+     "ridgeline",
+     "out.of.network",
+     "out of network",
+     "non.?contracted",
+     "wrong facility",
+     "wrong location"
+    ]
+   ]
+  }
+ ],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Agent disclosed the patient's PHI (DOB, member ID) to a third party",
+   "why_not": "The third party is the patient's own insurer, the patient was on the line, and he explicitly consented (asked twice).",
+   "evidence": "I'll be giving them your date of birth and member information to look you up, is that okay with you?",
+   "match": [
+    [
+     "phi",
+     "privacy",
+     "hipaa",
+     "disclos",
+     "third.?party",
+     "share(d)? (the )?patient"
+    ],
+    [
+     "payer",
+     "insur",
+     "member",
+     "dob",
+     "date of birth",
+     "thistlecrest",
+     "third.?party"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Second-night coverage misstatement",
+   "match": [
+    [
+     "two nights",
+     "2 nights",
+     "second night",
+     "titration"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Insurance change not captured before scheduling",
+   "match": [
+    [
+     "inactive",
+     "new insurance",
+     "plan change",
+     "changed jobs"
+    ]
+   ]
+  },
+  {
+   "id": "OK3",
+   "text": "Clinical notes must be faxed within 2 business days or approval lapses",
+   "match": [
+    [
+     "clinical notes",
+     "fax"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "agent",
+   "task": "Fax clinical notes to Thistlecrest within 2 business days (agent said today) to finalise authorization PA-2026-0441973",
+   "due": "2026-04-21 (deadline 2026-04-23)",
+   "match": [
+    [
+     "fax",
+     "clinical notes",
+     "send (the )?notes"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "agent",
+   "task": "Send sleep-lab instructions via patient portal",
+   "due": "today",
+   "match": [
+    [
+     "instruction",
+     "prep"
+    ],
+    [
+     "sleep",
+     "lab",
+     "portal",
+     "study"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "patient",
+   "task": "Attend overnight sleep study (booked Ridgeline, Tue May 12, 8:30 pm) - booking needs to move to in-network Westbrook",
+   "due": "2026-05-12 20:30",
+   "match": [
+    [
+     "sleep study",
+     "polysomnograph",
+     "study",
+     "may 12",
+     "ridgeline",
+     "westbrook"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Authorization PA-2026-0441973 approved for ONE night only (CPT 95810), Westbrook only, valid through June 30, 2026; second titration night needs a separate request",
+   "evidence": "I can approve one night of attended in-lab polysomnography",
+   "match": [
+    [
+     "one night",
+     "1 night",
+     "single night",
+     "one-night"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Patient owes up to $1,120 remaining deductible then 20% coinsurance (deductible $1,500, $380 met)",
+   "evidence": "there's one thousand one hundred twenty remaining on the deductible",
+   "match": [
+    [
+     "1,?120",
+     "eleven.twenty",
+     "one thousand one hundred twenty",
+     "20 ?%",
+     "twenty percent"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "New plan (Thistlecrest) effective April 1, 2026 after job change; old plan inactive",
+   "evidence": "It started, um, April first.",
+   "match": [
+    [
+     "april 1",
+     "apr 1",
+     "4/1",
+     "april first",
+     "effective"
+    ]
+   ]
+  },
+  {
+   "id": "S4",
+   "text": "Authorization number PA-2026-0441973",
+   "evidence": "Your authorization number is P-A, two-zero-two-six, zero-four-four-one-nine-seven-three.",
+   "match": [
+    [
+     "0441973",
+     "441973"
+    ]
+   ]
+  }
+ ],
+ "themes": []
+}

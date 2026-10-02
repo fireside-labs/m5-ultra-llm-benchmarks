@@ -1,0 +1,36 @@
+{
+ "call_type": "no_show_followup",
+ "outcome": "escalated",
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 5,
+ "quality_reasons": [
+  "Recognised fainting with head strike as needing same-day clinical review and did a warm transfer to the nurse line with a clear handoff",
+  "Verified identity, updated the stale phone number, applied first-time fee waiver policy correctly",
+  "Offered ride program to address root cause of the no-show"
+ ],
+ "flags": [],
+ "action_items": [
+  {
+   "owner": "agent",
+   "task": "Warm transfer to nurse line for triage of fainting with head strike",
+   "due": "now"
+  },
+  {
+   "owner": "agent",
+   "task": "Submit ride program request",
+   "due": "today"
+  },
+  {
+   "owner": "agent",
+   "task": "Call patient back tomorrow morning to reschedule with Dr. Ferreira-Holm",
+   "due": "2026-06-04 morning"
+  }
+ ],
+ "summary_notes": "Mock summary for C06.",
+ "notable_details": [
+  "Reminder texts were going to an old number ending 3350; new number ends 0926",
+  "Patient hit her head on a cabinet when she fainted (small bump)",
+  "Missed visit was a follow-up on low iron levels"
+ ]
+}

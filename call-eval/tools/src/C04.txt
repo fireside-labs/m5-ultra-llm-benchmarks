@@ -1,0 +1,38 @@
+@id C04
+@date 2026-05-19 09:12
+@line Corrowind Pharmacy - Refill Line
+@direction inbound
+@target 2000
+@speaker A TECH = pharmacy technician
+@speaker C CALLER = patient
+---
+A: Corrowind Pharmacy, this is Lena, how can I help you?
+C: Hi, good morning. I need a refill on my lisinopril. The ten milligram— well, actually, it's, um, it's twenty now, sort of. It's complicated. [laughs]
+A: [laughs] That's okay, we'll figure it out. Can I get your first and last name and your date of birth?
+C: Philippa Oyelaran-Groot. O-Y-E-L-A-R-A-N, dash, G-R-O-O-T. Date of birth is September fourteenth, nineteen fifty-nine.
+A: Thank you. And can you confirm your address or phone number?
+C: Seventy-seven Harrow Lane.
+A: Thank you, Ms. Oyelaran-Groot. Okay. I have your profile. So the lisinopril on file is ten milligrams, one tablet daily, and— it looks like that prescription has zero refills left.
+C: Right, so here's the complicated part. Two weeks ago Dr. Lindqvist-Mbeki bumped me up to twenty milligrams. She said, just take two of your tens until you run out and she'd send the new one. And, um, I've been taking two a day, so I'm running out faster. I have, um, two pills left. So that's tomorrow morning and then nothing.
+A: Okay. That makes sense. Hold on just a sec.
+#hold 60
+A: Okay, thank you for holding. So, I don't see a new prescription for the twenty milligram from Dr. Lindqvist-Mbeki's office. It's possible it didn't get sent, or it went to a different pharmacy.
+C: Oh, great. Of course.
+A: What I can do is send a request to her office right now for a new prescription for twenty milligrams, once daily, and I'll put a note that you're out after tomorrow.
+C: Yes, please. How long does that usually take?
+A: Usually same day or next day, but it depends on the office. I also asked the pharmacist, and since you'll be out, she can do a three-day emergency supply of the ten milligram, so you can keep taking two a day until the new one comes in.
+C: Oh, that would be great. Thank you.
+#fill pharmacy_lookup smalltalk
+A: Okay. So, are you picking up here at the Ferris Avenue location, like usual?
+C: Oh— actually, can it be the Harbor Road one? I'm, um, I'm staying at my sister's for a couple weeks, she just had her hip done, and Harbor Road is right around the corner.
+A: Sure. Let me transfer the emergency supply to Harbor Road. [typing] Okay. Harbor Road will have the three-day supply ready after four o'clock today.
+C: After four. Okay.
+A: And when the doctor sends the twenty milligram, we'll fill it at Harbor Road too and send you a text when it's ready. Is the number ending in six-one-zero-nine still good for texts?
+C: Yes, that's my cell.
+A: Perfect.
+C: So I'll, um, I'll get a text from you guys when the new one's ready, and I don't need to call the doctor myself?
+A: You don't need to, we'll send the request. But if you haven't heard from us by tomorrow afternoon, it wouldn't hurt to give her office a call too, just to nudge them.
+C: Okay, that's a good idea. I'll do that.
+A: Anything else I can help with?
+C: No, that's it. You've been really helpful, thank you, Lena.
+A: You're welcome. Have a good day.

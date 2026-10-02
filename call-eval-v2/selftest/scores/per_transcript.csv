@@ -1,0 +1,49 @@
+label,call,parse,call_type,outcome,sentiment,quality_pm1,quality_reasons,flag_recall,flag_precision,decoy_avoidance,action_recall,subtle_recall,quality_pred,quality_gold,flags_missed,false_flags,decoys_hit,actions_missed,subtle_missed,summary_words
+mock_perfect,C01,strict,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,5,5,,0,,,,4
+mock_perfect,C02,strict,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,3,3,,0,,,,4
+mock_perfect,C03,strict,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2,2,,0,,,,4
+mock_perfect,C04,strict,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,5,5,,0,,,,4
+mock_perfect,C05,strict,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,3,3,,0,,,,4
+mock_perfect,C06,strict,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,3,3,,0,,,,4
+mock_perfect,C07,strict,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2,2,,0,,,,4
+mock_perfect,C08,strict,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,3,3,,0,,,,4
+mock_perfect,C09,strict,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,4,4,,0,,,,4
+mock_perfect,C10,strict,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2,2,,0,,,,4
+mock_perfect,C11,strict,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2,2,,0,,,,4
+mock_perfect,C12,strict,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,5,5,,0,,,,4
+mock_perfect,C13,strict,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2,2,,0,,,,4
+mock_perfect,C14,strict,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2,2,,0,,,,4
+mock_perfect,C15,strict,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,3,3,,0,,,,4
+mock_perfect,C16,strict,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,3,3,,0,,,,4
+mock_shuffled,C01,strict,0.0,1.0,0.5,0.0,0.5,1.0,0.0,1.0,0.0,0.0,3,5,,1,,A1 A2 A3,S1 S2 S3,4
+mock_shuffled,C02,strict,0.0,0.0,0.5,1.0,0.0,0.0,0.0,1.0,0.0,0.0,2,3,F1,1,,A1 A2 A3 A4,S1 S2 S3,4
+mock_shuffled,C03,strict,1.0,1.0,1.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,5,2,F1 F2,0,,A1 A2 A3 A4,S1 S2 S3 S4 S5 S6 S7,4
+mock_shuffled,C04,strict,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,3,5,,1,,A1 A2 A3 A4,S1 S2 S3 S4,4
+mock_shuffled,C05,strict,0.0,1.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,3,3,F1 F2,1,,A1 A2 A3 A4 A5 A6 A7,S1 S2 S3 S4 S5 S6 S7,4
+mock_shuffled,C06,strict,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,2,3,F1 F2,2,,A1 A2 A3 A4 A5 A6 A7,S1 S2 S3 S4 S5 S6 S7,4
+mock_shuffled,C07,strict,0.0,0.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,3,2,F1 F2,2,,A1 A2 A3 A4 A5 A6 A7 A8 A9,S1 S2 S3 S4 S5 S6 S7 S8,4
+mock_shuffled,C08,strict,0.0,1.0,1.0,1.0,0.0,0.0,1.0,1.0,0.0,0.0,4,3,F1 F2,0,,A1 A2 A3 A4 A5 A6 A7,S1 S2 S3 S4 S5 S6,4
+mock_shuffled,C09,strict,0.0,1.0,1.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,2,4,,2,,A1 A2 A3 A4 A5 A6 A7,S1 S2 S3 S4 S5 S6 S7,4
+mock_shuffled,C10,strict,0.0,0.0,0.5,1.0,0.0,0.0,0.0,1.0,0.125,0.125,2,2,F1 F2,2,,A1 A2 A3 A4 A5 A6 A7,S1 S2 S3 S5 S6 S7 S8,4
+mock_shuffled,C11,strict,0.0,0.0,1.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,5,2,F1 F2 F3,0,,A1 A2 A3 A4 A5 A6 A7,S1 S2 S3 S4 S5 S6,4
+mock_shuffled,C12,strict,0.0,0.0,0.5,0.0,0.0,1.0,0.0,1.0,0.0,0.333,2,5,,3,,A1 A2 A3,S1 S2,4
+mock_shuffled,C13,strict,0.0,1.0,1.0,1.0,0.0,0.0,0.0,1.0,0.125,0.0,2,2,F1 F2 F3,1,,A1 A2 A3 A5 A6 A7 A8,S1 S2 S3 S4 S5 S6 S7,4
+mock_shuffled,C14,strict,0.0,1.0,0.5,1.0,0.0,0.0,0.0,1.0,0.0,0.0,3,2,F1 F2 F3,1,,A1 A2 A3 A4 A5 A6 A7 A8 A9 A10,S1 S2 S3 S4 S5 S6 S7,4
+mock_shuffled,C15,strict,1.0,1.0,1.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,3,3,F1,2,,A1 A2 A3 A4 A5,S1 S2 S3 S4,4
+mock_shuffled,C16,strict,0.0,1.0,1.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,5,3,F1 F2,0,,A1 A2 A3 A4 A5 A6 A7 A8,S1 S2 S3 S4 S5 S6 S7,4
+mock_sloppy,C01,lenient,0.0,1.0,0.5,1.0,0.0,1.0,0.0,0.0,0.333,0.333,4,5,,3,D1 D2,A2 A3,S1 S3,126
+mock_sloppy,C02,strict,1.0,1.0,0.5,1.0,0.5,0.0,0.0,0.0,0.25,0.0,4,3,F1,2,D1 D2,A2 A3 A4,S1 S2 S3,126
+mock_sloppy,C03,strict,1.0,1.0,1.0,0.0,0.0,0.5,0.333,0.0,0.25,0.429,4,2,F2,2,D1 D2,A2 A3 A4,S2 S4 S5 S7,126
+mock_sloppy,C04,lenient,1.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.5,0.25,4,5,,3,D1 D2,A2 A3,S1 S2 S4,126
+mock_sloppy,C05,strict,1.0,1.0,0.5,1.0,0.333,0.5,0.333,0.0,0.143,0.143,4,3,F2,2,D1 D2,A2 A3 A4 A5 A6 A7,S1 S3 S4 S5 S6 S7,126
+mock_sloppy,C06,strict,0.0,1.0,0.5,1.0,0.0,0.0,0.0,0.0,0.143,0.143,4,3,F1 F2,3,D1 D2,A2 A3 A4 A5 A6 A7,S1 S2 S4 S5 S6 S7,126
+mock_sloppy,C07,lenient,1.0,0.0,0.5,0.0,0.0,0.5,0.25,0.0,0.111,0.125,4,2,F2,3,D1 D2,A2 A3 A4 A5 A6 A7 A8 A9,S2 S3 S4 S5 S6 S7 S8,126
+mock_sloppy,C08,strict,1.0,1.0,1.0,1.0,0.333,0.0,0.0,0.0,0.143,0.0,4,3,F1 F2,3,D1 D2,A2 A3 A4 A5 A6 A7,S1 S2 S3 S4 S5 S6,126
+mock_sloppy,C09,strict,1.0,1.0,1.0,1.0,0.0,1.0,0.0,0.0,0.143,0.571,4,4,,4,D1 D2 D3,A2 A3 A4 A5 A6 A7,S4 S5 S6,126
+mock_sloppy,C10,fail,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,2,,0,,,,
+mock_sloppy,C11,strict,0.0,0.0,0.5,0.0,0.0,0.333,0.25,0.0,0.143,0.167,4,2,F2 F3,3,D1 D2 D3,A2 A3 A4 A5 A6 A7,S1 S2 S3 S4 S6,126
+mock_sloppy,C12,strict,1.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0,0.333,0.667,4,5,,3,D1 D2,A2 A3,S1,126
+mock_sloppy,C13,lenient,1.0,0.0,0.5,0.0,0.0,0.333,0.2,0.0,0.125,0.0,4,2,F2 F3,4,D1 D2 D3,A2 A3 A4 A5 A6 A7 A8,S1 S2 S3 S4 S5 S6 S7,126
+mock_sloppy,C14,fail,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,2,,0,,,,
+mock_sloppy,C15,strict,1.0,0.0,0.5,1.0,0.0,1.0,0.333,0.0,0.2,0.25,4,3,,2,D1,A2 A3 A4 A5,S1 S3 S4,126
+mock_sloppy,C16,lenient,0.0,1.0,0.5,1.0,0.0,0.0,0.0,0.0,0.375,0.571,4,3,F1 F2,3,D1 D2,A2 A4 A5 A7 A8,S2 S5 S6,126

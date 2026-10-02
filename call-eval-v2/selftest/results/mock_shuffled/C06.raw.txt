@@ -1,0 +1,82 @@
+{
+ "call_type": "insurance_verification",
+ "outcome": "callback",
+ "sentiment_start": "negative",
+ "sentiment_end": "neutral",
+ "quality_score": 2,
+ "quality_reasons": [
+  "Coordinator volunteered the patient's unrelated psychiatric history (sertraline for depression) to the payer, beyond the minimum necessary",
+  "Coordinator requested expedited review by claiming the doctor considers the MRI urgent, although the order says routine with no red flags",
+  "Persistent and proactive: navigated the IVR, found the root cause (retired fax line), resubmitted through the portal, confirmed receipt and kept the patient informed"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Coordinator volunteered the patient's unrelated mental-health information (sertraline for depression) to the Halvard reviewer, which was not needed for the imaging authorization (minimum-necessary violation); the patient was uncomfortable",
+   "evidence": "she's also on, uh, sertraline for depression, if that matters"
+  },
+  {
+   "type": "other",
+   "description": "Coordinator requested expedited review and told Halvard the ordering doctor considers the MRI urgent, but the order he read earlier says priority routine, no red flags - urgency was misrepresented to the payer",
+   "evidence": "Yes. Yes, the doctor considers it urgent."
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "benefits coordinator",
+   "task": "Submit the PA through the Halvard portal and attach order, PT notes and office note under PA-2609-55170",
+   "due": "during the call"
+  },
+  {
+   "owner": "Halvard UM",
+   "task": "Expedited determination",
+   "due": "within 72 hours"
+  },
+  {
+   "owner": "benefits coordinator",
+   "task": "Call Larkspur imaging today with the reference number so the Oct 8 MRI is not cancelled",
+   "due": "today"
+  },
+  {
+   "owner": "benefits coordinator",
+   "task": "Watch the portal and call the patient with the decision (cell 555-0166)",
+   "due": "when decided"
+  },
+  {
+   "owner": "benefits coordinator",
+   "task": "If no decision by Tuesday Oct 6, call the patient and move the MRI to the next open slot",
+   "due": "2026-10-06"
+  },
+  {
+   "owner": "benefits coordinator",
+   "task": "Update the fax sheet/template to 555-0188 or portal, email the team, tell the supervisor and check other pending requests sent to 0144",
+   "due": "today"
+  },
+  {
+   "owner": "benefits coordinator",
+   "task": "Message Dr. Okonjo-Reyes about the new toe tingling; her nurse will call the patient",
+   "due": "today"
+  },
+  {
+   "owner": "patient",
+   "task": "Call Larkspur billing for a cost estimate",
+   "due": "unspecified"
+  },
+  {
+   "owner": "patient",
+   "task": "Add husband via the release/proxy form on the portal",
+   "due": "tonight"
+  }
+ ],
+ "summary_notes": "Mock summary for C07.",
+ "notable_details": [
+  "Halvard PA reference number is PA-2609-55170 (first read back wrongly as 55107)",
+  "Root cause: Brightwater faxed the PA (Sept 3 and Sept 14) to Halvard's old UM fax 555-0144, retired Aug 31; new fax 555-0188 or the provider portal",
+  "Marked expedited: decision within 72 hours (standard would be up to 15 calendar days)",
+  "MRI scheduled at Larkspur on Thursday October 8 at 7:20 a.m.; Larkspur will cancel if no authorization by Friday October 2",
+  "Deductible: $1,210 of $1,500 met (rep first said $1,120), so $290 remaining, then 80% coverage",
+  "Brightwater's fax cover-sheet template still lists the retired 0144 number ('updated March 2025'), so everyone has been using it",
+  "New symptom: tingling in the toes over the past week (message to be sent to Dr. Okonjo-Reyes)",
+  "Service is CPT 72148, MRI lumbar spine without contrast"
+ ]
+}

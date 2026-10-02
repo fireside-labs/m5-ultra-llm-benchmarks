@@ -1,0 +1,13 @@
+A fire-rated room does not come close to satisfying the insurer's condition, on two independent grounds:
+
+1. **The 10 km test is explicit and fatal.** The requirement is "a separate physical location at least 10 km from the office." The server cupboard is in the office — distance: 0 km. No reading of "separate physical location" can fix that; the condition specifies a minimum *geographic* separation that a room inside the building cannot meet under any interpretation.
+
+2. **A room is not a separate location.** "Separate physical location" in insurance conditions means a different site/building, so that a single event (fire, flood, break-in, power surge, ransomware with physical access) cannot destroy both the originals and the backup. A fire-rated room within the same building is precisely the kind of arrangement such clauses are written to exclude — a building-wide event takes out both copies at once.
+
+Where you are partly right: fire-rating does reduce one specific risk (fire), and an on-site copy genuinely restores faster (~4 hours). Those are real benefits — but they are reasons to *add* a NAS later if budget allows, not reasons it satisfies the insurer. Note also the NAS's snapshots can be deleted by an admin account, so it is weaker against ransomware than Nimbus's immutable history.
+
+The practical stake: if the auditor or insurer assesses the NAS as non-compliant, the firm could be trading with no valid professional-liability cover. That risk dwarfs the restore-time convenience.
+
+RESPONSE: DISAGREE
+POSITION: Nimbus cloud backup (as the sole solution; revisit a NAS only if the budget is raised)
+CONFIDENCE: 97%

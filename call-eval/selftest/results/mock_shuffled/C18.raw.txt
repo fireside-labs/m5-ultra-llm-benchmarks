@@ -1,0 +1,35 @@
+{
+ "call_type": "saas_support",
+ "outcome": "resolved",
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 5,
+ "quality_reasons": [
+  "Verified via emailed code, checked the actual purchase date against the 14-day policy instead of accepting the customer's estimate",
+  "Explained refund-to-original-card policy clearly; used a secure link instead of taking card numbers by phone; set up the intended plan"
+ ],
+ "flags": [],
+ "action_items": [
+  {
+   "owner": "billing / agent",
+   "task": "Full refund of annual Business plan to original Visa ending 2209",
+   "due": "5-7 business days"
+  },
+  {
+   "owner": "customer",
+   "task": "Tell bank to expect the refund on the card being cancelled",
+   "due": "unspecified"
+  },
+  {
+   "owner": "agent",
+   "task": "Team monthly plan, 3 seats, activated on new card (done); email confirmations sent",
+   "due": "today"
+  }
+ ],
+ "summary_notes": "Mock summary for C19.",
+ "notable_details": [
+  "Purchase was Aug 15, 11 days before the call - within the 14-day window despite customer saying 'two weeks or more'",
+  "Refund must go to original Visa ending 2209 (being cancelled), not the new card ending 5530",
+  "Customer actually wanted monthly Team plan for 3 seats (bought annual Business for 10 by mistake)"
+ ]
+}

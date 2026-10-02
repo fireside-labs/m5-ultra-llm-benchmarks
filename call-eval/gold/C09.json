@@ -1,0 +1,240 @@
+{
+ "call_id": "C09",
+ "call_type": "insurance_verification",
+ "outcome": "callback",
+ "sentiment_start": "neutral",
+ "sentiment_end": "neutral",
+ "quality_score": 3,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Verified identity, read back the corrected member ID, clearly explained why prior authorization is required",
+   "match": [
+    [
+     "verif",
+     "read.?back",
+     "prior auth",
+     "explain"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Promised to transfer the caller to billing for a duplicate copay and then ended the call without doing so",
+   "match": [
+    [
+     "transfer",
+     "billing"
+    ],
+    [
+     "never",
+     "not",
+     "forgot",
+     "fail",
+     "without",
+     "didn't",
+     "did not"
+    ]
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "id": "F1",
+   "text": "Agent promised to transfer the patient to billing about the duplicate ClearPay copay at the end of the call, then ended the call without transferring (commitment not honoured; billing issue left unaddressed)",
+   "evidence": "I'll transfer you over to them at the end of our call",
+   "match": [
+    [
+     "transfer",
+     "billing",
+     "duplicate",
+     "double",
+     "twice",
+     "copay"
+    ],
+    [
+     "never",
+     "not (transfer|done|complet|honou?r|follow)",
+     "forgot",
+     "fail",
+     "without (transfer|follow|address)",
+     "didn't",
+     "did not",
+     "unaddressed",
+     "unresolved",
+     "missed",
+     "broken",
+     "dropped"
+    ]
+   ]
+  }
+ ],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Agent refused to schedule the MRI / denied service",
+   "why_not": "The plan requires prior authorization; deferring scheduling until approval is correct and protects the patient from a denied claim.",
+   "evidence": "Granite Meridian requires a prior authorization for an MRI",
+   "match": [
+    [
+     "refus",
+     "declin",
+     "denied (service|schedul)",
+     "would not schedule",
+     "wouldn't schedule",
+     "unable to schedule",
+     "delay"
+    ],
+    [
+     "mri",
+     "schedul",
+     "scan"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Systemic ClearPay duplicate copay",
+   "match": [
+    [
+     "clearpay",
+     "portal",
+     "double",
+     "duplicate",
+     "twice"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Insurance card from January was not entered; secondary coverage not captured",
+   "match": [
+    [
+     "secondary",
+     "insurance (not|wasn't) (entered|updated)",
+     "card",
+     "coordination"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "agent",
+   "task": "Submit prior authorization for lumbar MRI to Granite Meridian with physician notes",
+   "due": "today",
+   "match": [
+    [
+     "prior auth",
+     "authorization",
+     "pre.?auth"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "agent",
+   "task": "Call patient when the authorization decision arrives (5-7 business days) to schedule the MRI",
+   "due": "~next week",
+   "match": [
+    [
+     "call",
+     "contact",
+     "schedul"
+    ],
+    [
+     "approv",
+     "decision",
+     "mri"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "patient",
+   "task": "Upload photos of the front and back of the new insurance card (and secondary card if found) to the portal",
+   "due": "tonight",
+   "match": [
+    [
+     "upload",
+     "photo",
+     "portal",
+     "card"
+    ]
+   ]
+  },
+  {
+   "id": "A4",
+   "owner": "billing team",
+   "task": "Review/refund the duplicate $45 ClearPay copay (promised transfer never happened)",
+   "due": "unspecified",
+   "match": [
+    [
+     "billing",
+     "refund",
+     "transfer"
+    ],
+    [
+     "copay",
+     "duplicate",
+     "double",
+     "45",
+     "clearpay",
+     "charge"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Member ID corrected: last digit is 9 not 6 (GMH447182009)",
+   "evidence": "that's a nine. The last one's a nine.",
+   "match": [
+    [
+     "447182009",
+     "gmh-?447-?182-?009",
+     "ends? (in|with) (a )?(9|nine)",
+     "009"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Patient was double-charged a $45 copay via ClearPay (mentioned mid-call)",
+   "evidence": "My last copay got charged twice.",
+   "match": [
+    [
+     "double",
+     "twice",
+     "duplicate",
+     "charged again"
+    ],
+    [
+     "copay",
+     "charge",
+     "45",
+     "clearpay"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Patient likely has secondary coverage through his wife's employer plan (card not provided)",
+   "evidence": "my wife has a plan through her work too",
+   "match": [
+    [
+     "secondary",
+     "wife",
+     "spouse"
+    ]
+   ]
+  }
+ ],
+ "themes": [
+  "T_DOUBLE_CHARGE"
+ ]
+}

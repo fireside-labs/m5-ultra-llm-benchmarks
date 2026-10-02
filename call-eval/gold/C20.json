@@ -1,0 +1,219 @@
+{
+ "call_id": "C20",
+ "call_type": "scheduling",
+ "outcome": "resolved",
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 1,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Disclosed the patient's appointment details and reason (20-week anatomy ultrasound) to an unverified third party before asking anything",
+   "match": [
+    [
+     "disclos",
+     "shared",
+     "revealed",
+     "third.?party",
+     "unverified",
+     "unauthori[sz]ed"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Accepted a vague DOB as 'close enough' and ignored that no one is on the release form",
+   "match": [
+    [
+     "dob",
+     "date of birth",
+     "birth",
+     "close enough",
+     "verif",
+     "release form"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "Changed the patient's main contact number to a separated ex-partner's number at his request",
+   "match": [
+    [
+     "phone",
+     "number",
+     "contact"
+    ]
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "id": "F1",
+   "text": "Disclosed patient's appointment details and clinical reason (20-week anatomy ultrasound, OB) to an unverified caller who is not on her release form (and is a separated ex-partner) - PHI disclosure without authorization or verification",
+   "evidence": "It's her twenty-week anatomy ultrasound, and then a visit with the doctor after.",
+   "match": [
+    [
+     "disclos",
+     "shared",
+     "reveal",
+     "gave",
+     "provided",
+     "released",
+     "phi",
+     "privacy",
+     "hipaa",
+     "confidential"
+    ],
+    [
+     "third.?party",
+     "unverified",
+     "without verif",
+     "before verif",
+     "not verified",
+     "unauthori[sz]ed",
+     "ex",
+     "husband",
+     "spouse",
+     "partner",
+     "caller",
+     "release form",
+     "authoriz"
+    ]
+   ]
+  },
+  {
+   "id": "F2",
+   "text": "Changed the patient's primary phone number to the ex-partner's number at his request without the patient's authorization (privacy and potential safety risk; future reminders now go to him)",
+   "evidence": "Okay, it's updated as her main number.",
+   "match": [
+    [
+     "phone",
+     "number",
+     "contact (info|detail)",
+     "contact"
+    ],
+    [
+     "chang",
+     "updat",
+     "modif",
+     "replac",
+     "switch"
+    ]
+   ]
+  }
+ ],
+ "decoys": [],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Inadequate identity verification ('close enough' DOB)",
+   "match": [
+    [
+     "dob",
+     "date of birth",
+     "close enough",
+     "verif",
+     "identit"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Potential domestic safety risk (separated ex-partner seeking pregnant patient's appointment info)",
+   "match": [
+    [
+     "safety",
+     "domestic",
+     "stalk",
+     "separated",
+     "estranged",
+     "ex-partner",
+     "ex partner"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "patient (driven by caller)",
+   "task": "Attend Thursday Sept 10, 2:40 pm 20-week ultrasound and visit with Dr. Iwu-Castellano",
+   "due": "2026-09-10 14:40",
+   "match": [
+    [
+     "2:40",
+     "two-forty",
+     "ultrasound",
+     "anatomy"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "clinic (automated)",
+   "task": "Reminder text tomorrow - now going to the caller's number",
+   "due": "2026-09-09",
+   "match": [
+    [
+     "reminder"
+    ],
+    [
+     "caller",
+     "his",
+     "\\bex\\b",
+     "new number",
+     "tomorrow"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Caller first said 'my wife', then admitted they are separated (ex-partner since spring)",
+   "evidence": "she's not technically my wife anymore. We're separated.",
+   "match": [
+    [
+     "separat",
+     "ex-",
+     "\\bex\\b",
+     "estranged",
+     "not (technically )?(his|my) wife",
+     "former"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Agent saw no one listed on the patient's release form but proceeded anyway",
+   "evidence": "I don't see anyone listed on her release form",
+   "match": [
+    [
+     "release form",
+     "no one listed",
+     "not listed",
+     "nobody listed",
+     "no authoriz",
+     "not on (her|the) (release|authoriz)"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Caller did not know the patient's DOB (guessed March 1993/94); agent accepted 'close enough'",
+   "evidence": "Close enough.",
+   "match": [
+    [
+     "close enough",
+     "guess",
+     "did not know",
+     "didn't know",
+     "vague",
+     "approximate",
+     "unsure"
+    ]
+   ]
+  }
+ ],
+ "themes": []
+}

@@ -1,0 +1,58 @@
+{
+  "call_type": "scheduling",
+  "outcome": "callback",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 4,
+  "quality_reasons": [
+    "Verified patient identity with DOB and ZIP before discussing PHI",
+    "Clearly explained prior authorization requirement and consequences of scheduling without it",
+    "Empathetic and friendly throughout, handled system delays gracefully",
+    "Missed promised transfer to billing for duplicate copay charge at end of call"
+  ],
+  "flags": [
+    {
+      "type": "missed_commitment",
+      "description": "Agent promised to transfer patient to billing for the duplicate copay charge but ended the call without doing so.",
+      "evidence": "I'll transfer you over to them at the end of our call so they can take care of it."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent",
+      "task": "Submit prior authorization request to Granite Meridian for lumbar spine MRI",
+      "due": "today"
+    },
+    {
+      "owner": "agent",
+      "task": "Call patient back when prior authorization decision is received",
+      "due": "next week (5-7 business days)"
+    },
+    {
+      "owner": "patient",
+      "task": "Upload photo of front and back of insurance card to patient portal",
+      "due": "tonight"
+    },
+    {
+      "owner": "patient",
+      "task": "Upload secondary insurance card if available",
+      "due": "unspecified"
+    },
+    {
+      "owner": "agent",
+      "task": "Transfer patient to billing for duplicate copay charge of $45",
+      "due": "end of call (not completed)"
+    }
+  ],
+  "summary_notes": "Outbound call to patient to schedule lumbar spine MRI ordered by Dr. Kowalczyk-Nnamdi. Verified identity. Collected new insurance info (Granite Meridian, member ID GMH447182009, group 70315). Insurance active but requires prior authorization for MRI. Agent will submit PA today and call back when decision received. Patient to upload card images to portal. Patient reported duplicate copay charge of $45 via ClearPay; agent promised to transfer to billing but call ended without transfer. No other issues.",
+  "notable_details": [
+    "Patient DOB: 12/05/1977, ZIP 97209",
+    "Insurance member ID corrected from GMH447182006 to GMH447182009 (final digit is 9)",
+    "Group number: 70315",
+    "Patient has secondary insurance through wife but no card available",
+    "Duplicate copay charge of $45 via ClearPay",
+    "MRI ordered by Dr. Kowalczyk-Nnamdi",
+    "Patient has been dealing with back pain for two months",
+    "Agent mentioned system slowness and login issues during call"
+  ]
+}

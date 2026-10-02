@@ -1,0 +1,49 @@
+{
+  "call_type": "scheduling",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 5,
+  "quality_reasons": [
+    "Verified identity with name, DOB and address before making changes",
+    "Caught and corrected the caller's date confusion (Wednesday the 14th vs Tuesday April 14) and confirmed the final slot back to the patient",
+    "Handled the spontaneously disclosed chest-tightness symptom appropriately: confirmed it was evaluated and cleared by cardiology, documented it, and gave clear safety advice",
+    "Proactively updated contact number with read-back and flagged the expired insurance card on file",
+    "Empathetic, efficient, and transparent throughout despite multiple system slowness/login interruptions"
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "agent",
+      "task": "Send appointment confirmation text to the new number 555-216-4471",
+      "due": "within the next few minutes"
+    },
+    {
+      "owner": "agent",
+      "task": "Add account note for front desk and therapist: spoke with patient by phone, reschedule reason, cardiology clearance for chest tightness, keep inhaler handy during sessions",
+      "due": "during the call (stated as done/being done)"
+    },
+    {
+      "owner": "patient",
+      "task": "Bring updated insurance card to the appointment",
+      "due": "Thursday, April 16 appointment"
+    },
+    {
+      "owner": "agent",
+      "task": "If call disconnects, call the patient back on the number on file",
+      "due": "conditional, immediately upon disconnection"
+    }
+  ],
+  "summary_notes": "Patient Tomasz Brennick-Vale (DOB 06/03/1971, identity verified) rescheduled PT follow-up with Dr. Haddad's team from Fri 4/10 2:15 PM to Thu 4/16 9:40 AM with the same therapist due to a work conflict. Caller briefly confused calendar dates; final booked slot confirmed. During the required health-concerns question, patient reported chest tightness on stairs last month, evaluated by cardiologist (treadmill test), attributed to asthma with inhaler adjusted; cleared. Agent documented and advised calling 911/doctor if symptoms recur, especially at rest. Contact number updated to 555-216-4471; confirmation text to follow. Patient reminded to bring new insurance card (old one expired end of prior year). No interpreter/accommodations needed.",
+  "notable_details": [
+    "Caller initially asked for 'Wednesday, the fourteenth'; agent corrected that April 14 is a Tuesday, and the caller confirmed Thursday, April 16 at 9:40",
+    "Original appointment being moved: Friday, April 10 at 2:15 with Dr. Haddad's team (same therapist retained for new slot)",
+    "Caller's phone number changed due to carrier switch: new cell 555-216-4471, replacing old number ending 8802; agent read the new number back before saving",
+    "Insurance card on file was noted as expiring at the end of last year; patient confirmed new cards were received in January and will bring one",
+    "Chest tightness occurred last month, was evaluated the following week by the patient's cardiologist with a treadmill test, attributed to asthma, inhaler changed, patient reports being fine since",
+    "Patient declined interpreter/accessibility accommodations when asked",
+    "Agent mentioned juggling four non-integrated screens, a slow system since lunch, and a forced 30-day password cycle, and the screen dropped to the login page mid-call",
+    "Caller mentioned Tuesdays are unavailable because he drives his mom",
+    "Caller joked about writing his password on a sticky note; agent did not act on it"
+  ]
+}

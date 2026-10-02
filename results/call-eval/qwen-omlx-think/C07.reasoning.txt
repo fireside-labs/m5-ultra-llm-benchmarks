@@ -1,0 +1,160 @@
+
+We need answer user's request: analyze transcript and return ONE JSON object conforming schema, no markdown. Need produce final JSON only. Need carefully analyze.
+
+We need determine call_type: pre_procedure. Outbound pre-admission nursing interview for surgery. Outcome: main issue? Pre-admission interview mostly completed, but there is unresolved question about NPO guidelines and arrival time; nurse promises callback tomorrow to confirm fluids and arrival time. Also driver changed. Main issue? The call's main purpose pre-admission interview; handled mostly, but specific pending follow-up contact. Outcome should be callback because main issue pending specific follow-up? The caller's main issue? It's pre-admission interview; most instructions given, but NPO conflict and arrival time need confirmation. Nurse says will call back tomorrow. So outcome callback. Could be resolved? The main issue was pre-admission interview; but there is a concrete follow-up. Rule: callback = main issue pending a specific follow-up contact. Since NPO conflict and arrival time pending, use callback.
+
+Sentiment start: patient neutral/positive? Starts "Yeah, hello" then says attacks killing me but not negative toward staff. Maybe neutral. End: positive: "Sounds good. Thanks, Hal." So sentiment_start neutral, sentiment_end positive.
+
+Quality score: Need rate staff handling. Nurse verified DOB, confirmed procedure, collected history, meds, allergies, instructions, corrected driver, promised callback. Issues: gave potentially unsafe/uncertain instruction about clear liquids until 2 hours before arrival based on text, says packet old, will double-check anesthesia tomorrow. This is a clinical safety concern? She told patient to go with text, clear liquids until 2 hours before arrival, but then says will double-check. Is that misinformation or clinical_safety? The patient asked conflicting instructions. Nurse should not give definitive instruction if uncertain; but she did say go with text, then will confirm. Could be flag clinical_safety or misinformation. Also nurse disclosed own background noise, cat, neighbor dog, password sticky note joke? Not serious. She asked if patient called from home, okay. She confirmed email starts with J at yahoo, not full disclosure. She asked DOB. Identity verification: outbound to patient, confirmed DOB. Good.
+
+Potential flags:
+- clinical_safety: Nurse provided potentially unsafe/uncertain preoperative fasting instruction (clear liquids until 2 hours before arrival) without confirmed anesthesia guidance, though promised to confirm. Evidence: "Honestly, I think the text is the newer guideline, so, um, go with the text. Clear liquids are fine until two hours before you arrive." This could warrant flag. But is it misinformation? It may be correct newer guideline, but nurse uncertain. Flag type clinical_safety or misinformation. Since pre-op fasting is safety. Use clinical_safety.
+- Maybe unauthorized_commitment? Nurse promises call back tomorrow by end of day. That's within role? Not unauthorized. Not flag.
+- missed_commitment? None.
+- privacy_disclosure? Nurse mentions email starts with J at yahoo, but to patient after DOB verification. okay.
+- security: Nurse says password changed every 30 days, patient says sticky note, nurse says didn't hear. Not a security issue? Could be policy? Not flag.
+- policy_violation? Nurse says skip privacy notice because existing patient; okay.
+- misinformation? Maybe about parking validation? likely correct.
+- identity_verification? Verified DOB. No flag.
+- clinical_safety: Also patient reports recent chest cold/cough; nurse didn't escalate or ask if fever? For surgery, recent respiratory infection may need anesthesia evaluation. Nurse just notes? She says "Okay." Could be missed clinical safety? But pre-admission nurse may note for anesthesia. She didn't explicitly escalate. However she did note post-op nausea for anesthesia. For chest cold, maybe should notify anesthesia. But not necessarily flag if routine. Could be a flag? Need be careful not overflag. The clear liquids conflict is more explicit.
+
+Quality score: 3 or 4? Nurse generally competent, empathetic, thorough, but gave uncertain fasting instruction and had many system delays. Score 3: mixed with one notable lapse (uncertain NPO instruction). Or 4: good with minor issues. The NPO instruction could be serious safety if wrong. But she promised to confirm. Still telling patient to follow text without confirmation could be notable lapse. Score 3. Quality reasons: verified identity and collected history; gave clear medication and day-of instructions; updated driver and contact preferences; but provided uncertain fasting guidance and relied on unconfirmed text; system delays and background noise but patient remained patient. Need 2-5 reasons.
+
+Action items:
+- Nurse: double-check with anesthesia and call patient back tomorrow Tuesday by end of day to confirm clear liquids guideline and arrival time. Owner nurse, due Tuesday by end of day.
+- Patient: stop ibuprofen/NSAIDs for next seven days before surgery; stop fish oil until after surgery; skip lisinopril morning of surgery; take metoprolol and omeprazole with small sip water; bring CPAP, ID, insurance card, medication list; shower night before and morning with antibacterial soap; have Bev drive and stay 24h. Are these action items? "every follow-up commitment or task stated in the call" includes patient tasks. Need include owner patient. Due dates: before surgery, Thursday morning, etc. Need not overdo? Could include key tasks. Schema action_items array. Need owner, task, due. Use due as stated or unspecified.
+Potential action items:
+1 owner nurse, task "Confirm anesthesia guidance on clear liquids and arrival time and call patient back", due "Tuesday by end of day".
+2 owner patient, task "Stop ibuprofen/Advil/Aleve and other NSAIDs", due "for the next seven days before surgery".
+3 owner patient, task "Stop fish oil", due "until after surgery".
+4 owner patient, task "Skip lisinopril on morning of surgery; take metoprolol and omeprazole with small sip of water", due "Thursday morning".
+5 owner patient, task "Bring CPAP machine, photo ID, insurance card, medication list; shower night before and morning with antibacterial soap", due "Thursday".
+6 owner patient, task "Arrange Bev Lindgren-Shaw to drive home and stay overnight/24 hours", due "Thursday".
+Maybe also nurse send notes to portal? Patient requested copy of notes sent to portal. Nurse says mark that. Action item owner nurse, task "Send copy of today's notes to patient portal", due unspecified. Also set reminders by text? Nurse says text it is, leave email for statements. Could be action item owner nurse, task "Set appointment reminders to text", due unspecified. But maybe too many. Need every follow-up commitment or task stated. Include portal notes and reminders. Also cancellation line info not action. Parking validation not action.
+
+Need notable_details: corrected driver from Theo to Bev Lindgren-Shaw with phone; allergy penicillin hives confirmed on chart; recent chest cold/cough; AFib since 2019/2020 uncertain; sleep apnea CPAP; post-op nausea; medications list; NPO conflict text vs packet; arrival time 5:45 a.m. surgery 7:15 may change; email starts J yahoo, text reminders preferred; mailing address unchanged; emergency contact unchanged; pharmacy Ferris Avenue; patient portal password issue; DOB Aug 30 1956; surgery Thursday March 19; Dr. Vanterpool-Iyer; laparoscopic cholecystectomy; parking garage level 3 skybridge, front desk validates; cancellation via reply to reminder text; nurse will call back Tuesday. Need final/corrected values. Use corrected driver. Maybe mention AFib onset uncertain "2019/2020". Notable details should be specific.
+
+Flags: Need evidence verbatim short. For clinical_safety: "Honestly, I think the text is the newer guideline, so, um, go with the text. Clear liquids are fine until two hours before you arrive." Description: Nurse gave potentially unsafe preoperative fasting instruction based on unconfirmed text before anesthesia confirmation. Could also flag misinformation? Use clinical_safety.
+
+Could there be flag for privacy? Nurse says "I'm also supposed to remind everyone about our updated cancellation line. If you ever need to cancel, there's a number on your reminder text, you can just reply to it." no.
+
+Could flag for security: Nurse says "It makes us change the password every, um, every thirty days, so I can never remember it." Patient says sticky note. Nurse says didn't hear. Not a business staff security failure? Maybe not.
+
+Could flag for policy_violation: Nurse says "it's asking me to confirm I read the privacy notice to you before— no, that's for new patients. You're fine. Skip." If existing patient, okay. Not flag.
+
+Could flag for unauthorized_commitment: Nurse says "I'll call you right back on the number we have" if disconnected. okay.
+
+Could flag for missed_commitment: none.
+
+Could flag for clinical_safety: patient reports recent chest cold/cough; nurse did not escalate or advise notify anesthesia. But she may note. Evidence: "I had a chest cold last week. Still have a little bit of a cough, mostly in the mornings. But it's mostly gone." Nurse: "Okay." Is that a symptom that warranted escalation but dismissed? For pre-op, recent respiratory infection can affect anesthesia. But nurse didn't dismiss, just okay. Could be a flag? Need not overflag. The clear liquids is enough.
+
+Quality reasons: Need 2-5 short specific. e.g. ["Verified identity and confirmed procedure details.", "Collected relevant history, medications, allergies, and gave day-of instructions.", "Updated driver/contact preferences and promised anesthesia confirmation.", "Provided uncertain fasting guidance before confirming with anesthesia.", "Handled system delays and background noise professionally."] That's 5.
+
+Summary notes <=120 words. Need concise. Include pre-admission interview completed for lap chole Thu Mar 19 Dr Vanterpool-Iyer. Patient DOB 8/30/1956. History HTN, AFib, sleep apnea, recent chest cold/cough, penicillin allergy hives. Meds reviewed; stop NSAIDs/fish oil; skip lisinopril morning of; take metoprolol/omeprazole with sip; bring CPAP, ID, insurance, med list; shower with antibacterial soap. Driver changed from Theo to Bev Lindgren-Shaw, phone 555-701-9910, will stay overnight. Arrival 5:45 a.m., surgery 7:15, to confirm. NPO conflict: text says clear liquids until 2h before arrival; nurse will confirm with anesthesia and call back Tuesday EOD. Portal notes requested; text reminders. Need under 120 words. Count maybe 100. Let's draft:
+"Pre-admission interview completed for laparoscopic cholecystectomy Thu 3/19 with Dr. Vanterpool-Iyer. Patient confirmed DOB 8/30/1956. History: HTN, AFib, sleep apnea, recent chest cold/cough, penicillin allergy hives. Meds reviewed: stop NSAIDs/fish oil; skip lisinopril morning of; take metoprolol/omeprazole with sip; bring CPAP, ID, insurance, med list; shower with antibacterial soap. Driver changed from Theo to Bev Lindgren-Shaw, 555-701-9910, staying overnight. Arrival 5:45 a.m., surgery 7:15, to confirm. NPO conflict: text says clear liquids until 2h before arrival; nurse will confirm with anesthesia and call back Tuesday EOD. Portal notes requested; text reminders preferred." Count: Pre-admission1 interview2 completed3 for4 laparoscopic5 cholecystectomy6 Thu7 3/19 8 with9 Dr.10 Vanterpool-Iyer11. Patient12 confirmed13 DOB14 8/30/1956 15. History16: HTN17, AFib18, sleep19 apnea20, recent21 chest22 cold/cough23, penicillin24 allergy25 hives26. Meds27 reviewed28: stop29 NSAIDs/fish30 oil31; skip32 lisinopril33 morning34 of35; take36 metoprolol/omeprazole37 with38 sip39; bring40 CPAP41, ID42, insurance43, med44 list45; shower46 with47 antibacterial48 soap49. Driver50 changed51 from52 Theo53 to54 Bev55 Lindgren-Shaw56, 555-701-9910 57, staying58 overnight59. Arrival60 5:45 61 a.m.62, surgery63 7:15 64, to65 confirm66. NPO67 conflict68: text69 says70 clear71 liquids72 until73 2h74 before75 arrival76; nurse77 will78 confirm79 with80 anesthesia81 and82 call83 back84 Tuesday85 EOD86. Portal87 notes88 requested89; text90 reminders91 preferred92. Good.
+
+Need JSON valid. Ensure no trailing commas. Use strings with quotes. Need no markdown. Ensure enum values.
+
+Potential issue: outcome callback vs resolved. The main issue? Pre-admission interview completed but pending confirmation. Use callback.
+
+Sentiment_start: Could be positive? Patient says "they told me you'd call. I've got my folder" neutral. "These attacks are killing me" negative about condition but not call. Use neutral.
+
+Quality_score: 3. Need flags evidence verbatim. Ensure evidence quote exact enough. Use "Honestly, I think the text is the newer guideline, so, um, go with the text. Clear liquids are fine until two hours before you arrive." That's verbatim. Description one sentence.
+
+Action items due: Need due string. For patient tasks, due as stated. For nurse portal notes, due unspecified. For reminders, due unspecified. For call back, due "Tuesday by end of day". For patient stop NSAIDs due "for the next seven days before surgery". For fish oil due "until after surgery". For morning meds due "Thursday morning". For bring items due "Thursday". For driver due "Thursday". For portal notes due unspecified. For reminders due unspecified.
+
+Need maybe include "Patient to call cancellation line/reply to reminder text if cancel"? Not necessary.
+
+Need ensure action_items owner values: "nurse", "patient". Could use "Nurse" but okay. Schema no enum. Use lowercase.
+
+Notable_details: Need array strings. Include corrected driver. Use final values. Maybe include phone numbers. Need not include all but careful. Let's list:
+- "Surgery: laparoscopic cholecystectomy with Dr. Vanterpool-Iyer on Thursday, March 19."
+- "Patient DOB: August 30, 1956."
+- "Allergy: penicillin causing hives; already on chart and confirmed."
+- "History: hypertension, atrial fibrillation (patient uncertain 2019/2020), sleep apnea with CPAP, recent chest cold with morning cough."
+- "Post-op nausea history; nurse will note for anesthesia."
+- "Medication changes: stop ibuprofen/NSAIDs for 7 days before surgery; stop fish oil until after surgery; skip lisinopril morning of surgery; take metoprolol and omeprazole with small sip of water."
+- "Driver/contact corrected from Theo Ashdown-Pike to Bev Lindgren-Shaw, 555-701-9910, staying overnight."
+- "NPO conflict: packet says NPO after midnight; text says clear liquids until 2 hours before arrival; nurse will confirm with anesthesia."
+- "Arrival time currently 5:45 a.m.; surgery planned 7:15 a.m.; to be confirmed."
+- "Contact preferences: text reminders; email on file starts with J at yahoo; electronic records preferred; mailing address and emergency contact unchanged."
+- "Patient requested copy of notes sent to portal; portal password issue noted."
+- "Parking: patient garage north side level 3, skybridge; front desk can validate parking."
+- "Cancellation: can reply to reminder text."
+Maybe too many but okay. Need final/corrected values. Include Theo corrected.
+
+Potential flags: Should we flag "clinical_safety" for recent chest cold? If we include only one flag, okay. But maybe quality reasons mention recent chest cold not escalated? If not flag, okay. Could add second flag? Need not overflag. But if nurse didn't escalate recent respiratory infection, could be clinical_safety. However pre-admission nurse likely notes for anesthesia; she didn't explicitly say she would note chest cold. She said "Okay." Could be a missed safety issue. But the call is pre-admission; anesthesia will see chart? She was making notes. She may note. Not enough evidence of failure. Avoid.
+
+Could flag "misinformation" for telling patient packet old? She says probably old. But uncertain. Clinical_safety covers.
+
+Need ensure JSON schema additionalProperties false. Only top-level required properties. No extra.
+
+Double-check transcript: Nurse says "I'll double-check with anesthesia tomorrow and give you a call back to confirm, along with your arrival time." Then "Yes, tomorrow, Tuesday, by end of day." Date/time call 2026-03-16 Monday? March 16 2026 is Monday. Surgery Thursday March 19. Tomorrow Tuesday March 17. Good.
+
+Potential issue: Nurse says "for everything else, just keep taking your regular medications as usual. On the morning of surgery, take your lisinopril— actually, skip the lisinopril the morning of" corrected. Notable details should use corrected skip lisinopril. Good.
+
+Potential issue: Patient says AFib since 2019? 2020. Use uncertain.
+
+Potential issue: Patient says "I almost didn't call" but outbound? Maybe inbound? Direction outbound but patient says almost didn't call. Not relevant.
+
+Potential issue: Nurse says "if we get disconnected I'll call you right back on the number we have." No disconnection.
+
+Potential issue: Nurse says "I saw you were in the queue for a bit" despite outbound? Maybe system. Not flag.
+
+Quality score: Could be 4 because nurse handled many interruptions and verified, but gave uncertain NPO. The instruction "go with the text" could be correct; she will confirm. Is that a serious compliance/safety failure? Maybe not serious, but notable lapse. Score 3. If score 3, flags one. Good.
+
+Need final JSON only. Ensure no newline? okay.
+
+Let's craft final JSON:
+{
+ "call_type": "pre_procedure",
+ "outcome": "callback",
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 3,
+ "quality_reasons": [...],
+ "flags": [ {type, description, evidence} ],
+ "action_items": [...],
+ "summary_notes": "...",
+ "notable_details": [...]
+}
+
+Need ensure evidence quote doesn't contain unescaped quotes? It has no double quotes. Good.
+
+Action items:
+[
+ {"owner":"nurse","task":"Double-check with anesthesia and call patient back to confirm clear-liquid guideline and arrival time","due":"Tuesday by end of day"},
+ {"owner":"nurse","task":"Send copy of today's notes to patient portal","due":"unspecified"},
+ {"owner":"nurse","task":"Set appointment reminders to text and leave email on file for statements","due":"unspecified"},
+ {"owner":"patient","task":"Stop ibuprofen/Advil/Aleve and other NSAIDs","due":"for the next seven days before surgery"},
+ {"owner":"patient","task":"Stop fish oil","due":"until after surgery"},
+ {"owner":"patient","task":"Skip lisinopril on morning of surgery; take metoprolol and omeprazole with a small sip of water","due":"Thursday morning"},
+ {"owner":"patient","task":"Bring CPAP machine, photo ID, insurance card, and medication list; shower night before and morning of with antibacterial soap","due":"Thursday"},
+ {"owner":"patient","task":"Have Bev Lindgren-Shaw drive patient home and stay for first 24 hours","due":"Thursday"}
+]
+
+Could include "Patient to use cancellation line/reply to reminder text if needed" due unspecified. Not necessary.
+
+Flags: type clinical_safety. Description: "Nurse gave a potentially unsafe preoperative fasting instruction based on an unconfirmed text before anesthesia confirmation." Evidence exact. Good.
+
+Need maybe flag "misinformation" because nurse said "packet's probably just old" without confirmation. But one flag enough.
+
+Quality reasons: 5. Ensure short.
+
+Summary notes: Need at most 120 words. We counted 92. Good.
+
+Notable details: Need maybe include "Patient's son Theo initially listed as driver but corrected to neighbor Bev Lindgren-Shaw". Good.
+
+Check JSON validity: strings with apostrophes okay. Use double quotes. No trailing commas.
+
+Potential issue: "due":"Tuesday by end of day" but call date 2026-03-16, tomorrow Tuesday. Good.
+
+Potential issue: outcome callback: main issue pending follow-up. Good.
+
+Potential issue: call_type pre_procedure vs scheduling. It's pre-admission instructions. pre_procedure.
+
+Potential issue: sentiment_start: patient says "These attacks are killing me" could be negative. But first minute includes "Yeah, they told me you'd call. I've got my folder" and "I'm ready to get rid of the thing, honestly. These attacks are killing me." That's negative about condition, but sentiment toward call? Field says customer's sentiment. Could be negative? First minute: patient is frustrated by gallbladder attacks. But not negative toward staff. Sentiment categories likely overall customer sentiment. "These attacks are killing me" negative. But also cooperative. Which to choose? Need first minute. At 00:00:46 "I'm ready to get rid of the thing, honestly. These attacks are killing me." That's negative/neutral? I'd say neutral because not upset with business, just condition. But if strict, negative. End positive. Maybe start neutral. Good.
+
+Potential issue: quality_score 3 due to uncertain NPO. If we flag clinical_safety, score 3 okay.
+
+Need final only JSON. Ensure no markdown fences.

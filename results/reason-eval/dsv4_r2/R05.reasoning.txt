@@ -1,0 +1,85 @@
+1.  The user asks for a structured response with specific sections: Variables, Top 3 priorities, What would change my mind. The context is a fictional non-profit health system (Harlow Valley Health) choosing a site for a new outpatient clinic (primary care, urgent care, X-ray, lab) in a metro of 900k. Three sites are described. I need to reason from general principles, be specific to the situation, and prioritize ruthlessly.
+
+2.  **Analyze the request**: The board wants to know which variables the site decision must take into account. The candidates are given, but I must reason from general principles. The response must be in Markdown, with exactly those section headings.
+
+3.  **Brainstorm variables** (at most 12, most important first):
+    *   *Demand / Market access*: Where is the unmet need? The clinic needs patients. Site B is dense, underserved (uninsured/Medicaid) – high demand but low reimbursement. Site A is growing – future demand. Site C is near existing facilities – potential cannibalization or complement.
+    *   *Accessibility / Transportation*: Site B is on bus lines – good for low-income. Site A is highway – good for car owners. Site C is office park – maybe less accessible for walk-ins.
+    *   *Reimbursement / Payer mix*: Site B has high uninsured/Medicaid – lower revenue per visit, but maybe grants or FQHC-like opportunities. Site A likely commercial – higher margin.
+    *   *Competition / Cannibalization*: Site C has competitor across street – but also near own hospital/clinic – cannibalization risk. Site A – are there other clinics? Site B – maybe lack of competition.
+    *   *Capital / Operating cost*: Site A lowest rent, but new build-out? Site B major renovation – high capital. Site C ready to occupy – low capital.
+    *   *Site readiness / Time to open*: Site C is ready – fastest to revenue. Site B needs renovation – delays.
+    *   *Staffing / Recruitment*: Site B in older dense area – maybe harder to recruit? Site A growing – maybe easier? Site C near hospital – can share staff.
+    *   *Mission alignment / Community need*: Non-profit – mission to serve underserved. Site B aligns strongly.
+    *   *Regulatory / Zoning*: Site A retail center – zoning for medical? Site B former bank – conversion? Site C office park – medical use?
+    *   *Imaging/lab logistics*: X-ray and lab need space, power, water, waste disposal. Renovation may be needed.
+    *   *Referral patterns / Integration*: Site C near hospital and clinic – easy referral, but also cannibalization.
+    *   *Population growth / demographics*: Site A fastest growing – future potential.
+    *   *Parking*: Site A ample, B maybe limited, C office park.
+
+    Let me prioritize. For a non-profit health system, the crux is: does it serve the mission (access for underserved) AND remain financially viable? The variable that drives outcome is *net contribution margin per site* considering payer mix, volume, and cost. But volume depends on demand and accessibility.
+
+    Let me list top 12:
+    1.  **Payer mix and reimbursement potential** – drives financial viability; Site B has high uninsured/Medicaid, Site A likely commercial.
+    2.  **Unmet demand / market need** – volume potential; Site B dense underserved, Site A growing, Site C near existing.
+    3.  **Accessibility and transportation** – affects utilization, especially for urgent care and primary care; Site B bus lines, Site A highway.
+    4.  **Capital and renovation costs** – Site B major renovation vs Site C ready; affects ROI and time.
+    5.  **Time to operational readiness** – Site C ready, Site B long delay; affects cash flow and competitive response.
+    6.  **Cannibalization vs. synergy with existing sites** – Site C near own hospital/clinic; Site A/B likely new market.
+    7.  **Competition** – Site C has competitor across street; Site A/B?
+    8.  **Staffing availability and recruitment** – Site B may have lower supply of clinicians; Site C can share.
+    9.  **Mission alignment / community impact** – non-profit mandate; Site B highest.
+    10. **Regulatory and zoning feasibility** – medical use, X-ray licensing, lab.
+    11. **Facility suitability for imaging/lab** – space, power, plumbing, radiation shielding.
+    12. **Growth potential / demographic trends** – Site A fastest growing.
+
+    That's 12. But I need to make them sharp and specific.
+
+    Let me refine and order by importance for a non-profit. The top priority is likely financial sustainability (payer mix) and mission (access). But which dominates? For a non-profit, they can't run a loss. So payer mix is #1. Then demand. Then capital.
+
+    Actually, let me think about the crux: The board is choosing between three sites. The decision hinges on whether they prioritize mission (Site B) vs. financial growth (Site A) vs. operational efficiency (Site C). The variables must capture that.
+
+    Let me write the list:
+
+    1. **Net contribution margin per visit (payer mix)** – Site B has high Medicaid/uninsured – lower reimbursement; Site A likely commercial – higher. Measure: analyze payer mix of surrounding zip codes, Medicaid/Medicare rates, uninsured rate.
+    2. **Unmet demand and service area population** – Site A fastest growing – future volume; Site B dense but maybe overserved? Measure: drive-time analysis, physician-to-population ratio, ED visit rates for non-urgent conditions.
+    3. **Accessibility and transportation** – Site B on bus lines – critical for low-income; Site A highway – car-dependent. Measure: transit frequency, parking availability, walkability index.
+    4. **Capital expenditure and operating cost profile** – Site B needs major renovation – high upfront; Site C ready – low. Measure: construction estimates, rent per sqft, utilities, maintenance.
+    5. **Time to open** – Site C ready – months; Site B renovation – year+. Measure: permitting timeline, construction schedule.
+    6. **Cannibalization and integration with existing assets** – Site C is 2mi from hospital, 1mi from clinic – may steal own patients; but also can share referrals. Measure: existing patient origin data, referral patterns.
+    7. **Competitive landscape** – Site C has competitor across street – may split urgent care volume; Site A/B? Measure: competitor locations, market share.
+    8. **Staffing availability** – Site C near hospital – can share staff; Site B may be hard to recruit. Measure: nurse/physician supply in area, commute times for staff.
+    9. **Mission alignment and community need** – Site B serves uninsured – aligns with non-profit mission. Measure: social vulnerability index, uninsured rate, poverty rate.
+    10. **Regulatory and zoning compliance** – X-ray needs licensing, lab needs CLIA; Site B former bank may have restrictions. Measure: zoning code, state health dept requirements.
+    11. **Facility suitability for imaging/lab** – X-ray needs lead shielding, lab needs water/waste. Site A retail – likely ok; Site B bank – vault? Measure: structural survey, utility capacity.
+    12. **Long-term growth potential** – Site A fastest growing – future upside. Measure: population projections, housing starts.
+
+    That's 12. But I should combine some to make it sharper. The instruction says "at most 12". I'll keep 10-12.
+
+    Let me think about the top 3 priorities. The most important variables are likely: 1) Payer mix / financial viability, 2) Unmet demand / volume potential, 3) Capital and time to open (or mission alignment). But for a non-profit, mission is crucial, but they can't lose money. So I think top 3 are: Payer mix, Unmet demand, and Capital/Time to open (because Site C is ready and low cost, Site B is high cost and slow). Actually, mission alignment might be #3 if they are truly non-profit. But the prompt says "board will choose" – they need to balance. I'll argue that the top 3 are: (1) Payer mix and net contribution margin, (2) Unmet demand and market access, (3) Capital cost and time to operational readiness. Mission alignment is important but is a constraint, not a driver – if they can't sustain it, they can't serve anyone.
+
+    Let me refine the top 3:
+    1. Payer mix and reimbursement (drives sustainability)
+    2. Unmet demand and volume potential (drives revenue)
+    3. Capital cost and time to open (drives feasibility and cash flow)
+
+    What would change my mind? Findings that would flip which site I favour or change priorities. For example:
+    - If Site B's payer mix is actually better than expected (e.g., a new Medicaid expansion or a grant), it could flip.
+    - If Site A's growth is speculative (no actual housing starts), then demand is low.
+    - If Site C's cannibalization is severe (e.g., existing clinic is at 50% capacity), then it's a bad idea.
+    - If Site B's renovation cost is manageable (e.g., under $X) and time is short, it becomes viable.
+    - If Site A has a competitor moving in, etc.
+
+    Let me write the response.
+
+    Structure:
+    ## Variables
+    Numbered list with one line each on why it matters and how to measure.
+
+    ## Top 3 priorities
+    Exactly 3 numbered items.
+
+    ## What would change my mind
+    2-5 bullets.
+
+    I'll be concise and specific.

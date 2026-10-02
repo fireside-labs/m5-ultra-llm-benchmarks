@@ -1,0 +1,143 @@
+{
+ "call_id": "C01",
+ "call_type": "scheduling",
+ "outcome": "resolved",
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 5,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Verified identity (name, DOB, street number) before discussing the appointment",
+   "match": [
+    [
+     "verif",
+     "identit",
+     "date of birth",
+     "dob"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Caught the caller's weekday/date mix-up and read back the final slot",
+   "match": [
+    [
+     "date",
+     "weekday",
+     "14",
+     "fourteenth",
+     "16",
+     "sixteenth",
+     "slot",
+     "appointment"
+    ],
+    [
+     "confus",
+     "mix",
+     "clarif",
+     "correct",
+     "caught",
+     "read.?back",
+     "confirm"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "Asked appropriate follow-up about the chest tightness (already evaluated) and gave safety-net advice",
+   "match": [
+    [
+     "chest",
+     "cardiolog",
+     "symptom",
+     "safety",
+     "911"
+    ]
+   ]
+  }
+ ],
+ "flags": [],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Patient reported chest tightness and agent failed to escalate",
+   "why_not": "Episode was a month ago, already evaluated by cardiology (asthma, inhaler changed), no current symptoms; agent asked, documented and gave 911 safety-net advice.",
+   "evidence": "it turned out to be my asthma, they changed my inhaler",
+   "match": [
+    [
+     "chest",
+     "tight",
+     "cardiac",
+     "cardiolog",
+     "asthma",
+     "inhaler",
+     "stairs"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "agent",
+   "task": "Send appointment confirmation text to the new mobile number",
+   "due": "within minutes",
+   "match": [
+    [
+     "confirm"
+    ],
+    [
+     "text",
+     "sms",
+     "4471",
+     "new number"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "caller",
+   "task": "Bring updated (January) insurance card to the visit",
+   "due": "2026-04-16",
+   "match": [
+    [
+     "insurance"
+    ],
+    [
+     "card"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Appointment rebooked for Thursday April 16 at 9:40 (caller first said 'Wednesday the 14th'; the 14th is a Tuesday)",
+   "evidence": "Thursday, April sixteenth at nine-forty",
+   "match": [
+    [
+     "16",
+     "sixteenth"
+    ],
+    [
+     "apr",
+     "thu",
+     "4/16"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Callback number changed: old number ending 8802 replaced by new mobile ending 4471",
+   "evidence": "four-four-seven-one",
+   "match": [
+    [
+     "4471",
+     "four-four-seven-one"
+    ]
+   ]
+  }
+ ],
+ "themes": []
+}

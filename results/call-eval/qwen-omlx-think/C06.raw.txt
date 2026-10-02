@@ -1,0 +1,57 @@
+
+
+{
+  "call_type": "no_show_followup",
+  "outcome": "escalated",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 5,
+  "quality_reasons": [
+    "Verified patient identity with date of birth before discussing appointment details.",
+    "Correctly applied the first-time missed-appointment fee waiver under policy.",
+    "Updated the patient's phone number after confirming the old number was no longer in use.",
+    "Recognized syncope with head injury as needing clinical review and transferred to the nurse line with red-flag guidance.",
+    "Offered a ride program request and committed to a specific callback to reschedule."
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "agent",
+      "task": "Update patient phone number to 555-448-0926",
+      "due": "during call"
+    },
+    {
+      "owner": "agent",
+      "task": "Submit ride program request for patient",
+      "due": "during call"
+    },
+    {
+      "owner": "nurse",
+      "task": "Assess patient's dizziness, syncope, and head bump and determine need for same-day evaluation",
+      "due": "during call"
+    },
+    {
+      "owner": "patient",
+      "task": "Call 911 if faintness, severe headache, confusion, or vomiting occur before nurse evaluation",
+      "due": "immediately if symptoms occur"
+    },
+    {
+      "owner": "agent",
+      "task": "Call patient back to reschedule appointment with Dr. Ferreira-Holm after nurse contact",
+      "due": "tomorrow morning"
+    }
+  ],
+  "summary_notes": "Outbound missed-appointment follow-up for Marisol Quintanar-Bede. DOB verified. Patient missed Dr. Ferreira-Holm follow-up yesterday due to ride issue; $25 fee waived as first missed appointment. Old phone ending 3350 replaced with 555-448-0926. Patient reports dizziness on standing, syncope Saturday, head bump, and low iron history. Agent escalated to Nurse Adeyemi-Strand for same-day assessment and advised 911 for faintness, severe headache, confusion, or vomiting. Ride program request submitted. Agent will call tomorrow morning to reschedule after nurse contact.",
+  "notable_details": [
+    "Patient's final corrected phone number is 555-448-0926; old number ended in 3350.",
+    "Patient's date of birth is 11/22/1990.",
+    "Missed appointment was yesterday afternoon with Dr. Ferreira-Holm for follow-up on iron levels.",
+    "$25 missed-appointment fee was waived because this was the patient's first missed appointment.",
+    "Patient reported dizziness on standing, fainting Saturday, and bumping head on a cabinet with a small bump.",
+    "Patient did not seek care after the fall and was found by her son.",
+    "Patient was transferred to Nurse Adeyemi-Strand for clinical assessment.",
+    "Agent advised 911 if faintness, severe headache, confusion, or vomiting occur.",
+    "Ride program request was submitted for future appointments.",
+    "Agent committed to call back tomorrow morning to reschedule after nurse contact."
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "call_type": "post_procedure_followup",
+  "outcome": "resolved",
+  "sentiment_start": "positive",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Correctly verified patient DOB and confirmed spouse was on the HIPAA authorization form before discussing medications",
+    "Dismissed calf achiness, swelling and warmth on the operated side as normal without escalation or DVT warning signs",
+    "Provided accurate, complete read-back of all instructions at the end of the call",
+    "Multiple technical interruptions (screen logout, mouse battery, slow loading) made the call inefficient",
+    "Warm, empathetic rapport and thorough systematic post-op assessment"
+  ],
+  "flags": [
+    {
+      "type": "clinical_safety",
+      "description": "Patient-reported left calf achiness, swelling and warmth on the operated side, possible DVT signs, were dismissed as common and managed only with elevation advice, without escalation or red-flag counseling.",
+      "evidence": "the back of the calf, the left one, the operated side, it's been kind of achy since yesterday ... looks a little swollen ... Kind of warm, maybe"
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "nurse",
+      "task": "Change physical therapy referral from Main Street to Eastgate Rehab location",
+      "due": "during the call (completed)"
+    },
+    {
+      "owner": "Eastgate Rehab",
+      "task": "Call patient to schedule physical therapy appointment",
+      "due": "within two or three business days"
+    },
+    {
+      "owner": "nurse",
+      "task": "Mention the conflicting pre-op fasting instructions (paper packet vs. text message) that caused the cancelled surgery to her manager",
+      "due": "unspecified"
+    },
+    {
+      "owner": "patient",
+      "task": "Restart baby aspirin 81 mg once daily (was due to restart yesterday, day three)",
+      "due": "today, 2026-03-06"
+    },
+    {
+      "owner": "patient",
+      "task": "Remove the big dressing and apply regular Band-Aids over the incisions; keep dry, no soaking/baths/pools until doctor clears",
+      "due": "tomorrow, day five (2026-03-07)"
+    },
+    {
+      "owner": "patient",
+      "task": "Do ankle pumps every hour while awake, ten at a time, and keep leg propped on a pillow",
+      "due": "ongoing"
+    },
+    {
+      "owner": "patient",
+      "task": "Attend post-op visit with Dr. Okonjo-Reyes",
+      "due": "Thursday, March 12 at 1:30"
+    },
+    {
+      "owner": "patient",
+      "task": "Call the after-hours number on the discharge sheet if fever over 100.4 or incisions become red, hot, or draining pus",
+      "due": "as needed"
+    },
+    {
+      "owner": "spouse",
+      "task": "Add aspirin restart to the medication chart on the fridge",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Outbound post-op follow-up after left knee arthroscopy with Dr. Okonjo-Reyes (Monday 2026-03-02). Patient doing well overall: pain 3-4/10, afebrile, no nausea, dressing intact with only day-one pink spotting. Taking acetaminophen (max 3000 mg/day); stopped oxycodone after first night. Amlodipine resumed Tuesday. Reported left calf achiness, swelling and warmth since yesterday - nurse advised elevation and ankle pumps but did not escalate. PT referral redirected from Main Street to Eastgate Rehab; Eastgate to call within 2-3 business days. Baby aspirin 81 mg restart (day three) was missed; starting today per nurse. Post-op visit Thursday 3/12 at 1:30. Spouse Ruth is on HIPAA authorization and participated in med review. Spouse raised prior cancellation due to conflicting fasting instructions; nurse agreed to raise with manager.",
+  "notable_details": [
+    "Patient identity verified via DOB: February 2, 1964",
+    "Original surgery on the 23rd was cancelled the morning of because patient drank apple juice at ~5 AM based on a text message allowing clear liquids, conflicting with the mailed packet's 'nothing after midnight'; surgery done the following week",
+    "PT referral was originally set to Main Street Rehab (40-minute drive) and changed at patient's request to Eastgate Rehab (~10 minutes)",
+    "Aspirin restart on day three should have been yesterday but was not started because the family was unaware; nurse authorized starting today, 81 mg once daily",
+    "Spouse Ruth confirmed on patient's HIPAA authorization form before medication discussion",
+    "Patient reported left calf achiness, swelling and warmth on the operated side since yesterday - only conservative advice given",
+    "Patient's acetaminophen regimen per spouse: 500 mg, two tablets every six hours; oxycodone stopped after first night (two doses)",
+    "Amlodipine (blood pressure medication) resumed Tuesday",
+    "Post-op visit confirmed: Thursday, March 12 at 1:30 with Dr. Okonjo-Reyes",
+    "Nurse experienced repeated technical problems: screen logged out to login page, slow-loading pages, and a dead mouse battery",
+    "Patient mentioned a 'roommate' with the game on despite spouse Ruth being home, and mentioned a daughter who lives two hours away and a friend from church checking in daily",
+    "Patient complained about the phone menu (pressed 2, went somewhere weird, pressed 0 repeatedly) and the repetitive hold music"
+  ]
+}

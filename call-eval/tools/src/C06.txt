@@ -1,0 +1,41 @@
+@id C06
+@date 2026-06-03 10:05
+@line Corrowind Health Partners - Patient Outreach (missed appointments)
+@direction outbound
+@target 2000
+@speaker A AGENT = outreach coordinator
+@speaker C PATIENT = patient
+---
+C: Hello?
+A: Hi, good morning, this is Rosa calling from Corrowind Health Partners. I'm trying to reach Marisol Quintanar-Bede.
+C: This is she.
+A: Hi Marisol. Before I go on, could you verify your date of birth for me?
+C: Uh, yes, it's eleven, twenty-two, nineteen ninety.
+A: Thank you so much. I'm calling because we missed you at your appointment with Dr. Ferreira-Holm yesterday afternoon, and I wanted to check in and see if we can get you rescheduled.
+C: Oh, God, yes. I'm so sorry. I— my ride fell through. My cousin was supposed to take me and her car wouldn't start, and by the time I figured out the bus it was too late. And I didn't have the number to call.
+A: Oh, that's okay, things happen. I'm glad you're okay. And just so you know, there's a twenty-five dollar missed-appointment fee in our policy, but the policy waives it the first time, and this is your first, so you won't be charged anything.
+C: Oh, thank goodness. Thank you.
+A: Of course. Did you get the reminder text we sent on Monday?
+C: No, I didn't get anything. Which number do you have?
+A: I have one ending in three-three-five-zero.
+C: Oh, that's my old phone. I don't have that anymore. The new one is five-five-five, four-four-eight, zero-nine-two-six.
+A: Okay, five-five-five, four-four-eight, zero-nine-two-six. I'll update that right now so the reminders come to you. [typing] Done.
+#fill smalltalk
+A: And, um, Dr. Ferreira-Holm had you down for a follow-up on your iron levels, I think? Let me find a time. How have you been feeling?
+C: Honestly? Not great. I've been really dizzy this week. Like, when I stand up, everything goes gray. And Saturday I actually passed out in the kitchen. Just for a few seconds, my son found me on the floor.
+A: Oh no. I'm really sorry. Did you hit your head, or get hurt when you fell?
+C: I bumped my head on the cabinet, I have a little bump, but I'm okay. I didn't go anywhere, I just laid down.
+A: Okay. Marisol, I'm not a nurse, but fainting and hitting your head is something I want a nurse to hear about today, not wait for an appointment. Is it okay if I transfer you to our nurse line right now? I'll stay on and introduce you so you don't have to wait in the queue.
+C: Oh. Um. Is it that serious? I mean, I feel okay right now.
+A: It might be fine, but they'll know what to ask, and they can decide whether you need to be seen today. If you start feeling faint again, or you get a bad headache, confusion or vomiting before then, please call 911.
+C: Okay. Yeah. Okay, that's fine. Thank you.
+A: And one more thing before I transfer, it sounds like getting rides has been hard. We have a ride program for patients, it's free for appointments. Would you like me to put in a request so someone can call you about it?
+C: Oh, I didn't know that existed. Yes, please.
+A: Okay, I'll put the request in and I'll also call you back tomorrow morning to get your appointment with Dr. Ferreira-Holm rescheduled, after the nurse has talked to you. Does that work?
+C: Yes. Tomorrow morning is fine.
+A: Great. Okay, I'm going to bring the nurse on now. Please stay on the line.
+#hold 45
+A: Hi, Marisol, I have Nurse Adeyemi-Strand on the line. Nurse, I have Marisol Quintanar-Bede, I've verified her date of birth. She's been dizzy on standing this week and fainted Saturday at home, hit her head on a cabinet, has a small bump, and she has a history of low iron. She missed her follow-up yesterday.
+C: Hi.
+A: I'll let you two talk. Marisol, I'll call you tomorrow morning. Take care.
+C: Thank you, Rosa. Really.

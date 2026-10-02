@@ -1,0 +1,41 @@
+{
+ "call_type": "billing_dispute",
+ "outcome": "callback",
+ "sentiment_start": "negative",
+ "sentiment_end": "neutral",
+ "quality_score": 2,
+ "quality_reasons": [
+  "Disclosed balance and card last-four before verifying identity (DOB asked only afterwards)",
+  "Over-promised a 48-hour guaranteed refund contrary to stated 7-10 business-day review",
+  "Refused to give a reference/ticket number"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Disclosed account balance and card last-four digits before verifying caller identity",
+   "evidence": "your balance is showing ninety dollars right now, and there's two payments on the card ending in three-three-one-eight"
+  },
+  {
+   "type": "other",
+   "description": "Guaranteed a refund within 48 hours, outside the stated 7-10 business day billing review policy",
+   "evidence": "I'll make sure you get it back in forty-eight hours. Guaranteed."
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "agent",
+   "task": "Submit refund request for the duplicate $45 ClearPay copay charge",
+   "due": "today"
+  },
+  {
+   "owner": "billing team",
+   "task": "Call the patient back to confirm the refund",
+   "due": "2026-03-20 (Friday)"
+  }
+ ],
+ "summary_notes": "Mock summary for C02.",
+ "notable_details": [
+  "Duplicate charge amount is $45, not $40 (copay increased in January; agent initially read the old copay)",
+  "Caller mentioned her daughter (also a patient, same week) may have the same duplicate charge; not followed up by agent"
+ ]
+}

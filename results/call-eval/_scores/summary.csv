@@ -1,0 +1,5 @@
+label,model,headline,parse_rate,strict_json_rate,call_type,outcome,sentiment,quality_pm1,quality_reasons,flag_recall,flag_precision,decoy_avoidance,action_recall,subtle_recall,themes,themes_found,summary_le_120_rate,median_total_s,median_ttft_s,median_decode_tps,total_completion_tokens,errors
+qwen-omlx-think,qwen-flash-next,97.35,1.0,1.0,1.0,1.0,0.95,1.0,0.938,0.933,1.0,1.0,0.975,0.967,1.0,T_DOUBLE_CHARGE T_FASTING_CONFLICT,1.0,59.06,1.79,102.21,123848,0
+glm53-omlx-high-dflash,glm53-flash,97.14,1.0,1.0,1.0,1.0,0.95,0.95,0.95,0.958,0.958,0.929,0.975,1.0,1.0,T_DOUBLE_CHARGE T_FASTING_CONFLICT,0.85,29.92,2.36,58.32,37750,0
+glm53-mtp-high,glm53-flash-mtp,96.5,1.0,1.0,1.0,0.85,0.95,0.95,0.933,0.975,1.0,1.0,0.958,1.0,1.0,T_DOUBLE_CHARGE T_FASTING_CONFLICT,0.7,23.13,2.51,65.54,33857,0
+ds0731-omlx-think,dsv4-0731,85.31,0.9,0.9,0.85,0.85,0.8,0.9,0.742,0.842,0.9,0.857,0.76,0.875,1.0,T_DOUBLE_CHARGE T_FASTING_CONFLICT,0.9,49.24,4.03,56.52,78243,0

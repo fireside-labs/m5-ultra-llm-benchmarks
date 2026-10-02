@@ -1,0 +1,361 @@
+{
+ "task_id": "R03",
+ "title": "Clinic no-show fee / scheduling policy memo (second-order effects)",
+ "category": "A",
+ "sections": [
+  "issues",
+  "priorities",
+  "bottom"
+ ],
+ "items": [
+  {
+   "id": "G1",
+   "text": "Medicaid managed-care contracts forbid billing members for missed appointments (34% of patients, and the highest no-show group)",
+   "importance": "high",
+   "match": [
+    [
+     "medicaid"
+    ],
+    [
+     "contract",
+     "prohibit",
+     "not (allowed|permitted)",
+     "can'?t (bill|charge)",
+     "cannot (bill|charge)",
+     "shall not",
+     "forbid",
+     "violat",
+     "breach",
+     "bill(ing)? members",
+     "exempt",
+     "barred",
+     "not (be )?billable"
+    ]
+   ],
+   "paraphrases": [
+    "Medicaid managed-care contracts say we shall not bill members for missed appointments - the fee can't apply to 34% of patients.",
+    "Charging Medicaid members the no-show fee would breach our payer contracts.",
+    "The fee is prohibited for Medicaid patients, who have the highest no-show rate (27%)."
+   ]
+  },
+  {
+   "id": "G2",
+   "text": "Two commercial contracts require 90 days' written notice to the plan before a new patient-facing fee; the memo's 60-day patient notice doesn't cover it",
+   "importance": "normal",
+   "match": [
+    [
+     "90.day",
+     "90 days",
+     "ninety",
+     "notice to the (plan|payer|insurer)s?",
+     "notify (the )?(plans?|payers?|insurers?)",
+     "(payer|plan|insurer) notice",
+     "notif(y|ication) (to )?(the )?(commercial )?(plans?|payers?|insurers?)",
+     "commercial (plans?|payers?|insurers?)",
+     "commercial contracts?"
+    ]
+   ],
+   "paraphrases": [
+    "Two commercial contracts need 90 days' written notice to the plan, longer than the 60-day patient notice.",
+    "We must notify the commercial plans in writing before introducing the fee.",
+    "Commercial contracts impose a 90-day notice requirement that the January 1 date may already miss."
+   ]
+  },
+  {
+   "id": "G3",
+   "text": "Text-only reminders won't reach many patients: 15% have no mobile number, 41% have no texting opt-in, and the templates are English-only while 22% prefer Spanish",
+   "importance": "high",
+   "match": [
+    [
+     "text",
+     "sms",
+     "remind",
+     "automat"
+    ],
+    [
+     "opt.?in",
+     "41%",
+     "no mobile",
+     "15%",
+     "without (a )?(mobile|cell)",
+     "english.only",
+     "only english",
+     "spanish",
+     "22%",
+     "(won'?t|will not|can'?t|cannot|don'?t|do not) (reach|receive|get)",
+     "exclud",
+     "left out",
+     "consent",
+     "language"
+    ]
+   ],
+   "paraphrases": [
+    "Automated texts can't go to the 41% without opt-in or the 15% with no mobile number, so reminders actually drop.",
+    "Text reminders are English-only but 22% of patients prefer Spanish.",
+    "Replacing calls with texts excludes a large share of patients from reminders, which could raise no-shows."
+   ]
+  },
+  {
+   "id": "G4",
+   "text": "Equity and access: fees and balance holds deter low-income patients (who no-show most), delaying care and pushing them to the ED or out of the practice",
+   "importance": "high",
+   "match": [
+    [
+     "equity",
+     "equitab",
+     "access to care",
+     "low.income",
+     "vulnerable",
+     "disparit",
+     "deter",
+     "delay(ed|ing|s)? (in )?(care|treatment)",
+     "forgo",
+     "barriers?",
+     "poorer patients",
+     "sicker patients",
+     "worse (health )?outcomes",
+     "\\bed\\b",
+     "emergency (department|room)",
+     "regressive",
+     "afford"
+    ]
+   ],
+   "paraphrases": [
+    "Equity problem: the fee and balance hold fall hardest on low-income and Medicaid patients and deter needed care.",
+    "Balance holds create a barrier to access; patients may delay chronic-care visits and end up in the ED.",
+    "Penalizing those who can least afford it widens disparities."
+   ]
+  },
+  {
+   "id": "G5",
+   "text": "The fee doesn't address the actual causes of no-shows (transportation 38%, work/childcare 19%); fixes for those are missing",
+   "importance": "normal",
+   "match": [
+    [
+     "transport",
+     "rides?\\b",
+     "root cause",
+     "underlying (cause|reason)",
+     "childcare",
+     "work (or childcare )?conflict",
+     "why patients (miss|no.show)",
+     "38%",
+     "causes? of (the )?no.shows?",
+     "reasons? (for|patients) (miss|no.show)"
+    ]
+   ],
+   "paraphrases": [
+    "The fee doesn't fix the top cause of no-shows - transportation (38%).",
+    "Root causes (transport, work and childcare conflicts) aren't addressed; a penalty won't create a ride.",
+    "Address why patients miss: rides, flexible hours, easy rescheduling."
+   ]
+  },
+  {
+   "id": "G6",
+   "text": "Revenue projections are overstated: Medicaid exempt, first miss waived, 31% collection rate on small charges, and lost patients (9% left after collections) cost more than the fee brings in",
+   "importance": "high",
+   "match": [
+    [
+     "collection rate",
+     "31%",
+     "collectib",
+     "uncollect",
+     "bad debt",
+     "write.?offs?",
+     "\\$?90k",
+     "overstat",
+     "revenue (projection|estimate|forecast|math)",
+     "lost (visit )?revenue",
+     "\\$?148",
+     "left the practice",
+     "leave the practice",
+     "attrition",
+     "lose patients",
+     "9% (of patients )?left",
+     "(patient )?churn",
+     "half of the (outstanding )?\\$?410k"
+    ]
+   ],
+   "paraphrases": [
+    "The $90k fee revenue is overstated: Medicaid can't be charged and only 31% of small charges get collected.",
+    "Patient attrition (9% left after collections letters) loses $148 visits - more than the $75 fee recovers.",
+    "Recovering half the $410k by balance holds is unrealistic; expect write-offs and patients leaving the practice."
+   ]
+  },
+  {
+   "id": "G7",
+   "text": "Double-booking makes chronic lateness worse: 61% of sessions already run 20+ minutes late, so both-show days cascade delays, wait times and provider burnout",
+   "importance": "normal",
+   "match": [
+    [
+     "double.?book",
+     "overbook"
+    ],
+    [
+     "late",
+     "delay",
+     "wait",
+     "overrun",
+     "burnout",
+     "overtime",
+     "61%",
+     "behind",
+     "cascade",
+     "both (patients )?show"
+    ]
+   ],
+   "paraphrases": [
+    "Double-booking the first slot will cascade delays when 61% of sessions already run late.",
+    "If both double-booked patients show, everyone waits longer and providers burn out.",
+    "Overbooking worsens wait times and can itself drive future no-shows."
+   ]
+  },
+  {
+   "id": "G8",
+   "text": "Staff workload shifts rather than disappears: fee disputes, waiver requests, balance conversations at booking, opt-in collection and inbound calls from patients who miss texts",
+   "importance": "normal",
+   "match": [
+    [
+     "staff",
+     "front.?desk",
+     "workload",
+     "work ?load",
+     "reception"
+    ],
+    [
+     "shift",
+     "disputes?",
+     "waivers?",
+     "inbound",
+     "calls? (from|in)",
+     "confront",
+     "complain",
+     "conflict",
+     "more work",
+     "new work",
+     "won'?t (free|save)",
+     "not (free|save)",
+     "30 hours",
+     "argu",
+     "opt.?ins?"
+    ]
+   ],
+   "paraphrases": [
+    "The 30 freed front-desk hours will be eaten by fee disputes, hardship waivers and angry calls.",
+    "Staff workload shifts to collecting balances at booking and handling complaints.",
+    "Front desk will field inbound calls from patients who never got a text."
+   ]
+  },
+  {
+   "id": "G9",
+   "text": "No measurement plan: no pilot, baseline or control, and no tracking of unintended effects (attrition, ED use, complaints, no-shows by payer)",
+   "importance": "high",
+   "match": [
+    [
+     "measur",
+     "metrics?",
+     "track",
+     "monitor",
+     "evaluat",
+     "\\bkpis?\\b",
+     "dashboard"
+    ],
+    [
+     "plan",
+     "pilot",
+     "baseline",
+     "before.and.after",
+     "unintended",
+     "balancing",
+     "control",
+     "phase",
+     "success criteria",
+     "no way",
+     "not defined",
+     "none",
+     "by payer",
+     "attrition",
+     "complaints",
+     "\\bed\\b"
+    ]
+   ],
+   "paraphrases": [
+    "There's no measurement plan: pilot first, set a baseline and track no-shows by payer, attrition and complaints.",
+    "No metrics for unintended effects such as patients leaving or ED use.",
+    "Evaluate with a pilot and a control group before rolling out practice-wide."
+   ]
+  }
+ ],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Urgent or same-day sick visits could be blocked by the balance hold",
+   "why_not": "The memo states urgent and same-day sick visits are never held for balances.",
+   "match": [
+    [
+     "urgent",
+     "same.day",
+     "sick visits?",
+     "acute"
+    ],
+    [
+     "balance",
+     "hold",
+     "block",
+     "den(y|ied)",
+     "turned away",
+     "refus"
+    ]
+   ],
+   "paraphrases": [
+    "Patients with urgent needs might be turned away for an unpaid balance.",
+    "Balance hold could block same-day sick visits.",
+    "Acute care may be denied because of a balance hold."
+   ]
+  },
+  {
+   "id": "D2",
+   "text": "There is no grace period or hardship waiver",
+   "why_not": "First miss each year is waived automatically and leads can waive for documented hardship.",
+   "match": [
+    [
+     "\\bno (grace|hardship|waiver|exception|first.time|forgiv)",
+     "lack(s|ing)? (a |any )?(grace|hardship|waiver|exception|forgiv)",
+     "without (a |any )?(grace|hardship|waiver|exception)",
+     "(should|need to|must) (add|include|allow|have) (a |an )?(grace|hardship|waiver|exceptions?|first)",
+     "missing (a |an )?(grace|hardship|waiver|exception|first)"
+    ]
+   ],
+   "paraphrases": [
+    "No hardship waiver or grace for a first offense.",
+    "The policy should allow exceptions for patients in hardship.",
+    "Missing a first-time forgiveness rule."
+   ]
+  },
+  {
+   "id": "D3",
+   "text": "Patients are not told about the policy in advance",
+   "why_not": "Mailed and posted 60 days ahead, and patients sign the updated financial policy.",
+   "match": [
+    [
+     "advance notice",
+     "prior notice",
+     "not (be )?(notified|informed|told)",
+     "notify patients",
+     "inform patients",
+     "patients? (won'?t|will not|may not|wouldn'?t) know",
+     "communicat(e|ion|ing) (of |about )?the (new )?policy",
+     "(roll.?out|change) communication",
+     "patient awareness",
+     "signage",
+     "patients (should|must|need to) be (notified|informed|told)"
+    ]
+   ],
+   "paraphrases": [
+    "Patients won't know about the new fee before it starts.",
+    "Need a plan to communicate the new policy to patients in advance.",
+    "Patients should be notified before the fee applies."
+   ]
+  }
+ ]
+}

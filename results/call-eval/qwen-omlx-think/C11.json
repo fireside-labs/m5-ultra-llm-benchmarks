@@ -1,0 +1,68 @@
+{
+  "call_type": "sales",
+  "outcome": "callback",
+  "sentiment_start": "neutral",
+  "sentiment_end": "neutral",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Rep made a money-back guarantee that was later admitted not to be in the contract.",
+    "Rep initially misrepresented contract terms as cancel-anytime, then disclosed a 36-month agreement with an early termination fee.",
+    "Rep gathered requirements and scheduled next steps.",
+    "Technical delays were handled without major disruption."
+  ],
+  "flags": [
+    {
+      "type": "unauthorized_commitment",
+      "description": "Rep promised a 30% fuel savings money-back guarantee that was later admitted not to be contractual.",
+      "evidence": "If you don't save thirty percent, we'll give you your money back."
+    },
+    {
+      "type": "misinformation",
+      "description": "Rep initially said there were no long contracts and cancellation anytime, then disclosed a 36-month agreement with an early termination fee.",
+      "evidence": "Oh, totally, no long contracts with us. You can cancel anytime."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "REP",
+      "task": "Send written proposal to Rufus by Thursday, including actual contract terms.",
+      "due": "Thursday"
+    },
+    {
+      "owner": "REP",
+      "task": "Schedule demo with Rufus and CFO Priscilla Kranz-Albright for next Tuesday at two.",
+      "due": "next Tuesday at two"
+    },
+    {
+      "owner": "REP",
+      "task": "Send demo invite to Rufus.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "PROSPECT",
+      "task": "Forward demo invite to Priscilla Kranz-Albright.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "REP",
+      "task": "Ensure solutions person covers the accounting integration piece.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "REP",
+      "task": "Note offline sync/rural internet requirement.",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Outbound sales follow-up to web inquiry from Rufus at Kranz and Daughters, a plumbing company. Corrected fleet size is 32 vehicles: 25 vans and 7 refrigerated box trucks. Priorities are fuel savings, dispatch, handoffs, and real-time location; calendar sync and tablet/offline use are important, accounting integration secondary. Rep quoted $32 per vehicle per month with free hardware on a 36-month agreement, after initially misstating cancel-anytime and a guaranteed 30% fuel savings money-back offer that was not contractual. Proposal due Thursday with actual contract terms; demo scheduled next Tuesday at two with Rufus and CFO Priscilla Kranz-Albright.",
+  "notable_details": [
+    "Fleet size corrected from 25 vans to 32 total vehicles: 25 vans and 7 refrigerated box trucks.",
+    "Pricing: $32 per vehicle per month, hardware free, standard 36-month agreement.",
+    "Early termination fee described as remaining balance on agreement if canceled before 36 months.",
+    "Rep initially claimed guaranteed 30% fuel savings with money-back, then said it was not in contract.",
+    "Rep initially said cancel anytime/no long contracts, then disclosed 36-month agreement.",
+    "Demo scheduled next Tuesday at two with Rufus and CFO Priscilla Kranz-Albright; proposal due Thursday.",
+    "Integrations: calendar required, accounting less important; tablet/iPad app and offline sync needed.",
+    "Contact: Rufus at Kranz and Daughters; demo invite to be sent to Rufus for forwarding."
+  ]
+}

@@ -1,0 +1,439 @@
+{
+ "call_id": "C16",
+ "call_type": "sales",
+ "call_type_accept": [
+  "saas_support"
+ ],
+ "outcome": "callback",
+ "outcome_accept": [
+  "resolved"
+ ],
+ "sentiment_start": "neutral",
+ "sentiment_start_accept": [
+  "positive"
+ ],
+ "sentiment_end": "positive",
+ "quality_score": 3,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Strong relationship management: honest about roadmap and fit, obtained deal-desk approval in advance, clear next steps and recap",
+   "match": [
+    [
+     "honest",
+     "transparen",
+     "deal desk",
+     "approval",
+     "recap",
+     "next steps",
+     "rapport",
+     "relationship",
+     "prepared",
+     "consultative",
+     "listened"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Told the CFO the reminder-date bug was already fixed, contradicting her own earlier statement that the fix ships Oct 20 in 7.4.2",
+   "match": [
+    [
+     "remind",
+     "bug",
+     "fix",
+     "7\\.4\\.2",
+     "oct(ober)? ?20"
+    ],
+    [
+     "contradict",
+     "already fixed",
+     "was fixed",
+     "is fixed",
+     "fixed in the current",
+     "(said|told|claimed|stated) .{0,50}(fixed|resolved)",
+     "not (yet )?fixed"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "Sent the admin invite to the CFO's personal Gmail despite the customer's stated company-accounts-only policy",
+   "match": [
+    [
+     "gmail",
+     "personal (e-?mail|address|account)",
+     "private (e-?mail|address|account)"
+    ]
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "id": "F1",
+   "text": "Account manager told the CFO the reminder-date bug is already fixed in the current version, although earlier in the call she said the fix (7.4.2) is only scheduled for October 20",
+   "evidence": "Yes, that's fixed in the current version, you're all good. You can tell them.",
+   "paraphrases": [
+    "Misinformation: the AM said the reminder email date issue was resolved when the fix isn't released until Oct 20.",
+    "Agent incorrectly assured the customer the due-date bug was fixed so he could tell his collections team.",
+    "Contradictory information about the reminder bug: told it was fixed now, but 7.4.2 is still scheduled for later."
+   ],
+   "negatives": [
+    "The fix for the reminder bug is scheduled for October 20 in release 7.4.2.",
+    "Reminder emails show an incorrect due date one day early (known 7.4 bug), wrong date confused customers.",
+    "Systemic bug: reminder emails display the wrong due date."
+   ],
+   "match": [
+    [
+     "remind",
+     "due.date",
+     "date bug",
+     "bug",
+     "7\\.4\\.2"
+    ],
+    [
+     "already (been )?(fixed|resolved)",
+     "(is|was|been|now) (now )?(fixed|resolved)",
+     "fixed (now|already|in the current)",
+     "(said|told|claimed|stated|assured) .{0,50}(fixed|resolved)",
+     "assur",
+     "contradict",
+     "not (yet )?(fixed|released|out)",
+     "isn'?t (yet )?(fixed|released|out)",
+     "until oct",
+     "before (the )?(fix|7\\.4\\.2)"
+    ]
+   ]
+  },
+  {
+   "id": "F2",
+   "text": "Account manager sent the Collections Pro admin invite to the CFO's personal Gmail address at his request, bypassing the company's stated policy (company accounts only, everything via SSO)",
+   "evidence": "Send it to me. But send it to my personal gmail",
+   "paraphrases": [
+    "Security issue: admin access was provisioned to a personal email account rather than a company address.",
+    "AM sent an administrator invitation to the CFO's private gmail, contrary to the customer's SSO/company-account policy.",
+    "Admin invite delivered to a personal, non-corporate email."
+   ],
+   "match": [
+    [
+     "gmail",
+     "personal (e-?mail|address|account|inbox)",
+     "private (e-?mail|address|account)",
+     "non.?(corporate|company) (e-?mail|address|account)"
+    ]
+   ]
+  }
+ ],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Account manager committed to a two-year price lock at $18/seat",
+   "why_not": "She obtained deal-desk sign-off the day before for up to 24 months at $18, and explicitly declined to promise three years without approval.",
+   "evidence": "I got sign-off yesterday for up to twenty-four months at eighteen.",
+   "paraphrases": [
+    "Unauthorized pricing commitment: AM locked the price for 2 years.",
+    "Agent promised a discounted $18 rate locked for twenty-four months.",
+    "Price lock of two years offered by the account manager."
+   ],
+   "match": [
+    [
+     "price lock",
+     "lock(ed|ing)? (the |in )?(price|rate)",
+     "24 months",
+     "twenty.four months",
+     "two.year",
+     "2.year",
+     "\\$18",
+     "eighteen dollars",
+     "discount"
+    ]
+   ]
+  },
+  {
+   "id": "D2",
+   "text": "Account manager disclosed another customer's results (a construction supply company) to the prospect",
+   "why_not": "The reference was anonymised ('I can't name them'); no identifying information was shared.",
+   "evidence": "I can't name them, but I can tell you they had a very similar customer mix to yours",
+   "paraphrases": [
+    "AM shared details about another customer's DSO results.",
+    "Disclosure of a different client's performance data during the sales pitch.",
+    "Referenced a construction supply company customer and its outcomes."
+   ],
+   "match": [
+    [
+     "another (customer|client|company)",
+     "other (customer|client|company)",
+     "construction supply",
+     "different (customer|client)",
+     "customer reference",
+     "case study"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Systemic 7.4 reminder-email date bug affecting their customers",
+   "match": [
+    [
+     "7\\.4\\b",
+     "day early",
+     "one day",
+     "time ?zone",
+     "known bug"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Retainage / progress billing not supported; tracked in spreadsheet",
+   "match": [
+    [
+     "retainage",
+     "progress billing"
+    ]
+   ]
+  },
+  {
+   "id": "OK3",
+   "text": "Blurry logo on PDF invoices",
+   "match": [
+    [
+     "logo",
+     "blurry",
+     "pdf"
+    ]
+   ]
+  },
+  {
+   "id": "OK4",
+   "text": "Customer's IT has not set up SSO / company account after email migration",
+   "match": [
+    [
+     "sso",
+     "single sign",
+     "email migration",
+     "identity provider"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "account manager",
+   "task": "Send renewal proposal (42 seats at $18/seat/month locked 2 years, SSO add-on, Collections Pro trial) with MSA redlines",
+   "due": "Friday 2026-10-02",
+   "match": [
+    [
+     "proposal",
+     "order form",
+     "quote"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "account manager",
+   "task": "Ask deal desk about a three-year price lock",
+   "due": "with the proposal",
+   "match": [
+    [
+     "three.year",
+     "3.year",
+     "3 years",
+     "three years"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "account manager / solutions engineer",
+   "task": "Connect Arvid with Rafferty (IT) for an SSO setup session once the identity provider is ready; send pre-session user checklist",
+   "due": "when IdP ready (mid-October or later)",
+   "match": [
+    [
+     "sso",
+     "single sign",
+     "arvid",
+     "rafferty",
+     "identity provider"
+    ]
+   ]
+  },
+  {
+   "id": "A4",
+   "owner": "account manager",
+   "task": "Send Yetunde the reminder-template workaround instructions and note the account as affected",
+   "due": "today",
+   "match": [
+    [
+     "template",
+     "workaround",
+     "reminder"
+    ]
+   ]
+  },
+  {
+   "id": "A5",
+   "owner": "account manager",
+   "task": "Schedule quarterly business review",
+   "due": "Tue 2026-10-27 10 a.m.",
+   "match": [
+    [
+     "qbr",
+     "quarterly",
+     "business review",
+     "oct(ober)?\\.? ?27",
+     "10/27"
+    ]
+   ]
+  },
+  {
+   "id": "A6",
+   "owner": "CFO / outside counsel",
+   "task": "Have outside counsel review the MSA redlines",
+   "due": "after proposal",
+   "match": [
+    [
+     "msa",
+     "master agreement",
+     "counsel",
+     "legal",
+     "lawyer",
+     "redline"
+    ]
+   ]
+  },
+  {
+   "id": "A7",
+   "owner": "controller (Yetunde)",
+   "task": "Send the PO number for the renewal and the original logo file",
+   "due": "unspecified",
+   "match": [
+    [
+     "\\bpo\\b",
+     "purchase order",
+     "logo"
+    ]
+   ]
+  },
+  {
+   "id": "A8",
+   "owner": "account manager",
+   "task": "Set up a product feedback session on retainage with the product manager",
+   "due": "unspecified",
+   "match": [
+    [
+     "retainage",
+     "product manager",
+     "feedback session"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Renewal is for 42 seats (CFO first said 24; controller corrected: estimators and dispatch were added)",
+   "evidence": "Forty-two, Mort. Forty-two.",
+   "negatives": [
+    "Renewal for 24 seats."
+   ],
+   "match": [
+    [
+     "\\b42\\b",
+     "forty.two"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Contract renews / ends November 30",
+   "evidence": "Your current contract ends November thirtieth.",
+   "match": [
+    [
+     "nov(ember)?\\.? ?30",
+     "11/30",
+     "30(th)? (of )?november"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Price $18 per seat per month (down from $22 list), locked for two years with deal-desk approval",
+   "evidence": "I can do eighteen dollars per seat per month.",
+   "match": [
+    [
+     "\\$ ?18\\b",
+     "eighteen dollars",
+     "18 (dollars|/|per)",
+     "eighteen (a|per) seat"
+    ]
+   ]
+  },
+  {
+   "id": "S4",
+   "text": "SSO add-on at $3 per seat per month for all 42 seats ($126/month); includes SCIM",
+   "evidence": "SSO on Tallyforge is an add-on, three dollars per seat per month.",
+   "match": [
+    [
+     "sso",
+     "single sign"
+    ],
+    [
+     "\\$ ?3\\b",
+     "three dollars",
+     "126",
+     "add.on"
+    ]
+   ]
+  },
+  {
+   "id": "S5",
+   "text": "QBR scheduled for Tuesday October 27, 10 a.m.",
+   "evidence": "October twenty-seventh, ten a.m. I'll send the invite.",
+   "match": [
+    [
+     "oct(ober)?\\.? ?27",
+     "10/27",
+     "27(th)? (of )?october"
+    ]
+   ]
+  },
+  {
+   "id": "S6",
+   "text": "Reminder-date fix (7.4.2) is scheduled for October 20 - not yet released",
+   "evidence": "The fix is in 7.4.2, which is scheduled for October twentieth.",
+   "match": [
+    [
+     "7\\.4\\.2",
+     "oct(ober)?\\.? ?20",
+     "10/20"
+    ]
+   ]
+  },
+  {
+   "id": "S7",
+   "text": "Collections Pro 30-day free trial for 5 AR seats ($4/seat/month if kept)",
+   "evidence": "Five seats, so twenty dollars a month.",
+   "match": [
+    [
+     "collections pro",
+     "collection spro"
+    ],
+    [
+     "trial",
+     "five seats",
+     "5 seats",
+     "\\$ ?4\\b",
+     "four dollars"
+    ]
+   ]
+  }
+ ],
+ "themes": [
+  "T_SAAS_DUE"
+ ]
+}

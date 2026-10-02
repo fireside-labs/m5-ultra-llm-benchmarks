@@ -1,0 +1,217 @@
+
+Let me think about this carefully. The request is a structured debate brief: a 4,000-person software/finance/operations company deciding whether to make remote work the default (opt-in office by team) vs. current three-days-a-week mandate. I need to write:
+
+1. Case for (≤6 numbered args, strongest advocate voice)
+2. Case against (≤6 numbered args)
+3. Cruxes (2–4 questions, separating empirical from value)
+4. What evidence would change the answer (bullets, specific internal experiments/evidence)
+5. My lean (2–4 sentences, confidence %, main condition)
+
+Constraints: no named studies/statistics/companies; mechanisms and general reasoning; say what evidence would settle each point. Be concrete to this situation: 4,000 people, software + finance + operations, no frontline roles. The proposal: default remote, teams opt into in-person meetings. Current: 3 office days/week.
+
+I should be a senior generalist advisor steering the work: name the variables that actually drive the outcome, spot what's missed, separate real from fake problems, prioritize ruthlessly, find the crux.
+
+Let me think about the actual substance.
+
+Key mechanisms for remote-by-default:
+
+Case for:
+1. Talent pool and retention: default-remote expands hiring geography and retains people who have reorganized their lives (childcare, location). In a 4,000-person software company, the marginal hire quality and retention is a huge lever. Commute time is unpaid work; three days a week is a tax. People quit over RTO mandates; forced office days are a visible, resented constraint.
+2. Default matters more than the option: under "remote unless team chooses," the default shapes norms — people don't have to negotiate individually, teams coordinate. The current 3-day rule forces everyone to the median preference; default-remote lets heterogeneous teams sort. Coordination is the real problem, and team-level opt-in solves it better than company-level mandate.
+3. Office days under a mandate are often "performative presence": commuting to sit on video calls. If the office is empty-ish under mandate anyway (people stagger days), you get worst of both worlds: commute costs without density benefits. Default-remote with deliberate team-chosen anchor days produces actual density when people do come.
+4. Real estate / cost: 4,000 people — office footprint is a major cost line; remote default lets you right-size or repurpose. Though this is a weaker point since they may have long leases; still, it's real.
+5. Measured output vs. presence: for software and finance knowledge work, output is measurable in ways presence isn't; presence metrics select for visibility, not value. Promotion bias toward in-person people is a fairness/quality problem.
+6. Focus work: deep work for engineers/analysts; interruption cost of office. Also business continuity, and access for caregivers.
+
+Case against:
+1. Coordination and tacit knowledge: new hires, cross-team work, mentorship — apprenticeship happens through osmosis; remote default makes it formal and scarce. At 4,000 people, silos form; weak ties decay; cross-functional serendipity (the actual value of a big office) dies. The team-level opt-in means teams that don't opt in never generate cross-team contact.
+2. Culture and trust at scale: culture is transmitted by observation; remote default makes culture an artifact (documents, all-hands) rather than lived. Harder to detect disengagement, integrity issues in finance ops, etc.
+3. Career development of juniors: the people most hurt by remote are the least experienced; mentorship decay shows up with a lag, so it's underweighted. Senior people (who decide) are the ones remote works best for — a selection-bias trap in the decision itself.
+4. Team opt-in fragmentation: "team chooses" creates inequity — some teams become office teams, others fully remote; pay/location policy gets messy; remote default pushes toward location-based pay and hiring anywhere, which changes the employment model fundamentally. Also managers' discretion to choose office becomes a power/retention issue.
+5. Onboarding and speed: decisions that take 2 weeks async take 2 days in a room, especially ambiguous ones (incident response, deal structuring in finance). Escalation paths atrophy.
+6. Reversibility and ratchet: going remote-default is easy to announce and hard to reverse; the office becomes a ghost town (empty office is worse than no mandate), lease/fitout decisions lock in; once people move houses, calling them back is a mass attrition event. Option value: keep the option by keeping the habit.
+
+Cruxes — what does the disagreement actually turn on?
+
+Empirical cruxes:
+1. What is the actual productivity/quality difference for this company's specific work — especially for juniors and for cross-team projects? (Mentorship decay is lagged and hard to see; need internal measurement.)
+2. How much of the current office attendance is already doing work — i.e., what happens on office days now? If office days are mostly video calls from desks, the mandate is buying nothing and remote default is nearly free. If there's real density and collaboration, the mandate is buying something.
+3. Which teams actually need co-location and how often? Is the disagreement mostly about the median employee or about a few critical functions (new-grad cohorts, incident response, finance close)?
+
+Value cruxes:
+4. How do you weigh employee preference/retention and talent-pool expansion against cultural cohesion and junior development? Is the company optimizing for the marginal hire (who values flexibility) or the existing institution (which benefits from density)? Also fairness: who bears the cost of the choice — juniors bear remote's costs, seniors reap its benefits.
+
+That's a good split: 2-3 empirical, 1-2 value.
+
+Evidence that would change the answer:
+- Internal natural experiment: compare teams already operating de facto remote-heavy vs. office-heavy on retention (esp. juniors' time-to-productivity, promotion rates), delivery metrics, incident rates, engagement.
+- Audit of current office days: what fraction of office-day time is collaborative vs. solo-on-Zoom; meeting outcomes.
+- A/B or staggered pilot: designate some org units remote-default with team-chosen anchor days for 2 quarters; track onboarding time-to-first-contribution, cross-team tie density (survey), attrition of <2-yr tenure, manager-rated ramp.
+- Exit interview and offer-decline coding: how often flexibility is the stated reason.
+- Measure the counterfactual cost: what would it take to make office days high-value (anchor days per team, co-located sub-teams) — if you can fix the mandate's weaknesses cheaply, remote-default's advantage shrinks.
+- Junior cohort tracking: time-to-independent contribution for hires under remote vs. hybrid.
+- Survey with stakes: stated preference vs. revealed (which teams voluntarily come in when allowed).
+
+My lean: I think the honest senior-advisor lean here is: remote-by-default is probably right for the median knowledge worker in this company, but the decision as framed (blanket default) is the wrong frame; the crux is junior development and the risk that team-level opt-in produces no coordination at all. A lean toward remote-default with structured exceptions (mandated anchor days for new hires' first N months, cross-team rituals) — confidence maybe 60-65%. The main condition: whether the company can measure and fix junior ramp; if it can't, hybrid mandate is safer.
+
+Actually, let me decide the lean cleanly. The proposal is "remote unless team chooses to meet in person." That's a reasonable design: it pushes the coordination decision to the level where the information is. The main failure mode is a commons problem: each team rationally chooses remote, and the cross-team/serendipity/junior-mentorship goods — which no team owns — quietly die. So my lean: yes to remote-default, but only with two guardrails: (a) a company-level minimum of in-person moments that no team can opt out of (onboarding cohorts, quarterly cross-team events), and (b) instrumentation to detect junior-ramp decay. Confidence ~60%. Condition: leadership actually funds the in-person moments and measures junior outcomes; otherwise lean against.
+
+Hmm, but the prompt says "My lean in 2–4 sentences, with a confidence level (as a percentage) and the main condition it depends on." So I need to be crisp.
+
+Let me also make sure I follow the meta-instructions: "name the variables that actually drive the outcome, spot what an analysis missed, separate real problems from things that only look like problems, prioritise ruthlessly, find the crux." And: "when you need a number that is not given, say so and state your assumption."
+
+Things that only look like problems: 
+- "Productivity will drop" — for experienced ICs doing heads-down work, presence is weakly tied to output; the real risk is concentrated in juniors and coordination, not the median.
+- "Culture will die" — culture at 4,000 people is mostly transmitted through managers and cohorts, not hallway serendipity; the claim needs unpacking into specific mechanisms (onboarding, norms, cross-team trust).
+- Real estate savings — often overstated due to lease lock-in; not a decision driver short-term.
+- The 3-day mandate itself: what does it actually buy? If attendance is staggered and people sit on video calls, the mandate is a costly status quo, not a benchmark of "office value." This is a key analytical point: the comparison isn't remote-default vs. ideal office; it's remote-default vs. the actual current hybrid, which may be delivering the costs of both.
+
+What's missed in the framing:
+- The proposal changes the default, but the binding constraint is coordination: who decides "team chooses"? Manager discretion becomes a retention/fairness variable.
+- Location/pay policy: remote default eventually forces a decision on geo-pay and cross-border hiring/tax — that's a bigger change than the work policy itself. Worth naming.
+- The decision is asymmetric in reversibility: remote default is a ratchet (people relocate; office shrinks). Underweight that.
+
+Cruxes — let me finalize 3-4:
+
+1. (Empirical) Does co-location currently produce measurable collaboration value, or is the 3-day mandate mostly performative? Evidence: audit of office-day time use; if performative, remote default is nearly free.
+2. (Empirical) How steep is the junior/mentorship penalty, and with what lag? Evidence: cohort tracking of time-to-productivity and retention for <2-yr tenure under different team regimes.
+3. (Empirical) Which decisions in this company are actually faster in a room — how much of the work is ambiguous/cross-functional vs. modular? Evidence: incident retros, project post-mortems classifying where co-location changed the outcome.
+4. (Value) Whose preferences count and who bears the risk: the median incumbent (flexibility) vs. future juniors and cross-team cohesion (density)? And is it acceptable that the benefits of remote default accrue to seniors while its costs fall on juniors?
+
+That's 3 empirical + 1 value. Good.
+
+Evidence section — bullets, specific:
+- Office-day time audit (calendar + diary sample): % of office-day hours in co-located collaboration vs. video calls from an office desk. If >half is video-from-office, the mandate buys little → moves toward remote default.
+- Junior cohort dashboard: time-to-first-independent-contribution, ramp-time, first-year retention, promotion velocity for hires onboarded under heavy-remote vs. office-heavy teams. Lagged but decisive on crux 2.
+- Pilot: 2-3 org units run remote-default with team-set anchor days for two quarters; matched comparison units keep 3-day mandate. Track delivery, attrition, engagement, cross-team tie density (e.g., "name your top 5 collaborators outside your team" survey — count how many you've met in person).
+- Offer-decline and exit coding: frequency of flexibility as a stated factor; also where new hires are located (can you hire people you currently can't?).
+- Meeting-outcome test: for a sample of cross-team decisions, compare cycle time/quality when kickoff was in-person vs. remote. Tests the "rooms are faster for ambiguous decisions" claim.
+- Reversibility probe: what happens to a ghost office — model attendance under remote default; if the office falls below a threshold where anchor days still work (people come in and their collaborators aren't there), remote default fails on its own terms. This is a key mechanism: remote default only works if teams actually coordinate anchor days; otherwise everyone comes in on different days and the office is pointless.
+
+That last point is important and subtle: under "team chooses," if teams choose different days, in-person meetings fail. So remote default requires a coordination mechanism (company-wide anchor days or inter-team calendar), which partially reintroduces the mandate. Worth naming in the case-against or cruxes.
+
+Case for — 6 args max. Let me draft sharp ones:
+
+1. The default is the policy; the mandate is the exception. Under the proposal, teams that benefit from co-orientation keep it; teams that don't stop paying the commute tax. The current 3-day rule forces everyone to the median preference, which by construction makes ~half the workforce worse off. Defaults matter because renegotiating away from a mandate is individually costly (career risk), while opting into office under remote-default is cheap and visible.
+
+2. The current mandate likely buys neither density nor flexibility — the worst cell of the matrix. Three mandated days with staggered attendance means people commute to sit on video calls; the office is busy enough to be distracting, empty enough to miss the serendipity. Remote default with deliberate team anchor days concentrates people when they do come, so the office days that remain are actually worth having.
+
+3. Talent: the binding constraint for a software/finance firm is the labor market, and remote default expands it (geography, caregivers, disability, people who've moved) and cuts attrition among people for whom the commute is a real cost. You can't verify the size without data, but the mechanism is one-directional: flexibility adds candidates, mandates subtract them.
+
+4. Output vs. presence: for modular knowledge work (coding, analysis, ops processing), presence is a poor proxy for contribution; mandates select for visibility, which corrupts promotion signals and pushes out people who deliver but don't perform presence.
+
+5. Cost and optionality of the footprint: 4,000 desks plus facilities is a large fixed cost; remote default lets it shrink over lease horizons. (Assumption: they own or can renegotiate space; if locked into a long lease, this argument weakens — say so.)
+
+6. Trust and adult treatment: a mandate says "we don't trust you to arrange your work"; the damage shows up in engagement and in the kind of managers you retain. Also continuity/resilience — an org that already works distributed is robust to disruption.
+
+Case against — 6:
+
+1. Apprenticeship decay: juniors learn by watching and being corrected in real time; remote default makes mentorship scheduled and scarce, and the damage appears 12-24 months later as a thin mid-level bench. The deciders (senior, remote-productive) are the least able to see this cost — a selection-bias trap.
+
+2. The coordination commons: no team owns cross-team ties, so under team-level opt-in every team rationally picks remote, weak ties decay, and the firm becomes a federation of silos. Big-company advantage (4,000 people can staff anything from anywhere) depends exactly on these ties.
+
+3. Team-choice fragmentation and fairness: "the team chooses" means managers choose; you get office-favoring and remote-favoring teams, inequitable promotion exposure (out of sight, out of mind), and eventually pressure for location-based pay and hiring — a fundamentally different employment model smuggled in as a work policy.
+
+4. Speed on ambiguous work: incidents, deal structuring, contentious design decisions — a room compresses the cycle; async stretches it and burns senior attention on written coordination. At scale, escalation paths atrophy.
+
+5. Empty-office death spiral: remote default lowers attendance → office feels dead on the days anyone comes → co-location loses its value even for teams that want it → the option is destroyed, not preserved. And the policy is a ratchet: once people relocate on remote-default assumptions, reversing it is a mass-attrition event. You're not choosing between two steady states; you're mostly choosing whether the office option survives.
+
+6. Culture and control environment: at 4,000 people, norms are transmitted by observation and enforced by presence (especially in finance/ops where process discipline matters); remote default makes culture an artifact you publish rather than a thing you catch, and weakens the informal signals managers use to detect trouble.
+
+That's 6 each. Now cruxes — 3-4, separated empirical/value:
+
+1. (Empirical) What do the current three office days actually produce? If most office-day time is solo work or video calls from a desk, the mandate is the status quo's weakness, and remote default is nearly free. If real co-located collaboration happens, the mandate is buying something that must be replaced. Evidence: time-use audit of office days.
+2. (Empirical) How large and lagged is the junior-development penalty, and does the company have the discipline to replace osmosis with deliberate apprenticeship? Evidence: cohort tracking.
+3. (Empirical) How much of the firm's work is cross-team and ambiguous (where rooms help) vs. modular (where they don't)? Evidence: post-mortem/incident classification.
+4. (Value) Whose interests dominate: incumbents' flexibility and the expanded hiring pool vs. long-run institutional cohesion and juniors' development — and is it acceptable that remote default's benefits accrue mostly to seniors while its costs fall on juniors? No data settles this; it's a weights question.
+
+Evidence bullets (specific, internal):
+- Office-day time audit (calendar + diary sample): % of office-day hours in co-located collaboration vs. video calls from an office desk. If >half is video-from-office, the mandate buys little → moves toward remote default.
+- Junior cohort dashboard: time-to-first-independent-contribution, ramp-time, first-year retention, promotion velocity for hires onboarded under heavy-remote vs. office-heavy teams. Lagged but decisive on crux 2.
+- Pilot: 2-3 org units run remote-default with team-set anchor days for two quarters; matched comparison units keep 3-day mandate. Track delivery, attrition, engagement, cross-team tie density (e.g., "name your top 5 collaborators outside your team" survey — count how many you've met in person).
+- Offer-decline and exit coding: frequency of flexibility as a stated factor; also where new hires are located (can you hire people you currently can't?).
+- Meeting-outcome test: for a sample of cross-team decisions, compare cycle time/quality when kickoff was in-person vs. remote. Tests the "rooms are faster for ambiguous decisions" claim.
+- Reversibility probe: what happens to a ghost office — model attendance under remote default; if the office falls below a threshold where anchor days still work (people come in and their collaborators aren't there), remote default fails on its own terms. This is a key mechanism: remote default only works if teams actually coordinate anchor days; otherwise everyone comes in on different days and the office is pointless.
+
+That last point is important and subtle: under "team chooses," if teams choose different days, in-person meetings fail. So remote default requires a coordination mechanism (company-wide anchor days or inter-team calendar), which partially reintroduces the mandate. Worth naming in the case-against or cruxes.
+
+My lean: I lean toward remote-by-default, ~60-65% confidence, conditional on two guardrails: company-coordinated anchor days (so team opt-ins don't cancel each other out) and a funded apprenticeship program for the first ~12-18 months of tenure (so the cost doesn't fall silently on juniors). If leadership won't fund the guardrails or measure junior outcomes, I'd stay with the mandate — because the status quo at least preserves the option, and remote default is a ratchet.
+
+Hmm, but "My lean" should be 2-4 sentences. Let me compress.
+
+Also the instruction: "when you need a number that is not given, say so and state your assumption." I have a couple of places: lease lock-in assumption; I could note the 4,000 scale means culture transmission is via managers, etc. I'll state assumptions inline where relevant (e.g., "assuming the lease allows footprint reduction; if not, drop this argument").
+
+Formatting: exactly the headings requested, in order: ## Case for, ## Case against, ## Cruxes, ## What evidence would change the answer, ## My lean. Markdown numbered lists for the first three; bullets for evidence; short paragraph for lean.
+
+Length: This deserves a fairly full response but I should be ruthless. Maybe 700-900 words. Each argument 1-3 sentences, punchy. Let me write tightly.
+
+Let me also make sure the "case for" and "case against" are written as advocates would — strongest versions, not strawmen — while the cruxes and lean show my advisor judgment.
+
+One more analytical point worth surfacing: the real comparison is not "remote default vs. office" but "remote default vs. the current hybrid," and the current hybrid may be the worst of both worlds. That's a genuinely useful advisor observation — the status quo is weaker than it looks. Conversely, remote default's failure mode (fragmented anchor days, ghost office) is also a worst-of-both outcome. So both sides are arguing against a worst-of-both-worlds outcome and accusing the other side of producing it. That's actually the crux structure: both sides agree "worst of both worlds is bad"; they disagree about which policy slides into it. That's a nice framing for the cruxes section. Maybe put it as an opening line of Cruxes or in the lean. Actually I could open the Cruxes section with one sentence of framing. The instructions say "A numbered list of the 2–4 questions" — I can add a one-line preamble; that should be fine and adds value. Keep it to one sentence.
+
+Let me draft.
+
+## Case for
+
+1. **The default is the policy.** Under the proposal, teams that benefit from being together keep that; teams that don't stop paying the commute tax. The current three-day rule forces everyone to the median preference, and a mandate is hard to escape individually (opting out reads as disengagement), while opting in under remote-default is cheap and visible. Defaults allocate the choice to the people with the information.
+
+2. **The current mandate probably buys neither density nor flexibility.** Three mandated days with staggered attendance means many people commute to sit on video calls: enough people in the office to be distracting, too few for the collaboration the mandate is nominally for. Remote default with deliberate team anchor days concentrates attendance, so the office days that remain are worth having. (Testable: audit what office days are actually used for — see below.)
+
+3. **Talent in, attrition down.** For software and finance staff the binding constraint is the labor market. Remote default widens the geographic and demographic pool (caregivers, people who have moved) and removes a visible, resented tax on everyone within commuting distance. The mechanism is one-directional: flexibility adds candidates; a mandate subtracts them.
+
+4. **Presence is a corrupt signal.** For modular knowledge work — coding, analysis, ops processing — output is observable and presence is not a proxy for it. Mandates select for visibility, which quietly corrupts promotion decisions and pushes out high performers who don't perform attendance.
+
+5. **Footprint cost.** 4,000 desks, leases and facilities are a large fixed cost; remote default lets the footprint shrink at lease renewal. (Assumption: the lease structure permits this; if the company is locked in for many years, this argument weakens to near zero.)
+
+6. **Trust compounds.** A blanket mandate tells 4,000 adults they can't be trusted to arrange their work; that shows up in engagement, in which managers stay, and in the org's resilience — a company that already works distributed is robust to disruption by construction.
+
+## Case against
+
+1. **Apprenticeship decays silently.** Juniors learn by watching and being corrected in real time; remote default makes mentorship scheduled and scarce. The damage surfaces 12–24 months later as a thin mid-level bench — after the decision-makers have moved on. Note the selection trap: the senior people making this call are precisely the people remote works best for.
+
+2. **Cross-team ties are a commons no team owns.** Under team-level opt-in, each team rationally chooses remote; weak ties across the 4,000 decay; the firm becomes a federation of silos. The main advantage of being 4,000 people rather than forty teams of 100 is exactly these ties.
+
+3. **"The team chooses" means the manager chooses.** You will get office-favoring and remote-favoring teams with different promotion exposure (out of sight, out of mind), and steady pressure toward location-based pay and hiring anywhere — a fundamentally different employment model smuggled in as a scheduling policy.
+
+4. **Ambiguous work is faster in a room.** Incidents, contentious design calls, finance close problems: a room compresses a two-week async negotiation into an afternoon. Async coordination burns scarce senior attention, and escalation paths atrophy when unused.
+
+5. **The empty-office death spiral, and the ratchet.** Remote default lowers attendance; a mostly-empty office makes even willing attendees' trips worthless (their collaborators aren't there); co-location loses value even for teams that want it. And the policy is close to irreversible: once people relocate on remote-default assumptions, calling them back is a mass-attrition event. You are not choosing between two steady states; you are deciding whether the office option survives at all.
+
+6. **Culture and control environment.** At this scale norms are transmitted by observation and enforced by presence — especially in finance and operations, where process discipline matters. Remote default turns culture into a document you publish rather than a thing managers catch, and removes the informal signals by which trouble is noticed early.
+
+## Cruxes
+
+Framing: both sides actually agree the danger is a "worst of both worlds" outcome — commuting without density, or flexibility without cohesion. They disagree about which policy slides into it. The questions:
+
+1. **(Empirical)** What do the current three office days actually produce? If most of that time is solo work or video calls from an office desk, the mandate is buying little and remote default is nearly free; if genuine co-located collaboration happens on those days, something real must be replaced. — Settled by a time-use audit of office days.
+
+2. **(Empirical)** How large and how lagged is the junior-development penalty, and can the company replace hallway osmosis with deliberate apprenticeship? If yes, the strongest argument against mostly dissolves. — Settled by cohort tracking of junior ramp and retention under different regimes.
+
+3. **(Empirical)** How much of the firm's work is cross-team and ambiguous (where rooms help) versus modular (where they don't)? — Settled by classifying incident and project post-mortems by whether co-location changed the outcome.
+
+4. **(Value)** Whose interests dominate: incumbents' flexibility and the enlarged hiring pool, or long-run cohesion and the juniors who bear remote's costs while seniors reap its benefits? No dataset settles this; it's a question about weights, and about whether the company sees itself as optimizing for current employees or for the institution over time.
+
+## What evidence would change the answer
+
+- **Office-day audit** (calendar + diary sample of a few hundred people): the share of office-day hours spent in co-located collaboration versus video calls from a desk. If the majority is video-from-office, the mandate's value is mostly fictional → moves me toward remote default.
+- **Pilot with control:** run 2–3 org units remote-default (with team-set anchor days) for two quarters against matched units keeping the mandate. Track delivery, attrition, engagement, and — critically — a "name your five closest collaborators outside your team; how many have you met in person this quarter?" survey to detect tie decay.
+- **Junior dashboard:** time-to-first-independent-contribution, first-year retention and promotion velocity for hires onboarded under remote-heavy versus office-heavy teams. Lagging indicator, but decisive on crux 2.
+- **Exit and offer-decline coding:** how often flexibility is a stated reason for leaving or declining; how many candidates the company can now reach that it couldn't before. Tests the size of the talent argument.
+- **Room-value test:** for a sample of cross-team decisions, compare cycle time and rework when the kickoff was in-person versus remote. Directly tests the "rooms are faster for ambiguous work" claim.
+- **Attendance model under remote default:** simulate or observe whether team-chosen days actually align. If teams pick different days and the office is dead on any given day, remote default fails on its own terms unless the company coordinates anchor days centrally — which is a partial reversion to a mandate.
+
+## My lean
+
+I lean toward remote-by-default, at roughly 60% confidence, but only with two guardrails: company-coordinated anchor days (so teams' opt-ins don't cancel out into a ghost office) and a funded, deliberate apprenticeship program for employees in their first 12–18 months. The main condition: if leadership won't pay for those guardrails or instrument junior outcomes, I'd keep the mandate — the status quo at least preserves the office option, and remote default is a ratchet that is cheap to announce and expensive to reverse.
+
+That's the shape. Let me check word counts and tighten. Also check: "Do not rely on specific studies, statistics or named companies" — I've avoided all. "say what evidence would settle each point" — I've done that in cruxes and evidence section. "state your assumption" for numbers not given — I did for lease; also I could flag the 60% confidence is judgment. The confidence itself is requested.
+
+One thing: the instruction says for Cruxes "Separate empirical questions from value questions" — I've labeled them. Good.
+
+Also the persona: "spot what an analysis missed or got wrong, separate real problems from things that only look like problems." I've embedded some of that (presence as corrupt signal; mandate buying neither; selection trap). Maybe I can sharpen one "only looks like a problem" point: "productivity will drop" is the fake problem; the real problem is junior development and coordination. I have that implicitly. Could add a line in Cruxes framing. Keep it tight.
+
+Length check: my draft is around 1,000 words. That's acceptable for this complexity but let me trim a bit. The instructions favor fewer, sharper points. I'll tighten each numbered item to 1-3 sentences.
+
+Also headings must be exactly: ## Case for, ## Case against, ## Cruxes, ## What evidence would change the answer, ## My lean. Yes.
+
+Let me finalize with tightened prose. I'll keep bold lead-ins on numbered items for scannability.

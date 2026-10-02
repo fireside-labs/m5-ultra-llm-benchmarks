@@ -1,0 +1,60 @@
+
+
+{
+  "call_type": "billing_dispute",
+  "outcome": "callback",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Verified the account using phone number, name confirmation, and date of birth.",
+    "Corrected the duplicate payment amount from $40 to $45 after checking the caller's receipt/email.",
+    "Explained the statement adjustments and added a note to the account.",
+    "Promised a guaranteed 48-hour refund despite stating the normal review process takes 7-10 business days.",
+    "Did not provide a reference number for the refund request."
+  ],
+  "flags": [
+    {
+      "type": "unauthorized_commitment",
+      "description": "The agent promised a guaranteed 48-hour refund despite stating that refund requests require 7-10 business days for review before the card refund.",
+      "evidence": "But, honestly, don't worry about that, I'll make sure you get it back in forty-eight hours. Guaranteed."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent",
+      "task": "Add a note to the account documenting the duplicate charge and conversation.",
+      "due": "during call"
+    },
+    {
+      "owner": "agent",
+      "task": "Submit a refund request for the duplicate $45 payment.",
+      "due": "during call"
+    },
+    {
+      "owner": "agent",
+      "task": "Ensure the duplicate $45 refund appears on the card within 48 hours as promised.",
+      "due": "48 hours"
+    },
+    {
+      "owner": "billing team",
+      "task": "Call the caller back to confirm the refund went through.",
+      "due": "this Friday"
+    },
+    {
+      "owner": "caller's daughter",
+      "task": "Review her account for a possible duplicate charge and call billing if found.",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Patient Leontyne Asare-Whitfield reported a duplicate $45 payment for the visit on the 26th: one paid at the desk and one automatic ClearPay payment. Agent verified account, corrected the amount from $40 to $45, explained statement adjustments, and added an account note. Agent submitted a refund request for the duplicate but stated the normal review is 7-10 business days, then promised a guaranteed 48-hour refund. Billing team was said to call back this Friday to confirm the refund. No reference number was provided. Patient mentioned her daughter, a patient from the same week, may have the same duplicate issue.",
+  "notable_details": [
+    "Patient: Leontyne Asare-Whitfield; account phone: 555-309-1184; DOB: October 9, 1988.",
+    "Account balance shown during call: $90.",
+    "Duplicate charge: two $45 payments on card ending 3318 for visit on the 26th; one desk payment and one ClearPay automatic payment.",
+    "Agent initially said $40 each, corrected to $45 each after caller checked email/receipt.",
+    "Agent promised guaranteed 48-hour refund despite stating 7-10 business-day review; no reference number provided.",
+    "Billing team promised callback this Friday to confirm refund.",
+    "Caller said her daughter, a patient from the same week, may have the same duplicate issue."
+  ]
+}

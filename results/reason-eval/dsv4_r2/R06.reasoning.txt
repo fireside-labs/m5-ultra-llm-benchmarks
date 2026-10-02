@@ -1,0 +1,113 @@
+The user wants me to respond as a senior generalist advisor to the CEO of Northfold Claims Services, analyzing the decision between keeping a cloud LLM API vs. moving to an open-weight model hosted in their own data center.
+
+Let me think through the key variables:
+
+1. **Data sensitivity and actual risk exposure** - The CISO says "data is sensitive" but the vendor has signed the DPA. What's the actual risk? Protected health information (PHI) type data. Need to assess what the incremental risk of cloud is vs. on-prem.
+
+2. **Total cost of ownership (TCO)** - Cloud API is likely pay-per-use. On-prem means buying GPUs, power, cooling, staffing. At 40k documents/month, need to estimate compute needs. Peak at quarter end means capacity must be sized for peak, not average.
+
+3. **Quality of outputs** - Open-weight models may lag behind commercial frontier models on summarization and legal/medical reasoning quality. Need to benchmark on their actual documents.
+
+4. **Compliance and regulatory requirements** - Insurance claims processing may have specific regulatory requirements (state insurance regs, HIPAA if US, GDPR if EU). DPA may satisfy customers but on-prem might be required by some contracts.
+
+5. **Engineering capacity** - Only 2 engineers maintain the integration. Running an on-prem LLM infrastructure (GPU cluster, model updates, monitoring, retraining) is a significant ongoing burden. This is a huge variable.
+
+6. **Operational reliability / SLAs** - Cloud API has high availability. On-prem needs redundancy, failover. At quarter-end peak, what happens if the GPU cluster goes down?
+
+7. **Vendor lock-in and portability** - Cloud API is a dependency. On-prem gives control. But also model updates, prompt engineering, etc.
+
+8. **Latency and throughput requirements** - Claims processing may have turnaround time expectations. On-prem GPU inference can be fast but needs capacity.
+
+9. **Model update cadence** - Commercial APIs improve continuously. Open-weight models require manual updates, re-validation.
+
+10. **Audit and explainability** - Insurance decisions may need to be explained. Both can do this, but on-prem may offer more control over logging.
+
+11. **Peak capacity planning** - Quarter-end peaks. Cloud scales elastically; on-prem must be provisioned for peak or have fallback.
+
+12. **Data retention and deletion** - What happens to data in the cloud API? Does the vendor retain training data? DPA may address this.
+
+Let me prioritize:
+
+1. **Actual data-sensitivity risk vs. contractual/compliance reality** - The DPA exists. What's the incremental risk? This is the crux of the CISO's argument. If the DPA already satisfies customers and regulators, the "sensitivity" argument may be weak. Measure: gap analysis of DPA vs. regulatory requirements; what specific threat does on-prem mitigate?
+
+2. **Engineering capacity and operational burden** - 2 engineers. Running on-prem LLM infra is a full-time job. This could break the integration entirely. Measure: current engineer utilization, time-to-deploy for new features, what would need to be hired.
+
+3. **TCO including peak provisioning** - 40k docs/month with quarter-end peaks. Cloud API is opex per-token. On-prem is capex + opex for GPUs sized for peak, plus power/cooling/staff. Measure: current API spend, projected GPU costs, utilization rates.
+
+4. **Output quality parity** - Open-weight models (e.g., Llama 3 70B, Mixtral) vs commercial frontier (GPT-4, Claude). For medical summarization and decision letters, quality matters for accuracy and customer satisfaction. Measure: benchmark on a sample of real (de-identified) documents.
+
+5. **Compliance and customer contracts** - Some insurers may require on-prem or may be fine with DPA. Measure: review contracts, ask customers.
+
+6. **Operational reliability** - Cloud SLA vs on-prem. Measure: uptime requirements, blast radius of failure.
+
+7. **Model lifecycle and updates** - Commercial API gets improvements automatically. On-prem requires manual updates, re-validation. Measure: how often does the vendor ship improvements that matter?
+
+8. **Data residency** - Where is the cloud API hosted? If in a different jurisdiction, that matters. Measure: check vendor data center locations.
+
+9. **Peak elasticity** - Cloud scales. On-prem needs headroom. Measure: peak-to-average ratio of document volume.
+
+10. **Vendor dependency risk** - If the API vendor raises prices or changes terms. Measure: contract terms, price history.
+
+11. **Security posture of on-prem** - Northfold has never run GPU clusters. Their own data center may be less secure than the cloud vendor's. Measure: security audit of their data center.
+
+12. **Migration and transition costs** - Rebuilding prompts, pipelines, testing. Measure: engineering time estimate.
+
+Top 3 priorities:
+1. Actual risk differential (data sensitivity argument) - because it's the stated reason for the change
+2. Engineering capacity - because 2 engineers is the binding constraint
+3. TCO including peak provisioning - because it's the economic crux
+
+What would change my mind:
+- If audit shows the DPA has gaps that expose Northfold to regulatory penalties, on-prem becomes more attractive.
+- If the open-weight model benchmarks at parity on their documents AND the team can hire 2+ more engineers, on-prem becomes viable.
+- If the cloud API costs are exploding due to volume growth, on-prem may be cheaper.
+- If customers demand on-prem (some insurers may have stricter requirements), that flips it.
+- If the cloud vendor has had breaches or the DPA is not actually enforceable, that flips it.
+
+Let me write this up concisely and specifically. The user wants at most 12 variables, numbered, most important first. Then exactly 3 top priorities. Then 2-5 bullets for what would change my mind.
+
+I should be specific to Northfold: 300 people, 40k docs/month, quarter-end peaks, 2 engineers, DPA signed, commercial cloud LLM API.
+
+Let me draft.
+
+Variables (ordered by importance):
+
+1. Actual risk differential — what specific harm does the cloud API create that on-prem prevents? The DPA is signed; the CISO's "sensitive data" claim needs to be tested against the actual threat model. Measure: gap analysis of DPA vs. regulatory obligations (HIPAA/state insurance regs/GDPR); list of concrete threat scenarios and their likelihood.
+
+2. Engineering capacity — 2 engineers maintain the integration today. On-prem LLM ops (GPU cluster, model updates, monitoring, retraining, failover) is a different scale of work. Measure: current engineer utilization; what breaks if one leaves; hiring plan and timeline.
+
+3. TCO including peak provisioning — 40k docs/month with quarter-end peaks. Cloud API is per-token opex with elastic scaling. On-prem requires GPU capex sized for peak (or fallback to cloud anyway). Measure: current API spend, projected GPU/hardware/power/cooling/staff costs, peak-to-average volume ratio.
+
+4. Output quality parity — Open-weight models may underperform on medical summarization and decision-letter drafting. Errors in claim decisions have direct financial and legal consequences. Measure: blind benchmark of both models on a sample of real (de-identified) documents, scored by claims professionals.
+
+5. Compliance and customer contracts — Insurers may have their own requirements beyond the DPA. Some may accept cloud with DPA; some may not. Measure: review all customer contracts and ask the insurers directly what they require.
+
+6. Operational reliability — Cloud API has a vendor SLA. On-prem needs its own redundancy, backup, and failover, or the claims pipeline stops at quarter-end. Measure: required uptime, blast radius of an outage, current cloud API SLA.
+
+7. Data residency and jurisdiction — Where does the cloud vendor process data? If outside the relevant jurisdiction, that's a real issue the DPA may not solve. Measure: vendor data center locations, sub-processor list.
+
+8. Model update and maintenance cadence — Commercial APIs improve continuously; open-weight models require manual version upgrades, re-validation, and prompt re-tuning. Measure: how often the vendor ships improvements that matter; how often Northfold would need to update.
+
+9. Vendor dependency and contract risk — The cloud API is a dependency, but so is the GPU hardware vendor and the open-weight model maintainer. Measure: contract terms, price escalation clauses, exit options.
+
+10. Security posture of Northfold's own data center — Running a GPU cluster in-house may be less secure than the cloud vendor's infrastructure. Measure: current data center security audit, patching cadence, access controls.
+
+11. Migration and transition cost — Rebuilding prompts, pipelines, evaluation harnesses, and testing takes engineering time and risks regression. Measure: engineering estimate in person-weeks, regression risk.
+
+12. Regulatory and audit trail requirements — Insurance decisions may need to be explainable and auditable. Both options can log, but on-prem may offer more control. Measure: current logging and audit requirements, whether the cloud API's logging meets them.
+
+Top 3 priorities:
+1. Actual risk differential — it's the stated reason for the change; if it doesn't hold, the whole proposal is moot.
+2. Engineering capacity — 2 engineers is the binding constraint; on-prem could break the integration entirely.
+3. TCO including peak provisioning — the economic crux; cloud is elastic, on-prem is not.
+
+What would change my mind:
+- If the DPA gap analysis reveals the cloud vendor can use the data for model training or sub-process without adequate controls, on-prem becomes clearly justified.
+- If a benchmark shows the open-weight model matches or beats the commercial API on Northfold's actual documents, and the team can hire at least 2 more engineers, the on-prem case strengthens.
+- If the cloud API's cost trajectory is steep (e.g., volume growth, price increases) and on-prem TCO is lower at peak provisioning, that flips the economics.
+- If customers/insurers explicitly require on-prem or refuse the cloud DPA, the decision is made for them.
+- If the cloud vendor has had a breach or the DPA is not enforceable in the relevant jurisdiction, that flips it.
+
+I think this is solid. Let me make it sharp and specific. I'll avoid padding. Keep each variable to one line on why + one line on how to measure. The user said "one line on why it matters here, and how you would measure or check it" — so I can do two lines per variable or combine. I'll combine into a compact format.
+
+Let me write the final answer.

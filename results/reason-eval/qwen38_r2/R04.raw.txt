@@ -1,0 +1,27 @@
+
+
+## Missed issues
+
+1. **Harrow’s dedicated-hardware clause kills the “same machine” plan.**  
+   What: The memo proposes running training and Harrow’s live demo/inference on the same server, but Harrow’s contract requires dedicated hardware not shared with any other workload, with access logs.  
+   Why it matters: This is a contractual/revenue risk, not just an engineering preference. If any Harrow data is processed on shared hardware, Quillmark may breach the pilot. If the 8-GPU fine-tune also touches Harrow data, it would need dedicated hardware too.  
+   Evidence: Contract note: “Harrow's data must be processed on dedicated hardware that is not shared with any other workload, with access logs available on request.” Plan: “The same machine will run our training jobs and also serve the live demo/inference endpoint.”
+
+2. **Option A arrives 10 weeks after the pilot starts.**  
+   What: The 8-GPU server has a 16-week lead time, but Harrow starts in 6 weeks.  
+   Why it matters: Option A cannot support the pilot on time. That forces either a delayed launch, a rushed workaround, or unplanned cloud spend.  
+   Evidence: Lead time: 16 weeks for 8-GPU, 3 weeks for 4-GPU. Pilot starts in 6 weeks.
+
+3. **Option A exceeds the existing rack power as written.**  
+   What: The existing rack has 8 kW total and 1.5 kW already used, leaving 6.5 kW available. The 8-GPU server draws about 10.2 kW under load.  
+   Why it matters: Option A cannot go in the existing rack. A second rack may not solve it if it has the same 8 kW limit; a power upgrade or rack change is needed, but cost/time are not in the memo. Option B is more flexible: one 4-GPU server at 5.1 kW fits with the existing 1.5 kW load, total 6.6 kW. Two 4-GPU servers would need a second rack or power separation.  
+   Evidence: Rack limit 8 kW; existing gear 1.5 kW; available 6.5 kW. 8-GPU draw 10.2 kW; 4-GPU draw 5.1 kW. Second rack $1.1k/month. Caveat: if the current rented 4-GPU box is also in that rack, even one new 4-GPU server may not fit.
+
+4. **The cloud break-even calculation is not supported by the actual workload pattern.**  
+   What: The memo says cloud is $41k/month and purchase breaks even in about 8 months, but that assumes around-the-clock full utilization. The notes show the 8-GPU fine-tune is only 30 hours per quarter.  
+   Why it matters: The payback may be wildly overstated. At the given on-demand rate, the known 8-GPU demand is tiny compared with the purchase price.  
+   Evidence: On-demand 8-GPU cloud: $98/hour. Quarterly 8-GPU fine-tune: 30 hours. That is $98 × 30 = $2,940 per quarter, or $11,760 per year. Around-the-clock on-demand at $98/h is about $70,560/month, not $41k/month. Actual total GPU-hours for the 1–2 and 4-GPU jobs are not given, so the 8-month break-even is unproven.
+
+5. **The workload mix makes an 8-GPU node mostly overprovisioned.**  
+   What: 97% of jobs use 4 or fewer GPUs; only the quarterly fine-tune uses 8.  
+   Why it matters: The main

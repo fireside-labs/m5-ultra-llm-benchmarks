@@ -1,0 +1,26 @@
+## Missed issues
+
+1. Single point of failure: one box runs both training and the paying customer's live endpoint; any failure or maintenance takes everything down (with next-business-day repair)
+2. Utilization mismatch: 85% of jobs use 1-2 GPUs and only 3% use 8, so the interconnect advantage rarely matters while two boxes reduce queueing between users
+3. Lead time: the 8-GPU server takes 16 weeks to arrive, but the paying pilot starts in 6 weeks (4-GPU servers ship in 3)
+4. Power: the 8-GPU server draws ~10.2 kW but the rack has only 6.5 kW free (8 kW limit minus 1.5 kW), so it needs a second rack too
+5. The Harrow contract requires dedicated hardware not shared with any other workload; one shared box for training and Harrow violates it, whereas one of two servers can be dedicated
+6. Rent the rare 8-GPU fine-tune in the cloud (~30 h x $98 = ~$3k per quarter) instead of buying for it
+7. Resale value: 4-GPU servers keep ~55% after 2 years vs ~40% for 8-GPU systems with fewer buyers
+8. Capital flexibility: with 14 months of runway and a board request to keep capex flexible, buying one 4-GPU server now and a second later is possible only with Option B
+
+## Looks like a problem but isn't
+
+- Networking between two servers for distributed training was not considered: handled (The memo includes 200 GbE NICs and switch in the $330k and measured the 1.6x multi-node slowdown.)
+- Warranty / hardware support not considered: handled (Both quotes include 3 years of next-business-day on-site support.)
+- The memo doesn't compare buying with renting cloud capacity: handled (The memo compares 24/7 rental at $41k/month and computes an ~8-month break-even.)
+
+## Top 3 priorities
+
+1. Utilization mismatch: 85% of jobs use 1-2 GPUs and only 3% use 8, so the interconnect advantage rarely matters while two boxes reduce queueing between users
+2. Lead time: the 8-GPU server takes 16 weeks to arrive, but the paying pilot starts in 6 weeks (4-GPU servers ship in 3)
+3. Power: the 8-GPU server draws ~10.2 kW but the rack has only 6.5 kW free (8 kW limit minus 1.5 kW), so it needs a second rack too
+
+## Bottom line
+
+The recommendation does not stand as written; resolve the priorities first.

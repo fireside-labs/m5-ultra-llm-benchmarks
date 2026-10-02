@@ -1,0 +1,93 @@
+
+Let me analyze this call carefully.
+
+Call type: This is a Tallyforge account management / renewal and expansion call. It's a sales call (renewal, upsell Collections Pro, SSO add-on). Direction outbound, scheduled meeting. call_type: "sales".
+
+Outcome: The main issues — renewal pricing agreed (18/seat for 2 years pending deal desk for 3 years), Collections Pro trial started (admin invite sent), SSO discussed. Complaint about reminder bug — workaround given, fix in 7.4.2 Oct 20. Proposal to be sent by Friday Oct 2. So mostly resolved during the call; but there are follow-ups (proposal, deal desk question). The main purpose — renewal discussion — was handled; pricing agreed. I'd say "resolved" — the renewal terms were agreed and trial started. But there's a pending deal desk question about 3-year term. Hmm. The main issue (renewal) was handled during the call — agreed at 18 for 2 years, with a possible 3-year pending. I'd call it resolved. Alternatively "callback" since proposal pending. The main issue was handled: pricing agreed, trial sent. I'll say resolved.
+
+Sentiment: start — customer_2 friendly, positive-ish. "I have a couple of complaints" — but overall warm. Start: positive (friendly small talk, "you're less salesy than most"). End: positive ("Thanks, Delphine. Good call. Eighteen bucks, I'll take it.").
+
+Quality score: The AM handled things well: investigated the reminder bug, gave workaround, honest about retainage roadmap, honest about payroll not fitting, deal desk approval documented. However there's a notable issue: at 01:04:29 Mortimer asks "the reminder thing. Is that fixed now?" and AM says "Yes, that's fixed in the current version, you're all good." But earlier she said the fix is in 7.4.2 scheduled for October twentieth — NOT yet released. That's misinformation — telling the customer it's fixed when it isn't (fix scheduled Oct 20, call is Sep 29). That's a notable accuracy failure. Also sending the trial invite to a personal gmail — the customer requested it, and Yetunde quietly objected ("Mort..."), and the AM complied despite the customer's own new SSO policy (company accounts only, no personal email logins). That's arguably a policy/security concern — sending business trial admin invite to personal email. The customer requested it, but the company's own stated policy says no personal email logins; the AM complied without pushback. Flag as security/other? It's the customer's choice; but the AM knew the policy (discussed minutes earlier). I'd flag it as a security flag — admin invite to personal email contrary to the customer's stated SSO policy, agent complied without noting the risk. Mild.
+
+Also the misinformation flag: "Yes, that's fixed in the current version" contradicts "fix is in 7.4.2, scheduled for October twentieth."
+
+Quality score: generally excellent handling but one accuracy failure (misinformation about fix) and the gmail compliance. I'd say 4 — good with minor issues, or 3 — one notable lapse. The misinformation is a notable lapse — telling the customer to tell their collections team it's done when it isn't. That's a 3? "generally competent but with one notable lapse." The gmail thing is minor since customer insisted. I'll go 3... Hmm. Actually the misinformation could cause the customer to stop using the workaround and get hit by the bug again until Oct 20. That's a notable accuracy failure. Score 3.
+
+Wait — also check: "I can do eighteen dollars per seat per month... I got sign-off yesterday for up to twenty-four months at eighteen. So that's approved" — fine, authorized. Three years: she said she'd ask deal desk, can't promise — correct handling.
+
+Also the seat count correction: Mortimer said 24, Yetunde corrected to 42; AM confirmed 42 active users. Notable detail.
+
+Retainage: customer said forgot to bill retainage "like, four months", Mortimer corrected to six months, Holloway Street job. Notable detail.
+
+Reminder bug: release 7.4, start of September, reminders show due date one day early for Americas; fix in 7.4.2 scheduled Oct 20. Workaround: switch to reminder template that doesn't print due date; AM to send instructions today and note account.
+
+Logo blurry: send original logo file, PNG ≥1000px; Yetunde to dig it up.
+
+PO number: Yetunde will send new PO at renewal; AM to put on order form.
+
+MSA redlines: Mortimer's outside counsel to review; AM to send redlines with proposal.
+
+QBR: Oct 27, 10 a.m., invite to be sent.
+
+SSO: Arvid to do working session with Rafferty once IdP ready (mid-October or later); AM to connect Arvid with Rafferty; Arvid to send checklist (export user list, compare to directory). Email migration in August — some emails may be out of date.
+
+Collections Pro trial: 30-day free trial, 5 seats, admin invite sent to Mortimer's personal gmail during call. If kept, $4/seat/month; ACH $0.50 flat per payment.
+
+Deal desk: ask about 3-year term; answer with proposal.
+
+Proposal by Friday, October second.
+
+Action items list:
+1. AM (Delphine): send proposal by Friday Oct 2 with 42 seats @ $18 2-year lock, SSO add-on, Collections Pro trial details, and MSA redlines.
+2. AM: ask deal desk about 3-year term; report back with proposal.
+3. AM: send Yetunde reminder-template workaround instructions today (2026-09-29).
+4. AM: put note on account so support knows they're affected by reminder bug.
+5. AM: set up feedback session with product manager re retainage (Bettina/Yetunde to attend) — "I'll set it up."
+6. AM: connect Arvid with Rafferty for SSO session once IdP ready (mid-October or later).
+7. Arvid: send SSO checklist (user list export vs directory comparison).
+8. Yetunde (customer): switch to reminder template that doesn't print due date.
+9. Yetunde: send original logo file (PNG ≥1000px wide) for support to re-upload.
+10. Yetunde: send new PO number at renewal for order form.
+11. Mortimer: forward proposal/redlines to outside counsel.
+12. AM: send QBR invite for Oct 27, 10 a.m.
+13. Collections Pro trial started — invite sent to personal gmail (done during call).
+
+Flags:
+1. misinformation: AM said reminder bug is fixed in current version, contradicting earlier statement that fix ships in 7.4.2 on Oct 20. Evidence: "Yes, that's fixed in the current version, you're all good. You can tell them." vs "The fix is in 7.4.2, which is scheduled for October twentieth."
+2. security/other: trial admin invite sent to personal gmail despite customer's own new policy of company accounts only / no personal email logins; agent complied without noting the conflict. Evidence: "send it to my personal gmail... It's mort dot ashgrove dot c-v at gmail dot com" / AM: "Sure, no problem."
+
+Maybe also missed_commitment? No — commitments all seem planned. The "fixed" claim is misinformation.
+
+Notable details:
+- Seat count corrected from 24 to 42 (Mortimer initially said 24; Yetunde corrected; AM confirmed 42 active users).
+- Retainage unbilled period corrected from four to six months (Holloway Street job).
+- Reminder bug: release 7.4, due dates shown one day early for Americas; fix in 7.4.2 scheduled Oct 20, 2026 — despite AM later saying it's fixed.
+- Renewal: contract ends Nov 30; current $22/seat/mo Business; offered $18/seat/mo locked 24 months, deal-desk approved; 3-year term pending deal desk; renewal increase cap 7%/yr in master agreement; annual billing net 30.
+- SSO add-on $3/seat/mo for all 42 seats (~$126/mo); IdP not ready until mid-October or later per Rafferty; email migration in August may have stale addresses; outside bookkeeper contractor will need SSO exemption.
+- Collections Pro: $4/seat/mo, 5 seats (~$20/mo), 30-day free trial started, admin invite sent to Mortimer's personal gmail; ACH $0.50 flat vs ~3% card fees.
+- QBR scheduled Oct 27, 10 a.m.
+- Customer's new SSO policy: all systems through SSO, company accounts only, no personal email logins (per IT contractor Rafferty).
+- Payroll module not a fit — no certified payroll reports (union Local 12 reporting weekly in other system).
+- Usage: ~1,900 invoices last quarter, 47-day avg invoice-to-payment.
+- Yetunde's complaint: reminder emails showed due date the 14th vs invoice 15th, starting early September (noticed ~10th), AR clerk Bettina spent a week apologizing.
+- Blurry logo on PDF invoices — Bettina uploaded logo two years ago.
+- Mortimer's contact: personal gmail mort.ashgrove.cv@gmail.com; IT hasn't set up his new company account since migration.
+
+Summary notes (≤120 words): Renewal/expansion call with CFO Mortimer and controller Yetunde. Renewal terms agreed: 42 seats (corrected from 24) at $18/seat/mo locked 2 years (deal-desk approved); 3-year term pending deal desk; renewal Nov 30. SSO add-on ($3/seat, all 42) included; setup session with SE Arvid once IT contractor Rafferty's IdP ready (mid-Oct+). Collections Pro 30-day trial for 5 AR seats started; invite sent to Mortimer's personal gmail despite customer's own company-accounts-only SSO policy. Reminder-date bug (release 7.4) confirmed; workaround template provided; fix due in 7.4.2 on Oct 20 — though AM later incorrectly told Mortimer it was already fixed. Proposal with MSA redlines due Oct 2; QBR Oct 27, 10 a.m.
+
+That's about 110 words. Good.
+
+Quality reasons:
+- Proactively investigated reminder-date bug via support channel and returned with root cause, fix date, and workaround.
+- Honest about product limits (retainage not in product, payroll lacks certified payroll reports) and only offered deal-desk-approved pricing.
+- Incorrectly told customer the reminder bug was already fixed, contradicting the Oct 20 release date given earlier.
+- Complied with sending trial admin invite to a personal gmail despite the customer's stated company-accounts-only policy.
+- Extensive small talk and repeated audio troubleshooting made the call long and unfocused.
+
+Score 3.
+
+Outcome: resolved? The renewal was agreed, trial started, workaround given. Main issue handled. I'll say resolved.
+
+Sentiment start: positive (warm, joking). End: positive.
+
+Call type: sales.

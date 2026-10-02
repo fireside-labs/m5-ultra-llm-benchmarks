@@ -1,0 +1,68 @@
+
+
+{
+  "call_type": "billing_dispute",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Verified identity before accessing the account.",
+    "Accurately identified two duplicate $30 copay charges and created refund ticket CP-58871.",
+    "Remained empathetic and patient through interruptions and system delays.",
+    "Made an unauthorized $310 balance adjustment despite stating that adjustments over $100 require supervisor approval."
+  ],
+  "flags": [
+    {
+      "type": "unauthorized_commitment",
+      "description": "Agent zeroed a $310 balance despite stating that adjustments over $100 require supervisor approval.",
+      "evidence": "I'll zero it out right now."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "billing team",
+      "task": "Process refund ticket CP-58871 for two duplicate $30 copay charges.",
+      "due": "7-10 business days"
+    },
+    {
+      "owner": "patient",
+      "task": "Withdraw the credit card dispute for the March 5 charge.",
+      "due": "tomorrow"
+    },
+    {
+      "owner": "patient",
+      "task": "Review the portal statement section for account details.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "agent",
+      "task": "Add a note to the refund ticket that the patient is withdrawing the card dispute.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "agent",
+      "task": "Add a note to the patient account summarizing the call.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "agent",
+      "task": "Email a summary with the ticket number and discussion to the email on file.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "agent",
+      "task": "Call the patient back if the call is disconnected.",
+      "due": "if disconnected"
+    }
+  ],
+  "summary_notes": "Patient verified and reported two duplicate $30 copay charges from ClearPay after front-desk payments for March 3 and March 10 physical therapy visits. Agent created refund ticket CP-58871; refunds expected in 7-10 business days. Patient will withdraw credit card dispute for the March 5 charge tomorrow. Patient also disputed a $310 January MRI balance denied for missing prior authorization; agent zeroed the balance despite stating adjustments over $100 require supervisor approval. Agent promised account notes and email summary. Known ClearPay duplicate-payment issue since late February.",
+  "notable_details": [
+    "Refund ticket number corrected to CP-58871 after initially being stated as CP-58817.",
+    "Duplicate charges were $30 ClearPay payments on March 5 and March 12, following March 3 and March 10 physical therapy visits.",
+    "Patient had already disputed the March 5 charge with the credit card company and will withdraw that dispute tomorrow.",
+    "A $310 January MRI balance was denied for missing prior authorization and was zeroed during the call.",
+    "Agent stated the ClearPay duplicate-payment issue is known since the end of February and a vendor fix is in progress.",
+    "Final account balance was reported as zero except for pending refunds."
+  ]
+}

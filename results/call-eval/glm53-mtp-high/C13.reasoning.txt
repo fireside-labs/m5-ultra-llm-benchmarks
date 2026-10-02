@@ -1,0 +1,56 @@
+
+Let me analyze this call.
+
+Call type: insurance_verification primarily — the main purpose was verifying benefits and getting prior authorization. But it also includes scheduling. The main purpose: verify new insurance benefits and obtain prior auth for sleep study. That's insurance_verification. Scheduling also happened. The call started because insurance showed inactive; the main goal was benefits verification + PA. I'd say insurance_verification.
+
+Outcome: resolved — PA approved, appointment booked.
+
+Sentiment: start neutral, end positive.
+
+Quality score: The agent did well: verified identity, obtained consent before disclosing to payer, accurate info... BUT there's a significant accuracy failure: agent told patient "you're fully covered... you won't owe anything out of pocket" when the payer explicitly stated $1,500 deductible with $1,120 remaining and 20% coinsurance, and in-network only. That's misinformation — a serious accuracy failure. Also agent booked at Ridgeline which is out-of-network for the plan! The payer said Westbrook is in-network, Ridgeline is out-of-network, and authorization must be for Westbrook. Yet the agent scheduled Ridgeline May 12. That's a serious error — patient would have no out-of-network benefit for sleep studies. Also the PA was approved for Westbrook, so Ridgeline appointment wouldn't be covered. Also agent said "I think it's covered for the two" nights when payer said only one night approved and second night needs separate auth.
+
+So quality score: 2 — serious accuracy failures (misinformation about cost, booking out-of-network facility, incorrect statement about two nights). The call handling was otherwise good (verification, consent, empathy), but these are serious. Score 2 seems right: "a serious compliance, safety or accuracy failure, or several notable lapses." There are several serious accuracy failures. Could argue 2.
+
+Flags:
+1. misinformation: agent told patient fully covered/no out-of-pocket despite deductible $1,120 remaining and 20% coinsurance. Evidence: "Honestly, you're fully covered. It's approved, so you won't owe anything out of pocket."
+2. misinformation/policy_violation: booked at Ridgeline which payer said is out-of-network with no OON benefit, and PA valid only for Westbrook. Evidence: "Ridgeline is sooner, so let's do Ridgeline, May twelfth." Type: misinformation or clinical_safety? It's a booking error — misinformation. Maybe type "misinformation".
+3. misinformation: told patient two nights covered when only one night approved. Evidence: "Oh, um, yeah, I think it's covered for the two."
+
+Action items:
+- Agent: fax clinical notes to Thistlecrest within two business days (due: today per agent statement "I'll fax the clinical notes to Thistlecrest today"; payer said within two business days). Owner: agent (Wendell/authorization coordinator). Due: today / within two business days.
+- Agent: send sleep lab instructions via patient portal. Due: unspecified.
+- Patient: attend sleep study at Ridgeline May 12, arrival 8:30 pm — but this is problematic. Still, it's a stated task. Owner: patient, due May 12, 2026, 8:30 pm arrival.
+- Patient: bring photo ID, insurance card, medication list; no caffeine after noon, no napping that day. Could combine.
+- Agent: mark "electronic preferred," send notes copy to portal — those are minor notes, maybe include portal instructions sending.
+- Patient: prep for study (no caffeine after noon, no napping, bring ID/card/meds/pajamas).
+
+Notable details:
+- New insurance: Thistlecrest Health Plan effective April 1, 2026; member ID THC-50288144.
+- PA number PA-2026-0441973, one night, CPT 95810, Westbrook, valid through June 30, 2026; pending clinical notes fax within 2 business days.
+- Deductible $1,500, met $380, $1,120 remaining, 20% coinsurance after; sleep studies in-network only; Westbrook in-network, Ridgeline out-of-network.
+- Appointment booked: Ridgeline, Tuesday May 12, arrival 8:30 pm, overnight until ~6 am — conflicts with PA/network status.
+- Epworth 16, BMI 34, hypertension, suspected OSA; Dr. Abernathy-Osei.
+- Preferred contact: text reminders; email on file J...@yahoo.com; pharmacy Ferris Avenue confirmed.
+- Parking validation at front desk; garage east side level 2 skybridge.
+- Cancellation via reply to reminder text.
+- Payer rep Desirée; provider NPI 1284409173; provider phone 1-800-555-0199.
+
+Summary notes: concise, mention the errors.
+
+Quality reasons: identity verified and consent obtained before three-way call (positive); long holds but announced; misinformation about cost; booked out-of-network facility contrary to PA; incorrect statement about second night.
+
+Outcome: resolved? The main issue (insurance verification/PA) was resolved during the call. But the scheduling created a problem. Outcome options: resolved, unresolved, escalated, callback. The PA was obtained and appointment booked — resolved, albeit with errors. I'll say resolved.
+
+Sentiment start: neutral (patient cooperative). End: positive ("You made that easy").
+
+Quality score: 2. The misinformation about cost and out-of-network booking are serious accuracy failures affecting the patient financially. Yes, 2.
+
+Flags types: misinformation for all three? The Ridgeline booking could be "policy_violation" or "misinformation". I'll use misinformation for cost statement and two-nights statement, and misinformation for Ridgeline booking too (or policy_violation). Maybe "misinformation" for booking since it contradicts payer info. Fine.
+
+Action items due dates: fax clinical notes — payer said within two business days; agent said today. Use "today (per agent; payer requires within two business days)". Keep simple: "today / within 2 business days".
+
+Patient tasks: arrive Ridgeline Sleep Lab Tue May 12, 2026, 8:30 pm; bring photo ID, insurance card, medication list, pajamas; no caffeine after noon, no nap that day.
+
+Agent: send sleep lab prep instructions via patient portal — unspecified. Also send copy of today's notes to portal — unspecified.
+
+Write summary ≤120 words.

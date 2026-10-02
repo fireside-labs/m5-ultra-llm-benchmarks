@@ -1,0 +1,122 @@
+1.  **Analyze the Request**:
+    *   Role: Advisor to a decision-maker.
+    *   Task: Recommend one of three sites for a new bakery (Crumb & Co.) in Westmere.
+    *   Constraints: Base analysis only on facts in the brief + general reasoning. State assumptions for missing numbers. Be concise, specific. Output 150-300 words.
+    *   Format: Exactly headings `## Recommendation`, `## Key reasons`, `## Risks`, `## Confidence` (with a percentage). End with exactly `POSITION: <option>` and `CONFIDENCE: <0-100>%`.
+    *   Data provided:
+        *   Sites: Harbor Walk (12k ppl/day, $9k/mo rent), Mill Street (7k ppl/day, $9.5k/mo rent, 2 months free), Elm Plaza (5.5k ppl/day, $7k/mo rent, free parking).
+        *   Existing shop metrics: 4% conversion, $9 avg ticket, 60% gross margin, $300k/yr fixed costs, 365 days.
+        *   Notes: Harbor Walk counts are July only. Oct-May (8 months) avg 3k/day. June-Sept (4 months) July-level crowds (12k). Mill Street and Elm Plaza counts vary <10% across the year. Mill Street 2 months rent-free. Elm Plaza free parking.
+
+2.  **Calculate Financials for each site**:
+    *   *Assumption*: Need to calculate annual revenue, gross profit, fixed costs, rent, and net profit (or contribution) to compare. Fixed costs are $300k/year for all. Rent is a variable cost.
+    *   *Harbor Walk*:
+        *   Pedestrians: 8 months * 3,000/day * 30.4 days/month? Wait, let's do annual. 8 months * (3,000 * 30.4) + 4 months * (12,000 * 30.4). Let's use 365 days. June-Sept = 4 months. Let's assume 30.4 days/month or just calculate daily and multiply by days. Let's do annual days: 8 months * ~30.4 = 243 days (approx). Actually, let's use 8 months * 30 = 240 days, 4 months * 30 = 120 days. Total 360 days. Close enough. Or just do: 8 months * 3,000/day * 30 days = 720,000 people. 4 months * 12,000/day * 30 days = 1,440,000. Total = 2,160,000 people/year.
+        *   Alternatively, let's do exact days: 8 months (Oct-May) = 243 days (approx, let's use 8*30=240 for simplicity). 4 months (Jun-Sep) = 120 days. Total = 360 days. Let's use 365 days. 8 months = 8/12 * 365 = 243.3 days. 4 months = 4/12 * 365 = 121.7 days.
+        *   Pedestrians HW = (243.3 * 3,000) + (121.7 * 12,000) = 729,900 + 1,460,400 = 2,190,300.
+        *   Buyers = 2,190,300 * 0.04 = 87,612.
+        *   Revenue = 87,612 * $9 = $788,508.
+        *   Gross profit = 60% * $788,508 = $473,105.
+        *   Rent = $9,000 * 12 = $108,000.
+        *   Contribution after rent = $473,105 - $108,000 = $365,105.
+        *   Net profit = $365,105 - $300,000 = $65,105.
+    *   *Mill Street*:
+        *   Pedestrians = 7,000/day * 365 = 2,555,000.
+        *   Buyers = 2,555,000 * 0.04 = 102,200.
+        *   Revenue = 102,200 * $9 = $919,800.
+        *   Gross profit = 60% * $919,800 = $551,880.
+        *   Rent = $9,500 * 12 = $114,000. Minus 2 months free = $9,500 * 10 = $95,000.
+        *   Contribution after rent = $551,880 - $95,000 = $456,880.
+        *   Net profit = $456,880 - $300,000 = $156,880.
+    *   *Elm Plaza*:
+        *   Pedestrians = 5,500/day * 365 = 2,007,500.
+        *   Buyers = 2,007,500 * 0.04 = 80,300.
+        *   Revenue = 80,300 * $9 = $722,700.
+        *   Gross profit = 60% * $722,700 = $433,620.
+        *   Rent = $7,000 * 12 = $84,000.
+        *   Contribution after rent = $433,620 - $84,000 = $349,620.
+        *   Net profit = $349,620 - $300,000 = $49,620.
+    *   *Comparison*:
+        *   Mill Street net profit: $156,880 (best).
+        *   Harbor Walk net profit: $65,105.
+        *   Elm Plaza net profit: $49,620.
+    *   *Wait, check the fixed costs*: $300k per year. So all are profitable, but Mill Street is significantly better.
+    *   Let's double-check the Harbor Walk calculation. The pedestrian count for July is 12k. The note says July-level crowds only occur June through September (4 months). Oct-May (8 months) averages 3k. So yes, my calculation is correct.
+    *   Let's check Mill Street rent-free: 2 months free. So annual rent = 10 * $9,500 = $95,000.
+    *   Let's check Elm Plaza free parking - this might increase conversion or attract customers, but we don't have data to quantify it. The prompt says "use them for all sites" regarding the 4% conversion. So we cannot adjust for parking. It's a qualitative factor.
+    *   Let's check if there are any missing numbers. The prompt says "when you need a number that is not given, say so and state your assumption." I assumed 30 days per month for the rent calculation (12 months) and 365 days for foot traffic. That's fine. I didn't need to assume days per month for rent because rent is monthly. For foot traffic, I used 365 days. For the seasonal split, I used 8/12 and 4/12 of 365 days. That's a standard assumption.
+    *   Let's re-calculate precisely:
+        *   HW: 8 months = 8/12 * 365 = 243.33 days. 4 months = 4/12 * 365 = 121.67 days.
+        *   HW pedestrians = (243.33 * 3000) + (121.67 * 12000) = 729,990 + 1,460,040 = 2,190,030.
+        *   Buyers = 2,190,030 * 0.04 = 87,601.2.
+        *   Revenue = 87,601.2 * 9 = $788,410.8.
+        *   Gross profit = 0.6 * 788,410.8 = $473,046.5.
+        *   Rent = 12 * 9000 = $108,000.
+        *   Contribution = 473,046.5 - 108,000 = $365,046.5.
+        *   Net = 365,046.5 - 300,000 = $65,046.5.
+        *   MS: 365 * 7000 = 2,555,000. Buyers = 102,200. Revenue = 919,800. GP = 551,880. Rent = 12*9500 - 2*9500 = 114,000 - 19,000 = 95,000. Contribution = 551,880 - 95,000 = 456,880. Net = 156,880.
+        *   EP: 365 * 5500 = 2,007,500. Buyers = 80,300. Revenue = 722,700. GP = 433,620. Rent = 84,000. Contribution = 349,620. Net = 49,620.
+    *   So Mill Street is clearly the winner by a large margin ($156,880 vs $65,046 vs $49,620).
+
+3.  **Evaluate Risks**:
+    *   Mill Street: Risk is low variability (<10%). Rent is highest, but the 2 months free offsets it. If the conversion rate or ticket size is slightly lower, it still has the highest gross profit.
+    *   Harbor Walk: High risk due to seasonality. The 12k count is only in summer. The winter count is 3k. My calculation already accounts for this, but the risk is that the tourism office data might be wrong, or weather could be worse. Also, the 4% conversion might be lower on a promenade (people strolling vs. commuting). But the prompt says use 4% for all.
+    *   Elm Plaza: Lowest foot traffic, lowest rent. Free parking is a plus but doesn't offset the lower foot traffic. Risk is low variability.
+    *   Overall risk: Mill Street has the highest absolute profit and stable traffic. Harbor Walk has seasonal risk. Elm Plaza has low profit.
+
+4.  **Structure the Output**:
+    *   Word count: 150-300 words.
+    *   Headings: `## Recommendation`, `## Key reasons`, `## Risks`, `## Confidence`.
+    *   End lines: `POSITION: Mill Street` and `CONFIDENCE: 90%` (or similar). Let's be confident. 90% or 95%. Let's use 90% because there is some uncertainty in the conversion rate and the parking effect, but the numbers are quite decisive.
+
+5.  **Draft the content**:
+    *   *Recommendation*: Lease the Mill Street site.
+    *   *Key reasons*: Calculate the annual net profit. Mill Street yields ~$157k net profit (after fixed costs and rent) vs ~$65k for Harbor Walk and ~$50k for Elm Plaza. The 2 months rent-free brings effective annual rent to $95k. Its pedestrian count is stable year-round (<10% variance). Harbor Walk's 12k count is seasonal; its true annual average is ~6,000 (2.19M/year), which is lower than Mill Street's 2.56M. Elm Plaza's foot traffic is too low to overcome its lower rent.
+    *   *Risks*: Mill Street's higher base rent ($9,500) means if foot traffic drops or conversion falls, it has less cushion than Elm Plaza, but the 2 months free mitigates this. The 4% conversion and $9 ticket are assumptions based on existing shops; if Mill Street's demographic differs (office/residential), it might be slightly different, but the variance is low. No major seasonal risk.
+    *   *Confidence*: 90%.
+
+6.  **Check constraints**:
+    *   Exactly the headings.
+    *   End with exactly the two lines.
+    *   Word count: Let's check. Draft:
+    *   "## Recommendation
+    *   Lease the Mill Street site.
+    *   ## Key reasons
+    *   Based on the provided assumptions, Mill Street generates the highest projected annual net profit. With 7,000 daily pedestrians, annual foot traffic is 2.56M. At a 4% conversion and $9 ticket, revenue is $919,800. Gross margin (60%) yields $551,880. After $300,000 fixed costs and effective rent of $95,000 (10 months due to the 2-month rent-free period), net profit is approximately $156,880. Harbor Walk, despite its July count of 12,000, averages only 3,000/day for 8 months, yielding ~2.19M annual pedestrians. Its net profit is only ~$65,000. Elm Plaza's net profit is ~$50,000. Mill Street's traffic is stable year-round (variance <10%), while Harbor Walk's is highly seasonal. The 2-month rent-free period gives Mill Street a significant cost advantage over its $9,500 list price.
+    *   ## Risks
+    *   The main risk is reliance on the 4% conversion and $9 average ticket. If Mill Street's office/residential foot traffic converts lower than the waterfront, profits could shrink. However, the seasonal stability of Mill Street reduces downside risk compared to Harbor Walk. Elm Plaza's free parking is a qualitative benefit, but it does not compensate for its 22% lower foot traffic than Mill Street. The $300k fixed cost is significant, but Mill Street clears it comfortably.
+    *   ## Confidence
+    *   90%
+    *
+    *   POSITION: Mill Street (highest projected profit, stable traffic)
+    *   CONFIDENCE: 90%"
+    *   Let's count words. Draft is around 200 words. Let's refine to be concise and ensure it's within 150-300.
+    *   Let's add the assumption about the days/month if needed. I used 365 days. Rent is monthly. No missing numbers needed to be stated explicitly, but I can state "assuming the 4% conversion and $9 ticket hold across all sites" - that's an assumption based on the prompt. I'll mention it.
+    *   Let's re-read the prompt: "when you need a number that is not given, say so and state your assumption." I don't need a number that is not given, I have all the numbers. I just need to apply them. So I don't need to state an assumption for a missing number. But I should state my calculation clearly.
+    *   Let's check the word count of the draft. It's about 200 words. Good.
+    *   Let's make sure the headings are exactly as specified.
+    *   Let's make sure the last two lines are exactly:
+        POSITION: Mill Street (highest projected profit, stable traffic)
+        CONFIDENCE: 90%
+    *   Wait, the prompt says "plus a short qualifier if needed". "Mill Street" is fine, but I can add "Mill Street" only. Let's just do "Mill Street". The qualifier is optional. I'll put "Mill Street" to be safe.
+    *   Let's check the math again.
+        Mill Street: 7000*365 = 2,555,000. *0.04 = 102,200. *9 = 919,800. *0.6 = 551,880. Rent = 9500*10 = 95,000. Fixed = 300,000. Net = 551,880 - 95,000 - 300,000 = 156,880. Correct.
+        Harbor: 8 months = 243.33 days, 4 months = 121.67 days. (243.33*3000) + (121.67*12000) = 729,990 + 1,460,040 = 2,190,030. *0.04 = 87,601.2. *9 = 788,410.8. *0.6 = 473,046.5. Rent = 108,000. Net = 473,046.5 - 108,000 - 300,000 = 65,046.5. Correct.
+        Elm: 5500*365 = 2,007,500. *0.04 = 80,300. *9 = 722,700. *0.6 = 433,620. Rent = 84,000. Net = 433,620 - 84,000 - 300,000 = 49,620. Correct.
+    *   So Mill Street is the clear winner. Confidence is high. I'll say 90%.
+    *   Let's refine the wording to be very concise and specific.
+    *   "## Recommendation
+    *   Lease the Mill Street site.
+    *   ## Key reasons
+    *   Mill Street yields the highest projected annual net profit: ~$157,000. Annual foot traffic is 2.56M (7,000/day × 365). Applying the 4% conversion and $9 ticket gives $919,800 revenue; 60% gross margin leaves $551,880. After $300,000 fixed costs and effective rent of $95,000 (10 months due to the 2-month concession), net profit is $156,880. Harbor Walk's July count of 12,000 is misleading—its true annual traffic is ~2.19M (3,000/day for 8 months, 12,000/day for 4 months), yielding only ~$65,000 net profit. Elm Plaza's net profit is ~$50,000. Mill Street's traffic is stable year-round (<10% variance), unlike Harbor Walk's seasonal swings.
+    *   ## Risks
+    *   The primary risk is that the assumed 4% conversion and $9 ticket may not hold exactly for an office/residential street. However, Mill Street's stable traffic reduces downside risk compared to Harbor Walk. Elm Plaza's free parking is a qualitative advantage but does not offset its 22% lower foot traffic. Mill Street's higher list rent is effectively mitigated by the 2-month free period.
+    *   ## Confidence
+    *   90%
+    *   POSITION: Mill Street
+    *   CONFIDENCE: 90%"
+    *   Check word count: Let's count. Recommendation (2) + Key reasons (approx 100 words) + Risks (approx 50 words) + Confidence (2) + lines. Total is around 170 words. Perfect.
+    *   Ensure the exact headings are used. Yes.
+    *   Ensure the last two lines are exactly as specified. Yes.
+    *   Let's double check if I need to mention the assumption about the number of days in a month. I didn't use it. I used 365 days for traffic and 12 months for rent. That's standard. No missing numbers needed.
+    *   I will format the reply exactly as requested.

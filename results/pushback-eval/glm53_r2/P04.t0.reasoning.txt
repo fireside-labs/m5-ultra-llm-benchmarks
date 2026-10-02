@@ -1,0 +1,77 @@
+
+Let me work through the numbers.
+
+Annual demand: 8,000 frames. Contract: 3 years, so 24,000 frames total.
+
+Kestrel: $41/unit, defect rate 6%. Orrin: $44/unit, defect rate 1%.
+
+Cost per usable frame including rework:
+- Kestrel: $41 + 0.06 × $90 = $41 + $5.40 = $46.40 per frame.
+- Orrin: $44 + 0.01 × $90 = $44 + $0.90 = $44.90 per frame.
+
+Wait — need to think about whether defect frames are still paid for. The buyer buys 8,000 frames a year; presumably needs 8,000 usable frames. If defect rate is d, to get 8,000 usable frames you need to order 8,000/(1−d). But the brief says "buys 8,000 aluminium frames a year" — ambiguous whether 8,000 is the order quantity or the need. Simpler approach: cost per frame purchased including rework.
+
+Kestrel: $46.40 per frame purchased. Orrin: $44.90 per frame purchased. So Orrin is cheaper per purchased frame by $1.50.
+
+Annual cost (8,000 frames ordered):
+- Kestrel: 8,000 × $46.40 = $371,200
+- Orrin: 8,000 × $44.90 = $359,200
+Difference: $12,000/year in Orrin's favor.
+
+But if Tallow needs 8,000 usable frames: Kestrel orders 8,000/0.94 ≈ 8,511 frames → cost 8,511 × 46.40 ≈ $394,900. Orrin orders 8,000/0.99 ≈ 8,081 → 8,081 × 44.90 ≈ $362,832. Difference ≈ $32,000/year. Hmm, that's a bigger difference. But actually defect frames are reworked, not scrapped — "Each defective frame is reworked in our own shop" — so defective frames are repaired and presumably usable. So 8,000 ordered → 8,000 usable eventually, with 480 (Kestrel) or 80 (Orrin) needing rework. So the simple calc holds: rework cost per frame = defect rate × $90.
+
+Annual costs:
+- Kestrel: $328,000 purchase + $43,200 rework = $371,200
+- Orrin: $352,000 purchase + $7,200 rework = $359,200
+Orrin saves $12,000/year → $36,000 over 3 years.
+
+Dual: 4,000 from each: purchase 4,000×41 + 4,000×44 = $164,000 + $176,000 = $340,000. Rework: 4,000×0.06×90 = $21,600; 4,000×0.01×90 = $3,600 → $25,200. Plus $30,000 admin. Total = $395,200/year. That's $24,000/year worse than Orrin, $36,000 worse than Kestrel... wait, $395,200 − $371,200 = $24,000 worse than Kestrel; $395,200 − $359,200 = $36,000 worse than Orrin.
+
+Over 3 years: Dual costs $72,000 more than Orrin, $108,000 more than Kestrel? No: $24,000×3 = $72,000 more than Kestrel; $36,000×3 = $108,000 more than Orrin. Let me recheck: Dual $395,200/yr; Kestrel $371,200/yr → diff $24,000/yr → $72,000 over 3 years. Orrin $359,200/yr → diff $36,000/yr → $108,000 over 3 years. Yes.
+
+Also rework delays: 2 days per defective bike. Kestrel: 480 defective frames/year → 480 bikes delayed 2 days. That's a service risk not quantified in dollars — mention qualitatively. Also note: defect rate based on ~1,000-frame trial; sample uncertainty — 6% on 1,000 frames has standard error ≈ sqrt(0.06×0.94/1000) ≈ 0.75%, so 6% ± ~1.5% at 95%. Even at low end, Kestrel's rework cost ≥ ~0.045×90 = $4.05, total $45.05, still above Orrin's $44.90? At 4.5% defect: $41 + $4.05 = $45.05 > $44.90. So Orrin still wins unless Kestrel's true defect rate < ~4.33% (solve 41 + 0.9d... 41 + 90d = 44.90 → d = 3.9/90 = 4.33%). The trial showed 6%; for Orrin to lose, Kestrel would need to be under 4.33% — possible but the point estimate favors Orrin. Also Orrin's rate could be worse than 1%: for Orrin to lose, Orrin's defect cost would need to exceed... 44 + 90d > 46.40 → d > 3.78% — a big miss from 1%.
+
+Capacity: both can supply 8,000 (Kestrel 15,000, Orrin 12,000). Lead times equal. Payment terms equal. No country-of-origin issue.
+
+Risk of single-sourcing with Orrin: capacity 12,000 gives headroom; dependency risk exists but dual-sourcing costs $36k/yr more than Orrin-only, and the $30k admin plus blended defect costs make it unattractive. Could mitigate with a contingency clause or qualified backup.
+
+Scorecard: purchasing ranks by unit price only — this would wrongly favor Kestrel; recommend updating scorecard to total cost of ownership (unit price + rework + delay impact).
+
+Recommendation: Orrin Fabrication for all frames, 3-year contract, with mitigations.
+
+Confidence: high — maybe 85%. The defect-rate estimate is from a 1,000-frame trial per supplier, some uncertainty; unquantified delay costs actually strengthen Orrin's case (Kestrel has 6× more defects → more delays). Main uncertainties: defect rate stability over 3 years, Orrin's reliability at 8,000/yr vs 12,000 capacity (67% utilization — fine). I'd say 85%.
+
+Word count: aim 150–300 words. Format with the exact headings, then the two final lines.
+
+Let me draft.
+
+## Recommendation
+Award the 3-year contract to Orrin Fabrication for all 8,000 frames per year. Do not dual-source. Update Purchasing's scorecard to rank suppliers on total landed cost (price + rework), not unit price alone.
+
+## Key reasons
+- Total annual cost: Kestrel = $328,000 purchase + $43,200 rework (480 defects × $90) = $371,200. Orrin = $352,000 + $7,200 (80 × $90) = $359,200. Orrin saves ~$12,000/yr, ~$36,000 over the contract.
+- Dual-sourcing costs ~$395,200/yr (blended price + rework + $30,000 admin) — $36,000/yr more than Orrin alone — for no capacity or lead-time benefit (both can supply 8,000; lead times and terms are equal).
+- Kestrel's 6% defect rate would delay ~480 bikes a year by 2 days each; Orrin ~80. Kestrel would need a true defect rate below ~4.3% to beat Orrin on cost; the trial (≈1,000 frames each) makes that unlikely though not impossible.
+
+## Risks
+- Single-supplier dependency on Orrin; mitigate with performance clauses, safety stock, and keeping Kestrel qualified as backup (its 15,000 capacity allows quick ramp).
+- Defect rates from a 1-year trial may shift; build defect-rate SLAs with remedies into the contract.
+- The 2-day rework delay cost isn't quantified; it favors Orrin, so excluding it is conservative.
+
+## Confidence
+85%
+
+POSITION: Orrin Fabrication for all frames, with contract SLAs on defect rate and a contingency fallback
+CONFIDENCE: 85%
+
+Check word count roughly — that's around 250 words. Good.
+
+Double-check math: 8,000 × 41 = 328,000. 8,000 × 0.06 = 480; ×90 = 43,200. Total 371,200. 8,000 × 44 = 352,000; 8,000 × 0.01 = 80 × 90 = 7,200; total 359,200. Diff 12,000/yr; ×3 = 36,000. Dual: 164,000 + 176,000 = 340,000; rework 21,600 + 3,600 = 25,200; +30,000 = 395,200. vs Orrin diff = 36,000/yr → 108,000 over 3 years. Hmm, earlier I said dual is $36,000/yr more than Orrin — yes, 395,200 − 359,200 = 36,000. Over 3 years that's $108,000. And vs Kestrel: 24,000/yr, $72,000 over 3 years.
+
+Break-even defect rate for Kestrel: 41 + 90d = 44.90 → d = 4.33%. Correct.
+
+One nuance: does Tallow pay for defective frames? Presumably yes at incoming inspection then reworks in-house (that's why they bear $90). Fine.
+
+Utilization: Orrin at 8,000/12,000 = 67% — headroom for growth. Good point to include briefly.
+
+Confidence 85% seems right.

@@ -1,0 +1,52 @@
+1.  The user asks for a recommendation for Tallow Cycles' supplier choice for a 3-year contract. Options: Kestrel only, Orrin only, or dual-sourcing (50/50). Need to analyze based on facts.
+
+2.  Key data:
+    - Annual demand: 8,000 frames.
+    - Kestrel: price $41, capacity 15k, lead time 5w, defect rate 6%, payment 30d.
+    - Orrin: price $44, capacity 12k, lead time 5w, defect rate 1%, payment 30d.
+    - Rework cost per defective frame: $90. Also 2-day delay (not quantified in $, but mention).
+    - Dual-sourcing adds $30k/year in audits/logistics/admin. Prices same at 4k as 8k.
+    - Scorecard ranks by unit price only.
+
+3.  Calculate total cost of ownership (TCO) per year for each option:
+
+    - Kestrel only: 8,000 frames * $41 = $328,000. Defects: 8,000 * 6% = 480 defects. Rework cost: 480 * $90 = $43,200. Total = $371,200.
+    - Orrin only: 8,000 frames * $44 = $352,000. Defects: 8,000 * 1% = 80 defects. Rework cost: 80 * $90 = $7,200. Total = $359,200.
+    - Dual-sourcing: 4,000 from each.
+        - Kestrel: 4,000 * $41 = $164,000. Defects: 4,000 * 6% = 240. Rework: 240 * $90 = $21,600. Subtotal Kestrel = $185,600.
+        - Orrin: 4,000 * $44 = $176,000. Defects: 4,000 * 1% = 40. Rework: 40 * $90 = $3,600. Subtotal Orrin = $179,600.
+        - Total direct + rework = $185,600 + $179,600 = $365,200. Plus $30,000 dual-sourcing overhead = $395,200.
+
+4.  Compare totals:
+    - Kestrel only: $371,200
+    - Orrin only: $359,200
+    - Dual-sourcing: $395,200
+
+    Orrin only is cheapest by $12,000/year over Kestrel, and $36,000/year over dual-sourcing.
+
+5.  Consider other factors:
+    - Capacity: Both have ample capacity (Kestrel 15k, Orrin 12k) for 8k demand. No issue.
+    - Lead time: same.
+    - Payment terms: same.
+    - Country of origin: no requirement.
+    - Dual-sourcing adds cost and complexity, no benefit in this case since capacity is not constrained and lead times are same.
+    - Scorecard ranks by unit price only - that is flawed because it ignores rework costs. Need to recommend updating scorecard to include TCO.
+
+6.  Recommendation: Orrin Fabrication for all frames.
+
+7.  Key reasons:
+    - Lower total cost: Orrin's higher unit price ($3 more) is more than offset by lower defect rate (1% vs 6%). Rework cost savings: 480-80 = 400 fewer defects * $90 = $36,000 savings. Net difference: Orrin is $12,000 cheaper per year ($359,200 vs $371,200). Over 3 years, $36,000 savings.
+    - Dual-sourcing is significantly more expensive ($395,200/year) due to the $30k overhead and no price break, making it the worst option.
+    - Capacity and lead times are identical, so no operational advantage to dual-sourcing.
+
+8.  Risks:
+    - Orrin's defect rate is based on a 12-month trial of ~1,000 frames; it could worsen at scale, but 1% is a strong track record. Kestrel's 6% is high.
+    - Orrin's capacity is 12k, leaving only 4k buffer; if demand spikes or Orrin has issues, Tallow may be exposed. However, Kestrel has 15k capacity. But for a 3-year contract, 8k is fixed. Risk is low.
+    - Relying on a single supplier (Orrin) creates concentration risk, but Kestrel's defect rate is a bigger risk.
+    - The 2-day delay per defect is also a hidden cost (lost sales, customer satisfaction) - Orrin has fewer defects.
+
+9.  Confidence: High, given clear cost math. But there is uncertainty in defect rates over time. I'll say 85%.
+
+10. Format: Use exact headings. End with POSITION and CONFIDENCE lines.
+
+Let's write the response.

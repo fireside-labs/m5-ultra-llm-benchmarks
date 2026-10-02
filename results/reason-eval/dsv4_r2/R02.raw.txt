@@ -1,0 +1,37 @@
+## Missed issues
+
+1. **The headline result is reversed within risk tiers (Simpson's paradox).** Among low-risk patients the program rate is 5.0% vs 4.0% for comparison; among high-risk, 25.0% vs 22.0%. In *both* tiers the program group has the higher rate. The overall 9.0% vs 18.4% exists only because the program group is 80% low-risk while the comparison group is 80% high-risk. If the program group had the comparison group's mix, its rate would be 0.2×5% + 0.8×25% = 21% — worse than the comparison. The report stratified the data and then ignored what the stratification shows.
+
+2. **Enrollment is self-selected, so the comparison is not a control.** Nurses enrolled patients who answered the first call and agreed; the comparison group is everyone else, including non-answerers and decliners. Answering a phone and agreeing to a program correlates with engagement and lower readmission risk. The risk-tier imbalance (80/20 vs 20/80) is direct evidence the groups are not exchangeable.
+
+3. **Dropping 140 non-completers biases the program group upward.** This is per-protocol, not intention-to-treat. Patients who leave a 3-call program often leave because they are readmitted or too sick to continue; removing them inflates the program's apparent success. They should remain in the program group regardless of completion.
+
+4. **The expansion forecast confuses sensitivity with positive predictive value.** Sensitivity 90% does not mean a flagged patient is 90% likely to be readmitted. With 13% prevalence and 70% specificity, PPV = 0.90×0.13 / (0.90×0.13 + 0.30×0.87) ≈ 31%. So 12,000 flagged patients contain ~3,720 actual readmissions, and even a genuine 50% reduction would prevent ~1,860, not 5,400. The forecast is overstated ~3x before questioning the 50% effect itself.
+
+5. **Hospital confounding: Northgate's meds-to-beds service.** 85% of program patients came from Northgate vs 40% of comparison. Northgate launched a bedside medication-delivery program in February 2025 that independently reduces readmissions. The program effect is inseparable from hospital and this concurrent intervention.
+
+6. **Timing confound with a definition change.** 70% of program patients were discharged July–December vs 50% of comparison. On July 1 the measure changed from "any readmission within 30 days" to "unplanned readmission within 30 days," which mechanically lowers counted readmissions. The program group is disproportionately measured under the looser definition.
+
+7. **The Spanish-language "100% reduction" is noise.** 0 of 9 vs 2 of 10 — 19 patients total. A 100% reduction on n=19 is statistically meaningless and cannot support prioritizing Spanish-language nurses.
+
+8. **The balance check is misleading.** Age and sex being similar says nothing when the groups differ massively on the variable that drives readmissions: risk tier (80% vs 20% low-risk). The check reassures leadership while ignoring the one confounder that actually matters.
+
+9. **Excluding deaths within 30 days is a competing-risk bias, not a neutral choice.** If the program (or selection into it) affects mortality, removing deaths from both groups changes the readmission comparison. Symmetric application doesn't make it unbiased if mortality differs.
+
+10. **The forecast's effect and base rate don't come from the pilot.** The forecast applies a 50% reduction (confounded) to a 13% base rate, but the pilot's own comparison rate is 18.4%. Also, sensitivity 90% + specificity 70% implies ~38% of discharges would be flagged, so 12,000 flagged patients implies ~31,700 discharges per year — the scale and transferability assumptions need verification before any expansion math.
+
+## Looks like a problem but isn't
+
+- **Out-of-state readmissions:** the state all-payer claims database captures all in-state hospital readmissions; missing out-of-state stays is a standard, acceptable limitation.
+- **First discharge only:** using each patient's first 2025 discharge avoids double-counting the same patient; a reasonable design choice.
+- **Excluding deaths:** applied identically to both groups; defensible as a competing-risk simplification, though it can bias if mortality differs (see #9 above).
+
+## Top 3 priorities
+
+1. **Risk-tier confounding (Simpson's paradox):** the stratified data show the program is associated with *higher* readmission rates within both tiers; the headline 9% vs 18.4% is a composition artifact. This destroys the central claim.
+2. **Selection and attrition bias:** non-random enrollment plus dropping 140 non-completers means the program group is not comparable to the comparison group; the effect estimate is not causal.
+3. **The forecast's PPV error:** the "90% likely to be readmitted" claim is wrong (~31%), so the 5,400 prevented-readmissions projection is overstated ~3x — and it's built on an effect the stratified data contradict.
+
+## Bottom line
+
+The report cannot support the conclusion that the program cuts readmissions in half, and it certainly cannot support expansion. Within every risk tier the program group has a higher readmission rate than the comparison group; the headline result is an artifact of comparing an 80%-low-risk program group against an 80%-high-risk comparison group, compounded by self-selection, per-protocol attrition, hospital mix, and a mid-year definition change. Leadership should not expand. Instead, run a randomized or properly risk-adjusted evaluation using intention-to-treat analysis, correct the forecast math (PPV ≈ 31%), and treat the Spanish-language result as hypothesis-generating only.

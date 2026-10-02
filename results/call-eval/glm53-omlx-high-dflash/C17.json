@@ -1,0 +1,70 @@
+{
+  "call_type": "sales",
+  "outcome": "callback",
+  "sentiment_start": "positive",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Ran a thorough, well-structured discovery call and built strong rapport with the prospect",
+    "Disclosed another client's confidential pricing (Halloway Pediatrics at $9/seat), explicitly acknowledging she should not share it",
+    "Contradicted herself on BAA availability: stated it is Enterprise-only, then promised to sign a BAA on the Team plan",
+    "Set clear, concrete next steps: security review with the compliance officer and a proposal for 85 seats by Friday",
+    "Handled the prospect's frequent interruptions and background noise patiently and professionally"
+  ],
+  "flags": [
+    {
+      "type": "policy_violation",
+      "description": "The account executive disclosed another client's confidential pricing information to a prospect, admitting she should not share it.",
+      "evidence": "I probably shouldn't say this, but Halloway Pediatrics, they're one of our clients... they're paying nine dollars a seat on their deal."
+    },
+    {
+      "type": "misinformation",
+      "description": "The rep gave contradictory information about BAA availability, first stating it is exclusive to the Enterprise plan and later telling the prospect a BAA would be signed on the Team plan.",
+      "evidence": "the BAA is only available on our Enterprise plan. It's not available on Team. ... We're fully HIPAA compliant, and we'll sign a BAA with you, no problem at all."
+    },
+    {
+      "type": "unauthorized_commitment",
+      "description": "The rep committed to signing a BAA with the prospect on the Team plan despite having stated the BAA is only offered on Enterprise.",
+      "evidence": "Can we do that on the Team plan? ... Yes, absolutely. ... we'll sign a BAA with you, no problem at all."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "REP (Gemma)",
+      "task": "Send calendar invite for security review call with Theodora (compliance officer) and Stackmoor security team",
+      "due": "Tuesday, October 6, 10 a.m."
+    },
+    {
+      "owner": "REP (Gemma)",
+      "task": "Send SOC 2 report and security questionnaire answers to the prospect ahead of the security review",
+      "due": "Before Tuesday, October 6"
+    },
+    {
+      "owner": "REP (Gemma)",
+      "task": "Deliver proposal for 85 seats",
+      "due": "Friday"
+    },
+    {
+      "owner": "REP (Gemma)",
+      "task": "Have the solutions person cover the accounting integration piece",
+      "due": "unspecified"
+    },
+    {
+      "owner": "REP (Gemma)",
+      "task": "Send email summary of the call for the prospect's Friday internal presentation",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Outbound sales discovery call with Marguerite, director of operations at Tidewell Home Care (home health agency, ~85 total users after correcting from 60 to include 25 per-diem contractors). Current tools: spreadsheets, whiteboard, shared calendar, group texts; leaving current vendor after a spring data breach; vendor contract ends January 15, so they must be live before then. Top pain points: handoffs and staff location visibility; rural offline connectivity is important. Pricing discussed: Team $14/seat/mo, Enterprise $26/seat/mo, annual billing; rep authorized up to 15% discount. Compliance officer Theodora has final sign-off on anything touching patient data; security review set for Tue Oct 6, 10 a.m. Proposal for 85 seats due Friday. Rep disclosed a client's confidential pricing and gave contradictory BAA information.",
+  "notable_details": [
+    "Seat count corrected from 60 to 85 late in the call (adds ~25 per-diem nurses/therapists needing access)",
+    "Current vendor contract ends January 15; Tidewell must be live on a replacement before then",
+    "Prospect's current vendor had a data breach last spring exposing staff data (non-clinical); compliance officer is highly sensitive to security",
+    "Pricing: Team $14/seat/month, Enterprise $26/seat/month, both billed annually; rep authorized up to 15% discount on annual agreement",
+    "Rep disclosed Halloway Pediatrics (pediatric home care client) pays $9/seat, 'just between us'",
+    "Compliance officer Theodora has final sign-off on anything touching patient information; security review scheduled Tuesday, October 6, 10 a.m.",
+    "Prospect needs offline/offline-sync support for rural field areas and calendar sync; accounting integration is lower priority",
+    "Prospect has 15 years of IT background; biggest adoption worry is that staff won't use the tool",
+    "Call is recorded for quality and training; rep confirmed this when the prospect asked"
+  ]
+}

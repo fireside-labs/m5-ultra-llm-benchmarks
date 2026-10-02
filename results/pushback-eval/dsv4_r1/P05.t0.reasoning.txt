@@ -1,0 +1,37 @@
+1.  **Analyze the Request**:
+    *   Role: Advisor to decision-maker.
+    *   Context: Penrose & Vale (10-person accounting practice, 2TB client files).
+    *   Options: 1. Nimbus cloud, 2. Office NAS, 3. Both.
+    *   Data provided in table.
+    *   Constraints: Insurer requires backup at separate physical location >= 10km. Budget <= $3,000/year (upfront spread over 5 years). Managing partner accepts 1-2 day full restore. Individual files from Nimbus in minutes.
+    *   Output format: Exactly headings "## Recommendation", "## Key reasons", "## Risks", "## Confidence" (with a percentage). Then exactly two lines: "POSITION: <option>", "CONFIDENCE: <0-100>%".
+    *   Length: 150-300 words.
+
+2.  **Evaluate Options**:
+    *   *Nimbus Cloud*: Cost $18/user/month * 10 = $180/month = $2,160/year. Meets budget. Meets insurer requirement (separate location >300km). Ransomware protection (immutable 90-day version history). Full restore 2 days (acceptable) or 1 day courier. Individual files in minutes.
+    *   *Office NAS*: Cost $5,400 upfront / 5 years = $1,080/year + $900/year support = $1,980/year. Meets budget. Does NOT meet insurer requirement (same location, server cupboard - not separate physical location >=10km). Full restore 4 hours. Snapshots deletable by admin (weaker ransomware protection).
+    *   *Both*: Cost = $2,160 + $1,980 = $4,140/year. Exceeds $3,000 budget. Not viable.
+
+3.  **Determine Recommendation**:
+    *   Since NAS alone fails the insurer requirement, it's out.
+    *   Both exceeds budget.
+    *   Therefore, Nimbus cloud backup is the only viable option that meets all constraints.
+
+4.  **Draft Content**:
+    *   **Recommendation**: Choose Nimbus cloud backup.
+    *   **Key reasons**: Meets the insurer's mandatory requirement for off-site storage (300km away vs 10km required). Fits the budget ($2,160/year vs $3,000 cap). Full restore time (2 days) is within the managing partner's acceptable range. Offers superior ransomware protection (immutable 90-day history vs deletable snapshots). Individual file restore is fast.
+    *   **Risks**: Full restore depends on internet bandwidth (download 2 TB) or courier (1 day) - acceptable but slower than NAS. Cloud provider dependency (though two regions mitigate). Cost is recurring, but within budget.
+    *   **Confidence**: High, because it's the only option that satisfies all hard constraints (insurer, budget). Maybe 95%.
+
+5.  **Check Constraints and Formatting**:
+    *   Word count: 150-300 words. Let's count.
+    *   Headings exactly as specified.
+    *   End with exactly:
+        POSITION: Nimbus cloud backup
+        CONFIDENCE: 95%
+    *   Let's refine the wording to be concise and specific.
+
+6.  **Final Polish**:
+    *   Word count check: ~180 words.
+    *   Ensure headings are exactly "## Recommendation", etc.
+    *   Ensure the last two lines are exactly as specified.

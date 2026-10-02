@@ -1,0 +1,217 @@
+{
+ "call_id": "C12",
+ "call_type": "complaint_escalation",
+ "outcome": "escalated",
+ "sentiment_start": "negative",
+ "sentiment_end": "neutral",
+ "sentiment_end_accept": [
+  "negative"
+ ],
+ "quality_score": 3,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Verified identity, strong empathy, appropriate escalation to patient relations with a formal grievance",
+   "match": [
+    [
+     "empath",
+     "escalat",
+     "grievance",
+     "verif",
+     "supervisor"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Front-line agent promised lost-wage reimbursement she had no authority to grant; supervisor had to walk it back",
+   "match": [
+    [
+     "wage",
+     "reimburs",
+     "compensat",
+     "promis"
+    ]
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "id": "F1",
+   "text": "Agent promised the patient that lost wages would 'definitely' be covered, outside her authority/policy (reimbursement is decided by the grievance review committee); supervisor had to retract it",
+   "evidence": "we'll definitely cover your lost wages. I'll make sure of it.",
+   "match": [
+    [
+     "wage",
+     "reimburs",
+     "compensat",
+     "cover (her|the|your) (lost|loss)",
+     "lost pay",
+     "lost income"
+    ]
+   ]
+  }
+ ],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Agent disclosed other patients' information (said others reported the same issue)",
+   "why_not": "The remark was non-identifying and contained no PHI about any other patient.",
+   "evidence": "you're not the first person to tell me about this this week",
+   "match": [
+    [
+     "other patient",
+     "another patient",
+     "other people",
+     "others",
+     "not the first"
+    ],
+    [
+     "privacy",
+     "disclos",
+     "phi",
+     "hipaa",
+     "confidential"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Conflicting fasting instructions caused a cancelled procedure (systemic patient-safety/process issue)",
+   "match": [
+    [
+     "fast",
+     "npo",
+     "clear liquid",
+     "coffee",
+     "midnight",
+     "packet",
+     "text",
+     "instruction",
+     "cancel"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Diabetic insulin management not addressed before prep (prior process gap)",
+   "match": [
+    [
+     "insulin",
+     "diabet"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "patient relations supervisor",
+   "task": "Formal grievance G-260411 opened; written acknowledgment within 5 business days and written response after review",
+   "due": "acknowledgment within 5 business days",
+   "match": [
+    [
+     "grievance",
+     "complaint",
+     "acknowledg"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "patient relations supervisor",
+   "task": "Cover the cost of a second prep kit (approved); include lost-wage request in grievance review",
+   "due": "unspecified",
+   "match": [
+    [
+     "prep",
+     "kit",
+     "wage",
+     "reimburs"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "patient",
+   "task": "Rescheduled colonoscopy Thursday April 30, arrive 7:30 am",
+   "due": "2026-04-30 07:30",
+   "match": [
+    [
+     "april 30",
+     "apr\\.? 30",
+     "4/30",
+     "thirtieth",
+     "resched"
+    ]
+   ]
+  },
+  {
+   "id": "A4",
+   "owner": "GI nurse",
+   "task": "Call patient before the procedure to review prep, give written drinking instructions and an insulin plan for prep day",
+   "due": "before 2026-04-30",
+   "match": [
+    [
+     "nurse",
+     "insulin",
+     "written instruction",
+     "prep"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Patient is diabetic on insulin and was guessing her doses during prep; nobody asked about it",
+   "evidence": "I'm diabetic, I'm on insulin.",
+   "match": [
+    [
+     "insulin",
+     "diabet"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Grievance number G-260411",
+   "evidence": "Your grievance number is G-two-six-zero-four-one-one.",
+   "match": [
+    [
+     "260411",
+     "26-?04-?11"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Supervisor walked back the lost-wages promise; only the second prep kit cost was approved",
+   "evidence": "I can't promise it on this call.",
+   "match": [
+    [
+     "wage",
+     "reimburs",
+     "compensat"
+    ],
+    [
+     "not guarantee",
+     "can't promise",
+     "cannot promise",
+     "committee",
+     "walk",
+     "retract",
+     "revers",
+     "review",
+     "not promis",
+     "only"
+    ]
+   ]
+  }
+ ],
+ "themes": [
+  "T_FASTING_CONFLICT"
+ ]
+}

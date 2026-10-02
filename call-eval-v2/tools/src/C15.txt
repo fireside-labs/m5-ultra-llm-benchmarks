@@ -1,0 +1,69 @@
+@id C15
+@date 2026-09-24 14:00
+@line Tallyforge - Sales (inbound demo request follow-up)
+@direction outbound
+@target 4000
+@seed 1515
+@speaker A REP = account executive (Bastian)
+@speaker C PROSPECT = owner of a small physiotherapy practice (Rosalind)
+---
+A: Hi, is this Rosalind? Bastian from Tallyforge, you'd filled out the demo form on our site?
+C: Oh, yes, hi! Yes. Thanks for calling back so fast.
+A: Of course. Is now still an okay time?
+C: Yeah, I've got about twenty minutes before my next patient.
+A: Perfect, I'll keep it tight. So tell me a bit about the practice.
+C: So, we're a physiotherapy practice, Kettering Lane Physio, it's me and, um, a few therapists, and a front desk person. Right now our invoicing is a mess. We do a lot of self-pay and some insurance top-ups, and the front desk does it all in spreadsheets and, honestly, Word templates.
+A: Oh, the Word templates. [laughs] I hear that a lot.
+C: It's embarrassing.
+A: Not at all, that's exactly who we help. How many people would need logins?
+C: Um, eleven? No— sorry, I was counting the part-timers who don't do billing. Seven. Seven people would actually use it.
+A: Seven seats. Got it.
+C: And, um, the front desk person, Ilse, she's the one who'd use it most. She's great but she's not super techy.
+A: That's totally fine. Most of our customers' front desks are up and running in an afternoon. What's the biggest headache right now? If you could fix one thing.
+C: Chasing payments. Honestly. People finish their sessions, they say "oh I'll pay online," and then they don't, and Ilse spends Fridays calling people. It's awkward. They're our patients, you know? We see them every week.
+A: Yeah, that's awkward. So that's exactly where automatic payment links help. The invoice goes out with a "pay now" button, card or bank transfer, and it gets paid like seventy percent faster for most practices.
+C: Seventy percent?
+A: That's the average we see across small service businesses, yeah. Your mileage may vary, but people pay faster when it's one tap.
+C: Huh. And can it do, like, packages? We sell packs of six sessions or ten sessions.
+A: Yep, you'd set those up as products, "six-session pack," "ten-session pack," and then the invoice just pulls the price in. You can also do deposits.
+C: Oh, deposits would be nice. We get no-shows for the first assessment.
+A: [laughs] Everybody does.
+C: And how does it, um, does it talk to our booking system? We use, uh, [inaudible] ...the one with the purple logo.
+A: I'm not sure which one that is off the top of my head, but we've got integrations with most of the big scheduling tools, and a Zapier-style connector for the rest. I'll check yours and put it in the follow-up email.
+C: Okay. That would be great.
+#fill sales_discovery sales_chat
+C: One thing I have to ask, because it's healthcare. The invoices have patient names, sometimes the, um, the treatment, like "six sessions, knee rehab." Does that matter for you? Like HIPAA-wise?
+A: Great question. So, compliance-wise: we do sign BAAs, business associate agreements, but only on our Enterprise plan. Enterprise has the audit logs, the data residency, all that. Starter and Growth don't come with a BAA.
+C: Okay. And Enterprise is how much?
+A: Enterprise is custom, but for seven seats you'd be looking at, honestly, probably more than you want to spend. It's built for, like, hospital groups.
+C: Oh. Okay.
+#fill sales_discovery
+A: So here's what I'd actually recommend for a practice your size. Starter. Seven seats, it's twelve a seat a month, and if you prepay annually you get our standard twenty percent annual discount, that's on the pricing page, everyone gets that.
+C: Twenty percent off for paying annually. Okay, that's nice.
+A: Yeah, it adds up. And Starter does everything you described: templates, payment links, reminders, the card processing.
+C: What about the card fees? Like, the processing fees? Our current thing takes almost three percent.
+A: Ours is two point six percent plus thirty cents per card payment, and bank transfers are a flat fifty cents. And you can pass the card fee on to the patient if you want, though a lot of healthcare practices choose not to.
+C: Yeah, we wouldn't do that. Our patients would revolt.
+A: [laughs] Totally get it.
+C: And if we hate it after a year, can we leave? Can we get our data out?
+A: Yep, full export any time, CSV or PDF, all your invoices and payment history. No lock-in beyond the annual term if you prepay.
+C: Okay, that's good. My last software held our data hostage for like two months.
+A: Oof. Yeah, we don't do that.
+C: And the patient stuff? The HIPAA thing?
+A: Oh, you're covered, honestly. Everything's encrypted, we're on the same infrastructure as the big guys. You're totally fine to put patient details in the invoice notes, people do it all the time.
+C: Okay, great. That was my big worry.
+A: Yeah, no, you're good.
+#fill sales_chat
+C: Can we try it first?
+A: Absolutely. I'll set up a trial workspace today, it runs fourteen days, so it'd end... October fifteenth? Wait, no, if I start it today it ends October eighth. Hmm, actually, let me start it on the first so you've got your front desk person back from vacation. Then it ends October fifteenth.
+C: Oh, that's thoughtful. Yes, she's out until the first.
+A: Perfect. Trial starts October first, ends October fifteenth. And I'd love to do a live walkthrough with your front desk person in the trial. How's Tuesday the sixth?
+C: Tuesday October sixth... I have a gap at eleven.
+A: Eleven on the sixth. I'll send a calendar invite.
+C: Great.
+A: And I'll send over a quote for seven Starter seats with the annual discount, so you can look at real numbers.
+C: Perfect. I'll look it over with my husband, he does our books.
+A: Sounds good. Anything else I can answer?
+C: No, I think that's it. Honestly this sounds great.
+A: Awesome. Talk on the sixth, Rosalind!
+C: Thanks, Bastian. Bye!

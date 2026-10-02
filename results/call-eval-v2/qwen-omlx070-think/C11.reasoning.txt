@@ -1,0 +1,441 @@
+
+We need answer user's request: analyze transcript and return ONE JSON object conforming schema, no markdown. Need produce final JSON only. Need carefully analyze.
+
+We need determine call_type, outcome, sentiment_start/end, quality_score, quality_reasons, flags, action_items, summary_notes, notable_details.
+
+Transcript: Brightwater nurse line, patient Imogen post-op day 3 lap chole, questions pain pills, drain, feeling crummy. Nurse Felipe verifies identity, spouse present authorized. Nurse gives instructions, escalates drain to surgical PA Dana conference. Refill request sent to surgeon team. Pharmacy updated. Follow-up date confirmed. Outcome? Main issue handled during call? Drain question answered by PA, refill request sent, instructions given. There is pending callback from Larkspur tomorrow to set drain check, and refill request tomorrow. But main issue? Caller's main issue was post-op concerns; handled with instructions and escalation to surgical PA. Outcome enum: resolved, unresolved, escalated, callback. Since handed to surgical PA (higher tier/clinician) and also callback planned. Rule: escalated = handed to supervisor, higher tier, clinician or another team (use even if callback planned). So outcome escalated. Could be resolved? But drain management handed to surgical team, PA conferenced. Use escalated.
+
+Call_type: post_procedure_followup. Main purpose checking after procedure.
+
+Sentiment_start: first minute? Patient after long hold, frustrated? At 00:18:27 "Oh thank God, a person... third try tonight" maybe negative/neutral? First minute of call? The call starts IVR and hold; customer sentiment in first minute: patient pressing four, spouse background, sighs at 03:57? But first minute maybe neutral? Need customer's sentiment in first and last minutes of call. First minute: patient says "Four, Rob, it's four, not three. I told you." SPOUSE: I didn't say anything. Not strongly negative. But overall start after hold, "Oh thank God, a person" relief, maybe neutral/positive? However first minute of actual call? It says first and last minutes of the call. At 00:00-00:01 patient is on hold, not talking to staff. Sentiment maybe neutral. But could be negative due to frustration with hold? At 00:03:57 sighs "Higher than normal. It's always higher than normal." That's 3:57 not first minute. At 00:18:27 when nurse answers, "Oh thank God, a person" positive relief. But first minute of call? The call includes hold. The first minute: IVR, patient presses 4, spouse. Neutral. Need choose. Maybe negative? She is frustrated by phone menu and hold? But not in first minute. I'd set sentiment_start neutral. Last minute: patient says "I feel a lot better, honestly. I was kind of panicking." "Thank you so much" positive. sentiment_end positive.
+
+Quality_score: Need rate staff overall. Nurse verified identity, included spouse with consent, accurate clinical info, appropriate escalation, empathetic. Some issues: long hold (initial ~18 min? Actually hold from 00:41 to 18:19 = 17m38 plus IVR; later hold 4m20, 3m00). Nurse had technical issues, mouse, login, echo, but handled. Gave bath advice? Wait earlier discharge instructions: no tub baths, no hot tubs, no swimming for two weeks. Later at 01:57:44 nurse says "Honestly, a nice warm bath would help with the soreness. Just relax in the tub for a bit, get those back muscles to loosen up. Heat's great for that." This contradicts earlier no tub baths for two weeks. That's a serious accuracy/safety issue? Post-op lap chole with drain, no tub baths/swimming for two weeks. Recommending bath is misinformation/clinical safety. Also earlier said heating pad on shoulder not incisions. Bath could soak incisions/drain, infection risk. This is a notable lapse. Also nurse said "Tylenol's fine" with hydrocodone containing acetaminophen; need ensure total acetaminophen not exceed. Patient taking Extra Strength Tylenol 2 every 6 hours = 1000 mg q6 = 4000 mg/day plus hydrocodone-acetaminophen 325 mg 1-2 q6 = up to 1300 mg/day, total up to 5300 mg/day, exceeds recommended max 3000-4000. Nurse did not warn about acetaminophen total. That's clinical safety/misinformation. However surgeon said use Tylenol; but nurse should caution not exceed acetaminophen. This is serious. Also nurse said "No, you're good" to doubling up. That's potentially dangerous. Need flag misinformation/clinical_safety. Also bath contradiction. Also maybe privacy: spouse on speaker, patient authorized. Nurse verified identity. No privacy flag. Unauthorized commitment? No. Missed commitment? Nurse promised call back if disconnected, not needed. Promised refill request, did. Promised update pharmacy, did. Promised Larkspur call tomorrow, PA said. No missed. Security? Patient joked sticky note, nurse didn't repeat. No.
+
+Quality score: despite good empathy and escalation, serious accuracy/safety failures (bath advice, acetaminophen total) -> 2? Rule: 2 = poor: serious compliance, safety or accuracy failure, or several notable lapses. 3 = mixed generally competent but one notable lapse. Here two serious safety/accuracy issues. Score 2. Need quality_reasons 2-5 short specific. Include verified identity, appropriate escalation, but gave conflicting bath advice and failed to warn acetaminophen max. Maybe long hold? But score due staff handling, hold maybe system. Could mention technical issues but not major. Need flags: misinformation/clinical_safety for bath; misinformation/clinical_safety for acetaminophen. Evidence verbatim. Need ensure evidence quotes from transcript. For bath: "Honestly, a nice warm bath would help with the soreness. Just relax in the tub for a bit, get those back muscles to loosen up. Heat's great for that." Type misinformation or clinical_safety? It's incorrect advice contradicting discharge instructions and post-op drain; could be clinical_safety. Use clinical_safety. For acetaminophen: evidence: "No, you're good." But need context maybe quote: "Tylenol's fine. Tylenol's actually great, we want you using that so you can lean on the narcotic less." and "No, you're good." Need one evidence quote. Could use "No, you're good." but not enough. Maybe quote: "Tylenol's fine. Tylenol's actually great, we want you using that so you can lean on the narcotic less." This shows failure to warn. Type misinformation or clinical_safety. Use clinical_safety. Also maybe misinformation because contradicts earlier no tub baths. Could flag misinformation for bath. But type enum includes clinical_safety, misinformation. Which better? Bath advice could cause infection/wound complication -> clinical_safety. Acetaminophen overdose risk -> clinical_safety. Could also flag misinformation for bath because contradicts discharge instructions. Need not overflag? The instructions say flag incorrect information given. Both are incorrect/unsafe. Use two flags.
+
+Need action_items: every follow-up commitment/task stated. Owners: nurse, surgical team, patient/spouse.
+- Nurse Felipe: send hydrocodone refill request to Dr. Vasquez-Lim's team tonight. due tonight.
+- Nurse Felipe: update preferred pharmacy to Ostrander Eastgate. due during call? "right now". due unspecified or during call. Use "during call".
+- Larkspur surgical team/office: call patient tomorrow, Friday, to set up drain check. due tomorrow/Friday.
+- Patient/Rob: keep emptying and recording JP drain twice daily. due ongoing.
+- Patient/Rob: add OTC polyethylene glycol powder once daily; Rob pick up at Eastgate tomorrow after work. due tomorrow after work.
+- Patient/Rob: draw pen line around pink incision to monitor spread. due unspecified/later.
+- Patient: if temp >101, call back. due if occurs.
+- Patient: if no bowel movement by Saturday or belly hard/swollen/vomiting, call back. due Saturday or if symptoms.
+- Patient: if incision spreads past line, pus, really hurts, call. due if occurs.
+- Patient: if drain skin red, leaks around tube, tube falls out, call Larkspur after-hours. due if occurs.
+- Patient: if sudden shoulder worse, shortness breath, chest pain, call 911. due if occurs.
+- Patient: if leg swelling, shortness breath, chest pain, call 911. due if occurs.
+- Patient: ask surgeon for work note at follow-up. due at follow-up.
+- Patient: attend follow-up Friday Oct 2 1:15 pm. due Friday Oct 2 1:15 pm.
+- Patient/Rob: space NyQuil and hydrocodone couple hours. due ongoing.
+- Patient: continue incentive spirometer 10 times/hour while awake. due ongoing.
+- Patient: walking, hydration, etc. Could include but action_items every follow-up commitment or task stated. Need not list all general advice? But "every follow-up commitment or task stated" could include tasks. Need be comprehensive but not too huge. Schema no limit. Need owner and due. Use concise.
+- Rob: pick up polyethylene glycol at Eastgate tomorrow after work. due tomorrow after work.
+- Rob: put follow-up date in notebook? Already in notebook. Not necessary.
+- Patient: hug pillow when cough. due ongoing.
+- Patient: shower with drain pinned to lanyard, pat dry. due ongoing.
+- Patient: no lifting >10 lbs for two weeks, no driving on narcotics. due two weeks.
+- Patient: no alcohol while on hydrocodone. due while on hydrocodone.
+- Patient: no tub baths/swimming for two weeks (but nurse later contradicted; still discharge instruction). due two weeks.
+- Patient: call if temp >101. due if temp >101.
+Need maybe not include all safety instructions? But action_items should be follow-up commitments/tasks. Could include key ones. Need due as stated or unspecified.
+
+Summary_notes: concise <=120 words. Include patient post-op day 3 lap chole, verified, spouse authorized. Issues: pain, shoulder gas, low-grade temp 100.8, constipation, drain output 40 mL AM trending down. Nurse gave instructions, sent hydrocodone refill request, updated pharmacy to Ostrander Eastgate, conferenced Larkspur PA; drain check call tomorrow, follow-up Oct 2 1:15. Note safety concerns: nurse advised bath despite no tub baths and did not warn acetaminophen max. Need maybe include in summary? For account/patient file, yes. Keep <=120 words. Count: "Patient Imogen Tessaro-Blythe, post-op day 3 lap chole (9/21), called nurse line. Husband Rob present and authorized. Concerns: pain, right shoulder gas pain, low-grade temp 100.8, constipation, JP drain. Nurse verified identity, gave wound/diet/activity instructions, sent hydrocodone refill request to surgeon team, updated pharmacy to Ostrander Eastgate, and conferenced Larkspur PA. Drain output 40 mL AM, trending down; Larkspur to call Friday for drain check. Follow-up Oct 2 1:15. Safety note: nurse later advised a bath despite earlier no tub baths and did not warn about acetaminophen total with Norco." Count maybe 95. Good.
+
+Notable_details: corrected dates, numbers, names, secondary issues, reference numbers, changed contact details. Include:
+- Surgery date corrected from twelfth to Monday September 21.
+- Follow-up date corrected from twelfth to Friday October 2 at 1:15 pm.
+- Temperature: patient said 100.8 this afternoon; spouse mentioned 101.8 last night but final current temp 100.8.
+- Drain output: Monday night 110, Tuesday 70/60, Wednesday 55/50, this morning 40 mL; protocol pull under 30 mL/24h for two days.
+- Pharmacy changed from Ostrander Millbrook to Ostrander Eastgate.
+- Medications: hydrocodone-acetaminophen 5/325, docusate, levothyroxine 75 mcg, birth control, vitamin D; allergy penicillin rash.
+- Patient taking Extra Strength Tylenol 2 every 6 hours in addition to Norco; no acetaminophen max warning.
+- Nurse advised bath despite discharge no tub baths for two weeks.
+- IVR menu issue: pressing 3 routed to billing.
+- Spouse Rob on speaker, patient authorized.
+- Low-grade temp threshold call back >101.
+- Constipation: no BM since Monday morning; add PEG, call if none by Saturday.
+- Shoulder pain referred gas; red flags.
+- Work: music teacher, sub through second week of October, needs work note at follow-up.
+- Follow-up with Dr. Vasquez-Lim at Larkspur.
+Need maybe include all.
+
+Flags: Need evidence verbatim. Ensure quotes exact enough. For bath: transcript: "Honestly, a nice warm bath would help with the soreness. Just relax in the tub for a bit, get those back muscles to loosen up. Heat's great for that." Good.
+For acetaminophen: Need quote showing nurse said okay. "No, you're good." But evidence should be short verbatim. Could combine? Evidence field string can include multiple quotes? It says short verbatim quote. Use one. Maybe "Tylenol's fine. Tylenol's actually great, we want you using that so you can lean on the narcotic less." This is verbatim? Transcript: "Yeah, that's the idea. Tylenol's fine. Tylenol's actually great, we want you using that so you can lean on the narcotic less." Use exact: "Tylenol's fine. Tylenol's actually great, we want you using that so you can lean on the narcotic less." It doesn't explicitly show failure to warn, but description can. Another quote: "No, you're good." after patient worried doubling up. Use that as evidence? It is verbatim. Description: Nurse told patient it was okay to take Extra Strength Tylenol with hydrocodone-acetaminophen without checking total acetaminophen. Evidence: "No, you're good." That's short. But maybe too short. Could use "No, you're good." Good.
+Could also flag misinformation for bath: type misinformation. Description: Nurse advised tub bath despite discharge instructions prohibiting tub baths for two weeks. Evidence: "Honestly, a nice warm bath would help with the soreness. Just relax in the tub for a bit, get those back muscles to loosen up. Heat's great for that." Type misinformation or clinical_safety. Use clinical_safety because wound/drain. But also misinformation. Need maybe two flags: one clinical_safety for acetaminophen, one misinformation for bath. But bath is also safety. The flag type enum can only one. Use clinical_safety for both? The examples include incorrect information given -> misinformation. Bath is incorrect info. Acetaminophen is safety. Could use misinformation for bath, clinical_safety for acetaminophen. But bath could infect incisions/drain. I'd use clinical_safety for bath too? Need flags compliance, privacy, security, patient-safety, accuracy. Both patient-safety and accuracy. Maybe one flag type misinformation for bath, one clinical_safety for acetaminophen. But if bath is incorrect info, misinformation. Let's do:
+1 type clinical_safety: "Nurse advised a tub bath for back soreness despite earlier discharge instruction prohibiting tub baths for two weeks and despite JP drain/incisions." evidence bath quote.
+2 type clinical_safety: "Nurse approved taking Extra Strength Tylenol with hydrocodone-acetaminophen without warning about total acetaminophen limit." evidence "No, you're good."
+Could also flag misinformation: "Nurse gave conflicting wound-care advice." But duplicate. Maybe two flags enough.
+
+Quality_reasons: 2-5 short specific. Need reflect score 2. Examples:
+- "Verified patient identity and documented spouse authorization."
+- "Appropriately escalated drain question to on-call surgical PA and arranged follow-up."
+- "Provided conflicting bath advice after stating no tub baths for two weeks."
+- "Failed to warn about acetaminophen maximum when approving Tylenol with Norco."
+- "Long hold and technical issues, but staff remained empathetic."
+Need 2-5. Good.
+
+Outcome: escalated. Need maybe callback? Rule use escalated even if callback planned. Good.
+
+Call_type: post_procedure_followup.
+
+Sentiment_start: Need decide. Let's examine first minute: 00:00-00:01 IVR, patient presses 4, says "Four, Rob, it's four, not three. I told you." SPOUSE: "I didn't say anything." Neutral? There is slight irritation. But customer sentiment in first minute maybe negative? She is correcting spouse, not necessarily negative. At 00:03:57 sighs. But first minute not. At 00:18:27 when nurse answers, "Oh thank God, a person" positive. But first minute of call? The call is 2h15, first minute is hold. Could be neutral. Last minute positive. If start negative due to third try? The first minute doesn't show. Maybe use neutral.
+
+Quality_score: 2 due serious safety. Need ensure not 3. The nurse overall excellent but two serious failures. 2.
+
+Action_items: Need owner strings. Could be "Nurse Felipe", "Larkspur surgical team", "Patient", "Patient/Rob", "Rob". Due strings. Need include all commitments. Let's list carefully.
+
+From transcript:
+- Nurse: "if we get disconnected I'll call you right back" due if disconnected. But not a concrete follow-up unless disconnect. Could include? It's a commitment. Owner Nurse, task call back if disconnected, due if disconnected. But maybe not necessary. Could include.
+- Nurse: "send a message to her team tonight with a refill request" due tonight.
+- Nurse: "update preferred pharmacy" due during call.
+- PA: "have our office call you tomorrow, Friday, to set up a drain check" due tomorrow/Friday.
+- PA: "if numbers under thirty by then, we pull it in office" due at drain check.
+- Nurse: "keep emptying and recording twice a day" due ongoing.
+- Nurse: "add gentle laxative ... once a day" due ongoing.
+- Rob: "pick it up at the Eastgate one tomorrow after work" due tomorrow after work.
+- Nurse: "if you go past, say, Saturday with nothing, or belly really swollen and hard and vomiting, call us back" due Saturday or if symptoms.
+- Nurse: "draw a little line around edge of pink" due unspecified/later.
+- Nurse: "If it spreads past line, pus, really hurt, call us" due if symptoms.
+- Nurse: "If temp over 101, call us back" due if temp >101.
+- Nurse: "incentive spirometer ten times an hour while awake" due ongoing.
+- Nurse: "call Larkspur if skin around tube really red, leaks around tube, tube falls out" due if symptoms.
+- Nurse: "shower with drain, pin bulb to lanyard, pat dry" due ongoing.
+- Nurse: "no lifting over ten pounds for two weeks" due two weeks.
+- Nurse: "no driving while taking narcotic" due while on narcotic.
+- Nurse: "no alcohol while on hydrocodone" due while on hydrocodone.
+- Nurse: "space NyQuil and hydrocodone couple hours" due ongoing.
+- Nurse: "ask surgeon for work note at follow-up" due at follow-up.
+- Patient: attend follow-up Friday Oct 2 1:15. due Friday Oct 2 1:15 pm.
+- Nurse: "call back press four if drop" due if disconnected.
+- Patient: "take bath tonight" due tonight? But this is unsafe advice; should we include as action item? It was a commitment from nurse/patient. But if flagging as unsafe, maybe include? Action_items every follow-up commitment or task stated. It was stated: "Rob, I'm taking a bath tonight." But due to safety, maybe not include or include with note? The schema doesn't allow notes. Could include "Patient: take bath tonight" but that would propagate unsafe. Better not include? But "every follow-up commitment" includes it. However we can omit tasks that are unsafe? The task was stated. But summary/flags note. Maybe include as "Patient: avoid tub baths despite nurse's bath suggestion; follow discharge instructions" but owner? That's not stated. Hmm. Need factual. Could include "Patient: take a bath tonight (contradicts discharge instructions)" but action_items task should be commitment. But due tonight. Yet we don't want to recommend. The field is just task stated. Could include with description? It says task. Could be "Take a bath tonight (contradicts earlier no tub baths instruction)". But maybe too editorial. Better omit because not a valid follow-up? But it is. However quality flags cover.
+- Patient: "hug pillow when cough" due ongoing.
+- Patient: "keep walking" due ongoing.
+- Patient: "drink water" due ongoing.
+- Patient: "no climbing on belly/jumping for couple weeks" due two weeks.
+- Patient: "gentle hug sitting from side" due ongoing.
+- Patient: "call 911 for red flags" due if symptoms.
+Need not list every general advice? The instruction says every follow-up commitment or task stated. Could be huge. Need balance. Maybe include key actionable follow-ups and safety thresholds. Not every lifestyle. But "every" suggests comprehensive. We can include many. JSON can be long. Need ensure valid.
+
+Potential issue: action_items due "unspecified" allowed. Use strings.
+
+Flags evidence must be short verbatim. Need exact quotes. Let's verify transcript quotes:
+- "Honestly, a nice warm bath would help with the soreness. Just relax in the tub for a bit, get those back muscles to loosen up. Heat's great for that." exact? At 01:57:44: "Honestly, a nice warm bath would help with the soreness. Just relax in the tub for a bit, get those back muscles to loosen up. Heat's great for that." yes.
+- "No, you're good." exact at 00:46:01. yes.
+Could also use "Tylenol's fine. Tylenol's actually great, we want you using that so you can lean on the narcotic less." exact? At 00:45:14: "Yeah, that's the idea. Tylenol's fine. Tylenol's actually great, we want you using that so you can lean on the narcotic less." Use substring exact. Good.
+
+Need maybe flag "privacy_disclosure"? Spouse on speaker, patient authorized. No.
+"identity_verification" flag? It says do NOT flag things handled correctly. No.
+"unauthorized_commitment"? Nurse promised Larkspur call? PA made it. No.
+"missed_commitment"? No.
+"security"? Patient joked password sticky note, nurse didn't repeat. No.
+"policy_violation"? No.
+
+Need maybe flag "misinformation" for IVR? Not staff. No.
+
+Quality reasons: Need 2-5. Use 5.
+
+Summary notes <=120 words. Need count. Let's draft:
+"Patient Imogen Tessaro-Blythe, post-op day 3 lap chole (9/21), called nurse line. Husband Rob present and authorized. Concerns: pain, right shoulder gas pain, low-grade temp 100.8, constipation, JP drain. Nurse verified identity, gave wound/diet/activity instructions, sent hydrocodone refill request to surgeon team, updated pharmacy to Ostrander Eastgate, and conferenced Larkspur PA. Drain output 40 mL AM, trending down; Larkspur to call Friday for drain check. Follow-up Oct 2 1:15. Safety note: nurse later advised a bath despite earlier no tub baths and did not warn about acetaminophen total with Norco."
+Count: Patient1 Imogen2 Tessaro-Blythe3 post-op4 day5 3 6 lap7 chole8 (9/21)9 called10 nurse11 line12 Husband13 Rob14 present15 and16 authorized17 Concerns18 pain19 right20 shoulder21 gas22 pain23 low-grade24 temp25 100.8 26 constipation27 JP28 drain29 Nurse30 verified31 identity32 gave33 wound/diet/activity34 instructions35 sent36 hydrocodone37 refill38 request39 to40 surgeon41 team42 updated43 pharmacy44 to45 Ostrander46 Eastgate47 and48 conferenced49 Larkspur50 PA51 Drain52 output53 40 54 mL55 AM56 trending57 down58 Larkspur59 to60 call61 Friday62 for63 drain64 check65 Follow-up66 Oct67 2 68 1:15 69 Safety70 note71 nurse72 later73 advised74 a75 bath76 despite77 earlier78 no79 tub80 baths81 and82 did83 not84 warn85 about86 acetaminophen87 total88 with89 Norco90. Good.
+
+Notable_details: Need array strings. Include corrected values. Let's draft 12-15. Ensure final/corrected values.
+- "Surgery date corrected to Monday, September 21, 2026 (patient initially said twelfth)."
+- "Follow-up corrected to Friday, October 2, 2026 at 1:15 PM with Dr. Vasquez-Lim at Larkspur (patient initially said twelfth)."
+- "Current temperature reported as 100.8°F this afternoon; spouse mentioned 101.8°F last night, but current value used."
+- "JP drain output: Monday night 110 mL, Tuesday 70/60 mL, Wednesday 55/50 mL, this morning 40 mL; Larkspur protocol is pull under 30 mL/24h for two consecutive days."
+- "Preferred pharmacy changed from Ostrander Millbrook to Ostrander Eastgate."
+- "Patient authorized husband Rob to participate and receive information."
+- "Medications: hydrocodone-acetaminophen 5/325, docusate, levothyroxine 75 mcg, birth control pill, vitamin D gummy; allergy: penicillin rash."
+- "Patient also taking Extra Strength Tylenol 2 tablets every 6 hours with Norco; nurse did not address total acetaminophen limit."
+- "Nurse gave conflicting advice: earlier no tub baths for two weeks, later recommended a warm bath."
+- "IVR issue: pressing 3 for prescription refills routed to billing, causing two failed attempts."
+- "Constipation: no bowel movement since Monday morning; advised OTC polyethylene glycol once daily and call if none by Saturday."
+- "Shoulder pain assessed as referred gas pain; red flags include sudden worsening, shortness of breath, or chest pain."
+- "Patient is a middle-school music teacher; sub through second week of October; needs work note at follow-up."
+- "Larkspur office to call Friday to schedule drain check, likely early next week."
+- "Nurse sent hydrocodone refill request to Dr. Vasquez-Lim's team; controlled refill cannot be written after hours by on-call PA."
+Need maybe include "No calf pain, swelling, SOB, chest pain." Could include.
+
+Action_items: Need decide list. Let's create robust but not insane. Use owner strings.
+1 Nurse Felipe: "Send hydrocodone refill request to Dr. Vasquez-Lim's team via message line." due "tonight".
+2 Nurse Felipe: "Update preferred pharmacy to Ostrander Pharmacy Eastgate." due "during call".
+3 Larkspur surgical team: "Call patient Friday to set up drain check." due "Friday".
+4 Larkspur surgical team: "Pull JP drain at drain check if output under 30 mL/24h for two days." due "at drain check".
+5 Patient/Rob: "Empty and record JP drain output twice daily, morning and evening." due "ongoing".
+6 Rob: "Pick up over-the-counter polyethylene glycol powder at Ostrander Eastgate." due "tomorrow after work".
+7 Patient: "Take polyethylene glycol powder once daily." due "ongoing".
+8 Patient/Rob: "Draw pen line around pink incision to monitor spread." due "unspecified".
+9 Patient: "Call Brightwater if temperature exceeds 101°F." due "if temperature exceeds 101°F".
+10 Patient: "Call Brightwater if no bowel movement by Saturday or belly becomes hard/swollen with vomiting." due "Saturday or if symptoms occur".
+11 Patient: "Call Brightwater if incision redness spreads past pen line, pus appears, or pain worsens." due "if symptoms occur".
+12 Patient: "Call Larkspur after-hours if drain site becomes very red, leaks around tube, or tube falls out." due "if symptoms occur".
+13 Patient: "Call 911 for sudden shoulder worsening, shortness of breath, chest pain, or one-sided leg swelling." due "if symptoms occur".
+14 Patient: "Use incentive spirometer 10 times per hour while awake." due "ongoing".
+15 Patient: "Walk regularly and stay hydrated." due "ongoing".
+16 Patient: "Avoid lifting over 10 pounds for two weeks." due "two weeks".
+17 Patient: "Do not drive while taking hydrocodone." due "while taking hydrocodone".
+18 Patient: "Avoid alcohol while taking hydrocodone." due "while taking hydrocodone".
+19 Patient: "Space NyQuil and hydrocodone by a couple of hours." due "ongoing".
+20 Patient: "Ask surgeon for work note at follow-up." due "at follow-up".
+21 Patient: "Attend follow-up with Dr. Vasquez-Lim at Larkspur." due "Friday, October 2, 2026 at 1:15 PM".
+22 Nurse Felipe: "Call patient back if call disconnects." due "if call disconnects".
+23 Patient: "Shower with drain pinned to lanyard and pat drain site dry." due "ongoing".
+24 Patient: "Hug pillow against abdomen when coughing." due "ongoing".
+25 Patient: "Avoid tub baths, hot tubs, and swimming for two weeks." due "two weeks". This is discharge instruction, despite nurse bath advice. Should include? It is stated earlier. Good.
+26 Patient: "Take a bath tonight"? Should we include? If include, conflict. Maybe not. But "every follow-up commitment" includes. Could include as "Patient: Take a bath tonight (contradicts discharge instruction; flagged)." But action_items task maybe should not editorial. Could include "Take a bath tonight" due "tonight". But then summary/flag. However if we include, it's factual. But might be seen as endorsing. The task is stated. The instruction says every follow-up commitment or task stated. It was stated by patient after nurse advice. I'd include? But due to safety, maybe include with "contrary to discharge instructions"? The schema doesn't forbid. But action_items are for follow-up commitments; if we include unsafe, maybe reviewer sees. But summary_notes already. Could omit because not a valid commitment? Hmm.
+Maybe include "Patient: Avoid tub baths despite nurse's bath suggestion; follow discharge instructions" but that's not stated. Better not.
+Could include "Patient: Take a bath tonight" and flag. But then action_items includes unsafe task. The field doesn't have safety. But call analysis should capture commitments. I'd include but maybe with task "Take a bath tonight (contradicts earlier no tub baths instruction)". Is that allowed? It's a task stated plus note. It may be okay. But due to concise, maybe omit to avoid propagating. The instruction says every follow-up commitment or task stated. It is a task. But if we omit, could be considered missing. Include with parenthetical.
+27 Patient: "Take a bath tonight (contradicts earlier no tub baths instruction)." due "tonight". But owner patient. Good.
+28 Patient: "Call Brightwater nurse line if disconnected, press four and ask for Felipe." due "if disconnected".
+29 Patient: "Follow up with billing/Larkspur number on statement if surgery bill questions." due "if statement received". Nurse said call number on statement. Could include.
+30 Patient: "Ask for option two for billing?" Not needed.
+
+Need action_items not too huge but okay. Ensure due strings not empty.
+
+Potential issue: "Larkspur surgical team" owner for call tomorrow. PA said "our office call you tomorrow, Friday". Good.
+
+Need JSON valid. No markdown. Ensure all required fields.
+
+Double-check schema: additionalProperties false. Top-level only required properties. flags items only type, description, evidence. action_items only owner, task, due. No extra.
+
+Need call_type enum exact: post_procedure_followup.
+outcome enum: escalated.
+sentiment_start: neutral. sentiment_end: positive.
+quality_score integer 2.
+quality_reasons array strings.
+flags array objects.
+action_items array objects.
+summary_notes string.
+notable_details array strings.
+
+Need maybe include "callback" outcome? Let's revisit. Main issue: caller wanted pain pills, drain, crummy. Pain pills: refill request sent, not resolved until tomorrow. Drain: PA answered and arranged callback. Crummy: assessed, instructions. The main issue maybe drain question resolved by PA? But also pending callback. Rule: escalated = handed to higher tier/clinician (use even if callback planned). So escalated.
+
+Sentiment_start: Could be negative? Let's think. The customer's sentiment in first minute of call: At 00:00:18 patient says "Four, Rob, it's four, not three. I told you." SPOUSE: "I didn't say anything." This is mild annoyance. At 00:00:27 IVR hold. No strong. At 00:03:57 sighs. But first minute maybe neutral. If first minute includes 00:18? No, first minute of call is 0-1. Use neutral. Last minute positive.
+
+Quality: Need maybe score 3? Let's weigh. The nurse was excellent, verified, escalated, empathetic. But two serious safety issues. The bath advice is a serious accuracy failure. Acetaminophen total is serious safety. Score 2. Good.
+
+Flags: Need maybe include "misinformation" for bath and "clinical_safety" for acetaminophen. If both clinical_safety, okay. The flag type enum. Let's choose:
+- type: "clinical_safety" description: "Nurse advised a tub bath despite earlier discharge instruction prohibiting tub baths for two weeks and despite incisions/JP drain." evidence bath quote.
+- type: "clinical_safety" description: "Nurse approved taking Extra Strength Tylenol with hydrocodone-acetaminophen without warning about total acetaminophen limit." evidence "No, you're good."
+Could also flag "misinformation" for bath? Maybe one flag can be misinformation: "Nurse gave conflicting wound-care advice by recommending a tub bath after stating no tub baths for two weeks." evidence. Type misinformation. But patient safety more important. Use clinical_safety.
+
+Need evidence for acetaminophen maybe include more context: "No, you're good." is verbatim but short. Good.
+
+Potential flag: "Nurse disclosed patient information to spouse before verifying spouse authorization?" Actually patient said husband on speaker and okay. Nurse verified patient first, then asked if someone with you, patient authorized. No.
+
+Potential flag: "Nurse said 'I'll call you right back' but later if drop said call back press four." Not missed.
+
+Potential flag: "Nurse said 'Larkspur is calling you tomorrow' but PA said office call tomorrow." okay.
+
+Potential flag: "Nurse updated pharmacy without verifying? Patient authorized." no.
+
+Potential flag: "Nurse gave incorrect follow-up date?" No, corrected.
+
+Potential flag: "Nurse said coffee fine, no alcohol, okay."
+
+Potential flag: "Nurse said Tylenol fine but didn't check total acetaminophen." yes.
+
+Potential flag: "Nurse recommended bath after no tub baths." yes.
+
+Potential flag: "Nurse said 'no tub baths, no hot tubs, no swimming for two weeks' then later 'nice warm bath'." Could flag misinformation. Good.
+
+Need maybe include "clinical_safety" for not escalating low-grade temp? Temp 100.8 post-op day 3, nurse said low-grade common, call if >101. That's reasonable. No flag.
+
+Need maybe include "clinical_safety" for not addressing possible infection redness? Nurse gave monitoring. okay.
+
+Need maybe include "clinical_safety" for not addressing constipation 3 days? Nurse addressed. okay.
+
+Need maybe include "clinical_safety" for not addressing NyQuil with hydrocodone? Nurse warned space. okay.
+
+Need maybe include "clinical_safety" for not addressing total acetaminophen. yes.
+
+Need maybe include "misinformation" for "Tylenol's fine" without limit. Could be misinformation. But clinical_safety.
+
+Now action_items: Need ensure due strings are not too long? okay.
+
+Let's craft JSON carefully. Need escape quotes? JSON strings with quotes inside? Use no unescaped double quotes inside strings. Evidence quotes contain double quotes? We need include verbatim quote without surrounding quotes? The evidence string can contain text with apostrophes. If it contains double quotes, need escape. Our evidence no double quotes except maybe not. Use single? Transcript has no double quotes in evidence. Good.
+
+Action_items task strings with parentheses okay. Need avoid unescaped double quotes. Use apostrophes? JSON strings can contain apostrophe. Good.
+
+Let's draft final JSON:
+{
+ "call_type": "post_procedure_followup",
+ "outcome": "escalated",
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 2,
+ "quality_reasons": [...],
+ "flags": [...],
+ "action_items": [...],
+ "summary_notes": "...",
+ "notable_details": [...]
+}
+
+Need ensure quality_reasons 2-5. Use 5.
+
+Action_items list maybe 25. Ensure each object has owner, task, due. Let's decide final list. Need not overdo but comprehensive. Include bath contradiction? I think include because stated. But maybe action_items should be valid follow-up commitments, not unsafe. The instruction says every follow-up commitment or task stated. It was stated. Include with parenthetical. But if we include, due tonight. It may be weird. Could include "Patient: Take a bath tonight (contradicts earlier no tub baths instruction)." This is factual and flags. Good.
+
+Also include "Patient: Avoid tub baths, hot tubs, and swimming for two weeks." This is also stated. Both contradictory. That's okay, captures conflict.
+
+Need include "Patient: Call Brightwater if disconnected and press four ask for Felipe." due if disconnected.
+
+Need include "Patient: Call Larkspur after-hours number on discharge sheet for drain issues." due if symptoms.
+
+Need include "Patient: Call number on Larkspur statement for billing questions." due if statement received.
+
+Need include "Patient: Ask for work note at follow-up." due at follow-up.
+
+Need include "Patient: Attend follow-up." due date.
+
+Need include "Patient: Keep walking." due ongoing.
+
+Need include "Patient: Drink water." due ongoing.
+
+Need include "Patient: Use incentive spirometer." due ongoing.
+
+Need include "Patient: Hug pillow when cough." due ongoing.
+
+Need include "Patient: Shower with drain pinned." due ongoing.
+
+Need include "Patient: No lifting >10 lbs." due two weeks.
+
+Need include "Patient: No driving while on narcotic." due while on hydrocodone.
+
+Need include "Patient: No alcohol while on hydrocodone." due while on hydrocodone.
+
+Need include "Patient: Space NyQuil and hydrocodone." due ongoing.
+
+Need include "Patient: No climbing on belly/jumping for couple weeks." due two weeks.
+
+Need include "Patient: Gentle hug sitting from side." due ongoing.
+
+Maybe too many. But okay.
+
+Need action_items due for "ongoing" maybe "ongoing". Good.
+
+Potential issue: "Patient: Take a bath tonight (contradicts earlier no tub baths instruction)." The task is not a follow-up commitment? It is. Good.
+
+Need maybe owner "Patient/Rob" for tasks involving Rob. Good.
+
+Let's ensure no duplicate too much. Could combine safety calls into one? But every threshold maybe separate. Fine.
+
+Notable_details: Need maybe include "No calf pain, swelling, SOB, chest pain reported." Good.
+
+Let's count summary words again maybe okay.
+
+Need final output only JSON. No markdown. Ensure valid JSON. Let's construct carefully.
+
+Double-check evidence quotes exact:
+Bath evidence: "Honestly, a nice warm bath would help with the soreness. Just relax in the tub for a bit, get those back muscles to loosen up. Heat's great for that." Contains apostrophe Heat's, okay.
+Acetaminophen evidence: "No, you're good." Contains apostrophe, okay.
+
+Quality reasons:
+- "Verified identity and documented spouse authorization."
+- "Escalated drain question to on-call surgical PA and arranged drain-check call."
+- "Provided conflicting bath advice after stating no tub baths for two weeks."
+- "Failed to warn about acetaminophen maximum when approving Tylenol with Norco."
+- "Long hold and technical issues, but staff remained empathetic and thorough."
+Good.
+
+Flags descriptions one sentence. Good.
+
+Action_items: Need due for "tonight" etc. Use "tonight" for refill. "during call" for pharmacy. "Friday" for Larkspur call. "at drain check" for pull. "ongoing". "tomorrow after work". "Saturday or if symptoms occur". "if symptoms occur". "if temperature exceeds 101°F". Use degree symbol okay. JSON UTF-8. Good.
+
+Potential issue: action_items "Patient: Take a bath tonight (contradicts earlier no tub baths instruction)." due "tonight". This may be considered not a valid follow-up because unsafe. But okay.
+
+Need maybe include "Patient: Avoid tub baths, hot tubs, and swimming for two weeks." due "two weeks". Good.
+
+Need maybe include "Patient: Call Brightwater if no bowel movement by Saturday or belly hard/swollen with vomiting." due "Saturday or if symptoms occur". Good.
+
+Need maybe include "Patient: Call Brightwater if incision redness spreads past pen line, pus appears, or pain worsens." due "if symptoms occur". Good.
+
+Need maybe include "Patient: Call Larkspur after-hours if drain site becomes very red, leaks around tube, or tube falls out." due "if symptoms occur". Good.
+
+Need maybe include "Patient: Call 911 for sudden shoulder worsening, shortness of breath, chest pain, or one-sided leg swelling." due "if symptoms occur". Good.
+
+Need maybe include "Patient: Call Brightwater if disconnected, press four and ask for Felipe." due "if disconnected". Good.
+
+Need maybe include "Patient: Call number on Larkspur statement for billing questions." due "if statement received". Good.
+
+Need maybe include "Patient: Ask surgeon for work note at follow-up." due "at follow-up". Good.
+
+Need maybe include "Patient: Attend follow-up with Dr. Vasquez-Lim at Larkspur." due "Friday, October 2, 2026 at 1:15 PM". Good.
+
+Need maybe include "Patient: Use incentive spirometer 10 times per hour while awake." due "ongoing". Good.
+
+Need maybe include "Patient: Hug pillow against abdomen when coughing." due "ongoing". Good.
+
+Need maybe include "Patient: Shower with drain pinned to lanyard and pat drain site dry." due "ongoing". Good.
+
+Need maybe include "Patient: Avoid lifting over 10 pounds for two weeks." due "two weeks". Good.
+
+Need maybe include "Patient: Do not drive while taking hydrocodone." due "while taking hydrocodone". Good.
+
+Need maybe include "Patient: Avoid alcohol while taking hydrocodone." due "while taking hydrocodone". Good.
+
+Need maybe include "Patient: Space NyQuil and hydrocodone by a couple of hours." due "ongoing". Good.
+
+Need maybe include "Patient: Avoid tub baths, hot tubs, and swimming for two weeks." due "two weeks". Good.
+
+Need maybe include "Patient: Take a bath tonight (contradicts earlier no tub baths instruction)." due "tonight". Good.
+
+Need maybe include "Patient: Keep walking and stay hydrated." due "ongoing". Good.
+
+Need maybe include "Patient: Take polyethylene glycol powder once daily." due "ongoing". Good.
+
+Need maybe include "Rob: Pick up over-the-counter polyethylene glycol powder at Ostrander Eastgate." due "tomorrow after work". Good.
+
+Need maybe include "Patient/Rob: Empty and record JP drain output twice daily, morning and evening." due "ongoing". Good.
+
+Need maybe include "Patient/Rob: Draw pen line around pink incision to monitor spread." due "unspecified". Good.
+
+Need maybe include "Nurse Felipe: Send hydrocodone refill request to Dr. Vasquez-Lim's team via message line." due "tonight". Good.
+
+Need maybe include "Nurse Felipe: Update preferred pharmacy to Ostrander Pharmacy Eastgate." due "during call". Good.
+
+Need maybe include "Nurse Felipe: Call patient back if call disconnects." due "if call disconnects". Good.
+
+Need maybe include "Larkspur surgical team: Call patient Friday to set up drain check." due "Friday". Good.
+
+Need maybe include "Larkspur surgical team: Pull JP drain at drain check if output under 30 mL/24h for two days." due "at drain check". Good.
+
+This is many but valid.
+
+Need ensure no action_items due empty. Good.
+
+Notable_details: Need maybe include "Patient initially said surgery on twelfth, corrected to Monday September 21." Good.
+"Follow-up initially said twelfth, corrected to Friday October 2 at 1:15 PM." Good.
+"Temperature current 100.8 this afternoon; spouse mentioned 101.8 last night." Good.
+"Drain output values." Good.
+"Pharmacy changed." Good.
+"Spouse authorized." Good.
+"Medications/allergy." Good.
+"Tylenol total issue." Good.
+"Bath conflict." Good.
+"IVR issue." Good.
+"Constipation." Good.
+"Shoulder gas." Good.
+"Work note." Good.
+"Larkspur call Friday." Good.
+"Refill controlled after hours." Good.
+"Red flags denied." Good.
+
+Need maybe include "Patient's name spelled Tessaro-Blythe." Could include. Not necessary but notable. Add maybe.
+
+Need ensure summary_notes at most 120 words. It is 90. Good.
+
+Potential issue: JSON with degree symbol and en dash? okay. Use ASCII maybe. Use 101°F okay. Could use 101 F to avoid. But JSON supports Unicode. Fine.
+
+Potential issue: "Ostrander Pharmacy, Eastgate counter" vs "Ostrander Eastgate". Use final. Good.
+
+Potential issue: call_type maybe "post_procedure_followup" not "post_procedure_follow-up". Enum exact. Good.
+
+Potential issue: outcome "escalated" because PA conferenced. Good.
+
+Potential issue: sentiment_start maybe negative? Let's reconsider. The first minute of call includes patient on hold? At 00:00:18 she says "Four, Rob, it's four, not three. I told you." That's slightly irritated. But not necessarily negative. At 00:00:27 IVR says all nurses busy. She doesn't speak until 03:57. First minute neutral. Good.
+
+Potential issue: quality_score 2 due serious failures. Good.
+
+Need final only JSON. Ensure no trailing commas. Let's write final.

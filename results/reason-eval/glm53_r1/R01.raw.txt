@@ -1,0 +1,34 @@
+## Missed issues
+
+1. **Tallis cannot yet run union payroll rules — the memo's own #1 pain point.** Shift-differential and overtime-averaging are "on the roadmap for Q3" (App. 4), not shipped. With 4 of 9 sites unionized and payroll errors the top grievance source, Ferncliff would go live running manual workarounds for exactly the sites where errors hurt most — and even if Q3 lands, it would be unproven code at go-live. A roadmap promise is not a contract term. Evidence: App. 4 vs. Context.
+
+2. **The price score measures the wrong year, inverting the real ranking.** Price (25% weight) was scored on the discounted year-1 subscription only. On 3-year total cost, Tallis is ≈ $277k in year 1 (incl. the $95k implementation fee) plus $303k/yr escalating up to 8% — roughly $0.9–0.96M all-in — versus Corvane at $708k (fixed, implementation included) and Meridew at ≈ $690k (3% cap, $30k implementation). Tallis is the *most expensive* option by roughly $180–250k yet scored 9/10 on price; Meridew, the actual cheapest, scored 7. Evidence: App. 1 vs. the matrix.
+
+3. **The uptime score rewards marketing, not contract.** Tallis got 10/10 for a 99.99% figure from its marketing page while its draft contract contains no uptime SLA ("commercially reasonable efforts"); Corvane and Meridew commit to 99.9% with service credits. The 15%-weight advantage doesn't exist contractually — Tallis is the only vendor with *no* enforceable uptime commitment for a system that schedules 1,400 people and runs payroll. Evidence: App. 2 vs. the matrix row "Uptime (vendor-reported)".
+
+4. **The references prove nothing about Ferncliff's profile.** Tallis's three references have 60–190 employees, are single-site and non-union; Ferncliff is 1,400 employees across 9 sites, 4 unionized. "Set up in six weeks; managers love the app" is evidence for a 60-person site, not a 9-site unionized rollout. The on-point references — Corvane's 2,000-employee unionized distributor, Meridew's multi-site retailers — scored *lower* on this criterion. Evidence: App. 3 vs. Context.
+
+5. **Vendor viability and exit costs are unpriced.** Tallis is 3 years old, has 40 employees, and is raising its next round; its contract carries a 6-month-fee termination charge and exports historical payroll data only in its own format. A payroll platform must outlive the vendor's funding cycle, and Ferncliff needs portable payroll history for audits and grievances. Worst-case cost of a Tallis failure appears nowhere in the scoring. Evidence: App. 5, 6.
+
+6. **The scoring process is single-scorer, script-dependent, and arithmetically wrong.** The recommending Director scored all demos alone, using each vendor's own demo script — a method that systematically rewards the most polished demo, which is where Tallis's 9 on the 30%-weight features criterion comes from (a 9 for a product missing union rules shows the criterion wasn't anchored to Ferncliff's requirements). Separately, the weights sum to 110% (30+25+20+15+10+10), so the headline totals of 9.75/7.90/7.65 are not valid as computed. Evidence: Rationale bullet 1; the matrix.
+
+7. **The six people who will run the system daily never saw a demo.** The payroll team was excluded, yet "ease of use" carries 20% and was scored by someone who won't operate the tool. They are also the people who could validate union-rule configuration in a sandbox within days. Evidence: App. 7.
+
+8. **The Friday deadline is vendor leverage, not a Ferncliff constraint.** Signing this week locks a 40%-off teaser year (saving only ~$32–54k against the alternatives' year 1) while leaving uncapped up-to-8% escalators in the expensive years un-negotiated. With 11 months to end-of-support, 2–3 weeks of validation costs nothing strategically. Evidence: Recommendation; App. 1; Context.
+
+## Looks like a problem but isn't
+
+- **Security:** all three have SOC 2 Type II reports with no exceptions found by IT — adequately handled.
+- **ERP integration:** prebuilt connectors plus a tested sample payroll journal export is reasonable evidence at selection stage; full parallel testing belongs in implementation.
+- **Support:** 24/7 with a 1-hour response for payroll-blocking issues, written into all three draft contracts — comparable and contractual.
+- **The 99.99% vs. 99.9% digits themselves** (~53 min vs. ~8.8 h downtime/year) are immaterial at payroll cadence — the issue is that only two vendors put any number in the contract, not the gap between them.
+
+## Top 3 priorities
+
+1. **Make union payroll capability a contractual go/no-go.** Before any signature, Tallis must commit shift-differential and overtime-averaging rules to a pre-go-live date in the contract, with remedies for slippage, and prove them in a sandbox configured with Ferncliff's actual union rules. If Tallis won't, disqualify it — this is the capability Ferncliff is buying the system to fix.
+2. **Re-score price on 3-year total cost** (subscriptions + escalators + implementation fees). Tallis is the most expensive option at ~$0.9–0.96M vs. Corvane's $708k and Meridew's ~$690k. This also removes the Friday-expiry rationale, which locks only the teaser year.
+3. **Reconcile the contract with the scores, and fix the process.** Tallis's no-SLA uptime, proprietary-format data export, and 6-month termination fee must either be contracted around (uptime SLA with credits, standard-format export, source-code escrow or successor terms) or reflected in its scores; and re-run the scoring with weights that sum to 100% and the payroll team scoring ease of use.
+
+## Bottom line
+
+The recommendation does not stand: every Tallis advantage in the matrix — price, uptime, features, references — dissolves under the appendix, while it lacks the one capability Ferncliff most needs (union payroll) and carries the weakest contract and exit terms. Do not sign Friday; the expiry only locks a discounted year 1 ahead of uncapped escalators. Spend the next two to three weeks on payroll-team demos, a union-rules sandbox test, a TCO re-score, and contract fixes, then decide. Corvane and Meridew both already clear the bar Tallis fails, so slowing down carries no real risk of missing the end-of-support deadline.

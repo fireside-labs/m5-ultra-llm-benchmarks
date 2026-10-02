@@ -1,0 +1,254 @@
+
+We need answer user's request: analyze transcript and return ONE JSON object conforming schema, no markdown. Need produce final JSON only.
+
+Need carefully analyze transcript.
+
+Call: patient calls scheduling to double-check endoscopy instructions. Main purpose? Pre-procedure instructions? It's scheduling line but caller asks about procedure time/location, fasting instructions, driver. Could be pre_procedure because pre-procedure instructions. Call_type enum includes pre_procedure. Main purpose: checking pre-procedure details/instructions. Could be scheduling because appointment time/location changed. But field rules: pre_procedure = pre-admission or pre-procedure instructions. The caller's main goal is double-check things before endoscopy, including fasting instructions. So pre_procedure likely.
+
+Outcome: main issue? She had conflicting fasting instructions; agent couldn't answer, sent urgent message to pre-procedure nurse team to call back today. Also corrected time/location and email. Main issue pending nurse callback. Outcome callback. Could be resolved? She got corrected appointment info, but fasting instruction unresolved pending callback. Since main issue pending specific follow-up contact, callback.
+
+Sentiment start: caller starts friendly, laughs, neutral/positive? "Hi Celeste... double-check... before I lose my mind [laughs]" likely positive or neutral. Sentiment_start enum negative neutral positive. I'd choose positive? She is friendly, laughing. But "lose my mind" mild frustration. Maybe neutral? Need customer sentiment first minute. She is polite, laughs. Positive. End: "Perfect. Thank you so much... really helpful." positive.
+
+Quality score: Agent verified identity (name, DOB, last four phone). Corrected appointment time/location, updated email, noted electronic preference, parking validation, driver requirement. Did not guess clinical instruction, escalated urgent to nurse team, reported discrepancy. Some issues: long hold? She mentions queue, music repeated; agent had system loading, mute, headset glitch, background noise, small talk. But handled well. Score 4? Good with minor issues (long unannounced hold? system delays, background noise). Could be 5? There was a wait in queue and repeated music, but not necessarily staff failure. Agent had unannounced mute? She said sneezed and hit mute, not major. System loading delays. Maybe 4. Need quality_reasons 2-5.
+
+Flags: Need compliance/privacy/security/accuracy problems. Identity verification done. Disclosure? Agent disclosed appointment details after verification. No unauthorized. Clinical safety? Conflicting fasting instructions could be patient safety issue, but agent escalated appropriately. Should we flag misinformation? The packet and text conflicting; not necessarily staff misinformation. Could flag "other" for conflicting pre-procedure instructions causing safety risk? But flags are problems in how call handled. The conflicting instructions are a process issue, not call handling? Could flag "clinical_safety" because patient received conflicting fasting instructions and needed urgent nurse clarification. Evidence: "The packet says nothing to eat or drink after midnight. But I already got a text this morning... clear liquids are fine up to two hours before arrival." Is that a flag? It is a patient-safety issue, even if handled correctly? Instructions: flags: compliance, privacy, security, patient-safety, or accuracy problems in how the call was handled, and commitments made without authority or not kept. Examples: symptom warranted escalation but dismissed; incorrect information given. Do NOT flag things handled correctly. Here conflicting instructions are a patient-safety/accuracy problem in communications, but agent handled correctly. Should we flag? It says flags problems in how the call was handled. The conflicting instructions were not in how call handled, but a system issue. Could still be patient-safety flag? Need be careful. Maybe no flags because agent verified, escalated, no unauthorized commitments. But there is a missed commitment? Email update went to old email, patient not notified of time/location change. That's a missed commitment? The business failed to notify patient of updated appointment. Flag type missed_commitment? Description: appointment update was sent only by email to outdated address, so patient was not notified of changed time/location. Evidence: "it looks like the update went out by email only, and I see the email on your file might be an old one." This is a commitment? Not exactly a promised callback, but a failure to notify. Could be policy_violation? Maybe "missed_commitment" if they committed to send updates but didn't. But flag examples include promised callback/transfer not happened. This is a communication failure. Could flag "other" or "policy_violation"? Need not overflag. The patient wasn't told of changed time/location; that's significant. But was it handled correctly during call? Agent corrected. The flag could be about prior notification failure. Type maybe "missed_commitment" or "other". The schema allows other. But instructions: flags compliance, privacy, security, patient-safety, or accuracy problems in how the call was handled, and commitments made without authority or were not kept. The old email notification is an accuracy/communication problem, not necessarily call handling. Could include as flag type "other" description: Appointment change was communicated only to outdated email, causing patient to arrive wrong time/location. Evidence. But is that a flag? It might be useful. However "Do NOT flag things that were handled correctly" - the call handled it correctly, but the prior process failed. The flag is not about call handling? Hmm.
+
+Also conflicting fasting instructions: patient-safety issue. Agent escalated. Could flag "clinical_safety" because conflicting NPO instructions could lead to cancellation/aspiration risk. But agent didn't dismiss. Flag could be about the conflicting instructions themselves. The examples: "a symptom that warranted escalation but was dismissed" not this. "incorrect information given to customer" - the text/packet gave conflicting info, but not by agent. Could flag misinformation? The text says clear liquids up to two hours before arrival, packet says nothing after midnight. Which is correct unknown. It's conflicting clinical instructions. Could be patient-safety. But if we flag, evidence quote. Need decide.
+
+Action items:
+- Agent: send urgent message to pre-procedure nurse team to call patient back today with correct eating/drinking instructions. Due today (before 5? "same day before five"). Owner agent? task send urgent message. Due today.
+- Pre-procedure nurse team: call patient back today with correct fasting instructions. Due today before 5.
+- Agent/team lead: report conflicting packet/text instructions to team lead for correction. Due unspecified? "I'm also reporting it to my team lead so someone fixes it." Could be agent, task report discrepancy, due unspecified or today? Not explicit. Could include due unspecified.
+- Patient: arrange adult driver for Friday, bring parking ticket for validation? These are instructions, not necessarily commitments? Action items every follow-up commitment or task stated. Patient needs to bring ticket, arrange driver. Could include owner patient, task bring parking ticket to front desk for validation, due Friday May 8. Owner patient, task arrange adult driver, due Friday May 8. But action_items likely staff follow-ups. But "every follow-up commitment or task stated" includes customer tasks. Need include? Could include patient tasks. Due Friday May 8. Also patient update email? Agent updated email, done. Note electronic preferred done.
+- Agent: update email, note electronic preference. Already done, not follow-up? Could omit completed tasks. Action items are follow-up commitments/tasks. Include pending.
+
+Summary notes: concise <=120 words. Include patient Ottoline Ferraby-Nkemelu, DOB 10/02/1992, upper endoscopy Dr. Halvorsen-Adu Friday May 8, corrected arrival 7:00 a.m. Westbrook endoscopy center second floor (not 7:30 Main Street). Conflicting fasting instructions: packet NPO after midnight vs text clear liquids up to 2 hours before arrival; agent sent urgent message to pre-procedure nurse team for same-day callback before 5. Email updated to ottoline.f-n@gmail.com, electronic preferred. Parking validation at front desk; adult driver required due sedation.
+
+Notable details: corrected date/time/location, email, phone last four, name spelling, DOB, conflicting instructions, parking validation, driver, system delays, queue wait, background noise? Need specific details reviewer shouldn't miss. Include final corrected values. Maybe include "Friday May 8" not May 8? Date/time call 2026-05-04, Friday May eighth. Need note year? 2026. Use final values. Include "arrival 7:00 a.m. not 7:30", "Westbrook endoscopy center second floor not Main Street", "email updated", "electronic preferred", "phone ending 8133", "parking validation", "adult driver required", "conflicting fasting instructions", "nurse callback today before 5", "reported discrepancy to team lead". Maybe "patient's letter said 7:30 Main Street".
+
+Need ensure JSON valid, no markdown. Need no extra properties.
+
+Potential flags: Let's think deeply. The call had identity verification. No privacy disclosure before verification. No unauthorized commitment. Agent promised nurse callback today; that's within process? "Their messages are answered same day before five, and I'm marking it urgent." Is that an unauthorized commitment? It's a commitment to callback today. Is it within authority? Probably yes, pre-procedure nurse team same day. But if not guaranteed? She says will call back today. Could be okay. No missed commitment.
+
+Quality issues: The agent had multiple interruptions, background noise, mute, system loading, small talk. But not serious. Score 4.
+
+Flags: Should we include a flag for "missed_commitment" due to appointment update not sent to current email? The transcript: "it looks like the update went out by email only, and I see the email on your file might be an old one." This is a failure to notify patient of changed appointment. It's an accuracy/communication problem. It may be a flag type "other" or "policy_violation". The flag type enum includes "other". Description: "Appointment time/location change was communicated only by email to an outdated address, so the patient was not notified." Evidence: "it looks like the update went out by email only, and I see the email on your file might be an old one." This is not a commitment made during call, but a missed commitment by organization to notify. Could be "missed_commitment"? The commitment was to send updates? Not explicit. "other" safer.
+
+Conflicting fasting instructions: Could flag "clinical_safety" or "misinformation". The patient received conflicting instructions; agent escalated. If we flag, description: "Patient received conflicting pre-procedure fasting instructions (NPO after midnight vs clear liquids up to 2 hours before arrival), creating safety/cancellation risk." Evidence: "The packet says nothing to eat or drink after midnight. But I already got a text this morning, a reminder, and it says clear liquids are fine up to two hours before arrival." This is a patient-safety issue. But instructions say flags problems in how the call was handled. The call handled by escalating. However the existence of conflicting instructions is a patient-safety problem that a reviewer should flag. The examples include "incorrect information given to the customer" - here customer got conflicting info from org. Could flag "misinformation" or "clinical_safety". Which type? "clinical_safety" seems apt because fasting instructions affect sedation safety. But the agent didn't give incorrect info. The flag could be about the org's communications. The schema doesn't restrict to agent. It says flags compliance, privacy, security, patient-safety, or accuracy problems in how the call was handled, and commitments... Hmm "in how the call was handled" might exclude prior communications. But the call revealed a patient-safety issue. I think include one flag for conflicting instructions as clinical_safety, because it's important. But risk: "Do NOT flag things that were handled correctly" - the conflicting instructions were not handled incorrectly on the call, but the issue itself is a safety problem. The flag description can say "conflicting instructions were provided to patient" not agent mishandling. It's still a flag.
+
+Could also flag "other" for outdated email notification. Maybe two flags. Need not overflag? The prompt wants flags for compliance, privacy, security, patient-safety, accuracy problems. The outdated email is accuracy/communication. The conflicting instructions is patient-safety. Include both? Might be too many but okay. Need evidence verbatim short. Ensure evidence quotes from transcript exactly? Use verbatim. For outdated email: "it looks like the update went out by email only, and I see the email on your file might be an old one." That's verbatim except capitalization? Transcript: "it looks like the update went out by email only, and I see the email on your file might be an old one." Good.
+
+For conflicting: "The packet says nothing to eat or drink after midnight. But I already got a text this morning, a reminder, and it says clear liquids are fine up to two hours before arrival." Good.
+
+But if we include clinical_safety flag, quality_score maybe 4 because agent escalated. If no flags, score 4 still. Which is expected? The call had a serious issue: patient almost arrived wrong time/location due to outdated email. That's a flag. Also conflicting fasting instructions. I'd include both.
+
+Need consider "unauthorized_commitment" for agent saying "you'll hear from the nurse team today". Is that a commitment outside authority? She says messages answered same day before five, marking urgent. Probably okay. But if nurse team may not call? It's a commitment. Could be okay. No flag.
+
+Need action_items due: For nurse callback: due "today before 5". For agent send urgent message: due "today". For report discrepancy: due "unspecified" or "today"? She says "I'm also reporting it to my team lead" present, likely immediate. Could due "unspecified". For patient tasks: bring parking ticket due "Friday May 8"; arrange adult driver due "Friday May 8". Should we include patient tasks? The schema owner can be customer/patient. It says every follow-up commitment or task stated. Yes include. But summary maybe enough. Need not include completed tasks. Include pending.
+
+Potential action item: "Agent: update email" completed during call, not follow-up. Omit. "Agent: note electronic preferred" completed. Omit.
+
+Need ensure due strings. Use "today before 5 p.m." for nurse callback. "today" for urgent message. "unspecified" for report discrepancy. "Friday, May 8" for patient tasks.
+
+Call_type: pre_procedure. Could be scheduling? Let's evaluate: The main purpose: "I've got an endoscopy coming up on Friday and I just want to double-check a couple of things". She asks time/location, fasting, driver, parking. This is pre-procedure instructions. Use pre_procedure.
+
+Outcome: callback. Because nurse callback pending. Even though some resolved. Use callback.
+
+Sentiment_start: positive? Let's decide. First minute: caller says "Hi Celeste... double-check... before I lose my mind. [laughs]" Agent laughs. She seems friendly but mildly stressed. Sentiment categories: negative, neutral, positive. "before I lose my mind" could be negative/frustrated, but laughs. Maybe neutral. The first minute includes verification and then "What? Westbrook? Nobody told me that." at 00:12, still within first minute? Actually first minute up to 00:01:00 includes "What? Westbrook? Nobody told me that." That's negative surprise. But sentiment_start should customer's sentiment in first minutes. She starts positive/neutral then becomes negative upon learning change. Which to choose? Need first minute overall. At 00:00:07 friendly. At 00:01:12 "What? Westbrook? Nobody told me that." That's negative. But first minute maybe before 00:01:00, she hasn't reacted yet. The call-relative first minute includes up to 00:01:00: she says "What? Westbrook? Nobody told me that." at 00:01:12 just after. Hmm. "first and last minutes" approximate. Start could be neutral/positive. I'd choose neutral because she is checking and mildly anxious, not clearly positive. But she laughs. End positive. Many QA would mark positive start if friendly. Need choose one. Let's inspect: "Hi Celeste. I've got an endoscopy coming up on Friday and I just want to double-check a couple of things before I lose my mind. [laughs]" This is humorous, positive/neutral. I'd say positive? But "lose my mind" indicates stress. Maybe neutral is safer. Sentiment_start neutral, sentiment_end positive.
+
+Quality_score: 4. Reasons: verified identity; corrected appointment details; escalated clinical question appropriately; updated contact preference; minor issues with system delays/background noise and prior notification failure. Need 2-5 short specific. Could include "Handled conflicting fasting instructions by urgent nurse escalation rather than guessing." Good.
+
+Flags: Need type enum. For outdated email: type "other" or "policy_violation"? It's a notification failure. "missed_commitment" maybe if they committed to send updates. But no explicit commitment. Use "other". Description: "Appointment change was sent only to an outdated email, so the patient was not notified of the new time and location." Evidence. For conflicting instructions: type "clinical_safety". Description: "Patient received conflicting pre-procedure fasting instructions, creating a safety/cancellation risk." Evidence. Could also type "misinformation". Which is better? Clinical safety because sedation. Use clinical_safety.
+
+But if flag says "patient received conflicting instructions" not necessarily call handling. It's okay.
+
+Need ensure evidence quotes are short verbatim. Use exact from transcript. For clinical: "The packet says nothing to eat or drink after midnight. But I already got a text this morning, a reminder, and it says clear liquids are fine up to two hours before arrival." That's long but okay. Could shorten: "The packet says nothing to eat or drink after midnight. But I already got a text this morning... clear liquids are fine up to two hours before arrival." But evidence should be verbatim; ellipsis maybe not verbatim? Better full quote. It's okay.
+
+For outdated email: "it looks like the update went out by email only, and I see the email on your file might be an old one." Good.
+
+Could flag "identity_verification"? No, verification happened. Do not flag.
+
+Could flag "security" for patient saying email? No.
+
+Need action_items owner strings: "agent", "pre-procedure nurse team", "team lead", "patient". Due. For report discrepancy: owner "agent" or "scheduling team"? She says reporting to team lead. Task "Report conflicting packet/text fasting instructions to team lead for correction." Due "unspecified". Could owner "agent". Good.
+
+Need summary_notes <=120 words. Let's draft:
+"Patient Ottoline Ferraby-Nkemelu (DOB 10/02/1992) called to confirm upper endoscopy with Dr. Halvorsen-Adu on Friday, May 8. Corrected appointment: arrive 7:00 a.m. at Westbrook endoscopy center, second floor, not 7:30 a.m. at Main Street. Conflicting fasting instructions: packet says NPO after midnight; text says clear liquids up to 2 hours before arrival. Agent sent urgent message to pre-procedure nurse team for same-day callback before 5 p.m. and reported discrepancy. Email updated to ottoline.f-n@gmail.com; electronic preferred. Parking validation available at front desk; adult driver required due sedation."
+Count words: Patient1 Ottoline2 Ferraby-Nkemelu3 DOB4 10/02/19925 called6 to7 confirm8 upper9 endoscopy10 with11 Dr.12 Halvorsen-Adu13 on14 Friday,15 May16 8.17 Corrected18 appointment:19 arrive20 7:0021 a.m.22 at23 Westbrook24 endoscopy25 center,26 second27 floor,28 not29 7:3030 a.m.31 at32 Main33 Street.34 Conflicting35 fasting36 instructions:37 packet38 says39 NPO40 after41 midnight;42 text43 says44 clear45 liquids46 up47 to48 249 hours50 before51 arrival.52 Agent53 sent54 urgent55 message56 to57 pre-procedure58 nurse59 team60 for61 same-day62 callback63 before64 565 p.m.66 and67 reported68 discrepancy.69 Email70 updated71 to72 ottoline.f-n@gmail.com;73 electronic74 preferred.75 Parking76 validation77 available78 at79 front80 desk;81 adult82 driver83 required84 due85 sedation.86 Good.
+
+Notable_details array:
+- "Patient: Ottoline Ferraby-Nkemelu, DOB 10/02/1992, phone ending 8133."
+- "Procedure: upper endoscopy with Dr. Halvorsen-Adu on Friday, May 8, 2026."
+- "Corrected arrival: 7:00 a.m. at Westbrook endoscopy center, second floor; original letter said 7:30 a.m. at Main Street."
+- "Conflicting fasting instructions: packet says nothing to eat or drink after midnight; text says clear liquids up to 2 hours before arrival."
+- "Email updated to ottoline.f-n@gmail.com; patient prefers electronic communications."
+- "Parking validation available at front desk; patient must bring parking ticket."
+- "Adult driver required after sedation; no taxis or rideshares alone."
+- "Pre-procedure nurse team to call back today before 5 p.m. with fasting instructions."
+- "Agent reported conflicting instructions to team lead."
+Maybe include "Call had system delays, mute, background noise, and queue wait." Not necessary but notable? Could include. But not too many. Use final corrected values.
+
+Need JSON only. Ensure no trailing commas. Validate schema:
+required all. additionalProperties false.
+flags items required type description evidence. action_items owner task due.
+quality_score integer 1-5.
+sentiment enums.
+call_type enum.
+outcome enum.
+
+Potential issue: "due" for action item "today before 5 p.m." okay. "Friday, May 8" okay.
+
+Need think if call_type could be scheduling. The main purpose includes appointment time/location change. But pre_procedure more specific. Use pre_procedure.
+
+Need think if outcome should be escalated? Agent sent urgent message to nurse team, not necessarily transferred. Outcome definitions: escalated = handed to supervisor, higher tier, clinician or another team (use even if callback planned). Here agent sent urgent message to pre-procedure nurse team, another team/clinician. That is escalation. But also callback. Which to choose? Outcome enum single. Definitions: escalated = handed to a supervisor, higher tier, clinician or another team (use this even if a callback is also planned); callback = main issue pending a specific follow-up contact. Here main issue pending nurse callback, and it was handed to nurse team. The instruction says use escalated even if callback also planned. So outcome should be escalated, not callback. Important. The agent didn't transfer live, but sent urgent message to nurse team. Is that "handed to ... another team"? Yes. "send an urgent message right now to the pre-procedure nurse team, and ask them to call you back". That's handing to another team. Use escalated. But if no live handoff, still escalated. The outcome definitions: callback = main issue pending a specific follow-up contact. escalated = handed to supervisor, higher tier, clinician or another team (use this even if a callback is also planned). So choose escalated. Need adjust summary maybe. Outcome escalated.
+
+Sentiment_end positive.
+
+Quality_score maybe 4. If outcome escalated, okay.
+
+Flags: If agent escalated appropriately, no flag for clinical safety? The conflicting instructions still a patient-safety issue. But maybe flag should be for "clinical_safety" because conflicting instructions could be dangerous. It was escalated, but flag can note issue. However "Do NOT flag things that were handled correctly" might mean don't flag the escalation. But the conflicting instructions themselves are a problem. I'd include. But if the flag type clinical_safety description says "Patient received conflicting pre-procedure fasting instructions..." It's not a handling failure by agent, but a patient-safety problem. The prompt says flags: compliance, privacy, security, patient-safety, or accuracy problems in how the call was handled, and commitments... It might expect flags for issues in call handling, not external. But the conflicting instructions were provided by the organization, and the call revealed it. It is an accuracy problem. I think include.
+
+Outdated email notification: Is that a flag? It is a prior communication failure. Could be "other". It is important. Include.
+
+Could there be a flag for "privacy_disclosure" because agent disclosed appointment details after verification? No.
+
+Could there be a flag for "policy_violation" because agent disclosed background noise/neighbor's parrot? No.
+
+Could there be a flag for "security" because patient said email aloud? No.
+
+Need maybe include "unauthorized_commitment" for agent promising nurse callback today? Let's examine: "Their messages are answered same day before five, and I'm marking it urgent." This is a commitment to same-day callback. If policy says messages answered same day before five, okay. Not unauthorized. No flag.
+
+Need maybe include "missed_commitment" for email update? The organization had commitment to send appointment updates? The agent says update went out by email only to old email. That's a missed notification. Use other.
+
+Quality_reasons: Need 2-5 short specific. Could include:
+- "Verified identity with name, DOB, and phone last four before discussing appointment."
+- "Corrected appointment time and location and updated email/contact preference."
+- "Escalated conflicting fasting instructions to pre-procedure nurse team rather than guessing."
+- "Minor handling issues: system delays, mute, background noise, and prior notification failure."
+This is 4. Good.
+
+Need ensure quality_score 4 due minor issues. If flags include serious patient-safety, maybe score 3? The agent handled well, but the organization had serious issues. Quality_score rates staff handled call overall. Staff handled well, but prior notification failure maybe not staff? The call had system delays. 4. If conflicting instructions not staff's fault. 4.
+
+Need maybe include action item for "team lead: correct conflicting packet/text instructions" due unspecified. Owner team lead? Agent reported to team lead, but task for team lead? The stated commitment: "I'm also reporting it to my team lead so someone fixes it." Action item owner agent to report; owner team lead to fix? Could include both? "every follow-up commitment or task stated". The fix is implied but not explicit owner. Could include owner "team lead" task "Correct conflicting fasting instruction communications" due unspecified. But maybe too inferred. Better owner "agent" task "Report conflicting packet/text fasting instructions to team lead" due unspecified. The fix is not a stated commitment with owner. But "so someone fixes it" is a task. Could include owner "team lead" due unspecified. Hmm.
+
+Action items list:
+1 owner agent, task "Send urgent message to pre-procedure nurse team for same-day callback with correct fasting instructions.", due "today before 5 p.m."
+2 owner "pre-procedure nurse team", task "Call patient back with correct eating/drinking instructions.", due "today before 5 p.m."
+3 owner "agent", task "Report conflicting packet/text fasting instructions to team lead.", due "unspecified"
+4 owner "patient", task "Bring parking ticket to front desk for garage validation.", due "Friday, May 8"
+5 owner "patient", task "Arrange adult driver to drive home after sedation.", due "Friday, May 8"
+Maybe also "patient: arrive at 7:00 a.m. Westbrook second floor" not follow-up? It's instruction. Could include? Not necessary.
+
+Need due for urgent message: "today" maybe before 5? The message sent now, due today. Good.
+
+Potential issue: action_items owner "pre-procedure nurse team" due "today before 5 p.m." The agent said messages answered same day before five, not guaranteed call? But okay.
+
+Need final JSON. Ensure strings escaped? JSON object. No markdown.
+
+Double-check schema: quality_reasons array items string. flags array can be empty. action_items array. summary_notes string. notable_details array.
+
+Need maybe include "call_type": "pre_procedure". outcome "escalated". sentiment_start "neutral" or "positive"? Let's decide final. I lean neutral start because she is anxious and then upset about change. But first minute she laughs. The prompt: customer's sentiment in first and last minutes. At 00:00:07 she is friendly. At 00:01:12 negative. First minute includes up to 00:01:00, before negative. But "first minutes" plural maybe first minute. Could be neutral. Use neutral to be safe. End positive.
+
+Need maybe include "notable_details" with corrected values. Ensure no too long? No limit. Good.
+
+Let's consider if flags should be empty because all handled correctly. The prompt examples: "Do NOT flag things that were handled correctly (e.g. verification that did happen, disclosure the patient authorised, a fee waiver that policy allows, a decision that correctly follows policy)." The outdated email is not handled correctly by organization. The conflicting instructions are not handled correctly by organization. So flags okay. But "in how the call was handled" maybe not. Yet flags can include patient-safety problems. The conflicting instructions are patient-safety. Include.
+
+Could flag type "misinformation" instead of clinical_safety for conflicting instructions. Which is more accurate? The text and packet conflict; one may be misinformation. But we don't know which. "clinical_safety" captures risk. Use clinical_safety.
+
+Could flag type "policy_violation" for outdated email? Maybe "other". Use other.
+
+Need evidence for outdated email: It says "it looks like the update went out by email only, and I see the email on your file might be an old one." This is agent's statement. Good.
+
+Need evidence for clinical: Use caller quote. Good.
+
+Potential issue: evidence quote includes "I already got a text this morning, a reminder, and it says clear liquids are fine up to two hours before arrival." It's verbatim. Good.
+
+Need maybe include flag for "identity_verification"? No.
+
+Let's draft final JSON:
+{
+  "call_type": "pre_procedure",
+  "outcome": "escalated",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 4,
+  "quality_reasons": [
+    "Verified identity with name, date of birth, and phone last four before discussing appointment details.",
+    "Corrected the appointment time and location and updated the patient’s email and communication preference.",
+    "Escalated the conflicting fasting instructions to the pre-procedure nurse team instead of guessing.",
+    "Minor issues included system delays, mute/background noise, and a prior notification failure to an outdated email."
+  ],
+  "flags": [
+    {
+      "type": "other",
+      "description": "The appointment time and location change was communicated only to an outdated email, so the patient was not notified.",
+      "evidence": "it looks like the update went out by email only, and I see the email on your file might be an old one."
+    },
+    {
+      "type": "clinical_safety",
+      "description": "The patient received conflicting pre-procedure fasting instructions, creating a safety and cancellation risk.",
+      "evidence": "The packet says nothing to eat or drink after midnight. But I already got a text this morning, a reminder, and it says clear liquids are fine up to two hours before arrival."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent",
+      "task": "Send an urgent message to the pre-procedure nurse team requesting a same-day callback with correct fasting instructions.",
+      "due": "today before 5 p.m."
+    },
+    {
+      "owner": "pre-procedure nurse team",
+      "task": "Call the patient back with the correct eating and drinking instructions.",
+      "due": "today before 5 p.m."
+    },
+    {
+      "owner": "agent",
+      "task": "Report the conflicting packet and text fasting instructions to the team lead for correction.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "patient",
+      "task": "Bring the parking ticket to the front desk for garage validation.",
+      "due": "Friday, May 8"
+    },
+    {
+      "owner": "patient",
+      "task": "Arrange an adult driver to drive home after sedation.",
+      "due": "Friday, May 8"
+    }
+  ],
+  "summary_notes": "...",
+  "notable_details": [...]
+}
+
+Need ensure summary <=120 words. Draft above 86. Good.
+
+Need maybe include "Dr. Halvorsen-Adu" in summary. Good.
+
+Potential issue: "pre-procedure nurse team" owner with hyphen okay.
+
+Need final no markdown. Ensure valid JSON: use double quotes, no smart quotes? Use straight quotes. The summary has apostrophe? Use patient’s? Avoid curly apostrophe? JSON allows Unicode but okay. Use "patient's" straight. Email has dot. Good.
+
+Need maybe include "2026" in notable details. Good.
+
+Let's count summary words again with final:
+"Patient Ottoline Ferraby-Nkemelu (DOB 10/02/1992) called to confirm upper endoscopy with Dr. Halvorsen-Adu on Friday, May 8. Corrected appointment: arrive 7:00 a.m. at Westbrook endoscopy center, second floor, not 7:30 a.m. at Main Street. Conflicting fasting instructions: packet says NPO after midnight; text says clear liquids up to 2 hours before arrival. Agent sent urgent message to pre-procedure nurse team for same-day callback before 5 p.m. and reported discrepancy. Email updated to ottoline.f-n@gmail.com; electronic preferred. Parking validation available at front desk; adult driver required due sedation."
+Words: Patient1 Ottoline2 Ferraby-Nkemelu3 (DOB4 10/02/1992)5 called6 to7 confirm8 upper9 endoscopy10 with11 Dr.12 Halvorsen-Adu13 on14 Friday,15 May16 8.17 Corrected18 appointment:19 arrive20 7:0021 a.m.22 at23 Westbrook24 endoscopy25 center,26 second27 floor,28 not29 7:3030 a.m.31 at32 Main33 Street.34 Conflicting35 fasting36 instructions:37 packet38 says39 NPO40 after41 midnight;42 text43 says44 clear45 liquids46 up47 to48 249 hours50 before51 arrival.52 Agent53 sent54 urgent55 message56 to57 pre-procedure58 nurse59 team60 for61 same-day62 callback63 before64 565 p.m.66 and67 reported68 discrepancy.69 Email70 updated71 to72 ottoline.f-n@gmail.com;73 electronic74 preferred.75 Parking76 validation77 available78 at79 front80 desk;81 adult82 driver83 required84 due85 sedation.86. Good.
+
+Need maybe include "outcome escalated" but summary says agent sent urgent message. Good.
+
+Double-check flags evidence: For outdated email, quote starts lowercase "it" from transcript. Good. For clinical, quote exact? Transcript: "The packet says nothing to eat or drink after midnight. But I already got a text this morning, a reminder, and it says clear liquids are fine up to two hours before arrival." Yes.
+
+Potential issue: "clinical_safety" flag might be considered not a handling problem. But okay.
+
+Could include "quality_score": 3 due serious prior notification failure? The staff handled call well, but the business had serious failure. Quality_score rates how well business's staff handled call overall. The prior notification failure is not this staff? But it's business. The call itself had minor issues. 4. If flags include patient-safety, maybe 3? Let's think: 5 = excellent: verified, accurate, followed policy, appropriate resolution/escalation, empathetic. The agent did all. But there was a long queue wait and system delays, background noise. 4 = good with minor issues. The prior notification failure is not call handling but serious. However the agent corrected. I'd still 4. If we flag outdated email, maybe score 3? "mixed: generally competent but with one notable lapse." The lapse is not agent? The call had a notable lapse: appointment update not sent to current email. But that occurred before call. The staff on call handled. The score overall business maybe includes that. But the call itself: the agent discovered and corrected. The patient was not harmed. 4.
+
+Need maybe include "quality_reasons" mention prior notification failure. Good.
+
+Potential issue: action item due "today before 5 p.m." for agent sending urgent message: The agent says send now, nurse messages answered same day before five. The due for sending is now/today. Good.
+
+Need maybe include "patient: update email" completed? No.
+
+Need final JSON only. Ensure no newline issues okay.
+
+Let's produce final.

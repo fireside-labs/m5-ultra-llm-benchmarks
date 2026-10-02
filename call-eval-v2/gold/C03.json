@@ -1,0 +1,453 @@
+{
+ "call_id": "C03",
+ "call_type": "pharmacy_refill",
+ "outcome": "callback",
+ "outcome_accept": [
+  "resolved"
+ ],
+ "sentiment_start": "neutral",
+ "sentiment_start_accept": [
+  "negative"
+ ],
+ "sentiment_end": "neutral",
+ "sentiment_end_accept": [
+  "positive"
+ ],
+ "quality_score": 2,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Nobody caught that the patient is taking two of the new 20 mg white tablets (40 mg/day), even with lightheadedness and a 94/58 reading dismissed as fine",
+   "match": [
+    [
+     "double",
+     "two (of the )?(new |white |20 ?mg |twenty )*(tablet|pill|one)",
+     "40 ?mg",
+     "forty mill",
+     "overdos",
+     "dizz",
+     "lighthead",
+     "low blood pressure",
+     "hypotens",
+     "94"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "The ibuprofen/NSAID interaction question was promised to the pharmacist and never answered",
+   "match": [
+    [
+     "ibuprofen",
+     "advil",
+     "nsaid",
+     "knee"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "Pharmacist was proactive on the prior auth, arranged a $4 bridge fill and confirmed consent before talking to the son",
+   "match": [
+    [
+     "bridge",
+     "proactiv",
+     "consent",
+     "prior auth",
+     "\\bpa\\b",
+     "friendly",
+     "courteous",
+     "helpful"
+    ]
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "id": "F1",
+   "text": "Patient says she has been taking 'two of the white ones' since Monday (advice meant for the old 10 mg pink tablets); the pharmacist later confirms the white tablets are the new 20 mg strength, so she is taking 40 mg/day of lisinopril - nobody connected the two statements or corrected her, even though she reported lightheadedness and a 94/58 reading",
+   "evidence": "I been taking two of the white ones since Monday like the young man said",
+   "paraphrases": [
+    "Possible lisinopril overdose: patient is taking two 20 mg tablets daily (40 mg), double the prescribed dose, and staff did not catch it.",
+    "Double dosing not addressed - patient takes 2 of the new white 20 mg pills per day.",
+    "Patient taking twice the prescribed dose of her blood pressure medication; with dizziness and low BP this was missed."
+   ],
+   "negatives": [
+    "Tech initially quoted a forty dollar copay for lisinopril, then corrected it.",
+    "Patient reported lightheadedness that the tech attributed to the heat."
+   ],
+   "match": [
+    [
+     "two (of the )?(new |white |20 ?mg |twenty )*(tablet|pill|one)",
+     "double",
+     "40 ?mg",
+     "forty mill",
+     "overdos",
+     "twice (the|her|as much)",
+     "2 (x|tablets|pills)",
+     "too much",
+     "excess"
+    ],
+    [
+     "lisinopril",
+     "blood pressure",
+     "\\bbp\\b",
+     "dose",
+     "dosing",
+     "white",
+     "tablet",
+     "pill",
+     "lighthead",
+     "dizz",
+     "hypotens"
+    ]
+   ]
+  },
+  {
+   "id": "F2",
+   "text": "Patient asked whether she can take ibuprofen (Advil) with her blood-pressure pill; the tech promised the pharmacist would go over it, but the pharmacist never addressed it (and the patient had already taken two Advil)",
+   "evidence": "she'll go over the ibuprofen thing with you, okay? I'll put it in my note for her",
+   "paraphrases": [
+    "The NSAID-lisinopril interaction question was never answered despite the technician's promise.",
+    "Missed commitment: ibuprofen question handed to the pharmacist but not discussed.",
+    "Patient's question about taking Advil with lisinopril was left unaddressed."
+   ],
+   "match": [
+    [
+     "ibuprofen",
+     "advil",
+     "nsaid",
+     "anti.?inflammator"
+    ],
+    [
+     "never",
+     "not (been )?(address|answer|discuss|follow|cover|raise)",
+     "unanswer",
+     "unaddress",
+     "didn't",
+     "did not",
+     "fail",
+     "miss",
+     "forgot",
+     "promis",
+     "left",
+     "dropped",
+     "without"
+    ]
+   ]
+  }
+ ],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Pharmacist discussed the patient's prescriptions and insurance with her son (a third party)",
+   "why_not": "The patient explicitly consented on the line ('He can hear all my stuff') and the pharmacist confirmed consent again before adding him as contact.",
+   "evidence": "He can hear all my stuff, it's okay.",
+   "paraphrases": [
+    "Patient's medication details were disclosed to her son without verifying authorization.",
+    "Privacy: PHI shared with Rafael, a family member, and he was made the contact.",
+    "Pharmacist spoke to a third party (the son) about the patient's prescriptions."
+   ],
+   "match": [
+    [
+     "son",
+     "rafael",
+     "third.party",
+     "family member",
+     "relative"
+    ],
+    [
+     "disclos",
+     "shar",
+     "discuss",
+     "privacy",
+     "consent",
+     "authori[sz]",
+     "phi",
+     "hipaa",
+     "contact",
+     "spoke",
+     "speak"
+    ]
+   ]
+  },
+  {
+   "id": "D2",
+   "text": "Technician quoted the wrong copay ($40) for the 30-day fill",
+   "why_not": "He corrected himself immediately ('I read the wrong column... It's four dollars').",
+   "evidence": "I read the wrong column, that's the brand column. It's four dollars.",
+   "paraphrases": [
+    "Misinformation: tech said the copay would be forty dollars.",
+    "Incorrect copay of $40 quoted to the patient for the thirty-day supply."
+   ],
+   "match": [
+    [
+     "copay",
+     "\\$40\\b",
+     "forty dollar",
+     "40 dollar",
+     "wrong column"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Prior authorization not on file at Halvard despite two faxes from the office",
+   "match": [
+    [
+     "prior auth",
+     "\\bpa\\b",
+     "authori[sz]ation",
+     "halvard",
+     "fax"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Lightheadedness dismissed as heat / low BP reading called good by the tech",
+   "match": [
+    [
+     "lighthead",
+     "dizz",
+     "heat",
+     "94",
+     "low blood pressure",
+     "hypotens",
+     "reading"
+    ]
+   ]
+  },
+  {
+   "id": "OK3",
+   "text": "Tech previously told patient to take two of the old 10 mg tablets",
+   "match": [
+    [
+     "10 ?mg",
+     "ten mill",
+     "old (tablets|pills|strength)",
+     "pink"
+    ]
+   ]
+  },
+  {
+   "id": "OK4",
+   "text": "Phone menu routed patient to billing",
+   "match": [
+    [
+     "menu",
+     "bill",
+     "press"
+    ]
+   ]
+  },
+  {
+   "id": "OK5",
+   "text": "Tech gave clinical-sounding reassurance outside his scope",
+   "match": [
+    [
+     "scope",
+     "clinical advice",
+     "technician"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "pharmacist",
+   "task": "Call Dr. Lindqvist's office to resend the prior authorization and confirm where it is going",
+   "due": "today",
+   "match": [
+    [
+     "office",
+     "lindqvist",
+     "prescriber",
+     "doctor"
+    ],
+    [
+     "prior auth",
+     "\\bpa\\b",
+     "authori[sz]",
+     "resend",
+     "fax"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "pharmacy",
+   "task": "Call Rafael (preferred contact 555-0191) when the 90-day supply is approved",
+   "due": "when PA approved",
+   "match": [
+    [
+     "call",
+     "notify",
+     "contact",
+     "let .* know",
+     "voicemail"
+    ],
+    [
+     "approv",
+     "90.day",
+     "ninety.day",
+     "ready",
+     "rafael",
+     "son"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "son (Rafael)",
+   "task": "Pick up 30-day bridge fill of lisinopril 20 mg ($4) plus atorvastatin at Millbrook counter",
+   "due": "Thursday after 2 pm",
+   "match": [
+    [
+     "pick.?up",
+     "collect"
+    ],
+    [
+     "thursday",
+     "millbrook",
+     "bridge",
+     "30.day",
+     "son",
+     "rafael"
+    ]
+   ]
+  },
+  {
+   "id": "A4",
+   "owner": "son (Rafael)",
+   "task": "If the PA drags past next week, call Halvard member services to check whether anything was received",
+   "due": "after one week",
+   "match": [
+    [
+     "member services",
+     "call halvard",
+     "contact halvard",
+     "check with halvard",
+     "halvard .*(if|after|week)"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "30-day copay is $4.00 (tech first said forty dollars)",
+   "evidence": "It's four dollars. Four-oh-oh.",
+   "negatives": [
+    "copay of $40",
+    "thirty-day copay forty dollars"
+   ],
+   "match": [
+    [
+     "\\$4(\\.00)?\\b",
+     "four dollar",
+     "\\b4\\.00",
+     "\\$ 4\\b"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Lisinopril Rx number 771042",
+   "evidence": "it's seven-seven-one-zero-four-two",
+   "match": [
+    [
+     "771.?042",
+     "seven.seven.one.?zero.four.two"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Pharmacist did a 30-day bridge fill of lisinopril 20 mg while the PA is pending",
+   "evidence": "a thirty-day bridge fill today, the twenty milligram",
+   "match": [
+    [
+     "bridge",
+     "30.day",
+     "thirty.day",
+     "short.?term fill",
+     "interim"
+    ],
+    [
+     "lisinopril",
+     "20",
+     "twenty",
+     "fill",
+     "supply"
+    ]
+   ]
+  },
+  {
+   "id": "S4",
+   "text": "Pickup Thursday (Sept 17) after 2 pm at the Millbrook counter, not Eastgate",
+   "evidence": "It'll be ready tomorrow, Thursday, after two, here at the Millbrook counter.",
+   "match": [
+    [
+     "millbrook"
+    ],
+    [
+     "thursday",
+     "sept\\w* 17",
+     "9/17",
+     "after 2",
+     "2 ?pm"
+    ]
+   ]
+  },
+  {
+   "id": "S5",
+   "text": "Halvard shows no PA request on file although the office says it faxed twice (Sept 9 and Monday)",
+   "evidence": "they show no PA request on file for her at all",
+   "match": [
+    [
+     "no (pa|prior auth\\w*|request|record)",
+     "nothing (on file|received)",
+     "not received",
+     "never received",
+     "no record",
+     "not on file",
+     "not been received",
+     "hasn't received",
+     "did not receive"
+    ]
+   ]
+  },
+  {
+   "id": "S6",
+   "text": "Patient's home BP reading this morning was 94/58 (previously 150-160), called 'great' by the tech",
+   "evidence": "Ninety-four? Over fifty-eight.",
+   "match": [
+    [
+     "94/58",
+     "94 over 58",
+     "ninety.four over fifty.eight",
+     "94/ ?58"
+    ]
+   ]
+  },
+  {
+   "id": "S7",
+   "text": "Son Rafael added as preferred contact, 555-0191",
+   "evidence": "Five-five-five, oh-one-nine-one.",
+   "match": [
+    [
+     "0191",
+     "zero.one.nine.one",
+     "oh.one.nine.one"
+    ]
+   ]
+  }
+ ],
+ "themes": [
+  "T_PA_FAX"
+ ]
+}

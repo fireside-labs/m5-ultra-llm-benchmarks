@@ -1,0 +1,95 @@
+{
+  "call_type": "saas_support",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Tier 2 (Priyanka) delivered an accurate root-cause diagnosis (TF-88213, UTC conversion bug), corrected Tier 1's misinformation, and provided two effective workarounds",
+    "Tier 1 changed the account billing email to a caller-supplied address before identity verification was completed, then sent the verification code to that new address",
+    "Tier 1 gave incorrect information that posted late fees cannot be reversed, which Tier 2 later corrected",
+    "Roughly 25-minute hold after transfer to Tier 2 with distorted music and no one staying on the line as promised",
+    "Empathetic, patient handling throughout despite a noisy environment and repeated interruptions"
+  ],
+  "flags": [
+    {
+      "type": "identity_verification",
+      "description": "The Tier 1 agent updated the account's billing email to an address supplied by the caller before verifying her identity, then sent the verification code to that newly supplied address, effectively allowing the caller to choose where the verification code was delivered.",
+      "evidence": "Sure, I can do that for you, let me just fix that while we're here. ... Oh, no worries, I already updated it, so I'll just send it to the billing address instead, that's yours now."
+    },
+    {
+      "type": "misinformation",
+      "description": "The Tier 1 agent incorrectly stated that posted late fees cannot be reversed; Tier 2 corrected this and the customer reversed one fee during the call.",
+      "evidence": "once a late fee posts to an invoice it can't be reversed. The system locks it."
+    },
+    {
+      "type": "missed_commitment",
+      "description": "The Tier 1 agent promised to stay on the line until Tier 2 picked up, but dropped off at the transfer and the customer held for roughly 25 minutes with distorted hold music.",
+      "evidence": "No, I'll write it all up in the ticket before I transfer you, and I'll stay on until they pick up."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "customer",
+      "task": "Reverse the late fee on INV-20422 (Brookfield Renovations) using 'Reverse fee'",
+      "due": "right after this call (2026-09-22)"
+    },
+    {
+      "owner": "customer",
+      "task": "Confirm the new billing email (odile.ms@ferncliffjoinery.com) via the confirmation link in her inbox",
+      "due": "unspecified"
+    },
+    {
+      "owner": "customer",
+      "task": "Add assistant Junie as a Staff user via Settings, Team, Invite user",
+      "due": "this afternoon"
+    },
+    {
+      "owner": "customer",
+      "task": "Export the reminder history (61 reminders, Sept 1-22) to a spreadsheet and review affected clients",
+      "due": "unspecified"
+    },
+    {
+      "owner": "customer",
+      "task": "Switch the plan to annual before the renewal date",
+      "due": "before 2026-10-20"
+    },
+    {
+      "owner": "customer",
+      "task": "Switch the reminder template back from 'Friendly reminder, no date' once release 7.4.2 is out",
+      "due": "after 7.4.2 release (unspecified)"
+    },
+    {
+      "owner": "Gordon (account owner)",
+      "task": "Change the account login email from accounts@ferncliffjoinery.com (retired employee Bernie's inbox), from his profile or by calling in",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Tier 2 specialist (Priyanka)",
+      "task": "Send a summary email with ticket TF-88213, the two workaround steps, and a client-facing explanation paragraph (for Hartwell/Moe)",
+      "due": "right after the call (today)"
+    },
+    {
+      "owner": "Tier 2 specialist (Priyanka)",
+      "task": "Note the customer's request for a subscription credit for the account manager to consider",
+      "due": "unspecified"
+    },
+    {
+      "owner": "engineering",
+      "task": "Fix reminder-date/late-fee UTC bug TF-88213 in release 7.4.2 (Ferncliff account attached for notification)",
+      "due": "unspecified - no firm date given"
+    }
+  ],
+  "summary_notes": "Odile Marchetti-Sung, bookkeeper at Ferncliff Joinery, reported reminder emails showing due dates one day early since early September and two $35 late fees posted on due dates despite on-time payments (INV-20417 Hartwell Kitchens, INV-20422 Brookfield Renovations; $70 total). Tier 2 confirmed known bug TF-88213 from release 7.4 (UTC date conversion); fix due in 7.4.2, no firm date; account attached to ticket. Fee on INV-20417 reversed on the call; customer to reverse INV-20422. Workarounds applied: late-fee grace period changed 0 to 1 day; template switched to 'Friendly reminder, no date'. Billing email updated to odile.ms@ferncliffjoinery.com (confirmation pending); login email still accounts@ (owner Gordon to change). Annual plan requested at Oct 20 renewal; subscription credit request noted for account manager. Summary email promised.",
+  "notable_details": [
+    "Invoice number initially misread as 'two oh four seventy' and corrected to INV-20417 ($4,812.50, issued Aug 16, net 30, due Sept 15)",
+    "Late-fee job runs at 7:01 p.m. Central (midnight UTC) the day before the due date: Hartwell's fee posted 7:01 p.m. Sept 14 with payment at 2:47 p.m. Sept 15 (ACH); Brookfield's fee posted 7:01 p.m. Sept 17 with payment 10:15 a.m. Sept 18 (card)",
+    "61 reminders sent Sept 1-22 were affected; every reminder including a due date since release 7.4 (Sept 2) shows one day early for anyone west of UTC",
+    "Another customer affected by the same bug: Rhiannon at Kittering Veterinary, with about fifteen client complaints",
+    "Plan includes three free Staff seats with only one in use; Junie to be invited as a Staff user (customer initially considered sharing her password, which Tier 2 correctly discouraged)",
+    "Customer's role in the Members list shows 'Owner' although she describes herself as bookkeeper; the account owner is Gordon (Ferncliff)",
+    "Renewal date is October 20; annual plan is roughly two months free versus monthly",
+    "Customer was on hold about 20 minutes before the call and a further ~25 minutes during the Tier 2 transfer; verification code 419226 was read aloud on the call",
+    "Customer mentioned 22 (corrected to 23) floor staff; Hartwell delivery confirmed for Thursday morning, not tomorrow; coworker Dale/Arjun and Deb mentioned in passing"
+  ]
+}

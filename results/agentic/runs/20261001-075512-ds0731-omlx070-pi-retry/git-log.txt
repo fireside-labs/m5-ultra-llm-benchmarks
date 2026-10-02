@@ -1,0 +1,157 @@
+d915ed6bf61ac44237d2dca57c46cfbdf4c0482c1790866584milestone 1: Project scaffold
+
+4	0	.gitignore
+33	0	README.md
+12	0	index.html
+2594	0	package-lock.json
+20	0	package.json
+10	0	src/main.ts
+8	0	tests/scaffold.test.ts
+21	0	tsconfig.json
+13	0	vite.config.ts
+477006bd105f037744af83490624a2b2cfc958491790866609milestone 2: Seeded RNG
+
+54	0	src/rng.ts
+83	0	tests/rng.test.ts
+31b3139bd52e803221764d233cfc43c1b7ba78041790866623milestone 2: Seeded RNG (fix state-isolation test)
+
+3	1	tests/rng.test.ts
+2e238f082b4bab1a8bc61bd5da9ee81b52141cc31790866645milestone 2: Seeded RNG
+
+7	7	tests/rng.test.ts
+cf2c21c929a09b3ba0b1a046eb3d5d79ddc0c7021790866678milestone 2: Seeded RNG
+
+11	6	tests/rng.test.ts
+36305864428e943e2ce3000058273407dc8970a91790866719milestone 3: Tile map model
+
+132	0	src/map.ts
+119	0	tests/map.test.ts
+da6d9500c5af44dfdf5a6aea2f686108798b761b1790866730milestone 3: Tile map model
+
+1	1	tests/map.test.ts
+d879460ac86554e943d5b1c4e3456ed4b4e24a3c1790866961milestone 4: Dungeon generator (BSP)
+
+172	0	src/dungeon.ts
+53	0	src/types.ts
+126	0	tests/dungeon.test.ts
+e3b7326acc04f1bc3e4c72e7844944f8c1a54c261790867048milestone 5: Canvas renderer with camera
+
+52	0	src/camera.ts
+44	3	src/main.ts
+167	0	src/renderer.ts
+42	0	tests/camera.test.ts
+e076bf2aace3af5be36f7df01039954aa21d46ee1790867099milestone 6: Player movement and keyboard input
+
+102	0	src/input.ts
+28	0	src/movement.ts
+57	0	tests/movement.test.ts
+dbb2be29aa1033c216509431de3bf20b68a6b5871790867151milestone 6: Player movement and keyboard input
+
+4	2	src/movement.ts
+3	2	tests/movement.test.ts
+17f73d3dd1db6844e0ca4fbbc789a619f3185b0d1790867504milestone 7: Field of view and fog of war
+
+39	0	src/fog.ts
+72	0	src/fov.ts
+11	1	src/renderer.ts
+140	0	tests/fov.test.ts
+08c7dab3684318aa221d40bd620310184e0356dd1790867622milestone 8: Entities and components
+
+92	0	src/entity.ts
+84	0	src/inventory.ts
+8	0	src/types.ts
+139	0	tests/entity.test.ts
+7de71504113a36885a7f28edf7711cfa061131d01790867638milestone 8: Entities and components
+
+0	1	tests/entity.test.ts
+0a33ed099bfc2d6080eee9e1ae370d89fdba3c131790867885milestone 9: Monsters and AI behaviours
+
+152	0	src/ai.ts
+84	0	src/monsters.ts
+218	0	tests/monsters.test.ts
+a28ee3c3d7f6a3108207c32e847f09dbc53f21f91790867920milestone 9: Monsters and AI behaviours
+
+1	1	src/ai.ts
+3	0	src/entity.ts
+1	0	src/monsters.ts
+0	1	tests/monsters.test.ts
+d2fa8fac1e789e25151528388a8a5509c61a3bd21790868070milestone 10: A* pathfinding
+
+12	3	src/ai.ts
+128	0	src/pathfinding.ts
+132	0	tests/pathfinding.test.ts
+dc3e2816d4b525c5fc4e052d7cd5ce0a4005211b1790868219milestone 11: Turn scheduler
+
+53	0	src/scheduler.ts
+108	0	tests/scheduler.test.ts
+32f6829406de0808bd7b86f091e261f6b208a6051790868397milestone 12: Combat and message log
+
+41	0	src/combat.ts
+52	0	src/log.ts
+38	0	src/ui/messageLog.ts
+94	0	tests/combat.test.ts
+45	0	tests/log.test.ts
+d71af42d6b1c35d89cfc9ed030603faf0567933b1790869027milestone 13: Items and item actions
+
+5	0	src/fog.ts
+474	0	src/game.ts
+124	0	src/items.ts
+176	0	tests/game.test.ts
+76	0	tests/items.test.ts
+8179ebebd03075f0ac64890a54f6e7d2cfaba7101790869418milestone 14: Inventory UI with keyboard navigation
+
+522	0	package-lock.json
+2	1	package.json
+5	0	src/fog.ts
+5	4	src/input.ts
+7	44	src/main.ts
+5	4	src/renderer.ts
+218	0	src/ui/gameUI.ts
+178	0	src/ui/inventory.ts
+70	0	tests/input.test.ts
+99	0	tests/inventory-ui.test.ts
+d220af64e07285c3263e6b57c6aa278c48c897d41790869511milestone 14: Inventory UI with keyboard navigation
+
+2	1	src/input.ts
+0	3	src/ui/inventory.ts
+4	3	tests/input.test.ts
+ca2f4a67182e734e58ff8cfd2334ada0d2b2e8af1790869544milestone 14: Inventory UI with keyboard navigation
+
+5	1	src/input.ts
+bd60f97c13e2d2b558b812d0d140d541a2f5ead51790869894milestone 15: Multiple levels with stairs
+
+61	77	src/game.ts
+164	0	src/levels.ts
+6	0	src/ui/gameUI.ts
+127	0	tests/levels.test.ts
+063361c3b16bdd565dc8c2c18f407935440be5e51790870316milestone 16: Save and load with versioning
+
+9	0	src/entity.ts
+65	0	src/game.ts
+8	0	src/items.ts
+12	0	src/levels.ts
+10	1	src/rng.ts
+71	0	src/save.ts
+18	0	src/scheduler.ts
+143	0	src/serialization.ts
+29	1	src/ui/gameUI.ts
+37	0	src/ui/storage.ts
+123	0	tests/save.test.ts
+32	0	tests/storage.test.ts
+bf575a551d7b738f71e25ee4f7659d1474e05da91790870384milestone 16: Save and load with versioning
+
+1	1	src/ui/gameUI.ts
+23	2	tests/storage.test.ts
+2f7edc1a20053bc3055217f5b3cd620b6f8ada281790870763milestone 17: Status effects
+
+4	0	src/ai.ts
+4	0	src/entity.ts
+79	1	src/game.ts
+11	6	src/items.ts
+6	0	src/scheduler.ts
+3	0	src/serialization.ts
+63	0	src/status.ts
+4	0	src/ui/gameUI.ts
+1	0	tests/monsters.test.ts
+114	0	tests/status-game.test.ts
+107	0	tests/status.test.ts

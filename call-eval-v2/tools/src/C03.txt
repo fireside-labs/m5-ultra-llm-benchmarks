@@ -1,0 +1,220 @@
+@id C03
+@date 2026-09-16 10:21
+@line Ostrander Pharmacy (Brightwater) - Millbrook counter - refill line
+@direction inbound
+@target 14000
+@seed 303
+@diar_drop 0.15
+@speaker T TECH = pharmacy technician (Jaylen)
+@speaker C CALLER = patient (Beatriz)
+@speaker S SON = patient's son (Rafael)
+@speaker R PHARMACIST = pharmacist (Ingrid Solberg-Mace, PharmD)
+---
+T: Oh Strander Pharmacy, Millbrook, this is Jaylen, can I get a name and date of birth?
+C: Hello? Yes. Hello. Is this the pharmacy? The real pharmacy?
+T: Yes ma'am, this is the pharmacy.
+C: Oh good. Because my eyes, I can never see the numbers on the bottle. Okay. My name is Beatriz Almeida-Hough. Almeida, A-L-M-E-I-D-A, and then Hough like rough. With a dash.
+T: And your date of birth?
+C: The fourth of February, nineteen fifty-nine.
+T: Okay, I've got you. And just to confirm, your address is still on, um, Corbel Street?
+C: Fourteen-ten Corbel Street, yes.
+T: Perfect. What can I do for you today, Ms. Almeida-Hough?
+C: So it's my blood pressure pill. The listen a pril. Dr. Lindqvist changed it, he made it stronger, at my last appointment, and I need the— the big bottle, the three months.
+T: The lysine april— sorry, lisinopril, yeah. Let me pull that up.
+C: [laughs] I can never say it either.
+T: [typing] Okay so I see the new prescription came in from Dr. Lindqvist on, uh, the eighth. Lisinopril twenty milligrams, one tablet daily, ninety-day supply.
+C: Yes. That one.
+T: And I see we mailed you a little bit of it already, looks like a partial, fifteen tablets, because the plan only let us do a short fill.
+C: Yes, yes, that came Monday. The little bottle.
+T: Okay, and did that come by mail or did somebody pick it up? Because it says mail here, but sometimes people come in.
+C: The mailman. In the, the bubble envelope. I almost threw it away, I thought it was the, the coupons.
+T: [laughs] Yeah, the mail-order envelopes look like junk mail, everybody says that.
+C: My grandson opened it. He's staying with me this month, he's at the community college, he does the, the computer classes.
+T: Oh nice.
+C: He eats everything. Everything. I buy the, the big box of cereal and it's gone in two days.
+T: [laughs] College kids.
+C: So I don't know why they sent fifteen. Fifteen pills. What do I do with fifteen.
+T: That's the plan, they limit the first fill on a new strength sometimes. It's not something you did.
+C: Okay. As long as I didn't do something.
+T: Nope, you're fine.
+C: And my card. Do you need my card? The insurance? I have it here. It's, uh, it says Hal— Halvard. The member number is H as in, uh, house, then zero-zero-four... [inaudible] ...six-one.
+T: I've got it on file already, it's the same one, the one ending in six-one. You're all set there.
+C: Okay. They sent me a new card in January and I didn't know if it was different.
+T: Same number, just a new design. They do that.
+#fill pharmacy_lookup pharmacy_queue @A=T
+C: And the, the young man I talked to last week, before the bottle came, he said, until the new ones come, take two of the old ones. Because the old ones are the ten.
+T: Yeah, that's usually what we tell people when a dose doubles, if they've still got the old strength at home.
+C: So I been taking two. The pink ones ran out on Sunday, so I been taking two of the white ones since Monday like the young man said.
+T: Okay, great. So you're good on supply for a few more days then.
+C: I think so. I have to count. I'm not good with counting pills, my eyes.
+T: No worries. So what I need to figure out is the ninety-day. Let me see what the plan says.
+#fill pharmacy_lookup ehr_navigation @A=T
+T: Okay so... the claim for the ninety-day is rejecting. It says, um, "PA required." Prior authorization. With Hal Ford— Halvard, your insurance.
+C: What does that mean? It's the same pill. I been on it six years.
+T: It's the same pill, just the higher strength in a ninety-day quantity, and your plan wants the doctor to send them a form first. It's annoying, I know.
+C: The doctor's office has to do it?
+T: Yeah, the office sends the form to Halvard, Halvard approves it, then we can run it.
+C: Okay. Well. I hope they do it.
+T: I'll have the pharmacist look at whether they've sent it. She can see a little more than me.
+#fill pharmacy_queue smalltalk @A=T
+C: And can I ask you, while I have you, my knee is killing me. The left one. I been doing the garden, the tomatoes, you know, kneeling. Can I take the Advil? The ibuprofen? With the blood pressure pill? Because my neighbor Dolores said no, you can't, it fights with the blood pressure, and Dolores knows everything, she was a nurse.
+T: Oh, that's a really good question, and honestly that's one for the pharmacist, I'm not allowed to give that advice. When I transfer you over, she'll go over the ibuprofen thing with you, okay? I'll put it in my note for her.
+C: Okay. Good. Because I took two yesterday. The Advil. And then I thought, Beatriz, ask first.
+T: Yeah, definitely ask her.
+C: And also I been a little, you know, when I stand up, a little dizzy. Lightheaded. Like the room goes, whoosh.
+T: Oh, yeah, it's probably the heat, honestly, it's been crazy hot this week. Make sure you're drinking water.
+C: It has been hot. My tomatoes are cooking on the vine.
+T: [laughs] Right? My car said a hundred and two yesterday.
+C: And I have the machine, the blood pressure machine, the cuff, Rafael bought it for me at Christmas. This morning it said, um, ninety-something. Ninety-four? Over fifty-eight. Is that good? It used to be one-fifty, one-sixty.
+T: Oh, that sounds great, honestly. Lower is better with blood pressure, so the new dose is working.
+C: You think so?
+T: Sounds like it! Dr. Lindqvist will be happy.
+C: He's a nice man. He's very tall. I have to look up at him like a, a giraffe.
+T: [laughs]
+C: He told me to write it down every day, the numbers. I have a little notebook. My grandson wanted to put it in the phone but I like the notebook.
+T: Notebook works. Bring it to your next appointment.
+C: I will. It has a cat on it. The notebook.
+T: [laughs] Even better.
+#fill smalltalk pharmacy_queue family_side @A=T
+T: Okay. So for the thirty-day, if we end up doing a thirty-day while we wait, your copay would be forty dollars.
+C: Forty! For thirty days?
+T: Hang on, hang on, sorry, I read the wrong column, that's the brand column. It's four dollars. Four-oh-oh. Four dollars for thirty days on the generic.
+C: Oh. Four dollars. You scared me.
+T: Sorry, sorry. Four dollars.
+C: Okay. Four I can do.
+#fill pharmacy_lookup @A=T
+T: And I'm also seeing your atorvastatin, the cholesterol one, is due. Do you want me to fill that too?
+C: The cholesterol, yes. Same as always?
+T: Same as always, forty milligrams, ninety days, that one goes through no problem. It'll be the same copay as usual.
+C: Okay. Good. One thing goes right.
+T: [laughs]
+C: Oh, and the eye drops. Do I have eye drops on there? The, the Latin a prost? For the glaucoma? Dr. Pereira-Lund does that one, not Dr. Lindqvist.
+T: Latanoprost, yeah. Let me see. [typing] I see it, but it was filled on the second, so it's not due yet. You should still have most of that bottle.
+C: I keep it in the refrigerator. Is that right? My friend said refrigerator.
+T: Unopened bottles in the fridge, yeah. Once you open one, room temperature is fine for about six weeks.
+C: Oh. I keep the open one in the fridge too.
+T: That's okay, that won't hurt it. It's just colder in your eye.
+C: [laughs] It is cold. I always jump.
+T: [laughs]
+C: And the flu shot. Do you do the flu shot there? My daughter-in-law said get it early this year.
+T: We do. Walk-in or appointment, any day until six. You can do it when you pick up if you want, or whenever. It's covered by your plan, no copay.
+C: Maybe. I don't like the needle.
+T: It's a tiny one, I promise. Our pharmacist is really good, you barely feel it.
+C: That's what they always say. "You won't feel it." And then I feel it.
+T: [laughs] Fair. Think about it.
+C: My husband, God rest him, he never got the flu shot, never, forty years, and he never got the flu once. Not once. And I get the shot every year and I get the sniffles every winter.
+T: [laughs] Sniffles aren't the flu, though. That's how you know it's working.
+C: That's what Rafael says. Okay. Maybe I'll do it Thursday. We'll see.
+C: Can you tell me the number on the bottle? The prescription number? Rafael, my son, he likes to have the numbers.
+T: Sure, the lisinopril is, um, our ex seven seventy-one [inaudible] two.
+C: Seven seventy-one... what?
+T: I'll have the pharmacist give it to you, she'll have the label right there. Okay, let me get her. It might be a minute, she's doing a vaccine. Is that okay?
+C: Yes, yes. I'll wait.
+C: Wait, wait, before you put me on hold. Do I have to come in or can you mail it again? Because the mail took a long time.
+T: For the short fill we'll do pickup, it's faster. Your son can pick up for you, he just needs to know your date of birth.
+C: He knows. He knows everything about me. More than me.
+T: [laughs] Perfect.
+T: Okay, I'm going to put you on a quick hold.
+#note caller placed on hold for transfer to pharmacist
+#hold 240
+#fill hold_announce transfer_wait @A=T
+#diar off
+C: Rafael! Rafael, come here, it's the pharmacy, you talk to them about the insurance part.
+S: Who is it?
+C: The pharmacy. They said the insurance has to have a form from Dr. Lindqvist.
+S: A prior auth? Ugh. Okay, give me the phone when they pick up.
+C: You know I don't understand those things.
+S: It's fine, Mãe.
+#diar on
+#fill family_side hold_announce @A=T
+R: Hi, this is Ingrid, I'm the pharmacist. Sorry to keep you waiting. Am I speaking with Beatriz?
+C: Yes, hello, it's me. And my son is here, Rafael, he's going to talk to you about the insurance, he does all my insurance things. He can hear all my stuff, it's okay. Here.
+S: Hi, this is Rafael, her son.
+R: Hi Rafael. Beatriz, just so I'm clear, you're okay with me talking to Rafael about your prescriptions and insurance?
+C: [in background] Yes! Everything. He knows everything.
+R: Great. Okay, thank you. So I've got Jaylen's note here. The ninety-day lisinopril twenty is rejecting for a prior authorization with Halvard.
+S: Right. So has the doctor's office sent it?
+R: So I actually called Dr. Lindqvist's office before I picked up, because I had a feeling, and the MA there, she said they faxed it to Halvard twice. Once on the ninth and once again on Monday.
+S: Okay, so then what's the problem?
+R: So I also have Halvard's pharmacy help desk on the other line, and when I checked their system, they show no PA request on file for her at all. Nothing received.
+S: Nothing? From two faxes?
+R: Nothing. I don't know where those faxes are going. I'm going to call the office back after this and have them look at it again.
+S: Unbelievable. Okay.
+#fill pharmacy_lookup ehr_navigation @A=R @C=S
+S: So what does she do in the meantime? Does she run out?
+R: No, she won't run out. What I'll do is a thirty-day bridge fill today, the twenty milligram, at the regular copay, which plan allows without the PA. That covers her while the PA gets sorted.
+S: Okay. That's good. How much is that?
+R: Four dollars.
+S: Okay.
+R: It'll be ready tomorrow, Thursday, after two, here at the Millbrook counter. And the atorvastatin will be in the same bag.
+S: Millbrook. Not the other one?
+R: Not Eastgate, no. Millbrook. On Rourke Avenue, by the bank.
+S: Got it. I can pick it up on my way home from work.
+#fill pharmacy_queue smalltalk2 @A=R @C=S
+S: And Mom wanted the prescription number.
+R: Sure. For the lisinopril, it's seven-seven-one-zero-four-two. Seven-seven-one, zero-four-two.
+S: Seven-seven-one-zero-four-two. Got it.
+R: The new prescription keeps the same number when it refills, so that's the one to use.
+S: Okay.
+C: [in background] Ask about the pills, the white pills.
+S: She's asking about the pills. Like, what they look like? She gets confused, she's got like four different bottles.
+R: Sure. So her new strength is twenty milligrams, those are the white round ones. One tablet once a day. The old tens were pink, she shouldn't have any more of those, but if she finds any, don't mix them.
+S: White round ones, one a day. Mom, white round ones, one a day.
+C: [in background] The white ones, okay. Yes. I have the white ones.
+R: Perfect. And the cholesterol pill is the oval one, also white, but it's bigger and it says the number on it. She takes that at night.
+S: Okay. I'll put a sticker on them.
+R: That's a great idea.
+S: Oh, and she's still got some of the white ones that came in the mail, the little bottle. Should she finish those first before the new bag?
+R: Yes, use up the mailed ones first, they're the same strength, same tablet. Then start the new bottle.
+S: Okay, same thing, just finish them. Got it.
+S: And honestly, if the ninety-day takes forever, can she just get the higher strength and cut them? Like, my buddy does that with his, to save money.
+R: She doesn't need to, the twenty is exactly her dose, so no splitting. Some people's doctors prescribe a forty and have them split it for cost, but that's a decision for Dr. Lindqvist, and with the generic at four dollars there's really no savings here.
+S: Yeah, four bucks. Not worth the hassle.
+R: Exactly.
+S: What's it cost without insurance, out of curiosity? In case Halvard just never does it.
+R: For ninety tablets of the generic twenty, our cash price is about eighteen dollars. So even worst case it's not going to break the bank. But let's get the PA done, there's no reason it shouldn't go through.
+S: Okay. Eighteen bucks. Good to know.
+#diar off
+S: Mom, it's like eighteen dollars even without insurance.
+C: Eighteen? Then why do I need the form?
+S: Because it's the insurance, Mãe, they like forms.
+C: Pfft.
+#diar on
+S: Sorry, she's commenting.
+R: [laughs] She's not wrong.
+S: And, uh, the Halvard people. If I want to call them myself, is there a number? Because I've had to call them before about her hearing aids and it took like an hour.
+R: The member services number is on the back of her card. For prior auth specifically, it's the doctor's office that has to deal with them, not you, so honestly I'd let us and the office handle it. If it drags past next week, then you can call member services and ask them to check whether they've received anything.
+S: Okay. I'll give it a week.
+R: That's reasonable.
+#fill pharmacy_lookup smalltalk family_side @A=R @C=S
+S: So the PA. Who's calling who?
+R: So here's what will happen. I'm going to call Dr. Lindqvist's office today and ask them to resend the PA and confirm where it's going. Once Halvard approves it, we'll get a paid claim, and we'll call your mom to let her know the ninety-day is ready. Usually a few business days once they actually have it.
+S: And if they don't approve it?
+R: Then the doctor can do an appeal, or switch the quantity, and we'll keep doing thirty-days in the meantime. She won't go without.
+S: Okay. Can you call me instead of her? She doesn't always hear the phone.
+R: I can put you as the preferred contact. What's your number?
+S: Five-five-five, oh-one-nine-one.
+R: Five-five-five, zero-one-nine-one. And just to be sure, Beatriz, is it okay that we call Rafael about your prescriptions?
+C: [in background] Yes, yes, call Rafael.
+R: Done. Added.
+S: Can you guys text instead of call? I'm at work, I can't always pick up.
+R: We can text a "ready for pickup" message, but anything about the prior auth itself we'll call and leave a voicemail. We don't put prescription details in texts.
+S: That's fine. Voicemail's fine.
+R: Okay. Texts for pickup, calls for anything else.
+S: Perfect.
+S: And she said something about the flu shot?
+R: Oh, sure. If she wants it, she can get it tomorrow when you pick up, no appointment needed, no copay on her plan.
+S: Mom, flu shot tomorrow?
+C: [in background] I'll think about it!
+S: She'll think about it. That means no.
+R: [laughs] That's okay. The offer stands.
+#fill pharmacy_queue smalltalk2 @A=R @C=S
+S: Alright. I think that's everything, right Mom?
+C: [in background] [inaudible] ...the knee.
+S: What?
+C: [in background] Never mind, never mind. It's fine.
+S: Okay. I think that's it.
+R: Okay. So, bridge fill of lisinopril twenty, thirty days, four dollars, ready tomorrow after two at Millbrook, plus the atorvastatin. I'll call the doctor's office about the prior auth today, and we'll call you, Rafael, when the ninety-day is approved.
+S: Perfect. Thank you, Ingrid.
+R: You're welcome. Take care, both of you.
+C: [in background] Thank you! Bye-bye!

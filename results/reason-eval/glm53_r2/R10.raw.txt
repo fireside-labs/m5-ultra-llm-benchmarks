@@ -1,0 +1,32 @@
+## Estimate chain
+
+1. **City vehicle fleet:** 245,000 households × 1.7 vehicles = **416,500 light vehicles** (consistent with 600,000 residents ≈ 2.4 people/household).
+2. **EVs in 2030:** 416,500 × 12% (midpoint of the state's 8–16%) ≈ **50,000 EVs**.
+3. **Split by charging access:** 30% (midpoint of 25–35%) lack home charging → **15,000 without, 35,000 with**.
+4. **Sessions per week:**
+   - No home charging: 200 mi ÷ 150 mi/session = 1.33 session-equivalents/week; × 70% DC-fast share = 0.93 sessions/week each → 15,000 × 0.93 ≈ **14,000/week**.
+   - With home charging: 2 sessions/month ≈ 0.5/week → 35,000 × 0.5 = **17,500/week**.
+   - Fleets: 1,500 EVs × 5 = **7,500/week** (assumes all land on the public network, as given).
+   - Total ≈ **39,000 sessions/week**.
+5. **Port-hours demanded:** 39,000 × 40/60 h = **26,000 port-hours/week**.
+6. **Usable capacity per port:** 168 h/week × 25% utilization ceiling = **42 port-hours/week**. The 25% rule is what converts average demand into a port count — it builds in headroom for evening/weekend peaks, which are inherently several times the daily average.
+7. **Ports needed:** 26,000 ÷ 42 ≈ **620 total ports**; minus the 46 existing → **~575 to build**.
+8. **Cost:** 575 × $180k (midpoint of $140k–$220k) ≈ **$100M** (range: 394 × $140k ≈ $55M to 761 × $220k ≈ $168M).
+9. **What $12M buys:** $12M ÷ $180k ≈ 67 ports ≈ **11% of the 620 total** (~12% of the 575-port gap).
+10. **Sanity note:** the no-home share (25–35%) barely moves the total (±3%), because a no-home driver adds only ~0.4 sessions/week over a home-charging driver. Total EV count and the utilization ceiling dominate.
+
+## Result
+
+ESTIMATE: 620
+RANGE: 440 - 810
+DECISION: No — $12M buys only ~55–85 ports against a ~$100M program, covering roughly 10% of the ~620 ports needed.
+
+## Key sensitivities
+
+1. **The 25% utilization ceiling:** port count scales inversely with it — every 5 percentage points moves the total ~±20% (planning to 35% via pricing/demand-spreading cuts the need to ~440; a peakier reality at 20% pushes it toward ~775).
+2. **EV share in 2030 (8–16%):** scales all driver demand linearly; this uncertainty alone spans most of the 440–810 range and is outside the city's control.
+3. **Whether fleet demand lands on the public network:** the 7,500 weekly fleet sessions are ~19% of total demand; if the 1,500 fleet EVs charge at depots instead, the need drops by ~120 ports.
+
+## Recommendation
+
+Treat the $12M as a down payment, not the program: fund ~60–70 ports at the highest-demand sites — clusters of multi-unit and street-parked households, plus corridors ride-hail and delivery drivers actually use — and install spare conduit and panel capacity so ports can be added cheaply later. Before committing, check the three swing factors: actual peak-hour demand patterns, whether state/federal funds or private charging operators will co-fund the remaining ~$90M, and whether fleet depots can be induced to build private charging. Note that cheap curbside and workplace L2 is the main substitute — shifting even a third of no-home drivers' energy off DC fast chargers would materially shrink the fast-charge build-out. Revisit annually against actual EV registrations and utilization at the first sites; if early ports run above ~25% utilization, plan for the high end of the range.

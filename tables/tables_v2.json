@@ -1,0 +1,378 @@
+[
+ {
+  "n": 1,
+  "name": "cold_vs_warm",
+  "title": "Pay prefill once: cold vs next turn",
+  "header": [
+   "",
+   "Cold (first answer)",
+   "Next turn, +64 tokens",
+   "Next turn, +4k tokens"
+  ],
+  "rows": [
+   [
+    "Qwen, 50k",
+    "11 s",
+    "0.6 s",
+    "1.5 s"
+   ],
+   [
+    "Qwen, 100k",
+    "22 s",
+    "0.9 s",
+    "1.8 s"
+   ],
+   [
+    "Qwen, 250k",
+    "59 s",
+    "2.0 s",
+    "2.9 s"
+   ],
+   [
+    "DeepSeek, 300k",
+    "7.6 min",
+    "13 s",
+    ""
+   ],
+   [
+    "DeepSeek, 500k",
+    "17.2 min",
+    "22 s",
+    ""
+   ],
+   [
+    "DeepSeek, 1M",
+    "57 min",
+    "44 s",
+    ""
+   ]
+  ],
+  "rules": [],
+  "key": null,
+  "note": "Qwen: oMLX 0.7.0. DeepSeek: oMLX custom-kernel build (rc1), its next turn adds 64 new tokens plus a short question."
+ },
+ {
+  "n": 2,
+  "name": "qwen_depth",
+  "title": "Qwen on oMLX 0.7.0 vs llama.cpp",
+  "header": [
+   "Context",
+   "Prefill, oMLX 0.7.0",
+   "Prefill, llama.cpp",
+   "Decode, oMLX",
+   "Decode, llama.cpp"
+  ],
+  "rows": [
+   [
+    "10k",
+    "3,854 t/s",
+    "1,622 t/s",
+    "72 t/s",
+    "47 t/s"
+   ],
+   [
+    "50k",
+    "4,503",
+    "1,535",
+    "68",
+    "38"
+   ],
+   [
+    "100k",
+    "4,464",
+    "1,393",
+    "64",
+    "30"
+   ],
+   [
+    "250k",
+    "4,235",
+    "1,069",
+    "63",
+    "17.5"
+   ]
+  ],
+  "rules": [
+   [
+    "rowbest",
+    "max",
+    0,
+    [
+     1,
+     2
+    ]
+   ],
+   [
+    "rowbest",
+    "max",
+    1,
+    [
+     1,
+     2
+    ]
+   ],
+   [
+    "rowbest",
+    "max",
+    2,
+    [
+     1,
+     2
+    ]
+   ],
+   [
+    "rowbest",
+    "max",
+    3,
+    [
+     1,
+     2
+    ]
+   ],
+   [
+    "rowbest",
+    "max",
+    0,
+    [
+     3,
+     4
+    ]
+   ],
+   [
+    "rowbest",
+    "max",
+    1,
+    [
+     3,
+     4
+    ]
+   ],
+   [
+    "rowbest",
+    "max",
+    2,
+    [
+     3,
+     4
+    ]
+   ],
+   [
+    "rowbest",
+    "max",
+    3,
+    [
+     3,
+     4
+    ]
+   ]
+  ],
+  "key": "faster engine per row"
+ },
+ {
+  "n": 3,
+  "name": "replay_engines",
+  "title": "Real sessions replayed: oMLX vs llama.cpp",
+  "header": [
+   "Replayed session",
+   "oMLX",
+   "llama.cpp"
+  ],
+  "rows": [
+   [
+    "DeepSeek, 209 requests to 418k: time to first token at 300\u2013420k",
+    "7.3 s",
+    "16.6 s"
+   ],
+   [
+    "DeepSeek: decode at 300\u2013420k",
+    "29 t/s",
+    "21 t/s"
+   ],
+   [
+    "DeepSeek: whole session",
+    "**46 min**",
+    "73 min"
+   ],
+   [
+    "Qwen, 181 requests to 200k: whole session",
+    "**~19.5 min**",
+    "29.7 min"
+   ]
+  ],
+  "rules": [
+   [
+    "rowbest",
+    "min",
+    0,
+    [
+     1,
+     2
+    ]
+   ],
+   [
+    "rowbest",
+    "max",
+    1,
+    [
+     1,
+     2
+    ]
+   ],
+   [
+    "rowbest",
+    "min",
+    2,
+    [
+     1,
+     2
+    ]
+   ],
+   [
+    "rowbest",
+    "min",
+    3,
+    [
+     1,
+     2
+    ]
+   ]
+  ],
+  "key": "better engine per row"
+ },
+ {
+  "n": 4,
+  "name": "mtp_dspark",
+  "title": "MTP and DSpark: speedup by task",
+  "header": [
+   "",
+   "Code",
+   "Reasoning",
+   "JSON",
+   "Prose"
+  ],
+  "rows": [
+   [
+    "Qwen MTP (oMLX), temp 0",
+    "1.97x",
+    "2.09x",
+    "2.28x",
+    "1.53x"
+   ],
+   [
+    "DeepSeek DSpark (oMLX)",
+    "1.53x",
+    "1.54x",
+    "1.51x",
+    "1.00x"
+   ]
+  ],
+  "rules": [],
+  "key": null
+ },
+ {
+  "n": 5,
+  "name": "agent_harnesses",
+  "title": "Agents with real harnesses",
+  "header": [
+   "Run",
+   "Result"
+  ],
+  "rows": [
+   [
+    "DeepSeek V4 Flash, its own DeepSeek Harness, llama.cpp, 3 h",
+    "all 30 milestones, 53/54 hidden tests"
+   ],
+   [
+    "Qwen, pi, llama.cpp, 1 h",
+    "milestone 15, every hidden test passing"
+   ],
+   [
+    "Qwen, Oh My Pi, oMLX rc1, 1 h",
+    "milestone 15, hidden tests passing"
+   ]
+  ],
+  "rules": [],
+  "key": null
+ },
+ {
+  "n": 6,
+  "name": "deepseek_1m",
+  "title": "The 1 million token run: DeepSeek V4 Flash",
+  "header": [
+   "Context",
+   "First read",
+   "Decode",
+   "Next turn",
+   "Codes recalled"
+  ],
+  "rows": [
+   [
+    "300k",
+    "7.6 min",
+    "26 t/s",
+    "13 s",
+    "3/3"
+   ],
+   [
+    "500k",
+    "17.2 min",
+    "24 t/s",
+    "22 s",
+    "3/3"
+   ],
+   [
+    "750k",
+    "34.3 min",
+    "21 t/s",
+    "33 s",
+    "3/3"
+   ],
+   [
+    "1M",
+    "57.2 min",
+    "22 t/s",
+    "44 s",
+    "2/3"
+   ]
+  ],
+  "rules": [],
+  "key": null
+ },
+ {
+  "n": 7,
+  "name": "ltx_video",
+  "title": "Bonus: LTX-2.5 video in ComfyUI",
+  "header": [
+   "121 frames, 5 s with audio",
+   "Time"
+  ],
+  "rows": [
+   [
+    "1280x704, template defaults",
+    "122 s"
+   ],
+   [
+    "1280x704, `--gpu-only` + full-frame VAE decode",
+    "**92 s**"
+   ],
+   [
+    "1920x1088, `--gpu-only`, 1024 tiles",
+    "**244 s**"
+   ]
+  ],
+  "rules": [
+   [
+    "colbest",
+    "min",
+    [
+     0,
+     1
+    ],
+    [
+     1
+    ]
+   ]
+  ],
+  "key": "fastest at 1280x704"
+ }
+]

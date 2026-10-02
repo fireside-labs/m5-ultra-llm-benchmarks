@@ -1,0 +1,55 @@
+{
+  "call_type": "sales",
+  "outcome": "callback",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Misrepresented contract terms as cancel-anytime when a 36-month agreement with early termination fee applies",
+    "Overstated fuel savings as guaranteed when not in contract and only 'very, very likely'",
+    "Made misleading claims without proactively disclosing limitations until prospect questioned them"
+  ],
+  "flags": [
+    {
+      "type": "misinformation",
+      "description": "Represented the contract as cancel-anytime without disclosing the 36-month term and early termination fee until the prospect questioned it.",
+      "evidence": "You can cancel anytime."
+    },
+    {
+      "type": "misinformation",
+      "description": "Claimed a guaranteed 30% fuel savings with money-back guarantee, but later admitted it is not in the contract and only 'very, very likely'.",
+      "evidence": "thirty percent fuel savings. Guaranteed."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "REP",
+      "task": "Send written proposal with contract terms",
+      "due": "Thursday"
+    },
+    {
+      "owner": "REP",
+      "task": "Send calendar invite for demo with Priscilla",
+      "due": "next Tuesday at 2"
+    },
+    {
+      "owner": "PROSPECT",
+      "task": "Forward invite to Priscilla",
+      "due": "unspecified"
+    },
+    {
+      "owner": "REP",
+      "task": "Ensure solutions person covers accounting integration",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Inbound sales call with Rufus (ops manager) at Kranz and Daughters, a plumbing company with 32 vehicles (25 vans + 7 box trucks). Prospect interested in fuel savings and dispatch. Rep made misleading claims about cancel-anytime and guaranteed 30% savings, later clarified contract is 36-month with ETF and savings not guaranteed. Agreed to send written proposal by Thursday and schedule demo with CFO Priscilla Kranz-Albright next Tuesday at 2. Prospect will forward invite. Noted need for calendar sync, offline capability, and accounting integration.",
+  "notable_details": [
+    "Vehicle count corrected from 25 to 32 (25 vans + 7 box trucks).",
+    "Decision maker is CFO Priscilla Kranz-Albright.",
+    "Prospect uses spreadsheets, shared calendar, and group texts.",
+    "Need for offline capability in rural areas.",
+    "Rep had technical difficulties (mouse died, wrong window).",
+    "Prospect mentioned handoffs as biggest pain point."
+  ]
+}

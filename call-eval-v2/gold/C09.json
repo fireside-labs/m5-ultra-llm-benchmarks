@@ -1,0 +1,449 @@
+{
+ "call_id": "C09",
+ "call_type": "saas_support",
+ "outcome": "resolved",
+ "outcome_accept": [
+  "escalated"
+ ],
+ "sentiment_start": "neutral",
+ "sentiment_start_accept": [
+  "negative"
+ ],
+ "sentiment_end": "neutral",
+ "sentiment_end_accept": [
+  "positive"
+ ],
+ "quality_score": 4,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Agent was curt, sarcastic and condescending (rude tone, interrupted the owner)",
+   "match": [
+    [
+     "curt",
+     "rude",
+     "sarcas",
+     "condescend",
+     "dismissive",
+     "abrupt",
+     "brusque",
+     "impatient",
+     "unfriendly",
+     "blunt",
+     "tone",
+     "patroni[sz]",
+     "snark",
+     "terse",
+     "cold"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Every answer was accurate and complete: correct root-cause diagnosis (encoding/diacritic), working XLSX workaround, verified identity and got explicit owner authorization, clear recap and follow-up",
+   "match": [
+    [
+     "accura",
+     "correct",
+     "root cause",
+     "encoding",
+     "xlsx",
+     "diacritic",
+     "fixed",
+     "resolved"
+    ]
+   ]
+  }
+ ],
+ "flags": [],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Agent gave the accountant (a third party) access to the account and discussed payroll data with her",
+   "why_not": "The verified account owner explicitly authorized the accountant on the recorded line, both for the call and for the Accountant-role user.",
+   "evidence": "I, Ambrose Delacroix-Weng, authorize adding Sunniva Rask as a user, Accountant role.",
+   "paraphrases": [
+    "Payroll details were disclosed to a third-party accountant on the call.",
+    "Agent added an external accountant as a user on the account.",
+    "Third party Sunniva Rask was given access to payroll data."
+   ],
+   "match": [
+    [
+     "accountant",
+     "sunniva",
+     "rask",
+     "third.party",
+     "third party"
+    ]
+   ]
+  },
+  {
+   "id": "D2",
+   "text": "Agent deleted a payroll record (the 'PR-0918 copy') permanently",
+   "why_not": "It was an unfinalized draft created by accident; the owner requested deletion and confirmed twice; the finalized run was untouched.",
+   "evidence": "Deleting a draft is permanent. It does not affect the finalized run.",
+   "paraphrases": [
+    "Agent permanently deleted payroll data at the customer's request.",
+    "A payroll draft was deleted, which is irreversible.",
+    "Deletion of the PR-0918 copy could cause data loss."
+   ],
+   "match": [
+    [
+     "delet",
+     "remov",
+     "erase"
+    ],
+    [
+     "draft",
+     "copy",
+     "payroll",
+     "run",
+     "record",
+     "data"
+    ]
+   ]
+  },
+  {
+   "id": "D3",
+   "text": "Agent refused to support manually edited export files ('you're on your own')",
+   "why_not": "Correct statement of support scope; she then gave the supported way to add the column.",
+   "evidence": "If you edit the export by hand and the import breaks, you're on your own.",
+   "paraphrases": [
+    "Agent told the accountant she'd be on her own if she edited the file.",
+    "Support refused help with manually modified exports.",
+    "Agent declined to assist with hand-edited CSV files."
+   ],
+   "match": [
+    [
+     "on (your|her|their) own",
+     "by hand",
+     "hand.edit",
+     "manual(ly)?.{0,20}(edit|modif)",
+     "(edit|modif)\\w*.{0,30}(file|export|csv)",
+     "won'?t support",
+     "not support",
+     "refus\\w*.{0,40}(edit|modif)",
+     "declin\\w*.{0,40}(edit|modif)"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Agent was rude / unprofessional / condescending (tone, not a compliance issue)",
+   "match": [
+    [
+     "rude",
+     "unprofessional",
+     "condescend",
+     "sarcas",
+     "curt",
+     "dismissive",
+     "tone",
+     "disrespect",
+     "impatient",
+     "blunt",
+     "patroni[sz]",
+     "belittl",
+     "mock"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Owner splits cash tips without recording them (unreported wages) - customer's own practice, agent advised correctly",
+   "match": [
+    [
+     "tip"
+    ]
+   ]
+  },
+  {
+   "id": "OK3",
+   "text": "Owner held a new employee's bank details on a sticky note (agent correctly refused to take them by phone)",
+   "match": [
+    [
+     "sticky",
+     "bank (detail|account|info)",
+     "dmitri"
+    ]
+   ]
+  },
+  {
+   "id": "OK4",
+   "text": "Systemic reminder-email date bug (7.4)",
+   "match": [
+    [
+     "remind",
+     "due date",
+     "7\\.4",
+     "day early"
+    ]
+   ]
+  },
+  {
+   "id": "OK5",
+   "text": "Tier 1 chat wasted 40 minutes on irrelevant troubleshooting",
+   "match": [
+    [
+     "tier 1",
+     "tier one",
+     "theo",
+     "chat",
+     "cache",
+     "forty minutes",
+     "40 minutes"
+    ]
+   ]
+  },
+  {
+   "id": "OK6",
+   "text": "Ledgerline / encoding incompatibility (third-party limitation)",
+   "match": [
+    [
+     "encoding",
+     "ledgerline",
+     "utf",
+     "1252",
+     "diaeresis",
+     "accent",
+     "zo[eë]"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "customer",
+   "task": "Use XLSX (default export format now XLSX) or Windows-1252 CSV for future payroll exports",
+   "due": "future runs",
+   "match": [
+    [
+     "xlsx",
+     "excel",
+     "1252",
+     "default export",
+     "export format"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "accountant (Sunniva)",
+   "task": "Accept the Accountant-role invite",
+   "due": "within 7 days (today)",
+   "match": [
+    [
+     "invite",
+     "accept",
+     "accountant role",
+     "user"
+    ],
+    [
+     "accept",
+     "invite",
+     "sunniva",
+     "accountant"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "agent (Marguerite)",
+   "task": "Email a written summary with the knowledge-base article on export encodings",
+   "due": "today",
+   "match": [
+    [
+     "knowledge.base",
+     "article",
+     "encoding",
+     "xlsx",
+     "export"
+    ],
+    [
+     "email",
+     "send",
+     "written"
+    ]
+   ]
+  },
+  {
+   "id": "A4",
+   "owner": "agent (Marguerite)",
+   "task": "Log a request with engineering to put the CSV encoding option on the main export screen",
+   "due": "unspecified",
+   "match": [
+    [
+     "engineering",
+     "feature request",
+     "log",
+     "request",
+     "defect"
+    ],
+    [
+     "encoding",
+     "export",
+     "csv"
+    ]
+   ]
+  },
+  {
+   "id": "A5",
+   "owner": "customer (Ambrose)",
+   "task": "Update the mobile app from 7.2 to 7.4.1 (turn on automatic updates)",
+   "due": "unspecified",
+   "match": [
+    [
+     "app",
+     "update",
+     "7\\.4\\.1",
+     "7\\.2"
+    ],
+    [
+     "updat",
+     "upgrad",
+     "crash",
+     "version"
+    ]
+   ]
+  },
+  {
+   "id": "A6",
+   "owner": "customer and accountant",
+   "task": "Set up cash tips / paid tips earning types for the four Saturday tasting-room staff and enter tips each run; decide PTO retroactivity with accountant on Monday",
+   "due": "Monday / each pay run",
+   "match": [
+    [
+     "tip",
+     "pto",
+     "accrual",
+     "retroactiv"
+    ]
+   ]
+  },
+  {
+   "id": "A7",
+   "owner": "accountant (Sunniva)",
+   "task": "Send Ambrose the resale-certificate form again (sales tax on wholesale)",
+   "due": "unspecified",
+   "match": [
+    [
+     "resale",
+     "sales tax",
+     "tax.exempt",
+     "certificate"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "The failing payroll run is PR-0918 (Sept 18), first misread as PR-0981",
+   "evidence": "zero nine one eight. PR-0918. September eighteenth.",
+   "negatives": [
+    "Payroll run PR-0981 failed to import."
+   ],
+   "match": [
+    [
+     "0918",
+     "zero.nine.one.eight",
+     "oh.nine.one.eight"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Root cause: employee Zoë Abernathy-Quill changed her name to include a diaeresis (ë) on Sept 9; Tallyforge exports UTF-8 but Ledgerline reads Windows-1252",
+   "evidence": "Because she changed her name in her employee profile on September ninth.",
+   "match": [
+    [
+     "zo[eë]",
+     "abernathy",
+     "diaeresis",
+     "diacritic",
+     "accent",
+     "umlaut",
+     "two dots",
+     "special character",
+     "non.ascii",
+     "encoding",
+     "utf",
+     "1252"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Workaround: export as XLSX (now the default); alternatively CSV encoding Windows-1252; imported 12 of 12 rows",
+   "evidence": "Choose XLSX instead of CSV.",
+   "match": [
+    [
+     "xlsx",
+     "excel format",
+     "1252"
+    ]
+   ]
+  },
+  {
+   "id": "S4",
+   "text": "Hollis Varga's net pay is $1,850 (owner first read $1,815 from the wrong column)",
+   "evidence": "Net is— one thousand eight hundred fifty. Eighteen fifty.",
+   "negatives": [
+    "Hollis net pay $1,815.",
+    "net pay of 1815"
+   ],
+   "match": [
+    [
+     "1,?850",
+     "eighteen.fifty",
+     "one thousand eight hundred fifty"
+    ]
+   ]
+  },
+  {
+   "id": "S5",
+   "text": "Plan renews November 1 at the same price (the 'upcoming changes' email was about the optional expense module)",
+   "evidence": "Your plan renews November first, monthly price unchanged.",
+   "match": [
+    [
+     "nov(ember)?\\.? ?(1|first)\\b",
+     "11/1\\b",
+     "1st of november"
+    ]
+   ]
+  },
+  {
+   "id": "S6",
+   "text": "Mobile app is on 7.2, which has a known payroll crash; current version 7.4.1",
+   "evidence": "Current is 7.4.1. Seven-two has a known crash in payroll on newer phones.",
+   "match": [
+    [
+     "7\\.4\\.1",
+     "7\\.2",
+     "seven.two"
+    ]
+   ]
+  },
+  {
+   "id": "S7",
+   "text": "The accidental draft 'PR-0918 copy' was created via 'Duplicate as draft' on Sept 19 and was deleted; finalized run untouched",
+   "evidence": "You clicked \"Duplicate as draft\" on September nineteenth at eight-forty a.m.",
+   "match": [
+    [
+     "copy",
+     "draft"
+    ],
+    [
+     "delet",
+     "remov"
+    ]
+   ]
+  }
+ ],
+ "themes": [
+  "T_SAAS_DUE"
+ ]
+}

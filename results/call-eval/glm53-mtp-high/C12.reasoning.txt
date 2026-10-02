@@ -1,0 +1,39 @@
+
+Let me analyze.
+
+Call type: complaint_escalation (main goal is to file a complaint). Outcome: escalated (formal grievance opened, supervisor involved) — also rescheduled. Escalated fits.
+
+Sentiment start: negative (upset). End: neutral-ish ("Okay. Fine." — she accepted; "Hm. Fine." then later cooperative). Last minutes: "Yes. Please." "Okay." — neutral seems right.
+
+Quality score: Agent made unauthorized commitment ("we'll definitely cover your lost wages. I'll make sure of it") — supervisor walked back. That's a serious compliance failure (unauthorized_commitment). Also lots of small talk, inefficiencies, screen timeouts. Supervisor handled well: opened grievance, approved prep kit cost, rescheduled, noted diabetes/insulin safety issue. Score: 3 (mixed — one notable lapse: unauthorized commitment; plus inefficiency). Maybe 3.
+
+Flags:
+1. unauthorized_commitment: agent promised lost wages coverage without authority. Evidence: "we'll definitely cover your lost wages. I'll make sure of it."
+2. clinical_safety: patient was guessing insulin doses during prep, diabetic on insulin not asked — this was a safety issue raised; but it was handled (supervisor put in request). Do not flag things handled correctly? The flag is about the original incident — the prep instructions didn't account for diabetic insulin. Hmm, flags are about how the call was handled. The insulin issue was raised and addressed. But it's a notable safety detail — could flag as clinical_safety: patient self-managed insulin during prep without guidance, discovered only in passing. It was handled correctly in the call though. The instruction says don't flag things handled correctly. The insulin issue was handled correctly by the supervisor. But the underlying safety event (cancelled procedure, patient guessing insulin doses) — the call handled it. I could include it as a flag since it's a patient-safety issue that surfaced; but the handling was appropriate. I'll include it as clinical_safety flag since it's a safety concern that warrants reviewer attention — actually the guidance says flags are "compliance, privacy, security, patient-safety, or accuracy problems in how the call was handled". The insulin issue wasn't a problem in how the call was handled. But the misinformation flag: the text message instructions contradicted the packet — misinformation given to patient. That's a business-side accuracy problem. Flag: misinformation — conflicting prep instructions (text said clear liquids until 2 hours before; packet said nothing after midnight). Evidence: "the text says clear liquids until two hours before. They say two different things!"
+
+Also possibly identity_verification handled correctly — no flag.
+
+Action items:
+- Supervisor: open formal grievance G-260411, written acknowledgment within 5 business days, written response after review — due: within five business days (acknowledgment).
+- Supervisor: approve/cover cost of second prep kit — approved now.
+- Supervisor: include lost wages request in grievance for review committee — unspecified.
+- Supervisor/GI nurse: nurse to call patient before April 30 to review prep and insulin plan — due: before Thursday, April 30.
+- Supervisor: reschedule colonoscopy April 30, 7:30 arrival — done during call? It's booked. Could list as completed but action items are follow-up commitments. Rescheduling was done on call. I'll include nurse call and grievance items.
+- Agent: note "electronic preferred" — minor, done.
+
+Notable details:
+- Grievance number G-260411.
+- Rescheduled colonoscopy: Thursday, April 30, arrival 7:30 AM, same endoscopy center.
+- Patient diabetic on insulin; was guessing doses during prep; GI nurse to go over insulin plan.
+- Conflicting prep instructions: mailed packet says nothing after midnight; text said clear liquids up to 2 hours before.
+- Patient prefers electronic communication.
+- Preferred pharmacy on Ferris Avenue confirmed.
+- Lost wages reimbursement not guaranteed; decided by review committee; prep kit cost approved.
+- Patient name Henrietta Moss-Okwuosa, DOB 7/17/1968.
+- Cancellation line: reply to reminder text.
+
+Summary notes ≤120 words.
+
+Quality reasons: unauthorized commitment of lost wages reimbursement; excessive small talk and multiple technical interruptions extending call; supervisor handled grievance well, walked back improper promise transparently; safety issue (insulin) captured and escalated to nurse; identity verified properly.
+
+Score 3.

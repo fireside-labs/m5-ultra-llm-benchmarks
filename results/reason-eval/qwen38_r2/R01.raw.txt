@@ -1,0 +1,55 @@
+
+
+## Missed issues
+
+1. **Tallis has not proven the payroll rules that drive Ferncliff’s biggest risk.**  
+   Ferncliff is 60% hourly warehouse staff, has 4 unionized sites, and says payroll errors are the #1 source of HR grievances. Corvane and Meridew configured union shift-differential and overtime-averaging rules in sandbox tests, but Tallis says those rules are only “on the roadmap for Q3.” If Tallis cannot calculate union payroll correctly, it may fail the core objective of reducing grievances, and the 11-month end-of-support timeline leaves little room for roadmap slippage.
+
+2. **The price score is materially wrong because it uses a misleading year-1 number.**  
+   Tallis’s $182k year-1 subscription includes a 40% discount, but it also has a $95k implementation fee, $303k year-2 list price, up to 8% annual increases, and a termination fee equal to 6 months of fees. Even year 1 with implementation is $277k, versus Corvane at $236k and Meridew at $244k. Assuming a 3-year horizon and using the quoted terms, Tallis is roughly $907k versus $708k for Corvane and $691k for Meridew before exit costs, despite the memo calling Tallis the cheapest option.
+
+3. **Uptime scoring rewards marketing while the contract removes enforceable reliability.**  
+   Tallis scored 10 for “99.99% uptime,” but that figure is from vendor marketing, and the draft contract offers no uptime SLA, only “commercially reasonable efforts.” Corvane and Meridew contracts include a 99.9% SLA with service credits. For payroll, enforceable downtime remedies matter more than an uncontracted marketing claim.
+
+4. **Tallis’s references do not resemble Ferncliff’s environment.**  
+   Tallis’s three references are 60, 140, and 190 employees, all single-site and non-union. Ferncliff has 1,400 employees, 9 sites, and unionized locations. Corvane has a 2,000-employee unionized distributor reference, and Meridew has multi-site retailer references. Tallis has not shown it can handle Ferncliff’s scale, multi-site complexity, or union payroll requirements.
+
+5. **Tallis’s vendor viability is a serious continuity risk for payroll.**  
+   Tallis was founded 3 years ago, has 40 employees, and says it is raising its next round this quarter. Corvane and Meridew are each more than 15 years old and profitable. Payroll is business-critical; a funding failure, acquisition, or support contraction would create immediate operational and legal exposure.
+
+6. **Tallis creates unacceptable exit and data-portability risk.**  
+   Tallis exports historical payroll data only in its own format and has a termination fee equal to 6 months of fees. If implementation fails, the vendor underperforms, or the vendor falters financially, Ferncliff would face a costly migration and contractual lock-in. That is a major risk for a system that must be replaceable.
+
+7. **The evaluation excluded the people who will actually run payroll daily.**  
+   The payroll team, 6 people who would use the system daily, has not seen any demos. The memo author scored the demos alone using each vendor’s own script, which favors polished sales demonstrations over usability, error prevention, payroll controls, and exception handling. This makes the “Features” and “Ease of use” scores weak evidence.
+
+8. **The scoring matrix lacks mandatory pass/fail requirements and risk adjustments.**  
+   Union payroll rules, enforceable SLAs, data portability, vendor viability, and total cost should not be treated as ordinary scored features. A weighted total of 9.75 creates false confidence because it lets Tallis win despite unproven core payroll capability, no uptime SLA, weak references, and high exit risk.
+
+9. **The memo asks for signature before contract and due diligence are complete.**  
+   The recommendation is to sign this week, but key terms remain risky: no uptime SLA, separate implementation fee, renewal increases, termination fee, data-export limitation, and vendor funding uncertainty. Those are contract and finance issues, not implementation details to be resolved after signature.
+
+10. **The Friday price deadline is being used as a decision driver, not a business reason.**  
+   The memo recommends signing to lock in a year-1 price expiring Friday. But the year-1 price is not the real cost, and a discounted first-year subscription should not override payroll accuracy, union fit, contractual protections, or vendor viability.
+
+## Looks like a problem but isn't
+
+- Security posture appears addressed for now: all three provided SOC 2 Type II reports, and IT Security reviewed them with no exceptions.
+- ERP integration feasibility appears addressed: all three have prebuilt connectors and passed a tested sample payroll journal export.
+- Basic support terms appear comparable: all three offer 24/7 phone support with a 1-hour response commitment for payroll-blocking issues in the draft contracts.
+- The weighted totals are arithmetically correct; the problem is the quality and basis of the inputs, not the math.
+
+## Top 3 priorities
+
+1. **Make union/hourly payroll fit a pass/fail gate before any signature.**  
+   Require Tallis to demonstrate Ferncliff’s union shift-differential and overtime-averaging rules in a sandbox, with the payroll team and relevant HR/union stakeholders reviewing the results, and make any delivery commitment contractual with acceptance criteria. If Tallis cannot prove this now, it should not advance.
+
+2. **Re-score on total cost and enforceable risk, not year-1 subscription price.**  
+   Rebuild the model with implementation fees, year-2 pricing, maximum increases, termination fees, SLA credits, data-export terms, and vendor viability. Legal and finance need to review the draft contract before anyone signs.
+
+3. **Complete user, reference, and exit validation before signing.**  
+   The payroll team must test the platform, Ferncliff needs comparable multi-site unionized references, and the team must document a realistic migration and exit plan. Do not sign based on the Friday price deadline.
+
+## Bottom line
+
+The recommendation does not stand as written. Do not sign this week; the $182k year-1 price is not the real cost, and Tallis has not proven it can handle unionized hourly payroll or provide enforceable uptime and exit terms. Use this week to run a focused validation: prove the union payroll rules, reprice total cost and contract risk, and get payroll, legal, finance, and union/HR stakeholder sign-off; otherwise Corvane or Meridew should move forward.

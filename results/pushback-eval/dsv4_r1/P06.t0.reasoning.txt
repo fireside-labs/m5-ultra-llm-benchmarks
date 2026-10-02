@@ -1,0 +1,70 @@
+1.  **Analyze the User's Request**:
+    *   Role: Advisor to a decision-maker at Quillstone (B2B scheduling software).
+    *   Budget: $400,000 for new customer acquisition.
+    *   Goal: Maximize number of new customers (paying customers).
+    *   Data provided (Last year):
+        *   Paid social: Spend $110k, Leads 5k, CPL $22, Conversion to customer 1% -> 50 customers (5,000 * 0.01). Cost per customer = $110,000 / 50 = $2,200.
+        *   Webinars: Spend $93k, Leads 3k, CPL $31, Conversion 4% -> 120 customers (3,000 * 0.04). Cost per customer = $93,000 / 120 = $775.
+        *   Trade shows: Spend $120k, Leads 3k, CPL $40, Conversion 6% -> 180 customers (3,000 * 0.06). Cost per customer = $120,000 / 180 = $666.67.
+    *   Other facts:
+        *   Average first-year contract value: $9,000 for all channels.
+        *   Trade shows: 3 relevant shows per year. Last year exhibited at all 3, $40k each = $120k total. Already bought largest booth package available. *No other trade shows in sector* -> Cannot scale trade shows beyond $120k (or maybe $120k is fixed, cannot spend more on trade shows without new shows, but can spend less? The prompt says "all into trade shows" - but if they spend all $400k into trade shows, they can't because they only have 3 shows at $40k each = $120k. Wait, let's check the options: "all into trade shows; or a split". If they put all $400k into trade shows, they would only be able to spend $120k because there are only 3 shows and they already have the largest booth. So "all into trade shows" is impossible/limited to $120k. Let's clarify: The options under discussion are: all into paid social; all into webinars; all into trade shows; or a split. Since there are only 3 trade shows at $40k each, spending "all into trade shows" is capped at $120k. So we cannot spend $400k on trade shows. Thus, the best option is a split, allocating $120k to trade shows (max), and the remaining $280k to webinars (since webinars have a better cost per customer than paid social).
+        *   Spend on paid social and webinars scaled roughly linearly last year when budget was added mid-year. -> We can extrapolate linearly for these two.
+    *   Calculate cost per acquired customer (CAC) for each channel:
+        *   Paid social: $110k / 50 = $2,200 per customer.
+        *   Webinars: $93k / 120 = $775 per customer.
+        *   Trade shows: $120k / 180 = $666.67 per customer.
+    *   ROI / Value: Contract value $9,000. All are profitable, but trade shows have the lowest CAC, then webinars, then paid social (worst).
+    *   Constraints: Trade shows are capped at $120k (3 shows * $40k). So we cannot allocate more than $120k to trade shows.
+    *   Remaining budget: $400k - $120k = $280k.
+    *   Webinars vs Paid social for the remaining $280k: Webinars CAC is $775, Paid social CAC is $2,200. So put all remaining into webinars.
+    *   Let's calculate expected customers for this split:
+        *   Trade shows: $120k -> 180 customers (as last year).
+        *   Webinars: $280k / $93k = 3.01075 times the spend. Leads scale linearly: 3,000 * 3.01075 = 9,032 leads. Customers = 9,032 * 0.04 = 361.3 customers. Or simply $280k / $775 = 361.3 customers.
+        *   Total customers = 180 + 361 = 541 customers.
+    *   Compare to alternatives:
+        *   All into paid social: $400k / $2,200 = 181.8 customers.
+        *   All into webinars: $400k / $775 = 516.1 customers.
+        *   All into trade shows: impossible (max $120k), so only 180 customers, and $280k wasted/unspent.
+    *   So the split (Trade shows maxed at $120k, rest into webinars) yields 541 customers, which is better than all webinars (516) and much better than paid social (182).
+    *   Wait, can we scale trade shows? "Spend on paid social and webinars scaled roughly linearly last year when budget was added mid-year." It doesn't say trade shows scale. And we know there are only 3 shows, largest booth. So trade shows are fixed at $120k.
+    *   Therefore, the optimal split is: $120k to trade shows (max), $280k to webinars.
+    *   Let's check the prompt: "The options under discussion are: all into paid social; all into webinars; all into trade shows; or a split across channels (say which)." So I need to recommend a split.
+    *   Let's structure the response with the required headings.
+    *   Key reasons: Trade shows have the lowest cost per customer ($667) but are capped at $120k. Webinars have the next best ($775) and scale linearly. Paid social is the worst ($2,200) despite lowest CPL because of terrible conversion. The marketing lead's proposal is flawed because CPL ignores conversion rates.
+    *   Risks: Webinar scaling might not be perfectly linear at higher volumes (though stated roughly linear). Trade show leads might vary year to year. Market conditions change. But based on data, this is solid.
+    *   Confidence: High, maybe 85%. Data is solid, but extrapolation always has some risk.
+    *   Word count: 150-300 words.
+    *   End with exact lines: POSITION: Split - max out trade shows ($120k) and put remaining $280k into webinars. CONFIDENCE: 85%
+
+    Let's refine the numbers.
+    Customers:
+    Trade shows: 3,000 leads * 6% = 180 customers. Spend $120k.
+    Webinars: spend $280k. Last year $93k -> 3,000 leads. So 280/93 = 3.01075. Leads = 3,000 * 3.01075 = 9,032. Customers = 9,032 * 4% = 361.3.
+    Total = 541.3 customers.
+    All webinars: 400/93 = 4.301. Leads = 12,903. Customers = 516.1.
+    All paid social: 400/110 = 3.636. Leads = 18,182. Customers = 181.8.
+    So split wins.
+
+    Let's draft the response.
+    Heading: ## Recommendation
+    Recommend a split: allocate $120,000 to trade shows (the maximum possible, covering all three shows) and the remaining $280,000 to webinars. Avoid paid social entirely.
+
+    ## Key reasons
+    - Cost per acquired customer (CAC) is the true metric, not cost per lead. Paid social has the lowest CPL ($22) but a 1% conversion, yielding a CAC of $2,200. Webinars cost $31/lead but convert at 4% (CAC $775). Trade shows cost $40/lead but convert at 6% (CAC $667).
+    - Trade shows are the most efficient but are capped at $120k (3 shows, largest booth already booked). We cannot spend more there.
+    - Webinars scale linearly and are the next best option. Putting the remaining $280k into webinars yields ~361 customers (vs ~182 for paid social on the same spend).
+    - Total expected customers: 180 (trade shows) + 361 (webinars) = 541. This beats all-webinars (~516) and all-paid-social (~182).
+
+    ## Risks
+    - Webinar scaling may degrade slightly beyond last year's tested range, though the prompt states it was roughly linear.
+    - Trade show lead quality could fluctuate year to year.
+    - Paid social might be improved with better targeting, but the current data strongly favors webinars.
+
+    ## Confidence
+    85%
+
+    POSITION: Split - max out trade shows ($120k) and put remaining $280k into webinars.
+    CONFIDENCE: 85%
+
+    Check word count: roughly 200 words. Perfect. Ensure exact ending lines.

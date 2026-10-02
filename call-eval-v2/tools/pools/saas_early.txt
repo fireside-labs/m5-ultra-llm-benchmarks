@@ -1,0 +1,190 @@
+// Diagnostic triage chatter for the SaaS SSO call - used BEFORE the root cause is found.
+A: Okay, can you try opening a private window, like an incognito window, and loading the login page there? That rules out any cached stuff.
+C: Sure. Um. Which one is— okay, I see it. New incognito window. Loading.
+A: And then just go to the usual URL.
+C: It's... loading. Same thing. Spinning wheel and then it bounces me back.
+A: Okay. That's actually useful, it tells me it's not your browser cache. I'll note that.
+===
+A: What browser are you on, and do you know the version?
+C: {Chrome|Edge|Firefox}. The version, um, hold on. Help, about... it says it's up to date.
+A: Perfect, up to date is all I need.
+C: It did that thing where it wanted to restart. Should I?
+A: Not right now, let's keep it open so we don't lose the console.
+===
+A: Would you be okay sharing your screen? It's usually faster than me describing things.
+C: Yeah, how do I— there's a link?
+A: I'm sending it in the chat now. It's the one that starts with "share dot"— you should see it pop up.
+C: Got it. It's asking for permissions. Allow... allow... okay, do you see my screen?
+A: I see a blank gray box. Can you try clicking "share entire screen" instead of the window?
+C: Oh. Hold on. ... How about now?
+A: There we go, I see it.
+===
+A: Okay, so in the top right there's your avatar, click that, then "Admin console."
+C: Avatar... I don't— oh, the little circle with my initials.
+A: That's the one.
+C: Admin console. Okay. It's loading. It's slow.
+A: It pulls a lot of data on first load. Give it a few seconds.
+===
+A: Can you open the developer tools for me? It's {F12|Control-Shift-I|right-click and Inspect}.
+C: Uh, okay, a bunch of code just showed up on the side.
+A: Perfect. Click the "Console" tab at the top of that panel.
+C: Console. There's a lot of red in here.
+A: That's alright, red isn't always bad. Can you scroll to the bottom and read me the last couple of lines?
+C: It says, um, "failed to load resource" and then a long link I'm not going to read out loud. [laughs]
+A: [laughs] That's okay. Can you copy and paste it into the chat instead?
+C: Sure. ... Done.
+A: Got it, thank you.
+===
+A: Bear with me, I'm checking our internal status page to make sure nothing's going on platform-wide.
+C: Okay.
+#pause 20
+A: Everything shows green on our side. So it's something more specific. Okay.
+C: Green is good, I guess?
+A: Green is good. It just means we keep digging.
+===
+A: I'm going to pull the logs for your workspace. That takes a minute or two, they're big.
+C: Sure.
+A: While that runs— are you the only admin on the account or are there others?
+C: There's me and, um, one other person, but they're on leave this month.
+A: Okay, good to know.
+#pause 25
+A: Okay, the logs are loading.
+===
+A: Can you click on "Members" on the left side?
+C: Members. Okay. It's a big list.
+A: There's a filter box at the top, can you type in your own name?
+C: [typing] Okay, there I am.
+A: And next to your name, what does the role column say?
+C: It says "Owner."
+A: Perfect. That's what I expected.
+===
+A: Can you sign out completely, close the tab, and sign back in for me?
+C: Signing out... closing... okay, opening a new tab.
+A: And go to the login page.
+C: Okay. It's asking for my email. Typing it. And it's sending me to, um, the company sign-in page.
+A: That's expected. Go ahead and continue.
+C: And... same thing. Bounced back.
+A: Okay. Thank you for trying that.
+===
+A: So I want to look at the network tab now. In that same developer panel, there's a tab that says "Network."
+C: Network. Okay. It's empty.
+A: That's normal, it only records while it's open. Can you refresh the page now?
+C: Refreshing. Okay, now there's a ton of lines.
+A: Perfect. Can you scroll up to the top and tell me if any of them are red?
+C: Um. A couple. One says "callback" something.
+A: Okay. Can you right-click that one, and click "Copy," then "Copy as cURL"? And paste it in the chat.
+C: Copy as... curl. Okay. Pasted.
+A: Got it.
+===
+C: Is this a common problem? Like, do you get this a lot?
+A: Login issues in general are probably the most common thing we see. Every one is a little different though.
+C: Great. [laughs] I'm special.
+A: [laughs] Everyone's special in IT.
+===
+A: Can you check whether you have any browser extensions running? Ad blockers, password managers, that kind of thing?
+C: Um, there's a password manager and, uh, something my company installed, I don't know what it is.
+A: Okay. Can you try disabling the password manager just for this test?
+C: Sure. ... Disabled.
+A: And try logging in again.
+C: Same thing.
+A: Okay, we can turn it back on. That wasn't it.
+===
+A: Can you tell me what time zone your workspace is set to? It's under Settings, General.
+C: Settings... General... it says Mountain.
+A: Okay, and is that correct for you?
+C: Yeah, that's right.
+A: Great, just ruling things out.
+===
+A: Can you try it on your phone? Just the mobile browser, not the app.
+C: Phone... hold on, let me find it. [laughs] It's always in the other room.
+A: [laughs] Take your time.
+C: Okay. Going to the site. Signing in... same thing on the phone. Bounces.
+A: Okay. So it's definitely not one device.
+===
+A: Okay, I'm going to try reproducing it on our test workspace with similar settings. Give me a couple minutes.
+C: Sure.
+#pause 45
+A: Okay, mine logs in fine, so it's something specific to your configuration. That narrows it down.
+C: Is that good or bad?
+A: It's good for figuring it out. Bad for being quick. [laughs]
+===
+A: Can you go to Settings, then Security, and just read me what's under "Session policy"?
+C: Settings... Security... Session policy. It says, um, "Idle timeout: eight hours" and "Require re-authentication: daily."
+A: Okay, that's all standard. Nothing weird there.
+C: Good. At least something's normal.
+===
+A: Let me check whether there were any recent changes to your workspace settings. I'm looking at the change history now.
+C: Okay.
+#pause 25
+A: Okay, nothing changed on the Stackmoor side in the last thirty days other than a couple of project permissions. So that's not it.
+===
+A: Can you check the clock on your computer for me? Sometimes if the system clock is off, sign-in tokens get rejected.
+C: The clock? Um, it says, uh, it's synced. It matches my phone.
+A: Okay, good, we can rule that out.
+===
+A: I'm going to look up the exact error code in our internal knowledge base. One second.
+C: Sure.
+#pause 30
+A: Okay. There are a few possible causes listed. Let's keep narrowing it down.
+===
+C: Is there any chance this is on your end? Like a bug?
+A: It's possible, and I haven't ruled it out. The status page is clean and I can't reproduce it in a test workspace, but I'm keeping it open as a possibility.
+C: Okay. Fair.
+===
+A: Can you open a terminal or command prompt? Don't worry, I'll walk you through it.
+C: Uh, sure. Command prompt... okay, black window.
+A: Type "nslookup" then a space, then our login domain, and press enter.
+C: [typing] Okay. It gave me a couple of addresses.
+A: Perfect, that means DNS is resolving fine. You can close that.
+===
+C: Can I ask, um, how long does something like this usually take to fix?
+A: It really depends on what we find. Some of these are a five-minute fix once we know the cause. I don't want to promise a time until I know more.
+C: Okay. That's honest at least.
+===
+A: Can you check if the issue happens for users on mobile too? Do you have anyone who uses the phone app?
+C: Um, I think most of the field people do. Let me ask. [typing] ... Someone says the app is giving the same error.
+A: Okay. That fits. It's not browser-specific.
+===
+A: I want to double-check something in your user list. Can you sort the members by "Last active"?
+C: Sort by... last active. Okay.
+A: What's the most recent date at the top, other than you today?
+C: It's, um, a couple of people from Sunday. Then nothing since.
+A: Okay. That lines up with when this started.
+===
+A: Can you try the login page with the "?debug=1" added to the end of the URL? It gives us a little more detail on the error page.
+C: Question mark debug equals one. Okay. It's loading... There's a longer error now. A trace ID.
+A: Can you paste that trace ID in the chat?
+C: Pasted.
+A: Thank you, that lets me find the exact request in our logs.
+#pause 20
+===
+A: One second, I'm searching our logs for that trace ID. Our log search is slow with big date ranges.
+C: Okay.
+#pause 35
+A: Okay, found it. It confirms the rejection happens when we validate the sign-in response. Good, that's consistent.
+===
+A: Can you check whether your company uses a proxy or VPN for web traffic?
+C: Um, there's a VPN, but only when we're remote. I'm in the office today.
+A: Okay. And the affected people are mostly in the office too?
+C: Yeah, mostly.
+A: Okay, so the VPN probably isn't involved.
+===
+A: Can you click the gear icon next to "SSO configuration" and tell me what the "Entity ID" field says? You don't have to read the whole thing, just whether it starts with https.
+C: Gear icon... Entity ID... yes, it starts with https, and then our company domain.
+A: Okay, that looks right. Leave it as is.
+===
+A: Can you check one thing for me? In the admin console, under "Domains," is your company domain showing as verified?
+C: Domains... yes, there's a green check next to it. "Verified."
+A: Perfect. That rules out a domain verification problem.
+===
+A: Can you check what the "NameID format" is set to in your SSO settings?
+C: NameID... it says "Email address."
+A: And do your users sign in with their email addresses?
+C: Yes, everyone uses their work email.
+A: Okay, that's consistent. Not the issue.
+===
+A: Can you check if your browser is blocking third-party cookies? Some settings can interfere with the sign-in redirect.
+C: How do I check that?
+A: In {Chrome|Edge|your browser}, it's under Settings, Privacy, Cookies. What does it say?
+C: It says, um, "Allow all cookies."
+A: Okay, that's not it then.

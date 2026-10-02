@@ -1,0 +1,100 @@
+{
+  "call_type": "complaint_escalation",
+  "outcome": "escalated",
+  "sentiment_start": "negative",
+  "sentiment_end": "neutral",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Identity was verified before discussing account details.",
+    "Agent was empathetic and escalated to supervisor appropriately.",
+    "Supervisor opened grievance, rescheduled procedure, and addressed insulin-specific prep follow-up.",
+    "Agent made an unauthorized lost-wages reimbursement promise, later corrected by supervisor.",
+    "System timeouts and a 2-minute hold caused minor delays."
+  ],
+  "flags": [
+    {
+      "type": "unauthorized_commitment",
+      "description": "Agent promised lost wages reimbursement without authority; supervisor later corrected that it is committee-decided.",
+      "evidence": "we'll definitely cover your lost wages. I'll make sure of it."
+    },
+    {
+      "type": "clinical_safety",
+      "description": "Conflicting pre-procedure instructions created anesthesia/cancellation safety risk.",
+      "evidence": "the text says clear liquids until two hours before"
+    },
+    {
+      "type": "clinical_safety",
+      "description": "Patient reported diabetic insulin management was not assessed during prior prep.",
+      "evidence": "Nobody asked me about that last time either"
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "Patient Services Representative",
+      "task": "Report conflicting pre-procedure instructions to the relevant teams.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Patient Services Representative",
+      "task": "Note patient's electronic communication preference.",
+      "due": "during call"
+    },
+    {
+      "owner": "Patient Relations Supervisor",
+      "task": "Open formal grievance G-260411.",
+      "due": "during call"
+    },
+    {
+      "owner": "Patient Relations Supervisor",
+      "task": "Send written acknowledgment of the grievance.",
+      "due": "within five business days"
+    },
+    {
+      "owner": "Patient Relations Supervisor / review committee",
+      "task": "Review grievance with endoscopy center and text reminder team and provide written response.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Patient Relations Supervisor",
+      "task": "Include lost wages reimbursement request in the grievance for committee review.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Patient Relations Supervisor",
+      "task": "Approve and process cost of second prep kit.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Patient Relations Supervisor",
+      "task": "Include agent Noor's statement in the grievance record.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "GI nurse",
+      "task": "Call patient before the rescheduled procedure to review prep and provide written instructions, including insulin plan.",
+      "due": "before April 30, 2026"
+    },
+    {
+      "owner": "Patient",
+      "task": "Attend rescheduled colonoscopy at the endoscopy center.",
+      "due": "April 30, 2026 7:30 AM"
+    },
+    {
+      "owner": "Patient",
+      "task": "Bring photo ID, insurance card, and updated medication list.",
+      "due": "April 30, 2026"
+    }
+  ],
+  "summary_notes": "Patient Henrietta Moss-Okwuosa complained that conflicting colonoscopy prep instructions (text allowed clear liquids until 2 hours before arrival; mailed packet said nothing after midnight) caused cancellation. She also reported diabetes/insulin was not assessed during prior prep. Identity verified. Agent empathetically escalated to Patient Relations Supervisor, who opened grievance G-260411, rescheduled colonoscopy for Apr 30, 2026, 7:30 AM, approved second prep kit cost, and arranged GI nurse call to review insulin-specific prep instructions. Lost wages reimbursement was promised by agent but corrected to committee review. Patient prefers electronic communications; pharmacy on Ferris Avenue confirmed.",
+  "notable_details": [
+    "Patient: Henrietta Moss-Okwuosa, DOB 07/17/1968, phone 555-240-7713.",
+    "Grievance number: G-260411.",
+    "Rescheduled colonoscopy: Thursday, April 30, 2026, arrival 7:30 AM, same endoscopy center.",
+    "Conflicting prep instructions: text said clear liquids until 2 hours before arrival; mailed packet said nothing after midnight.",
+    "Patient is diabetic and on insulin; prior prep did not include insulin assessment.",
+    "Agent initially promised lost wages coverage; supervisor corrected that lost wages are committee-decided.",
+    "Second prep kit cost approved by supervisor.",
+    "Patient prefers electronic communications; preferred pharmacy on Ferris Avenue confirmed.",
+    "Call included 2-minute hold and multiple system timeouts."
+  ]
+}

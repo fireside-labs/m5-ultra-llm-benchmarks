@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CallAnalysis",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["call_type", "outcome", "sentiment_start", "sentiment_end", "quality_score", "quality_reasons", "flags", "action_items", "summary_notes", "notable_details"],
+  "properties": {
+    "call_type": {
+      "type": "string",
+      "enum": ["scheduling", "pre_procedure", "post_procedure_followup", "no_show_followup", "billing_dispute", "insurance_verification", "pharmacy_refill", "complaint_escalation", "saas_support", "sales", "other"]
+    },
+    "outcome": {"type": "string", "enum": ["resolved", "unresolved", "escalated", "callback"]},
+    "sentiment_start": {"type": "string", "enum": ["negative", "neutral", "positive"]},
+    "sentiment_end": {"type": "string", "enum": ["negative", "neutral", "positive"]},
+    "quality_score": {"type": "integer", "minimum": 1, "maximum": 5},
+    "quality_reasons": {"type": "array", "items": {"type": "string"}},
+    "flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "description", "evidence"],
+        "properties": {
+          "type": {"type": "string", "enum": ["privacy_disclosure", "identity_verification", "unauthorized_commitment", "missed_commitment", "clinical_safety", "misinformation", "security", "policy_violation", "other"]},
+          "description": {"type": "string"},
+          "evidence": {"type": "string"}
+        }
+      }
+    },
+    "action_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["owner", "task", "due"],
+        "properties": {
+          "owner": {"type": "string"},
+          "task": {"type": "string"},
+          "due": {"type": "string"}
+        }
+      }
+    },
+    "summary_notes": {"type": "string"},
+    "notable_details": {"type": "array", "items": {"type": "string"}}
+  }
+}

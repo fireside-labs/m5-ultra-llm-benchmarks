@@ -1,0 +1,80 @@
+CALL TRANSCRIPT
+Call ID: C08
+Date/time: 2026-07-14 16:22
+Line: Stackmoor (project management SaaS) - Customer Support
+Direction: inbound
+Speakers: AGENT = support engineer; CUSTOMER = workspace admin at a customer company
+Source: automatic speech-to-text with speaker diarization; timestamps are call-relative. [inaudible], [crosstalk] and [background] marks are from the transcription service.
+------------------------------------------------------------
+[00:00:04] AGENT: Stackmoor support, this is Kenji. How can I help?
+[00:00:07] CUSTOMER: Hi Kenji. I'm, um, I'm in a bit of a bind. I need to export our time report to CSV for payroll by five o'clock and the export just fails. Every time.
+[00:00:21] AGENT: Oh no, okay, let's get you sorted. Can I get the email on your account and your workspace name?
+[00:00:28] CUSTOMER: It's odalys at ferrante-mwangi-studio dot com, and the workspace is "FM Studio."
+[00:00:33] AGENT: Thanks. I just sent a six-digit code to that email, can you read it to me?
+[00:00:40] CUSTOMER: Hold on... four-one-nine, two-two-seven.
+[00:00:43] AGENT: That's it, thank you, you're verified. Okay, what exactly happens when you export?
+[00:00:49] CUSTOMER: I go to Reports, Time, set it to last month, hit Export, CSV, and it spins for like a minute and then says "Export failed, try again later." I've tried later. [laughs] Many laters.
+[00:01:02] AGENT: [laughs] Understood. Let me check your workspace. [typing] Okay, I see you're on the Team Classic plan. Can I put you on a quick hold while I check something?
+[00:01:15] CUSTOMER: Sure. Please be quick, though.
+[00:01:18] [caller placed on hold]
+[00:05:38] [hold ended - 4m20s]
+[00:05:39] AGENT: Thanks so much for holding, sorry that was longer than I meant. So, here's what's going on. On the Team Classic plan, the CSV export has a cap of five thousand rows, and your report for last month is about seven thousand two hundred rows, because it's broken out per entry. Instead of telling you that, it just fails, which is a bug, and I'm sorry about that.
+[00:06:04] CUSTOMER: Oh. Great. So I can't do it?
+[00:06:08] AGENT: You can, there are two workarounds. One, export to Excel format, XLSX, which doesn't have the cap. Or two, split it into two date ranges, like the first and second half of the month.
+[00:06:21] CUSTOMER: Can payroll take Excel? Um... yeah, actually, they can. Let me try it. [typing] Reports... Time... Export... XLSX... It's working. It's downloading. Oh, thank God.
+[00:06:32] AGENT: [laughs] Great!
+[00:06:34] CUSTOMER: Okay, I'll just open it and— yeah, it's all there. Okay. Phew.
+[00:06:40] CUSTOMER: Is it okay if I put the phone down for a second? I need to grab my glasses.
+[00:06:48] AGENT: Of course.
+[00:07:05] CUSTOMER: Okay. I can see now. [laughs] Mostly.
+[00:07:08] AGENT: I'm just going to, um, scroll down here, there's a lot on this page.
+[00:07:15] CUSTOMER: Okay.
+[00:07:16] AGENT: [typing] Still scrolling. Almost there.
+[00:07:19] CUSTOMER: [laughs] It's like a receipt from a pharmacy.
+[00:07:23] AGENT: [laughs] Exactly like that.
+[00:07:26] CUSTOMER: Is it, um, is it busy over there today?
+[00:07:30] AGENT: A little busier than usual. You picked a decent time.
+[00:07:35] CUSTOMER: Oh good. I always feel bad calling when I know everyone's slammed.
+[00:07:40] AGENT: No, it's what we're here for.
+[00:07:43] CUSTOMER: You have a really calm voice, by the way. That helps.
+[00:07:48] AGENT: Oh, well, thank you. That's nice to hear.
+[00:07:52] CUSTOMER: The last place I called, the guy sounded like he was on a treadmill.
+[00:07:58] AGENT: [laughs] Oh no.
+[00:08:00] CUSTOMER: Yeah. Anyway.
+[00:08:02] CUSTOMER: Can you hear the, uh, the construction? They're redoing the road outside my place. It's been a month.
+[00:08:10] AGENT: A little bit. You're fine though.
+[00:08:13] CUSTOMER: It starts at seven every morning. Seven!
+[00:08:17] AGENT: Oh, that's rough.
+[00:08:19] AGENT: It's thinking. It's still thinking. [laughs] Sorry.
+[00:08:22] CUSTOMER: Take your time, honestly.
+[00:08:25] AGENT: I appreciate that. Some days it's faster. Today's not one of those days.
+[00:08:30] CUSTOMER: [background: TV] Hang on let me turn this down. My son has the game on and it's— okay. Okay, sorry.
+[00:08:40] AGENT: You're fine. Who's playing?
+[00:08:42] CUSTOMER: Oh, I have no idea honestly. Some team he likes. He gets very loud about it.
+[00:08:50] AGENT: [laughs] That's half the fun I guess.
+[00:08:54] CUSTOMER: Is it okay if I, um, if I write this down? Let me find a pen. Hang on. [background: drawer opening] Why is there never a pen.
+[00:09:04] AGENT: [laughs] That's universal.
+[00:09:06] CUSTOMER: Found a pencil. Crayon, actually. It'll do.
+[00:09:10] AGENT: [laughs] Whatever works.
+[00:09:12] AGENT: And just, uh, so you know, if we get disconnected I'll call you right back on the number we have.
+[00:09:20] CUSTOMER: Okay. That's happened to me before with, um, other places, and nobody calls back, so.
+[00:09:28] AGENT: Yeah, I'll make sure. It's on my screen right here.
+[00:09:32] CUSTOMER: Appreciate it.
+[00:09:34] AGENT: Sorry, my headset just did something weird. Can you still hear me?
+[00:09:39] CUSTOMER: Yep, I hear you.
+[00:09:41] AGENT: Okay good. It's been, um, it's been glitchy all morning. IT says they're "looking into it."
+[00:09:48] CUSTOMER: [laughs] They always are.
+[00:09:50] AGENT: Always. Okay. Where were we.
+[00:09:54] CUSTOMER: My neighbor always says you have to be nice to the people on the phone, because they can help you or not.
+[00:10:04] AGENT: [laughs] Well, I'd help you either way. But it's appreciated.
+[00:10:10] CUSTOMER: [laughs] She's a smart lady.
+[00:10:12] AGENT: I've filed the bug with our engineering team so the CSV export gives a proper message, and I've linked your account to it so you'll get an email when it's fixed. Your ticket number is four-four-zero-nine-one.
+[00:10:28] CUSTOMER: Four-four-zero-nine-one. Thank you.
+[00:10:31] AGENT: Is there anything else?
+[00:10:33] CUSTOMER: Um, no— well, unrelated, but the weekly digest emails stopped coming too. Since, uh, last Tuesday, I think. But honestly nobody reads them, so whatever.
+[00:10:45] AGENT: Oh, I'll add that to the ticket, it might be related to the same export service. I'll make a note to check it.
+[00:10:55] CUSTOMER: Sure. Also, we're up for renewal in like two weeks, so, um, if Classic is going to keep doing this, I might need to talk to someone about the plans.
+[00:11:09] AGENT: That makes sense. I can have your account manager reach out with the options, no pressure.
+[00:11:16] CUSTOMER: Yeah, that'd be fine. Okay, thank you, Kenji, you saved my afternoon.
+[00:11:23] AGENT: Glad to help. Good luck with payroll!
+[00:11:26] [call ended]

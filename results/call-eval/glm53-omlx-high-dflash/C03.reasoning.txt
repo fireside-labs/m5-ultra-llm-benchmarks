@@ -1,0 +1,50 @@
+
+Let me analyze.
+
+Call type: post_procedure_followup (outbound nurse follow-up).
+
+Outcome: resolved — follow-up completed, questions answered, PT referral changed, aspirin restart clarified. No pending callback except Eastgate will call within 2-3 business days — that's a task but the main issue (follow-up) is resolved. Outcome: resolved.
+
+Sentiment: start neutral/positive — patient is cheerful, "pretty good honestly" — positive. End positive ("You've been great").
+
+Quality score: The nurse verified DOB, checked authorization before talking to spouse, gave accurate info. But notable lapse: calf pain, swelling, warmth on operated side — potential DVT symptoms — dismissed as "pretty common... keep it propped up." That's a clinical safety concern. Warmth, swelling, calf achiness post-op could be DVT; nurse didn't escalate or advise warning signs for DVT. That's a notable lapse → score 3? Or 2? The nurse dismissed a symptom that arguably warranted escalation. Guidelines say 2 = poor: serious compliance, safety or accuracy failure. A missed DVT symptom could be serious. But it's mixed — generally competent with one notable lapse → 3. Hmm. The symptom description: achy calf, swollen, tighter, warm — classic DVT warning signs. Nurse attributed to immobility and stockings without assessing further. I'd say 3 (one notable lapse) — it's a judgment call. Given "a symptom that warranted escalation but was dismissed" is listed as a flag example, and score 2 = "a serious... safety... failure". I think 3 is defensible; the symptom is ambiguous and nurse gave some advice (ankle pumps). I'll go with 3.
+
+Flags:
+1. clinical_safety: calf pain/swelling/warmth dismissed without escalation or DVT red-flag guidance. Evidence: "yeah, that's pretty common after knee surgery... Just keep it propped up on a pillow and it should settle down."
+2. Possibly misinformation: conflicting fasting instructions — but that's a systemic issue, not the nurse's misinformation. The spouse raised it; nurse said she'd mention to manager. Could flag as policy_violation? Not really. Maybe not flag. Could flag "missed_commitment"? She said "I'll mention it to our manager" — that's a commitment, include in action_items. Not a flag unless not kept (call ended, unknown). Don't flag.
+
+Also nurse said "I didn't hear that" jokingly about password on sticky note — not a flag.
+
+Identity verification: DOB verified — good. Spouse authorized on HIPAA form — verified — good, don't flag.
+
+Action items:
+- Nurse: mention conflicting fasting instructions (packet vs text) to manager — due unspecified.
+- Nurse/clinic: PT referral changed to Eastgate Rehab; Eastgate will call patient to schedule within 2-3 business days. Owner: Eastgate Rehab / scheduling. Task: call patient to schedule PT. Due: within two to three business days.
+- Spouse/patient: restart baby aspirin 81 mg once daily starting today (2026-03-06). Owner: patient/spouse. Due: today / starting 2026-03-06.
+- Patient: remove big dressing tomorrow (day five, 2026-03-07), apply Band-Aids, keep dry. Owner: patient. Due: tomorrow (2026-03-07).
+- Patient: ankle pumps every hour, ten at a time. Owner: patient. Due: ongoing.
+- Patient: attend post-op visit Thursday March 12 at 1:30. Owner: patient. Due: 2026-03-12 1:30 PM.
+- Patient: call after-hours line if fever >100.4 or incisions red/hot/draining pus. Owner: patient. Due: as needed / unspecified.
+
+Notable details:
+- DOB verified: Feb 2, 1964.
+- Surgery: left knee arthroscopy with Dr. Okonjo-Reyes, performed Monday (call date 2026-03-06 is Friday; Monday = 2026-03-02). Original surgery 23rd cancelled due to clear-liquid instruction conflict (apple juice at 5am); rescheduled following week.
+- Pain 3-4/10; stopped oxycodone after first night (took two); acetaminophen 500mg x2 q6h; max 3000 mg/day.
+- Amlodipine restarted Tuesday; aspirin 81mg restart day three = today.
+- PT referral corrected from Main Street to Eastgate Rehab.
+- Post-op visit Thursday March 12 at 1:30 with Dr. Okonjo-Reyes.
+- Calf symptoms: left calf achy, swollen, warm since yesterday — potential DVT signs, advised elevation only.
+- Ruth on authorization form.
+- Phone menu issue: pressing 2 sends somewhere weird.
+- Nurse's screen/login issues, mouse battery — minor.
+
+Summary notes ≤120 words.
+
+Quality reasons:
+- Verified DOB and confirmed spouse on authorization before discussing meds.
+- Comprehensive post-op assessment with read-back of instructions.
+- Dismissed calf swelling/warmth/pain without DVT assessment or red-flag advice.
+- Multiple long technical interruptions (screen, mouse) extended call.
+- Changed PT referral location per patient preference.
+
+Score 3.

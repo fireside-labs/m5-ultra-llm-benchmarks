@@ -1,0 +1,23 @@
+## Missed issues
+
+1. Networking between two servers for distributed training was not considered
+2. Warranty / hardware support not considered
+3. The memo doesn't compare buying with renting cloud capacity
+4. Stakeholders should be consulted more broadly.
+5. The timeline seems aggressive.
+6. Communication with the team could be improved.
+7. There may be risks that need further analysis.
+8. Single point of failure: one box runs both training and the paying customer's live endpoint; any failure or maintenance takes everything down (with next-business-day repair)
+9. Utilization mismatch: 85% of jobs use 1-2 GPUs and only 3% use 8, so the interconnect advantage rarely matters while two boxes reduce queueing between users
+10. Lead time: the 8-GPU server takes 16 weeks to arrive, but the paying pilot starts in 6 weeks (4-GPU servers ship in 3)
+11. Power: the 8-GPU server draws ~10.2 kW but the rack has only 6.5 kW free (8 kW limit minus 1.5 kW), so it needs a second rack too
+12. The Harrow contract requires dedicated hardware not shared with any other workload; one shared box for training and Harrow violates it, whereas one of two servers can be dedicated
+13. Rent the rare 8-GPU fine-tune in the cloud (~30 h x $98 = ~$3k per quarter) instead of buying for it
+14. Resale value: 4-GPU servers keep ~55% after 2 years vs ~40% for 8-GPU systems with fewer buyers
+15. Capital flexibility: with 14 months of runway and a board request to keep capex flexible, buying one 4-GPU server now and a second later is possible only with Option B
+
+## Top 3 priorities
+
+1. Stakeholders should be consulted more broadly.
+2. The timeline seems aggressive.
+3. Communication with the team could be improved.

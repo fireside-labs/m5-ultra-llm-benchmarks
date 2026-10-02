@@ -1,0 +1,25 @@
+We need to analyze the call transcript. The call is to a pharmacy refill line. The patient needs a refill on lisinopril, but the dose changed from 10mg to 20mg. The technician handles it: sends a request to the doctor, arranges a 3-day emergency supply of 10mg, transfers to Harbor Road location, confirms text number. The call ends resolved.
+
+Call type: pharmacy_refill.
+
+Outcome: resolved (the main issue was handled: request sent, emergency supply arranged).
+
+Sentiment start: neutral (patient starts with "Hi, good morning" and explains, not negative). Sentiment end: positive (patient says "You've been really helpful, thank you").
+
+Quality score: The technician was helpful, verified identity (name, DOB, address), handled the situation well, arranged emergency supply, transferred location, gave clear instructions. Minor issue: long hold (1 minute) but that's not a big deal. Also system slowness but not the tech's fault. Score 5? Or 4? The tech did everything correctly. There was a hold of 1 minute, but that's acceptable. No major issues. I'd say 5.
+
+Quality reasons: Verified identity, arranged emergency supply, sent refill request, transferred to correct location, clear communication.
+
+Flags: None. Identity verification was done properly. No privacy issues. No unauthorized commitments. The emergency supply is within policy presumably. No missed commitments. So empty list.
+
+Action items: 
+- Tech sends request to Dr. Lindqvist-Mbeki's office for new prescription (20mg) - owner: tech, due: same day or next day (unspecified exact, but stated "usually same day or next day").
+- Tech arranges 3-day emergency supply of 10mg at Harbor Road - owner: tech, due: ready after 4pm today.
+- Patient to call doctor if no text by tomorrow afternoon - owner: patient, due: tomorrow afternoon.
+- Tech will fill new prescription at Harbor Road and send text - owner: tech, due: when prescription arrives (unspecified).
+
+Summary notes: Patient needs lisinopril 20mg, but only 10mg on file with no refills. Tech sent request to doctor, arranged 3-day emergency supply of 10mg at Harbor Road location, transferred from Ferris Ave. Patient to pick up after 4pm. Will text when new prescription ready. Patient to call doctor if no text by tomorrow afternoon.
+
+Notable details: Patient's name spelled out, DOB, address. Dose change from 10 to 20mg, taking two 10mg per day. Two pills left. Emergency supply at Harbor Road. Text number ending 6109. Patient staying at sister's. Drive-through open until 9pm. Phone menu issue.
+
+Now produce JSON.

@@ -1,0 +1,36 @@
+
+Let me analyze.
+
+Call type: billing_dispute. Outcome: refund request submitted, callback promised by Friday. Main issue handled during call? Refund request was put in, but the refund itself pending; also callback promised. Outcome: callback seems appropriate — the main issue is pending a specific follow-up contact (billing team callback by Friday, refund in 48 hours). Could be "resolved" since refund request was submitted. But the money isn't back yet; the agent promised 48-hour refund and Friday callback. I'd say "callback" — pending follow-up contact. Actually the refund was committed; the issue is pending the refund. The schema: callback = main issue pending a specific follow-up contact. Yes, callback.
+
+Sentiment: start neutral (slightly annoyed but polite — "kind of annoyed" comes later; start is neutral). End positive/neutral — caller says "Thanks", seems satisfied. End positive.
+
+Quality score: Agent verified identity (phone number + DOB) — though disclosed balance and charge details after only phone number, before DOB. Disclosed account balance and payment details after just phone number match, before DOB verification. That's a privacy flag? Phone number is weak verification; agent confirmed name and gave balance/payments before DOB. Flag: identity_verification — account details disclosed before full identity verification (DOB asked at 00:00:55, after balance disclosed at 00:00:27).
+
+Unauthorized commitment: agent guaranteed 48-hour refund when policy says 7-10 business days review plus card refund after. "I'll make sure you get it back in forty-eight hours. Guaranteed." That's a commitment outside policy/authority. Flag: unauthorized_commitment.
+
+Also no reference number given — minor, not a flag per se. Maybe missed_commitment? Not yet — callback by Friday is future. Not flag.
+
+Quality score: 3? One notable lapse (the 48-hour guarantee contradicting policy) plus verification lapse. Two notable lapses → 2? The verification issue is a compliance failure (disclosure before verification). I'd say 3: generally competent, empathetic, accurate correction of copay, but the guarantee and early disclosure. Hmm, "2 = poor: a serious compliance, safety or accuracy failure, or several notable lapses." Disclosure of account details before full verification is a compliance failure. Plus unauthorized guarantee. I'd go 3 — the disclosure was to the patient herself who knew the info; risk is low but still a process lapse. The guarantee is a notable lapse. Two notable lapses → could be 2. I'll pick 3, since generally competent and empathetic; the lapses are moderate. Actually "several notable lapses" = 2. We have two lapses. Hmm. The verification lapse: phone number + name confirmation is common partial verification; DOB was asked shortly after. I'll rate 3 with reasons.
+
+Flags:
+1. identity_verification: account balance and payment details disclosed after only phone-number lookup, before DOB verification. Evidence: "your balance is showing ninety dollars right now, and there's two payments on the card ending in three-three-one-eight" (before DOB asked at 00:00:55).
+2. unauthorized_commitment: guaranteed 48-hour refund contrary to stated 7-10 business day policy. Evidence: "don't worry about that, I'll make sure you get it back in forty-eight hours. Guaranteed."
+
+Action items:
+- Agent: submit refund request for duplicate $45 charge — due: unspecified (during call).
+- Billing team: call patient back to confirm refund went through — due: by Friday (2026-03-20).
+- Agent: add account note — done during call; could include as completed? Action items are follow-up commitments; the note was stated and done. Maybe include refund processing: billing team review refund — 7-10 business days per policy but agent promised 48 hours. I'll include: billing team to process refund within 48 hours (as promised). And callback by Friday.
+
+Notable details:
+- Corrected copay amount $45 each (agent initially said $40; corrected to $45).
+- Duplicate charges on card ending 3318, both from visit on the 26th (Feb 26 presumably; visit on the 26th).
+- ClearPay portal auto-charged; switched to ClearPay end of February.
+- Balance showing $90 (two $45 payments).
+- No reference/ticket number provided for refund.
+- Daughter also a patient, same week, may have same duplicate charge; hasn't checked; advised to call if she sees it.
+- DOB Oct 9, 1988; phone 555-309-1184.
+- Caller mentioned confusing IVR (pressed 2 went somewhere weird).
+- Date of call 2026-03-16, so Friday = 2026-03-20.
+
+Summary notes ≤120 words.

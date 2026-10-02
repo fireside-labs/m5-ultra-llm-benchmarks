@@ -1,0 +1,90 @@
+
+We need answer user's request: analyze transcript and return ONE JSON object conforming schema, no markdown. Need produce final JSON only. Need carefully analyze.
+
+We need determine call_type: outbound post-op nurse follow-up. Main purpose checking after cataract surgery. So post_procedure_followup.
+
+Outcome: nurse identifies urgent retinal detachment symptoms, instructs immediate evaluation, says calling on-call ophthalmologist, expects them at clinic urgent entrance. Is that resolved? Main issue? The call was follow-up; during call identified urgent issue and arranged immediate care/escalated to on-call ophthalmologist. Outcome enum: resolved, unresolved, escalated, callback. Since handed to clinician/on-call ophthalmologist and urgent evaluation, use escalated. Even if callback planned? It says calling on-call right after, expecting them. So escalated.
+
+Sentiment start: patient positive? Starts friendly, says surgery breeze, lovely, laughs. Positive. End: after urgent symptoms, maybe neutral? Patient asks is it serious, son says thanks. Could be neutral or positive? Customer sentiment in last minutes: patient background "Is it serious?" maybe concerned, but not negative. Son thanks. End maybe neutral. Need choose. Start positive, end neutral. Could be positive? They are grateful but urgent concern. Neutral safer.
+
+Quality_score: nurse verified identity (DOB), got permission for son, corrected drop frequency, identified red flags, escalated appropriately, empathetic. Minor issues: long charting pauses, system spinning, patient interruptions, but handled. Score 5? Excellent: verified identity, accurate info, followed policy, appropriate escalation, empathetic. There was a potential issue: nurse asked son to confirm drops, son had wrong chart, nurse corrected. No compliance failure. Maybe 5. But there is a billing issue passed to billing team, not handled. But main clinical issue escalated. Quality overall excellent. Could be 5. Need quality_reasons 2-5.
+
+Flags: Need compliance, privacy, security, patient-safety, accuracy problems. Did any? Identity verification done. Permission for son obtained before discussing care. Nurse disclosed? She asked permission before son. No privacy violation. Unauthorized commitment? She says billing team will call dad about duplicate charge. Is that within authority? Probably okay? Could be commitment but not necessarily unauthorized. Missed commitment? None. Clinical safety? She correctly escalated red flags. Misinformation? None. Security? None. Policy violation? None. So flags empty. But consider: nurse says "I'm calling our on-call ophthalmologist... she'll be expecting you" maybe commitment? Not flag. Billing team call maybe not authority? But likely okay. No flag.
+
+Action items: every follow-up commitment/task stated. Owner: patient/son? Need include:
+- Patient and son: go to Corrowind Eye Clinic urgent entrance on Westbrook Road within the hour / now, bring drops and discharge papers, don't bend/lift until seen. Due: within the hour / now.
+- Nurse: call on-call ophthalmologist Dr. Achebe-Lindqvist right after this call. Due: right after this call.
+- Billing team: call patient about duplicate $40 copay charge. Due: unspecified.
+- Son: fix medication chart to prednisolone four times a day. Due: unspecified? He says I'll fix it. Could include.
+- Patient/son: continue both drops four times a day, wait five minutes between them. Is that instruction not follow-up commitment? Action item maybe task. Include? "every follow-up commitment or task stated" includes instructions? Could include medication correction. Owner patient/son, task administer both eye drops four times daily with 5 min between, due ongoing. But action_items likely commitments. Include medication correction as task.
+- Nurse: document permission to discuss care with son. She says will document. Due unspecified. Could include.
+- Nurse: pass billing issue to billing team. Due unspecified.
+Need not overdo but include all stated.
+
+Summary_notes: concise <=120 words. Include post-op cataract right eye, DOB verified, son authorized, drops corrected, red flags new floaters flashes curtain, urgent evaluation, on-call ophthalmologist, billing duplicate charge. Need not too long.
+
+Notable_details: specific details: DOB April 1 1948; surgery Tuesday right eye; son Jules authorized; antibiotic tan cap 4x/day; prednisolone white cap corrected from 3 to 4x/day; wait 5 min; shield at night; symptoms new floaters, flashes, gray curtain from right side; urgent entrance Westbrook Road; on-call Dr. Achebe-Lindqvist; duplicate $40 copay via ClearPay after front desk Tuesday; friend church daily; etc. Use final corrected values.
+
+Need ensure JSON valid, no markdown. Need only object. Ensure enums exact.
+
+Potential nuance: call_type could be post_procedure_followup. Outcome escalated. Sentiment_end maybe neutral. Quality_score 5. quality_reasons: verified identity and authorized third party; corrected medication frequency; recognized retinal detachment red flags and arranged urgent ophthalmology; empathetic despite interruptions; passed billing issue. Good.
+
+Flags: empty. But maybe there is a privacy issue: patient says "You can talk to him about anything, he knows all my business." Nurse confirms permission. Good.
+
+Potential issue: nurse asked son "What drops is he on?" after permission. Good.
+
+Potential issue: nurse says "I'm calling our on-call ophthalmologist... she'll be expecting you" could be unauthorized commitment? Not likely. If flag? No.
+
+Potential issue: billing team call about duplicate charge: nurse says "I'll pass that to our billing team and ask them to call your dad about it." Is that a commitment outside authority? Probably not. No flag.
+
+Need action_items due strings. Use "within the hour" etc.
+
+Let's craft JSON. Ensure no trailing commas.
+
+Double-check schema: additionalProperties false. Required all. action_items owner task due strings. flags empty array. quality_reasons array strings. summary_notes string. notable_details array strings.
+
+Need maybe include "call_type": "post_procedure_followup". outcome "escalated". sentiment_start "positive", sentiment_end "neutral". quality_score 5.
+
+Quality reasons:
+- "Verified patient identity with date of birth before discussing care."
+- "Obtained and documented patient permission before discussing care with his son."
+- "Corrected the prednisolone dosing from three to four times daily and reinforced drop spacing."
+- "Recognized new floaters, flashes, and curtain as urgent retinal red flags and arranged immediate ophthalmology evaluation."
+- "Maintained empathy and clarity despite multiple interruptions and system delays."
+
+Action items:
+1 owner "Patient and son" task "Go to Corrowind Eye Clinic urgent entrance on Westbrook Road for same-hour evaluation; bring drops and discharge papers; avoid bending/lifting until seen." due "within the hour"
+2 owner "Nurse" task "Call on-call ophthalmologist Dr. Achebe-Lindqvist after the call." due "right after this call"
+3 owner "Patient and son" task "Administer both antibiotic and prednisolone eye drops four times daily, waiting five minutes between drops." due "ongoing"
+4 owner "Son" task "Correct medication chart to show prednisolone four times daily." due "unspecified"
+5 owner "Nurse" task "Document patient permission to discuss care with son." due "unspecified"
+6 owner "Billing team" task "Call patient about duplicate $40 copay charge from ClearPay." due "unspecified"
+Maybe owner "Nurse" task "Pass duplicate copay issue to billing team." due "unspecified". Could combine with billing team. Need every commitment. Include both? Might be redundant. But okay.
+
+Summary notes <=120 words. Draft:
+"Outbound post-op follow-up after right-eye cataract surgery. Patient verified by DOB and authorized son Jules to discuss care. Drops reviewed: antibiotic tan cap and prednisolone white cap both four times daily, five minutes apart; son corrected chart from three to four times daily. Night shield used. Patient reported new floaters, flashes, and gray curtain in operated eye; nurse advised urgent same-hour evaluation, instructed son to go to Corrowind Eye Clinic urgent entrance on Westbrook Road, bring drops/discharge papers, avoid bending/lifting, and said on-call ophthalmologist Dr. Achebe-Lindqvist would be called. Secondary issue: duplicate $40 copay charge via ClearPay; nurse will route to billing." Count words? Outbound1 post-op2 follow-up3 after4 right-eye5 cataract6 surgery7. Patient8 verified9 by10 DOB11 and12 authorized13 son14 Jules15 to16 discuss17 care18. Drops19 reviewed20: antibiotic21 tan22 cap23 and24 prednisolone25 white26 cap27 both28 four29 times30 daily31, five32 minutes33 apart34; son35 corrected36 chart37 from38 three39 to40 four41 times42 daily43. Night44 shield45 used46. Patient47 reported48 new49 floaters50, flashes51, and52 gray53 curtain54 in55 operated56 eye57; nurse58 advised59 urgent60 same-hour61 evaluation62, instructed63 son64 to65 go66 to67 Corrowind68 Eye69 Clinic70 urgent71 entrance72 on73 Westbrook74 Road75, bring76 drops/discharge77 papers78, avoid79 bending/lifting80, and81 said82 on-call83 ophthalmologist84 Dr.85 Achebe-Lindqvist86 would87 be88 called89. Secondary90 issue91: duplicate92 $4093 copay94 charge95 via96 ClearPay97; nurse98 will99 route100 to101 billing102. Good.
+
+Notable details:
+- "Patient: Cyrus Delacroix-Mensah; DOB April 1, 1948."
+- "Surgery: cataract surgery on Tuesday, right eye."
+- "Son Jules authorized to discuss care; permission documented."
+- "Medication correction: prednisolone white cap changed from three times daily to four times daily; antibiotic tan cap four times daily; wait five minutes between drops."
+- "Night shield worn every night."
+- "New symptoms: floaters, flashes, gray curtain/shadow from right side in operated eye."
+- "Urgent plan: Corrowind Eye Clinic urgent entrance on Westbrook Road within the hour; bring drops and discharge papers; avoid bending/lifting; ED if unable to get there."
+- "On-call ophthalmologist: Dr. Achebe-Lindqvist."
+- "Billing issue: $40 copay paid at front desk Tuesday, then charged again yesterday via ClearPay; billing team to call."
+- "Patient has friend from church checking daily."
+Maybe include "Patient initially thought symptoms were part of healing." Good.
+
+Need ensure no markdown. Final JSON only.
+
+Double-check if outcome should be callback? The main issue pending follow-up contact? But escalated to clinician. Use escalated.
+
+Could quality_score be 4 due to long unannounced hold? Nurse had pauses charting, system spinning, but announced? She said "Just a second while I finish this" and "Bear with me". Not unannounced. 5.
+
+Flags empty. But maybe "unauthorized_commitment" for billing team call? The nurse says "I'll pass that to our billing team and ask them to call your dad about it." This is a commitment but likely within role. Not flag. If strict, no.
+
+Need ensure JSON strings escape? No special. Use double quotes. No newline? Can pretty print. User says output only JSON object. Pretty okay. Ensure no comments.
+
+Let's final.

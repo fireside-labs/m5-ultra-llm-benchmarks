@@ -1,0 +1,104 @@
+{
+  "themes": [
+    {
+      "theme": "Unauthorized commitments and overpromising",
+      "description": "Agents repeatedly promise refunds, credits, coverage, contract terms, or clinical actions outside their authority or without required approvals. This creates false expectations and compliance risk.",
+      "call_ids": [
+        "C02",
+        "C05",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C15",
+        "C17",
+        "C20"
+      ],
+      "evidence": "Guaranteed 48-hour refund, zeroed $310 balance, promised full month credit, 30% savings guarantee, lost wages, second sleep-study night, early controlled-substance refill, BAA on Team, and unauthorized reminder commitments.",
+      "recommended_action": "Enforce approval workflows and script guardrails for refunds, credits, coverage, contract terms, and clinical commitments."
+    },
+    {
+      "theme": "ClearPay duplicate copay charges",
+      "description": "Patients are charged twice for the same visit when a front-desk payment is followed by an automatic ClearPay payment. The issue is known but still generating disputes, refunds, and collections risk.",
+      "call_ids": [
+        "C02",
+        "C05",
+        "C09",
+        "C14",
+        "C18"
+      ],
+      "evidence": "Duplicate $45, $30, $45, three $45 charges, and $40 copay duplicates were reported; one account was referred to collections despite an open dispute.",
+      "recommended_action": "Pause or fix ClearPay duplicate-payment logic and proactively audit affected accounts before collections."
+    },
+    {
+      "theme": "Conflicting pre-procedure fasting instructions",
+      "description": "Patients receive different NPO or prep instructions from mailed packets and text messages, causing confusion, cancellations, and safety risk. The conflict is not consistently resolved before the procedure.",
+      "call_ids": [
+        "C03",
+        "C07",
+        "C12",
+        "C16"
+      ],
+      "evidence": "Packet said nothing after midnight while text allowed clear liquids until 2 hours before arrival; this caused a prior cancellation and required urgent nurse confirmation.",
+      "recommended_action": "Standardize one authoritative pre-procedure instruction source and require anesthesia confirmation before sending patient-facing texts."
+    },
+    {
+      "theme": "Medication safety and clinical escalation gaps",
+      "description": "Medication changes, dangerous symptoms, or cost-related nonadherence are sometimes not escalated to the right clinician or pharmacist. This creates avoidable clinical risk.",
+      "call_ids": [
+        "C03",
+        "C04",
+        "C14",
+        "C15"
+      ],
+      "evidence": "Possible DVT symptoms were not escalated, a dose change was not received, skipped BP meds due to cost were not initially escalated, and a controlled-substance interaction was handled without pharmacist review.",
+      "recommended_action": "Require mandatory clinical escalation and pharmacist review for red-flag symptoms, medication changes, and controlled-substance requests."
+    },
+    {
+      "theme": "Scheduling and appointment detail errors",
+      "description": "Appointment dates, times, locations, referrals, and contact details are frequently wrong or changed without proper verification. This can lead to missed care, wrong-facility visits, and privacy exposure.",
+      "call_ids": [
+        "C03",
+        "C13",
+        "C16",
+        "C20"
+      ],
+      "evidence": "Wrong PT referral, out-of-network scheduling, wrong time/location sent to outdated email, and phone number changed without release form.",
+      "recommended_action": "Add mandatory double-checks for appointment details, network status, and identity verification before scheduling or contact changes."
+    },
+    {
+      "theme": "Identity verification and security/privacy failures",
+      "description": "Staff disclose account, medication, or appointment information without adequate identity verification or authorization, and in one case shared credentials. This creates privacy and security exposure.",
+      "call_ids": [
+        "C10",
+        "C14",
+        "C15",
+        "C20"
+      ],
+      "evidence": "Agent read customer admin password, husband's account disclosed without authorization, medication list disclosed after name only, and appointment details/phone changed without release form.",
+      "recommended_action": "Enforce strict identity verification, HIPAA/privacy authorization checks, and no-credential-sharing rules with QA monitoring."
+    },
+    {
+      "theme": "Insurance, prior authorization, and network errors",
+      "description": "Insurance verification, prior authorization, and network status are mishandled, leading to denied balances, delayed care, or scheduling at the wrong facility. Agents also give inaccurate coverage estimates.",
+      "call_ids": [
+        "C05",
+        "C09",
+        "C13"
+      ],
+      "evidence": "MRI denied for missing prior authorization, PA required for MRI, and patient scheduled at out-of-network Ridgeline despite PA for Westbrook and told no out-of-pocket cost.",
+      "recommended_action": "Integrate real-time eligibility/network checks and require PA/network confirmation before scheduling or quoting costs."
+    },
+    {
+      "theme": "Missed or untracked follow-up commitments",
+      "description": "Promised callbacks, transfers, and billing follow-ups are not reliably assigned, referenced, or completed. This leaves unresolved issues and increases repeat contacts.",
+      "call_ids": [
+        "C02",
+        "C09",
+        "C14"
+      ],
+      "evidence": "A promised billing callback had no reference number, a promised billing transfer did not occur, and a promised callback had no task assigned.",
+      "recommended_action": "Require every promised follow-up to create a tracked task with owner, due date, and reference number before call closure."
+    }
+  ]
+}

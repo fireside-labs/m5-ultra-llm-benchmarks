@@ -1,0 +1,134 @@
+{
+  "call_type": "saas_support",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 4,
+  "quality_reasons": [
+    "Verified account owner with emailed code and PIN before accessing payroll data.",
+    "Obtained explicit owner authorization before discussing payroll with the accountant.",
+    "Correctly diagnosed and resolved the UTF-8/Windows-1252 import failure by switching to XLSX.",
+    "Handled sensitive garnishment and bank-detail requests safely and gave accurate policy guidance.",
+    "Minor issues: one unannounced hold and a very long call with many unrelated issues."
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "Agent",
+      "task": "Leave a note for Tier 1 about ineffective cache/browser troubleshooting for an already-generated export.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Agent",
+      "task": "Email customer a written summary and knowledge-base article on export encodings.",
+      "due": "today"
+    },
+    {
+      "owner": "Agent",
+      "task": "Log a feature request with engineering to expose CSV encoding choice on the main export screen.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Customer",
+      "task": "If CSV export is needed, set CSV encoding to Windows-1252.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Customer",
+      "task": "Update the mobile app to version 7.4.1.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Customer",
+      "task": "Talk to Sunniva about whether to make PTO accrual retroactive to August.",
+      "due": "Monday"
+    },
+    {
+      "owner": "Customer",
+      "task": "Enable Cash tips and Paid tips earning types for the four Saturday tasting-room employees.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Customer",
+      "task": "Record tip splits every Saturday and enter them on each pay run.",
+      "due": "each pay run"
+    },
+    {
+      "owner": "Customer",
+      "task": "Shred the sticky note containing Dmitri's bank information.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Dmitri Volkov-Haas",
+      "task": "Enter his own bank details in the employee portal.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Sunniva Rask",
+      "task": "Accept the Accountant-role invite.",
+      "due": "today"
+    },
+    {
+      "owner": "Customer",
+      "task": "Set a calendar reminder for SSO certificate expiry a month before expiration.",
+      "due": "today"
+    },
+    {
+      "owner": "Customer",
+      "task": "Request a full workspace export quarterly.",
+      "due": "quarterly"
+    },
+    {
+      "owner": "Customer",
+      "task": "Archive old projects, using bulk archive if needed.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Customer",
+      "task": "Send API documentation to developer.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Customer",
+      "task": "Send dark-mode instructions to staff.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Customer",
+      "task": "Set up chat integration for project updates.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Customer",
+      "task": "Set a one-day grace period for late fees if desired.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Sunniva Rask",
+      "task": "Send Ambrose the resale certificate form again.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Sunniva Rask",
+      "task": "Create a Garnishment deduction, attach the order PDF, set payee to the agency, and use the cap field if present.",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Inbound Tier 2 payroll support for Pemberton Coffee Roasters. PR-0918 CSV export failed in Ledgerline due to UTF-8/Windows-1252 encoding mismatch caused by Zoë Abernathy-Quill's diaeresis. Resolved by exporting PR-0918 as XLSX; 12/12 imported. Default export set to XLSX. Deleted draft PR-0918 copy. Accountant Sunniva Rask authorized and invited with Accountant role. Agent advised on tips, garnishment, PTO, SSO certificate, reminder-date bug fix 7.4.2 Oct 20, app update, renewal Nov 1. Will email summary and log encoding UI request.",
+  "notable_details": [
+    "Payroll run corrected from PR-0981 to PR-0918; September 18 finalized run with 12 employees.",
+    "Root cause: Tallyforge UTF-8 CSV vs Ledgerline Windows-1252 import; XLSX export imported 12/12 and default export set to XLSX.",
+    "Zoë Abernathy-Quill changed name spelling to include diaeresis on September 9, causing row 7 invalid-character error.",
+    "Draft 'PR-0918 copy' created September 19 at 8:40 a.m. was deleted; finalized PR-0918 untouched.",
+    "Sunniva Rask (Rask and Holloway) was authorized on the recorded line and invited with Accountant role; invite expires in seven days; email stated as sunniva@raskholloway.com.",
+    "New employee Dmitri Volkov-Haas start date September 28; bank info on sticky note to be shredded; he must enter bank details via employee portal.",
+    "Rosa Ilunga-Park PTO balance 4.8 hours is correct under September 1 effective date; retroactive change requires business/accounting decision.",
+    "Tips: cash and card tips must be reported; enable Cash tips and Paid tips for Rosa, Dmitri (starting next week), Kofi, and Zoë.",
+    "Wage garnishment order: create Garnishment deduction, attach order PDF, set payee to agency, use cap field; details not read on recorded line.",
+    "Reminder emails show due date one day early due known bug since 7.4; fix in 7.4.2 on October 20; late fees off for account.",
+    "Mobile app version 7.2.x has known payroll crash; update to 7.4.1.",
+    "Subscription renews November 1 at same monthly price; 'upcoming changes' email was optional expense module.",
+    "W-2s generate January 15, e-filed by January 31; paper copies cost extra.",
+    "SSO login issue: password logins succeeded; agent suspected certificate expiry and advised calendar reminder; no explicit certificate renewal action stated."
+  ]
+}

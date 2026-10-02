@@ -1,0 +1,1172 @@
+{
+ "ds0731-omlx070-think": {
+  "C01": {
+   "parse_ok": true,
+   "quality_pred": 4,
+   "quality_gold": 5,
+   "quality_abs_err": 1,
+   "quality_reasons_missed": [],
+   "flags_pred": 0,
+   "flags_tp": 0,
+   "flags_gold": 0,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 54,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C02": {
+   "parse_ok": true,
+   "quality_pred": 3,
+   "quality_gold": 3,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [],
+   "flags_pred": 1,
+   "flags_tp": 1,
+   "flags_gold": 1,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [
+    "A1",
+    "A2"
+   ],
+   "subtle_missed": [],
+   "summary_words": 86,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C03": {
+   "parse_ok": true,
+   "quality_pred": 2,
+   "quality_gold": 2,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [
+    "Q3"
+   ],
+   "flags_pred": 3,
+   "flags_tp": 2,
+   "flags_gold": 2,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 1,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [
+    "A4"
+   ],
+   "subtle_missed": [
+    "S5"
+   ],
+   "summary_words": 82,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C04": {
+   "parse_ok": true,
+   "quality_pred": 5,
+   "quality_gold": 5,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [],
+   "flags_pred": 0,
+   "flags_tp": 0,
+   "flags_gold": 0,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 69,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C05": {
+   "parse_ok": true,
+   "quality_pred": 2,
+   "quality_gold": 3,
+   "quality_abs_err": 1,
+   "quality_reasons_missed": [],
+   "flags_pred": 2,
+   "flags_tp": 2,
+   "flags_gold": 2,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [
+    "A4"
+   ],
+   "subtle_missed": [],
+   "summary_words": 80,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C06": {
+   "parse_ok": true,
+   "quality_pred": 4,
+   "quality_gold": 3,
+   "quality_abs_err": 1,
+   "quality_reasons_missed": [
+    "Q3"
+   ],
+   "flags_pred": 1,
+   "flags_tp": 0,
+   "flags_gold": 2,
+   "flags_missed": [
+    "F1",
+    "F2"
+   ],
+   "flags_false": [
+    [
+     "decoy:D1",
+     "misinformation | Tier 1 agent incorrectly stated that posted late fees cannot be reversed, which was later corrected by Tier 2. | once a late fee posts to an in"
+    ]
+   ],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [
+    "D1"
+   ],
+   "actions_missed": [
+    "A7"
+   ],
+   "subtle_missed": [
+    "S7"
+   ],
+   "summary_words": 122,
+   "summary_le_120": false,
+   "parse_mode": "strict"
+  },
+  "C07": {
+   "parse_ok": true,
+   "quality_pred": 5,
+   "quality_gold": 2,
+   "quality_abs_err": 3,
+   "quality_reasons_missed": [
+    "Q1",
+    "Q2"
+   ],
+   "flags_pred": 0,
+   "flags_tp": 0,
+   "flags_gold": 2,
+   "flags_missed": [
+    "F1",
+    "F2"
+   ],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [
+    "S8"
+   ],
+   "summary_words": 87,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C08": {
+   "parse_ok": true,
+   "quality_pred": 5,
+   "quality_gold": 3,
+   "quality_abs_err": 2,
+   "quality_reasons_missed": [
+    "Q2",
+    "Q3"
+   ],
+   "flags_pred": 0,
+   "flags_tp": 0,
+   "flags_gold": 2,
+   "flags_missed": [
+    "F1",
+    "F2"
+   ],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [
+    "A5"
+   ],
+   "subtle_missed": [],
+   "summary_words": 112,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C09": {
+   "parse_ok": false,
+   "parse_mode": "fail"
+  },
+  "C10": {
+   "parse_ok": true,
+   "quality_pred": 5,
+   "quality_gold": 2,
+   "quality_abs_err": 3,
+   "quality_reasons_missed": [
+    "Q1",
+    "Q2"
+   ],
+   "flags_pred": 0,
+   "flags_tp": 0,
+   "flags_gold": 2,
+   "flags_missed": [
+    "F1",
+    "F2"
+   ],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 72,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C11": {
+   "parse_ok": true,
+   "quality_pred": 2,
+   "quality_gold": 2,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [],
+   "flags_pred": 2,
+   "flags_tp": 2,
+   "flags_gold": 3,
+   "flags_missed": [
+    "F2"
+   ],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [
+    "A4"
+   ],
+   "subtle_missed": [
+    "S5"
+   ],
+   "summary_words": 102,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C12": {
+   "parse_ok": true,
+   "quality_pred": 5,
+   "quality_gold": 5,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [
+    "Q1"
+   ],
+   "flags_pred": 0,
+   "flags_tp": 0,
+   "flags_gold": 0,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 59,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C13": {
+   "parse_ok": false,
+   "parse_mode": "fail"
+  },
+  "C14": {
+   "parse_ok": true,
+   "quality_pred": 3,
+   "quality_gold": 2,
+   "quality_abs_err": 1,
+   "quality_reasons_missed": [
+    "Q3"
+   ],
+   "flags_pred": 3,
+   "flags_tp": 2,
+   "flags_gold": 3,
+   "flags_missed": [
+    "F3"
+   ],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 1,
+   "decoys_hit": [],
+   "actions_missed": [
+    "A2",
+    "A3",
+    "A5",
+    "A6",
+    "A10"
+   ],
+   "subtle_missed": [
+    "S3"
+   ],
+   "summary_words": 74,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C15": {
+   "parse_ok": true,
+   "quality_pred": 3,
+   "quality_gold": 3,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [],
+   "flags_pred": 1,
+   "flags_tp": 1,
+   "flags_gold": 1,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 78,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C16": {
+   "parse_ok": true,
+   "quality_pred": 4,
+   "quality_gold": 3,
+   "quality_abs_err": 1,
+   "quality_reasons_missed": [
+    "Q3"
+   ],
+   "flags_pred": 1,
+   "flags_tp": 1,
+   "flags_gold": 2,
+   "flags_missed": [
+    "F2"
+   ],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [
+    "A8"
+   ],
+   "subtle_missed": [
+    "S2"
+   ],
+   "summary_words": 126,
+   "summary_le_120": false,
+   "parse_mode": "strict"
+  },
+  "_themes": {
+   "themes_run": true,
+   "parse_ok": true,
+   "parse_mode": "strict",
+   "themes_returned": 8,
+   "themes_found": [
+    "T_PA_FAX",
+    "T_SAAS_DUE"
+   ],
+   "decoy_themes_reported": [
+    "D_DOUBLE_CHARGE"
+   ],
+   "themes_call_recall": {
+    "T_PA_FAX": 0.75,
+    "T_SAAS_DUE": 0.667
+   }
+  }
+ },
+ "glm53-mtp-high": {
+  "C01": {
+   "parse_ok": true,
+   "quality_pred": 5,
+   "quality_gold": 5,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [],
+   "flags_pred": 0,
+   "flags_tp": 0,
+   "flags_gold": 0,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 104,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C02": {
+   "parse_ok": true,
+   "quality_pred": 3,
+   "quality_gold": 3,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [],
+   "flags_pred": 1,
+   "flags_tp": 1,
+   "flags_gold": 1,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [
+    "A1",
+    "A2"
+   ],
+   "subtle_missed": [],
+   "summary_words": 106,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C03": {
+   "parse_ok": true,
+   "quality_pred": 2,
+   "quality_gold": 2,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [],
+   "flags_pred": 4,
+   "flags_tp": 2,
+   "flags_gold": 2,
+   "flags_missed": [],
+   "flags_false": [
+    [
+     "false",
+     "missed_commitment | The caller was told the hold for the pharmacist would be quick ('it might be a minute') but remained on hold for approximately 29 minutes wi"
+    ]
+   ],
+   "flags_acceptable": 0,
+   "flags_duplicate": 1,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 116,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C04": {
+   "parse_ok": true,
+   "quality_pred": 4,
+   "quality_gold": 5,
+   "quality_abs_err": 1,
+   "quality_reasons_missed": [],
+   "flags_pred": 0,
+   "flags_tp": 0,
+   "flags_gold": 0,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 102,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C05": {
+   "parse_ok": true,
+   "quality_pred": 3,
+   "quality_gold": 3,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [
+    "Q1"
+   ],
+   "flags_pred": 1,
+   "flags_tp": 1,
+   "flags_gold": 2,
+   "flags_missed": [
+    "F1"
+   ],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [
+    "A7"
+   ],
+   "subtle_missed": [],
+   "summary_words": 122,
+   "summary_le_120": false,
+   "parse_mode": "strict"
+  },
+  "C06": {
+   "parse_ok": true,
+   "quality_pred": 3,
+   "quality_gold": 3,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [
+    "Q3"
+   ],
+   "flags_pred": 3,
+   "flags_tp": 1,
+   "flags_gold": 2,
+   "flags_missed": [
+    "F2"
+   ],
+   "flags_false": [
+    [
+     "decoy:D1",
+     "misinformation | The Tier 1 agent incorrectly stated that posted late fees cannot be reversed; Tier 2 corrected this and the customer reversed one fee during th"
+    ]
+   ],
+   "flags_acceptable": 1,
+   "flags_duplicate": 0,
+   "decoys_hit": [
+    "D1"
+   ],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 121,
+   "summary_le_120": false,
+   "parse_mode": "strict"
+  },
+  "C07": {
+   "parse_ok": true,
+   "quality_pred": 4,
+   "quality_gold": 2,
+   "quality_abs_err": 2,
+   "quality_reasons_missed": [],
+   "flags_pred": 3,
+   "flags_tp": 2,
+   "flags_gold": 2,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 1,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 112,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C08": {
+   "parse_ok": true,
+   "quality_pred": 3,
+   "quality_gold": 3,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [],
+   "flags_pred": 2,
+   "flags_tp": 2,
+   "flags_gold": 2,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 125,
+   "summary_le_120": false,
+   "parse_mode": "strict"
+  },
+  "C09": {
+   "parse_ok": true,
+   "quality_pred": 4,
+   "quality_gold": 4,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [],
+   "flags_pred": 0,
+   "flags_tp": 0,
+   "flags_gold": 0,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [
+    "A1"
+   ],
+   "subtle_missed": [],
+   "summary_words": 126,
+   "summary_le_120": false,
+   "parse_mode": "strict"
+  },
+  "C10": {
+   "parse_ok": true,
+   "quality_pred": 3,
+   "quality_gold": 2,
+   "quality_abs_err": 1,
+   "quality_reasons_missed": [],
+   "flags_pred": 2,
+   "flags_tp": 2,
+   "flags_gold": 2,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 122,
+   "summary_le_120": false,
+   "parse_mode": "strict"
+  },
+  "C11": {
+   "parse_ok": true,
+   "quality_pred": 2,
+   "quality_gold": 2,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [],
+   "flags_pred": 3,
+   "flags_tp": 2,
+   "flags_gold": 3,
+   "flags_missed": [
+    "F2"
+   ],
+   "flags_false": [],
+   "flags_acceptable": 1,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [
+    "A5"
+   ],
+   "subtle_missed": [],
+   "summary_words": 129,
+   "summary_le_120": false,
+   "parse_mode": "strict"
+  },
+  "C12": {
+   "parse_ok": true,
+   "quality_pred": 5,
+   "quality_gold": 5,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [
+    "Q1"
+   ],
+   "flags_pred": 0,
+   "flags_tp": 0,
+   "flags_gold": 0,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 101,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C13": {
+   "parse_ok": true,
+   "quality_pred": 3,
+   "quality_gold": 2,
+   "quality_abs_err": 1,
+   "quality_reasons_missed": [
+    "Q3"
+   ],
+   "flags_pred": 5,
+   "flags_tp": 2,
+   "flags_gold": 3,
+   "flags_missed": [
+    "F3"
+   ],
+   "flags_false": [
+    [
+     "decoy:D2",
+     "misinformation | Odessa told the caller the prior authorization was denied when in fact Halvard never received the faxed requests; the manager corrected this. |"
+    ]
+   ],
+   "flags_acceptable": 2,
+   "flags_duplicate": 0,
+   "decoys_hit": [
+    "D2"
+   ],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 111,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C14": {
+   "parse_ok": true,
+   "quality_pred": 2,
+   "quality_gold": 2,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [
+    "Q3"
+   ],
+   "flags_pred": 4,
+   "flags_tp": 2,
+   "flags_gold": 3,
+   "flags_missed": [
+    "F3"
+   ],
+   "flags_false": [
+    [
+     "decoy:D1",
+     "misinformation | Corwin incorrectly told the patient he was out of network at Brightwater's own urgent care; the coding specialist later confirmed he is in netw"
+    ]
+   ],
+   "flags_acceptable": 1,
+   "flags_duplicate": 0,
+   "decoys_hit": [
+    "D1"
+   ],
+   "actions_missed": [
+    "A2",
+    "A6"
+   ],
+   "subtle_missed": [],
+   "summary_words": 143,
+   "summary_le_120": false,
+   "parse_mode": "strict"
+  },
+  "C15": {
+   "parse_ok": true,
+   "quality_pred": 2,
+   "quality_gold": 3,
+   "quality_abs_err": 1,
+   "quality_reasons_missed": [],
+   "flags_pred": 2,
+   "flags_tp": 1,
+   "flags_gold": 1,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 1,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 103,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C16": {
+   "parse_ok": true,
+   "quality_pred": 3,
+   "quality_gold": 3,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [],
+   "flags_pred": 2,
+   "flags_tp": 2,
+   "flags_gold": 2,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 136,
+   "summary_le_120": false,
+   "parse_mode": "strict"
+  },
+  "_themes": {
+   "themes_run": true,
+   "parse_ok": true,
+   "parse_mode": "strict",
+   "themes_returned": 8,
+   "themes_found": [
+    "T_IVR_MISROUTE",
+    "T_PA_FAX",
+    "T_SAAS_DUE"
+   ],
+   "decoy_themes_reported": [
+    "D_DOUBLE_CHARGE"
+   ],
+   "themes_call_recall": {
+    "T_IVR_MISROUTE": 1.0,
+    "T_PA_FAX": 1.0,
+    "T_SAAS_DUE": 1.0
+   }
+  }
+ },
+ "qwen-omlx070-think": {
+  "C01": {
+   "parse_ok": true,
+   "quality_pred": 4,
+   "quality_gold": 5,
+   "quality_abs_err": 1,
+   "quality_reasons_missed": [],
+   "flags_pred": 1,
+   "flags_tp": 0,
+   "flags_gold": 0,
+   "flags_missed": [],
+   "flags_false": [
+    [
+     "decoy:D2",
+     "misinformation | Agent initially gave incorrect information that the doctor was not taking new patients, though the patient was established; the error was corre"
+    ]
+   ],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [
+    "D2"
+   ],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 75,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C02": {
+   "parse_ok": true,
+   "quality_pred": 3,
+   "quality_gold": 3,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [],
+   "flags_pred": 1,
+   "flags_tp": 1,
+   "flags_gold": 1,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [
+    "A1"
+   ],
+   "subtle_missed": [],
+   "summary_words": 96,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C03": {
+   "parse_ok": true,
+   "quality_pred": 2,
+   "quality_gold": 2,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [],
+   "flags_pred": 2,
+   "flags_tp": 1,
+   "flags_gold": 2,
+   "flags_missed": [
+    "F1"
+   ],
+   "flags_false": [],
+   "flags_acceptable": 1,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 91,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C04": {
+   "parse_ok": true,
+   "quality_pred": 5,
+   "quality_gold": 5,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [],
+   "flags_pred": 0,
+   "flags_tp": 0,
+   "flags_gold": 0,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [
+    "S3"
+   ],
+   "summary_words": 93,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C05": {
+   "parse_ok": true,
+   "quality_pred": 2,
+   "quality_gold": 3,
+   "quality_abs_err": 1,
+   "quality_reasons_missed": [],
+   "flags_pred": 2,
+   "flags_tp": 2,
+   "flags_gold": 2,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 91,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C06": {
+   "parse_ok": true,
+   "quality_pred": 2,
+   "quality_gold": 3,
+   "quality_abs_err": 1,
+   "quality_reasons_missed": [
+    "Q3"
+   ],
+   "flags_pred": 3,
+   "flags_tp": 1,
+   "flags_gold": 2,
+   "flags_missed": [
+    "F2"
+   ],
+   "flags_false": [
+    [
+     "decoy:D1",
+     "misinformation | Tier 1 incorrectly told the customer that posted late fees cannot be reversed. | once a late fee posts to an invoice it can't be reversed. The "
+    ]
+   ],
+   "flags_acceptable": 0,
+   "flags_duplicate": 1,
+   "decoys_hit": [
+    "D1"
+   ],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 104,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C07": {
+   "parse_ok": true,
+   "quality_pred": 3,
+   "quality_gold": 2,
+   "quality_abs_err": 1,
+   "quality_reasons_missed": [],
+   "flags_pred": 2,
+   "flags_tp": 1,
+   "flags_gold": 2,
+   "flags_missed": [
+    "F2"
+   ],
+   "flags_false": [],
+   "flags_acceptable": 1,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 84,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C08": {
+   "parse_ok": true,
+   "quality_pred": 2,
+   "quality_gold": 3,
+   "quality_abs_err": 1,
+   "quality_reasons_missed": [],
+   "flags_pred": 2,
+   "flags_tp": 2,
+   "flags_gold": 2,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [
+    "S5"
+   ],
+   "summary_words": 95,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C09": {
+   "parse_ok": true,
+   "quality_pred": 4,
+   "quality_gold": 4,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [
+    "Q1"
+   ],
+   "flags_pred": 0,
+   "flags_tp": 0,
+   "flags_gold": 0,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [
+    "S4"
+   ],
+   "summary_words": 78,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C10": {
+   "parse_ok": true,
+   "quality_pred": 2,
+   "quality_gold": 2,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [],
+   "flags_pred": 1,
+   "flags_tp": 1,
+   "flags_gold": 2,
+   "flags_missed": [
+    "F2"
+   ],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 107,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C11": {
+   "parse_ok": true,
+   "quality_pred": 2,
+   "quality_gold": 2,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [],
+   "flags_pred": 2,
+   "flags_tp": 2,
+   "flags_gold": 3,
+   "flags_missed": [
+    "F2"
+   ],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [
+    "A5"
+   ],
+   "subtle_missed": [],
+   "summary_words": 90,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C12": {
+   "parse_ok": true,
+   "quality_pred": 5,
+   "quality_gold": 5,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [
+    "Q1"
+   ],
+   "flags_pred": 0,
+   "flags_tp": 0,
+   "flags_gold": 0,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 88,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C13": {
+   "parse_ok": true,
+   "quality_pred": 3,
+   "quality_gold": 2,
+   "quality_abs_err": 1,
+   "quality_reasons_missed": [],
+   "flags_pred": 3,
+   "flags_tp": 2,
+   "flags_gold": 3,
+   "flags_missed": [
+    "F3"
+   ],
+   "flags_false": [
+    [
+     "decoy:D2",
+     "misinformation | Odessa initially told the caller that Halvard had denied the prior authorization, although the manager later found that Halvard had never recei"
+    ]
+   ],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [
+    "D2"
+   ],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 96,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C14": {
+   "parse_ok": true,
+   "quality_pred": 2,
+   "quality_gold": 2,
+   "quality_abs_err": 0,
+   "quality_reasons_missed": [
+    "Q3"
+   ],
+   "flags_pred": 4,
+   "flags_tp": 2,
+   "flags_gold": 3,
+   "flags_missed": [
+    "F3"
+   ],
+   "flags_false": [
+    [
+     "decoy:D1",
+     "misinformation | Billing representative incorrectly told the patient he was out of network. | And you were out of network, that's why it's so high."
+    ]
+   ],
+   "flags_acceptable": 1,
+   "flags_duplicate": 0,
+   "decoys_hit": [
+    "D1"
+   ],
+   "actions_missed": [
+    "A2"
+   ],
+   "subtle_missed": [
+    "S6"
+   ],
+   "summary_words": 90,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C15": {
+   "parse_ok": true,
+   "quality_pred": 2,
+   "quality_gold": 3,
+   "quality_abs_err": 1,
+   "quality_reasons_missed": [],
+   "flags_pred": 1,
+   "flags_tp": 1,
+   "flags_gold": 1,
+   "flags_missed": [],
+   "flags_false": [],
+   "flags_acceptable": 0,
+   "flags_duplicate": 0,
+   "decoys_hit": [],
+   "actions_missed": [],
+   "subtle_missed": [],
+   "summary_words": 85,
+   "summary_le_120": true,
+   "parse_mode": "strict"
+  },
+  "C16": {
+   "parse_ok": false,
+   "parse_mode": "fail"
+  },
+  "_themes": {
+   "themes_run": true,
+   "parse_ok": true,
+   "parse_mode": "strict",
+   "themes_returned": 8,
+   "themes_found": [
+    "T_IVR_MISROUTE",
+    "T_PA_FAX"
+   ],
+   "decoy_themes_reported": [
+    "D_DOUBLE_CHARGE"
+   ],
+   "themes_call_recall": {
+    "T_IVR_MISROUTE": 1.0,
+    "T_PA_FAX": 0.75
+   }
+  }
+ }
+}

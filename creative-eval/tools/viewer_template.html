@@ -1,0 +1,75 @@
+<title>Three Isekai Openings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a reading room. Short header with the reveal switch, story tabs, then one story at a time in a comfortable column. */
+:root {
+  --paper: #f7f5f0;
+  --page: #fffdf8;
+  --ink: #26221d;
+  --ink-soft: #6d655b;
+  --rule: #e4ded3;
+  --accent: #5b6d3a;
+  --f-read: "Literata", Georgia, "Times New Roman", serif;
+  --f-ui: "Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { color-scheme: dark; --paper: #17150f; --page: #1f1c16; --ink: #ece6da; --ink-soft: #aaa194; --rule: #36312a; --accent: #a8bf7a; }
+}
+:root[data-theme="dark"] { color-scheme: dark; --paper: #17150f; --page: #1f1c16; --ink: #ece6da; --ink-soft: #aaa194; --rule: #36312a; --accent: #a8bf7a; }
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font: 16px/1.5 var(--f-ui); padding-inline: 18px; padding-block: 28px 80px; }
+.wrap { max-width: 760px; margin: 0 auto; display: grid; gap: 22px; }
+header { display: grid; gap: 8px; }
+h1 { font: 600 28px/1.2 var(--f-read); margin: 0; text-wrap: balance; }
+.sub { color: var(--ink-soft); margin: 0; max-width: 62ch; }
+.bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.tab { font: 500 14px var(--f-ui); padding: 8px 14px; border-radius: 999px; border: 1px solid var(--rule); background: var(--page); color: var(--ink); cursor: pointer; }
+.tab[aria-selected="true"] { border-color: var(--accent); color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.tab:focus-visible, .reveal:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.reveal { font: 500 14px var(--f-ui); padding: 8px 14px; border-radius: 6px; border: 1px dashed var(--ink-soft); background: transparent; color: var(--ink-soft); cursor: pointer; }
+.story { background: var(--page); border: 1px solid var(--rule); border-radius: 8px; padding-block: 28px; padding-inline: clamp(18px, 5vw, 44px); }
+.meta { font-size: 13px; color: var(--ink-soft); display: flex; flex-wrap: wrap; gap: 6px 16px; margin-bottom: 18px; font-variant-numeric: tabular-nums; }
+.who { color: var(--accent); font-weight: 600; }
+.prose { font-family: var(--f-read); font-size: 17.5px; line-height: 1.7; max-width: 66ch; }
+.prose h1, .prose h2, .prose h3 { font-family: var(--f-read); text-wrap: balance; line-height: 1.25; }
+.prose h1 { font-size: 26px; } .prose h2 { font-size: 21px; margin-top: 2em; } .prose h3 { font-size: 18px; }
+.prose hr { border: 0; border-top: 1px solid var(--rule); margin: 2.2em 0; }
+.chapter-break { text-align: center; color: var(--ink-soft); letter-spacing: 0.4em; margin: 2.6em 0 1.4em; font-family: var(--f-ui); font-size: 13px; text-transform: uppercase; }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Three Isekai Openings</h1>
+    <p class="sub">Same prompt to three local models: pick your own premise, tropes welcome if they're done well, two chapters. The labels are shuffled. Read all three, pick a favorite, then reveal who wrote what.</p>
+  </header>
+  <div class="bar">
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <button class="reveal" id="reveal" type="button">Reveal the models</button>
+  </div>
+  <article class="story" id="story"></article>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+<script id="data" type="application/json">/*__DATA__*/[]</script>
+<script>
+const S = JSON.parse(document.getElementById("data").textContent);
+let cur = 0, revealed = false;
+try { const v = JSON.parse(localStorage.getItem("isekai-reader") || "{}"); cur = v.cur || 0; revealed = !!v.revealed; } catch (e) {}
+const save = () => { try { localStorage.setItem("isekai-reader", JSON.stringify({ cur, revealed })); } catch (e) {} };
+const md = s => { const h = window.marked ? marked.parse(s || "") : (s || ""); return window.DOMPurify ? DOMPurify.sanitize(h) : h; };
+function render() {
+  document.getElementById("tabs").innerHTML = S.map((s, i) =>
+    `<button class="tab" role="tab" aria-selected="${i === cur}" data-i="${i}">Story ${s.letter}${revealed ? " · " + s.model.split(" (")[0] : ""}</button>`).join("");
+  document.querySelectorAll(".tab").forEach(b => b.onclick = () => { cur = +b.dataset.i; save(); render(); scrollTo(0, 0); });
+  const s = S[cur];
+  document.getElementById("story").innerHTML = `
+    <div class="meta"><span>Story ${s.letter}</span>${revealed ? `<span class="who">${s.model}</span>` : ""}<span>${s.words.toLocaleString()} words</span><span>written in ${Math.round(s.secs / 60 * 10) / 10} min</span></div>
+    <div class="prose">${md(s.ch1)}<div class="chapter-break">Chapter 2</div>${md(s.ch2)}</div>`;
+  document.getElementById("reveal").textContent = revealed ? "Hide the models" : "Reveal the models";
+}
+document.getElementById("reveal").onclick = () => { revealed = !revealed; save(); render(); };
+render();
+</script>

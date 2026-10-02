@@ -1,0 +1,22 @@
+{
+  "label": "qwen-omlx-think",
+  "model": "qwen-flash-next",
+  "url": "http://127.0.0.1:8000/v1/chat/completions",
+  "params": {
+    "max_tokens": 16384,
+    "temperature": 0.1,
+    "top_p": 1.0,
+    "stream": true,
+    "json_mode": false,
+    "extra_body": {
+      "chat_template_kwargs": {
+        "enable_thinking": true
+      }
+    }
+  },
+  "prompt_sha": "3d9a21b0295ef6f5",
+  "themes_prompt_sha": "d1ce612800be5724",
+  "schema_sha": "01e0e1b891f57a62",
+  "transcripts_sha": "fe59b223a7af6d81",
+  "updated": "2026-10-01T00:45:10"
+}

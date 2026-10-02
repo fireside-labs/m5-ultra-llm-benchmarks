@@ -1,0 +1,41 @@
+{
+  "call_type": "saas_support",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 5,
+  "quality_reasons": [
+    "Verified identity with a one-time code before discussing account details",
+    "Diagnosed root cause (5000-row CSV cap on Team Classic plan) and provided effective workarounds",
+    "Filed a bug with engineering and provided ticket number 44091",
+    "Empathetic, professional, and handled secondary issues (digest emails, renewal) appropriately"
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "Engineering team",
+      "task": "Fix CSV export bug so it gives a proper message instead of failing",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Agent (Kenji)",
+      "task": "Check weekly digest email issue and add to ticket",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Account manager",
+      "task": "Reach out to customer about plan options before renewal",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Customer called because CSV time report export failed, blocking payroll. Agent verified identity, identified 5000-row cap on Team Classic plan as cause, and resolved by guiding customer to XLSX export, which succeeded. Filed bug (ticket 44091) and linked account for notification. Also noted weekly digest emails stopped since last Tuesday; agent added to ticket. Customer mentioned renewal in ~2 weeks; agent arranged account manager outreach. Call ended positively.",
+  "notable_details": [
+    "Ticket number: 44091",
+    "CSV export fails due to 5000-row cap on Team Classic plan; workaround is XLSX export",
+    "Weekly digest emails stopped since last Tuesday",
+    "Renewal due in about two weeks",
+    "Customer verified via one-time code 419227",
+    "Hold lasted 4 minutes 20 seconds",
+    "Customer email: odalys@ferrante-mwangi-studio.com; workspace: FM Studio"
+  ]
+}

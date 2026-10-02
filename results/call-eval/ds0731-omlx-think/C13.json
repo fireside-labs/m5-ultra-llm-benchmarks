@@ -1,0 +1,55 @@
+{
+  "call_type": "insurance_verification",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Provided incorrect coverage information, telling patient they are fully covered despite deductible and coinsurance.",
+    "Scheduled study at out-of-network Ridgeline facility despite payer stating only Westbrook is in-network.",
+    "Incorrectly stated two nights are covered when only one night was approved."
+  ],
+  "flags": [
+    {
+      "type": "misinformation",
+      "description": "Agent told patient they are fully covered and will owe nothing, despite the plan having a deductible and coinsurance.",
+      "evidence": "you're fully covered. It's approved, so you won't owe anything out of pocket."
+    },
+    {
+      "type": "misinformation",
+      "description": "Agent scheduled the study at Ridgeline, which the payer stated is out-of-network, and told the patient they are covered.",
+      "evidence": "Ridgeline is sooner, so let's do Ridgeline, May twelfth."
+    },
+    {
+      "type": "misinformation",
+      "description": "Agent stated the study is covered for two nights, but the payer approved only one night and said a second night requires a separate authorization.",
+      "evidence": "I think it's covered for the two."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent",
+      "task": "Fax clinical notes to Thistlecrest",
+      "due": "2026-04-21"
+    },
+    {
+      "owner": "agent",
+      "task": "Send sleep lab instructions to patient portal",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Insurance verified with Thistlecrest (effective 4/1/2026). Prior authorization approved for one night attended in-lab polysomnography (CPT 95810) at Westbrook facility, auth #PA-2026-0441973, valid through 6/30/2026, pending fax of clinical notes within 2 business days. Patient scheduled at Ridgeline on 5/12/2026, which is out-of-network per payer; agent incorrectly told patient they are fully covered and that two nights are covered. Deductible remaining $1120, then 20% coinsurance. Patient prefers text reminders. Need to correct scheduling and coverage information.",
+  "notable_details": [
+    "New insurance: Thistlecrest Health Plan, effective 4/1/2026.",
+    "Member ID: THC-50288144.",
+    "Authorization number: PA-2026-0441973.",
+    "Approved for one night at Westbrook, not Ridgeline.",
+    "Deductible: $1500, met $380, remaining $1120, then 20% coinsurance.",
+    "Sleep studies covered in-network only; Ridgeline out-of-network.",
+    "Patient scheduled at Ridgeline on 5/12/2026 (out-of-network).",
+    "Agent told patient fully covered (incorrect).",
+    "Agent said two nights covered (incorrect).",
+    "Patient prefers text reminders.",
+    "Parking validation available at front desk."
+  ]
+}

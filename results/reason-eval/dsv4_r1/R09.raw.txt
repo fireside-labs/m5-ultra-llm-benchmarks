@@ -1,0 +1,31 @@
+## First steps
+
+1. **Pull 15-minute interval call volume, staffing, and abandonment data for the last 4 weeks, with special focus on Monday 8:00–11:00.** Why now: The 22%-of-weekly-calls stat is a red flag. If that window is 3–4x the average, hiring 4 agents on the same 8–5 shift won't touch it. Needs: Telecom/IT admin access to the ACD reports.
+2. **Interview all 12 remaining agents (15 min each) about the new EHR's specific friction points.** Why now: Handle time jumped 1.5 min (37%). If it's a missing macro, a double-entry screen, or a known bug, we can claw back capacity in days without spending $260k. Needs: Call center lead to schedule, a notepad, and access to the EHR.
+3. **Map the 7-option IVR and trace the 26% transfer rate.** Why now: Transfers double-handle calls. If refill status (31% of calls) is buried behind 3 menus or routes to a human who then transfers, we can fix routing immediately. Needs: Phone system vendor documentation or admin console.
+4. **Fast-track a manual callback process today (even before the $40k add-on is approved).** Why now: The board is angry *now*. A 9-minute hold is unacceptable. Agents can take a name/number and call back in 15 min during low-volume windows. This cuts abandonment and anger immediately. Needs: A shared spreadsheet or simple queue, and manager buy-in.
+5. **Draft a staggered schedule proposal (e.g., 3 agents at 7:00, 4 at 8:00, 3 at 9:00, 2 part-timers for Monday only).** Why now: All 12 on the same shift means zero coverage at 8:00 sharp and overstaffing at 16:00. Staggering is the cheapest way to attack the Monday spike. Needs: HR approval for flexible shifts and part-time hires.
+6. **Pull call logs for the 18% repeat callers to see which reason drives them.** Why now: If they're all "test results" or "refill status", a simple text/portal notification kills 18% of total call volume. Needs: Call log export and a quick pivot table.
+7. **Check with IT on open EHR vendor tickets related to call-center screen load times.** Why now: The 5.6-min handle time might be a system latency issue, not a user training issue. Fixing a bug is faster than retraining or hiring. Needs: IT ticket system access.
+8. **Set a daily 10-minute standup with the call center lead to review yesterday's wait time, abandonment, and handle time.** Why now: To see which of the above changes move the needle in real time, and to keep the COO's board pressure channeled into data, not panic. Needs: Call center lead's calendar slot.
+
+## Measure first
+
+1. **Average speed of answer and abandonment rate by 15-minute interval, especially Monday 8–11.** *Decision:* Whether hiring 4 full-time 8–5 agents (proposal a) actually helps, or whether we need staggered/part-time coverage instead. If the Monday spike is 4x the average, 4 agents spread across 9 hours will be idle at 2 PM and useless at 9 AM.
+2. **Handle time breakdown: talk time vs. after-call work (ACW) vs. hold time, pre- and post-EHR.** *Decision:* Whether the 1.5-min increase is fixable via macros/training (clawing back ~3–4 agents of capacity) or a permanent system cost that forces hiring. If ACW is 2+ minutes, we fix that first.
+3. **Transfer rate by IVR menu option (which option leads to a transfer).** *Decision:* Whether to re-route the IVR (cheap) vs. hire agents (expensive). If 26% of calls transfer, we're paying for 26% extra handle time. Fixing the menu could free 20%+ capacity.
+4. **Of the 31% refill-status callers, how many have portal access and how many actually use it?** *Decision:* Whether to invest in pushing portal adoption/automated refill texts (kills 31% of volume) vs. buying callback (which just delays the call). If portal activation is 35%, there's huge untapped deflection.
+5. **Repeat-call rate by reason (are the 18% repeat callers all about test results or refills?).** *Decision:* Whether to fix the underlying notification process (text when results are ready) to eliminate repeat calls entirely, rather than hiring agents to handle the same patient twice.
+6. **Cost per call today vs. projected cost per call under (a) hiring 4 agents and (b) callback add-on.** *Decision:* The $260k vs $40k ROI. If callback reduces abandonment but not handle time or volume, it doesn't fix the root cause—it just hides the wait.
+
+## What would kill the idea
+
+- **Proposal (a) – Hire 4 agents:** If the Monday 8–11 spike is >3x the daily average, hiring 4 agents on the same 8–5 shift won't materially reduce that window's wait time (they'd be idle in the afternoon). Also, if the 5.6-min handle time is due to a broken EHR workflow, we'd just be paying 4 people to be slow.
+- **Proposal (b) – Callback add-on:** If the abandonment rate stays high because callers don't trust the callback or if the 18% repeat callers still call back anyway, it doesn't reduce total work—it just shifts it. If the board's definition of "fix it" is "answer under 2 minutes," a callback that says "we'll call you in 30 min" may still be seen as a failure.
+- **My leading idea (staggered shifts + IVR/EHR workflow fixes):** If the handle time increase is actually due to a new regulatory requirement in the EHR (e.g., mandatory double-entry or verification), we can't claw it back—then we must hire. Or if the IVR changes don't reduce transfers because callers are confused by the menu, we might need to add a human routing option instead of removing one.
+
+## Top 3 priorities
+
+1. **Fix the Monday 8–11 capacity crunch via staggered shifts and part-time Monday coverage.** This is the single biggest driver of the 9-minute average. All 12 agents on the same shift is a structural mismatch with the call pattern. Staggering costs nothing and can cut peak wait dramatically.
+2. **Claw back the 1.5-minute EHR handle-time increase via macros, training, or system fixes.** This is equivalent to adding ~3–4 agents of capacity without the $260k cost. If we can get handle time back to 4.1 min, we've effectively solved the capacity problem.
+3. **Deflect the 31% refill-status calls (and the 18% repeat callers) via IVR automation and portal/text notifications.** This reduces raw demand, which is the only way to get sustainably under 2 minutes. Buying callback (b) just hides the wait; hiring (a) just adds cost. Deflection kills the volume.

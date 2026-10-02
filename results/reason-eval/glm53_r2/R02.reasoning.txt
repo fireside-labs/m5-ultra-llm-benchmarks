@@ -1,0 +1,198 @@
+
+Let me work through this report carefully as the deciding reviewer.
+
+The headline: program 9.0% vs comparison 18.4% readmission — "cuts readmissions in half." Leadership wants to expand to every partner hospital.
+
+Key issues to identify:
+
+1. **Massive selection bias / confounding by risk tier.** The program group is 80% low-risk (800/1000), comparison is 80% high-risk (800/1000). Nurses enrolled patients who answered the phone and agreed — healthier, more engaged patients. Within tiers, the rates are nearly identical: low risk 5.0% vs 4.0% (program actually HIGHER), high risk 25.0% vs 22.0% (program higher). So within every risk stratum, the program group does *worse* than comparison. The entire headline effect is composition: the program group was mostly low-risk patients who were going to do well anyway. Simpson's paradox, textbook. This is the single most important point. The risk-tier table actually destroys the headline claim. Let me verify: Program low risk 40/800 = 5.0%; comparison low 8/200 = 4.0%. Program high 50/200 = 25%; comparison high 176/800 = 22%. Yes — in both strata the program rate is higher than comparison. Weighted: program 0.8*5% + 0.2*25% = 4% + 5% = 9%. Comparison 0.2*4% + 0.8*22% = 0.8% + 17.6% = 18.4%. Checks out. So the "halving" is 100% composition, and within-stratum the program is associated with slightly higher readmission. The risk tier is a measured confounder; there are surely unmeasured ones too (engagement, social support, transportation).
+
+2. **Excluding the 140 dropouts biases the program group.** Patients who left before completing 3 calls removed from program group. Dropouts likely sicker, harder to reach, died? No — deaths were excluded separately, but dropouts are likely the less adherent/sicker patients. Removing them cherry-picks the completers. Also this creates a "dose-response" tautology: you only count patients who received the full intervention. 140/1140 ≈ 12% of enrollees dropped. If those 140 had readmission rates like the high-risk comparison (22%), that's ~31 readmissions; adding them: (90+31)/(1140) ≈ 10.6%, still lower than 18.4% but the point is the direction of bias. Actually we don't know their risk mix, but the bias direction is clear: attrition is not random. Also note: excluding dropouts but not excluding analogous unreachable patients from comparison — comparison includes everyone else, including patients who would never answer a phone. So the comparison includes the "hard-to-reach" patients that the program group was scrubbed of. That's a clean statement of the asymmetry.
+
+3. **Deaths excluded — conditioning on survival.** Excluding patients who died within 30 days from both groups. If the program (or something correlated with enrollment, like being well enough to answer a phone) affects survival... Actually more importantly: patients who died are excluded, but death is post-discharge and possibly related to the same health factors driving selection. Excluding deaths post-randomization/post-enrollment breaks the comparison — it's conditioning on a post-treatment variable. But honestly the bigger issue is that death exclusion is symmetric, so it may be minor. Still worth noting: if the program prevented deaths (nurses catch deterioration), excluding deaths removes benefit from the program side. But we can't verify. It's a legitimate flag but lower priority. Actually, the main reason to flag it: excluding deaths after enrollment is conditioning on a post-enrollment outcome; if enrollment correlates with survival (engaged patients survive more), the exclusion differentially trims the comparison... hmm, actually comparison patients who died are also removed. Both groups' deaths removed. The asymmetry: deaths aren't counted as bad outcomes. A patient who dies can't be readmitted; excluding them removes the worst outcomes. If program selection favors healthier patients, fewer die, so more survive to be readmitted... it's tangled. Keep it brief: excluding post-discharge deaths discards the worst outcomes and can distort a 30-day readmission comparison; better to use a combined endpoint (readmission or death) — standard practice (e.g., HRRP uses all-cause readmission; CMS counts death differently). One line.
+
+4. **Timing confound: the July 1 measure change + program patients concentrated in H2.** 70% of program patients discharged July–Dec vs 50% of comparison. On July 1 the definition changed to exclude planned readmissions. So program patients are disproportionately measured under the *narrower* definition. If planned readmissions are, say, 3–4 points of the rate, that alone could be a large chunk of the gap. We don't know the size — must state assumption. But the direction is unambiguous: the group with more H2 discharges benefits more from the narrower measure. This is a real, unquantified confound. Also H2 vs H1 could differ seasonally.
+
+5. **Meds-to-beds confound at Northgate.** 85% of program patients from Northgate vs 40% of comparison. Northgate started meds-to-beds in Feb 2025, which itself reduces readmissions. So the program group is disproportionately composed of patients who also got another readmission-reducing service. The comparison group is only 40% Northgate. This inflates the program effect. Also hospital site itself (case mix, socioeconomic catchment) differs.
+
+6. **The Spanish-language cohort is n=10 and n=9.** 0/9 vs 2/10. With such tiny numbers, the difference is noise (Fisher exact p ~ 0.46 or so). 2 events vs 0 events. Recommending "Spanish-language nurses as a priority" on this is indefensible. Also multiple comparisons / cherry-picking subgroups.
+
+7. **The expansion forecast botches the PPV/sensitivity math.** "Sensitivity 90%, specificity 70%... because a flagged patient is therefore 90% likely to be readmitted" — that's wrong. 90% sensitivity means 90% of readmitted patients are flagged, not that 90% of flagged patients are readmitted. That latter is PPV. With prevalence 13%, sensitivity 90%, specificity 70%: PPV = (0.9×0.13)/(0.9×0.13 + 0.3×0.87) = 0.117/(0.117+0.261) = 0.117/0.378 ≈ 31%. So flagged patients are ~31% likely to be readmitted, not 90%. Also the flagged count: 12,000 flagged per year — with specificity 70%, false positive rate 30%; if total discharges N, flagged = 0.9×0.13N + 0.3×0.87N = 0.378N. For 12,000 flagged, N ≈ 31,746 discharges. True readmits among flagged ≈ 0.117N ≈ 3,714; PPV ≈ 31%. And even the "×50%" halving is unsupported given issue #1. So the 5,400 figure is off by roughly an order of magnitude in assumption chain: correct PPV ~31% and an unproven effect size (possibly zero or negative within strata) → expected prevented readmissions could be near zero. Let me compute what the report's own data suggest: within-tier the program showed no benefit (slightly negative), so best estimate of effect on flagged (high-risk) patients is ~0 or harmful. So 5,400 → ~0. That's the punchline.
+
+Also "13% of discharged patients are readmitted" — but the comparison rate here is 18.4%; fine, different population, but note the flagged-population math.
+
+8. **No statistical testing / no adjustment.** The report presents raw rates, no significance tests, no regression adjusting for tier, site, timing. Even the headline 9.0 vs 18.4 with n=1000 each would be significant, but the *adjusted* effect is the question. Also the risk-tier table shows the adjusted effect is ~zero. Could fold into #1 but the "no adjusted analysis" point stands: they had the data to do stratified analysis and didn't (or did and buried it). Actually they did the stratified table — they just didn't interpret it. So the point is interpretation failure more than analysis failure. I'll fold this into #1 and maybe keep a separate point about no significance testing for subgroups.
+
+9. **Enrollment mechanism = consent bias.** Nurses enrolled patients who answered and agreed. This is self-selection: engaged patients with phones, transportation, health literacy. The comparison includes all others — including patients who would have refused. This is the mechanism behind #1. Also can't disentangle "program effect" from "compliant patient effect." This is arguably the same as #1; I'll make #1 the Simpson's paradox with the tier table, and #2 the dropout exclusion, and mention selection mechanism within #1.
+
+10. **First discharge in 2025 only / program contamination?** Patients readmitted to any hospital counted — that's actually a strength, not a problem. Index discharge selection: using first discharge of 2025 is fine. One possible issue: patients readmitted early in the year... not a big deal.
+
+Other candidates:
+- Comparison group could include patients who received the calls? No — program group is those enrolled; comparison is all others. But could comparison patients have been enrolled at a different program elsewhere? Not stated.
+- The comparison is "all other patients" — including patients too sick to enroll, died before first call? Deaths excluded. Patients who never answered — those are in comparison. Yes, that's the asymmetry.
+- Denominator mismatch: program n=1,000 after removing 140 dropouts — how many were approached? We don't know enrollment rate. If 1,140 enrolled out of, say, 3,000 eligible, the comparison includes the ~1,860 who declined/couldn't be reached — a huge hidden selection. Worth one line: we don't know how many patients were approached/eligible, so we can't gauge selection intensity.
+- "Risk tier assigned by our risk model" — the same model used for the forecast; the tier table shows the model does stratify (5% vs 25% in program... wait, program low 5% vs high 25%; comparison low 4% vs high 22%). Model discriminates fine. Not a problem per se.
+- Seasonality: H1 vs H2 discharges differ (flu season etc.). Fold into timing confound.
+- The headline "cuts in half" — even the crude comparison might be confounded by the measure change and site; covered.
+
+Ranking by importance for the expansion decision:
+
+1. Simpson's paradox: within both risk tiers program rates are *higher*; the halving is entirely composition. (Kills the headline.)
+2. Forecast math error: sensitivity≠PPV; correct PPV ≈ 31%; and the 50% effect size is unsupported; 5,400 collapses to ~0. (Kills the forecast/ROI.)
+3. Selection/consent + dropout exclusion: program group is scrubbed of hard-to-reach and dropouts; comparison isn't. (Mechanism of #1; also 140 dropouts removed.)
+4. Meds-to-beds/site confound: 85% vs 40% Northgate.
+5. Timing/measure-change confound: 70% vs 50% H2; definition narrowed July 1.
+6. Spanish cohort n=9 vs 10 — noise, yet drives a recommendation.
+7. Death exclusion — conditioning on post-discharge survival; use readmission-or-death endpoint.
+8. No uncertainty/adjustment: no CIs, no tests, no multivariable adjustment; subgroup claims untested.
+9. Unknown enrollment denominator: can't assess how severe selection was (how many approached, refused).
+10. Maybe: the comparison includes patients who would never have answered — related to 9. Or: "13% readmission prevalence across partner hospitals vs 18.4% here" — inconsistent base rates for the forecast. Eh, could mention.
+
+Let me pick 10 max, most important first. I think:
+
+1. Simpson's paradox / composition — within-tier rates higher for program.
+2. Forecast misuses sensitivity as PPV; PPV ≈ 31%; effect size unproven → 5,400 unsupported.
+3. Attrition bias: 140 dropouts removed; comparison has no analogous removal.
+4. Consent/selection bias mechanism (could merge with 3? They're distinct: one is post-enrollment attrition, other is pre-enrollment self-selection). Keep separate but maybe merge into one "selection bias, two stages." The instruction says fewer, sharper points. I could merge consent-selection and attrition into one point: "the program group is filtered twice — at enrollment (answered phone, agreed) and after (140 dropouts removed) — while comparison is unfiltered." That's sharper. Then I have room for others.
+
+Revised list:
+
+1. Simpson's paradox: the stratified table refutes the headline. Program worse in both tiers (5.0 vs 4.0; 25.0 vs 22.0). The halving is 100% case mix.
+2. Forecast math: sensitivity treated as PPV. Correct PPV ≈ 31% (show calc). Plus effect size unproven. 5,400 → could be ~0.
+3. Double filtering of program group: consent at enrollment + 140 dropout exclusion; comparison untouched. Hard-to-reach/sicker patients concentrate in comparison.
+4. Site confound: Northgate meds-to-beds; 85% vs 40%.
+5. Measure-change/timing confound: July 1 definition change; 70% vs 50% H2 exposure. Unquantified but direction favors program.
+6. Spanish cohort: 0/9 vs 2/10 — statistically meaningless, drives a priority recommendation.
+7. Death exclusion: conditioning on post-discharge survival; use combined endpoint.
+8. No statistical inference or adjustment anywhere: no CIs/tests; with the tier table in hand they should have run a stratified/Mantel-Haenszel or logistic adjustment; the crude headline is the one number that's misleading.
+9. Unknown selection intensity: no denominators on approached/refused; can't quantify how strong the consent filter is; also comparison includes patients who could never be reached.
+10. Base-rate inconsistency for forecast: report uses 13% prevalence for partner hospitals while its own comparison rate is 18.4%; and flagged volume 12,000 implies ~32k discharges — the forecast's inputs are internally unverified. Hmm, is this strong? The 13% is stated as "across all partner hospitals" — plausible it differs from these two hospitals. Not a huge deal. Alternative 10th: "risk tier is from Brightwater's own model — potential circularity/overfitting"? Weak. Another: "planned readmission change also affects the tier composition over time"? Overlaps 5.
+
+Maybe a better 10th: the report claims "demographics do not explain the difference" based on two variables (age, sex) — balance check is superficial; the variables that matter (risk tier, site, time, engagement) are unbalanced, so the two-variable balance check is beside the point. That's a decent point — the balance check creates false reassurance. I'll use that as #9 or #10.
+
+Let me finalize 9-10:
+9. Superficial balance check: age/sex balanced but the covariates that matter (tier, site, half-year) are wildly unbalanced; "demographics do not explain the difference" is false reassurance.
+10. Unknown enrollment funnel: no counts of eligible/approached/refused; can't judge selection severity; also comparison contains unreachable patients by construction.
+
+Hmm, 10 items max — I have 10. But instruction says don't pad; fewer sharper. Maybe trim to 8-9. Let me evaluate each for distinct value:
+
+- 1 essential.
+- 2 essential.
+- 3 essential (merge consent + attrition).
+- 4 essential.
+- 5 essential.
+- 6 essential (it drives a recommendation).
+- 7 moderate — keep, one line-ish.
+- 8 moderate — the "no inference" point; somewhat generic but the specific angle: they had the stratified data and the adjusted analysis would have shown ~zero/negative effect. Could merge into 1. But the Spanish cohort point also involves inference. I'll keep 8 short or fold into 1 and 6. Actually folding: "no significance testing" is most relevant to #6 (Spanish) and the headline. The headline crude difference is huge so significance isn't the issue — confounding is. So the "no tests" point mainly matters for subgroups. I'll fold into #6 and drop standalone #8.
+- 9 (balance check) — good, distinct, shows the report's own "robustness" claim is hollow. Keep.
+- 10 (enrollment funnel) — keep? It's somewhat covered by #3. The distinct bit: we can't quantify selection without denominators. I could merge into #3 as a sub-clause. Then I'd have 8 items. 8 is fine, or keep 10 items? "at most 10" — quality over quantity. I'll do 8: 1,2,3(consent+attrition+funnel),4,5,6(Spanish+no testing),7(deaths),8(balance check). That's 8. Good.
+
+Wait — should the forecast math or Simpson's be #1? For the expansion decision, both are fatal. Simpson's paradox undermines the *evidence*; the forecast error undermines the *ROI*. The headline claim "cuts readmissions in half" is the core conclusion — and the report's own table refutes it. I'll put Simpson's #1, forecast #2. Actually, one could argue the forecast error is #1 because it's the direct basis for the expansion decision ("prevent 5,400/year"). But the effect estimate (50% reduction) feeds the forecast too, and it's false. Simpson's is first.
+
+Let me double-check the PPV computation: prevalence 13%, sens 90%, spec 70%.
+- True positives per 1,000 discharges: 130 readmitted × 0.9 = 117 flagged.
+- False positives: 870 not readmitted × 0.30 = 261 flagged.
+- Flagged total = 378. PPV = 117/378 = 30.95% ≈ 31%.
+So a flagged patient is ~31% likely to be readmitted, not 90%. If 12,000 flagged → implies total discharges ≈ 12,000/0.378 ≈ 31,700. True readmissions among flagged ≈ 12,000 × 31% ≈ 3,700. Even if the program halved readmissions among flagged (unproven), prevented ≈ 1,850, not 5,400. And the report's own stratified data suggest ~zero effect in high-risk patients (25% vs 22% — program worse). So the 5,400 could plausibly be ~0. Good, concrete.
+
+Also note: 12,000 × 90% = 10,800 would be "readmitted among flagged" under their wrong math — they computed 12,000×90%×50% = 5,400. Under correct math, readmitted among flagged ≈ 3,700 (not 10,800), and prevented = 3,700 × (true effect). If true effect is the within-tier difference (program slightly worse), prevented ≈ 0 or negative. Great.
+
+Also the flagged count check: 12,000 flagged/year with 13% prevalence → N ≈ 31,700 discharges/yr across partner hospitals. Fine to mention briefly.
+
+Now "Looks like a problem but isn't":
+- Using first discharge in 2025 only (avoids double counting / multiple index admissions).
+- State all-payer claims: captures readmissions to any hospital, not just ours — avoids undercounting (this is a strength).
+- Excluding patients who died — hmm, I flagged this as an issue. Don't put it in both. I flagged "conditioning on survival" as an issue; some would say it's standard. I'll keep it as an issue but mild, or move it to "looks like a problem but isn't"? The cleaner take: excluding deaths is defensible-ish but the standard fix is a combined endpoint. I'll keep it in missed issues but low priority. Actually, is it really a problem? If the program can't affect death (nurse calls could plausibly affect death — they catch deterioration, medication issues...). Competing risk: death precludes readmission. Excluding deaths removes competing events symmetrically. The asymmetry arises only if death rates differ between groups, which they might due to selection. It's a legitimate secondary concern. Keep as low-priority missed issue.
+- Demographics balance (age/sex similar) — a reviewer might say "groups balanced, fine" — but I'm arguing it's false reassurance. Hmm, that's in missed issues. For "looks like a problem but isn't," candidates:
+  - Counting readmissions to any hospital in the state (strength, avoids missing outcomes).
+  - Index-discharge dedup (first discharge only).
+  - The comparison group being "all other patients" rather than a matched sample — actually that IS a problem given no adjustment. Skip.
+  - Risk-tier table itself: a reviewer might think the tier table is a robustness check showing consistency; actually it shows the opposite. Not "isn't a problem."
+  - Removing the 140 dropouts — no, that's a problem.
+  - Using the same risk model for tiers and forecast — fine mechanically.
+  - The 13% vs 18.4% prevalence difference — not really a problem; different populations.
+  - "Two hospitals only" — a reviewer might flag limited generalizability; but the report is explicit about scope; the pilot scope itself isn't an analytical error. Could say: "Piloting at only two hospitals isn't itself a flaw — the flaw is extrapolating a site-confounded result from them." Eh.
+  - Excluding deaths: I could actually place it here as "handled adequately"? No — I think it's a genuine but minor issue. Decision: keep in missed issues as a lower item, framed as "use combined endpoint."
+
+So "Looks like a problem but isn't": 
+- All-payer statewide readmission capture (no undercounting of readmissions to other hospitals).
+- First-discharge-only dedup.
+- Small program group (1,000) vs comparison pool — using all others as comparison is reasonable *as a starting point*; the problem is adjustment, not the pool itself. Hmm, maybe skip.
+- Age/sex balance? No — that's my false-reassurance point.
+- The crude headline being statistically significant (n=1000 each, p << 0.001) — the issue isn't significance, it's confounding; a reviewer might demand a p-value but it would pass. That's a decent one: "The headline difference would easily pass a significance test (≈90 vs ≈184 events) — the problem is confounding, not noise." Good one-liner.
+- Spanish cohort being tiny — no, that IS a problem.
+
+Keep 3 one-liners: statewide claims capture; first-discharge dedup; significance-vs-confounding. Maybe also: "Excluding the 140 dropouts looks like standard per-protocol handling" — no, it's a problem. OK three lines.
+
+Top 3 priorities:
+1. Simpson's paradox — the stratified result contradicts the headline; the program shows no benefit within tiers. Do not expand on this evidence.
+2. Forecast math (sensitivity ≠ PPV; PPV ≈ 31%; effect unproven) — the 5,400 number is wrong by ~all of it.
+3. Selection/attrition filtering (consent + 140 dropouts) — or the site/meds-to-beds confound? Which is third? The selection filtering is the mechanism that produced Simpson's paradox — arguably part of #1. The site confound (meds-to-beds 85/40) is an independent reason the crude comparison is inflated. I'd rank: 1 Simpson's, 2 forecast math, 3 selection filtering (consent + dropouts). Then meds-to-beds and timing are #4/#5 in missed issues. Hmm, but "top 3 priorities" should be the three that most undermine the conclusion. Selection filtering is the root cause; meds-to-beds is an additional confounder. I'll go with selection as #3 since it explains why the tier imbalance exists and can't be fixed by just noting composition.
+
+Bottom line: The report's own risk-tier table shows the program group did no better (slightly worse) than comparison within both risk strata; the headline halving is entirely patient-mix. The 5,400/year forecast rests on confusing sensitivity with PPV (true PPV ≈ 31%) and on an effect size the data don't support. Cannot conclude benefit; can conclude the evaluation is confounded. Leadership should not expand next quarter; instead run the analysis properly — adjust for tier/site/timing, count dropouts as outcomes (intention-to-treat), use a combined readmission-or-death endpoint, and ideally randomize eligible patients at a few hospitals before scaling.
+
+Also recommend: stratified analysis they already have data for; pre-specify; pilot RCT.
+
+Now, formatting: exact headings requested:
+## Missed issues
+## Looks like a problem but isn't
+## Top 3 priorities
+## Bottom line
+
+Missed issues: numbered list, ≤10, most important first; each: what it is, why it matters, evidence with numbers.
+
+Let me draft each item tightly.
+
+1. **The risk-tier table refutes the headline (Simpson's paradox).** Within both strata the program does worse: low risk 5.0% vs 4.0%, high risk 25.0% vs 22.0%. The program group is 80% low-risk (800/1,000) while the comparison is 80% high-risk (800/1,000). The entire 9.4-point crude gap comes from case mix, not from the calls; on like-for-like patients the sign flips. This alone invalidates "cuts readmissions in half."
+
+2. **The expansion forecast confuses sensitivity with PPV.** Sensitivity 90% = 90% of readmitted patients get flagged; it does not mean a flagged patient has 90% readmission risk. With 13% prevalence, 90% sensitivity, 70% specificity: per 1,000 discharges, flagged = 117 true positives + 261 false positives = 378, so PPV ≈ 31%. 12,000 flagged patients contain ~3,700 future readmissions, not 10,800. And the ×50% effect is the discredited headline. Corrected, expected prevented readmissions ≈ 3,700 × (true effect) — which per the tier table is ~zero — versus the claimed 5,400.
+
+3. **The program group was filtered twice; the comparison not at all.** Enrollment required answering the phone and consenting (engaged, reachable, likely healthier), and then the 140 patients who didn't complete all 3 calls (12% of the 1,140 enrolled) were deleted from the program arm. The comparison still contains everyone the program filtered out — patients too sick or too disorganized to answer a phone. Removing dropouts after the fact guarantees the program arm counts only patients who received the full dose. Analyze by intention-to-treat (keep the 140, ideally as readmitted-or-not as observed).
+
+4. **Site confound: Northgate's meds-to-beds.** 85% of program patients vs 40% of comparison came from Northgate, which launched a readmission-reducing service in Feb 2025. Part of the "program" effect is a different hospital's pharmacy service plus any site case-mix differences. The comparison is not contemporaneous like-for-like even within site.
+
+5. **Outcome definition changed mid-year and exposure to the change is unbalanced.** From July 1, planned readmissions no longer count, so the same patient generates a lower measured rate after July. 70% of program patients vs 50% of comparison were discharged in H2, so the program arm is disproportionately measured under the more forgiving definition. Direction of bias favors the program; magnitude unknown from the report (planned-readmission share not given — assumption needed).
+
+6. **The Spanish-language recommendation rests on 19 patients and 2 events.** 0/9 vs 2/10 is indistinguishable from noise (a difference of 2 events flips it); no test is reported. Prioritizing Spanish-language nurses on this is indefensible, and picking this subgroup out of many looks like cherry-picking.
+
+7. **Excluding 30-day deaths conditions on a post-discharge outcome.** Patients who die can't be readmitted; deleting them discards the worst outcomes. If enrollment correlates with survival (it plausibly does — you must be alive and well enough to answer a nurse's call), the exclusion trims the groups differently. Standard fix: count "readmission or death within 30 days."
+
+8. **The balance check is false reassurance.** Age (67 vs 68) and sex (54% vs 55% female) balance is irrelevant when the covariates that drive readmission — risk tier (80/20 vs 20/80), site (85% vs 40% Northgate), and half-year of discharge (70% vs 50% H2) — are grossly unbalanced. "Demographics do not explain the difference" is technically true and completely beside the point.
+
+That's 8. Should I add a 9th about unknown enrollment funnel? It's partially inside #3. I could add: "We never learn how many patients were approached or refused, so the severity of the consent filter can't be quantified." It's a distinct, actionable data gap. Add as #9? The instruction: at most 10, don't pad. 8 solid items is good; a 9th that's a genuine gap is fine. Let me add:
+
+9. **No denominators for the enrollment funnel.** The report never says how many discharged patients were eligible, approached, or refused — only that 1,000 completed (1,140 enrolled minus 140 dropouts). Without that, leadership can't judge how strong the healthy-volunteer filter was, nor estimate the cost per enrolled patient when scaling.
+
+Hmm, cost per enrolled patient is a nice practical angle. Keep.
+
+Maybe a 10th: no confidence intervals / significance testing anywhere. I folded testing into #6. A standalone "no adjusted analysis was run despite the data being in hand" is somewhat covered by #1 ("they computed the stratified table but didn't interpret it"). I'll leave at 9. Actually — one more candidate: the forecast's "12,000 flagged per year" implies ~31,700 discharges across partner hospitals (12,000/0.378); is that consistent? We can't verify; minor. Skip. 9 items.
+
+Wait, also consider: "70% of program patients discharged July–Dec" — could also reflect ramp-up of enrollment (program started Jan, scaled over time). The comparison is uniform-ish (50%). Seasonality (winter discharges readmit more?) — winter is H1+Dec... Anyway the measure change is the crisp point.
+
+Also check the arithmetic claims I make:
+- 1,140 enrolled = 1,000 remaining + 140 removed. Report says "Patients who left the program before completing all 3 calls (n = 140) were removed from the program group." So enrolled = 1,140 assuming the 1,000 is after removal. Yes.
+- 140/1,140 = 12.3%.
+- PPV: 117/378 = 0.3095 → ~31%.
+- 12,000 flagged → total discharges = 12,000 / 0.378 = 31,746 → ~32,000. Readmissions among flagged = 12,000 × 0.3095 ≈ 3,714.
+- If true effect were the observed within-tier differences (program +3 pts low, +3 pts high), prevented = negative. Best case with a genuinely effective program: unknown. State: "could plausibly be near zero."
+
+For "Top 3 priorities":
+1. Simpson's paradox — within-tier results show no benefit; headline is pure case mix. Any expansion decision based on the 50% reduction is decision-making on a refuted estimate.
+2. Forecast math — sensitivity≠PPV; PPV ≈ 31%; 5,400 → ~0–1,900 at best (3,714 × 50% ≈ 1,857 even if the halving were real). Actually even under the most generous correction (PPV 31% AND the unproven 50% effect), it's ~1,850, and the report's own stratified data suggest ~0. Good.
+3. Selection filtering (consent + 140 dropouts, unknown funnel) — the mechanism generating #1 and unfixable post hoc; demands intention-to-treat re-analysis or randomization.
+
+Bottom line: 2–4 sentences. What can be concluded: the crude difference exists but is fully explained by measured case mix (tier), with additional uncontrolled confounding (site, timing, dropout removal) all pointing the same way; no credible evidence of benefit; forecast is arithmetically wrong. What to do: don't expand next quarter; re-run as intention-to-treat with adjustment for tier/site/calendar half and combined endpoint; if leadership wants a scalable answer, run a randomized pilot at 2–3 hospitals. Also: the Spanish-nurse recommendation should be dropped.
+
+Now "Looks like a problem but isn't" lines:
+- Statewide all-payer claims: captures readmissions to any hospital, so the outcome isn't undercounted for either group — a genuine strength.
+- Counting only each patient's first 2025 discharge: prevents double-counting repeat discharges as separate index events.
+- The crude 9.0% vs 18.4% gap would pass any significance test (~90 vs ~184 events, n=1,000 each) — the problem is confounding, not statistical noise, so demanding a p-value misses the point.
+- Maybe: "Using 'all other patients' as the comparison rather than a matched cohort is a reasonable starting design — the failure is that no adjustment was applied afterward, not the pool itself." Hmm, borderline; could be seen as contradicting my critique. Skip or include? I think include is fine but risky. I'll keep three lines. Maybe add: "Two-hospital pilot scope" — no.
+
+One more possible "isn't a problem": excluding deaths? No, I'm keeping that as an issue. Fine, three lines.
+
+Length: keep it tight. Use bold lead-ins per item. The persona: senior generalist advisor, ruthless prioritization, concrete numbers.
+
+Format check: Markdown, exact headings in order: "## Missed issues", "## Looks like a problem but isn't", "## Top 3 priorities", "## Bottom line". Numbered lists. Missed issues ≤10 items with what/why/evidence. I'll structure each as a bold claim sentence then 2–3 clauses covering what/why/evidence with numbers. Keep each item ~3 lines.
+
+Write it.

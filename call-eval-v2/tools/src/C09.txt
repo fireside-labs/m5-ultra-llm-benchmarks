@@ -1,0 +1,302 @@
+@id C09
+@date 2026-09-25 15:40
+@line Tallyforge (invoicing, accounts-receivable & payroll SaaS) - Support, Tier 2 (payroll)
+@direction inbound (escalated from Tier 1 chat, conference call)
+@target 25000
+@seed 9093
+@diar_drop 0.15
+@speaker A AGENT = Tier 2 payroll support engineer (Marguerite)
+@speaker C CUSTOMER = owner of a small coffee-roasting company (account owner)
+@speaker D CUSTOMER_2 = customer's external accountant (joined by conference)
+@speaker E OTHER = roastery employee in the background, occasionally audible
+---
+A: Tier 2 payroll, Marguerite.
+C: Oh, hi! Hi. I was in the chat with— with someone, Teo? Theo? And he said he'd have Tier 2 call me, so I'm guessing that's you.
+A: That's me. Name and the account.
+C: Ambrose Delacroix-Weng. Pemberton Coffee Roasters. I'm the owner.
+A: Mm-hm. I'm sending a code to the owner email. Read it back when it arrives.
+C: Okay, it's— hang on, my phone is— okay, here. Eight-three-one, oh-oh-four.
+A: Eight-three-one-zero-zero-four. And the account security PIN.
+C: The PIN. Uh. Is that the— the four-digit one? The one I set up like three years ago?
+A: That is what a PIN is, yes.
+C: [laughs] Okay. Um. Two-seven-seven-one.
+A: Fine. You're verified as the account owner. Someone else is breathing on this line. Who is it?
+D: Hi, sorry, that's me. Sunniva Rask, I'm Ambrose's accountant, at Rask and Holloway. I'm on from my office.
+A: Okay. Mr. Delacroix-Weng, before I go any further. I don't discuss account details with third parties unless the account owner tells me to. Do you want your accountant on this call hearing your payroll data?
+C: Yes, of course, that's why she's here, she's the one who—
+A: That's a yes. Noted on the ticket. Go.
+C: Okay, so, a little background, so you understand who we are. We're a small roastery, we do maybe— well, it depends on the season, but around fourteen hundred pounds a week, mostly wholesale to cafés, a couple of grocery stores, and then the online shop, and we have twelve people on payroll, some part-time, and we've been on Tallyforge since, gosh, twenty twenty-three? And before that I did payroll on a spreadsheet, which was a nightmare, Sunniva can tell you—
+A: Mr. Delacroix-Weng. I have your account in front of me. I can see twelve employees and when you signed up. I need the problem, not the company history.
+C: Oh. Right. Sorry. Okay.
+A: The problem.
+C: Yes. Sorry. I tend to, uh— Sunniva says I bury the lede. [laughs]
+D: He does. [laughs]
+A: Mm.
+C: Okay. So. Every two weeks we run payroll in Tallyforge, and then I export it and Sunniva imports it into her software, Ledgerline, for the books and the quarterly stuff. And this time it won't import. It just fails.
+A: "It just fails." What does it say when it fails?
+D: It says "Import error, row seven, invalid character."
+A: So it doesn't "just fail." It tells you the row. Okay. Which payroll run?
+
+C: The September, um, the September eighteenth one. The ID is— it's P R dash oh-nine-eight-one.
+A: There's no PR-0981 on your account.
+C: Oh. Sorry. Let me— it's tiny, my glasses are— zero nine one eight. PR-0918. September eighteenth. That makes more sense, actually. [laughs]
+A: PR-0918. Yes. That exists. Twelve employees, finalized September eighteenth, export generated twice, both CSV.
+C: Right, I tried it twice. I thought maybe it was a glitch.
+
+A: Doing the same thing twice and expecting a different result. Okay.
+A: I'm reading the chat transcript from Tier 1 so you don't have to repeat yourselves. Hold on. Don't talk.
+#pause 25
+A: Okay. Theo had you clear your browser cache, log out and log in, and try a different browser. None of which could possibly affect a file that has already been generated. So that was forty minutes you won't get back.
+C: [laughs] It was about forty minutes, yeah.
+A: I'll leave him a note.
+D: Honestly, he was very nice.
+A: Nice is not the same as useful. Moving on.
+#fill saas_early saas_howto @A=A @C=C
+A: Ms. Rask. Open the CSV in a text editor. Not a spreadsheet. A text editor.
+D: Uh, sure, I have note pad. Okay, opening it.
+A: Go to row seven. What's the name?
+D: Row seven... it's, um, it's Zoë. Zoë Abernathy-Quill. But it's showing up weird. It says Z-O-capital-A-with-a-squiggle, and then like a quotation mark thing.
+A: Of course it does. Zoë has an e with two dots on it. A diaeresis.
+C: She's very particular about it. She's from— her mom is Dutch, I think? Or [inaudible] Belgian.
+A: I don't need her genealogy. Tallyforge exports CSV as UTF-8. Your accountant's software reads CSV as Windows-1252. The two-dot e turns into garbage, and Ledgerline rejects the row. That's the entire problem.
+D: Oh. Huh. So it's an encoding thing.
+A: It's an encoding thing.
+C: So is it a bug? On your side?
+A: No. The export is valid UTF-8. Ledgerline only reads one encoding. That's their limitation. I'm still going to give you two ways around it, so don't panic.
+C: I'm not panicking.
+A: You sound like you're panicking.
+E: [background] Ambrose, the Huila lot is cooling, you want it bagged or binned?
+C: [to employee] Binned! Binned, Rosa, it's for the cupping tomorrow. [to agent] Sorry. We're mid-roast.
+A: Mm-hm.
+#fill it_side_talk office_smalltalk @A=A @C=C
+D: Can I ask, before we fix it, because I want to understand— why would Ledgerline read it differently? We import CSVs from other clients all the time and I've never seen this.
+A: Because most of your other clients' employees probably have names with no accents in them, or their software exports Windows-1252. Ledgerline's CSV importer assumes Windows-1252. It does not detect encoding. Any character outside basic English becomes two or three junk characters, and their validator rejects the row as an invalid character. An e with a diaeresis, an n with a tilde, an accented a. Same result.
+D: Oh. So any Spanish names, too, then.
+A: Any. Do you have any José or Nuñez on another client?
+D: Um, actually, yes, but I think that client uses a different payroll system.
+A: Then that system exports Windows-1252, or the employees typed their names without accents. Either way, not my problem today.
+D: [laughs] Okay. Fair. That's actually really helpful to know, though.
+A: Mm-hm.
+C: So it's not our fault and it's not your fault.
+A: It's nobody's fault. It's two programs disagreeing about how to write letters. Happens constantly.
+A: Option one. In Tallyforge, Payroll, Export, there's a format dropdown. Choose XLSX instead of CSV. Ledgerline imports XLSX without the encoding problem because the format stores text properly.
+C: Okay, XLSX. Got it.
+A: Option two, if Ms. Rask insists on CSV for some reason, same screen, "Advanced," CSV encoding, set it to Windows-1252. Then it'll match what Ledgerline expects.
+D: I don't insist on anything, honestly, I just want it to work. [laughs]
+A: Then use XLSX. Mr. Delacroix-Weng, you're in the payroll screen?
+C: I'm— I'm in Payroll. Okay. Export. Format... CSV, XLSX, PDF. XLSX. Run PR-0918. Export. It's downloading.
+A: Send it to her.
+C: Sending. Sunniva, it's coming to your email.
+D: Got it. Okay, importing into ledger line. Import, payroll, choose file... okay. It's thinking.
+#pause 20
+D: Twelve rows imported. No errors. Oh my gosh. Okay.
+A: Twelve of twelve.
+D: Twelve of twelve. And Zoë looks right. With the dots.
+C: Oh, thank God.
+A: You're welcome.
+#diar off
+C: Oh my gosh, it worked, it actually worked—
+D: Hold on, hold on, let me check the mapping, it sometimes puts the deductions in the wrong—
+A: It won't. XLSX columns are named.
+D: —okay, no, the deductions are in the right place. Gross, federal, state, FICA, the 401k, net. Okay.
+C: Sunniva, I could kiss you.
+D: [laughs] Please don't. Thank Marguerite.
+#diar on
+A: No need.
+#fill saas_late it_side_talk @A=A @C=C
+D: Let me just spot-check a couple of totals against the Tallyforge register before we call it done. Ambrose, can you read me Hollis's net from your screen?
+C: Hollis Varga. Net pay... eighteen fifteen. One eight one five.
+D: Hmm. I have eighteen fifty.
+A: Mr. Delacroix-Weng. Look again. The column you want is "Net," not "Hours."
+C: Oh— oh, sorry, I'm in the wrong column, that's his hours times something. Net is— one thousand eight hundred fifty. Eighteen fifty. Sorry.
+D: Okay, eighteen fifty matches. One thousand eight hundred fifty dollars and zero cents.
+A: Good. They match. Because it's the same data.
+D: [laughs] Fair enough. I just like to check.
+A: You should check. That part is correct.
+D: And can you read me Zoë's net too, since she's the one that broke it? [laughs]
+C: Zoë... net... nine hundred twelve, forty. Nine twelve forty. In the Net column this time. [laughs]
+D: Nine twelve forty. Matches.
+A: Of course it matches. It's the same run.
+D: I know, I know. Professional paranoia.
+A: Professional paranoia is fine. Keep doing it.
+#fill saas_howto office_smalltalk @A=A @C=C
+E: [background] Ambrose, the guy from the import company is on line two about the green coffee—
+C: [to employee] Tell him I'll call him back in twenty minutes, Rosa. Twenty! [to agent] Sorry. Our green coffee shipment's stuck at the port. Different problem.
+A: I only do payroll.
+C: [laughs] I know, I know. I wasn't going to ask you about the port.
+A: Good.
+C: Okay, so, this is great, but can I ask, why did the last two months work? It's the same Zoë. She's been with us since spring.
+A: Because she changed her name in her employee profile on September ninth. Before that it was spelled with a plain e. The audit log says so.
+C: Oh. Oh, she did, she told me. She said the system "finally let her" use her real spelling. [laughs]
+A: Then that's your explanation.
+C: Huh. Okay. Well that's— that's kind of a relief, actually, because I thought I broke something.
+A: You didn't break anything. Your employee spelled her name correctly. Ledgerline didn't like it.
+#diar off
+C: Should I ask her to change it back, so it doesn't happen again?
+A: No. Don't ask an employee to misspell her own name because of an accounting import. Use XLSX.
+D: Yeah, no, definitely don't do that, Ambrose. [laughs]
+C: No, no, you're right, I wasn't going to— I was just asking.
+#diar on
+A: Set the default export format so you don't have to remember. Payroll, Settings, Default export format, XLSX. Save.
+C: Payroll, Settings... Default export format... XLSX. Saved.
+A: Done.
+#fill saas_debug it_side_talk @A=A @C=C
+C: Can I ask a payroll question, an actual payroll one? About PTO?
+A: That's what I'm here for.
+C: So, we just started giving people paid time off. One hour for every thirty hours worked. And I set it up in Tallyforge, but Rosa says her balance looks wrong. She says she should have more.
+A: What's Rosa's full name?
+C: Rosa Ilunga-Park.
+A: [typing] Rosa Ilunga-Park. Accrual policy "Standard PTO," one hour per thirty hours worked, effective September first. She's worked a hundred and forty-four hours since September first. That's four point eight hours. Her balance shows four point eight hours. It's correct.
+C: Oh. She thinks it should've started in August.
+A: You set the effective date to September first. If you wanted it to start in August, you should have set August. It's not retroactive unless you make it retroactive.
+C: Can I make it retroactive?
+A: Yes. Edit the policy, change the effective date, check "Recalculate balances." It recalculates for everyone on that policy. Do it on purpose, not because one person complained. That's a business decision, not a software one.
+C: Okay. I'll— I'll talk to Sunniva about it. Is that a, does that affect the books, Sunniva?
+D: It does affect the accrued liability, yeah. Let's talk about it Monday, don't change it today.
+A: Listen to your accountant.
+C: [laughs] Okay. Monday.
+#hold 95
+A: I'm back. I was checking something on PR-0918. Nothing's wrong with it. Carry on.
+C: Oh. Okay. What were you checking?
+A: That the second export didn't create a second run. It didn't. Exports don't create runs. Moving on.
+D: Oh— should I go back and redo July and August with the XLSX, just to be safe?
+A: No. July and August imported without errors because nobody's name had an accent then. The data is correct. Re-importing them would create duplicates in Ledgerline. Don't do it.
+D: Right, okay. Good point. I'd have to delete the old ones first anyway.
+A: You'd have to delete them first, and you wouldn't gain anything. Leave them.
+C: Okay. While I have you. There's another thing. When I was in there, I saw two payroll things for the eighteenth. One just says PR-0918 and the other one says "PR-0918 copy," and it's a draft. I think I clicked something by accident.
+A: You clicked "Duplicate as draft" on September nineteenth at eight-forty a.m. The copy is a draft. It was never finalized, nobody was paid from it.
+C: Okay. Can we get rid of it? It's confusing Sunniva.
+D: It is confusing me a little, yeah.
+A: I can delete the draft. Deleting a draft is permanent. It does not affect the finalized run. Confirm you want the draft "PR-0918 copy" deleted.
+C: Yes. Delete it.
+A: I'm going to ask again because people say yes to things without listening. The draft named "PR-0918 copy." Not PR-0918. Delete?
+C: Yes. The copy. Delete the copy. Not the real one.
+A: Deleted. PR-0918 is untouched. Twelve employees, finalized.
+C: Great. Thank you.
+#fill office_smalltalk saas_late @A=A @C=C
+C: Okay, another payroll one. Tips. We opened a little tasting room in the spring, it's open Saturdays, and people leave tips in a jar, and also some on the card reader. And right now I just, um, I just split the jar in cash at the end of the day and I don't put it anywhere.
+A: That's a problem.
+C: Is it?
+A: Cash tips are wages. They have to be reported. Card tips are wages. They have to be reported. "I split the jar" is not a payroll system.
+D: I did mention this, Ambrose. In June.
+C: You did. You did mention it.
+A: In Tallyforge you have two earning types: "Cash tips" and "Paid tips." Cash tips the employee already has in hand, so you record them for tax purposes and nothing extra is paid out. Paid tips, the card-reader ones, get added to the paycheck. Each employee who gets tips needs both earning types enabled on their profile. Then every pay run you enter the amounts.
+C: Okay. Cash tips, paid tips. On each person. How do I know how much each person got?
+A: How you divide tips is your policy. The software records what you tell it. Write down the split every Saturday and enter it on the run.
+C: Okay. That's, um, that's more paperwork, but okay.
+A: It's less paperwork than an audit.
+D: [laughs] That's what I keep telling him.
+C: Okay, okay. I'm outnumbered. [laughs]
+A: You are. Earning types are under Payroll, Settings, Earnings. Turn them on, then add them to the four people who work Saturdays.
+C: How do you know four people work Saturdays?
+A: Because four people have Saturday hours on their timesheets. I can read.
+C: [laughs] Right. Okay.
+#diar off
+C: Rosa, who works the tasting room? ... You, Dmitri starting next week, Kofi and— and Zoë. Okay. Four. She's right.
+C: No, the software lady. ... No, she's very— she's very efficient. ... [laughs] Yes, she is a little scary.
+#diar on
+A: I can hear you.
+C: [laughs] Sorry! Sorry.
+A: It's fine. I've been called worse. Next question.
+D: Actually, I have one, and it's a bit sensitive. One of Ambrose's employees has a wage garnishment order that came in last week. Ambrose forwarded it to me.
+A: Don't read me the details. I don't need the employee's name or the amount on a recorded line. In Tallyforge you create a deduction with type "Garnishment," attach the order PDF, set the amount or percentage exactly as the order says, and set the payee to the agency on the order. It takes priority over voluntary deductions automatically.
+D: Okay. Garnishment type, attach the order, payee is the agency. That's straightforward.
+A: If the order has a cap, there's a field for the cap. Use it. People forget, and then they overpay the agency for months.
+D: Good to know. Thank you.
+A: Mm-hm.
+C: Oh, and, um, we have a new guy starting Monday, Dmitri, and he gave me his bank info on a sticky note for direct deposit. Can I just read it to you and you put it in?
+A: No. I don't take bank account numbers over the phone, and you shouldn't be holding them on a sticky note. Add him as an employee, and he gets an invite to the employee portal where he enters his own bank details. Then shred the sticky note.
+C: Oh. Okay. That's— yeah, that's probably smarter.
+A: It is smarter.
+D: She's right, Ambrose. Please shred that.
+C: Shredding it. Okay. Well, I'll shred it after I add him. [laughs] Rosa, where's the shredder? ... Okay, Rosa's taking it.
+A: Add him first so you have his email right. Employees, Add employee. Start date Monday. He'll get the invite as soon as you save.
+C: Employees, Add employee... Dmitri Volkov-Haas, start date September twenty-eighth... save. Okay.
+A: Done. He enters his own bank details. If he doesn't, he gets a paper check. That's the default.
+C: Okay. Good.
+#fill saas_billing_nav sales_chat @A=A @C=C
+D: Ambrose, can I ask them about the access thing while we're on?
+C: Oh, yes. So, right now I export stuff and email it to Sunniva every two weeks, which is a pain. Can she just log in and get it herself?
+A: She can have her own login with the Accountant role. Read-only on payroll and invoices, can run exports, can't pay anyone, can't change bank details. It's free on your plan.
+C: Perfect, yes, let's do that.
+A: You're the account owner. Say, on this recorded line, that you authorize adding Sunniva Rask as a user with the Accountant role.
+C: I, Ambrose Delacroix-Weng, authorize adding Sunniva Rask as a user, Accountant role. [laughs] Is that formal enough?
+A: It's sufficient. Email address, Ms. Rask.
+D: sunniva at rask holloway dot com. R-A-S-K, H-O-L-L-O-W-A-Y.
+A: [typing] Invite sent. Accountant role. It expires in seven days, so accept it this week, not next month.
+D: I'll accept it today. Thank you.
+A: And Mr. Delacroix-Weng, you'll get an email saying a user was added. That's normal. Don't call us about it.
+C: [laughs] Okay. I won't.
+#fill it_side_talk saas_howto @A=A @C=C
+#note conference participant disconnected
+C: Sunniva? Did we lose Sunniva?
+A: She dropped. She'll either call back in or she won't.
+C: She's in a building with terrible reception. She always says the elevator shaft eats her signal. [laughs]
+A: Mm.
+C: So, um, while she's gone— can I ask you something dumb?
+A: You can ask.
+C: The sales tax thing. When we sell bags of coffee wholesale to cafés, do I charge sales tax on the invoice or not? Because Theo in chat said one thing and a friend of mine said another.
+A: I'm not your tax advisor. Tallyforge applies whatever tax rules you configure. Whether wholesale coffee is taxable where you are is a question for your accountant, who is, conveniently, the person who just dropped off this call.
+C: [laughs] Okay. Fair.
+
+A: If she tells you it's exempt for resale, you collect a resale certificate from the café, and in Tallyforge you mark that customer "Tax exempt" and attach the certificate. Clients, edit, Tax status. That's the software part. The law part is hers.
+C: Got it. Clients, Tax status. Okay.
+#note conference participant joined
+D: Sorry! Sorry, the elevator. What did I miss?
+C: She told me to ask you about sales tax. [laughs]
+D: [laughs] Ambrose, we've talked about this. Resale certificates. I'll send you the form again.
+A: There. Solved by the correct person.
+#fill office_smalltalk saas_debug @A=A @C=C
+C: Okay, unrelated, but my wholesale customers keep telling me the reminder emails say the invoice is due a day before it actually is. Like, the invoice says the thirtieth and the reminder says the twenty-ninth. Is that also a— is that us?
+A: No. That one is ours. It's a known bug since the 7.4 release. Time zone conversion. Every reminder email shows the due date one day early. The fix ships in 7.4.2 on October twentieth.
+C: October twentieth. Okay. Can it be sooner?
+A: No. Don't ask me to make it sooner, I can't. If you're worried about late fees in the meantime, set a one-day grace period under Invoicing, Late fees. It's in the known-issue article.
+C: Okay. One-day grace period. I'll do that.
+A: Your late fees are currently off, by the way, so it doesn't matter for you. The reminder date is just cosmetic for your account.
+C: Oh. Okay, well. Good. [laughs]
+D: That explains why Café Ondine paid early last week, actually.
+C: Ha. Yeah.
+#fill saas_late it_side_talk @A=A @C=C
+C: And one more, sorry. The phone app keeps crashing when I open payroll. Like, it opens, and then it just closes.
+A: Which version?
+C: How do I—
+A: Settings, About, in the app.
+C: Settings... About... seven point two point something.
+A: Current is 7.4.1. Seven-two has a known crash in payroll on newer phones. Update the app.
+C: Oh. Okay. I'll update it. I didn't know you had to— I thought it did that itself.
+A: It does if you turn on automatic updates. You didn't.
+C: [laughs] Of course I didn't.
+#fill saas_howto office_smalltalk @A=A @C=C
+C: Oh, and— do you know when our subscription renews? I got an email about "upcoming changes" and I panicked a little.
+A: Your plan renews November first, monthly price unchanged. The "upcoming changes" email was about the new expense module, which is optional and not on your plan.
+C: November first, same price. Okay. Good.
+A: If there were a price change you'd get sixty days' written notice. There isn't one.
+C: Great. Good. Okay.
+#fill it_side_talk saas_debug @A=A @C=C
+D: Can I ask a quick question about the export, for the future? If I need to add a column, like a cost-center column, before importing, can I just add it in Excel and then import?
+A: You can do whatever you want to a file on your own computer. If you edit the export by hand and the import breaks, you're on your own. We support the file as Tallyforge generates it. Not files someone has edited.
+D: Okay, that's fair. Is there a way to get the cost center in the export itself?
+A: Yes. Payroll, Settings, Export columns, add "Department." Ledgerline maps Department to cost center. That's in their import guide, page four. I'm not going to read their guide to you.
+D: [laughs] No, I'll find it. Department. Okay, perfect.
+C: She's very efficient.
+D: She is. [laughs]
+#fill office_smalltalk saas_late @A=A @C=C
+D: Marguerite, last question from me, I promise. W-2s. When does Tallyforge generate them for this year? Last year Ambrose got them in late January and I was a bit worried.
+A: W-2s generate automatically on January fifteenth for all employees paid in the calendar year. They're filed electronically by January thirty-first. Employee copies go to the portal the same day. If Ambrose wants paper copies mailed, it's a setting, and it costs extra per form.
+D: January fifteenth. Okay, that's fine, that's actually earlier than I thought.
+A: It was January fifteenth last year as well. He just didn't look at the portal.
+C: [laughs] Guilty.
+A: Mm.
+C: I'm sorry, I know I'm asking a lot of questions. I really appreciate it, I'm just— I'm a coffee guy, not a computer guy, you know?
+A: You don't need to apologize. Stop apologizing. Ask the questions.
+C: Okay. Sorry. [laughs] I mean— okay.
+A: Recap. I'm only saying this once, so write it down. The PR-0918 import failed because of the diaeresis in Zoë Abernathy-Quill's name: Tallyforge exports UTF-8, Ledgerline reads Windows-1252. You exported as XLSX and it imported twelve of twelve. Default export format is now XLSX. If you ever need CSV, set the CSV encoding to Windows-1252. I deleted the draft "PR-0918 copy"; the finalized run is untouched. Ms. Rask has an Accountant-role invite that expires in seven days. The reminder-date bug is fixed in 7.4.2 on October twentieth. Update your phone app. Your plan renews November first at the same price.
+C: Got it. Wow. Okay.
+A: I'm also logging the encoding issue with engineering as a request to add the encoding choice to the main export screen, since it's buried under Advanced. And I'll email you a written summary with the knowledge-base article on export encodings today.
+C: That's great. Thank you. Can I say something?
+A: You're going to anyway.
+C: [laughs] You're not very friendly, you know that? But you fixed it.
+A: I've been told. Your payroll imports now. Anything else?
+C: No. That's it. Thanks. I guess. [laughs]
+D: Thank you, Marguerite.
+A: Goodbye.

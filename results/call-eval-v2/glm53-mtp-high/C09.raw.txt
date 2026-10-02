@@ -1,0 +1,47 @@
+{
+  "call_type": "saas_support",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 4,
+  "quality_reasons": [
+    "Verified the account owner with an email code and security PIN, and obtained explicit recorded consent before discussing anything with the third-party accountant.",
+    "Correctly diagnosed the UTF-8 vs Windows-1252 encoding mismatch and resolved the import failure with XLSX (12 of 12 rows), while steering the customer away from harmful steps like re-importing July/August or asking an employee to misspell her name.",
+    "Strong security practices: refused to take bank details over the phone and declined garnishment specifics on a recorded line.",
+    "Curt and occasionally dismissive tone toward the customer and accountant (e.g. 'I don't need her genealogy', 'Nice is not the same as useful').",
+    "The secondary SSO login outage was traced to a likely expired certificate, but the final recap omitted it, leaving its resolution and next steps unclear."
+  ],
+  "flags": [],
+  "action_items": [
+    {"owner": "agent (Marguerite)", "task": "Email the customer a written summary of the call with the knowledge-base article on export encodings", "due": "today"},
+    {"owner": "agent (Marguerite)", "task": "Log an engineering request to surface the CSV encoding choice on the main export screen instead of under Advanced", "due": "unspecified"},
+    {"owner": "agent (Marguerite)", "task": "Leave a note for Tier 1 agent Theo about the unnecessary browser/cache troubleshooting on an already-generated file", "due": "unspecified"},
+    {"owner": "customer (Ambrose)", "task": "Set a one-day grace period under Invoicing > Late fees as a workaround for the reminder-date bug", "due": "unspecified"},
+    {"owner": "customer (Ambrose)", "task": "Update the Tallyforge mobile app from 7.2.x to current (7.4.1) and enable automatic updates", "due": "unspecified"},
+    {"owner": "customer (Ambrose)", "task": "Enable 'Cash tips' and 'Paid tips' earning types and add them for the four Saturday tasting-room staff (Rosa, Dmitri, Kofi, Zoë); record and enter the Saturday tip split each pay run", "due": "unspecified"},
+    {"owner": "customer/accountant", "task": "Create the garnishment deduction (type Garnishment, attach order PDF, payee set to the agency, cap field if applicable)", "due": "unspecified"},
+    {"owner": "customer (Ambrose) with accountant (Sunniva)", "task": "Discuss whether to make the PTO accrual retroactive to August (recalculates accrued liability)", "due": "Monday"},
+    {"owner": "accountant (Sunniva)", "task": "Accept the Accountant-role user invitation", "due": "today (invite expires in 7 days)"},
+    {"owner": "accountant (Sunniva)", "task": "Resend the resale certificate form to Ambrose", "due": "unspecified"},
+    {"owner": "customer (Ambrose)", "task": "Address the expiring SSO certificate per the help articles sent in chat (sandbox reproduced the login failure with an expired certificate)", "due": "unspecified"},
+    {"owner": "customer (Ambrose)", "task": "Set a shared-calendar reminder one month before the SSO certificate expiry", "due": "today"},
+    {"owner": "customer (Ambrose)", "task": "Request a full workspace export under Admin > Data as a backup habit", "due": "quarterly"}
+  ],
+  "summary_notes": "Tier 2 payroll support call, escalated from Tier 1 chat. Owner Ambrose Delacroix-Weng (Pemberton Coffee Roasters, 12 employees) verified via email code + PIN; accountant Sunniva Rask authorized on the record. Root cause of the PR-0918 (Sept 18) payroll export failing to import into Ledgerline: UTF-8 export vs Windows-1252 importer choking on the diaeresis in Zoë Abernathy-Quill's name (spelling changed in profile Sept 9). Resolved by exporting XLSX (12/12 imported); default export format set to XLSX; accidental draft 'PR-0918 copy' deleted after double confirmation. Secondary SSO login outage: sandbox reproduced the failure with an expired certificate, but resolution was not confirmed in the recap. Also advised on tips reporting compliance, garnishment setup, PTO accrual, reminder-date bug (fix 7.4.2, Oct 20), mobile app update, and Accountant-role access.",
+  "notable_details": [
+    "Payroll run ID corrected from PR-0981 to PR-0918 (finalized September 18, twelve employees).",
+    "Trigger for the import failure: Zoë Abernathy-Quill changed her name spelling in her employee profile on September 9, adding the diaeresis; July and August imports worked because no name had accents.",
+    "Draft 'PR-0918 copy' was created September 19 at 8:40 a.m. via 'Duplicate as draft'; deleted during the call with explicit double confirmation; finalized run untouched.",
+    "Net pay verification: Hollis Varga $1,850.00 (customer first misread the Hours column as 1815) and Zoë Abernathy-Quill $912.40, both matched to Ledgerline.",
+    "Known bug: invoice reminder emails show the due date one day early (since release 7.4, time-zone conversion); fix ships in 7.4.2 on October 20; customer's late fees are currently off.",
+    "Accountant invite sent to sunniva@raskholloway.com with Accountant role (read-only payroll/invoices, can run exports); expires in 7 days.",
+    "New employee Dmitri Volkov-Haas added with start date Monday, September 28; he must enter his own bank details via the employee portal; the sticky note with his bank info is being shredded.",
+    "PTO: policy 'Standard PTO' 1 hour per 30 hours worked effective September 1; Rosa Ilunga-Park has 144 hours since Sept 1 = 4.8-hour balance, which is correct; retroactivity deferred to Monday as a business/accounting decision.",
+    "Wage garnishment order received last week; agent deliberately declined the employee name/amount on a recorded line and gave only setup guidance.",
+    "Tips compliance gap: cash jar tips and card tips are unreported wages; two earning types ('Cash tips', 'Paid tips') must be enabled for the four Saturday staff.",
+    "Subscription renews November 1 at unchanged price; 'upcoming changes' email concerned the optional expense module; price changes require 60 days' written notice.",
+    "W-2s generate January 15 and are e-filed by January 31; employee copies go to the portal; paper mailing costs extra.",
+    "Audit log showed the first login failure just after midnight the morning the issue started, and several hundred failed authentication attempts that day; password-based logins were still succeeding.",
+    "Late in the call the customer says he is at home with a possessed router, although roastery staff and equipment were audible around him earlier - a location inconsistency worth noting."
+  ]
+}

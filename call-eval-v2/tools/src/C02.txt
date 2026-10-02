@@ -1,0 +1,97 @@
+@id C02
+@date 2026-09-16 13:47
+@line Brightwater Patient Financial Services (billing)
+@direction inbound
+@target 6000
+@seed 202
+@speaker A AGENT = patient financial services representative (Renata)
+@speaker C CALLER = patient (Desmond)
+---
+A: Patient Financial Services, this is Renata, thanks for holding. How can I help you today?
+C: Yeah, hi. So, um, okay, honestly, I pressed three for refills? Because I need my inhaler, the, the albuterol, and I got... you. Billing. So I'm— I don't even know if I'm in the right place.
+A: Oh no. Yeah, that's been happening a lot since they changed the phone menu, you're not the first today, believe me. I'll give you the pharmacy's direct line at the end so you don't have to go through the menu again, okay?
+C: Okay, thanks. And actually— actually, since I've got billing, I do have a bill question. I got a statement and it's, it's more than I thought.
+A: Sure, let's look at that while we have you. Can I get your full name?
+C: Desmond Kirwan-Oyelaran. K-I-R-W-A-N, dash, O-Y-E-L-A-R-A-N.
+A: Thank you. [typing] Okay, I'm actually seeing two accounts with a Desmond Kirwan... one might be a family member? So before I open anything, can I get your date of birth?
+C: Eleven, twenty-two, eighty-eight.
+A: And the street address we'd have on file?
+C: On file it's probably still the old one. Four-forty Sable Ridge Road.
+A: Yep, that matches. Great, you're verified, I've got the right account open now. The other one's not you, so we'll leave that alone.
+C: Huh. Okay.
+#fill billing_lookup ehr_navigation
+A: Okay, so, just so you know how this works on my end, and I always tell people this up front so there's no surprises: I can explain every charge, I can set up a payment plan, and if there's a fee that, you know, shouldn't be there, I can take off fees up to fifty dollars myself. Anything over fifty, I have to send to my lead for approval, and she usually gets back within a day or two.
+C: Okay. That's fair.
+C: Actually, while we're at it, can you tell me what the insurance paid? On the sinus visit? Because I got a thing from them, the, uh, the explanation thing, the EOB, and I couldn't make heads or tails of it.
+A: Sure, it's confusing for everyone. Let me pull the claim. [typing] So the visit was billed to Halvard, they allowed a hundred and eighty-two dollars, they paid a hundred and thirty, and the rest went to your side as copay and deductible. Which is what we'll get to in a second.
+C: Okay. So they did pay something.
+A: They did. The EOB isn't a bill, it's just them telling you what they did. The bill is what we send.
+C: Got it. I always think the EOB is a bill and I panic.
+A: [laughs] Everybody does. They should print "THIS IS NOT A BILL" in giant red letters.
+C: They kind of do, actually, I just don't read it.
+A: [laughs]
+A: So let's see what we've got. [typing] There's a, um... the statement total is a hundred forty-six twenty.
+C: Yeah. A hundred and forty-six dollars. For what? I went in once.
+A: So it's two things. Part of it is your copay balance from the August visit, the one with Dr. Haverstock—
+C: The sinus thing.
+A: The sinus thing, yeah. That part is, um, fifteen twenty.
+C: Fifteen? Okay, that's— that's not bad.
+A: And then the rest is a no-show fee, ninety-five dollars, from July twenty-ninth.
+C: A no-show? I didn't no-show. I— okay, well, I mean, technically I didn't show, but I called. I called that morning. I was sick, like, really sick. Throwing-up sick.
+A: Oh, I'm sorry. That's the worst.
+C: It was some stomach bug, my whole office had it. Half of us were out that week. My manager was, like, sending emails from the bathroom floor.
+A: Oh no. [laughs] Sorry, that's not funny.
+C: No, it's a little funny now. It wasn't then.
+C: And I called and I got the, the menu, and I pressed whatever, and I left a message.
+A: Okay, so I'm not seeing a message noted, but honestly that doesn't mean you didn't leave one. Voicemail at the front desk is, um, it's not always great.
+C: So I'm paying ninety-five dollars because your voicemail's bad.
+A: I hear you. I totally hear you. Let me look at a couple things.
+#fill billing_lookup smalltalk
+A: Okay, wait, I want to go back, I said fifteen twenty before for the copay part— I read that wrong, I'm sorry, the line wraps on my screen. It's fifty-one twenty. Fifty-one dollars and twenty cents.
+C: Fifty-one?
+A: Yeah, fifty-one twenty. That's the copay, which was forty, plus the eleven-twenty for the strep test the insurance applied to your deductible.
+C: Oh. Okay. Yeah, they did do a strep test. Okay, fifty-one twenty I get. It's the ninety-five I don't get.
+A: Right. And so the hundred forty-six twenty is the fifty-one twenty plus the ninety-five.
+C: Okay.
+C: And honestly, like, my brother-in-law said you guys sent him to collections for no reason last year. So I'm a little nervous, you know?
+A: Oh, I'm sorry to hear that. I can't look into his account on your call, but if he calls us himself, we can go over it with him. As for you, there's nothing in collections, you're totally fine, nothing's overdue past the grace period.
+C: Okay. Good. He's... he's kind of dramatic, to be fair.
+A: [laughs]
+#fill smalltalk office_smalltalk
+C: So what can we do about the ninety-five.
+A: Okay. So. You were sick, you called, the message didn't get noted. You know what, honestly, I'm just going to take that off for you. Don't even worry about it. Just this once, okay?
+C: Seriously?
+A: Seriously. [typing] Done. It's gone. So you just owe the fifty-one twenty.
+C: Wow. Okay. Thank you. That's— thank you, Renata. That actually makes my day.
+A: Of course! You were sick, it happens. I'd feel terrible charging you for being sick.
+A: Sure. Or if it's easier, I can split it into a payment plan, like three months, no interest. Whatever works for you.
+C: No, no, it's fifty bucks, I can do it. I just didn't want to pay a hundred and forty-six for being sick.
+A: Totally fair.
+C: Can I pay it now?
+A: Sure, I can take a card over the phone.
+C: Okay, it's a Visa... [inaudible] ...hold on, my wallet's in the car.
+#hold 60
+C: Okay. Sorry. It's a Visa ending in two-nine-one-four.
+A: [typing] And the full number?
+C: [reads card number — redacted by transcription service]
+A: Expiration and the code on the back?
+C: [redacted]
+A: Thank you. And it went through. Fifty-one twenty, paid in full, you're at zero.
+C: Zero. Beautiful.
+#fill billing_lookup
+A: Do you want an emailed receipt?
+C: Yeah, please. Same email as on file, D-kirwan-o at, uh, the gmail one.
+A: Got it. I'll email that receipt as soon as we hang up.
+C: Oh, and, the address. You said the old address matched. I actually moved, like, in August. Should I give you the new one?
+A: Yes, please, so your statements don't go to the old place.
+C: It's eighteen Wrenfield Court. Apartment three-B. Same zip, I think. Wait no, different. Zero... [inaudible] ...the zip ends in four-one.
+A: Eighteen Wrenfield Court, Apartment 3B... and the zip, I'm just going to pull it from the street lookup... got it. Updated.
+C: Great.
+A: Okay, and you wanted that pharmacy number. So, Ostrander Pharmacy, direct line, it's five-five-five, oh-one-six-two. That skips the whole menu and goes right to the refill counter.
+C: Five-five-five, oh-one-six-two. Writing it down. Great.
+A: They can do your albuterol, and if they need anything from the doctor they'll reach out.
+C: Perfect. I'll call them right now.
+A: Anything else I can do for you, Desmond?
+C: No, no, you've been awesome. Really. Best phone call I've had with, like, any medical place.
+A: Aw, that's so nice to hear. Feel better, and have a good rest of your day.
+C: You too. Bye.

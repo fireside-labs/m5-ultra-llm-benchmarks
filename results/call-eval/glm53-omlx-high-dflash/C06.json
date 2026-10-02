@@ -1,0 +1,42 @@
+{
+  "call_type": "no_show_followup",
+  "outcome": "escalated",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 5,
+  "quality_reasons": [
+    "Verified patient date of birth before discussing the appointment",
+    "Correctly waived the $25 missed-appointment fee per first-time policy",
+    "Recognized fainting with head injury as needing same-day nurse review and warm-transferred with a clear handoff summary",
+    "Gave appropriate 911 warning signs (faintness, bad headache, confusion, vomiting) before transfer",
+    "Proactively offered the free ride program and updated the patient's phone number"
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "agent (Rosa)",
+      "task": "Submit ride program request so someone can call the patient about free transportation",
+      "due": "unspecified"
+    },
+    {
+      "owner": "agent (Rosa)",
+      "task": "Call patient back to reschedule follow-up appointment with Dr. Ferreira-Holm after nurse consultation",
+      "due": "tomorrow morning (2026-06-04)"
+    },
+    {
+      "owner": "nurse (Nurse Adeyemi-Strand)",
+      "task": "Assess patient's dizziness, Saturday fainting episode, and head injury; decide if she needs to be seen today",
+      "due": "today (2026-06-03)"
+    }
+  ],
+  "summary_notes": "Outbound no-show follow-up for missed 2026-06-02 follow-up with Dr. Ferreira-Holm (iron levels). Patient missed due to ride falling through; $25 first-time fee waived per policy. Reminder texts were going to an old phone; number updated to 555-448-0926. Patient reported week of dizziness on standing with graying vision and a syncopal episode Saturday with head strike on cabinet (small bump, son found her on floor). Agent escalated to Nurse Adeyemi-Strand via warm transfer with full handoff; 911 warning signs given. Ride program request to be submitted; agent to call tomorrow morning to reschedule after nurse evaluation. Identity verified via DOB (11/22/1990).",
+  "notable_details": [
+    "Patient DOB verified: 11/22/1990",
+    "Phone number on file ending 3350 is outdated; new number is 555-448-0926 (patient never received Monday reminder text)",
+    "Missed appointment was with Dr. Ferreira-Holm on 2026-06-02 (yesterday afternoon) for iron-level follow-up; history of low iron",
+    "$25 missed-appointment fee waived because it is the patient's first occurrence",
+    "Patient fainted Saturday at home, hit head on cabinet (small bump), found on floor by her son; reports dizziness on standing with graying vision all week",
+    "Agent stated 'In the office today' then corrected to 'Today I'm at home' during small talk",
+    "Agent promised to call back on the number on file if disconnected"
+  ]
+}

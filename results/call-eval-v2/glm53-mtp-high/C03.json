@@ -1,0 +1,76 @@
+{
+  "call_type": "pharmacy_refill",
+  "outcome": "callback",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Patient stated she has been taking two 20mg lisinopril tablets daily since Monday (double the prescribed dose, misapplying bridging advice meant for two 10mg tablets) and reported dizziness and a BP of 94/58; neither the technician nor the pharmacist caught the overdose",
+    "Technician dismissed the dizziness as heat-related and praised the low blood pressure reading instead of escalating to the pharmacist",
+    "Pharmacist counseling on the ibuprofen/knee-pain question was promised and noted, but never actually delivered during the pharmacist portion",
+    "A 'quick hold' for the pharmacist transfer became a roughly 29-minute hold (23:37 to 52:22)",
+    "Strong points: identity verification was thorough, son's authorization was explicitly confirmed, and the pharmacist's plan (bridge fill, PA follow-up, contact preferences) was clear and well-communicated"
+  ],
+  "flags": [
+    {
+      "type": "clinical_safety",
+      "description": "The patient disclosed she has been taking two 20mg lisinopril tablets daily since Monday (double the prescribed once-daily dose) after misapplying bridging advice intended for two 10mg tablets, while also reporting lightheadedness and a morning reading of 94/58, and no staff member identified or corrected the overdose.",
+      "evidence": "The pink ones ran out on Sunday, so I been taking two of the white ones since Monday like the young man said."
+    },
+    {
+      "type": "clinical_safety",
+      "description": "The technician dismissed the patient's dizziness/lightheadedness as heat and reassured her that the low blood pressure reading showed the new dose was working, rather than referring a symptomatic patient on a newly doubled antihypertensive regimen to the pharmacist.",
+      "evidence": "Oh, yeah, it's probably the heat, honestly, it's been crazy hot this week. Make sure you're drinking water."
+    },
+    {
+      "type": "missed_commitment",
+      "description": "The technician promised the pharmacist would review the ibuprofen/knee-pain interaction question after the transfer and said she put it in her note, but the ibuprofen question was never addressed during the pharmacist conversation.",
+      "evidence": "When I transfer you over, she'll go over the ibuprofen thing with you, okay? I'll put it in my note for her."
+    },
+    {
+      "type": "missed_commitment",
+      "description": "The caller was told the hold for the pharmacist would be quick ('it might be a minute') but remained on hold for approximately 29 minutes with repeated recorded messages.",
+      "evidence": "Okay, I'm going to put you on a quick hold."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "pharmacist (Ingrid)",
+      "task": "Call Dr. Lindqvist's office to have the prior authorization resent to Halvard and confirm the correct fax destination",
+      "due": "today (2026-09-16)"
+    },
+    {
+      "owner": "pharmacy",
+      "task": "Prepare 30-day bridge fill of lisinopril 20mg ($4 copay) plus atorvastatin 40mg 90-day supply for pickup at the Millbrook counter",
+      "due": "Thursday after 2:00 PM"
+    },
+    {
+      "owner": "pharmacy",
+      "task": "Call Rafael (555-0191) when the 90-day lisinopril is approved/ready; text a pickup-ready message only (no prescription details by text)",
+      "due": "unspecified"
+    },
+    {
+      "owner": "son (Rafael)",
+      "task": "Pick up the bridge fill and atorvastatin at Millbrook (Rourke Avenue); if the PA drags past next week, call Halvard member services to check whether anything was received",
+      "due": "Thursday after 2:00 PM / if unresolved past next week"
+    },
+    {
+      "owner": "patient (Beatriz)",
+      "task": "Consider getting the flu shot (walk-in until 6 PM, no copay); bring the blood pressure notebook to the next appointment",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Verified patient Beatriz Almeida-Hough (DOB 02/04/1959) requested 90-day lisinopril 20mg (Dr. Lindqvist, new strength); a 15-tablet partial was mailed earlier. The 90-day claim rejects for prior authorization with Halvard; the doctor's office faxed the PA twice (9/9 and Monday) but Halvard shows nothing received. Pharmacist Ingrid arranged a 30-day bridge fill at $4, ready Thursday after 2 PM at Millbrook with atorvastatin 40mg 90-day. Rafael (son) authorized and added as preferred contact, 555-0191; texts for pickup only. SAFETY CONCERN: patient reported taking two 20mg tablets daily since Monday (double dose) with dizziness and BP 94/58 - not addressed on the call; needs urgent pharmacist callback. Promised ibuprofen counseling never occurred. Latanoprost not due; flu shot offered.",
+  "notable_details": [
+    "Patient has been taking two 20mg lisinopril tablets daily since Monday - double the prescribed one-tablet dose - after misapplying prior advice to 'take two of the old ones' (the old tablets were 10mg); she reported dizziness and a morning BP of 94/58",
+    "Copay was initially misquoted as $40 (technician read the brand column) and corrected to $4 for a 30-day generic supply",
+    "Full lisinopril prescription number given by the pharmacist: 771042; the number stays the same across refills of the new prescription",
+    "Dr. Lindqvist's office faxed the PA to Halvard twice (September 9 and again Monday); Halvard's pharmacy help desk shows no PA request on file",
+    "Rafael added as preferred contact at 555-0191; policy stated: texts only for pickup-ready messages, no prescription details in texts, calls/voicemail for PA updates",
+    "Pickup location is Millbrook (Rourke Avenue, by the bank), not Eastgate",
+    "Cash price for 90 tablets of generic lisinopril 20mg is about $18 if the PA ultimately fails",
+    "Latanoprost (glaucoma, Dr. Pereira-Lund) was filled on the 2nd and is not due; open bottles are fine at room temperature for about six weeks",
+    "Insurance card was reissued in January with the same member number ending in six-one",
+    "Patient took two 10mg (pink) tablets until they ran out Sunday, then two 20mg (white) tablets since Monday; pharmacist instructed to use up the mailed 20mg tablets first, then the new bottle, one white round tablet once daily; atorvastatin is the larger oval white tablet taken at night"
+  ]
+}

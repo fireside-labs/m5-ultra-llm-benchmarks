@@ -1,0 +1,61 @@
+{
+  "call_type": "insurance_verification",
+  "outcome": "callback",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Identity properly verified with DOB and ZIP before discussing any details",
+    "Accurately captured corrected member ID (ending 009) and ran eligibility check, correctly explaining the prior authorization requirement and denial risk",
+    "Promised to transfer the patient to billing for the duplicate $45 copay charge at the end of the call, but the call ended without the transfer occurring",
+    "Numerous technical disruptions (slow system, dead mouse, session logout, accidental mute) and extended small talk made an otherwise simple call run over ten minutes",
+    "Empathetic and courteous throughout, acknowledged the patient's two months of back pain and set clear expectations"
+  ],
+  "flags": [
+    {
+      "type": "missed_commitment",
+      "description": "The agent committed to transferring the patient to the billing team for the duplicate copay charge at the end of the call, but the call ended without any transfer taking place.",
+      "evidence": "That's billing, so I'll transfer you over to them at the end of our call so they can take care of it."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent (Imani, imaging pre-registration)",
+      "task": "Submit prior authorization request to Granite Meridian for the lumbar spine MRI with Dr. Kowalczyk-Nnamdi's notes",
+      "due": "today (2026-03-27)"
+    },
+    {
+      "owner": "agent (Imani, imaging pre-registration)",
+      "task": "Call patient as soon as the authorization decision is received to schedule the MRI",
+      "due": "probably next week (5-7 business days)"
+    },
+    {
+      "owner": "patient",
+      "task": "Upload photo of front and back of Granite Meridian insurance card to the patient portal",
+      "due": "tonight"
+    },
+    {
+      "owner": "patient",
+      "task": "Optionally upload wife's secondary insurance card to the portal if he locates it",
+      "due": "unspecified"
+    },
+    {
+      "owner": "billing team",
+      "task": "Resolve duplicate $45 copay charge (paid at desk, then charged again by ClearPay) - transfer was promised but did not occur",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Outbound imaging pre-registration call for Bartholomew Szabo-Achebe (DOB 12/05/1977, ZIP 97209) regarding a lumbar spine MRI ordered by Dr. Kowalczyk-Nnamdi. Identity verified. Old insurance ended in December; new Granite Meridian Health Plan effective 01/01 (member ID GMH-447-182-009, group 70315, patient is subscriber). Eligibility active, but prior authorization required before scheduling; agent to submit today with physician notes and call patient when decided (est. 5-7 business days). Patient to upload card images to portal tonight. Patient reported a duplicate $45 copay charge (desk payment plus ClearPay); promised transfer to billing did not occur before call ended - needs follow-up. Emergency contact confirmed unchanged; no interpreter or accommodations needed.",
+  "notable_details": [
+    "Member ID was self-corrected by the patient: final digit is 9, not 6 - full ID is GMH-447-182-009; group number 70315",
+    "Insurance transition: previous plan ended in December; new Granite Meridian Health Plan started January 1 after a job change; card was given at front desk but never entered into the system",
+    "Patient is the subscriber/policyholder on the new plan",
+    "Secondary coverage may exist through the patient's wife's employer plan, but the card was not available; only primary is needed for this visit",
+    "Billing issue raised in passing: $45 copay charged twice - once at the desk and again days later by 'ClearPay'",
+    "Prior authorization for MRI typically takes 5-7 business days; scheduling without it risks full claim denial to the patient",
+    "Emergency contact confirmed as unchanged; no interpreter or accessibility accommodations needed",
+    "Patient has had back pain for two months",
+    "Wayfinding detail given: main entrance is the one with the blue awning; check-in is inside to the left",
+    "Agent stated she was working from home despite earlier saying she was in the office ('In the office today. Today I'm at home')"
+  ]
+}

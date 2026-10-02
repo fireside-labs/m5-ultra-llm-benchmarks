@@ -1,0 +1,176 @@
+{
+ "call_id": "C11",
+ "call_type": "sales",
+ "outcome": "callback",
+ "outcome_accept": [
+  "unresolved"
+ ],
+ "sentiment_start": "neutral",
+ "sentiment_start_accept": [
+  "positive"
+ ],
+ "sentiment_end": "negative",
+ "sentiment_end_accept": [
+  "neutral"
+ ],
+ "quality_score": 2,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Made an unsupported 'guaranteed 30% fuel savings or money back' claim that she later admitted is not in the contract",
+   "match": [
+    [
+     "30",
+     "thirty",
+     "fuel",
+     "guarantee"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Said 'no long contracts, cancel anytime' then quoted a 36-month agreement with an early-termination fee",
+   "match": [
+    [
+     "36",
+     "thirty-six",
+     "contract",
+     "cancel",
+     "termination"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "Did secure next steps (written proposal + demo with the decision-maker)",
+   "match": [
+    [
+     "demo",
+     "proposal",
+     "next step"
+    ]
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "id": "F1",
+   "text": "Rep claimed a guaranteed 30% fuel saving with money-back, then admitted it is not in the contract (unsupported/misleading claim)",
+   "evidence": "Our customers see thirty percent fuel savings. Guaranteed.",
+   "match": [
+    [
+     "30",
+     "thirty",
+     "fuel",
+     "money.?back",
+     "guarantee"
+    ],
+    [
+     "guarantee",
+     "claim",
+     "mislead",
+     "unsupport",
+     "not in (the )?contract",
+     "overstat",
+     "exaggerat",
+     "false",
+     "unsubstantiat",
+     "money.?back"
+    ]
+   ]
+  },
+  {
+   "id": "F2",
+   "text": "Rep said 'no long contracts, cancel anytime' but the actual offer is a 36-month agreement with an early-termination fee equal to the remaining balance (misrepresented terms)",
+   "evidence": "There's just an early termination fee if you cancel before the thirty-six months are up.",
+   "match": [
+    [
+     "36",
+     "thirty-six",
+     "three-year",
+     "3-year",
+     "cancel anytime",
+     "cancel any time",
+     "termination",
+     "contract term",
+     "long contract",
+     "lock"
+    ]
+   ]
+  }
+ ],
+ "decoys": [],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Prospect trust damaged / deal at risk",
+   "match": [
+    [
+     "trust",
+     "skeptic",
+     "at risk",
+     "credibility"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "rep",
+   "task": "Send written proposal with the real contract terms",
+   "due": "2026-07-23 (Thursday)",
+   "match": [
+    [
+     "proposal",
+     "quote",
+     "pricing",
+     "in writing"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "rep",
+   "task": "Send demo invite for Tuesday 2 pm with Rufus and CFO Priscilla Kranz-Albright",
+   "due": "2026-07-28 14:00",
+   "match": [
+    [
+     "demo",
+     "meeting",
+     "invite"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Fleet size corrected from 25 vans to 32 vehicles (25 vans + 7 refrigerated box trucks)",
+   "evidence": "So thirty-two total.",
+   "match": [
+    [
+     "32 (vehicles|total|units|trucks)",
+     "thirty-two (vehicles|total)",
+     "7 (box|refrigerat)",
+     "seven (box|refrigerat)",
+     "box trucks",
+     "refrigerated"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Decision-maker is the CFO, Priscilla Kranz-Albright, not the caller",
+   "evidence": "Anything with a contract goes to our CFO, Priscilla Kranz-Albright.",
+   "match": [
+    [
+     "cfo",
+     "priscilla",
+     "decision.?maker"
+    ]
+   ]
+  }
+ ],
+ "themes": []
+}

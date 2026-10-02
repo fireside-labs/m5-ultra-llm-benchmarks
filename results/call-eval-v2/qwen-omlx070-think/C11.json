@@ -1,0 +1,189 @@
+{
+  "call_type": "post_procedure_followup",
+  "outcome": "escalated",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Verified identity and documented spouse authorization.",
+    "Escalated drain question to on-call surgical PA and arranged drain-check call.",
+    "Provided conflicting bath advice after stating no tub baths for two weeks.",
+    "Failed to warn about acetaminophen maximum when approving Tylenol with Norco.",
+    "Long hold and technical issues, but staff remained empathetic and thorough."
+  ],
+  "flags": [
+    {
+      "type": "clinical_safety",
+      "description": "Nurse advised a tub bath despite earlier discharge instruction prohibiting tub baths for two weeks and despite incisions and a JP drain.",
+      "evidence": "Honestly, a nice warm bath would help with the soreness. Just relax in the tub for a bit, get those back muscles to loosen up. Heat's great for that."
+    },
+    {
+      "type": "clinical_safety",
+      "description": "Nurse approved taking Extra Strength Tylenol with hydrocodone-acetaminophen without warning about total acetaminophen limit.",
+      "evidence": "No, you're good."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "Nurse Felipe",
+      "task": "Send hydrocodone refill request to Dr. Vasquez-Lim's team via message line.",
+      "due": "tonight"
+    },
+    {
+      "owner": "Nurse Felipe",
+      "task": "Update preferred pharmacy to Ostrander Pharmacy Eastgate.",
+      "due": "during call"
+    },
+    {
+      "owner": "Nurse Felipe",
+      "task": "Call patient back if call disconnects.",
+      "due": "if call disconnects"
+    },
+    {
+      "owner": "Larkspur surgical team",
+      "task": "Call patient Friday to set up drain check.",
+      "due": "Friday"
+    },
+    {
+      "owner": "Larkspur surgical team",
+      "task": "Pull JP drain at drain check if output is under 30 mL/24h for two days.",
+      "due": "at drain check"
+    },
+    {
+      "owner": "Patient/Rob",
+      "task": "Empty and record JP drain output twice daily, morning and evening.",
+      "due": "ongoing"
+    },
+    {
+      "owner": "Rob",
+      "task": "Pick up over-the-counter polyethylene glycol powder at Ostrander Eastgate.",
+      "due": "tomorrow after work"
+    },
+    {
+      "owner": "Patient",
+      "task": "Take polyethylene glycol powder once daily.",
+      "due": "ongoing"
+    },
+    {
+      "owner": "Patient/Rob",
+      "task": "Draw pen line around pink incision to monitor spread.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Patient",
+      "task": "Call Brightwater if temperature exceeds 101 F.",
+      "due": "if temperature exceeds 101 F"
+    },
+    {
+      "owner": "Patient",
+      "task": "Call Brightwater if no bowel movement by Saturday or belly becomes hard/swollen with vomiting.",
+      "due": "Saturday or if symptoms occur"
+    },
+    {
+      "owner": "Patient",
+      "task": "Call Brightwater if incision redness spreads past pen line, pus appears, or pain worsens.",
+      "due": "if symptoms occur"
+    },
+    {
+      "owner": "Patient",
+      "task": "Call Larkspur after-hours if drain site becomes very red, leaks around tube, or tube falls out.",
+      "due": "if symptoms occur"
+    },
+    {
+      "owner": "Patient",
+      "task": "Call 911 for sudden shoulder worsening, shortness of breath, chest pain, or one-sided leg swelling.",
+      "due": "if symptoms occur"
+    },
+    {
+      "owner": "Patient",
+      "task": "Use incentive spirometer 10 times per hour while awake.",
+      "due": "ongoing"
+    },
+    {
+      "owner": "Patient",
+      "task": "Keep walking and stay hydrated.",
+      "due": "ongoing"
+    },
+    {
+      "owner": "Patient",
+      "task": "Avoid lifting over 10 pounds for two weeks.",
+      "due": "two weeks"
+    },
+    {
+      "owner": "Patient",
+      "task": "Do not drive while taking hydrocodone.",
+      "due": "while taking hydrocodone"
+    },
+    {
+      "owner": "Patient",
+      "task": "Avoid alcohol while taking hydrocodone.",
+      "due": "while taking hydrocodone"
+    },
+    {
+      "owner": "Patient",
+      "task": "Space NyQuil and hydrocodone by a couple of hours.",
+      "due": "ongoing"
+    },
+    {
+      "owner": "Patient",
+      "task": "Avoid tub baths, hot tubs, and swimming for two weeks.",
+      "due": "two weeks"
+    },
+    {
+      "owner": "Patient",
+      "task": "Take a bath tonight (contradicts earlier no tub baths instruction).",
+      "due": "tonight"
+    },
+    {
+      "owner": "Patient",
+      "task": "Shower with drain pinned to lanyard and pat drain site dry.",
+      "due": "ongoing"
+    },
+    {
+      "owner": "Patient",
+      "task": "Hug pillow against abdomen when coughing.",
+      "due": "ongoing"
+    },
+    {
+      "owner": "Patient",
+      "task": "Ask surgeon for work note at follow-up.",
+      "due": "at follow-up"
+    },
+    {
+      "owner": "Patient",
+      "task": "Attend follow-up with Dr. Vasquez-Lim at Larkspur.",
+      "due": "Friday, October 2, 2026 at 1:15 PM"
+    },
+    {
+      "owner": "Patient",
+      "task": "Call Brightwater if disconnected, press four and ask for Felipe.",
+      "due": "if disconnected"
+    },
+    {
+      "owner": "Patient",
+      "task": "Call number on Larkspur statement for billing questions.",
+      "due": "if statement received"
+    }
+  ],
+  "summary_notes": "Patient Imogen Tessaro-Blythe, post-op day 3 lap chole (9/21), called nurse line. Husband Rob present and authorized. Concerns: pain, right shoulder gas pain, low-grade temp 100.8, constipation, JP drain. Nurse verified identity, gave wound/diet/activity instructions, sent hydrocodone refill request to surgeon team, updated pharmacy to Ostrander Eastgate, and conferenced Larkspur PA. Drain output 40 mL AM, trending down; Larkspur to call Friday for drain check. Follow-up Oct 2 1:15. Safety note: nurse later advised a bath despite earlier no tub baths and did not warn about acetaminophen total with Norco.",
+  "notable_details": [
+    "Surgery date corrected to Monday, September 21, 2026; patient initially said twelfth.",
+    "Follow-up corrected to Friday, October 2, 2026 at 1:15 PM with Dr. Vasquez-Lim at Larkspur; patient initially said twelfth.",
+    "Current temperature reported as 100.8 F this afternoon; spouse mentioned 101.8 F last night, but current value used.",
+    "JP drain output: Monday night 110 mL, Tuesday 70/60 mL, Wednesday 55/50 mL, this morning 40 mL.",
+    "Larkspur drain protocol: pull when output is under 30 mL/24h for two consecutive days.",
+    "Preferred pharmacy changed from Ostrander Millbrook to Ostrander Eastgate.",
+    "Patient authorized husband Rob to participate and receive information.",
+    "Medications: hydrocodone-acetaminophen 5/325, docusate, levothyroxine 75 mcg, birth control pill, vitamin D gummy.",
+    "Allergy: penicillin rash.",
+    "Patient also taking Extra Strength Tylenol 2 tablets every 6 hours with Norco; nurse did not address total acetaminophen limit.",
+    "Nurse gave conflicting advice: earlier no tub baths for two weeks, later recommended a warm bath.",
+    "IVR issue: pressing 3 for prescription refills routed to billing, causing two failed attempts.",
+    "Constipation: no bowel movement since Monday morning; advised OTC polyethylene glycol once daily and call if none by Saturday.",
+    "Shoulder pain assessed as referred gas pain; red flags include sudden worsening, shortness of breath, or chest pain.",
+    "Patient is a middle-school music teacher; sub through second week of October; needs work note at follow-up.",
+    "Larkspur office to call Friday to schedule drain check, likely early next week.",
+    "Nurse sent hydrocodone refill request to Dr. Vasquez-Lim's team; controlled refill cannot be written after hours by on-call PA.",
+    "Patient denied calf pain, one-sided leg swelling, shortness of breath, and chest pain."
+  ]
+}

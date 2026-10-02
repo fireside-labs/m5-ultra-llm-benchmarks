@@ -1,0 +1,54 @@
+
+
+## Missed issues
+
+1. **The headline comparison is confounded by risk mix, and the risk-tier table reverses the conclusion.**  
+   The program group is mostly low-risk, while the comparison group is mostly high-risk. That alone can create a large apparent benefit. Evidence: program is 800 low-risk and 200 high-risk; comparison is 200 low-risk and 800 high-risk. Within low risk, program readmission is 5% vs 4%; within high risk, 25% vs 22%. If the program group had the comparison group’s tier-specific rates, expected readmissions would be 800 × 4% + 200 × 22% = 76, versus 90 observed. The program looks slightly worse, not half as good.
+
+2. **Program assignment is self-selected, not randomized.**  
+   Only patients who answered the first nurse call and agreed to participate entered the program; the comparison group includes everyone else, including patients who may not answer, refuse, or have less support. Evidence: “Nurses enrolled patients who answered the first call and agreed to take part.” Answering and agreeing may reflect contactability, health literacy, family support, or better post-discharge stability, all of which can reduce readmissions independent of the calls.
+
+3. **Removing 140 program dropouts biases the program group.**  
+   The program group is analyzed as patients who completed all three calls, not as patients offered/enrolled in the program. Evidence: “Patients who left the program before completing all 3 calls (n = 140) were removed from the program group,” and the program table shows 1,000 patients, implying the original program group was likely 1,140. If dropouts were higher risk or less engaged, excluding them makes the program look better. No intention-to-treat rate is reported.
+
+4. **The outcome definition changed during the study period, and the program group is more exposed to the stricter definition.**  
+   On July 1, the measure changed from “any readmission” to “unplanned readmission,” excluding planned readmissions such as chemotherapy or staged surgery. Evidence: program group is 70% July–December discharged; comparison group is 50% July–December. The program group is more likely to be measured under the lower-readmission definition, which could produce part of the apparent effect.
+
+5. **Northgate’s meds-to-beds service is a concurrent intervention concentrated in the program group.**  
+   Northgate opened a discharge medication-delivery service that likely reduces readmissions, and the program group is disproportionately from Northgate. Evidence: Northgate opened meds-to-beds in February 2025; 85% of program patients came from Northgate versus 40% of the comparison group. Without hospital-specific results, the program cannot be separated from the Northgate intervention.
+
+6. **The expansion forecast treats sensitivity as positive predictive value, which is a major arithmetic error.**  
+   With 13% readmission prevalence, 90% sensitivity, and 70% specificity, the probability that a flagged patient is actually readmitted is not 90%. Evidence: PPV = (0.90 × 0.13) / [(0.90 × 0.13) + (0.30 × 0.87)] = 0.117 / 0.378 = 31%. So 12,000 flagged patients would include about 3,700 true future readmitters, not 10,800.
+
+7. **The forecast also assumes the invalid 50% effect and generalizes it across all hospitals.**  
+   The forecast multiplies flagged patients by a 50% reduction taken from the headline result. Evidence: the forecast uses 12,000 × 90% × 50% = 5,400. But the 50% effect is not supported after risk-tier comparison, and the data come from only two hospitals with major timing and hospital-specific confounding. Even if the model PPV were 31%, a 50% effect would imply roughly 12,000 × 31% × 50% = 1,860 prevented readmissions, not 5,400.
+
+8. **The balance check is far too narrow.**  
+   Similar age and sex do not make the groups comparable when the key readmission driver—discharge risk—is wildly imbalanced. Evidence: age is 67 vs 68 and sex is 54% vs 55% female, but risk tier is 80% low-risk in the program group versus 20% low-risk in the comparison group. The report also ignores hospital, timing, language, payer, comorbidity burden, social support, and discharge complexity.
+
+9. **The Spanish-language cohort conclusion is statistically meaningless.**  
+   The recommendation to prioritize Spanish-language nurses is based on two small groups with almost no events. Evidence: 0 of 9 program patients versus 2 of 10 comparison patients. A 0% vs 20% difference with 19 total patients and only two readmissions cannot support a resource priority.
+
+10. **The comparison group construction is unexplained and possibly nonrepresentative.**  
+   The report says the comparison group is “all other patients,” but the table shows exactly 1,000 comparison patients, matching the program group size. Evidence: “The comparison group is all other patients discharged from the same two hospitals,” yet the table reports 1,000 comparison patients. If this is a sampled or matched subset, the method is missing; if it is truly all other patients, the table is incomplete or misleading.
+
+## Looks like a problem but isn't
+
+- Using the state all-payer claims database to capture readmissions to any hospital is a strong choice for readmission measurement.
+- Using each patient’s first discharge in 2025 avoids double-counting the same patient.
+- Excluding deaths within 30 days from both groups can be defensible if the target is readmission among survivors, though the number excluded by group should still be checked.
+
+## Top 3 priorities
+
+1. **Reanalyze the program effect with risk adjustment before trusting any causal claim.**  
+   The current comparison is dominated by risk mix: the program group is mostly low-risk and the comparison group is mostly high-risk. The tier-specific rates show no benefit and point estimates slightly worse.
+
+2. **Account for the July 1 outcome-definition change and the Northgate meds-to-beds service.**  
+   The program group is more likely to be measured under the stricter unplanned-readmission definition and is heavily concentrated at a hospital with a concurrent readmission-reducing service. These issues alone could explain much of the reported difference.
+
+3. **Correct the expansion forecast before making any scale-up decision.**  
+   The model’s PPV is about 31%, not 90%, and the 50% effect size is not supported by the adjusted data. The forecast of 5,400 prevented readmissions is not credible.
+
+## Bottom line
+
+The report cannot support the claim that nurse follow-up calls cut 30-day readmissions in half; the unadjusted comparison is confounded by risk mix, self-selection, timing, and hospital-specific interventions, and the risk-tier data show no benefit. The expansion forecast is also invalid because it treats 90% sensitivity as 90% probability that a flagged patient will be readmitted, when the correct PPV is about 31%. Leadership should pause expansion and require a corrected analysis with risk adjustment, intention-to-treat handling of dropouts, separate handling of the July 1 outcome-definition change, hospital-specific results, and a corrected forecast before any all-hospital rollout.

@@ -1,0 +1,36 @@
+## Case for
+
+1. **Talent and retention** — Removing the geographic constraint widens the applicant pool to the entire country or globe, and it eliminates a major cause of attrition: forced relocation or a long commute. For a 4,000-person knowledge firm, the marginal cost of losing a senior engineer or finance lead is far higher than the cost of an empty desk.
+2. **Deep work and output** — Software, finance modeling, and operations analysis are cognitively demanding tasks that require long, uninterrupted blocks of time. A three-day office mandate fragments those blocks with commutes, meetings, and ambient noise. Remote-by-default lets individuals match their environment to the task, which is typically a net gain in raw output per hour.
+3. **Forces explicit communication** — Remote work makes asynchronous documentation, written decision records, and clear ownership of tasks non-negotiable. This reduces tribal knowledge and single-person dependencies, making the organization more robust and easier to audit — a real benefit for finance and ops.
+4. **Autonomy and trust** — Making remote the default signals that leadership trusts professionals to manage their own time and output. This tends to increase intrinsic motivation and reduces the demoralizing effect of "presence theater" — showing up to be seen rather than to work.
+5. **Cost and agility** — Real estate, utilities, and facilities management are large fixed costs. Reducing office footprint frees capital for product development or hiring. It also allows the company to scale headcount without being constrained by physical office capacity or lease cycles.
+6. **Resilience** — Decoupling operations from a single physical location protects against local disruptions (weather, transit strikes, health events). For a company whose product is software and whose processes are financial/operational, this is a meaningful risk reduction.
+
+## Case against
+
+1. **Loss of serendipity** — Innovation and problem-solving in software and finance often come from unplanned interactions: overhearing a conversation, bumping into a colleague from another team, or a whiteboard session that started casually. These are hard to replicate in scheduled video calls, and their absence compounds over time.
+2. **Mentorship and tacit knowledge** — Junior staff learn by observing how seniors approach problems, negotiate, and make judgment calls. Remote work makes this deliberate and slower. If onboarding time to full productivity increases, the long-term cost may outweigh the short-term focus gains.
+3. **Cultural cohesion and trust** — Shared norms, a sense of mission, and psychological safety are built through physical presence. Remote-by-default risks fragmentation into silos, weaker cross-team alignment, and a gradual erosion of the "one company" feeling. This is especially risky for finance and ops, which depend on cross-functional trust.
+4. **Coordination latency** — For tightly coupled work — sprint planning, financial closes, incident response, quarterly audits — synchronous, in-person resolution is faster and less error-prone than a chain of asynchronous messages. The cost of a miscommunication in a financial model or a code deployment is high.
+5. **Managerial variance** — Not all managers are skilled at leading remote teams. A default policy exposes this variance, potentially widening the gap between high- and low-performing teams. The three-day rule, whatever its flaws, provides a baseline of interaction that compensates for weak remote-management practices.
+6. **The default effect** — Making remote the default sets a high psychological bar for choosing to meet in person. Teams will under-invest in face-to-face time even when it is clearly valuable (e.g., quarterly planning, offsites, crisis war-rooms). The current rule at least forces a minimum level of physical interaction that many teams would not voluntarily maintain.
+
+## Cruxes
+
+1. **Empirical: What is the net productivity/innovation effect of unplanned in-person interaction versus deep-work focus for *this specific mix* of software, finance, and ops?** If the office generates more value through serendipity than it loses through distraction, the case for remote weakens. If the opposite, it strengthens. This is measurable with a pilot.
+2. **Empirical: How much of the company's critical knowledge is tacit versus documented?** If decisions, processes, and domain expertise are already well-documented, remote is low-risk. If they live in people's heads and hallway conversations, remote will degrade decision quality and onboarding speed.
+3. **Value: Should the company optimize primarily for individual autonomy and output, or for collective cohesion and serendipity?** This is not a factual question. It depends on whether leadership believes the firm's competitive advantage comes from top-tier individual contributors or from cross-team collaboration and culture.
+4. **Empirical: How heterogeneous are the teams, and will the "team chooses" clause actually work?** If teams are highly interdependent (e.g., finance and ops), a single policy may be suboptimal. But if teams are given the choice, will they make the right call — or will social pressure, inertia, or fear of looking "anti-remote" lead them to default to remote even when in-person would be better?
+
+## What evidence would change the answer
+
+- **Run a 6-month pilot** on matched teams (e.g., two software teams, one finance team, one ops team) with remote-by-default versus the current three-day rule. Measure objective output: cycle time, defect rate, on-time delivery, error rates in financial reporting, incident resolution time.
+- **Track "time-to-answer" for cross-team questions** and the number of spontaneous cross-team collaborations (shared documents, code reviews, ad-hoc meeting invites). A sharp drop in either would signal a loss of serendipity.
+- **Survey new hires at 3, 6, and 12 months** on their perceived ramp-up speed, access to mentors, and sense of belonging. Compare attrition rates and reasons, especially for junior staff and high performers.
+- **Measure the variance in team performance across managers** in both modes. If remote-by-default disproportionately hurts teams with weaker managers, the policy is not neutral — it's a bet on managerial capability.
+- **Audit the current state of documentation**: what percentage of critical processes and decisions are written down and accessible? If it's low, the company needs to invest in documentation before going remote, not after.
+
+## My lean
+
+I lean slightly toward remote-by-default, but with a confidence of only 55%. The main condition is that the company invests heavily in explicit async documentation and remote-management training, and that the "team chooses to meet in person" clause is actively used for high-stakes, high-interdependence events like planning, onboarding, and crisis resolution. If the company cannot make that investment, the three-day rule is the safer default because it compensates for weak processes and managerial variance.

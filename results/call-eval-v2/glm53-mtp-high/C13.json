@@ -1,0 +1,113 @@
+{
+  "call_type": "complaint_escalation",
+  "outcome": "escalated",
+  "sentiment_start": "negative",
+  "sentiment_end": "neutral",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Odessa correctly verified the healthcare POA document and caller's identity before discussing the patient's care",
+    "Caller waited roughly 32 minutes before reaching an agent, plus multiple long holds during the call",
+    "Odessa gave incorrect information twice (PA 'denied' when Halvard never received it; dose 'twice a day' when the order is once daily), both corrected by the manager",
+    "Manager (Bernard) ran a thorough root-cause investigation, found the retired fax line, and gave a concrete, time-bound remediation plan",
+    "Manager promised to cover the $240 urgent care bill despite stating earlier that financial decisions require the risk-management committee"
+  ],
+  "flags": [
+    {
+      "type": "missed_commitment",
+      "description": "Nurse Gail promised a personal callback on Friday September 11 regarding the PA status that never occurred.",
+      "evidence": "she said she would call me on Friday, the eleventh, herself, and let me know"
+    },
+    {
+      "type": "missed_commitment",
+      "description": "Two patient portal messages (September 12 and 21) were marked read by the Millbrook nurse pool with no reply.",
+      "evidence": "Both marked \"read.\" No reply from us on either."
+    },
+    {
+      "type": "misinformation",
+      "description": "Odessa told the caller the prior authorization was denied when in fact Halvard never received the faxed requests; the manager corrected this.",
+      "evidence": "it says, um, \"PA status: not approved.\" ... it wasn't denied. Halvard never received it."
+    },
+    {
+      "type": "misinformation",
+      "description": "Odessa stated the new inhaler dose was twice daily; the actual order is one inhalation once daily, corrected by the manager.",
+      "evidence": "I see the fluticasone-umeclidinium-vilanterol, one puff twice a day ... It's one inhalation, once daily. Not twice."
+    },
+    {
+      "type": "unauthorized_commitment",
+      "description": "The manager committed to covering the patient's $240 urgent care bill despite having stated that financial decisions must go to the risk-management committee and that he could not promise outcomes.",
+      "evidence": "we'll cover the urgent care bill, don't worry about it ... I'll take care of it."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "practice manager (Bernard)",
+      "task": "Resubmit the fluticasone-umeclidinium-vilanterol prior authorization through the Halvard provider portal, marked expedited, including the urgent care note",
+      "due": "today, 2026-09-29, before end of day"
+    },
+    {
+      "owner": "practice manager (Bernard)",
+      "task": "Ask Dr. Benedetti-Kahn's nurse to check for a manufacturer sample/starter inhaler and inform the caller of the result either way",
+      "due": "this afternoon, 2026-09-29"
+    },
+    {
+      "owner": "practice manager (Bernard)",
+      "task": "Call the caller with the authorization status whether or not it is approved",
+      "due": "by Thursday, October 1"
+    },
+    {
+      "owner": "customer (Philippa)",
+      "task": "Send the $240 urgent care bill to Bernard Ashdown-Pryce at the Millbrook office (scan via portal, mail, or drop off)",
+      "due": "tonight, 2026-09-29"
+    },
+    {
+      "owner": "customer (Philippa)",
+      "task": "Send the urgent care discharge papers for the chart (portal upload or bring in)",
+      "due": "unspecified"
+    },
+    {
+      "owner": "practice manager (Bernard)",
+      "task": "Fax a records request to Corliss Street Urgent Care and attach records to the PA when received",
+      "due": "unspecified"
+    },
+    {
+      "owner": "practice manager (Bernard)",
+      "task": "Update the Halvard prior-auth fax number in the payer directory to the new line (555-018-188) and portal link, and notify Millbrook, Eastgate, and Harbor Street staff",
+      "due": "today, 2026-09-29"
+    },
+    {
+      "owner": "practice manager (Bernard)",
+      "task": "Pull a list of every Halvard PA faxed to the retired number since September 1 to identify other affected patients",
+      "due": "unspecified"
+    },
+    {
+      "owner": "practice manager (Bernard)",
+      "task": "Talk to the nurse team about the unanswered portal pool and review the follow-up process with Gail when she returns from vacation",
+      "due": "unspecified"
+    },
+    {
+      "owner": "practice leadership / patient relations (Odessa)",
+      "task": "Complete formal complaint CR-26-1193 and provide the written response by mail to 61 Thornbury Way",
+      "due": "within thirty days"
+    },
+    {
+      "owner": "customer (Philippa)",
+      "task": "Once approval is confirmed, call Ostrander Pharmacy to ensure the inhaler is queued and arrange delivery to Linden Court",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Daughter/healthcare POA Philippa Garrow-Nakamura filed a formal complaint (CR-26-1193) re: 4-week delay on PA for Ottoline Garrow's (84, COPD) new maintenance inhaler prescribed by Dr. Benedetti-Kahn 9/1. Faxes sent 9/2 and 9/10 to a retired Halvard fax line (retired 8/31); never received, not denied. Patient out of old inhaler since 9/20, using albuterol 6-7 puffs/day (over the >4/day call-doctor threshold); COPD flare 9/19 treated at Corliss Street Urgent Care (SpO2 86, prednisone 5 days), $240 bill. Manager resubmitting PA expedited via portal today, checking samples, callback by 10/1, covering urgent care bill, fixing fax directory practice-wide. Address updated to Linden Court, 900 Fallowfield Rd, unit 214. Dose: one inhalation once daily.",
+  "notable_details": [
+    "Complaint reference number: CR-26-1193; written response due within 30 days; caller requested response by mail to 61 Thornbury Way, explicitly not via the portal",
+    "Corrected root cause: Halvard never received the PA (code 'no prior authorization on file'); faxes of 9/2 and 9/10 went to retired line 555-010-144 (retired 8/31 per August provider bulletin); new fax is 555-018-188 or provider portal",
+    "Corrected dose: one inhalation once daily (Odessa had said twice daily, apparently reading the old inhaler's directions)",
+    "Patient address updated from old Pell Street house to Linden Court Assisted Living, 900 Fallowfield Road, unit 214",
+    "Caller corrected the urgent care date in passing: Saturday September 19 (not the ninth); SpO2 86 vs her normal ~92; treated with nebulizer and 5-day prednisone",
+    "Patient has been without maintenance inhaler since September 20; rescue albuterol use is 6-7 puffs/day, exceeding the urgent care doctor's threshold of 'more than four times a day, call the doctor'",
+    "Caller contact: cell 555-0129; voicemail with care details authorized; manager's direct line is main Millbrook number, extension 4417",
+    "Verification details: patient DOB 11/2/1941; caller DOB 6/18/1973; POA document scanned March 2025",
+    "Portal messages sent September 12 and 21 were marked read with no reply; nurse Gail (took 9/8 call) is on vacation this week",
+    "Patient has been on the orange maintenance inhaler since 2019; other medications (amlodipine, cholesterol, vitamin) come via Linden Court bubble packs; only inhalers use Ostrander Pharmacy",
+    "A prior flu-shot billing mix-up last year was mentioned but resolved and excluded from the complaint at the caller's request",
+    "Halvard expedited PA turnaround stated as 72 hours; if denied, options are doctor appeal or step therapy to a preferred inhaler"
+  ]
+}

@@ -1,0 +1,230 @@
+{
+ "call_id": "C17",
+ "call_type": "sales",
+ "outcome": "callback",
+ "sentiment_start": "positive",
+ "sentiment_start_accept": [
+  "neutral"
+ ],
+ "sentiment_end": "positive",
+ "quality_score": 2,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Good discovery and next steps (security review with the decision-maker, documentation, proposal)",
+   "match": [
+    [
+     "discovery",
+     "next step",
+     "security review",
+     "proposal",
+     "demo"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Contradicted her own statement: told the prospect a BAA/HIPAA coverage is available on Team after saying BAA is Enterprise-only",
+   "match": [
+    [
+     "baa",
+     "hipaa",
+     "business associate"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "Disclosed another client's name and pricing",
+   "match": [
+    [
+     "halloway",
+     "another client",
+     "other client",
+     "another customer",
+     "other customer",
+     "pricing",
+     "\\$9",
+     "nine dollars"
+    ]
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "id": "F1",
+   "text": "Rep told the prospect the Team plan is HIPAA compliant and Stackmoor will sign a BAA, contradicting her earlier statement that BAAs are Enterprise-only; prospect plans to store PHI (visit notes) on Team",
+   "evidence": "We're fully HIPAA compliant, and we'll sign a BAA with you, no problem at all.",
+   "match": [
+    [
+     "baa",
+     "hipaa",
+     "business associate",
+     "compliance claim"
+    ]
+   ]
+  },
+  {
+   "id": "F2",
+   "text": "Rep disclosed another client's name (Halloway Pediatrics) and their negotiated per-seat price ($9/seat)",
+   "evidence": "Halloway Pediatrics, they're one of our clients",
+   "match": [
+    [
+     "halloway",
+     "pediatric",
+     "\\$9",
+     "nine dollars",
+     "9 dollars",
+     "9/seat",
+     "\\bpric",
+     "pays",
+     "paying",
+     "per.seat"
+    ]
+   ]
+  }
+ ],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Rep disclosed another customer (the hospice)",
+   "why_not": "The hospice reference was anonymous ('a hospice in the Midwest') with no identifying or commercial details.",
+   "evidence": "We have a hospice in the Midwest",
+   "match": [
+    [
+     "hospice",
+     "midwest"
+    ]
+   ]
+  },
+  {
+   "id": "D2",
+   "text": "Rep offered an unauthorized discount",
+   "why_not": "15% is explicitly within her stated authority and was only held in reserve.",
+   "evidence": "I can go up to fifteen percent off on an annual agreement, that's the most I'm authorized to do",
+   "match": [
+    [
+     "15",
+     "fifteen",
+     "discount"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Prospect intends to store PHI in task notes (data-handling risk)",
+   "match": [
+    [
+     "phi",
+     "visit notes",
+     "patient (data|information|notes)"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Hard go-live deadline Jan 15 / previous vendor breach",
+   "match": [
+    [
+     "deadline",
+     "january 15",
+     "jan 15",
+     "breach"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "rep",
+   "task": "Send invite for security review call with compliance officer Theodora and Stackmoor security team, Tue Oct 6, 10 am",
+   "due": "2026-10-06 10:00",
+   "match": [
+    [
+     "security review",
+     "theodora",
+     "compliance officer",
+     "invite",
+     "october 6",
+     "oct 6",
+     "10/6"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "rep",
+   "task": "Send SOC 2 report and security questionnaire answers ahead of the review",
+   "due": "before 2026-10-06",
+   "match": [
+    [
+     "soc",
+     "questionnaire",
+     "security doc"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "rep",
+   "task": "Send proposal for 85 seats",
+   "due": "2026-10-02 (Friday)",
+   "match": [
+    [
+     "proposal",
+     "quote"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Seat count corrected from 60 to 85 (adds ~25 per-diem contractors)",
+   "evidence": "So, eighty-five.",
+   "match": [
+    [
+     "85",
+     "eighty-five"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Hard deadline: current vendor contract ends January 15; must be live before then",
+   "evidence": "their contract ends January fifteenth",
+   "match": [
+    [
+     "jan(uary)?\\.? ?15",
+     "1/15",
+     "january fifteenth"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Final sign-off belongs to compliance officer Theodora, not the caller",
+   "evidence": "Theodora, our compliance officer, has to sign off",
+   "match": [
+    [
+     "theodora",
+     "compliance officer"
+    ]
+   ]
+  },
+  {
+   "id": "S4",
+   "text": "Reason for switching: current vendor had a data breach last spring (staff data exposed)",
+   "evidence": "They had a data breach last spring.",
+   "match": [
+    [
+     "breach"
+    ]
+   ]
+  }
+ ],
+ "themes": []
+}

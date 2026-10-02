@@ -1,0 +1,50 @@
+{
+  "call_type": "post_procedure_followup",
+  "outcome": "escalated",
+  "sentiment_start": "positive",
+  "sentiment_end": "negative",
+  "quality_score": 5,
+  "quality_reasons": [
+    "Verified patient identity with date of birth before discussing care",
+    "Obtained and documented explicit patient permission before speaking with son Jules",
+    "Caught and corrected a medication discrepancy (prednisolone 4x/day vs son's chart saying 3x/day)",
+    "Recognized retinal detachment red flags (floaters, flashes, curtain shadow) and escalated urgently with clear instructions",
+    "Handled frequent interruptions and background noise patiently and professionally"
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "nurse (Maribel)",
+      "task": "Call on-call ophthalmologist Dr. Achebe-Lindqvist to arrange urgent same-day evaluation",
+      "due": "immediately after the call"
+    },
+    {
+      "owner": "son (Jules)",
+      "task": "Drive patient to Corrowind Eye Clinic urgent entrance on Westbrook Road, bringing drops and discharge papers; keep patient from bending over or lifting",
+      "due": "within the hour / leaving now"
+    },
+    {
+      "owner": "son (Jules)",
+      "task": "Correct home medication chart for prednisolone from three times daily to four times daily",
+      "due": "unspecified"
+    },
+    {
+      "owner": "billing team",
+      "task": "Call patient about duplicate $40 copay charge (paid at front desk, charged again via ClearPay portal)",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Routine post-op follow-up call after right-eye cataract surgery (Tuesday 2026-06-09). Identity verified (DOB 1948-04-01); verbal authorization documented to discuss care with son Jules. Medication regimen corrected: both antibiotic (tan cap) and prednisolone (white cap) drops four times daily, five minutes apart; night shield in use. Patient reported new floaters, flashes and a gray curtain shadow in the operated eye this morning - possible retinal detachment. Nurse escalated: urgent evaluation at Corrowind Eye Clinic urgent entrance (Westbrook Road) with on-call ophthalmologist Dr. Achebe-Lindqvist, to be seen within the hour; ED if unable to attend. Secondary issue: duplicate $40 copay charge (front desk Tuesday plus ClearPay portal) referred to billing team for callback.",
+  "notable_details": [
+    "Patient DOB verified as April 1, 1948",
+    "Surgery was Tuesday; call dated 2026-06-11, so surgery date is 2026-06-09, right eye",
+    "Discharge orders specify prednisolone four times daily for the first week; son's home chart incorrectly said three times daily and he agreed to fix it",
+    "Both drops (antibiotic tan cap, prednisolone white cap) confirmed four times daily with five minutes between them",
+    "Red-flag symptoms: new floaters, flashes, and gray curtain/shadow from the side in the right eye, reported the morning of the call",
+    "On-call ophthalmologist named as Dr. Achebe-Lindqvist; urgent entrance located on Westbrook Road at Corrowind Eye Clinic",
+    "Duplicate charge: $40 copay paid at front desk Tuesday, then ClearPay portal charged the same amount again yesterday (2026-06-10)",
+    "Patient gave verbal permission for nurse to discuss care with son Jules; nurse documented it",
+    "After-hours line is on the bottom of the discharge sheet; patient keeps paperwork on his fridge",
+    "Support at home: a friend from church visits daily; son Jules has been staying with the patient"
+  ]
+}

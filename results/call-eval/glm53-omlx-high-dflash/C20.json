@@ -1,0 +1,51 @@
+{
+  "call_type": "scheduling",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Disclosed the patient's appointment date, time, provider and medical purpose (20-week anatomy ultrasound) to a third party before any identity verification",
+    "Accepted a vague, incorrect date of birth ('ninety-four? ninety-three') as verification with 'Close enough'",
+    "Changed the patient's main contact number to the caller's phone despite noting no one was listed on her release form and learning the caller is separated from the patient",
+    "Excessive small talk and repeated system delays made a simple confirmation take over six minutes"
+  ],
+  "flags": [
+    {
+      "type": "privacy_disclosure",
+      "description": "Agent disclosed the patient's appointment details and medical purpose to a caller who was not the patient and had not been verified.",
+      "evidence": "It's her twenty-week anatomy ultrasound, and then a visit with the doctor after."
+    },
+    {
+      "type": "identity_verification",
+      "description": "Agent failed to properly verify the caller's identity, accepting an approximate and inconsistent date of birth.",
+      "evidence": "it's in March. March... ninety-four? Ninety-three. Something like that. — Close enough. [laughs]"
+    },
+    {
+      "type": "policy_violation",
+      "description": "Agent updated the patient's file with the caller's phone number as the main contact without authorization from the patient or a release form, after learning the caller and patient are separated.",
+      "evidence": "I don't see anyone listed on her release form, but if you're driving her, that makes sense... Okay, it's updated as her main number."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "scheduling system",
+      "task": "Send appointment reminder text to the newly updated number (555-827-3091)",
+      "due": "tomorrow (2026-09-09)"
+    },
+    {
+      "owner": "scheduling team",
+      "task": "Call the caller's number if anything changes with the appointment",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Caller (separated spouse of patient Annika Sorensen-Mbatha) phoned to confirm an appointment. Agent confirmed Thursday 2026-09-10 at 2:40 PM with Dr. Iwu-Castellano at the Alder Street Women's Health center: 20-week anatomy ultrasound followed by a doctor visit. Agent disclosed these details and the medical purpose without verifying the caller, accepted an approximate DOB, and changed the patient's main contact number to the caller's (555-827-3091) despite no release form on file and the caller stating they are separated. Reminder text to go out tomorrow to the new number. Privacy review of the contact-number change and disclosure is recommended.",
+  "notable_details": [
+    "Patient name: Annika Sorensen-Mbatha; caller initially described her as his wife, later corrected to separated 'since the spring'",
+    "Appointment: Thursday, September 10 (2026-09-10) at 2:40 PM with Dr. Iwu-Castellano, Women's Health center on Alder Street",
+    "Purpose: 20-week anatomy ultrasound followed by a doctor visit",
+    "Caller's number 555-827-3091 was set as the patient's main contact number; no authorized contact listed on release form",
+    "DOB given only approximately as March 1993 or 1994 and was not confirmed",
+    "Reminder text scheduled to go out the following day to the caller's number"
+  ]
+}

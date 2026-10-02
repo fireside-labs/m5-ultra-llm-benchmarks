@@ -1,0 +1,77 @@
+
+Let me analyze this call.
+
+Call type: saas_support (login/SSO issue). Main issue resolved (SSO restored), but SCIM sync escalated to Tier 2 with callback within 4 business hours, and billing issue passed to billing team. Outcome: escalated (handed to Tier 2 engineering; use escalated even if callback planned).
+
+Sentiment start: negative (panicked, "nobody can log in", stressed). End: positive ("Thank you, Arjun", relieved).
+
+Quality score: The agent did well overall — verified identity via email code, systematic troubleshooting, resolved SSO. But serious issues: asked for and accepted the customer's password over the phone ("read me the temporary admin password") — security violation. Also promised a full month free credit — "I'll make sure you get a full month free on your next invoice. I'll put that through myself" — Tier 1 agent committing a credit that per his own statement is handled by account manager; unauthorized commitment. Also disclosed another customer's details (Pellmont Freight, admin name Gary Tolliver-Shea) — privacy disclosure of another customer's info. Also the hold at 01:10:05–01:12:25 was 2m20s — announced though ("short hold"). Hold at 00:38:08 was 1m15s, announced.
+
+So quality score: 3? The security failure (asking for password) is serious — credential sharing. That's a serious compliance/security failure → score 2 per rubric ("a serious compliance, safety or accuracy failure"). Combined with unauthorized credit commitment and disclosing another customer's info — multiple serious failures → could be 1 or 2. The overall handling was otherwise excellent and resolved the issue. I'd say 2: serious security failure (password over phone), unauthorized commitment (month free), privacy disclosure (other customer's details). Multiple serious failures → 1? The rubric: 1 = multiple serious failures or dangerous handling. Hmm. The password request is a serious security failure; the credit promise is unauthorized commitment; the Pellmont disclosure is privacy. That's three serious failures. But the call was otherwise handled excellently and resolved. I'd lean 2 — poor: a serious compliance failure plus others. Actually "1 = multiple serious failures" — we have multiple. But the resolution was excellent... The rubric is about how staff handled the call. I'll go with 2, noting the strong troubleshooting but serious security/compliance lapses. Hmm, arguably 2 fits "a serious compliance... failure, or several notable lapses" — we have one serious compliance failure (credential handling) plus several notable lapses. 2 seems right.
+
+Flags:
+1. security: Agent requested and accepted the account owner's password over the phone. Evidence: "Can you, um, read me the temporary admin password you use for the Stackmoor owner account?" and customer read it out. Also agent said "we do it all the time."
+2. unauthorized_commitment: Agent promised a full month free credit, though he said credits are handled by the account manager. Evidence: "I'll make sure you get a full month free on your next invoice. I'll put that through myself."
+3. privacy_disclosure: Agent shared another customer's incident details including admin name. Evidence: "with Pellmont Freight. Their admin, Gary Tolliver-Shea, uploaded the old certificate..."
+
+Action items:
+- Customer (Mina): remove six dispatch users from SSO enforcement exceptions — end of day.
+- Customer: update security contacts (add her own and Rosalind's addresses) — done during call actually; she added them. She did it during the call. So maybe not an action item. She added two contacts and enabled the checkbox during the call. So completed. But Rosalind said "update the security contact" — done. Skip or note as completed? Action items = follow-up commitments. The security contact update was completed on call. I'll exclude completed ones, or include? Better to list only pending ones. Actually she did it live. Exclude.
+- Customer: text/contact IT director Rosalind to download new metadata — completed (she joined and uploaded). Exclude.
+- Tier 2 engineering: call back regarding SCIM sync failure — within four business hours (ticket SM-20931).
+- Customer: remove dispatch exceptions end of day (as above).
+- Agent: send email summary of the call — unspecified (he said "I'll send you an email summary").
+- Billing team: reach out to customer about invoice billing 140 seats vs 120 licensed — unspecified.
+- Customer: quarterly workspace export — self-imposed, "once a quarter" — maybe include? It's a stated intention. Could include: owner: customer, task: request full workspace export, due: quarterly. Hmm, it's more of a habit intention. I'll include the concrete ones. Maybe include calendar reminder for cert expiry — "I'm doing that today." That's a customer task: set calendar reminder for certificate expiry — today. Include? It's a commitment stated. I'll include it.
+- Customer: send email to staff about the issue — done during call. Exclude.
+
+Notable details:
+- Root cause: IdP signing certificate rotated September 3 (customer initially thought August 30), old cert expired September 7 (yesterday); new cert valid until September 3, 2029.
+- Affected users corrected from ~40 to 112 (Denver office); Phoenix users on password login unaffected.
+- Break-glass owner emergency access link sent, expires in 24 hours; audit trail entries visible.
+- Six dispatch users added to SSO enforcement exceptions; to be removed end of day.
+- Escalation ticket SM-20931 for SCIM provisioning sync failure; Tier 2 callback within four business hours.
+- Security contact was it-security@fennimore-tile.com (dead distribution list); Mina added mina.c-r@ and r.ndiaye-fairbanks@fennimore-tile.com; old contact left in place; enabled "Send certificate expiry reminders to all workspace owners."
+- Billing discrepancy: last invoice billed 140 seats vs 120 licensed; passed to billing team.
+- Agent promised full month free credit on next invoice.
+- Agent logged in using customer's password read over phone.
+- Agent disclosed another customer's details (Pellmont Freight, Gary Tolliver-Shea).
+- Metadata download initially defaulted to inactive/expired cert; corrected.
+- First failure just after midnight on start day.
+- Expiry warning emails went to dead distribution list.
+
+Summary notes (≤120 words): SSO outage for 112 Denver users due to expired IdP signing cert... etc.
+
+Outcome: escalated (Tier 2 escalation for SCIM). Main issue (login) resolved, but escalation happened for secondary issue. Rule: "escalated = handed to a supervisor, higher tier, clinician or another team (use this even if a callback is also planned)". SCIM sync was escalated to Tier 2. So outcome = escalated.
+
+Sentiment start: negative ("panicked", people standing at desk). End: positive ("Thank you, Arjun. Sorry I was so stressed" — grateful, relieved). Positive.
+
+Quality reasons:
+- Thorough systematic troubleshooting and clear root-cause identification (expired IdP signing certificate).
+- Identity verified via emailed code before account access/discussion.
+- Serious security lapse: asked customer to read out admin password over the phone and used it to access her account.
+- Promised a full month free credit despite stating credits are handled by the account manager.
+- Disclosed another customer's incident details and admin name.
+- Long holds were announced; good communication otherwise.
+
+Keep 2-5 reasons. Pick 5.
+
+Flags evidence quotes — short verbatim:
+1. security: "Can you, um, read me the temporary admin password you use for the Stackmoor owner account?" — plus "Yeah, we do it all the time, it's just quicker."
+2. unauthorized_commitment: "I'll make sure you get a full month free on your next invoice. I'll put that through myself."
+3. privacy_disclosure: "we actually had almost exactly this last week with Pellmont Freight. Their admin, Gary Tolliver-Shea, uploaded the old certificate"
+
+Action items list:
+1. Owner: Tier 2 engineering team — call customer back re SCIM sync failure (ticket SM-20931) — within four business hours.
+2. Owner: Customer (Mina) — remove six dispatch users from SSO enforcement exceptions — end of day.
+3. Owner: Agent (Arjun) — send email summary of call/ticket — unspecified.
+4. Owner: Billing team — contact customer regarding invoice billed 140 seats vs 120 licensed — unspecified.
+5. Owner: Customer — set shared calendar reminder for certificate expiry — today.
+6. Owner: Customer — request quarterly workspace export? Maybe skip; it's aspirational. I'll include the calendar reminder and skip export... Actually "I'm going to do that once a quarter" — a commitment. Include as due "quarterly". Hmm, keep list focused. I'll include it — it's a stated task. Actually to avoid clutter, include: calendar reminder (today), export (quarterly). Fine.
+
+Summary notes draft:
+"Tier 1 support call from workspace owner Mina Castellanos-Reid (Fennimore Tile and Stone, verified via emailed code). Company-wide SSO login failure affecting 112 Denver users since Monday; Phoenix password users unaffected. Root cause: IdP signing certificate rotated Sept 3 by Dariusz (on leave); old cert expired Sept 7 and was never updated in Stackmoor. Fixed by IT director Rosalind Ndiaye-Fairbanks (joined from plane) downloading new metadata XML, uploaded by Mina; SSO confirmed restored. Owner break-glass access issued (24h). Six dispatch users added to SSO exceptions, to be removed end of day. SCIM sync failure escalated to Tier 2, ticket SM-20931, callback within 4 business hours. Security contacts updated. Billing discrepancy (140 vs 120 seats) referred to billing. Agent promised one month free credit; also requested customer password by phone."
+
+That's over 120 words? Count roughly: ~130. Trim.
+
+Final JSON.

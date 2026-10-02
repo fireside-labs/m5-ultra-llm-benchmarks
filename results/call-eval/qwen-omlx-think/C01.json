@@ -1,0 +1,49 @@
+{
+  "call_type": "scheduling",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 5,
+  "quality_reasons": [
+    "Verified identity using name, date of birth, and street number before accessing appointment details.",
+    "Corrected the patient's date confusion and confirmed the final appointment clearly.",
+    "Handled the chest tightness disclosure appropriately by documenting cardiology clearance and giving safety advice.",
+    "Updated the patient's phone number and reminded them to bring an updated insurance card.",
+    "Maintained an empathetic and professional tone despite system delays."
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "agent",
+      "task": "Add note for therapist that patient was cleared by cardiology and to keep inhaler handy during sessions",
+      "due": "during call"
+    },
+    {
+      "owner": "agent",
+      "task": "Send appointment confirmation text to updated phone number 555-216-4471",
+      "due": "within next few minutes"
+    },
+    {
+      "owner": "patient",
+      "task": "Bring updated insurance card to the Thursday, April 16 appointment",
+      "due": "Thursday, April 16 at 9:40"
+    },
+    {
+      "owner": "patient",
+      "task": "Call 911 or doctor immediately if chest tightness returns, especially at rest",
+      "due": "if symptoms return"
+    }
+  ],
+  "summary_notes": "Inbound scheduling call. Patient Tomasz Brennick-Vale verified and moved PT follow-up from Friday, April 10 at 2:15 to Thursday, April 16 at 9:40 with same therapist. Patient initially confused Wednesday/14th; agent clarified next Tuesday is April 14. No interpreter/accessibility needs. Patient reported prior chest tightness, evaluated by cardiology, treadmill test, asthma diagnosis, inhaler changed, cleared; agent added note for therapist and advised emergency care if symptoms recur. Updated phone from ending 8802 to 555-216-4471 and will text confirmation. Reminded patient to bring updated insurance card.",
+  "notable_details": [
+    "Appointment changed from Friday, April 10 at 2:15 to Thursday, April 16 at 9:40 with same therapist.",
+    "Patient initially said Wednesday, the 14th; agent corrected that next Tuesday is April 14.",
+    "Phone number updated from number ending 8802 to 555-216-4471.",
+    "Patient reported chest tightness last month; cardiology evaluation/treadmill test found asthma, inhaler changed, patient cleared.",
+    "Agent will add note for therapist to keep inhaler handy and advised 911/doctor if chest tightness returns, especially at rest.",
+    "Patient reminded to bring updated insurance card; old card expired end of last year, new cards received in January.",
+    "No interpreter or accessibility accommodations needed.",
+    "Agent will send confirmation text to new number within next few minutes.",
+    "Agent experienced slow system, multiple screens, and a login interruption during the call."
+  ]
+}

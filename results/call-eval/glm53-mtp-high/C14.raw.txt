@@ -1,0 +1,101 @@
+{
+  "call_type": "billing_dispute",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Agent Brent disclosed the husband's account balance and collections status without any authorization on file, a serious privacy violation the supervisor had to report",
+    "A promised callback from Kyle (by Friday 9/11) was never assigned or made, and the account was sent to collections on 9/14 despite an open dispute, violating policy",
+    "Brent dismissed the patient's disclosure that she was skipping blood pressure medication every other day since August instead of escalating it",
+    "Supervisor Danielle Okafor-Brandt handled the resolution excellently: verified all three duplicates against receipts, issued refunds, recalled the collections referral, and applied a policy-compliant $50 credit",
+    "Caller was left on an unannounced 6m50s hold waiting for the supervisor"
+  ],
+  "flags": [
+    {
+      "type": "privacy_disclosure",
+      "description": "Agent Brent shared the husband Reinhold's account details (balance, collections referral, duplicate payment) with the caller despite no authorization on file, which the supervisor confirmed was improper and reported to the privacy office.",
+      "evidence": "his account shows two hundred twelve dollars and forty cents, also referred to collections on the fourteenth"
+    },
+    {
+      "type": "missed_commitment",
+      "description": "Kyle promised a billing callback by Friday September 11 during the September 8 call, but no callback task was ever assigned and no one called.",
+      "evidence": "It says, \"Patient requests callback from billing re: duplicate ClearPay payments, promised callback by 9/11.\" But there's no callback task attached to it."
+    },
+    {
+      "type": "clinical_safety",
+      "description": "The caller told Brent she had been skipping her blood pressure medication every other day since August for financial reasons, and he moved on without addressing or escalating the risk.",
+      "evidence": "I told Brent, but he didn't seem to care. I've been skipping my blood pressure pills, every other day, since August."
+    },
+    {
+      "type": "policy_violation",
+      "description": "The account was referred to an outside collections agency on September 14 while a billing dispute had been open since May, which the supervisor confirmed violates the policy that accounts with open disputes cannot be referred.",
+      "description_extra": "",
+      "evidence": "That should never have happened while you had an open dispute. Our policy is that accounts with an open billing dispute are on hold and can't be referred."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "billing supervisor (Danielle Okafor-Brandt)",
+      "task": "Submit recall request to the collections agency for the $135 referral and place a billing hold on Gwendolyn's account",
+      "due": "during the call / immediate"
+    },
+    {
+      "owner": "billing supervisor (Danielle Okafor-Brandt)",
+      "task": "Issue refunds for three duplicate $45 ClearPay charges ($135 total): two to Visa ending 1186, one to HSA card ending 7720",
+      "due": "refunds to post within 7-10 business days"
+    },
+    {
+      "owner": "billing director's office",
+      "task": "Call patient regarding director-level review of the dispute open since May (callback task assigned by supervisor with her name on it)",
+      "due": "within 48 hours, by Wednesday end of day"
+    },
+    {
+      "owner": "billing supervisor (Danielle Okafor-Brandt)",
+      "task": "Apply $50 goodwill credit to the account",
+      "due": "next statement"
+    },
+    {
+      "owner": "billing supervisor (Danielle Okafor-Brandt)",
+      "task": "Send account statement and a written recap letter via mail and patient portal, including copy of today's notes",
+      "due": "today"
+    },
+    {
+      "owner": "nurse/pharmacist line",
+      "task": "Call patient about lower-cost options for her blood pressure medication",
+      "due": "today"
+    },
+    {
+      "owner": "financial counseling program",
+      "task": "Call patient about medication and bill assistance programs",
+      "due": "within two business days"
+    },
+    {
+      "owner": "billing supervisor (Danielle Okafor-Brandt)",
+      "task": "Report Brent's unauthorized disclosure of the husband's account to the privacy office",
+      "due": "unspecified"
+    },
+    {
+      "owner": "patient's husband (Reinhold Achterberg-Lowe)",
+      "task": "Call billing himself (ask for Danielle) to request the same recall and review for his account, or sign an authorization form",
+      "due": "this afternoon"
+    },
+    {
+      "owner": "patient (Gwendolyn Achterberg-Lowe)",
+      "task": "If no call from the billing director's office by Wednesday end of day, call the billing number and ask for Danielle directly",
+      "due": "Wednesday end of day"
+    }
+  ],
+  "summary_notes": "Patient Gwendolyn Achterberg-Lowe (DOB 1/26/1955, age 71) called repeatedly about three duplicate $45 ClearPay copay charges (Mar 9/11, May 4/6 on Visa ...1186; Jul 13/15 on HSA ...7720), totaling $135, after a dispute open since May went unresolved and the account was wrongly sent to collections on 9/14. Supervisor Danielle Okafor-Brandt confirmed all duplicates against receipts, recalled the collections referral, placed a billing hold, issued refunds (7-10 business days), applied a $50 goodwill credit, and escalated to the billing director (callback by Wednesday). Patient reported skipping BP medication every other day since August due to finances; nurse and financial counseling referrals made. Agent Brent improperly disclosed husband Reinhold's account ($212.40, also in collections); privacy office report required. Husband to call himself for his own recall/review.",
+  "notable_details": [
+    "Duplicate charge pairs: Mar 9 desk payment + Mar 11 ClearPay (Visa ...1186); May 4 + May 6 (Visa ...1186); Jul 13 + Jul 15 (HSA ...7720, saved as portal default from a pharmacy payment)",
+    "Collections referral dated September 14 for $135; patient received the collections letter Saturday; agency does not report for at least a year and nothing has been reported; recall confirmation letter expected within 10 business days",
+    "Dispute history: opened May, called again July, called September 8 and spoke with Kyle who promised a callback by Friday September 11 that never occurred (note existed but no task was assigned)",
+    "Husband Reinhold Achterberg-Lowe's account: $212.40, referred to collections September 14, with a duplicate ClearPay payment from June; no authorization on file, so it could not be discussed; he will call the afternoon of the call",
+    "Patient is skipping blood pressure pills every other day since August on a fixed income; nurse/pharmacist call today and financial counselor within two business days were arranged",
+    "$50 goodwill credit is within the supervisor authority limit of $75",
+    "Contact/preferences confirmed: address unchanged (309 Kestrel Bend), email starting with 'M' at gmail still valid, text reminders preferred, electronic statements preferred, preferred pharmacy on Old Mill Road unchanged, emergency contact unchanged, no interpreter/accommodations needed",
+    "Front desk can validate garage parking if the ticket is brought in; photo ID, insurance card, and medication list needed for the next visit",
+    "Supervisor's name for direct follow-up: Danielle Okafor-Brandt"
+  ]
+}

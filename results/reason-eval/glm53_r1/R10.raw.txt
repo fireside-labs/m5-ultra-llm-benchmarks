@@ -1,0 +1,30 @@
+## Estimate chain
+
+1. **Vehicle stock:** 245,000 households × 1.7 vehicles = 416,500 light vehicles.
+2. **EVs in 2030:** take the midpoint of the state's 8–16% projection (assumption: the city tracks the state) → 416,500 × 0.12 ≈ **50,000 EVs**.
+3. **Split by home charging:** midpoint of staff's 25–35% → 50,000 × 0.30 = **15,000 without home charging**, 35,000 with.
+4. **Sessions per no-home driver:** (200 mi/week ÷ 150 mi/session) × 70% DCFC share = 1.33 × 0.7 ≈ 0.93 sessions/week → 15,000 × 0.93 ≈ **14,000 sessions/week**. (Check: 14,000 × 150 mi = 2.1M mi/week, exactly 70% of 15,000 × 200 mi — internally consistent.)
+5. **Sessions per home-charging driver:** 2/month × 12 ÷ 52 ≈ 0.46/week → 35,000 × 0.46 ≈ **16,200 sessions/week**. (Assumption: "twice a month" holds even as the network grows.)
+6. **Fleets:** 1,500 × 5 = **7,500 sessions/week**. (Assumption: all on public ports; depot charging would cut this.)
+7. **Total demand:** 14,000 + 16,200 + 7,500 ≈ **37,700 sessions/week**.
+8. **Port-hours demanded:** 37,700 × 40 min ≈ 1.51M min/week ≈ **25,100 hours/week**.
+9. **Usable hours per port:** 168 h/week × 25% utilization ceiling = **42 h/week** (assumption: the 24-hour ceiling works as a weekly average).
+10. **Ports needed:** 25,100 ÷ 42 ≈ **600 total**; minus the 46 existing (assumed still operating) ≈ **550 new**.
+11. **Range edges:** 8% EVs + 25% no-home → ≈425 total (≈380 new); 16% EVs + 35% no-home → ≈780 total (≈735 new).
+12. **Cost:** closing a 550-port gap at the $180k midpoint ≈ $99M; $12M buys 12,000,000 ÷ $140k–220k ≈ **54–86 ports**.
+
+## Result
+
+ESTIMATE: 600
+RANGE: 425 - 780
+DECISION: No — $12M buys only ~55–85 ports against the ~380–740 new ports needed, covering roughly 10–15% of the gap.
+
+## Key sensitivities
+
+1. **EV adoption (8–16%):** every downstream number scales with it, and the state's range alone spans ~425–780 ports — a 2× swing bigger than any other input's plausible range.
+2. **Sustainable utilization and session length:** ports needed = weekly port-hours ÷ (168 × utilization); at a 15% ceiling the answer rises to ~1,000, at 30% it falls to ~500. Since no-home drivers charge in evening peaks, the real sustainable average may sit *below* 25%, pushing the estimate up.
+3. **Charging that stays off the public fast network:** home-charging drivers at 2×/month generate ~43% of all sessions and fleets another ~20%; if home-charging drivers fast-charge mainly on trips and fleets build depots, demand drops by a third or more. By contrast, the no-home share (25–35%) barely matters (~±8%) because the two driver classes differ only ~2× in frequency — a seeming key variable that isn't.
+
+## Recommendation
+
+Treat the $12M as gap-filler, not the network: concentrate it in the multi-unit and street-parking neighborhoods where the ~15,000 captive fast-charge users will live, since that is exactly where private charge-point operators won't build. Stretch the money by funding make-ready and grid work (or co-funding) rather than turnkey ports, and require utilization data-sharing as a condition. Stage the build — put the first ~60–80 ports in at midpoint demand, watch actual utilization against the 25% ceiling, and re-run this estimate annually, because the 8–16% EV range dominates and will narrow with time. Separately, negotiate with ride-hail and delivery operators on depot or off-peak charging before their fleets consume ~20% of public capacity.

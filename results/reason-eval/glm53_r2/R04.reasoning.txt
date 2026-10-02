@@ -1,0 +1,226 @@
+
+Let me work through this memo carefully.
+
+The memo recommends Option A: one 8-GPU server, $310k, vs Option B: two 4-GPU servers, $330k total.
+
+Key facts from notes:
+
+1. Job log: 85% of GPU jobs use 1–2 GPUs, 12% use 4, 3% use 8 (quarterly fine-tune). Median queue wait 3 hours on current rented 4-GPU box. People wait for one another's jobs.
+
+2. Lead time: 16 weeks for 8-GPU config, 3 weeks for 4-GPU servers. Harrow pilot starts in 6 weeks. So Option A arrives ~10 weeks AFTER the pilot starts. Option B arrives ~3 weeks before pilot starts. This is a huge missed issue — the memo says "order Option A this week" and "the same machine will run training jobs and also serve the live demo/inference endpoint for Harrow which starts in 6 weeks." But the 8-GPU server takes 16 weeks to arrive. So the plan is internally inconsistent: the machine won't exist when the pilot starts. Option B (3 weeks lead) actually arrives in time.
+
+3. Power: rack limit 8 kW, existing gear 1.5 kW, so only 6.5 kW available. 8-GPU server draws 10.2 kW — doesn't fit in the existing rack at all. Each 4-GPU server draws 5.1 kW. Two 4-GPU servers = 10.2 kW, also exceeds 6.5 kW in one rack. But one 4-GPU server (5.1 kW) fits in the existing rack (6.5 kW available), and the second one needs the second rack ($1.1k/month = $13.2k/year, ~$39.6k over 3 years). Wait — actually could you split: one 4-GPU in existing rack (5.1 ≤ 6.5 ✓), second 4-GPU in new rack. So Option B requires the second rack: +$1.1k/month. Option A requires the second rack entirely (10.2 kW > 6.5 kW available), so Option A also needs a second rack, and the memo's $310k price doesn't include that. Actually wait — the memo says Option B's price "includes the 200 GbE network cards and switch needed to link them." So Option B's $330k includes networking. Option A's $310k doesn't include the second rack cost ($1.1k/month). Over 3 years that's $39.6k, making Option A's true cost ~$349.6k vs Option B's ~$369.6k. Hmm, so Option A is still cheaper by $20k even with rack costs, but the memo claimed $20k cheaper without accounting for the rack. Actually the memo didn't mention rack costs at all — it says "It goes in our existing colocation rack," which is factually wrong given power draw. So the "cheaper by $20k" claim is wrong in basis; true gap is still ~$20k but both need the rack. Wait let me recompute: Option A total = 310 + 39.6 = 349.6k. Option B total = 330 + 39.6 = 369.6k. Difference still $20k. But the memo's claim "cheaper: $20k less" is coincidentally still right in magnitude, though the memo believed A fits in the existing rack. Hmm, but actually — does Option A need the second rack for sure? 10.2 kW draw under load vs 8 kW limit with 1.5 kW used → 6.5 kW free. Yes, A cannot go in the existing rack. So the memo's plan ("goes in our existing colocation rack") is wrong. Both options need the second rack. So the cost difference stays $20k but both are ~$40k more expensive than stated. Actually wait — could Option B put both 4-GPU servers in the second rack? 10.2 kW in one rack > 8 kW limit. No. So B must split across two racks: one in existing (5.1 ≤ 6.5), one in new. Either way second rack needed for both options. So the $20k delta survives, but the "fits in existing rack" claim is false, and neither option's stated price includes the required rack.
+
+Hmm, but actually there's a subtlety: with Option B, you could buy ONE 4-GPU server now ($165k) and defer the second. That's the flexibility point. Also, one 4-GPU server fits in the existing rack with no extra rack cost.
+
+4. Harrow contract: data must be processed on dedicated hardware not shared with any other workload, access logs on request. The memo's plan is for the same machine to run training jobs AND serve Harrow inference. That directly violates the contract. So Option A as planned breaches the Harrow contract on day one. This is a killer issue for the plan. Under Option B, you could dedicate one 4-GPU server to Harrow and use the other for training — that actually resolves the compliance issue AND the queueing issue. This flips the recommendation.
+
+5. Cash runway 14 months, board asked to keep capital spending flexible until Series A closes. Spending $310–330k now is a big chunk; Option B allows phased purchase: buy one 4-GPU now ($165k), defer second until after Series A or until demand requires. Also resale: 4-GPU retains 55% after 2 years vs 40% for 8-GPU with fewer buyers — lower residual risk for B, and phased purchase reduces capital at risk.
+
+6. Cloud comparison: $41k/month for equivalent capacity around the clock → break-even ~8 months. But the workload is not 24/7-equivalent: 85% of jobs use 1–2 GPUs. The actual utilization doesn't justify full 8-GPU ownership necessarily. Alternative: rent the 8-GPU instance only for the quarterly fine-tune: $98/hour × 30 hours = $2,940 per quarter, ~$11.8k/year. That's trivially cheap compared to buying an 8-GPU server for a 3%-of-jobs workload. So the right sizing might be: one or two 4-GPU servers owned + rent 8-GPU for quarterly fine-tune. The memo's break-even analysis compares owning full capacity vs renting full capacity around the clock, which is a strawman — nobody needs 24/7 rental; you rent on demand. This is a major analytical flaw.
+
+Let me quantify: quarterly fine-tune on 8 GPUs: 30 hours × $98 = $2,940 per quarter. If Option B is chosen, the fine-tune runs 1.6x slower → 48 hours × ... wait, split across two 4-GPU servers it's not an 8-GPU instance; renting would be $98/hr for 8-GPU. If they rent instead of running split: $2,940/quarter vs running on owned 4-GPU pair at 1.6x slower = 48 hours of owned time (no incremental cash cost but occupies the machines for 2 days, and it's quarterly so negligible). Or rent the 8-GPU for $2,940/quarter ≈ $11.8k/year — trivial vs $20k price difference and vs $310k capex.
+
+7. Utilization/sizing: 85% of jobs use 1–2 GPUs. Buying 8 GPUs to serve a workload whose median job is 1–2 GPUs, with 12% at 4 and 3% at 8, is mis-sized. Two 4-GPU servers give better bin-packing: jobs of 1–2 GPUs pack efficiently; a 4-GPU job takes one server; the 8-GPU job takes both (at 1.6x slowdown) or rent cloud. Also queueing: median wait 3 hours because people share one 4-GPU box; two 4-GPU servers (or one 4-GPU + better scheduling) reduces contention. Actually with Option A (single 8-GPU), all jobs share one machine — queueing could persist unless they partition. With B, you get two scheduling domains, and one can be dedicated to Harrow.
+
+8. The 1.6x slowdown test: it's one data point (the quarterly fine-tune), which is 3% of jobs. Fine — but the memo uses it to justify the whole purchase. Also the fine-tune happens quarterly; a 1.6x slowdown on a quarterly job = 30h → 48h, four times a year: costs 72 extra hours per year on a machine you own. The real cost of that slowdown is ~zero cash; it's just longer wall-clock 4 times a year. Meanwhile the memo's network cards for B are already included in the $330k. So the "faster interconnect" argument is weak given the fine-tune can be rented for $2,940.
+
+Wait — but if they own two 4-GPU servers, they could still run the fine-tune across both at 1.6x slower (48h quarterly). Or rent. Either way trivial.
+
+9. Pilot timing again: 6 weeks vs 16-week lead. Even under Option A, Harrow needs dedicated hardware at pilot start. Options: rent cloud for Harrow until the server arrives (but contract says dedicated hardware — cloud dedicated instances could satisfy it? The contract says "dedicated hardware that is not shared with any other workload" — a dedicated cloud instance might qualify, or might not; need legal read. But the memo doesn't address how Harrow is served at all before week 16+). Under Option B, first 4-GPU server arrives in 3 weeks — before the pilot — and can be dedicated to Harrow. This is decisive.
+
+10. Also: the memo says "I have accounted for the networking cost of Option B, and it is in the $330k" — fine, that handles the switch cost objection. And support is equal — handles that objection.
+
+11. Resale/obsolescence: 4-GPU retains 55% vs 40%, fewer buyers for 8-GPU. Over 3 years... actually the resale figure is after 2 years. If Series A / pivot changes needs, B is easier to sell one unit. Also B gives partial liquidity: sell one 4-GPU and keep one.
+
+12. Risk of single point of failure: one 8-GPU server = both training and Harrow inference on one machine; any hardware failure or maintenance window takes down the paying customer's endpoint. Next-business-day support means up to ~1 business day+ of downtime for the pilot customer. With B, Harrow's box is isolated from training crashes/reboots and from the other server's failures. This compounds with the contract issue.
+
+13. Power headroom for growth: even B uses both racks fully-ish. Existing rack: 6.5 kW free, one 4-GPU uses 5.1 → 1.4 kW headroom. Second rack 8 kW with 5.1 used → 2.9 kW headroom. Neither option leaves room for another 8-GPU later. Minor.
+
+14. Break-even math check: $41k/month × 8 = $328k ≈ cost of B ($330k) and slightly above A ($310k → 7.6 months). Fine, but runway is 14 months and board wants capex flexibility until Series A. Break-even of 8 months is within runway, but the comparison is flawed as noted (24/7 rental strawman). The real alternative isn't "rent 24/7" — it's "rent what you need when you need it." The memo never prices the actual demand pattern against on-demand rental. Given 85% of jobs are 1–2 GPUs, owned capacity needed is likely 4 GPUs (maybe one 4-GPU server, $165k, fits existing rack!), plus rental for the rare 4-GPU overflow and quarterly 8-GPU. That's a dramatically cheaper, board-friendly, contract-compliant, timeline-compliant plan. Hmm, but median queue wait 3 hours on current rented 4-GPU box suggests the single 4-GPU is congested — people wait for one another. So maybe two 4-GPU servers (B) or one 4-GPU + scheduling discipline. The queue wait evidence supports adding capacity beyond one 4-GPU box. So B (phased: one now, second soon/after Series A) or B outright.
+
+Let me structure the recommendation: Don't buy the 8-GPU server. Buy one 4-GPU server now ($165k, 3-week lead, fits existing rack, can be dedicated to Harrow for the pilot), rent cloud 8-GPU for the quarterly fine-tune (~$3k/quarter), defer the second 4-GPU until Series A closes or utilization demands it. This preserves board flexibility, meets Harrow timing and compliance, halves capex.
+
+But wait — the Harrow contract: "dedicated hardware that is not shared with any other workload." If they buy one 4-GPU now and dedicate it to Harrow, then training jobs have... nothing owned until the second arrives (or they keep renting their current 4-GPU box). They currently rent a 4-GPU box — keep renting it during transition. Fine.
+
+Also who serves Harrow inference before week 3? Pilot starts in 6 weeks; server arrives in 3 weeks. OK. Under Option A, arrival at week 16 — ten weeks after pilot start. Memo has no answer. Could rent dedicated cloud for Harrow until then — possible but the memo didn't say it, and it adds cost and contract-interpretation risk.
+
+Now, does Option B's second server need the second rack? Yes: two 4-GPU = 10.2 kW total; existing rack has 6.5 kW free → one server there, second in new rack at $1.1k/month. If phased (one server), no second rack needed initially — another cash benefit.
+
+Cost summary:
+- A: $310k + $1.1k/mo rack (it can't fit existing rack) = $310k + $39.6k/3yr ≈ $349.6k. Also breaches Harrow contract, arrives after pilot, SPOF.
+- B: $330k + $39.6k ≈ $369.6k, but phased: $165k now + $13.2k/yr rack when second arrives.
+- Hybrid: $165k now + ~$3k/quarter rental + defer second.
+
+The memo's "cheaper by $20k" — still true in absolute terms but immaterial vs the compliance/timing issues; and both need the rack so the delta is unchanged. Actually hold on, is it possible the vendor's Option A quote assumed single rack? Doesn't matter; physically it doesn't fit.
+
+One more check on the 1.6x: "our quarterly 8-GPU fine-tune ran 1.6x slower split across two servers than on a single 8-GPU node." So on B, fine-tune = 48h. Quarterly. Extra 18h per quarter occupying both servers. Negligible. And the networking hardware is already in B's price. So the interconnect argument is worth very little.
+
+Also note: the memo's claim "Faster interconnect... I have accounted for the networking cost" — fine. "Simpler: one machine to administer" — mild point, outweighed.
+
+Queue wait: median 3 hours on current rented 4-GPU box. With a single 8-GPU shared by everyone + Harrow... wait, Harrow can't share it (contract). So under A, Harrow needs separate hardware anyway! That means Option A's plan ("same machine will run training and serve Harrow") is not just risky, it's contractually prohibited. So under A, they'd need to buy/rent something else for Harrow entirely — meaning A's true cost is $310k + Harrow hardware (another 4-GPU server? $165k? or cloud). This makes A drastically more expensive. Actually this is the crux: the memo's plan violates the contract under either option if both workloads share; but under B, dedicating one server to Harrow is natural. Under A, you must procure additional dedicated capacity for Harrow. So A = $310k + Harrow solution. Unless... they run Harrow on... no, contract is clear. So A's real cost is far above B's. This is probably the single most important missed issue, along with the lead-time miss. Which is #1?
+
+Lead time: pilot starts in 6 weeks; A arrives in 16 weeks. The plan as written fails the pilot launch — the company's first paying customer. That's existential-ish. The contract violation is also existential-ish (legal breach). Both stem from "same machine for both workloads." I'd put the Harrow contract/dedication issue #1 because it makes the recommended plan non-viable and flips the economics, then lead time #2 (also makes plan non-viable as written). Or combine? They're distinct: even if you solved timing (rent until arrival), the sharing ban persists. And even if you solved sharing (separate hardware), A still arrives late. Both must be fixed. I'll list contract first, lead time second — or lead time first? The memo explicitly plans "order this week... same machine will... serve the live demo... starts in 6 weeks." The 16-week lead directly contradicts the 6-week pilot. That's the most glaring factual error. The contract violation is the most consequential. Hmm. I'll put the Harrow contract first because it invalidates the core plan and the cost comparison (A needs extra hardware), then lead time.
+
+Actually, let me reconsider: which is "most important first"? The contract issue: under Option A, Harrow cannot be served on the same machine at all — so A's plan is impossible, and A's true cost includes dedicated Harrow hardware. The lead-time issue: A can't be there for the pilot regardless. Both kill the plan. The contract one also flips the cost comparison decisively. I'll go: 1) Harrow contract breach, 2) lead time vs pilot date, 3) power/rack claim false, 4) cloud comparison strawman / on-demand rental for fine-tune is $3k/quarter, 5) sizing mismatch (85% jobs 1–2 GPUs; buying 8 GPUs), 6) capital flexibility / board / runway — phased B or hybrid, 7) resale/residual risk, 8) SPOF for paying customer / NBD support, 9) queue-wait evidence actually supports more, smaller scheduling domains... hmm, or supports more capacity generally. 10) maybe: 1.6x slowdown cost is negligible (quarterly job) — that's partly covered in #4. Let me allocate.
+
+Max 10 items. Let me draft:
+
+1. **Harrow contract makes the core plan illegal.** Contract requires dedicated hardware not shared with any other workload. Memo plans same machine for training + Harrow. Under A, you'd need to buy/rent separate Harrow hardware on top of $310k — real cost of A is ~$310k + a dedicated box; under B, dedicating one 4-GPU server solves it for free. Evidence: contract note vs Plan paragraph.
+
+2. **Lead time: A arrives ~10 weeks after the pilot starts.** 16-week lead vs 6-week pilot. "Order this week" cannot serve Harrow at launch; B's 3-week lead arrives before launch. Memo doesn't say how Harrow is served weeks 6–16+.
+
+3. **The server cannot go in the existing rack.** 10.2 kW draw vs 8 kW rack limit with 1.5 kW already used (6.5 kW free). Both A and B (10.2 kW combined) exceed it; second rack at $1.1k/month (~$39.6k over 3 years) is required for either option but appears in neither quote's comparison; "it goes in our existing colocation rack" is wrong. Note: one 4-GPU server (5.1 kW) does fit — enabling the phased buy with no new rack.
+
+4. **Cloud break-even is a strawman; the fine-tune costs ~$3k to rent.** Memo compares owning vs renting 24/7 ($41k/mo), but demand isn't 24/7-flat. The only 8-GPU job is quarterly: 30h × $98/h ≈ $2,940 (~$11.8k/yr). Renting the fine-tune removes the main reason to prefer A's interconnect, and the 1.6x penalty on B costs only 18 extra hours per quarter on owned gear.
+
+5. **Sizing mismatch: 85% of jobs use 1–2 GPUs.** Buying 8 GPUs for a workload whose bulk is 1–2 GPUs (12% at 4, 3% at 8) overbuilds; two 4-GPU servers (or one now) pack better and cut the 3-hour median queue by adding a second scheduling domain.
+
+6. **Capital flexibility: board wants capex flexible until Series A; runway 14 months.** $310–330k now is the largest single commitment; B allows $165k now and deferring the second server; hybrid defers even more. Break-even of 8 months is inside runway but rests on the flawed 24/7 comparison.
+
+7. **Single point of failure for the first paying customer.** Under the memo's plan, Harrow's endpoint shares a machine with training jobs (reboots, crashes, driver updates); next-business-day support means up to a business day of pilot downtime. Dedicated 4-GPU under B isolates the customer.
+
+8. **Resale/residual risk.** 4-GPU holds 55% of price after 2 years vs 40% for 8-GPU with fewer buyers; B (or phased B) leaves less capital at risk if the Series A or roadmap shifts.
+
+9. **Queue-wait evidence is misread.** Median 3-hour wait with people waiting on one another shows contention on a shared box; a single shared 8-GPU doesn't fix scheduling contention (still one queue), whereas two 4-GPU domains do for 97% of jobs.
+
+10. Maybe: **No plan for Harrow capacity at all before/after.** Hmm, that's covered in 1–2. Alternative 10: the 1.6x test is a single benchmark on 3% of jobs — generalizing from it to "faster interconnect" as a purchase driver is thin. Or: growth headroom — neither option leaves power for a future second 8-GPU; minor. Or: the memo doesn't state Harrow's inference GPU needs — maybe 1–2 GPUs suffice; if so, dedicating a 4-GPU server to Harrow is comfortably sized, and the remaining 4-GPU matches the 85% profile. That's a decent point: the memo never sizes Harrow's serving load. I'll include that as part of #1 or separate. Let me make #10: "Harrow's serving load is never sized" — if it needs only 1–2 GPUs (consistent with 85% profile), a dedicated 4-GPU server is ample; if it needs 8, neither option as configured works without more hardware. Evidence: memo gives no inference load numbers. That's a genuine missed factor.
+
+Actually also worth noting: under Option B with one server dedicated to Harrow, training capacity = one 4-GPU server — same as today's rented box, which has 3h median queue wait. So B-with-dedication doesn't relieve training congestion unless they buy the second server or keep renting. Honest analysis: B = $330k gives 4 GPUs for training + 4 for Harrow. Training congestion unchanged vs today unless second server... wait today they rent ONE 4-GPU box. Under B, training gets one 4-GPU (owned) — same capacity as today, queue persists. Hmm! So to fix queues they'd want the second 4-GPU for training too — but that's the one dedicated to Harrow. So B doesn't fix queueing either, unless Harrow's load is light and can share... no, contract forbids. So queue fix requires either keeping the rented 4-GPU alongside, or the second rack + third server later, or scheduling. Interesting nuance. The honest conclusion: the queue problem isn't solved by either option once Harrow gets dedicated hardware; it needs the phased second purchase post-Series A or continued rental. I should mention this — it strengthens the phased recommendation and shows I did the math. Where to put it? In #5 (sizing) or #9 (queue). I'll fold into #9: even under B, dedicating one server to Harrow leaves training at today's capacity (one 4-GPU), so the 3h queue persists; expect to add the second training server (or keep renting) after Series A — another reason the phased path beats buying 8 GPUs now. Hmm, but that slightly complicates "B fixes queues." Let me be careful and honest.
+
+Actually wait: today they rent a 4-GPU box. Under the memo's plan A, training would get 8 GPUs (but Harrow can't share → Harrow needs other hardware; training gets the full 8). Under B with dedication, training gets 4. So A gives training 8 GPUs (fixing queues for 97% of jobs via parallel jobs), B gives training 4 (queue persists). But A is non-viable due to contract+lead time+power as planned... A could still be viable if they rent Harrow hardware separately and put A in the second rack. Then A = $310k + $39.6k rack + Harrow hardware/rental. Training gets 8 GPUs. Hmm. So a fair comparison: A + separate Harrow solution vs B with dedication. A's total: $310k + rack $39.6k/3yr + Harrow (another 4-GPU server $165k? or cloud dedicated). That's ~$475k+ vs B $330k + $39.6k = $369.6k. B wins on cost, timing, flexibility, residual. And the fine-tune on B runs 1.6x slower quarterly or rent for $3k. So B still wins even granting A its training-capacity advantage. Good — the recommendation is robust.
+
+Alternatively the hybrid: one 4-GPU now ($165k) dedicated to Harrow, keep renting the current 4-GPU for training (~what does the rented 4-GPU cost? Not given — the $41k/month is for 8-GPU equivalent 24/7; a 4-GPU rental maybe ~$20k/mo? Not given; I shouldn't invent. The memo says current rented 4-GPU box — cost not given. I can note the hybrid keeps that rental cost, which is unknown from the memo). Hmm, careful: the hybrid's economics depend on the current 4-GPU rental price, which isn't given. I'll state the assumption gap. Actually the memo implies they currently rent a 4-GPU box — the $41k/month figure was for "equivalent capacity" (8-GPU) around the clock. So current rental cost is unknown. The hybrid: $165k capex now + keep current rental until Series A, then buy second 4-GPU ($165k) and drop rental. Whether that beats full B now depends on rental cost — flag as the number to check. But the board-flexibility and timing arguments carry the hybrid regardless.
+
+What should happen this week: don't sign Option A; go back to vendor: order one 4-GPU server now (3-week lead, arrives before pilot, fits existing rack, dedicate to Harrow), get pricing/lead confirmation on the second 4-GPU for post-Series A, and rent the 8-GPU cloud instance for the quarterly fine-tune (~$2,940). Also confirm with legal that a dedicated owned 4-GPU server satisfies Harrow's clause and set up access logging. Also verify Harrow's serving GPU requirement.
+
+Wait, one more check on "dedicated hardware" and the quarterly fine-tune: if Harrow's server is dedicated, the fine-tune must run on the other 4-GPU (split, 1.6x slower → 48h) or rented 8-GPU. Fine.
+
+Also check B's networking: $330k includes 200 GbE cards and switch — so cross-server fine-tune is possible. Good.
+
+Also the memo's break-even: "either purchase breaks even in about 8 months" — $310k/$41k ≈ 7.6 mo; $330k/$41k ≈ 8.05 mo. OK arithmetic fine but premise flawed.
+
+Now "Looks like a problem but isn't": things the memo handles adequately:
+- Networking cost for B: memo says the 200 GbE cards and switch are in the $330k — handled.
+- Support parity: both quotes include 3-year NBD on-site — not a differentiator.
+- The 1.6x interconnect penalty is real but its cost impact is small (quarterly job) — hmm, that's more of a "missed issue" (they overweighted it). The section is for things a reviewer might flag that the memo actually handles. So: (a) B's network hardware cost — included; (b) support — equal; (c) maybe "one machine to administer" simplicity — minor but real, though I'd say the memo handles... eh. (d) The break-even arithmetic itself (7.6–8 months) is arithmetically right given the $41k figure — the flaw is the comparison premise, not the math. Could list that as "the arithmetic is fine; the premise is the problem" — but that's basically missed issue #4. I'll keep the section short: network cards/switch included; support parity; the 1.6x slowdown is measured, not assumed (the measurement exists; what's wrong is its weight). Hmm, the instruction: "Things a reviewer might flag that the memo actually handles adequately." So: 1) Option B's interconnect hardware cost — explicitly included in $330k. 2) Hardware support — identical 3-yr NBD on both quotes. 3) The 1.6x cross-server penalty — the memo actually measured it rather than guessing; the measurement is fine, it's the decision weight that's off (covered in missed issues). Maybe better third: "Owning vs renting in principle — with a steady 24/7-sized workload the ~8-month break-even logic would be sound; the issue is the workload isn't flat" — no, that's missed issue again. Keep two or three lines.
+
+Top 3 priorities:
+1. Harrow contract compliance + launch timing (dedicated hardware, in place by week 6) — this alone rules out Option A as specified and mandates a dedicated box arriving ≤6 weeks → the 3-week 4-GPU.
+2. Capital flexibility/board constraint + true cost (rack fees, Harrow hardware, resale) → phased purchase of 4-GPU servers.
+3. Right-sizing to the workload (85% 1–2 GPU jobs; quarterly 8-GPU rentable for ~$3k) → 4-GPU-class owned capacity, rent the spikes.
+
+Bottom line: Reject Option A as written. Buy one 4-GPU server now ($165k, arrives in 3 weeks, fits existing rack), dedicate it to Harrow; rent the quarterly 8-GPU fine-tune (~$3k); defer the second 4-GPU (and second rack) until after Series A or until training demand justifies it. This week: place the 4-GPU order, confirm with legal the dedicated-server setup meets Harrow's clause, and get Harrow's serving load sized.
+
+Hmm — one caveat: is one 4-GPU enough for Harrow? Unknown (missed issue #10). If Harrow needs more, decision changes — flag it. Also, if legal says cloud dedicated instances satisfy the clause, an interim cloud stopgap exists, but owned 4-GPU is cleaner.
+
+Also should I double check the claim in missed issue #3 that Option B also needs the second rack? Two servers × 5.1 = 10.2 kW; existing rack free = 6.5 kW. One server fits (5.1 ≤ 6.5); second doesn't (another 5.1 > 1.4 remaining). So yes, B needs the second rack too — but only when the second server arrives (phased benefit). And A needs it immediately. Correct.
+
+Also note: A's $310k quote — does it include rack? No, quotes are for servers (B's includes network gear). So both need +$1.1k/mo. The memo's "$20k cheaper" survives but the memo's placement claim is false. Also over 3 years both +$39.6k. Fine.
+
+One more: does the memo's "I have accounted for the networking cost of Option B, and it is in the $330k" possibly mean they think A's $310k lacks network gear? A single node doesn't need the switch. Fine.
+
+Also: 16-week lead — even if they ordered A this week, arrival ≈ week 16, pilot week 6 → 10-week gap. And Harrow contract breach would persist after arrival under the memo's plan. Both fatal to the plan as written.
+
+Now let me also sanity-check the queue point for #9: "Median queue wait on our current rented 4-GPU box is 3 hours. People often wait for one another's jobs." With A (8 GPUs, one queue): a 1–2 GPU job can run alongside others (GPU sharing/partitioning) — an 8-GPU node can run four 2-GPU jobs concurrently, so contention could improve vs a 4-GPU box. With B dedicated-to-Harrow, training stays at 4 GPUs → 3h waits persist. So honestly: A (if it were viable) would help queues more than B-with-dedication. But A isn't viable as planned; and B + deferred second server fixes queues post-Series A. I'll present #9 accurately: the memo cites queue pain to justify buying more capacity, but its own plan gives Harrow dedicated hardware (contract) — under B that leaves training at today's 4-GPU level, so the 3h median wait won't improve until the second training server arrives; plan for that (post-Series A) rather than expecting the 8-GPU purchase to fix it. Actually under the memo's (invalid) plan, training would get all 8. The point: the memo doesn't reconcile "dedicated Harrow hardware" with "queue relief" — the two goals compete for the same GPUs. Good nuance for #9 or #1. I'll put it in #9.
+
+Let me also reconsider the ordering of missed issues by importance:
+
+1. Harrow contract breach (plan is non-compliant; A needs extra dedicated hardware → cost comparison wrong).
+2. Lead time vs pilot (A misses launch by ~10 weeks).
+3. Power/rack (A doesn't fit existing rack; both need second rack; memo's placement claim false; one 4-GPU fits — enables phased).
+4. Cloud strawman / rent the fine-tune for ~$3k/quarter (kills the main technical advantage of A).
+5. Sizing (85% 1–2 GPUs).
+6. Capital flexibility (board, runway, phased B).
+7. Resale/residual (55% vs 40%, fewer buyers).
+8. SPOF for paying customer.
+9. Queue relief vs dedicated Harrow compete; plan the second training server.
+10. Harrow serving load never sized.
+
+That's 10. Good. Could trim to 8 but 10 allowed. Each needs: what, why it matters, evidence with numbers. Keep tight.
+
+Word count: aim for a thorough but tight response. The persona: senior generalist advisor, concrete, prioritized, fewer sharper points. The headings must be exactly as requested, in order. "Looks like a problem but isn't" is optional — include it with 2–3 one-liners.
+
+Let me write the numbers precisely:
+- Rack: 8 kW limit − 1.5 kW existing = 6.5 kW free; A draws 10.2 kW (over by 3.7 kW); B draws 5.1 kW per server → one fits, second needs new rack. Second rack $1.1k/mo ≈ $13.2k/yr ≈ $39.6k over the 3-year support horizon.
+- Fine-tune rental: 30 h × $98/h = $2,940/quarter ≈ $11.8k/yr. vs $310k capex for the 8-GPU node whose only 8-GPU job is this.
+- 1.6x penalty on B: 30h → 48h, +18h per quarter.
+- Break-even: $310k ÷ $41k/mo ≈ 7.6 mo; $330k ÷ $41k ≈ 8.1 mo. But 24/7 rental is the wrong counterfactual.
+- Lead: 16 wk vs 6 wk pilot → ~10 wk gap; B: 3 wk → 3 wk margin.
+- Resale after 2 yrs: 4-GPU 55% → lose ~$74k of $165k; 8-GPU 40% → lose ~$186k of $310k. (55% of 165 = 90.75, lose 74.25k; 40% of 310 = 124, lose 186k.) Good concrete numbers.
+- Job mix: 85% / 12% / 3%.
+- Runway 14 months; $310k ≈ 22% of... runway isn't cash amount. Don't overreach; just say it's the largest capex and board wants flexibility.
+
+For the hybrid recommendation, note the unknown: current 4-GPU rental cost not given — state assumption. Actually for the bottom line I recommend: order one 4-GPU now dedicated to Harrow; keep renting the existing 4-GPU for training until Series A closes, then buy the second 4-GPU and drop the rental; rent the quarterly fine-tune. This week: place the order (3-wk lead beats the 6-wk pilot with margin), legal check on the Harrow clause + access logs, size Harrow's serving load, and get the second server priced/held.
+
+One risk to acknowledge: if Harrow's endpoint needs >4 GPUs, this changes — hence sizing this week is critical. Also if legal reads "dedicated hardware" as excluding colo-owned? No — owned dedicated colo server is the cleanest fit.
+
+Also, should the second 4-GPU go in the existing rack? Existing rack free 6.5 − 5.1 = 1.4 kW → no; second server needs the new rack. Include in the plan: second rack $1.1k/mo starts when second server arrives.
+
+Format: Markdown, exact headings:
+## Missed issues
+## Looks like a problem but isn't
+## Top 3 priorities
+## Bottom line
+
+Keep each missed issue to ~2-3 lines. Bold the lead phrase. Use the numbers.
+
+Draft:
+
+## Missed issues
+
+1. **The plan breaches the Harrow contract on day one.** The contract requires Harrow's data to run on hardware "not shared with any other workload"; the memo's plan runs training and Harrow inference on the same machine. Under Option A this means buying or renting *additional* dedicated hardware on top of the $310k — so A's true cost is ~$475k+ (310 + 165 for a Harrow-dedicated 4-GPU), not $310k, while Option B solves compliance for free by dedicating one server. (Evidence: contract note vs. Plan paragraph.)
+
+2. **Option A arrives ~10 weeks after the pilot starts.** Lead time is 16 weeks; Harrow starts in 6. "Order this week" cannot put an 8-GPU server under the pilot, and the memo offers no stopgap. Option B's 3-week lead lands ~3 weeks before launch.
+
+3. **The 8-GPU server cannot go in the existing rack.** It draws 10.2 kW against 6.5 kW free (8 kW limit − 1.5 kW existing). Both options actually need the second rack ($1.1k/month ≈ $39.6k over 3 years), which appears in neither total — but a single 4-GPU server (5.1 kW) does fit, which enables a phased buy with no new rack.
+
+4. **The cloud comparison is a strawman, and the fine-tune costs ~$3k to rent.** Break-even is computed against 24/7 rental ($41k/mo), but the only 8-GPU job is the quarterly fine-tune: 30 h × $98/h ≈ $2,940 (~$11.8k/yr). Renting it eliminates the main reason to want A's interconnect; on B the 1.6x penalty costs just 18 extra hours per quarter.
+
+5. **The purchase is mis-sized for the workload.** 85% of jobs use 1–2 GPUs and 12% use 4; only 3% need 8. Eight owned GPUs is built for the rarest job, while two 4-GPU servers (bought one at a time) match the actual distribution and let 4-GPU jobs run without blocking 1–2-GPU jobs.
+
+6. **It ignores the board's capital-flexibility constraint.** With 14 months runway and a Series A pending, $310–330k is the wrong shape of commitment. Option B can be split: $165k now, $165k after the round. The 8-month break-even is inside runway but rests on the flawed 24/7 comparison in (4).
+
+7. **Residual-value risk is worse for A.** After 2 years a 4-GPU returns ~55% (−$74k on $165k) vs ~40% for the 8-GPU (−$186k on $310k) "with fewer buyers." If the roadmap shifts post-Series A, B loses far less and can be sold one unit at a time.
+
+8. **Single point of failure for the first paying customer.** Under the memo's plan, Harrow's endpoint shares a machine with training jobs (reboots, crashes, driver updates); next-business-day support means up to a full business day of pilot downtime per incident. A dedicated 4-GPU under B isolates the customer.
+
+9. **The queue problem isn't actually solved by the memo's plan.** Median 3-hour waits come from contention on one shared box. Once Harrow gets dedicated hardware (required by contract), Option B leaves training at today's 4-GPU capacity — so expect to add a second *training* server (or keep renting) after Series A; the memo never reconciles "dedicated Harrow hardware" with "queue relief."
+
+10. **Harrow's serving load is never sized.** If the endpoint needs 1–2 GPUs (consistent with the 85% profile), a dedicated 4-GPU is ample; if it needs 8, neither option as quoted works. No inference-load numbers appear anywhere in the memo.
+
+## Looks like a problem but isn't
+
+- Option B's networking cost — the 200 GbE cards and switch are already in the $330k.
+- Support parity — both quotes carry identical 3-year next-business-day on-site coverage.
+- The 1.6x cross-server slowdown is measured, not guessed — the measurement is sound; it's just being given far more decision weight than a 3%-of-jobs quarterly job merits.
+
+## Top 3 priorities
+
+1. **Harrow launch: compliant dedicated hardware on site within 6 weeks.** This rules out Option A as written (16-week lead, sharing banned) and points straight at a 4-GPU server with a 3-week lead.
+2. **Capital shape: spend the minimum now, keep the second tranche for after Series A.** Phased 4-GPU purchases ($165k tranches) fit the board constraint; $310k+ now does not.
+3. **Right-sizing: own 4-GPU-class capacity, rent the 8-GPU spike.** The workload (85% at 1–2 GPUs; quarterly 8-GPU rentable for ~$2,940) doesn't justify 8 owned GPUs.
+
+## Bottom line
+
+Reject Option A as written. Order one 4-GPU server this week ($165k, arrives in 3 weeks, fits the existing rack), dedicate it to Harrow, keep renting the current 4-GPU box for training, and rent the quarterly fine-tune (~$2,940); buy the second 4-GPU (plus the $1.1k/month second rack) after Series A closes or when training demand demands it. This week also: confirm with legal that a dedicated owned server satisfies Harrow's clause with access logging, and measure Harrow's serving GPU requirement — if it needs more than 4 GPUs, revisit before signing anything.
+
+Check bottom line: 3 sentences-ish, fine. Check the hybrid economics honesty: keeping current rental — cost unknown; I noted it in #9 implicitly ("or keep renting"). Maybe add in bottom line "(the current rental cost isn't in the memo — check it against $165k when deciding timing of the second buy)". Hmm, bottom line should be 2–4 sentences. Let me weave: "...keep renting the current 4-GPU box for training until Series A closes (its rental cost isn't given — compare it to $165k when timing the second purchase)..." That's a bit clunky but honest. Alternatively leave it in #9 only. The bottom line should be decisive. I'll keep bottom line clean and put the unknown in #9/#10.
+
+Actually, one thing to double check in #1's cost claim: "A's true cost is ~$475k+" — 310 + 165 = 475, plus rack 39.6 → ~515k. But maybe Harrow could be served from cloud dedicated → cheaper but contract-interpretation risk. I'll say "on top of $310k — roughly $475k if the answer is another 4-GPU server, before rack fees." Keep it as an illustrative number with stated basis. Good.
+
+Also double-check #3 arithmetic: 8 − 1.5 = 6.5 free. A: 10.2 > 6.5 by 3.7 kW. B per server 5.1 ≤ 6.5 ✓; two servers 10.2 > 6.5 ✗. Correct.
+
+$1.1k × 36 = $39.6k over 3 years. ✓.
+
+Fine-tune: 30 × 98 = $2,940 ✓. ×4 = $11,760/yr ✓.
+
+1.6 × 30 = 48; +18h/quarter ✓.
+
+Resale: 0.55 × 165 = 90.75 → loss 74.25 ≈ $74k ✓. 0.40 × 310 = 124 → loss 186 ✓.
+
+Break-even: 310/41 = 7.56; 330/41 = 8.05 ✓ (memo says ~8 months, fine).
+
+Everything from memo + reasoning. Assumptions stated where numbers not given (Harrow load, current rental cost, illustrative $165k for Harrow-dedicated hardware under A).
+
+Length seems right — thorough but each point tight. Headings exact. Numbered list ≤10 ✓. Top 3 exactly 3 ✓. Bottom line 2–4 sentences — I have about 3–4; make sure. Let me count: (1) "Reject Option A as written." (2) "Order one 4-GPU... demands it." (3) "This week also: ... before signing anything." That's 3 sentences. Good.

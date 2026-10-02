@@ -1,0 +1,141 @@
+
+
+{
+  "call_type": "scheduling",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Verified caller and son before accessing records.",
+    "Booked both appointments, updated insurance, submitted refill, and explained referral policy.",
+    "Handled confidential adolescent visit cautiously but still disclosed its existence.",
+    "Gave incorrect location confirmation for Gideon's Harbor Street appointment.",
+    "Transfer to referrals involved a long hold despite being described as short."
+  ],
+  "flags": [
+    {
+      "type": "privacy_disclosure",
+      "description": "Agent disclosed the existence and follow-up nature of a confidential adolescent clinic visit to the parent.",
+      "evidence": "oh, that one's flagged, it's marked confidential, adolescent clinic, so I can't really— well, it was just a follow-up"
+    },
+    {
+      "type": "misinformation",
+      "description": "Agent incorrectly confirmed that Gideon's October 12 appointment was at Eastgate after booking it at Harbor Street.",
+      "evidence": "Yep, same place, you'll be all set."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "Tamsin",
+      "task": "Submit albuterol HFA refill request for Ezra to Dr. Sato's nurse team.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Dr. Sato's nurse team",
+      "task": "Process Ezra's albuterol HFA refill request and send it to Eastgate pharmacy.",
+      "due": "one to two days"
+    },
+    {
+      "owner": "Tamsin",
+      "task": "Add note to Ezra's appointment for Dr. Sato to print immunization record for school.",
+      "due": "Oct 22, 2026"
+    },
+    {
+      "owner": "Tamsin",
+      "task": "Add note to Ezra's appointment about the confidential adolescent clinic follow-up on the third.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Gideon Achebe-Lund",
+      "task": "Bring signed green athletic pre-participation form to Ezra's appointment.",
+      "due": "Oct 22, 2026"
+    },
+    {
+      "owner": "Tamsin",
+      "task": "Add Ezra to Dr. Sato's Thursday cancellation list and text if an earlier slot opens.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Tamsin",
+      "task": "Turn on appointment reminders for Gideon and Celeste Achebe for Ezra's appointment.",
+      "due": "two days before appointment"
+    },
+    {
+      "owner": "Tamsin",
+      "task": "Send copy of today's notes to Gideon's portal.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Tamsin",
+      "task": "Update Halvard insurance for Gideon and Ezra to member ID H-77310, group B-442.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "System",
+      "task": "Check Halvard eligibility overnight.",
+      "due": "overnight"
+    },
+    {
+      "owner": "Gideon Achebe-Lund",
+      "task": "Arrive 15 minutes early for Dr. Lindqvist appointment at Harbor Street.",
+      "due": "Oct 12, 2026"
+    },
+    {
+      "owner": "Gideon Achebe-Lund",
+      "task": "Call nurse line or urgent care if knee locks or cannot bear weight.",
+      "due": "if symptoms worsen"
+    },
+    {
+      "owner": "Paloma",
+      "task": "Add note to Gideon's appointment to watch for orthopedics referral after visit.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Dr. Lindqvist",
+      "task": "If clinically indicated, place orthopedics referral during Gideon's visit.",
+      "due": "Oct 12, 2026"
+    },
+    {
+      "owner": "Paloma",
+      "task": "Send orthopedics referral electronically to Corran Orthopedics if placed.",
+      "due": "after Oct 12, 2026 visit"
+    },
+    {
+      "owner": "Corran Orthopedics",
+      "task": "Call Gideon to schedule orthopedics appointment.",
+      "due": "within five business days of referral being sent"
+    },
+    {
+      "owner": "Tamsin",
+      "task": "Send text confirmations/reminders to cell ending 8812.",
+      "due": "two days before appointments"
+    },
+    {
+      "owner": "Front desk",
+      "task": "Validate Eastgate parking for Gideon when he brings a ticket.",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Gideon Achebe-Lund called for himself and son Ezra. Verified identity. Ezra booked sports physical with Dr. Sato at Eastgate Thu Oct 22 3:30 pm; bring signed green athletic form; added to cancellation list; reminders to both parents; albuterol HFA refill request sent to Dr. Sato's nurses for Eastgate pharmacy. Gideon booked with Dr. Lindqvist at Harbor Street Mon Oct 12 9:20 am, arrive 15 min early; adult Eastgate closed. Insurance updated to Halvard H-77310 group B-442 for both. Referrals explained ortho referral must follow visit; Paloma noted. Agent incorrectly confirmed Eastgate when caller asked location.",
+  "notable_details": [
+    "Caller: Gideon Achebe-Lund, DOB 11/30/1978, address 42 Pennyroyal Drive.",
+    "Son: Ezra Achebe-Lund, DOB 03/04/2011; caller corrected age to 15 and a half.",
+    "Ezra sports physical booked Thu Oct 22, 2026, 3:30 pm with Dr. Sato at Eastgate pediatrics, first floor.",
+    "Ezra added to Dr. Sato's Thursday cancellation list; reminders to Gideon and Celeste Achebe.",
+    "Albuterol HFA rescue inhaler refill request sent to Dr. Sato's nurse team for Eastgate pharmacy.",
+    "Gideon knee visit booked Mon Oct 12, 2026, 9:20 am with Dr. Lindqvist at Harbor Street, not Eastgate; arrive 15 minutes early.",
+    "Adult medicine at Eastgate closed for renovation through November; pediatrics and pharmacy remain open.",
+    "Insurance updated to Halvard member ID H-77310, group B-442; corrected from initially read H-77301.",
+    "Ezra is on same family plan; caller believed member ID may have -02 suffix, not confirmed.",
+    "Eligibility check will run overnight.",
+    "Orthopedics referral must be generated from Dr. Lindqvist visit; Paloma will send to Corran Orthopedics if indicated; Corran to call within 5 business days.",
+    "Ezra has a confidential adolescent clinic follow-up on the third; agent noted it for Dr. Sato without disclosing details.",
+    "Bring signed green athletic pre-participation form; Dr. Sato to print immunization record for school.",
+    "Immunizations appear up to date: last 11-year visit and flu shot last October.",
+    "Text confirmations/reminders to cell ending 8812; reminder two days before.",
+    "Parking validation available at Eastgate front desk with ticket; Harbor Street has free parking lot.",
+    "Agent incorrectly confirmed Eastgate as location for Gideon's Oct 12 appointment after booking Harbor Street.",
+    "Transfer to referrals involved a long hold despite being described as short."
+  ]
+}

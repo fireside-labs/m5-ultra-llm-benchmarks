@@ -1,0 +1,46 @@
+{
+ "call_type": "pharmacy_refill",
+ "outcome": "resolved",
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 1,
+ "quality_reasons": [
+  "No identity verification (name only) before reading out the medication list",
+  "Pushed through an early refill of a controlled substance (alprazolam) without pharmacist review",
+  "Dismissed a potential benzodiazepine + zolpidem interaction instead of referring to the pharmacist"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Technician agreed to an early refill of a controlled substance (alprazolam, last filled 7/30, 30-day supply) as cash, bypassing insurance rejection, without pharmacist review",
+   "evidence": "I can just push it through. Insurance might reject it for being early, but you can just pay cash"
+  },
+  {
+   "type": "other",
+   "description": "No identity verification (name only, no DOB/address) before disclosing the patient's medication list",
+   "evidence": "I see you've got alprazolam, the point five, sertraline, and a cholesterol one."
+  },
+  {
+   "type": "other",
+   "description": "Patient reported a new zolpidem prescription from another pharmacy; technician gave clinical reassurance about combining it with alprazolam instead of referring to the pharmacist (CNS-depressant interaction)",
+   "evidence": "I mean, lots of people take both. You should be fine."
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "pharmacy tech",
+   "task": "Prepare early alprazolam refill (cash) for pickup",
+   "due": "2026-08-17 15:00"
+  },
+  {
+   "owner": "patient",
+   "task": "Pick up at front counter at 3 pm with photo ID",
+   "due": "2026-08-17 15:00"
+  }
+ ],
+ "summary_notes": "Mock summary for C15.",
+ "notable_details": [
+  "Zolpidem (Ambien) was filled at a different pharmacy and is not on this pharmacy's profile",
+  "Alprazolam last filled July 30 (30-day supply); patient leaves on vacation Aug 22 for two weeks"
+ ]
+}

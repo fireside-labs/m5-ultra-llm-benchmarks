@@ -1,0 +1,24 @@
+{
+  "label": "dsv4_r2",
+  "model": "dsv4-0731",
+  "url": "http://127.0.0.1:8000/v1/chat/completions",
+  "params": {
+    "max_tokens_per_turn": 12000,
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "seed": null,
+    "stream": true,
+    "extra_body": {
+      "chat_template_kwargs": {
+        "enable_thinking": true
+      }
+    }
+  },
+  "prompts_sha": {
+    "followup_suffix.md": "f450c39f763fe133",
+    "system.md": "a21329d957f0d0e6",
+    "turn1_suffix.md": "26165dba876cca49"
+  },
+  "topics_sha": "33a4ad55cdbe75d8",
+  "updated": "2026-10-01T12:34:46"
+}

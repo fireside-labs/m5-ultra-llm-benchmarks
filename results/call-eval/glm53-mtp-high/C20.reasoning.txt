@@ -1,0 +1,13 @@
+
+Key issues: caller is not the patient, separated spouse. Agent disclosed appointment details (date, time, provider, purpose - 20-week anatomy ultrasound) before any identity verification. Then asked for DOB, caller gave vague answer ("March ninety-four? ninety-three. Something like that") and agent said "Close enough" — failed verification. Then updated phone number on patient's file to caller's number without authorization — privacy/policy violation. Also disclosed that no one is listed on her release form, then proceeded anyway.
+
+Call type: scheduling. Outcome: resolved (caller's question answered, number changed). Sentiment start neutral, end positive. Quality score: 2 (serious privacy failure: disclosure before verification, failed verification accepted, unauthorized file change).
+
+Flags:
+1. privacy_disclosure - disclosed appointment details before verifying identity. Evidence: "It's her twenty-week anatomy ultrasound, and then a visit with the doctor after." (DOB asked at 00:40, after disclosure at 00:32).
+2. identity_verification - accepted vague DOB "Close enough. [laughs]".
+3. privacy_disclosure / policy_violation - changed contact number on patient file without authorization; caller is separated spouse, no release form on file. Evidence: "I don't see anyone listed on her release form, but if you're driving her, that makes sense... it's updated as her main number."
+
+Action items: reminder text goes out tomorrow to caller's number (owner: agent/system). Due: tomorrow (2026-09-09). Also caller to drive patient Thursday. Maybe "Agent updated phone number" — already done. Action items: reminder text scheduled to send tomorrow.
+
+Notable details: appointment Thursday Sept 10 at 2:40 PM with Dr. Iwu-Castellano at Alder Street Women's Health; 20-week anatomy ultrasound plus doctor visit; caller is separated spouse (not wife, separated since spring); phone number changed to 555-827-3091 as main number; no authorized release/contact on file; DOB approx March 1993/94 (unverified); caller initially said "wife" then corrected.

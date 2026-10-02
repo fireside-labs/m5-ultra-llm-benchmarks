@@ -1,0 +1,14 @@
+
+Call type: billing_dispute (SaaS billing, but main purpose is billing dispute — could be saas_support? The enum: billing_dispute = charges, refunds, balances. The call is about duplicate charges/refund. It's a SaaS product but the main purpose is billing dispute. I'd choose billing_dispute.)
+
+Outcome: resolved — refund issued, downgrade done.
+
+Sentiment start: negative ("a bit annoyed"). End: positive ("Thank you, Matthias. Sorry I came in angry.").
+
+Quality: 5? Verification done via email code, accurate info, policy-compliant refund (30-day window), empathetic. Small issues: lots of small talk, but that's fine. Maybe 5. There's a lot of chitchat but no compliance failures. Score 5.
+
+Flags: none? Refund within policy. Verification done. No flags. Maybe none.
+
+Action items: agent sends email confirming downgrade and refund — owner: agent (Matthias), due unspecified. Refund to card 5-7 business days — that's a passive item; could list as action item? "Refund of $49 to Mastercard ending 6604, 5-7 business days" — owner billing/agent. I'll include email confirmation and refund processing.
+
+Notable details: two workspaces, Archive running since last November (10 months), refund only most recent $49 charge within 30-day policy, card ending 6604, verification code 441902 (maybe not needed), main workspace unchanged with 4 users, Archive last used ~February, Read-Only tier downgrade.

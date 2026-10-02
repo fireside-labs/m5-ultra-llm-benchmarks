@@ -1,0 +1,524 @@
+@id C14
+@date 2026-09-22 13:47
+@line Brightwater Family Medicine - Patient Financial Services (billing); transferred to Billing Coding Specialist
+@direction inbound
+@target 30000
+@seed 1414
+@diar_drop 0.14
+@speaker I IVR = Brightwater automated phone system
+@speaker A AGENT = billing representative (Corwin)
+@speaker C CALLER = patient
+@speaker W CALLER_SPOUSE = caller's wife, in the room on speakerphone
+@speaker B SCHEDULER = appointments scheduler (Bree), reached by a misrouted transfer
+@speaker S SPECIALIST = billing coding specialist (Ines)
+---
+I: Thank you for calling Brightwater Family Medicine. If this is a medical emergency, hang up and dial nine-one-one.
+I: Please listen carefully, as our menu options have recently changed.
+I: If you are calling about a bill, please note: accounts with an open billing dispute are placed on hold and are not referred to collections while the dispute is reviewed.
+I: For appointments, press one. For billing and payments, press two. For prescription refills, press three. For the nurse line, press four. To hear these options again, press star.
+C: [keypad tone]
+I: I'm sorry, I didn't understand your selection.
+C: [to someone in the room] I pressed three. I pressed three, Lucia.
+W: [background] Press it harder.
+C: You don't press it harder, it's a phone. [keypad tone]
+I: For appointments, press one. For billing and payments, press two. For prescription refills, press three—
+C: [keypad tone]
+I: Thank you. Please hold while we connect you.
+I: Para continuar en español, oprima nueve.
+I: At the end of this call, you may be asked to take a brief survey about your experience. To opt in, press one now. Otherwise, please continue to hold.
+C: [to wife] A survey. Oh, they're going to get a survey.
+W: [background] Press one.
+C: [keypad tone] I'm pressing one. They're getting a survey.
+I: Thank you. You have opted in to our survey.
+#pause 20
+#note hold music
+#pause 40
+I: Did you know? You can view and pay your statement online through the Brightwater patient portal.
+#pause 55
+#fill hold_announce transfer_wait
+C: [to wife] Still nothing. ... Yeah, I'll ask about the pills first, then the bill. ... I know. I know.
+W: [background] And don't let them tell you it's out of network again.
+C: Nobody's told me anything yet, I'm on hold.
+#pause 30
+A: Patient Financial Services, this is Corwin.
+C: Financial— wait. Is this— I pressed three. For refills.
+A: This is billing.
+C: Billing. Okay. Well, I pressed three for refills because I need my blood pressure pills renewed too, and I ended up with you guys anyway. So, lucky me, I guess, because I also need billing.
+A: Yeah, that happens. What do you need?
+C: Okay. Um. Okay, so, my name is Thaddeus Mbeki-Rowntree. M-B-E-K-I dash R-O-W-N-T-R-E-E. I'm calling about a statement I got, it's, it's a big one.
+A: [typing] Mbeki... dash... okay. Thaddeus. Got it.
+C: Don't you need my birthday or something?
+A: Nah, you're fine, I got you. There's only one of you in here. What's the statement?
+C: Uh, okay. Well. So it's, um, it's for one thousand two hundred and eighty-four dollars. For an urgent care visit. Which is insane. I was there for maybe forty minutes. They x-rayed my wrist and wrapped it.
+A: Uh-huh. One-two-eight-four, I see it.
+C: And the statement says the date of service was September fifteenth. But I wasn't there on the fifteenth. I was there on the fifth. The Saturday, the Saturday before Labor Day. I was moving a canoe off the car rack and it, it came down on my wrist.
+A: Okay.
+C: So the date's wrong too, is what I'm saying.
+A: Okay, well, the date's, whatever, the date's not really the issue. So it's showing the visit at the, uh, at the emergency level. Level five. And you were out of network, that's why it's so high.
+C: Out of network? It's your urgent care! It's Brightwater urgent care, at Millbrook! It's literally the same name as you!
+A: Look, that's what it says on my screen.
+C: [crosstalk] How can I be out of network at—
+A: [crosstalk] I just— sir, I'm just reading what it says.
+#fill billing_lookup smalltalk
+C: Okay. Okay. Let me back up. I already called about this. I called on the tenth, I spoke to a woman, very nice, she opened a dispute. She gave me a ticket number. I have it right here, it's D as in David, five, eight, eight, one, two.
+A: [typing] Yeah, I see a dispute note.
+C: So it's disputed. It's under dispute.
+A: Yeah, whatever, that doesn't stop the clock. If it's not paid by Friday it goes to collections.
+C: Friday? This Friday?
+A: This Friday, the twenty-fifth. That's when it hits ninety days or whatever, the system sends it out.
+C: Ninety days? I got the bill like two weeks ago!
+A: I'm just telling you what the system does.
+C: [exhales] Okay. I'm recording this call, by the way. Just so you know. I'm recording it on my end.
+A: Fine, whatever.
+C: Because I want to remember who told me what.
+A: Sure.
+C: And can you at least tell me what the twelve eighty-four is made of? Like, line by line?
+A: [typing] Uh. Yeah. Okay so there's two lines. Line one, the visit, ten ninety-eight. Line two, the x-ray, wrist, two views, one eighty-six.
+C: Ten ninety-eight for the visit.
+A: Ten ninety-eight.
+C: For forty minutes. That's, what, twenty-seven dollars a minute.
+A: I don't set the prices, sir.
+C: No, I know you don't. I'm just— I'm doing the math out loud. It's a habit. I'm an auditor.
+A: Okay.
+C: And the insurance paid nothing?
+A: Insurance paid, uh, zero. There's a, there's a code on it. "CO" something. It's a denial.
+C: A denial for what?
+A: It just says the code. I don't— I'm not coding. I'm billing.
+C: Okay. Okay. Can you read me the code?
+A: C-O, dash, uh, one-fifty? Fifteen? It's kind of— the screen cuts it off. One-five-oh. Or one-fifty-something.
+C: [to wife] He doesn't know what the code is.
+W: [background] Of course he doesn't.
+A: I can hear you, ma'am.
+W: [background] Good.
+#fill billing_lookup office_smalltalk
+A: So, look. What I can do, I can set you up on a payment plan today. Twelve months, no interest, it'd be like a hundred and seven a month. That way it doesn't go out.
+C: I'm not setting up a payment plan for a bill that's wrong.
+A: It's just an option.
+C: I understand it's an option. It's not my option. I'm— I disputed it. I told you. On the tenth. With the nice woman.
+A: Do you remember her name?
+C: She said her name was... Marguerite? No. Marisol? Something with an M. She was very nice. She said somebody would look at the coding. That was twelve days ago.
+A: Yeah, well, the note says "pt disputes charges, sent to coding queue." So it's in the queue.
+C: So it's in the queue and it's going to collections on Friday.
+A: Those are two different systems.
+C: [laughs] That's the problem, isn't it. That's literally the problem.
+A: I can take a card payment today if you want to make a partial—
+C: No. Thank you. No.
+#fill smalltalk2 billing_lookup
+#diar off
+C: Can you hear me? You went quiet.
+A: I'm here. I'm just looking at something.
+C: Okay.
+A: [typing] Yeah, so, it's also showing the, the guarantor is you, the insurance is Halvard, the PPO.
+C: The PPO, yes.
+A: Okay.
+#diar on
+C: Is there a supervisor? Or, or, the coding people? Can I talk to them directly?
+A: Coding doesn't usually take calls.
+C: Well, could they make an exception? Because I've got— I have time today. I took the afternoon.
+C: Can you at least check with somebody? About the date? Because if the date's wrong, the whole bill is wrong, right? Isn't that how this works?
+A: Hold on. Let me ask somebody.
+#hold 120
+A: Okay. So I asked, and it's, they said the statement date thing is a "known display thing." It doesn't change anything.
+C: A known display thing.
+A: That's what they said.
+C: So it's known that your statements show the wrong date, and nobody fixes it.
+A: I don't— I'm not IT, sir.
+C: Okay. And what happens Friday? Walk me through it. What happens on Friday?
+A: Friday the system flags it, and then it goes to the agency. Third party. They'd send you a letter and, and call you, probably.
+C: An agency. For a bill I'm disputing.
+A: Yep.
+C: [to wife] Did you hear that?
+W: [background] I heard it.
+#fill billing_lookup smalltalk2
+W: [background] Tell him you want somebody who knows the codes.
+C: My wife says— and she's right— I want to talk to somebody who actually understands the codes. Because I am not paying twelve hundred dollars for an ace bandage.
+A: There's a coding specialist. It's a wait.
+C: I'll wait.
+A: Fine. I'll send you to coding. Hold on.
+#note transfer attempted
+#hold 70
+B: Brightwater appointments, this is Bree, how can I help you?
+C: Appointments? No— no, I was being sent to coding. Billing coding. The billing guy, Corwin, was transferring me to coding.
+B: Oh, shoot. Sorry. I think he hit the wrong line, we're right next to each other on the transfer list. Okay. Do you know if it's the coding queue or the billing supervisor?
+C: Coding. Somebody who knows the codes.
+B: Okay. Let me try to send you to the coding queue. If it drops, call back and say "billing coding" to the operator, okay? Not the menu. The menu is, um, it's been weird.
+C: Yeah, I noticed.
+B: [laughs] Everybody's noticed. Okay, transferring you now. Sorry about that.
+C: No, thanks, Bree.
+#note transferred to billing coding queue
+#hold 210
+#fill hold_announce transfer_wait
+#diar off
+W: What if we just pay it and fight it after?
+C: We are not paying twelve hundred dollars to fight it after. Do you know how long it takes to get money back from these people?
+W: I know, I'm just saying, if it goes to collections—
+C: It's not going to collections. It's disputed.
+W: He said Friday.
+C: He said a lot of things. He said I was out of network at their own urgent care.
+W: That's true.
+C: The tuition payment's due the first, too. For Mateo. I'm not putting twelve hundred on the card the week before tuition.
+W: Okay. Okay. You're right.
+C: I'm always right.
+W: [laughs] You were not right about the canoe.
+C: I was not right about the canoe.
+#diar on
+#pause 50
+C: [humming along to hold music]
+W: [background] Please stop.
+C: It's catchy.
+W: [background] It's been the same eight seconds for twenty minutes.
+C: That's what makes it catchy.
+#pause 40
+C: [phone buzzing] Oh— hang on, that's Mateo. [to phone] Hey, bud. ... I'm on hold with the doctor's billing. ... No, the wrist. The wrist bill. ... Yeah. ... No, it's fine, it's healed, I'm just fighting about money. ... Okay. Love you. ... Yeah, Sunday, we'll call. Bye.
+W: [background] Is he okay?
+C: He's fine. He wanted to know if we're coming up for family weekend. I said Sunday. ... Is that right? Is family weekend the, uh—
+W: [background] October.
+C: October. Okay.
+#pause 30
+#diar off
+C: Twelve eighty-four. For a wrist.
+W: Did he say collections?
+C: He said Friday. He said if it's not paid by Friday.
+W: We are not paying it by Friday.
+C: I know we're not paying it by Friday.
+W: Did you write down his name?
+C: Corwin. C-O-R-W-I-N, I think.
+W: And the recording's on?
+C: The recording's on. It's in the little app.
+#diar on
+#fill family_side smalltalk2
+C: [to wife] And, uh, what was the other thing, the pills? ... Right, the amlodipine. I've got like four left. ... No, I'll call the nurses after. Option four, apparently, not three. Three gets you billing. [laughs] ... I don't know, they changed it.
+W: [background] Write it down.
+C: I'm writing it down.
+#pause 45
+#fill hold_announce connection_issues
+#note recorded message: Thank you for your patience. A billing specialist will be with you shortly.
+#pause 60
+S: Hi, thank you so much for holding. This is Ines, I'm one of the coding specialists in Patient Financial Services. Who do I have the pleasure of speaking with?
+C: Thaddeus. Mbeki-Rowntree. Hi.
+S: Hi Thaddeus. I'm sorry about the wait. Before I go into anything, I do need to verify you. Can you give me your date of birth?
+C: Oh, see, the other guy didn't ask. Uh, March seventeenth, nineteen sixty-nine.
+S: Thank you. And the address on file?
+C: Seven Tamarack Row. Unit, uh, no unit. Just seven.
+S: And the last four digits of the phone number on the account?
+C: Four-four-zero-nine.
+S: Perfect, thank you, you're verified. Okay. So Corwin left me a little note that says, quote, "patient disputes urgent care bill, says OON is wrong." So I'm guessing you've had a day.
+C: [laughs] I've had a day. I've had a month. Okay. So.
+S: Tell me from the top. I want to hear it from you.
+C: Okay. September fifth, Saturday, I hurt my wrist. Canoe. Don't ask.
+S: [laughs] I won't ask.
+C: Went to your urgent care at Millbrook. They x-rayed it, said it's a sprain, not broken, wrapped it, gave me a, uh, a splint thing. I was in and out in under an hour. I paid my, my urgent care copay at the desk. Then I get a statement for one thousand two hundred eighty-four dollars, it says the visit was on September fifteenth, which it wasn't, and the guy just now told me I was out of network, and that if I don't pay by Friday it goes to collections. And I already opened a dispute on the tenth.
+S: Okay. Thank you, that's really clear. Give me a minute to pull up the claim itself, not just the statement. The statement is kind of the summary, the claim is the actual thing we sent to Halvard.
+C: Okay.
+#fill billing_lookup ehr_navigation @A=S
+S: Okay. So, first thing. You are not out of network. Brightwater Urgent Care at Millbrook is contracted with Halvard, it's in network for your plan. I'm looking at the remit and I think I see where Corwin got that from, there's a denial reason code on the first line that's, um, it's a "non-covered level of service" code, and if you don't know the codes it kind of looks like a network denial. But it isn't. That's not right, and I'm sorry you were told that.
+C: So I'm in network.
+S: You're in network.
+C: Lucia, I'm in network.
+W: [background] I told you.
+S: [laughs] She told you.
+C: She always tells me.
+S: Okay so here's what actually happened. The visit was coded, um, as a nine-nine-two-eight-five. That's an emergency department visit, the highest level, level five. And that's not even a code an urgent care should be billing. It's like— it's for the ER, for, you know, really serious stuff. Your visit, from the notes, is a, a normal established-patient visit, moderate complexity, that'd be a nine-nine-two-one-four. Plus the x-ray, which was billed correctly.
+C: So somebody typed the wrong code.
+S: Somebody picked the wrong code. It happens more than it should when the urgent care's busy, there's a dropdown and the ER codes are right under the urgent care ones. It's on us. So Halvard got a claim for an ER level-five visit at an urgent care, said "that's not a covered level of service at this place of service," and it all fell to you as patient responsibility. That's the twelve eighty-four.
+C: Okay. That makes way more sense than "out of network."
+S: Yeah.
+#fill smalltalk office_smalltalk
+S: And the date. You said the fifteenth on the statement?
+C: The statement says nine-fifteen.
+S: Okay, the claim says nine-oh-five. Date of service September fifth. So the claim to Halvard is right, it's only the patient statement that's printing it wrong. That's— ugh, I've actually seen that this month, our statement template is dropping a digit or adding one, I'm going to send that to the statement team too. But for your purposes, the date of service is the fifth.
+C: The fifth. Good. Because I was going to say, on the fifteenth I was at work, I have a badge log.
+S: [laughs] You came prepared.
+C: I'm an auditor. By trade. It's a sickness.
+S: Oh, you're my people.
+C: [laughs]
+C: Can I tell you what my insurance sent me? Because I got the EOB thing too, the explanation of benefits.
+S: Oh, yes, please, that's really helpful actually.
+C: Okay, it says, um, "Claim processed. Provider: Brightwater Urgent Care Millbrook. Service date, nine slash oh five slash twenty-six." See, nine-oh-five. "Billed, one thousand two hundred eighty-four. Allowed, zero. Plan paid, zero. You may owe, one thousand two hundred eighty-four." And then there's a little note at the bottom, "remark code N, uh, N-ninety-five— no, that's a smudge— N-five-nine? Service not covered at this place of service."
+S: That's exactly it. "Not covered at this place of service." That's the ER code from an urgent-care location. Thank you, that confirms it. And it says the fifth, so Halvard has the right date.
+C: So Halvard has the right date and you have the wrong date.
+S: Our statement has the wrong date. Our claim is fine. It's the printing.
+C: Okay. As an auditor I would like to note that's two different errors in one bill.
+S: [laughs] Noted. Your auditor's report is noted.
+C: [laughs] I'll send you an invoice.
+S: Please don't, I'll have to code it.
+C: [laughs]
+#fill ehr_navigation smalltalk @A=S
+S: Can I ask a clinical-ish question, just for the coding? Did they do anything besides the x-ray and the splint? Like any injections, stitches, anything like that?
+C: No. Nothing. They poked at it, they said "does this hurt," I said "yes," they took a picture, it wasn't broken, they gave me the splint and told me to take ibuprofen.
+S: Okay, that's what the note says too. So a nine-nine-two-one-four is right. Moderate. Because they had to rule out a fracture.
+C: Okay. And not a— what was it— the two-eight-five.
+S: Definitely not a nine-nine-two-eight-five. That's like, you came in by ambulance level of thing.
+C: I came in by Subaru.
+S: [laughs] Subaru is a different code.
+#fill smalltalk2 office_smalltalk
+C: And can I just ask— the first guy. Corwin. Is he new?
+S: I— I can't really talk about other staff, I'm sorry. But I am going to put a note on what you were told, because you shouldn't have been told you were out of network. That's on us.
+C: Okay. I appreciate that. I don't want him to get in trouble, I just— he was, he was a lot.
+S: I hear you. I'll put that in my note too.
+C: Thank you.
+#fill billing_lookup ehr_navigation @A=S
+#diar off
+W: Can I ask her something?
+C: My wife wants to ask you something. I'm going to put you on, on the, it's already on speaker. Go ahead.
+W: Hi. Sorry. While you've got him up, can you check my account too? I had a visit in August, I never got a bill, which honestly worries me more than getting one.
+S: Hi! I'd be happy to look, but I'd need to verify you separately, since it's your own account. I can do that right after we finish Thaddeus's, or you can call in anytime and ask for me.
+W: Oh. Sure. No, you know what, it's fine. If I haven't gotten a bill I'm not going to go looking for one. [laughs]
+S: [laughs] Fair enough. The offer stands.
+W: Thank you.
+#diar on
+C: She's very practical.
+S: I like her.
+#fill family_side connection_issues
+#fill ehr_navigation billing_lookup @A=S
+S: Okay. So what I'm going to do is recode the visit to a nine-nine-two-one-four and send Halvard a corrected claim. That's a replacement claim, so it replaces the original, it's not a new bill.
+C: Okay.
+S: Let me give you the original claim number in case you talk to Halvard. It's two-six-oh-nine, dash, three-three-four-one-eight.
+C: Two six oh nine, three three four... one eight.
+S: Three-three-four-one-eight. Yep.
+C: Got it.
+S: And then once Halvard reprocesses it, based on your benefits, it should come out as your urgent-care copay, which is seventy-five, plus your coinsurance on the x-ray. So your estimated responsibility would be about one eighty-four.
+C: One forty-eight?
+S: One-eight-four. A hundred eighty-four dollars. Seventy-five copay plus a hundred and nine on the x-ray coinsurance.
+C: Okay, one eighty-four. And I already paid the seventy-five at the desk.
+S: Let me look. [typing] Hmm. I don't see a payment posted on the fifth. Do you remember how you paid?
+C: I— I think I paid. Or I think they said they'd bill me. Honestly I had a, I had a bag of ice on my wrist and I was in pain, it's a blur.
+S: Totally understandable. If you find a receipt, send it over. Otherwise it's all going to be on the corrected statement and you'll see exactly what's left.
+C: Okay.
+C: Can I ask you something about the copay? The seventy-five. If I paid it on the fifth— I'm going to look for the receipt tonight— but if I did pay it, where would it be?
+S: Good question. If you paid at the urgent care desk, it'd post as a "front desk payment" against the visit. Let me search by your account for anything around that date. [typing] So I see... a payment of seventy-five dollars on August second, that's for a different visit, the one with Dr. Okonjo, your physical—
+C: Oh, right, that was the physical. That's a different thing.
+S: Yeah. So that one's applied to that visit, correctly. And for September fifth, nothing. So either it wasn't collected at the desk or it didn't post. If you find a receipt or a card charge on your statement from the fifth, send that through the portal with the discharge papers and I'll apply it.
+C: Okay. And if I didn't pay it—
+S: Then it's just part of the one eighty-four. The seventy-five is in there. No surprises.
+C: Okay. Good. No surprises is all I want.
+#fill ehr_navigation smalltalk @A=S
+C: Can I ask— how long have you been doing this? You're very good at it.
+S: Oh, thank you. Coding, eleven years. Here, four. I used to do it for an orthopedic group, so wrists are kind of my— [laughs] —my comfort zone.
+C: Well, it shows. Seriously.
+S: That's very kind. It's honestly the fun part of the job, the detective part. Figuring out why something came out weird.
+C: That's exactly how I feel about audits. People think it's boring. It's detective work.
+S: Right? Everyone thinks we just sit and type numbers.
+C: We sit and type numbers, but with suspicion.
+S: [laughs] With suspicion. I love that.
+#fill office_smalltalk smalltalk2
+#fill smalltalk2 family_side
+S: And I'm putting a hold on the account right now so nothing goes anywhere while we redo this.
+C: Thank you. That's— thank you.
+S: Of course. Give me a sec while it, um— the screens are slow today.
+C: Take your time. I've been on this phone for an hour and a half, what's another five.
+S: [laughs] Don't jinx me.
+#fill ehr_navigation connection_issues @A=S
+S: Okay, so, I'm in the claim correction screen now. I'm going to read you what I'm changing as I go, just so you know exactly what's happening, and because, honestly, your auditor brain will probably like it.
+C: [laughs] It will.
+S: Line one. Place of service, twenty, urgent care. That's right, leaving that. Procedure code, I'm changing nine-nine-two-eight-five to nine-nine-two-one-four. Modifier, none. Diagnosis, uh, S-six-three, point, five-zero-two-A, that's sprain of the left wrist, initial encounter—
+C: Right wrist.
+S: Sorry?
+C: It was the right wrist. Not the left.
+S: [typing] Oh. Let me look at the note. ... You're right, the note says right wrist, the diagnosis code says left. Okay, so that's a third error, I'm going to fix that too. S-six-three, point, five-zero-one-A, right wrist.
+C: [laughs] Three errors.
+S: Three errors. Your audit report is getting long.
+C: I'm going to need a bigger binder.
+S: [laughs] Okay. Line two, the x-ray, seven-three-one-one-zero— no, sorry, seven-three-one-zero-zero, two views. That's right. Diagnosis on that line, same fix, right wrist.
+C: Okay.
+S: And the claim frequency, seven, replacement of prior claim, referencing the original claim number. Two-six-oh-nine, three-three-four-one-eight.
+C: Got it.
+#fill ehr_navigation billing_lookup @A=S
+S: Okay, it's saved, and it's in the batch. It'll go out tonight.
+C: Tonight. Okay. Can I— this is going to sound paranoid. Can I get something in writing that you did this? Just for my file.
+S: Not paranoid at all. When the corrected statement comes, it'll show the corrected codes on it. And if you want, I can send you a portal message today that just says "corrected claim submitted," with the date. Would that help?
+C: That would help, yes.
+S: Okay, I'll send that this afternoon.
+C: Thank you.
+#fill smalltalk office_smalltalk
+#diar off
+C: Sorry, are you— I think the line's doing the thing again.
+S: I— [inaudible] —can you hear—
+C: You're breaking up a little.
+S: [inaudible] —the batch tonight and then— [inaudible]
+C: I lost the middle of that.
+S: Sorry. Is this better? I switched headsets.
+C: Much better.
+S: I said, it goes out in tonight's batch, and then Halvard picks it up in the morning.
+C: Got it.
+#diar on
+#fill connection_issues smalltalk2
+C: Can I ask— this is kind of a, a general question. Why does an urgent care visit with no insurance payment even get sent to me as a bill before anybody looks at it? Like, it went from denied straight to "you owe twelve hundred."
+S: Honestly? That's a good question and it's a fair complaint. When a claim denies for a coding reason, it's supposed to go to a work queue first, so someone like me looks at it before the patient gets billed. But this one denied with a reason code that our system maps to "patient responsibility," so it skipped the queue and went right to your statement. I'm putting that in my note to my manager too. That's a process problem.
+C: That's a, that's a mapping problem.
+S: [laughs] Another master data problem.
+C: I told you. It's always master data.
+#fill billing_lookup ehr_navigation @A=S
+S: Okay. While that's thinking. Can I ask, do you have the discharge papers from the urgent care? The after-visit summary, it's usually like two or three pages, it has the diagnosis and what they did.
+C: Uh... Lucia, do we have the urgent care papers? The— from the wrist.
+W: [background] In the drawer. The kitchen drawer. With the warranty stuff.
+C: She says we have them. In the drawer of shame.
+S: [laughs] Everyone has one. If you can, take a photo of those pages and send them to me through the patient portal, as a message to billing, and put my name on it, Ines. It's not required, but if Halvard pushes back on the recode, it helps me to have exactly what the patient was given, because it shows the diagnosis and that it was a simple sprain.
+C: Through the portal. Message to billing, attention Ines.
+S: Exactly.
+C: I can do that tonight.
+S: Perfect.
+#fill smalltalk office_smalltalk
+C: Can I ask you something kind of off topic? As an auditor. How does this even happen? Like, from a controls standpoint. Somebody picks a code from a dropdown and nobody looks at it?
+S: [laughs] Oh, you want the real answer?
+C: I want the real answer.
+S: So there are edits. There's a scrubber, software that checks claims before they go out, and normally it would catch an ER code from an urgent care location. But the urgent care at Millbrook is in the same building as, um, as the old hospital outpatient department, and their location codes got, I'll just say, got tangled up when they moved systems. So the scrubber thought it was a hospital location. So it let it through.
+C: Ohh. So it's a master data problem.
+S: It's a master data problem. [laughs] You sound like our IT director.
+C: It's always master data. Every audit I've ever done, it's master data.
+S: I believe you. Anyway, I've seen maybe, I don't know, a handful of these this month, so I'm flagging it to my manager too, so they can look at the location setup.
+C: Good. Good. See, that's all I want. I want somebody to say "oh, that's wrong, we'll fix it."
+S: That's wrong, we'll fix it.
+C: [laughs] Thank you.
+#fill billing_lookup ehr_navigation @A=S
+S: Okay so let me tell you the timeline so you're not left wondering. The corrected claim goes to Halvard electronically, today or tomorrow morning, there's a batch. Halvard usually reprocesses a corrected claim in about seven to ten business days. Once they do, I'll call you to let you know what came back, and then a corrected, itemized statement goes out in the mail with the right date and the right amount.
+C: You'll call me.
+S: I'll call you. Within ten business days. So by, um, by October sixth at the latest. If Halvard is slow I'll still call you and tell you where it is.
+C: Okay.
+S: And you can always reach me directly. My extension is two-two-seven-one. If you call the main billing number, ask for Ines at extension two-two-seven-one.
+C: Two-two-seven-one. Writing it down. Lucia, write down two-two-seven-one.
+W: [background] Two two seven one.
+C: She's got it.
+#fill smalltalk2 family_side
+C: Oh, and— okay so the other thing, the money. Is there any, um, anything you can do on the hundred eighty-four? I mean it's fine, it's fair, I just— it's been a lot of month.
+S: Actually yes. We have a prompt-pay discount. It's in our financial policy: if the patient balance is paid in full within thirty days of the statement date, it's twenty percent off. I can note it on the account now so that when the corrected statement generates, the discount shows up automatically if you pay it by the due date.
+C: Twenty percent. On the one eighty-four.
+S: On whatever the final balance is after Halvard. I don't want to promise the exact number till it reprocesses, but yes, twenty percent if paid within thirty days.
+C: Okay. That's— thank you. I didn't know you had that.
+S: Not everybody asks. [laughs]
+C: Well, I'm asking.
+S: Noted on the account. "Eligible prompt-pay, twenty percent, per policy, apply to corrected statement."
+#fill ehr_navigation billing_lookup @A=S
+#diar off
+C: Sorry, my wife is asking me something. One second. ... What? ... The HSA. Okay. Can I pay it with the HSA card when it comes?
+S: Yes, absolutely, an HSA card works like any debit card for us. You can do it on the portal or call it in.
+C: Okay. Because last year I paid out of pocket and then had to do the reimbursement form and it was, it was a whole thing.
+S: Oh, the HSA reimbursement forms are— yeah. Just use the card.
+C: Just use the card. Lesson learned.
+#diar on
+#fill connection_issues smalltalk
+C: You there? I think you cut out.
+S: I'm here, sorry, I'm here. My headset did a thing.
+C: Okay. I thought I lost you, I was going to cry.
+S: [laughs] Nope, still here. Not getting rid of me that easily.
+#fill office_smalltalk smalltalk2
+C: So my wrist, by the way. Since you asked— you didn't ask, but— it's fine now. It was a sprain. I'm out of the splint. I can, uh, I can type again, which as an auditor is, you know, kind of important.
+S: Oh, that's good. Canoe's okay?
+C: The canoe is fine. The canoe is totally fine. The canoe won.
+S: [laughs]
+C: My son wants to take it out on the reservoir next weekend and I said, you know what, you carry it.
+S: Smart.
+C: I learned.
+#fill family_side smalltalk
+C: Can I ask how the corrected claim works? Do I have to do anything with Halvard? Do I call them?
+S: You shouldn't have to. It's a replacement claim, it carries a frequency code that tells Halvard, "throw away the old one, use this one." So they'll reprocess and send you a new EOB. You'll probably get that before our statement, actually, because they're faster at mail than we are.
+C: [laughs] Okay.
+S: When you get the new EOB, it should show the urgent care visit and the x-ray, and an amount you may owe. If that amount is about one eighty-four, we're good.
+C: And if it's not?
+S: Then you call me. Extension two-two-seven-one.
+C: Two-two-seven-one.
+S: You'll have it memorized by the end of this call.
+C: I already do. [laughs]
+#fill ehr_navigation billing_lookup @A=S
+C: You know what's funny. I do this for a living. Not medical, I audit, uh, mostly construction companies. Job costing. And the number one thing I tell people is, "the system is only as good as what you put into it." And here I am.
+S: Here you are. [laughs] Garbage in.
+C: Garbage in, twelve hundred dollars out.
+S: [laughs] I'm stealing that.
+C: It's yours.
+#fill smalltalk2 office_smalltalk
+S: Sorry, one second, I'm getting a message from my lead, I need to answer her real quick. Can I put you on a short hold? Like a minute.
+C: Sure.
+#hold 95
+#fill hold_announce
+S: Thanks for holding. Sorry about that. It was about something else, another account. Okay. Where was I.
+C: You were about to tell me everything's going to be fine.
+S: [laughs] Everything's going to be fine.
+C: Okay, devil's advocate. What if Halvard looks at the corrected claim and says no anyway? What happens then?
+S: Then we appeal. If the corrected claim comes back with anything weird, I file a first-level appeal with Halvard and attach the visit note and the x-ray report. That's why the discharge papers help. For a straightforward urgent care visit with an x-ray, I'd be really surprised if it got denied, but if it does, the appeal is on us, not you. You don't have to write any letters.
+C: I don't have to write letters.
+S: You don't have to write letters. I know you'd write a great letter.
+C: [laughs] I would write a devastating letter.
+S: I believe it. Save it for the survey. [laughs]
+C: Oh, you guys are getting a survey. You're getting a good survey. Corwin's getting, uh, a different survey.
+S: [laughs] I didn't hear that.
+#fill billing_lookup ehr_navigation @A=S
+C: And, um, timing-wise, is there a, a deadline for the corrected claim? Like, can it be too late?
+S: There's a timely filing limit, but for Halvard corrected claims it's, um, a year from the date of service for our contract. So we're very much fine. September fifth of next year. We're not anywhere close.
+C: Okay, good. As long as nobody sits on it for a year.
+S: Nobody's sitting on it. It goes tonight.
+C: Tonight.
+S: Tonight.
+#fill smalltalk office_smalltalk
+C: Okay, other question. The ten ninety-eight. If a visit like mine is, what, normally, what would it normally cost? Just so I have a sense. If you can say.
+S: I can give you a ballpark. Our charge for a nine-nine-two-one-four is a lot less than an ER level five, but honestly, what matters for you is the allowed amount under your plan, and with your plan, the urgent-care visit is just your seventy-five copay. The plan pays the rest. So the charge amount on the statement will look bigger than what you owe, but you'll only owe the copay plus the x-ray coinsurance.
+C: Okay. So, the hundred eighty-four.
+S: About a hundred eighty-four, yes.
+C: About.
+S: About. I can't promise to the penny until Halvard processes it. That's why I'm calling you after.
+C: That's fair. That's actually the right answer. If you'd said "exactly one eighty-four" I'd have been suspicious.
+S: [laughs] See, I know my audience.
+#fill ehr_navigation smalltalk2 @A=S
+#diar off
+C: Sorry— sorry, the dog. Hang on. Juniper, no. No. Off the— Lucia, can you get her? She's on the counter. ... Thank you. Sorry.
+S: [laughs] No worries. What kind of dog?
+C: She's a, a mutt. Shepherd and, and something with a lot of opinions.
+S: Those are the best ones.
+C: She's the boss of the house.
+S: I have a cat who's the boss of mine. Same energy.
+#diar on
+#fill family_side smalltalk
+S: Oh, two more things on the insurance side before I forget. One, do you have any other insurance? Anything through your wife's job, or Medicare, or anything?
+C: No. Just Halvard. Lucia's on mine.
+S: Okay, I'm going to mark "no other coverage," because sometimes Halvard holds claims when that's blank. [typing] Done. And two— this is important— because it was an injury, Halvard might mail you an accident questionnaire. It's a one-page form, it asks, like, "was this a work injury, was it a car accident, is anybody else liable." If you get it, please fill it out and send it back to Halvard right away, because if you don't, they'll sit on the claim until they get it.
+C: An accident questionnaire. From Halvard. In the mail.
+S: In the mail. It's usually a yellow-ish envelope. People throw it away because it looks like junk.
+C: Okay, so: not junk. Fill it out. Send it back.
+S: Exactly. And for the canoe, you'd just check "injury at home, no other party liable."
+C: Unless I sue the canoe.
+S: [laughs] Please don't sue the canoe.
+C: [laughs] I'll let it go. This time.
+#fill ehr_navigation billing_lookup @A=S
+C: Can I ask one more process thing? Will the corrected statement say "corrected" on it? Like, how do I know it's the new one and not the old one coming again?
+S: It'll have a new statement date, and the line items will show the new codes. And at the top there'll be a message, "this statement reflects adjustments to your account." And the date of service will say nine-oh-five.
+C: If it says nine-fifteen again, I'm calling you.
+S: If it says nine-fifteen again, please call me. [laughs] Extension two-two-seven-one.
+C: Two-two-seven-one.
+#fill smalltalk2 office_smalltalk
+C: I have to tell you, I was really ready to, to escalate this. Like, to write to your CEO. My wife had a draft going.
+S: Oh no. [laughs]
+C: She had a draft going. It started with "To whom it may concern, I am writing on behalf of my husband, who is an auditor."
+S: [laughs] That's a strong opening.
+W: [background] It was a very good draft.
+C: She says it was a very good draft.
+S: I'm sure it was. I'd like to think we don't need it now.
+C: We'll keep it in the drawer. With the urgent care papers.
+S: [laughs] The drawer of shame.
+C: The drawer of shame.
+#fill family_side connection_issues
+S: Okay. Before I let you go, let me read back what the account looks like right now so we're on the same page, and then I'll do the recap.
+C: Go ahead.
+S: Okay, account summary as of today. Patient balance, one thousand two hundred eighty-four dollars, "pending adjustment." Status: active. Holds: none. Last statement, September eighteenth. Dispute ticket D-five-eight-eight-one-two, open. Next statement cycle, October eighteenth.
+C: Okay.
+S: Great, so that all looks right. The balance will drop once the corrected claim comes back.
+C: Pending adjustment, okay.
+#diar off
+W: Ask her about Friday. The collections guy.
+C: Eh, she's got it handled, she put the hold on.
+W: Okay.
+#diar on
+S: Sorry, did you say something?
+C: No, no, my wife just— no, we're good.
+#fill ehr_navigation office_smalltalk @A=S
+S: Okay, here's the recap. One: you're in network, that was a coding error, not a network problem. Two: I'm recoding the visit from nine-nine-two-eight-five to nine-nine-two-one-four and sending Halvard a corrected claim, today or tomorrow. Three: the date of service is September fifth, the statement printed it wrong, I'm reporting that. Four: your estimated responsibility after Halvard is about a hundred eighty-four, and the twenty-percent prompt-pay discount is noted if you pay within thirty days of the corrected statement. Five: you'll send me the urgent care papers through the portal, attention Ines. Six: I'll call you within ten business days, by October sixth, with what Halvard did, and the corrected itemized statement comes by mail after that. And you've got my extension, two-two-seven-one.
+C: That's— yes. That's all of it. And the blood pressure pills, I know that's not you.
+S: That's not me, I'm sorry. If you call back, press four for the nurse line, they can send a refill request to your doctor. Or the pharmacy directly.
+C: Four. Not three.
+S: [laughs] Not three. I've heard about three.
+C: Okay. I'll call them after this.
+S: Is there anything else I can help with today?
+C: No. Honestly, Ines, thank you. You're the first person who's actually explained anything. I came into this call ready to fight.
+S: I could tell. [laughs] And you had every reason to. I'm sorry about how the first part of the call went.
+C: Not your fault.
+S: Well. I'll be talking to you by the sixth. Take care of that wrist.
+C: Will do. Bye now.
+S: Bye, Thaddeus.

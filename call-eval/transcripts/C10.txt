@@ -1,0 +1,664 @@
+CALL TRANSCRIPT
+Call ID: C10
+Date/time: 2026-09-08 09:05
+Line: Stackmoor (project management SaaS) - Customer Support, Priority Queue
+Direction: inbound
+Speakers: AGENT = Tier 1 support engineer; CUSTOMER = IT administrator at a customer company; CUSTOMER_2 = customer's IT director (joined by conference from an airplane)
+Source: automatic speech-to-text with speaker diarization; timestamps are call-relative. [inaudible], [crosstalk] and [background] marks are from the transcription service.
+------------------------------------------------------------
+[00:00:01] AGENT: Thanks for calling Stackmoor support, you're speaking with Arjun. What can I help with?
+[00:00:07] CUSTOMER: Hi Arjun. Okay. So, um, nobody in my company can log in. Since yesterday morning. I've got people literally standing at my desk.
+[00:00:18] AGENT: Oh no. Okay, that's a priority, let's get on it. Can I get your name, the email on the account, and the workspace?
+[00:00:27] CUSTOMER: It's Mina, Wilhelmina Castellanos-Reid. Email is mina dot c-r at fennimore-tile dot com. Workspace is Fennimore Tile and Stone.
+[00:00:36] AGENT: Thanks, Mina. I've just sent a verification code to that email. Can you read it to me when it comes in?
+[00:00:45] CUSTOMER: Okay... it's here. Seven-seven-zero, three-one-eight.
+[00:00:48] AGENT: Perfect, you're verified, and I can see you're the account owner on Fennimore Tile and Stone. So tell me what's happening when people try to sign in.
+[00:00:58] CUSTOMER: So we use single sign-on, through our identity provider, and when people click "Sign in with SSO," it goes to our company login page, they put in their password, they do the push notification thing, and then it comes back to Stackmoor and just says "Something went wrong, please try again." And then it loops.
+[00:01:24] AGENT: Okay. And this started yesterday morning?
+[00:01:27] CUSTOMER: Yesterday, Monday, first thing. I thought it was a blip, so I didn't call yesterday, I figured it'd fix itself. It didn't.
+[00:01:36] AGENT: Got it. Roughly how many users are affected?
+[00:01:41] CUSTOMER: Um, about forty? Most of the office. Well, I don't know exactly. A lot.
+[00:01:47] AGENT: Okay, about forty. And has anything changed on your side recently? Identity provider settings, certificates, new security policies, anything like that?
+[00:01:55] CUSTOMER: Hmm. We— okay, so our IdP certificate, the signing certificate, we rotated that. My colleague Dariusz did it before he went on leave. I think that was on the thirtieth? End of August.
+[00:02:10] AGENT: Okay, that's a really useful clue. A certificate rotation is one of the most common causes of exactly this. Let's dig in.
+[00:02:20] AGENT: Can you tell me what time zone your workspace is set to? It's under Settings, General.
+[00:02:27] CUSTOMER: Settings... General... it says Mountain.
+[00:02:31] AGENT: Okay, and is that correct for you?
+[00:02:34] CUSTOMER: Yeah, that's right.
+[00:02:37] AGENT: Great, just ruling things out.
+[00:02:40] AGENT: Can you check whether you have any browser extensions running? Ad blockers, password managers, that kind of thing?
+[00:02:48] CUSTOMER: Um, there's a password manager and, uh, something my company installed, I don't know what it is.
+[00:02:56] AGENT: Okay. Can you try disabling the password manager just for this test?
+[00:03:01] CUSTOMER: Sure. ... Disabled.
+[00:03:03] AGENT: And try logging in again.
+[00:03:07] CUSTOMER: Same thing.
+[00:03:09] AGENT: Okay, we can turn it back on. That wasn't it.
+[00:03:14] CUSTOMER: Is this call being recorded? I'm just curious.
+[00:03:18] AGENT: Yes, our calls are recorded for quality and training.
+[00:03:21] CUSTOMER: Okay. Hi, training people. [laughs]
+[00:03:24] AGENT: [laughs] They'll appreciate that.
+[00:03:26] CUSTOMER: [to coworker] The new hire starts Monday? ... Okay, does she need a laptop? ... And a phone? ... Okay, put it in the form. The form. Please use the form.
+[00:03:39] AGENT: [laughs] The form.
+[00:03:41] CUSTOMER: Nobody ever uses the form.
+[00:03:44] AGENT: I'm going to look up the exact error code in our internal knowledge base. One second.
+[00:03:51] CUSTOMER: Sure.
+[00:04:22] AGENT: Okay. There are a few possible causes listed. Let's keep narrowing it down.
+[00:04:29] AGENT: Sorry, my cat just walked across my keyboard. If you see a weird message in the chat, that was her.
+[00:04:37] CUSTOMER: [laughs] I didn't see anything. Yet.
+[00:04:40] AGENT: [laughs] She types better than me sometimes.
+[00:04:44] AGENT: Can you check one thing for me? In the admin console, under "Domains," is your company domain showing as verified?
+[00:04:53] CUSTOMER: Domains... yes, there's a green check next to it. "Verified."
+[00:04:57] AGENT: Perfect. That rules out a domain verification problem.
+[00:05:02] AGENT: Can you sign out completely, close the tab, and sign back in for me?
+[00:05:08] CUSTOMER: Signing out... closing... okay, opening a new tab.
+[00:05:13] AGENT: And go to the login page.
+[00:05:15] CUSTOMER: Okay. It's asking for my email. Typing it. And it's sending me to, um, the company sign-in page.
+[00:05:23] AGENT: That's expected. Go ahead and continue.
+[00:05:26] CUSTOMER: And... same thing. Bounced back.
+[00:05:30] AGENT: Okay. Thank you for trying that.
+[00:05:32] AGENT: Can you check the clock on your computer for me? Sometimes if the system clock is off, sign-in tokens get rejected.
+[00:05:42] CUSTOMER: The clock? Um, it says, uh, it's synced. It matches my phone.
+[00:05:47] AGENT: Okay, good, we can rule that out.
+[00:05:51] AGENT: I'm going to pull the logs for your workspace. That takes a minute or two, they're big.
+[00:05:59] CUSTOMER: Sure.
+[00:06:00] AGENT: While that runs— are you the only admin on the account or are there others?
+[00:06:08] CUSTOMER: There's me and, um, one other person, but they're on leave this month.
+[00:06:14] AGENT: Okay, good to know.
+[00:06:42] AGENT: Okay, the logs are loading.
+[00:06:44] CUSTOMER: Sorry, I'm eating a granola bar. I skipped breakfast because of all this.
+[00:06:50] AGENT: Oh, no, go ahead. You need fuel.
+[00:06:53] CUSTOMER: [laughs] This is my fuel. Sad.
+[00:06:56] CUSTOMER: I'm going to have to give a presentation about this at our Friday meeting, I just know it.
+[00:07:03] AGENT: [laughs] Well, you'll have the email summary to work from.
+[00:07:08] CUSTOMER: That's true. I'll just read it out loud. [laughs]
+[00:07:12] AGENT: Can you try it on your phone? Just the mobile browser, not the app.
+[00:07:18] CUSTOMER: Phone... hold on, let me find it. [laughs] It's always in the other room.
+[00:07:25] AGENT: [laughs] Take your time.
+[00:07:27] CUSTOMER: Okay. Going to the site. Signing in... same thing on the phone. Bounces.
+[00:07:34] AGENT: Okay. So it's definitely not one device.
+[00:07:37] AGENT: Can you check whether your company uses a proxy or VPN for web traffic?
+[00:07:44] CUSTOMER: Um, there's a VPN, but only when we're remote. I'm in the office today.
+[00:07:50] AGENT: Okay. And the affected people are mostly in the office too?
+[00:07:56] CUSTOMER: Yeah, mostly.
+[00:07:58] AGENT: Okay, so the VPN probably isn't involved.
+[00:08:01] AGENT: Can you try the login page with the "?debug=1" added to the end of the URL? It gives us a little more detail on the error page.
+[00:08:12] CUSTOMER: Question mark debug equals one. Okay. It's loading... There's a longer error now. A trace ID.
+[00:08:19] AGENT: Can you paste that trace ID in the chat?
+[00:08:23] CUSTOMER: Pasted.
+[00:08:25] AGENT: Thank you, that lets me find the exact request in our logs.
+[00:08:51] AGENT: One second, I'm searching our logs for that trace ID. Our log search is slow with big date ranges.
+[00:08:59] CUSTOMER: Okay.
+[00:09:36] AGENT: Okay, found it. It confirms the rejection happens when we validate the sign-in response. Good, that's consistent.
+[00:09:44] AGENT: Can you open a terminal or command prompt? Don't worry, I'll walk you through it.
+[00:09:51] CUSTOMER: Uh, sure. Command prompt... okay, black window.
+[00:09:55] AGENT: Type "nslookup" then a space, then our login domain, and press enter.
+[00:10:00] CUSTOMER: [typing] Okay. It gave me a couple of addresses.
+[00:10:05] AGENT: Perfect, that means DNS is resolving fine. You can close that.
+[00:10:10] AGENT: What browser are you on, and do you know the version?
+[00:10:15] CUSTOMER: Firefox. The version, um, hold on. Help, about... it says it's up to date.
+[00:10:22] AGENT: Perfect, up to date is all I need.
+[00:10:26] CUSTOMER: It did that thing where it wanted to restart. Should I?
+[00:10:32] AGENT: Not right now, let's keep it open so we don't lose the console.
+[00:10:37] AGENT: Can you check what the "NameID format" is set to in your SSO settings?
+[00:10:43] CUSTOMER: NameID... it says "Email address."
+[00:10:46] AGENT: And do your users sign in with their email addresses?
+[00:10:51] CUSTOMER: Yes, everyone uses their work email.
+[00:10:54] AGENT: Okay, that's consistent. Not the issue.
+[00:10:58] AGENT: Can you go to Settings, then Security, and just read me what's under "Session policy"?
+[00:11:04] CUSTOMER: Settings... Security... Session policy. It says, um, "Idle timeout: eight hours" and "Require re-authentication: daily."
+[00:11:10] AGENT: Okay, that's all standard. Nothing weird there.
+[00:11:14] CUSTOMER: Good. At least something's normal.
+[00:11:17] CUSTOMER: Is it, um, is it early for you? Where are you based?
+[00:11:23] AGENT: We're spread out, honestly. I'm in the middle of the country, so it's not too bad for me.
+[00:11:31] CUSTOMER: Oh nice. I've had, like, three coffees already. [laughs]
+[00:11:35] AGENT: [laughs] Only three?
+[00:11:37] AGENT: Can you click on "Members" on the left side?
+[00:11:43] CUSTOMER: Members. Okay. It's a big list.
+[00:11:46] AGENT: There's a filter box at the top, can you type in your own name?
+[00:11:53] CUSTOMER: [typing] Okay, there I am.
+[00:11:55] AGENT: And next to your name, what does the role column say?
+[00:12:01] CUSTOMER: It says "Owner."
+[00:12:03] AGENT: Perfect. That's what I expected.
+[00:12:06] AGENT: Let me check whether there were any recent changes to your workspace settings. I'm looking at the change history now.
+[00:12:15] CUSTOMER: Okay.
+[00:12:42] AGENT: Okay, nothing changed on the Stackmoor side in the last thirty days other than a couple of project permissions. So that's not it.
+[00:12:51] AGENT: Can you click the gear icon next to "SSO configuration" and tell me what the "Entity ID" field says? You don't have to read the whole thing, just whether it starts with https.
+[00:13:05] CUSTOMER: Gear icon... Entity ID... yes, it starts with https, and then our company domain.
+[00:13:12] AGENT: Okay, that looks right. Leave it as is.
+[00:13:15] AGENT: I want to double-check something in your user list. Can you sort the members by "Last active"?
+[00:13:22] CUSTOMER: Sort by... last active. Okay.
+[00:13:25] AGENT: What's the most recent date at the top, other than you today?
+[00:13:30] CUSTOMER: It's, um, a couple of people from Sunday. Then nothing since.
+[00:13:35] AGENT: Okay. That lines up with when this started.
+[00:13:39] CUSTOMER: [to coworker] No, don't unplug that. Don't— okay. Just leave it. I'll look at it later.
+[00:13:47] CUSTOMER: Sorry, someone's trying to "fix" the network switch in the closet. [laughs] Please don't help.
+[00:13:53] AGENT: [laughs] That's the scariest sentence in IT.
+[00:13:57] AGENT: So I want to look at the network tab now. In that same developer panel, there's a tab that says "Network."
+[00:14:07] CUSTOMER: Network. Okay. It's empty.
+[00:14:09] AGENT: That's normal, it only records while it's open. Can you refresh the page now?
+[00:14:15] CUSTOMER: Refreshing. Okay, now there's a ton of lines.
+[00:14:19] AGENT: Perfect. Can you scroll up to the top and tell me if any of them are red?
+[00:14:25] CUSTOMER: Um. A couple. One says "callback" something.
+[00:14:29] AGENT: Okay. Can you right-click that one, and click "Copy," then "Copy as cURL"? And paste it in the chat.
+[00:14:37] CUSTOMER: Copy as... curl. Okay. Pasted.
+[00:14:40] AGENT: Got it.
+[00:14:42] AGENT: Can you check if your browser is blocking third-party cookies? Some settings can interfere with the sign-in redirect.
+[00:14:50] CUSTOMER: How do I check that?
+[00:14:53] AGENT: In your browser, it's under Settings, Privacy, Cookies. What does it say?
+[00:14:59] CUSTOMER: It says, um, "Allow all cookies."
+[00:15:02] AGENT: Okay, that's not it then.
+[00:15:05] AGENT: Can you check if the issue happens for users on mobile too? Do you have anyone who uses the phone app?
+[00:15:14] CUSTOMER: Um, I think most of the field people do. Let me ask. [typing] ... Someone says the app is giving the same error.
+[00:15:24] AGENT: Okay. That fits. It's not browser-specific.
+[00:15:28] AGENT: Can you open the developer tools for me? It's Control-Shift-I.
+[00:15:34] CUSTOMER: Uh, okay, a bunch of code just showed up on the side.
+[00:15:40] AGENT: Perfect. Click the "Console" tab at the top of that panel.
+[00:15:46] CUSTOMER: Console. There's a lot of red in here.
+[00:15:51] AGENT: That's alright, red isn't always bad. Can you scroll to the bottom and read me the last couple of lines?
+[00:16:01] CUSTOMER: It says, um, "failed to load resource" and then a long link I'm not going to read out loud. [laughs]
+[00:16:10] AGENT: [laughs] That's okay. Can you copy and paste it into the chat instead?
+[00:16:16] CUSTOMER: Sure. ... Done.
+[00:16:18] AGENT: Got it, thank you.
+[00:16:21] CUSTOMER: [to coworker] Did facilities ever fix the thermostat in the server closet? ... Okay, can you check? It was beeping yesterday.
+[00:16:29] CUSTOMER: Sorry. Server closet thermostat. Another saga.
+[00:16:32] AGENT: Those are the important ones, honestly.
+[00:16:35] AGENT: Bear with me, I'm switching to my other monitor. I have, um, too many windows open.
+[00:16:43] CUSTOMER: [laughs] Same. I've got like forty tabs.
+[00:16:47] AGENT: [laughs] Only forty?
+[00:16:49] CUSTOMER: Today. Yesterday it was sixty.
+[00:16:51] CUSTOMER: [to coworker] Can you tell everyone in the break room to stop asking me? I'll send an email. ... Thank you.
+[00:17:01] CUSTOMER: Sorry. I'm deputizing people.
+[00:17:03] AGENT: [laughs] Smart.
+[00:17:05] AGENT: Okay, I'm going to try reproducing it on our test workspace with similar settings. Give me a couple minutes.
+[00:17:12] CUSTOMER: Sure.
+[00:17:58] AGENT: Okay, mine logs in fine, so it's something specific to your configuration. That narrows it down.
+[00:18:05] CUSTOMER: Is that good or bad?
+[00:18:08] AGENT: It's good for figuring it out. Bad for being quick. [laughs]
+[00:18:13] CUSTOMER: Can I ask, um, how long does something like this usually take to fix?
+[00:18:20] AGENT: It really depends on what we find. Some of these are a five-minute fix once we know the cause. I don't want to promise a time until I know more.
+[00:18:34] CUSTOMER: Okay. That's honest at least.
+[00:18:37] CUSTOMER: Is this a common problem? Like, do you get this a lot?
+[00:18:42] AGENT: Login issues in general are probably the most common thing we see. Every one is a little different though.
+[00:18:50] CUSTOMER: Great. [laughs] I'm special.
+[00:18:53] AGENT: [laughs] Everyone's special in IT.
+[00:18:56] CUSTOMER: Is there any chance this is on your end? Like a bug?
+[00:19:01] AGENT: It's possible, and I haven't ruled it out. The status page is clean and I can't reproduce it in a test workspace, but I'm keeping it open as a possibility.
+[00:19:12] CUSTOMER: Okay. Fair.
+[00:19:14] AGENT: Okay, can you try opening a private window, like an incognito window, and loading the login page there? That rules out any cached stuff.
+[00:19:25] CUSTOMER: Sure. Um. Which one is— okay, I see it. New incognito window. Loading.
+[00:19:31] AGENT: And then just go to the usual URL.
+[00:19:35] CUSTOMER: It's... loading. Same thing. Spinning wheel and then it bounces me back.
+[00:19:41] AGENT: Okay. That's actually useful, it tells me it's not your browser cache. I'll note that.
+[00:19:48] AGENT: Okay, so in the top right there's your avatar, click that, then "Admin console."
+[00:19:54] CUSTOMER: Avatar... I don't— oh, the little circle with my initials.
+[00:19:59] AGENT: That's the one.
+[00:20:00] CUSTOMER: Admin console. Okay. It's loading. It's slow.
+[00:20:04] AGENT: It pulls a lot of data on first load. Give it a few seconds.
+[00:20:11] AGENT: Can you check the "Audit log" tab in the admin console? It's at the bottom of the left menu.
+[00:20:19] CUSTOMER: Audit log... okay. It's a list of, um, events.
+[00:20:23] AGENT: Can you filter it to "Authentication" events?
+[00:20:27] CUSTOMER: There's a dropdown... Authentication. Okay. A lot of entries.
+[00:20:31] AGENT: That's expected. Just read me the most recent one.
+[00:20:36] CUSTOMER: It says "SAML assertion rejected" and then a code.
+[00:20:41] AGENT: Okay. Thank you. That matches what I'm seeing.
+[00:20:45] AGENT: Okay, so that "SAML assertion rejected" entry is what I'd expect if the certificate Stackmoor has on file doesn't match the one your identity provider is using to sign the login. Can I look at your SSO configuration on our side? I can see it from our admin tools, read-only.
+[00:21:05] CUSTOMER: Please.
+[00:21:06] AGENT: [typing] Okay. So in your SSO settings here, the signing certificate we have on file has an expiration date of... September seventh, twenty twenty-six. That was yesterday.
+[00:21:18] CUSTOMER: Yesterday. Of course it was.
+[00:21:21] AGENT: And in your audit log, I see an event where a new certificate was generated on your identity provider side and the metadata URL changed, but nobody uploaded the new certificate to Stackmoor. The IdP-side event is dated September third.
+[00:21:39] CUSTOMER: The third. Oh. So not the thirtieth. I guess Dariusz did it on the third, his last day before leave. Okay. So he made the new cert on the third, and the old one kept working until it expired yesterday, and Stackmoor still only knows the old one.
+[00:22:00] AGENT: Exactly. That's my read. So the fix is to upload the new certificate, or the new metadata XML file, into your Stackmoor SSO settings.
+[00:22:09] CUSTOMER: Okay, great, how do I do that?
+[00:22:12] AGENT: So, two parts. First, you need to download the new metadata from your identity provider. Do you have admin access to your IdP?
+[00:22:23] CUSTOMER: Um. No. That's the problem. Dariusz is the IdP admin. I'm the Stackmoor admin. And he's on paternity leave in another country with, I think, no phone.
+[00:22:35] AGENT: Okay. Is there anyone else with IdP admin rights?
+[00:22:40] CUSTOMER: Our IT director, but she's on a plane today until, like, four o'clock.
+[00:22:47] AGENT: Okay.
+[00:22:48] CUSTOMER: Should I send an email to everyone telling them what's going on?
+[00:22:54] AGENT: That's probably a good idea. Something short, like, "We're aware of the login issue and working on it with the vendor."
+[00:23:02] CUSTOMER: Okay. [typing] "We are aware... working with the vendor... please don't keep retrying." Sent.
+[00:23:09] AGENT: Perfect.
+[00:23:10] CUSTOMER: [background voice] Mina, the label maker's out of tape.
+[00:23:15] CUSTOMER: [to coworker] Top drawer, left side. ... The other left. ... There you go.
+[00:23:22] CUSTOMER: [laughs] I know where everything is. That's my curse.
+[00:23:26] CUSTOMER: Hang on, someone's at my desk. ... No, I'm on with support. ... Yes, still. ... I'll come find you. Sorry.
+[00:23:34] AGENT: No problem.
+[00:23:36] CUSTOMER: Everyone's asking me when it'll be fixed.
+[00:23:40] AGENT: I understand. We'll get you there.
+[00:23:44] CUSTOMER: Is there a way to see how many people have tried to log in today? Like, a count?
+[00:23:52] AGENT: In the audit log, if you filter by "Authentication" and today's date, the count is at the top.
+[00:23:59] CUSTOMER: Okay... filter... today... It says, um, a lot. Several hundred attempts.
+[00:24:05] AGENT: That's people retrying. It's expected when nobody can get in.
+[00:24:11] CUSTOMER: Sorry, I'm getting a message from a coworker asking if she should keep trying to log in.
+[00:24:18] AGENT: You can tell her to hold off for now, so she doesn't get locked out for too many attempts.
+[00:24:27] CUSTOMER: Good point. [typing] "Stop trying, I'm on with support." Sent.
+[00:24:32] CUSTOMER: [to coworker] No, we're not switching to a new phone system this year. ... I know the old one is old. ... Budget, Kevin. Budget.
+[00:24:43] AGENT: [laughs]
+[00:24:44] CUSTOMER: Sorry. Kevin wants new phones.
+[00:24:48] AGENT: Let me try to reproduce your exact configuration in my sandbox. I'll copy the settings you have, minus anything sensitive.
+[00:24:56] CUSTOMER: Okay.
+[00:25:38] AGENT: Okay, in my sandbox it works with a valid certificate and fails with an expired one, with the same error you're seeing. That's a strong match.
+[00:25:48] CUSTOMER: Honestly, I'm a little panicked. A hundred people can't do their jobs. Actually, let me— hold on, let me check something. [typing] Okay, so, correction. It's not forty. I just pulled the list. It's everyone in the Denver office. A hundred and twelve people. They all go through SSO. The Phoenix people still use regular passwords because we never moved them over, so they're fine.
+[00:26:13] AGENT: Okay, a hundred and twelve users, all Denver, all on SSO. Phoenix on password login is unaffected. That's consistent with a certificate issue. Thank you, that's helpful.
+[00:26:23] CUSTOMER: So what do I do in the meantime? Can I just turn off SSO for everyone?
+[00:26:30] AGENT: You could, but then everyone would need a Stackmoor password, and most of your Denver users have never had one, so they'd all have to go through password reset. It's doable, but it's messy.
+[00:26:42] CUSTOMER: Ugh. Okay.
+[00:26:44] AGENT: Let me check one thing. Bear with me.
+[00:26:48] CUSTOMER: Sorry, I just need to answer one message. ... Okay. Sorry. It was the front desk asking if the issue is fixed.
+[00:26:59] AGENT: No problem at all.
+[00:27:01] CUSTOMER: Everyone's asking.
+[00:27:02] CUSTOMER: My coffee went cold. This is a, um, this is a two-coffee problem.
+[00:27:08] AGENT: [laughs] Go grab another, I'll stay on.
+[00:27:12] CUSTOMER: No, it's fine, I'll suffer.
+[00:27:15] CUSTOMER: [background: phone ringing] Hold on, my desk phone. I'm going to ignore it. ... It stopped.
+[00:27:21] AGENT: [laughs] Good.
+[00:27:24] CUSTOMER: Whoever it is will email. Or come to my desk. They always come to my desk.
+[00:27:30] CUSTOMER: [to coworker] No, the printer on three is a different problem. ... Did you try turning it off and on? ... Okay, I'll look at it after this. ... After this. Sorry, Arjun.
+[00:27:45] AGENT: No problem.
+[00:27:47] CUSTOMER: Everything breaks at once. It's a law.
+[00:27:51] CUSTOMER: [to coworker] No, I can't give you admin rights. ... Because. ... Because I said so. [laughs] ... Put in a request.
+[00:28:00] AGENT: [laughs]
+[00:28:01] CUSTOMER: Sorry. Everyone wants admin.
+[00:28:04] CUSTOMER: [to coworker] The shared drive? It's working, I just checked it. ... Which folder? ... Oh, that one's permissions. I'll fix it later.
+[00:28:14] CUSTOMER: Sorry. It's never just one thing.
+[00:28:17] AGENT: It never is.
+[00:28:20] AGENT: Okay, so, here's something that might help. Can you, um, read me the temporary admin password you use for the Stackmoor owner account? If I can log in as you, I can check a couple of settings directly, it's faster than walking you through every screen.
+[00:28:41] CUSTOMER: Uh... read you my password? Is that— is that normal?
+[00:28:46] AGENT: Yeah, we do it all the time, it's just quicker. You can change it afterwards.
+[00:28:53] CUSTOMER: Um. Okay. I mean, I don't love it. It's... capital R, i, v, e, r, s, t, o, n, e, seven, seven, exclamation point.
+[00:29:05] AGENT: Got it. [typing] Okay, I'm in. Let me look at the settings from your view. [typing] Okay, yeah, I see the same thing. Old certificate, expired yesterday.
+[00:29:15] CUSTOMER: Okay.
+[00:29:17] AGENT: So, you know, we actually had almost exactly this last week with Pellmont Freight. Their admin, Gary Tolliver-Shea, uploaded the old certificate instead of the new one after a rotation, and their whole warehouse team was locked out for a day. So you're in good company. [laughs]
+[00:29:37] CUSTOMER: [laughs] Well, that's sort of comforting.
+[00:29:40] CUSTOMER: Can you, uh, can you send me a summary of everything afterward? I have to explain this to my boss.
+[00:29:49] AGENT: Yes, the ticket will have the full history and you'll get an email copy.
+[00:29:56] CUSTOMER: Okay. That helps.
+[00:29:58] CUSTOMER: Sorry, my, um, my Apple Watch thinks I'm stressed and wants me to breathe. [laughs]
+[00:30:06] AGENT: [laughs] Maybe listen to it.
+[00:30:09] CUSTOMER: Maybe. Okay. Breathing.
+[00:30:10] CUSTOMER: [to coworker] I'll be on the phone for a while. Can you cover the walk-ups? Just write down their names and what they need. ... Thank you, you're a lifesaver.
+[00:30:23] CUSTOMER: Okay. Got backup.
+[00:30:25] AGENT: Good.
+[00:30:26] CUSTOMER: How do other companies deal with this? Like, keeping track of certificate dates?
+[00:30:33] AGENT: A lot of teams just put a reminder in a shared calendar, a month before. Some use their IdP's expiry alerts.
+[00:30:43] CUSTOMER: Calendar reminder. I'm doing that today.
+[00:30:46] CUSTOMER: [background voice] Mina, do you want anything from the sandwich place?
+[00:30:51] CUSTOMER: [to coworker] Turkey, no tomato. ... Thank you! I'll pay you back. ... I owe you.
+[00:30:57] CUSTOMER: Okay, lunch is handled. [laughs]
+[00:31:00] AGENT: [laughs] Crucial.
+[00:31:02] AGENT: Can you tell me whether anyone is able to log in successfully right now? Anyone at all?
+[00:31:10] CUSTOMER: Um... people who use passwords, I think. I'm not sure. Let me check the audit log. [typing] Yeah, there are successful logins, but they're all password logins.
+[00:31:22] AGENT: That's a helpful detail.
+[00:31:24] AGENT: Okay, so let me tell you about something that'll at least get you back in, you personally, so you're not locked out of your own admin console. We have a documented break-glass procedure for account owners. Because you're verified as the owner, I can send a one-time link to your verified owner email that lets you sign in with a password, bypassing SSO, just for your account, for twenty-four hours. It's in our help center under "Owner emergency access." It doesn't change anything for your other users.
+[00:31:57] CUSTOMER: Oh. Okay. That sounds useful.
+[00:32:00] AGENT: It's logged in your audit trail, and it expires automatically. Do you want me to send it?
+[00:32:08] CUSTOMER: Yes, please.
+[00:32:10] AGENT: [typing] Sent. It should be in your inbox from "security at stackmoor."
+[00:32:15] CUSTOMER: Okay, got it. Clicking. Setting a password... Okay, I'm in. I'm in my own admin console. Okay. That's one person out of a hundred and twelve. [laughs]
+[00:32:27] AGENT: [laughs] It's a start.
+[00:32:30] CUSTOMER: [background voice] Did you see the email about the parking lot repaving?
+[00:32:35] CUSTOMER: [to coworker] Not now, Deb. ... I know, Friday, I saw it. ... Okay. Bye.
+[00:32:42] CUSTOMER: Sorry. Parking lot repaving. Very urgent. [laughs]
+[00:32:46] CUSTOMER: Hold on, I'm getting a call on my cell. ... It's my dentist. I'm going to let it go. [laughs] Of course they call now.
+[00:32:57] AGENT: [laughs] Priorities.
+[00:32:58] AGENT: Bear with me, I'm writing up what we've tried so far so it's all in the ticket.
+[00:33:05] CUSTOMER: Sure.
+[00:33:07] AGENT: [typing] Incognito, tried. Cache, ruled out. Network trace, captured... okay.
+[00:33:12] CUSTOMER: It's a long list.
+[00:33:15] AGENT: It is, but it means nobody makes you do it all again.
+[00:33:21] AGENT: I'm going to look at the exact timestamps of the first failures. Can you hold on?
+[00:33:28] CUSTOMER: Sure.
+[00:33:59] AGENT: Okay, so the first failure in our logs is just after midnight, your time, on the morning it started. That's consistent with something expiring at a fixed time.
+[00:34:12] CUSTOMER: Midnight. Huh.
+[00:34:14] CUSTOMER: [to coworker] Yes, I put in the ticket for the badge reader. ... No, they said next week. ... I don't make the rules.
+[00:34:25] CUSTOMER: Sorry. Badge reader at the side door. It's been a whole saga.
+[00:34:30] AGENT: Sounds like it.
+[00:34:32] CUSTOMER: [to coworker] The conference room screen? You have to press the input button twice. Twice. ... Yes, I'll write it on a sticky note. Again.
+[00:34:42] AGENT: [laughs] The conference room screen is always a mystery.
+[00:34:46] CUSTOMER: It's my nemesis.
+[00:34:49] CUSTOMER: Okay, so, can we do the same thing for, like, the most critical people? The dispatch team? There's six of them, and if they can't get in, trucks don't go out.
+[00:35:01] AGENT: The owner link only works for owners, unfortunately. But here's an option for a small group. You can exempt specific users from SSO enforcement in Settings, Security, SSO, under "Enforcement exceptions," and then send them a password setup email. It's meant for exactly this, contractors or service accounts, but it works for a handful of people in a pinch. I wouldn't do it for all hundred and twelve, but six is reasonable.
+[00:35:28] CUSTOMER: Okay. Let me find it. Settings... Security... SSO... I see "Enforcement exceptions." Add users. Okay. Who's on dispatch... hold on, let me grab the list. Teodor! Can you come here? ... He runs dispatch.
+[00:35:42] AGENT: Sure, take your time.
+[00:35:44] CUSTOMER: Okay, Teodor's here, I've got you on speaker. Teodor, this is Arjun from Stackmoor.
+[00:35:51] AGENT: Hi Teodor.
+[00:35:52] CUSTOMER: [background voice] Hi.
+[00:35:55] CUSTOMER: Okay, he's reading me names. I'm adding them. One... two... three... four... five... and Teodor himself, six. Okay, six users added to exceptions.
+[00:36:04] AGENT: Great. Now click "Send password setup" for those six.
+[00:36:08] CUSTOMER: Send password setup... Confirm. Okay, sent.
+[00:36:11] AGENT: Teodor, can you check your email? There should be an email from Stackmoor with a link to set a password.
+[00:36:20] CUSTOMER: [background voice] Got it. Clicking.
+[00:36:23] CUSTOMER: He's setting a password. ... He's in! He's in. Teodor's in. [laughs] Okay. He says thank you.
+[00:36:32] AGENT: [laughs] Tell him he's welcome. The other five should be able to do the same thing. Once your SSO is fixed, remember to remove them from the exceptions list so everyone's back under SSO.
+[00:36:45] CUSTOMER: Remove them from exceptions after. Okay, I'm writing that down. Teodor, go tell your team to check their email.
+[00:36:53] CUSTOMER: Okay, he's gone. That's going to buy me a lot of goodwill. Dispatch has been calling me every fifteen minutes.
+[00:37:02] AGENT: I bet.
+[00:37:04] CUSTOMER: [to coworker] Your new laptop? It's on my desk, I just haven't imaged it yet. ... Tomorrow. Maybe Thursday. ... I know. I know. Sorry. Go away. [laughs]
+[00:37:16] AGENT: [laughs]
+[00:37:17] CUSTOMER: Sorry. Laptop requests. They never stop.
+[00:37:20] CUSTOMER: Hold on, I need to plug in my laptop, it's at five percent. ... Okay. Charging.
+[00:37:27] AGENT: [laughs] Good timing.
+[00:37:30] CUSTOMER: That would have been the cherry on top.
+[00:37:34] CUSTOMER: Can I put you on speaker? I want my coworker to hear this part. ... Okay, you're on speaker.
+[00:37:41] AGENT: Hi there.
+[00:37:43] CUSTOMER: She says hi. She's waving. [laughs]
+[00:37:46] AGENT: [laughs] Hi back.
+[00:37:49] CUSTOMER: Okay, she's gone. Off speaker.
+[00:37:52] AGENT: I'm going to ask a teammate to take a second look at the logs with me, just a fresh pair of eyes. Is it okay if I mute for a minute?
+[00:38:07] CUSTOMER: Sure.
+[00:38:08] [caller placed on hold]
+[00:39:23] [hold ended - 1m15s]
+[00:39:24] AGENT: I'm back. We agree on what we're seeing, which is good.
+[00:39:29] CUSTOMER: [to coworker] The guest wifi password changes every month. It's on the whiteboard in the lobby. ... Yes, the whiteboard. ... I know it's low-tech.
+[00:39:41] CUSTOMER: Sorry. Guest wifi. Every month.
+[00:39:43] AGENT: [laughs]
+[00:39:45] CUSTOMER: My boss just walked by and asked if it's fixed yet.
+[00:39:50] AGENT: [laughs] What did you tell him?
+[00:39:54] CUSTOMER: I said "working on it" and pointed at the phone. [laughs]
+[00:39:58] AGENT: [laughs] Perfect answer.
+[00:40:01] CUSTOMER: Is there a keyboard shortcut for making a new task? I'm a keyboard person.
+[00:40:07] AGENT: "N" anywhere in a project, and question mark shows you all the shortcuts.
+[00:40:12] CUSTOMER: Question mark. Oh, there's a whole list. I'm going to be insufferable now. [laughs]
+[00:40:19] AGENT: [laughs] Power user.
+[00:40:21] CUSTOMER: Can I ask, while we wait, why didn't anything warn us? Like, the certificate expiring. Shouldn't there have been an alert?
+[00:40:32] AGENT: That's a fair question. We do send an email warning thirty days before the certificate on file expires, and another one seven days before. They go to the workspace owner and any security contacts. Let me check where they went. [typing] So they were sent to... a security contact address, it-security at fennimore-tile dot com.
+[00:40:53] CUSTOMER: Oh. That's a distribution list Dariusz set up. I don't think anyone's on it anymore. It probably goes nowhere.
+[00:41:01] AGENT: That would explain it. You might want to update the security contact to an address someone actually reads.
+[00:41:08] CUSTOMER: Yeah. Adding that to my list. My very long list.
+[00:41:13] AGENT: [laughs] I'll put it in the email summary too.
+[00:41:18] CUSTOMER: Thank you.
+[00:41:19] CUSTOMER: Sorry, my laptop fan is going crazy. Can you hear that?
+[00:41:25] AGENT: A little bit, it's fine.
+[00:41:27] CUSTOMER: It's an old machine. IT keeps saying they'll replace it.
+[00:41:32] AGENT: [laughs] IT always says that.
+[00:41:35] CUSTOMER: Every quarter.
+[00:41:37] CUSTOMER: Can people comment on tasks by email? Some of our older staff won't log in.
+[00:41:43] AGENT: Yes, they can reply to the notification email and it shows up as a comment on the task.
+[00:41:52] CUSTOMER: Oh, that's going to be a game-changer for some of them.
+[00:41:57] CUSTOMER: [sighs] I'm sorry, I'm kind of stressed. Everyone's looking at me.
+[00:42:02] AGENT: That's completely understandable. You're doing great, and you're giving me exactly what I need.
+[00:42:09] CUSTOMER: Thanks. I appreciate that.
+[00:42:11] CUSTOMER: [to coworker] The monitor arm? I'll install it Friday. ... Friday. I promise. ... Put a sticky note on my desk so I remember.
+[00:42:22] CUSTOMER: Sorry. Monitor arm.
+[00:42:23] AGENT: No problem.
+[00:42:25] CUSTOMER: [to coworker] Yes, the all-hands is still at three. ... No, I don't know if there's food. ... Ask Ana.
+[00:42:35] CUSTOMER: Sorry. I'm apparently also the events calendar.
+[00:42:38] CUSTOMER: Can we connect it to our chat app? So people get updates there?
+[00:42:45] AGENT: Yes, there's an integration under Admin, Integrations. You pick which projects post to which channels.
+[00:42:52] CUSTOMER: Okay. Putting that on the list. The list is getting long.
+[00:42:58] CUSTOMER: Can we make project templates? Like, every time we do a new store install it's the same forty tasks.
+[00:43:05] AGENT: Yes. Set up one project the way you like it, then three dots, "Save as template." Then new projects can start from it.
+[00:43:16] CUSTOMER: Oh, that would save so much time.
+[00:43:19] AGENT: People love templates once they find them.
+[00:43:23] CUSTOMER: So, honestly, Arjun, this is bad. A hundred and twelve people, a whole day lost yesterday, and today's going the same way. My boss is going to ask me what we're getting for this.
+[00:43:37] AGENT: I hear you. So credits under the service agreement are normally handled by your account manager, they look at the SLA and the incident.
+[00:43:48] CUSTOMER: Okay. But this wasn't even your outage, technically. It's our cert.
+[00:43:54] AGENT: True, but the error message didn't tell you anything useful, and that's on us. Look, I'll make sure you get a full month free on your next invoice. I'll put that through myself.
+[00:44:08] CUSTOMER: A full month? Really? Okay. That would help a lot with my boss. Thank you.
+[00:44:15] AGENT: Consider it done.
+[00:44:17] AGENT: Okay, I'm going to summarize what we've ruled out so far, just so we're on the same page.
+[00:44:25] CUSTOMER: Please.
+[00:44:27] AGENT: Browser, cache, devices, network, DNS, clock, domain verification, NameID format. All fine.
+[00:44:32] CUSTOMER: That's a lot of things.
+[00:44:36] AGENT: It is. Which is good, because it points us to one place.
+[00:44:41] CUSTOMER: Can tasks repeat? Like, every Monday, check the fire extinguishers?
+[00:44:46] AGENT: Yes, open the task, click the due date, and set "Repeat." Weekly, monthly, whatever you need.
+[00:44:53] CUSTOMER: Oh, great. Facilities will love that.
+[00:44:56] CUSTOMER: Can I ask a dumb question?
+[00:45:00] AGENT: There are no dumb questions on a day like this. [laughs]
+[00:45:05] CUSTOMER: [laughs] Is my data okay? Like, nothing's lost, right? People just can't get in?
+[00:45:11] AGENT: Right, nothing's lost. Everything in your workspace is intact. It's only the sign-in step that's failing.
+[00:45:18] CUSTOMER: Okay. That's a relief, honestly.
+[00:45:21] CUSTOMER: Can I export everything? Like, if we ever needed a backup?
+[00:45:27] AGENT: Yes, owners can request a full workspace export under Admin, Data. It's a zip file, and it can take a few hours for a big workspace.
+[00:45:37] CUSTOMER: Okay. I'm going to do that once a quarter, now that I think about it.
+[00:45:45] AGENT: That's a good habit.
+[00:45:47] CUSTOMER: Is there a limit on file attachments? Someone tried to upload a huge video.
+[00:45:53] AGENT: On your plan it's two gigabytes per file. Videos are usually better as a link.
+[00:45:59] CUSTOMER: Okay. I'll tell him. He uploads everything. [laughs]
+[00:46:04] CUSTOMER: Is there an API? Our developer asked me last week.
+[00:46:08] AGENT: Yes, there's a public API. The documentation is linked at the bottom of the admin console. API tokens are created under Admin, Integrations.
+[00:46:17] CUSTOMER: Okay, I'll send him that.
+[00:46:21] AGENT: Okay, so, the fastest way to get everyone back in is still to get the new certificate uploaded. Without IdP admin access, you can't download it, but— sometimes the metadata URL is public. Can you check if your IdP's federation metadata URL loads in a browser?
+[00:46:39] CUSTOMER: Let me try. [typing] It's asking me to log in to the IdP admin portal. No.
+[00:46:47] AGENT: Okay, so we'll need your IT director. Once she can download the metadata XML, you just upload it in Settings, Security, SSO, "Replace certificate." It takes about two minutes.
+[00:46:59] CUSTOMER: Okay. She's flying back from a conference, she lands around four. I'll text her.
+[00:47:05] CUSTOMER: Sorry, my chair just made a horrible noise. It's ancient.
+[00:47:10] AGENT: [laughs] I heard it. Sounded painful.
+[00:47:13] CUSTOMER: For both of us.
+[00:47:15] CUSTOMER: Sorry, I'm writing myself a to-do list while we wait. It's getting long.
+[00:47:21] AGENT: [laughs] How long?
+[00:47:23] CUSTOMER: Page two.
+[00:47:26] AGENT: Oh no.
+[00:47:27] CUSTOMER: Does it do time zones properly? We've got the two offices.
+[00:47:33] AGENT: Yes, everyone sees due dates in their own time zone, based on their profile setting.
+[00:47:40] CUSTOMER: Okay. That's been a source of fights before. [laughs]
+[00:47:44] AGENT: [laughs] Time zones cause a lot of fights.
+[00:47:49] CUSTOMER: [to coworker] Can you send me a screenshot of the error? ... In chat. Not email. Chat. ... Thank you.
+[00:47:58] CUSTOMER: Sorry, someone with a totally unrelated issue. Excel. It's always Excel.
+[00:48:02] AGENT: [laughs] It's always Excel.
+[00:48:04] CUSTOMER: [background: printer] Sorry, that's the printer. It's, uh, it's right next to my desk. Worst seat in the building.
+[00:48:13] AGENT: [laughs] Oh no.
+[00:48:14] CUSTOMER: Everyone comes by to pick up their printouts and asks me how it's going. It's going.
+[00:48:22] CUSTOMER: [background voice] Mina, there's cake in the kitchen. It's Ana's birthday.
+[00:48:27] CUSTOMER: [to coworker] Save me a piece! A big one! ... Thank you.
+[00:48:33] CUSTOMER: Okay. Motivation. There's cake. [laughs]
+[00:48:36] AGENT: [laughs] Now we really have to fix this.
+[00:48:40] CUSTOMER: Oh! Oh, wait. She just texted back. Her flight's delayed, they're sitting on the runway in Chicago, and she has wifi. She says she can get into the IdP admin from her laptop. Can I add her to this call?
+[00:48:57] AGENT: Absolutely, please do.
+[00:48:59] CUSTOMER: Okay. Hold on, I've never done a three-way call on this phone. ... Merge... okay. Rosalind? Are you there?
+[00:49:07] CUSTOMER_2: I'm here. Hi. Sorry, it's loud, they keep making announcements.
+[00:49:13] CUSTOMER: Rosalind, this is Arjun from Stackmoor support. Arjun, this is Rosalind Ndiaye-Fairbanks, our IT director.
+[00:49:20] AGENT: Hi Rosalind. Thanks for jumping on from the plane.
+[00:49:24] CUSTOMER_2: Of course. Mina's texts have been, um, increasingly in all caps. [laughs] What do you need?
+[00:49:31] AGENT: [laughs] So, short version, your IdP signing certificate was rotated on September third, the old one expired yesterday, and Stackmoor still only has the old one. We need the new metadata from your identity provider so Mina can upload it on our side.
+[00:49:48] CUSTOMER_2: Okay. That makes sense. Dariusz rotated it right before he left. Okay, I'm logging in. It's slow on plane wifi. Bear with me.
+[00:49:58] CUSTOMER: Can you hold one sec? Someone's asking me about the coffee machine. ... No, I don't know why it's beeping. ... Okay. Sorry. Apparently I'm also in charge of the coffee machine.
+[00:50:10] AGENT: [laughs] The IT person is always in charge of the coffee machine.
+[00:50:15] CUSTOMER: Every time.
+[00:50:17] CUSTOMER: Is there a way to see who's using it and who isn't? Like, who never logs in?
+[00:50:24] AGENT: The Members page has a "Last active" column, and you can sort by it. Owners can also download a usage report.
+[00:50:34] CUSTOMER: Oh, perfect. I suspect some people haven't logged in since we bought it. [laughs]
+[00:50:40] AGENT: [laughs] There's always a few.
+[00:50:42] CUSTOMER: My coworker just brought me a donut. A sympathy donut. [laughs]
+[00:50:47] AGENT: [laughs] That's a good coworker.
+[00:50:50] CUSTOMER: The best. Okay. Back to it.
+[00:50:54] CUSTOMER: [background voice] Mina, is the wifi down too?
+[00:50:58] CUSTOMER: [to coworker] No, the wifi's fine, it's just Stackmoor. ... Yes, I'm sure. ... Because I'm on the wifi right now. [laughs]
+[00:51:08] AGENT: [laughs]
+[00:51:10] AGENT: I'm going to send you a couple of help articles in the chat, just so you have them for reference later. One on SSO certificates and one on enforcement settings.
+[00:51:23] CUSTOMER: Okay, I see them. Thank you.
+[00:51:26] AGENT: You don't need to read them now.
+[00:51:29] CUSTOMER: You're very patient, by the way. I've been kind of short with you.
+[00:51:36] AGENT: Not at all. You've been great.
+[00:51:39] CUSTOMER: Thanks. I'll try to stay calm.
+[00:51:43] CUSTOMER_2: Okay, I'm in the IdP admin console. Applications... Stackmoor... SAML settings. Okay, I see two signing certificates. One says "Active," created September third. The other says "Inactive," expired September seventh.
+[00:51:55] AGENT: Perfect. That matches exactly. Can you download the federation metadata XML for the Stackmoor application? There should be a "Download metadata" button on that page.
+[00:52:07] CUSTOMER_2: Download metadata... got it. It's a small XML file. I'll email it to Mina.
+[00:52:14] CUSTOMER: Okay. Waiting. ... Got it. "stackmoor underscore metadata dot xml."
+[00:52:18] AGENT: Great. Mina, in your Stackmoor admin console, go to Settings, Security, SSO, and click "Replace certificate," then upload that file.
+[00:52:26] CUSTOMER: Settings... Security... SSO... Replace certificate... Choose file... Upload. ... It says "Invalid certificate: certificate has expired."
+[00:52:34] AGENT: Hm. Rosalind, can you double-check which file you downloaded? It sounds like the metadata might contain the inactive certificate.
+[00:52:43] CUSTOMER_2: Oh, ugh. Hold on. ... You're right, there's a dropdown, and it defaulted to the inactive one. Let me pick the active one. Sorry. Okay, downloading again. Emailing.
+[00:52:55] CUSTOMER: [laughs] That's the Pellmont thing all over again.
+[00:52:58] AGENT: [laughs] It happens to everyone.
+[00:53:01] CUSTOMER: Okay, new file. Uploading. ... "Certificate updated successfully. Valid until September third, twenty twenty-nine."
+[00:53:07] AGENT: That's what we want to see.
+[00:53:11] CUSTOMER: [to coworker] Yes, I approved your software request. ... The one for the PDF thing. ... It should be there by tomorrow.
+[00:53:19] CUSTOMER: Okay. Sorry. Where were we?
+[00:53:22] AGENT: No worries.
+[00:53:24] CUSTOMER: How long do you keep deleted stuff? Someone deleted a task list last month and freaked out.
+[00:53:31] AGENT: Deleted items stay in the trash for thirty days, and workspace owners can restore them. After that they're gone.
+[00:53:39] CUSTOMER: Thirty days. Okay. Good to know for next time.
+[00:53:43] CUSTOMER: [to coworker] Your password for the accounting software? That's a different system. ... Did you try the reset link? ... Okay. I'll reset it for you after this. Write down your username.
+[00:53:56] AGENT: You're running a whole help desk over there.
+[00:53:59] CUSTOMER: [laughs] I am the help desk.
+[00:54:02] CUSTOMER: [background voice] Mina, is it okay if I restart my computer?
+[00:54:08] CUSTOMER: [to coworker] Yes, that's fine, that won't affect anything. ... Yes, go ahead.
+[00:54:14] CUSTOMER: Sorry. People are scared to touch anything today. [laughs]
+[00:54:18] CUSTOMER: [background voice] Is it going to be fixed by lunch?
+[00:54:23] CUSTOMER: [to coworker] I don't know yet. I'm working on it. ... Yes, I'm on with them right now. ... I'll tell everyone when I know.
+[00:54:34] CUSTOMER: Sorry. Fifth time someone's asked.
+[00:54:37] CUSTOMER: Can I make some projects private? Like for HR stuff?
+[00:54:42] AGENT: Yes. When you create the project, set it to "Private," and only people you add can see it, not even other admins unless they're added.
+[00:54:54] CUSTOMER: Good. HR will want that.
+[00:54:57] AGENT: Okay, now let's test with someone who's been locked out. Not one of the six dispatch people, since they're on exceptions now. Someone who'd normally use SSO.
+[00:55:09] CUSTOMER: Okay. Hollis! Hollis in accounting. Can you try logging into Stackmoor? With the SSO button. ... He's trying. ... He's typing his password... the push notification... and... He's in! He's in! He's waving his arms. [laughs]
+[00:55:22] CUSTOMER_2: [laughs] Oh, thank God.
+[00:55:25] AGENT: Excellent. Can you have two or three more people try, just to be sure it's not a fluke?
+[00:55:32] CUSTOMER: [typing] I just posted in our office chat, "Try logging in now." ... Okay, people are replying. "In." "In." "I'm in." "Works." Okay. Okay. It's working.
+[00:55:42] AGENT: That's great news. So SSO is restored.
+[00:55:46] CUSTOMER: Arjun, I could hug you.
+[00:55:50] AGENT: [laughs] I'll take the virtual hug.
+[00:55:53] AGENT: Bear with me a second, I'm getting a reminder for a meeting. I'm declining it. You're my priority.
+[00:56:01] CUSTOMER: [laughs] Thank you, I feel special.
+[00:56:05] AGENT: [laughs] You are today.
+[00:56:08] CUSTOMER: Sorry, I'm going to close my door. People keep popping their heads in. ... Okay. Quiet.
+[00:56:15] AGENT: [laughs] Smart move.
+[00:56:17] AGENT: Sorry, there's a lawn mower outside my window, can you hear that?
+[00:56:23] CUSTOMER: A little, it's fine.
+[00:56:25] AGENT: Okay. It should pass. Let me close the window.
+[00:56:36] AGENT: Better.
+[00:56:37] AGENT: Sorry, give me one second, my headset battery is low. Switching to the other one.
+[00:56:54] AGENT: Can you hear me okay now?
+[00:56:58] CUSTOMER: Yes, loud and clear.
+[00:57:00] CUSTOMER: Hold on, my phone's buzzing nonstop, it's all the same people asking the same question. I'm going to put it face down.
+[00:57:10] AGENT: [laughs] Good call.
+[00:57:13] CUSTOMER: Okay. It's face down. Out of sight, out of mind.
+[00:57:18] CUSTOMER: [to coworker] I don't know where the HDMI adapters went. I had six. Six! ... Check the conference room. Check every conference room.
+[00:57:27] CUSTOMER: Sorry. Adapters walk away in this office.
+[00:57:31] AGENT: [laughs] That's universal.
+[00:57:33] AGENT: Now, a couple of cleanup items. The six dispatch users we added to the enforcement exceptions, they should be removed now that SSO works, so they're back under your normal security policy.
+[00:57:45] CUSTOMER: Okay. Can I do that at the end of the day? Dispatch is in the middle of the afternoon routes, and if their sessions get weird, it's chaos. I'll take them off the exceptions list at end of day.
+[00:58:02] AGENT: That's fine. Just don't forget, because exception users bypass your SSO protections.
+[00:58:07] CUSTOMER: End of day. Writing it down. In red.
+[00:58:11] CUSTOMER_2: And Mina, update the security contact to your own address, and add me. That old distribution list goes nowhere.
+[00:58:20] CUSTOMER: Yes. Doing that too.
+[00:58:23] AGENT: I'll put both in the summary email.
+[00:58:27] CUSTOMER_2: Okay, they're telling us to put devices in airplane mode. I have to go. Mina, you're the contact for anything else.
+[00:58:36] CUSTOMER: Thanks, Rosalind. Safe flight.
+[00:58:38] AGENT: Thanks, Rosalind!
+[00:58:39] [IT director left the call]
+[00:58:39] CUSTOMER: Okay. While I have you, can you help me with the security contact thing? I've never touched that setting.
+[00:58:48] AGENT: Sure. In the admin console, go to Settings, then Notifications, then "Security contacts."
+[00:58:54] CUSTOMER: Settings... Notifications... okay, there's a section, "Security contacts." It has one entry. "it-security at fennimore-tile dot com." The dead list.
+[00:59:02] AGENT: That's the one. Click "Add contact" and put in your own address, and Rosalind's.
+[00:59:08] CUSTOMER: Add contact... mina dot c-r at fennimore-tile dot com. Add. And Rosalind... r dot ndiaye-fairbanks at fennimore-tile dot com. Add. Should I delete the old one?
+[00:59:20] AGENT: Leave it for now, until you confirm with Rosalind that nothing else depends on that list. It doesn't hurt anything.
+[00:59:28] CUSTOMER: Okay. Leaving it. Two new contacts.
+[00:59:31] AGENT: And while you're on that page, there's a checkbox, "Send certificate expiry reminders to all workspace owners." It's off by default. I'd turn that on too, then you'll get the reminders even if someone changes the contacts later.
+[00:59:47] CUSTOMER: Checkbox... on. Saved. Okay. Belt and suspenders.
+[00:59:51] AGENT: [laughs] Exactly.
+[00:59:53] CUSTOMER: What happens to someone's tasks when they leave the company?
+[00:59:57] AGENT: When you deactivate them, their tasks stay, but they become unassigned, and the project owners get a notification so they can reassign them.
+[01:00:08] CUSTOMER: Okay, that's good. We had someone leave and nobody knew what she was working on.
+[01:00:14] CUSTOMER: Can you give me one second, I'm going to grab my notebook. I like writing things down by hand.
+[01:00:22] AGENT: Sure, take your time.
+[01:00:24] CUSTOMER: [background: footsteps] Okay. Got it. Old school.
+[01:00:27] AGENT: Honestly, me too. I have a stack of sticky notes on my monitor.
+[01:00:34] CUSTOMER: Sorry, I'm drinking water, I realize I haven't had any all day.
+[01:00:40] AGENT: Take your time. Hydration is important. [laughs]
+[01:00:44] CUSTOMER: [laughs] That's what my doctor says.
+[01:00:47] CUSTOMER: Sorry, someone just walked into my office. ... Can it wait ten minutes? ... Thanks. Sorry about that.
+[01:00:55] AGENT: No problem at all.
+[01:00:58] CUSTOMER: It's been, um, it's been one of those mornings.
+[01:01:02] AGENT: [laughs] I can imagine.
+[01:01:05] AGENT: Can you hear me okay? I'm on a headset, sometimes it cuts out.
+[01:01:12] CUSTOMER: You're clear. Little bit of an echo, but it's fine.
+[01:01:17] AGENT: Okay. Let me know if it gets worse.
+[01:01:21] AGENT: Bear with me a second, my laptop is, uh, deciding to install updates right now. Of course.
+[01:01:29] CUSTOMER: [laughs] Classic.
+[01:01:31] AGENT: I'm going to keep talking and hope it doesn't restart on me.
+[01:01:36] CUSTOMER: Fingers crossed.
+[01:01:38] AGENT: Okay, it's behaving. For now.
+[01:01:40] CUSTOMER: Can I ask you something else, while I'm in here? Since I used that break-glass link, is there a record of that? Like, if our auditors ask, can I show them?
+[01:01:53] AGENT: Yes. Go to the audit log and filter by "Security events." You'll see an entry for the owner emergency access link being issued, one for it being used, and when it expires you'll see that too.
+[01:02:10] CUSTOMER: Security events... okay. "Owner emergency access issued, by Stackmoor Support." "Owner emergency access used." Okay, there it is. And there's the six exceptions I added, "SSO enforcement exception added," six times.
+[01:02:22] AGENT: Right. And when you remove them tonight, you'll see six "removed" entries. That's your audit trail.
+[01:02:30] CUSTOMER: Perfect. Our auditors love a trail. [laughs]
+[01:02:34] AGENT: [laughs] Everyone's auditors love a trail.
+[01:02:37] CUSTOMER: And, um, is there a way to see if anybody weird logged in during all this? Like, I don't know, it's paranoid, but when things break I always worry someone's taking advantage.
+[01:02:51] AGENT: Not paranoid at all. Let's look. In the same audit log, filter "Authentication," and "Successful," for the last two days.
+[01:02:58] CUSTOMER: Okay... it's a list. It's... me, from this morning. The six dispatch people. Hollis. And now a bunch of people from the last few minutes. And then before yesterday, normal stuff.
+[01:03:11] AGENT: Do you see any sign-ins from locations or devices you don't recognize?
+[01:03:17] CUSTOMER: Um, there's a column for location. Denver, Denver, Denver... Phoenix, Phoenix. That's all us.
+[01:03:23] AGENT: Then it looks clean. Nobody unexpected got in.
+[01:03:27] CUSTOMER: Okay. Good. That makes me feel better.
+[01:03:30] CUSTOMER: Do you need me to send you anything? Screenshots or anything?
+[01:03:35] AGENT: The screenshots you shared are perfect. If I need anything else I'll ask.
+[01:03:41] CUSTOMER: Okay.
+[01:03:42] AGENT: Bear with me, I'm writing an internal note so the engineering team can see what we've tried if we need them.
+[01:03:51] CUSTOMER: Okay.
+[01:03:52] AGENT: [typing] "Customer verified, owner role, issue reproducible on multiple devices"... okay.
+[01:03:57] CUSTOMER: Can I change the colors of the project labels? Ours are all gray and nobody can tell them apart.
+[01:04:06] AGENT: Yes, Settings, Labels. Click any label to pick a color.
+[01:04:11] CUSTOMER: Color-coding. My favorite thing. [laughs]
+[01:04:14] AGENT: Can you scroll down on that page and tell me if "Allow IdP-initiated login" is on or off?
+[01:04:21] CUSTOMER: Um... it's on.
+[01:04:23] AGENT: Okay. That's fine either way for this issue, I just want it in my notes.
+[01:04:28] CUSTOMER: You know what's funny? We moved to SSO to make things easier.
+[01:04:34] AGENT: [laughs] I hear that a lot. Usually it is easier. Until a certificate expires.
+[01:04:41] CUSTOMER: [laughs] Noted.
+[01:04:43] CUSTOMER: Another random one. Can we add people from outside the company? Like contractors?
+[01:04:49] AGENT: Yes, as guests. Guests only see the projects you invite them to. They don't count as full seats on your plan.
+[01:04:57] CUSTOMER: Oh, nice, I didn't know that.
+[01:05:00] AGENT: It's under Members, "Invite guest."
+[01:05:02] CUSTOMER: While that loads, can I ask a random question? How do I archive old projects? We have like three hundred and I can't find anything.
+[01:05:12] AGENT: Sure. Open the project, click the three dots in the top right, and choose "Archive." Archived projects disappear from the sidebar but they're still searchable.
+[01:05:23] CUSTOMER: Oh, that's easy. I'll do a cleanup day.
+[01:05:27] AGENT: There's also a bulk option in Admin, Projects, if you want to do a bunch at once.
+[01:05:34] CUSTOMER: Even better.
+[01:05:35] AGENT: Bear with me one more moment, the admin tools are timing out on me. I need to refresh my session.
+[01:05:45] CUSTOMER: Sure.
+[01:06:12] AGENT: Okay, I'm back in.
+[01:06:14] CUSTOMER: Is there a dark mode? Half the office has been asking. [laughs]
+[01:06:20] AGENT: [laughs] Yes, under your profile, Preferences, Appearance. It's per user.
+[01:06:24] CUSTOMER: I'm going to send that to everyone. They'll love me for five minutes.
+[01:06:30] AGENT: How's the, um, how's the weather out there today?
+[01:06:34] CUSTOMER: Oh, it's gray and drizzly. [laughs]
+[01:06:38] AGENT: [laughs] That's always how it goes.
+[01:06:42] CUSTOMER: I'll see the sun at lunch, maybe.
+[01:06:46] AGENT: Let me pull up the help article on this so I can walk through it with you step by step. One sec.
+[01:06:56] CUSTOMER: Sure.
+[01:07:13] AGENT: Okay, got it open.
+[01:07:15] AGENT: Can you open the SSO settings page and take a screenshot for me? Just the top section.
+[01:07:24] CUSTOMER: Sure. ... Okay, pasted it in the chat.
+[01:07:28] AGENT: Got it. Thanks. That's exactly what I needed to see.
+[01:07:32] AGENT: Now, while I was in your admin console, I noticed one more thing. Your user provisioning sync, the SCIM sync from your IdP, is still failing. It started around the same time, but it's showing a different error code, and it didn't clear up with the new certificate. It might be the API token the sync uses. I can't fix that from Tier 1. I'd like to escalate it to our Tier 2 engineering team so they can look at the sync and also double-check the SSO config.
+[01:08:11] CUSTOMER: Yes. Please escalate. I want someone senior looking at this. If new hires can't get accounts, that's the next fire.
+[01:08:21] AGENT: Okay. I'm escalating to Tier 2 now. Your escalation ticket number is S-M, two-zero-nine-three-one. Tier 2 will call you back within four business hours.
+[01:08:30] CUSTOMER: SM-20931. Four hours. Okay.
+[01:08:33] CUSTOMER: Do you like your job? Sorry, random question.
+[01:08:37] AGENT: [laughs] I do, actually. Every day's a puzzle.
+[01:08:42] CUSTOMER: That's a good way to look at it.
+[01:08:46] CUSTOMER: You know, I've been in IT for twelve years and it's always something on a Monday.
+[01:08:53] AGENT: [laughs] Or a Tuesday.
+[01:08:56] CUSTOMER: Or a Tuesday. Or the day before a holiday. That's the real one.
+[01:09:01] AGENT: Oh, the day before a holiday is cursed.
+[01:09:05] CUSTOMER: Does the mobile app do notifications? Some of the field guys say they never get anything.
+[01:09:13] AGENT: It does, but each person has to allow notifications on their phone the first time the app asks. If they tapped "Don't allow," they have to turn it on in their phone settings.
+[01:09:28] CUSTOMER: That's definitely what happened. They tap "no" on everything.
+[01:09:32] AGENT: [laughs] Very common.
+[01:09:34] CUSTOMER: My manager just messaged me "any update?" for the, um, the fourth time.
+[01:09:39] AGENT: Oh no. Do you want me to write you a quick update you can paste?
+[01:09:46] CUSTOMER: No, I'll just tell him we're working on it. Which we are.
+[01:09:51] AGENT: We are.
+[01:09:53] AGENT: Okay, I'm going to put you on a short hold while I check something with my teammate. Is that okay?
+[01:10:03] CUSTOMER: Yeah, go ahead.
+[01:10:05] [caller placed on hold]
+[01:12:25] [hold ended - 2m20s]
+[01:12:26] AGENT: Thanks for waiting. Okay, so we looked at it together and we want to try a couple more things before we go further.
+[01:12:36] CUSTOMER: Okay.
+[01:12:38] AGENT: Bear with me, my session to the logging tool just expired, I have to sign back in.
+[01:12:46] CUSTOMER: [laughs] At least it's not just me.
+[01:12:49] AGENT: [laughs] Exactly. Even we get logged out.
+[01:13:10] AGENT: Okay, I'm back.
+[01:13:12] AGENT: So, to recap: one, SSO is restored with the new certificate. Two, Tier 2 will call you within four business hours on ticket SM-20931 about the SCIM sync. Three, you'll remove the six dispatch users from the enforcement exceptions at end of day. Four, you'll update the security contact address. Five, your break-glass access expires on its own in twenty-four hours. And I'll send you an email summary of all this.
+[01:13:40] CUSTOMER: Okay. That's clear. Thank you.
+[01:13:43] AGENT: Is there anything else I can help you with today?
+[01:13:48] CUSTOMER: Um— oh, actually, while I have you, this is totally separate. Our last invoice. It billed us for a hundred and forty seats. We only have a hundred and twenty licensed. I noticed it last week and forgot to call.
+[01:14:07] AGENT: Oh. Okay. I'm not able to see invoices from here, but I'll pass it to the billing team and they'll reach out to you.
+[01:14:17] CUSTOMER: Okay. Great. Thank you, Arjun. Sorry I was so stressed.
+[01:14:23] AGENT: Completely understandable. Have a good rest of your day, Mina.
+[01:14:28] CUSTOMER: You too. Bye.
+[01:14:31] [call ended]

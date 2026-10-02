@@ -1,0 +1,328 @@
+@id C07
+@date 2026-09-22 14:05
+@line Brightwater Family Medicine - Millbrook, Benefits & Authorizations Desk (conferenced with Halvard Health Plan)
+@direction inbound (three-way call with payer)
+@target 22000
+@seed 7207
+@diar_drop 0.15
+@speaker A AGENT = Brightwater benefits & authorizations coordinator
+@speaker C PATIENT = patient
+@speaker I IVR = Halvard Health Plan automated phone system
+@speaker P PAYER = Halvard provider services representative
+@speaker U PAYER_2 = Halvard utilization management representative
+---
+A: Benefits and authorizations, this is Yusuf, how can I help?
+C: Hi. Hi, um, yes. My name is Nadia Prewitt-Okafor and I'm calling because I got a call yesterday from the, from Larkspur, the imaging place, and they said my MRI might get cancelled because there's no, um, no authorization? And I— honestly I don't even know who I'm supposed to call. They told me to call you guys. The doctor's office. So.
+A: Okay, you're in the right place, Nadia, that's what we do here. Let's figure it out. Can I get your date of birth?
+C: November twenty-seventh, nineteen eighty-four.
+A: And the address we have on file?
+C: Two-ten Calloway Street. Apartment, uh, apartment four-C. Millbrook.
+A: Perfect. And just one more, can you give me the member ID off your Halvard card?
+C: Oh, sure, hold on, it's— [rustling] it's in my— okay. H-V-D, six-zero-four-four, one-eight-two-nine.
+A: H-V-D six-zero-four-four-one-eight-two-nine. Great, that matches. Okay. So you're all verified. Let me pull up the order.
+C: Thank you. Sorry, I'm a little, I'm stressed. I took the afternoon off for the MRI already, like, I asked my manager for the eighth, and she was not happy, and now it might not even happen.
+A: No, I get it. That's really frustrating. Let's see what we can do. Who called you from Larkspur, do you remember?
+C: A lady named Bettina, I think? Or Bettina's the name on the voicemail, and then I called back and got somebody else. She said they verify all the authorizations a week or two out, and mine showed "no auth on file," and that if they don't have one by Friday, the second, they'd have to cancel and I'd have to reschedule. And the next opening is like November.
+A: Friday October second. Okay.
+C: And I said, I don't— isn't that your job, to get it? And she said it's the ordering office's job. Which is you. And so I called the main number and I pressed, like, four different things, and finally somebody gave me this extension.
+A: Yeah, our phone tree is... a work in progress. I'm glad you found me.
+C: Me too. I almost gave up.
+#diar off
+A: Okay, give me one second, the chart's loading. It's slow after lunch, everybody's in it.
+C: That's fine.
+A: Are you, um, are you comfortable right now? Like, sitting okay? I know sitting can be rough with the back.
+C: I'm lying on the floor, actually. [laughs] With my legs up on the couch. It's the only way.
+A: [laughs] Hey, whatever works.
+C: My son thinks it's hilarious. He keeps stepping over me.
+A: [laughs] Okay, here we go, it's up.
+#diar on
+#fill ehr_navigation smalltalk
+A: Okay, so I've got the order up. I'll read it to you so we're on the same page. Ordering provider, Dr. Simone Okonjo-Reyes. MRI lumbar spine without contrast. CPT seven two one four eight. Diagnosis, low back pain with radiation to the left leg, eight weeks. Priority: routine. And then her note says, um, "Persistent radicular symptoms despite conservative therapy. No red flags. Routine imaging to guide management."
+C: What does "no red flags" mean? That sounds bad. Or good?
+A: Good. It's good. It means none of the, like, emergency kind of stuff. Like no numbness in the, uh, the saddle area, no losing control of your bladder, no fever, that kind of thing.
+C: Oh. Okay. No, none of that. It just hurts. A lot. Like, down the back of my leg, like a, like a hot wire.
+A: That sounds miserable, I'm sorry.
+C: It's— I work at a bakery, so I'm lifting the flour sacks, the fifty-pound ones, and it's, yeah.
+A: Oof. Okay. And the MRI is scheduled at Larkspur for— let me see, Thursday, October eighth?
+C: The eighth. Seven-twenty in the morning. Seven-twenty.
+A: Seven-twenty, okay. And then over here on the authorization side... [typing] okay so our log says we faxed the prior auth request to Halvard on September third, and again on September fourteenth. Both show fax confirmation "OK." To five-five-five, zero-one-four-four.
+C: So you sent it. Twice.
+A: We sent it twice, yeah. So I'm not sure why Larkspur's saying there's no authorization. Sometimes Halvard just takes a while, sometimes it's sitting in a queue. The best thing is to call them. And honestly the fastest way is if I call them with you on the line, because they're going to need to verify you too, and you can hear everything. These calls can take, I'm not going to lie, they can take a while. Like half an hour, sometimes more. Do you have time for that?
+C: I mean. I already took the afternoon off, my son's home from school anyway, so, I guess, yes. [laughs] I have until three-thirty, then I have to get dinner going.
+A: Okay. We'll try to beat that. So I'm going to give them your member ID and date of birth so they can find you. Is that okay with you?
+C: Yes, that's fine.
+A: Alright. Dialing them in. You'll hear the phone tree.
+#note three-way call: Halvard Health Plan provider line conferenced in
+I: Thank you for calling Halvard Health Plan provider services. This call may be monitored or recorded for quality. Please listen carefully, as our menu options have changed. For eligibility and benefits, press one. For claims, press two. For prior authorization and utilization management, press three. For pharmacy, press four. To repeat these options, press nine.
+A: [keypad tone]
+I: Prior authorization. Please say or enter the provider's ten-digit N P I number.
+A: One-four-seven-zero... [keypad tones]
+I: I'm sorry, I didn't get that. Please say or enter the provider's ten-digit N P I number.
+A: [keypad tones]
+I: I'm sorry, I still didn't get that. Let's try something else. Please say or enter the provider's tax I D number.
+A: Ugh. [keypad tones]
+I: Thank you. Please hold while I locate that record.
+#pause 20
+I: I'm sorry, I'm having trouble locating that record. Returning you to the main menu. For eligibility and benefits, press one. For claims, press two—
+A: No no no. Come on.
+C: [laughs] Is it always like this?
+A: Pretty much every day. Okay, let's try again. Three.
+I: Prior authorization. Please say or enter the provider's ten-digit N P I number.
+A: [keypad tones] Slowly this time.
+I: Thank you. Now please say or enter the member I D.
+A: [keypad tones]
+I: Thank you. For a new authorization request, press one. For the status of an existing request, press two. To speak with a representative, press zero.
+A: Status. Two. Well— zero. I want a human.
+I: Did you know? Most authorization requests can be submitted and tracked online through the Halvard provider portal. To continue holding for a representative, press one.
+A: One.
+I: Please continue to hold. Your estimated wait time is... more than... ten... minutes.
+C: Oh no.
+#fill payer_ivr hold_announce
+A: So while we wait, how long have you had the back thing? Eight weeks the note says?
+C: About, yeah, about two months. It started in July. I was, um, I was carrying a crate of eggs, it wasn't even the flour, it was eggs, and I bent and turned and something just went. Like a pop.
+A: Ugh, those are the worst. It's always something dumb.
+C: It's always something dumb! I said that to my husband. Twelve years of flour sacks and it's eggs.
+A: [laughs] Well. And the physical therapy, you've been doing that?
+C: Yes. At your guys' rehab place. I did, I want to say, six weeks? Something like that. It felt like forever. And I do the exercises at home, the, the cobra thing, and the knee-to-chest. The cobra helps actually. A little.
+A: Six weeks of PT. Okay, good, they'll ask about that. I'll pull up the notes when we get someone.
+C: Do they care? About the PT?
+A: Oh, they care a lot. Most plans want to see that you tried the conservative stuff first, PT, medications, before they pay for an MRI. Unless it's an emergency.
+C: Okay.
+#fill hold_announce family_side @C=C
+I: Thank you for holding. A representative will be with you shortly.
+#pause 30
+P: Thank you for calling Halvard Health Plan, provider services, my name is Carla, can I have your name and the name of your practice?
+A: Hi Carla, this is Yusuf at Brightwater Family Medicine, Millbrook. I have the patient on the line as well, she's given permission. We're calling about a prior authorization for an MRI.
+P: Okay, thank you. Can I have the N P I or tax I D?
+A: N P I is one-four-seven-zero, three-three-eight, two-one-nine.
+P: Thank you, Brightwater Family Medicine, Millbrook Avenue. And the member I D?
+A: H-V-D six-zero-four-four-one-eight-two-nine.
+P: [typing] Okay. And I'm showing a Nadine Prewitt?
+A: No— Nadia. N-A-D-I-A. Prewitt, hyphen, Okafor.
+P: Oh, I'm so sorry. Let me— I fat-fingered the I D, one second. Six-zero-four-four... one-eight-two-nine. Okay. Nadia Prewitt-Okafor. And date of birth?
+C: Eleven, twenty-seven, eighty-four.
+P: Thank you, Ms. Prewitt-Okafor, I have you now. Sorry about that.
+C: That's okay. Happens to me a lot. Everyone wants me to be Nadine.
+P: [laughs] Okay. So I'm in provider services, I can do eligibility and benefits. Prior auth is actually our U M department, utilization management. But let me confirm your eligibility first so they don't have to.
+A: Sure.
+P: Okay, so the member is active, effective January first, on the Halvard Select P P O. Advanced imaging, MRI, requires prior authorization, yes. In-network imaging at Larkspur Surgery and Endoscopy Center is covered at, um, eighty percent after deductible.
+C: What's my deductible?
+P: Your individual deductible is fifteen hundred. And it's showing, um, eleven-twenty met.
+C: Eleven-twenty.
+P: Sorry, wait. That's as of— let me refresh this, sometimes it's stale. [typing] Okay, with the August claims processed, it's twelve-ten met. One thousand two hundred ten. So you'd have two hundred ninety left before the eighty percent kicks in.
+C: Two-ninety. Okay. That's, okay. That's less bad than I thought.
+A: Got it, thanks Carla. While I have you, can you tell me her physical therapy benefit? In case the doctor wants more PT after the MRI.
+P: Sure. Outpatient rehab, P T, O T and chiro combined, thirty visits per calendar year. She's used, let me see, eight. Twenty-two remaining. Same coinsurance, after deductible.
+A: Twenty-two remaining. Perfect.
+C: Is that a lot? Twenty-two?
+A: That's plenty. Most people don't use thirty.
+P: And no referral needed for P T on her plan, just a prescription.
+A: Great. And Carla, is there any facility pre-certification on top of the prior auth for Larkspur? Some plans want both.
+P: Not for outpatient imaging. Just the one authorization. The rendering facility's on the request, so that covers them.
+A: Okay, good. One thing at least.
+C: Can I ask, um, is there a way I can see the authorization myself? Online? So I'm not calling everyone?
+P: Yes, ma'am. On the member portal, under "My Care," then "Authorizations." Anything submitted for you shows up there with a status.
+C: Oh. And it would've shown nothing, then. This whole time.
+P: If nothing was received, nothing would show, that's right.
+C: Huh. I wish I'd known that two weeks ago.
+P: I'm sorry about that.
+#fill payer_rep payer_hold2
+P: Okay, so for the authorization, let me transfer you to U M, they'll be able to see the request.
+A: Can you stay on and introduce us? We've been through the phone tree twice already.
+P: I'll put you through to their queue, they're usually pretty quick this time of day. Thanks for calling Halvard!
+A: Okay... thanks.
+#note call transferred
+I: Thank you for calling Halvard Health Plan provider services. This call may be monitored or recorded for quality. Please listen carefully, as our menu options have changed. For eligibility and benefits, press one—
+A: No. No! She sent us back to the front.
+C: Wait, what happened?
+A: The transfer dumped us back into the main menu. We're starting over. Hang on. Three.
+I: Prior authorization. Please say or enter the provider's ten-digit N P I number.
+A: [keypad tones]
+I: Thank you. Now please say or enter the member I D.
+A: H-V-D-six-zero-four-four-one-eight-two-nine.
+I: I'm sorry. I didn't get that. Please say or enter the member I D. Letters can be entered using the keypad, by pressing the key with that letter.
+A: Oh my gosh. H is four, V is eight, D is three... [keypad tones] ...six-zero-four-four-one-eight-two-nine.
+I: Thank you. For a new authorization request, press one. For the status of an existing request, press two. To speak with a representative, press zero.
+A: Zero.
+I: Did you know? Most authorization requests can be submitted and tracked online through the Halvard provider portal. To continue holding for a representative, press one.
+A: One. One one one.
+I: Please continue to hold. Your estimated wait time is... less than... five... minutes.
+C: Less than five! That's progress.
+A: [laughs] Don't jinx it.
+#diar off
+A: [to someone nearby] Hey, Bea— Bea, sorry, quick question, did we ever get anything from Halvard about a fax change? Like a bulletin?
+A: [off mic] [inaudible] ...the July one? ...in the binder, I think, I didn't read it...
+A: Okay. Never mind, I'll look later. [to caller] Sorry, Nadia, just asking my coworker something.
+C: That's okay.
+#diar on
+I: Please hold for the next available utilization management representative.
+#fill hold_announce payer_hold2
+C: So she just dumped us.
+A: Yeah. "Pretty quick." We'll see.
+C: Can I ask you something while we wait? If they say no, do I just not get the MRI?
+A: If they deny it, the doctor can appeal, or do a peer-to-peer, where she talks to their doctor directly. Or you could pay cash, but MRIs are expensive, so let's not go there yet. Most of the time it's just paperwork.
+C: Okay. Because I really need to know what's going on. My leg's been, like, tingly in the toes the last week too.
+A: Tingly? You should definitely tell Dr. Okonjo-Reyes about that. I can send her a message after this, if you want.
+C: Would you? I don't want to bother her.
+A: It's not a bother. I'll send her a message that you've had tingling in your toes this past week, and her nurse will call you.
+C: Okay. Thank you.
+#fill smalltalk2 family_side connection_issues @A=A @C=C
+I: Thank you for your patience. Your call is important to us. Please continue to hold.
+#pause 40
+C: Can I ask you a dumb insurance question while we wait?
+A: Sure, there's no dumb ones.
+C: My husband's on a different plan, through his work, it's not Halvard, it's, um, something else. Can I be on his? Like, would it be better?
+A: Oh, that's a question for open enrollment. Some people do have both, primary and secondary. It can help, but it can also be a headache with authorizations because both plans have rules. I'd talk to his HR in November.
+C: November. Okay. I'll write that down. I'm writing everything down today.
+A: [laughs] Good idea. I do that too.
+C: I have a notebook just for this back thing. Every call. Who I talked to, what they said. My sister told me to.
+A: Your sister's smart.
+C: She's a paralegal. [laughs] She's scary.
+A: [laughs]
+C: [to someone in the room] No, honey, I'm still on the phone. ... Ask your dad. ... No, not the iPad. ... Because I said so.
+C: Sorry. My son's home sick. Well, "sick."
+A: [laughs] I have one of those. Fevers that disappear at ten a.m.
+C: Exactly! The miracle recovery.
+#fill hold_announce payer_hold2 family_side @C=C
+U: Utilization management, this is Devon. Who do I have?
+A: Hi Devon! Finally. Sorry. Hi. This is Yusuf with Brightwater Family Medicine, Millbrook location, and I've got the member on the line with permission. We're checking on a prior auth for an outpatient MRI.
+U: No problem. N P I or tax I D for the requesting provider?
+A: N P I one-four-seven-zero, three-three-eight, two-one-nine.
+U: And the rendering facility?
+A: Larkspur Surgery and Endoscopy Center, the imaging department.
+U: Okay. Member I D?
+A: H-V-D six-zero-four-four-one-eight-two-nine.
+U: Name and date of birth, please.
+C: Nadia Prewitt-Okafor, November twenty-seventh, nineteen eighty-four.
+U: Thank you. Okay. And what's the service?
+A: MRI lumbar spine without contrast, seven two one four eight.
+U: Seven-two-one-four-eight. [typing] Okay... I'm not seeing any request on file for this member for seven-two-one-four-eight. Or for any imaging, actually. The last authorization on file for her is from last year, a, uh, a different service, closed.
+C: What? But they sent it. Twice.
+A: Yeah, we faxed it on the third and again on the fourteenth. I've got two fax confirmations.
+U: Okay. What fax number did you send to?
+A: Five-five-five, zero-one-four-four.
+U: Yeah. That's the problem. Zero-one-four-four was our old U M fax. That line was retired August thirty-first. Anything faxed there after that just... doesn't come to anyone. It still connects, so your machine says "OK," but there's nobody on the other end.
+A: Oh, come on.
+U: I know. We sent a provider bulletin in July, and there's a recorded message on the main line, but I hear this every day, honestly.
+A: Nobody here told— well. Somebody probably got the bulletin. What's the new number?
+U: New fax is five-five-five, zero-one-eight-eight. But honestly the provider portal is faster. Portal submissions get a reference number right away and you can attach the clinicals.
+A: Zero-one-eight-eight. Okay. I have portal access, I'll do it on the portal. Can you start it by phone while I upload, so we don't lose another day?
+U: I can open the case by phone and give you a reference number, and you attach the clinicals in the portal under that number. That works.
+A: Perfect. Let's do that.
+C: So it was never even received? This whole time?
+U: I'm sorry, ma'am. It looks like it never reached us. It's not a denial, it just never got here.
+C: [sighs] Okay. Okay. At least it's not a no.
+A: Devon, can you double-check something for me? Is there any chance it went to an intake queue that hasn't been worked yet? Like a backlog? I don't want to resubmit and create a duplicate.
+U: Fair question. Let me check with our intake team, can you hold for about two minutes?
+A: Sure.
+#hold 140
+U: Thanks for holding. I checked with intake. Nothing received from your N P I or tax I D since August thirty-first. They can see the old line still rings but nothing's routed. So you're not going to create a duplicate.
+A: Okay. Thanks for checking.
+U: And honestly, check your other pending requests too, if anything else went to zero-one-four-four after August thirty-first, same thing.
+A: Oh no. Yeah. There's probably a pile. I'll go through them.
+#fill payer_hold2 ehr_navigation @P=U
+U: Okay. So, opening a new request. Requesting provider, Dr. Okonjo-Reyes, I have her in our directory. Service, seven-two-one-four-eight, one unit, outpatient, Larkspur. Date of service?
+A: October eighth.
+U: October eighth. Diagnosis codes?
+A: M fifty-four point one six, and M fifty-four point four two.
+U: M fifty-four point one six... M fifty-four point four two. Lumbar radiculopathy and lumbago with sciatica, left. Okay. How long has she had symptoms?
+A: About eight weeks. Since mid-July.
+U: And conservative treatment? We need at least six weeks of documented conservative therapy for lumbar MRI without red flags.
+A: She's done six weeks of PT.
+U: Do you have dates? I'll need the PT notes uploaded.
+A: Yep, one sec, let me find the PT note. [typing] Our rehab notes are in a different tab, of course. Okay. Brightwater Rehab... here. Initial eval July thirty-first, and the discharge note is September eleventh. Eight visits. So July thirty-first through September eleventh, that's six weeks. And she's on a home exercise program.
+U: Six weeks, eight visits, home program. Medications?
+A: Um, naproxen, five hundred twice a day, and a short course of, um, methylprednisolone, the dose pack, in August.
+U: Okay, NSAIDs and an oral steroid. Good.
+C: The steroid thing helped for like three days.
+U: [laughs] They do that.
+U: Any other relevant history I should note?
+A: Um, let's see, she's also on, uh, sertraline for depression, if that matters.
+C: [pause] ...Oh. Um. Okay. I didn't really— okay.
+U: That's, uh, I don't need that for an imaging review, but okay. Anything related to the back? Prior surgery, injury, cancer history?
+#diar off
+C: No. Nothing like that.
+A: No cancer history. No prior surgery.
+#diar on
+A: No, no prior back surgery. Injury in July, lifting at work.
+U: Okay. Lifting injury, July. Is this a workers' comp case, by the way? If it's a work injury it may need to go to her employer's carrier.
+C: Oh. Um, no, I— I didn't file anything. It was eggs. I mean, it was at work, but I didn't report it. Is that bad?
+U: It's not bad, it's just something we ask. If no claim was filed, we can process it under the health plan.
+A: No comp claim. We'll note that.
+#fill payer_hold2 smalltalk2 @P=U
+A: Devon, one more thing, can we get this expedited? It's urgent— she's in a lot of pain, and the MRI's on the eighth, and we've already lost three weeks because of the fax thing.
+U: So, expedited review is for cases where waiting the standard timeframe could seriously jeopardize the member's life, health, or ability to regain maximum function. Is the ordering provider attesting that this is urgent?
+A: Yes. Yes, the doctor considers it urgent.
+U: Okay. I'll mark it expedited based on the provider's attestation. Make sure the clinical notes you upload support that, because the reviewer will look. Expedited decisions are made within seventy-two hours. Standard would be up to fifteen calendar days.
+A: Seventy-two hours. Great.
+C: So I might actually keep the eighth.
+U: If it's approved, you should be fine for the eighth.
+U: Okay, I've opened the case. Your reference number is P A, two-six-zero-nine, five-five-one-seven-zero.
+A: P A two-six-zero-nine, five-five-one-oh-seven?
+U: No— five-five-one, seven, zero. One-seven-zero at the end.
+A: Five-five-one-seven-zero. PA-2609-55170. Got it, sorry.
+C: Can I ask, if they say no, what happens? Yusuf said something about the doctor talking to your doctor?
+U: Right. If the reviewer can't approve it from the records, the ordering provider gets offered a peer-to-peer, a phone call with our medical director, before a denial is final. And if it's denied, there's an appeal process, which is in the letter. But let's not get ahead of ourselves.
+C: Okay. Peer-to-peer. I'm writing it down.
+U: [laughs] Good.
+C: My sister said you guys probably lose these on purpose so you don't have to pay.
+U: [laughs] I promise you nobody here is that organized. It's just the old fax line.
+A: [laughs]
+U: No problem. When you log into the portal, search by that reference and attach the order, the PT notes, and the most recent office note.
+A: Okay, I'm logging in now. Can you stay on for a minute while I upload so you can confirm you see it?
+U: Sure, I can do that.
+#hold 160
+#fill ehr_navigation hold_announce @C=C
+A: Okay, I'm in, I found the case. Uploading the order... PT initial eval, PT discharge note... and the office note from September second. That's four documents.
+U: [typing] Let me refresh... I see four attachments on PA-2609-55170. Order, two PT notes, office visit. Good.
+A: Great.
+U: Anything else I can help with?
+A: Actually, yes— can you confirm that new fax again, for our records? I want to update our sheet.
+U: Five-five-five, zero-one-eight-eight. And the portal is at the provider login on our website. But please, portal.
+A: Portal. Got it. Thank you, Devon, seriously, you're the first person all day who knew what was going on.
+U: [laughs] Happy to help. You'll get the determination in the portal, and the member gets a letter. Have a good afternoon.
+C: Thank you, Devon.
+#note Halvard representative disconnected
+A: Okay. Nadia, you still with me?
+C: I'm here. So— okay, so it was the fax number the whole time.
+A: The whole time. I'm really sorry. I'm going to update our fax sheet right after this and tell my supervisor, because if it happened to you it's happening to other people too.
+C: Yeah. That's, wow. Okay.
+A: Actually, give me a second, I want to look at something. [typing] Our fax cover sheet template. It's got Halvard U M fax, five-five-five, zero-one-four-four, and at the bottom it says "updated March 2025." So everybody here's been using the template. That's why.
+C: So it's not just me.
+C: I'll put a sticky note on the template right now and email the team. That's going to be a fun email.
+C: [laughs] Good luck.
+A: [laughs] Thanks.
+#fill smalltalk2 family_side @A=A @C=C
+C: Can I, um, can I say something? The thing about the depression medicine. Why did they need to know that?
+A: Oh, that. They sometimes ask for the whole med list, so I just like to give them everything up front, so they don't come back and pend it for more information. Saves a round trip.
+C: Oh. Okay. I guess. It's just, it's not really anybody's business, you know?
+A: Yeah, no, I hear you.
+C: Okay. So what happens now?
+A: So, now Halvard has seventy-two hours. I'll watch the portal, and as soon as there's a decision I'll call you. Same number, the one ending in, um, zero-one-six-six?
+C: Zero-one-six-six, yes. That's my cell.
+A: Okay. And I'm going to call Larkspur imaging today and let them know the authorization is in process with a reference number, so they don't cancel you on the eighth.
+C: Oh, please do, because the lady yesterday said they'd cancel it if they don't hear by Friday.
+A: I'll call them right after we hang up. If for some reason we still don't have a decision by Tuesday the sixth, I'll call you and we'll move the MRI to the next open slot, so you don't show up and get turned away.
+C: Okay. Tuesday the sixth.
+A: And I'll send Dr. Okonjo-Reyes the message about the tingling in your toes, so her nurse can call you about that.
+C: Thank you. And the cost, so it's the two-ninety and then eighty percent?
+A: Right, you'd pay the first two hundred ninety toward your deductible, and then twenty percent of the rest. Larkspur can give you an estimate if you call their billing line, they're pretty good about that.
+C: Okay. I'll call them.
+A: And just so you know what to expect, you'll get a letter from Halvard in the mail with the decision, whichever way it goes. And it'll show up in your member portal under "My Care."
+C: "My Care," "Authorizations." Carla told me. It's in the notebook.
+A: [laughs] You're more organized than me.
+C: Can I ask, um, the tingling thing. Should I be worried? Like, should I go to the ER?
+A: I'm not a clinician, so I can't really tell you that. I'll get the message to Dr. Okonjo-Reyes today, and if anything changes, like the numbness gets worse, or it's in both legs, or anything with your bladder, the stuff we talked about, you'd go to the ER or urgent care right away, don't wait for us.
+C: Okay. Both legs or bladder, ER.
+A: Right. And the nurse will call you.
+#fill smalltalk2 connection_issues @A=A @C=C
+C: Sorry, one more, my husband's asking, can he call you for updates? He's better with this stuff than me.
+A: He'd need to be on your release form for us to talk to him. Is he on it?
+C: I don't— I don't think so. I never filled one out.
+A: I can mail you the form, or you can do it on the portal under "authorizations and proxies." Until then I can only talk to you.
+C: Okay, I'll do it on the portal tonight.
+A: Perfect. Anything else?
+C: No. No, I think that's it. Thank you, Yusuf. Really. I don't know what I would've done.
+A: Of course. Hang in there, and do the cobra. [laughs]
+C: [laughs] I'll do the cobra. Bye.
+A: Bye, Nadia.

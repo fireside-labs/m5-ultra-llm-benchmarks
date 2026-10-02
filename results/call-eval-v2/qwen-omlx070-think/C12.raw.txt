@@ -1,0 +1,42 @@
+
+
+{
+  "call_type": "billing_dispute",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 5,
+  "quality_reasons": [
+    "Verified account owner identity with emailed six-digit code before discussing billing details.",
+    "Correctly identified that the apparent duplicate charge was two separate Studio subscriptions, not a billing error.",
+    "Applied policy accurately: downgraded unused Archive workspace to free Read-Only and refunded only the current-month charge.",
+    "Confirmed the main workspace and its users would remain unchanged.",
+    "De-escalated the customer's initial frustration and closed with a clear confirmation email commitment."
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "agent",
+      "task": "Send email confirming the Archive workspace downgrade to Read-Only and the $49 refund",
+      "due": "unspecified"
+    },
+    {
+      "owner": "customer",
+      "task": "Monitor Mastercard ending 6604 for the $49 refund",
+      "due": "5 to 7 business days"
+    }
+  ],
+  "summary_notes": "Customer reported two $49 charges on the same day. Identity verified via emailed code. Billing found two active Studio subscriptions tied to the same login/card: Halden Studio and Halden Studio Archive, both renewed on the twentieth. Archive had been active since last November and had not sent invoices since February. Agent downgraded Archive to free Read-Only, refunded the current $49 charge to Mastercard ending 6604, and explained refund timing of 5-7 business days. Main workspace remains unchanged. Confirmation email to be sent. Customer accepted outcome and sentiment improved.",
+  "notable_details": [
+    "Customer: Saoirse Lindgren-Abara, owner of Halden Studio.",
+    "Two workspaces tied to same login/card: Halden Studio and Halden Studio Archive.",
+    "Both workspaces were on Studio plan at $49/month and renewed on the twentieth.",
+    "Archive workspace had been active since last November, about 10 months.",
+    "Archive had not sent an invoice since February.",
+    "Main Halden Studio workspace has four users; Archive has one user.",
+    "Archive downgraded to free Read-Only tier; no more charges for it.",
+    "$49 refund issued to Mastercard ending 6604, expected in 5 to 7 business days.",
+    "Agent promised email confirming downgrade and refund.",
+    "Main workspace remains on Studio plan with no changes."
+  ]
+}

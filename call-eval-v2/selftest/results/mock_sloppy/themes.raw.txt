@@ -1,0 +1,33 @@
+{
+ "themes": [
+  {
+   "theme": "Double charges",
+   "description": "Customers were charged twice for the same purchase.",
+   "call_ids": [
+    "C04",
+    "C12"
+   ],
+   "evidence": "",
+   "recommended_action": "Review billing."
+  },
+  {
+   "theme": "Authorization delays",
+   "description": "Prior authorizations stuck pending with the insurer.",
+   "call_ids": [
+    "C03",
+    "C10"
+   ],
+   "evidence": "",
+   "recommended_action": "Follow up with payer."
+  },
+  {
+   "theme": "Long hold times",
+   "description": "Callers waited on hold.",
+   "call_ids": [
+    "C14"
+   ],
+   "evidence": "",
+   "recommended_action": "Staff up."
+  }
+ ]
+}

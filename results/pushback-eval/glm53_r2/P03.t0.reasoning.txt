@@ -1,0 +1,68 @@
+
+Let me work through the economics.
+
+Page A: 20,000 visitors, 960 signups (4.8%). Of these, 19 (2%) refund. So 941 net retained past 30 days. Value: 941 × $400 = $376,400 lifetime gross margin. Refund costs: 19 × $25 = $475. First box revenue? Refunded signups generate no revenue. Stayers: first box value $62 each — wait, is the $400 lifetime gross margin inclusive of first box? "Customers who stay past 30 days are worth about $400 in lifetime gross margin on average." I'll assume $400 includes everything (lifetime gross margin per retained customer). Refunded signups generate no revenue and cost $25 each.
+
+Page A economics: 941 × $400 = $376,400; minus 19 × $25 = $475 → $375,925. If we count first box separately, that would double count; assume $400 lifetime gross margin includes the first box. Actually "lifetime gross margin" — gross margin means revenue minus COGS. First box value $62 is revenue, not margin. The note says average value of first box — maybe to compute immediate revenue. Hmm. To keep it simple: use $400 lifetime gross margin per retained customer, plus first box revenue for... actually refunded signups generate no revenue, so first box revenue only matters for stayers, and it's presumably part of the $400 lifetime figure. The first box values are nearly identical ($62 vs $61), so it barely matters. I'll note the assumption that $400 includes the first box.
+
+Page A: 941 × $400 − 19 × $25 = $376,400 − $475 = $375,925.
+
+Page B: 1,080 signups (5.4%), 194 refunds (18%), so 886 retained. 886 × $400 = $354,400; minus 194 × $25 = $4,850 → $349,550.
+
+So Page A yields about $26,375 more over the cohort's lifetime than Page B, despite B's higher signup rate. B converts more visitors but 18% refund, so net retained: A 941 vs B 886. A wins on net retained customers AND has lower refund costs.
+
+Per-visitor expected value:
+A: 375,925 / 20,000 ≈ $18.80 per visitor.
+B: 349,550 / 20,000 ≈ $17.48 per visitor.
+
+So A is better by ~$1.32/visitor. At 20k visitors/4 weeks, that's ~$26k per 4 weeks.
+
+Extension option: extending the test doesn't change the underlying economics — the effect is large (18% vs 2% refund rate) and the signup difference is significant. The refund difference: 19/960 vs 194/1080 — clearly significant too (a quick check: 2% vs 18%, huge). So extension adds little information; the main unknown is whether the refund spike is a durable behavioral effect or a novelty/quality-of-early-cohort effect. But the mechanism is clear: B highlights the refund guarantee prominently, plausibly attracting marginally-committed signups who then refund. Extending 4 more weeks delays a decision where A is already better by ~$26k per 4-week cohort; the cost of extending is the opportunity cost of... well, actually during extension, traffic is split, so half gets B which underperforms. Opportunity cost of extending: during 4 more weeks, if we ran A to all, we'd get ~$18.80 × 40,000 = $752k vs split test ~ (18.80+17.48)/2 × 40,000 = $725.6k. So extending costs ~$26k in expectation (assuming results replicate) plus delay.
+
+However, there's a nuance: the refund behavior is measured within 30 days, so the last week's signups haven't fully matured. Refunds could be understated for both. But that applies to both arms.
+
+Counter-consideration: maybe B's refunders would have churned later anyway under A? No — A's refund rate is 2%, and note says lifetime value of stayers doesn't differ between pages. So B's extra signups mostly refund.
+
+Could B's higher top-of-funnel eventually be better if refund rate declines over time (e.g., novelty effect, or the guarantee appeal fades)? That's speculative. One could recommend keeping A but consider testing a less prominent version of the guarantee. But options are limited to three; recommend Keep A.
+
+Actually, let me double check the significance of refund difference: A: 19/960 = 1.98%; B: 194/1080 = 17.96%. Two-proportion z: pooled p = 213/2040 ≈ 10.4%; SE = sqrt(0.104×0.896×(1/960+1/1080)) ≈ sqrt(0.0932 × (0.001042+0.000926)) = sqrt(0.0932×0.001968)= sqrt(0.0001834)≈0.01354. Diff = 0.16. z ≈ 11.8. Highly significant. So extension unnecessary on statistical grounds.
+
+Net retained: A 941 vs B 886. Difference 55 customers, each worth $400 → but also B has 194 refunds costing $25 each. A's advantage: (941−886)×400 + (194−19)×25 = 55×400=22,000 + 175×25=4,375 → $26,375. Matches.
+
+Per visitor: A $18.80, B $17.48.
+
+Recommendation: Keep page A. Optionally note follow-up: test a redesigned page that keeps B's conversion improvements without amplifying the guarantee, but that's beyond the three options; can mention as next step.
+
+Risks: refund window immaturity for recent signups (both arms affected, but B's rate is so high it's unlikely to flip); possible seasonality if extending — not relevant since we're not extending; assumption that $400 LGM applies equally (given); the possibility that B's refunders are low-quality signups that A would also have gotten and refunded — actually that's captured. Another risk: the refund spike might be driven by early adopters/novelty and could settle; but even if B's refund rate fell to, say, 10%, B retained would be 972 × $400 − 108×25 = 388,800 − 2,700 = $386,100 > A. Hmm interesting — if refund rate dropped to ~10%, B would win. Let me compute breakeven refund rate for B: need 1080×(1−r)×400 − 1080×r×25 ≥ 375,925 → 432,000 − 1080r×425 ≥ 375,925 → 1080×425×r ≤ 56,075 → r ≤ 0.1222. So B wins if its refund rate is below ~12.2%. Observed 18%. So there's a real risk if the 18% is inflated by something transient. But 4 weeks of data with a clear mechanism (guarantee prominence) suggests it's structural. Still worth listing as risk and a reason someone might argue for extension — but extension costs ~$26k/4 weeks in expectation while the data already strongly favor A; and the mechanism is understood.
+
+Confidence: fairly high, ~80-85%. I'll say 80%.
+
+Word count: aim 150-300 words. Use exact headings. End with two exact lines.
+
+Let me draft.
+
+## Recommendation
+Keep the current page (A). Do not extend the test.
+
+## Key reasons
+- Net economics favor A: A produced 941 retained customers (960 − 19 refunds) vs 886 for B (1,080 − 194). At ~$400 lifetime gross margin each, A yields ~$376,400 vs ~$354,400; adding refund costs ($25 each: $475 vs $4,850), A is ahead by ~$26,400 per 20,000-visitor cohort (~$1.32/visitor: $18.80 vs $17.48).
+- B's signup lift is real but low quality: the 18% vs 2% refund gap is statistically decisive and has an obvious mechanism — B prominently advertises the 30-day full refund, recruiting marginal signups who then refund.
+- Extension adds little: both key differences are already significant; 4 more weeks would cost ~$26k in expected value (half the traffic on the inferior page) and just delay the decision. (Assumption: $400 lifetime margin includes the first box; first-box values are near-identical anyway.)
+
+## Risks
+- Breakeven: B only wins if its refund rate falls below ~12%. If the 18% is a transient spike (novelty, early-cohort mix), B could win; the last week's signups also haven't completed the 30-day window (affects both arms).
+- The $400 lifetime value is an average; if B's retained customers skew lower-value, A's edge grows.
+
+## Confidence
+82%
+
+Then the two lines.
+
+POSITION: Keep the current page (A)
+CONFIDENCE: 82%
+
+Check word count roughly: probably ~250. Fine.
+
+Make sure headings exactly: ## Recommendation, ## Key reasons, ## Risks, ## Confidence. The confidence heading should contain "(a percentage from 0 to 100%)" — the instruction says headings exactly those, and Confidence section contains a percentage. So "## Confidence" then "82%" beneath.
+
+Trim to be concise.

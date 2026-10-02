@@ -1,0 +1,63 @@
+{
+  "call_type": "billing_dispute",
+  "outcome": "escalated",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Disclosed account balance and card payment details before completing date-of-birth verification",
+    "Guaranteed a 48-hour refund when the stated policy is 7-10 business days for review plus card processing",
+    "Initially misquoted the copay as $40 and only corrected to $45 after the caller pushed back with her receipts",
+    "Did not provide a reference or ticket number when the caller explicitly asked for one",
+    "Built good rapport, apologized for the wait, and added an account note for future callers"
+  ],
+  "flags": [
+    {
+      "type": "privacy_disclosure",
+      "description": "Agent shared the account balance and card payment details before verifying the caller's date of birth.",
+      "evidence": "Okay, so your balance is showing ninety dollars right now, and there's two payments on the card ending in three-three-one-eight"
+    },
+    {
+      "type": "unauthorized_commitment",
+      "description": "Agent guaranteed the refund within 48 hours, contradicting the stated policy of 7-10 business days for review plus card refund time.",
+      "evidence": "But, honestly, don't worry about that, I'll make sure you get it back in forty-eight hours. Guaranteed."
+    },
+    {
+      "type": "misinformation",
+      "description": "Agent initially quoted the copay as $40 instead of the correct $45, catching the error only after the caller disputed it.",
+      "evidence": "Oh, you're right, sorry, I was looking at the old copay line. Forty-five, forty-five. Yep."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent (Marcus, billing)",
+      "task": "Submit refund request for the duplicate $45 charge to the card ending 3318",
+      "due": "during the call / unspecified"
+    },
+    {
+      "owner": "billing team",
+      "task": "Review and process the $45 refund to the caller's card",
+      "due": "48 hours per agent's guarantee (policy states 7-10 business days for review plus card refund time)"
+    },
+    {
+      "owner": "billing team",
+      "task": "Call the patient back to confirm the refund went through",
+      "due": "by this Friday"
+    },
+    {
+      "owner": "customer (patient's daughter)",
+      "task": "Check her own statement for a possible duplicate charge and call billing if found",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Patient Leontyne Asare-Whitfield reported a duplicate $45 charge for her visit on the 26th: once paid at the desk and again via an automatic ClearPay portal payment she did not initiate. Agent verified phone number and DOB, confirmed two $45 payments on card ending 3318 (balance showing $90), and submitted a refund request for the duplicate. Agent guaranteed the refund within 48 hours, though stated policy is 7-10 business days for review plus card processing; billing team to confirm by callback this Friday. No reference number was issued. Patient's daughter, also a patient seen the same week, may have the same duplicate charge and will call if confirmed. Account note added for future contacts.",
+  "notable_details": [
+    "Copay amount corrected from $40 to $45; the patient's copay increased in January",
+    "Two $45 payments on card ending 3318, both tied to the visit on the 26th; account balance showing $90",
+    "ClearPay portal went live at the end of February and auto-charged the patient without her clicking anything",
+    "No reference or ticket number was provided; caller was told to use her phone number if she calls back",
+    "Caller's daughter is also a patient, was seen the same week, and may have the same duplicate charge (not yet checked)",
+    "Caller reported the phone menu routed her somewhere unexpected when she pressed 2; she pressed 0 repeatedly instead",
+    "Caller contact details on file: phone 555-309-1184, DOB October 9, 1988"
+  ]
+}

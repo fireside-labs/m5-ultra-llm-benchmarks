@@ -1,0 +1,91 @@
+{
+ "call_type": "billing_dispute",
+ "outcome": "callback",
+ "sentiment_start": "negative",
+ "sentiment_end": "neutral",
+ "quality_score": 2,
+ "quality_reasons": [
+  "First agent (Corwin) was curt and dismissive, skipped identity verification, wrongly said out of network and threatened collections despite the open dispute",
+  "Coding specialist (Ines) verified properly, found and corrected the coding error (99285 to 99214), network and date confusion, and explained clearly with empathy",
+  "The promised account hold was never actually placed (summary read back shows no holds)"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Billing agent Corwin discussed the account and charges after the caller gave only his name; when the caller asked if he needed his birthday he said no - identity never verified",
+   "evidence": "Nah, you're fine, I got you."
+  },
+  {
+   "type": "other",
+   "description": "Corwin told the caller the bill would go to collections if not paid by Friday although a billing dispute was open, contradicting the policy (stated in the phone greeting) that disputed accounts are on hold and not referred to collections; never retracted",
+   "evidence": "If it's not paid by Friday it goes to collections."
+  },
+  {
+   "type": "other",
+   "description": "Specialist Ines promised to put a hold on the account right away, but the account summary she later read back shows 'Status: active. Holds: none' and she did not notice - the hold was never placed",
+   "evidence": "Status: active. Holds: none."
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "coding specialist (Ines)",
+   "task": "Recode visit 99285 to 99214, fix diagnosis to right wrist, submit replacement claim to Halvard in tonight's batch",
+   "due": "tonight"
+  },
+  {
+   "owner": "coding specialist (Ines)",
+   "task": "Call the caller back with Halvard's result within 10 business days",
+   "due": "by Oct 6"
+  },
+  {
+   "owner": "billing",
+   "task": "Mail a corrected itemized statement after Halvard reprocesses",
+   "due": "after reprocessing"
+  },
+  {
+   "owner": "caller",
+   "task": "Send photos of the urgent care discharge papers (and any copay receipt) via portal message to billing, attention Ines",
+   "due": "tonight"
+  },
+  {
+   "owner": "coding specialist (Ines)",
+   "task": "Note 20% prompt-pay discount to apply to the corrected statement if paid within 30 days",
+   "due": "on corrected statement"
+  },
+  {
+   "owner": "coding specialist (Ines)",
+   "task": "Place a hold on the account while the claim is reprocessed",
+   "due": "immediately"
+  },
+  {
+   "owner": "coding specialist (Ines)",
+   "task": "Send a portal message confirming the corrected claim was submitted",
+   "due": "this afternoon"
+  },
+  {
+   "owner": "caller",
+   "task": "Fill out and return Halvard's accident questionnaire if one arrives by mail",
+   "due": "on receipt"
+  },
+  {
+   "owner": "caller",
+   "task": "Call the nurse line (option 4) for a blood-pressure (amlodipine) refill",
+   "due": "after the call"
+  },
+  {
+   "owner": "coding specialist (Ines)",
+   "task": "Report the statement date-printing error and the coding/location setup problem to her manager and the statement team",
+   "due": "unspecified"
+  }
+ ],
+ "summary_notes": "Mock summary for C14.",
+ "notable_details": [
+  "Estimated balance after recode is about $184 ($75 copay + $109 x-ray coinsurance), not $1,284; caller misheard it as 148",
+  "Visit was miscoded as 99285 (ER level 5) and is being recoded to 99214",
+  "Date of service is Sept 5 (the statement misprinted Sept 15)",
+  "Original claim number 2609-33418",
+  "Specialist Ines's direct extension is 2271",
+  "Caller pressed 3 for refills in the phone menu and landed in billing",
+  "Diagnosis code also said left wrist; corrected to right wrist (S63.501A)"
+ ]
+}

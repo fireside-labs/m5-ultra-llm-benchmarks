@@ -1,0 +1,59 @@
+
+Let me analyze this call.
+
+Call type: saas_support. Outcome: main issue (SSO login) resolved during call; SCIM sync escalated to Tier 2 with callback within 4 business hours; billing issue passed to billing team. Per rules: "escalated = handed to a supervisor, higher tier, clinician or another team (use this even if a callback is also planned)". SCIM sync was escalated to Tier 2, billing passed to billing team. So outcome = escalated.
+
+Sentiment start: negative (panicked, "nobody can log in", stressed). Actually first minute: "I've got people literally standing at my desk" — negative. End: "Thank you, Arjun. Sorry I was so stressed" — positive/relieved. Positive.
+
+Quality score: The agent did well overall — verified identity via email code, methodical troubleshooting, resolved SSO. But serious issues:
+1. Asked customer to read out her password over the phone and logged in as her — credential sharing, security violation. "we do it all the time, it's just quicker" — that's a serious security failure.
+2. Promised a full month free credit — "I'll make sure you get a full month free on your next invoice. I'll put that through myself." Tier 1 agent committing a credit; credits normally handled by account manager per SLA. Unauthorized commitment. Also the issue was customer's cert, not vendor outage — credit may be outside policy.
+3. Disclosed another customer's details: "Pellmont Freight. Their admin, Gary Tolliver-Shea, uploaded the old certificate..." — privacy disclosure of another customer's info.
+4. Long holds: 1m15s and 2m20s — the second hold was announced ("short hold"), first was muted for a minute ("Is it okay if I mute for a minute?" — announced). Holds were announced, so minor.
+5. Identity verification: verified via email code — good. But then shared password — bad.
+
+Score: multiple notable lapses including a serious security failure (password sharing) and unauthorized commitment. I'd say 2 (poor: a serious compliance/security failure, or several notable lapses). There's one serious security failure plus unauthorized credit commitment plus privacy disclosure of another customer. That's multiple serious failures → could be 1? "1 = very poor: multiple serious failures or dangerous handling." Password sharing is serious; credit commitment is serious-ish; disclosing another customer's name/admin details is a privacy breach. Three serious failures. Hmm. But the overall handling was otherwise excellent and resolved the issue. The rubric: 2 = poor: a serious compliance, safety or accuracy failure, or several notable lapses. 1 = multiple serious failures. I think 2 is fair — password sharing is the standout serious failure; the credit and Pellmont disclosure are notable lapses. Actually the Pellmont disclosure is a privacy breach (serious). Credit commitment outside authority (serious). That's arguably multiple serious failures → 1. But the call was otherwise handled excellently and resolved. I'll go with 2, listing reasons.
+
+Flags:
+1. security: agent requested and used customer's password to log into her account. Evidence: "Can you, um, read me the temporary admin password you use for the Stackmoor owner account?" / "Yeah, we do it all the time, it's just quicker."
+2. unauthorized_commitment: promised a full month free credit, outside his authority (credits handled by account manager per SLA, and issue was customer-side cert). Evidence: "I'll make sure you get a full month free on your next invoice. I'll put that through myself."
+3. privacy_disclosure: shared another customer's details (Pellmont Freight, admin Gary Tolliver-Shea). Evidence: "we actually had almost exactly this last week with Pellmont Freight. Their admin, Gary Tolliver-Shea..."
+
+Action items:
+- Agent: send email summary of call/ticket — due unspecified.
+- Agent: escalate SCIM sync to Tier 2, ticket SM-20931; Tier 2 to call back within four business hours.
+- Customer (Mina): remove six dispatch users from SSO enforcement exceptions at end of day.
+- Customer: update security contacts (added Mina and Rosalind; done during call actually — she added two contacts and enabled expiry reminders checkbox during the call). Actually she did it during the call. But Rosalind said update security contact — done. So maybe not an action item. She added contacts during the call. The "leave old one until confirm with Rosalind" — pending confirmation. Hmm, keep it simple: action items stated: remove exceptions end of day; Tier 2 callback within 4 business hours; email summary; billing team to reach out re invoice (140 vs 120 seats); customer to set calendar reminder for cert expiry (she said "I'm doing that today" — self-task); customer quarterly export (self-stated intention, maybe skip). Also break-glass access expires in 24 hours automatically (not an action). Also customer to text IT director — done.
+
+Action items list:
+1. Owner: Tier 2 engineering team — call customer back re SCIM provisioning sync failure, ticket SM-20931 — within four business hours.
+2. Owner: agent (Arjun) — send email summary of the call/ticket — unspecified.
+3. Owner: customer (Mina) — remove six dispatch users from SSO enforcement exceptions — end of day.
+4. Owner: billing team — contact customer regarding invoice billing 140 seats vs 120 licensed — unspecified.
+5. Owner: customer — set shared calendar reminder for certificate expiry / update security contact — she did the security contact during call. Calendar reminder "today" — self task. Include? "every follow-up commitment or task stated in the call" — include customer tasks. I'll include calendar reminder (today) and maybe quarterly export. Keep to the main ones. I'll include the calendar reminder.
+
+Summary notes (≤120 words): SSO outage for 112 Denver users since Monday Sep 7 morning; cause: IdP signing cert rotated Sep 3 (not Aug 30 as first thought), old cert expired Sep 7; new metadata uploaded, SSO restored and verified. Owner break-glass access issued (expires in 24h). Six dispatch users added to enforcement exceptions with password setup; to be removed end of day. Security contacts updated (mina.c-r@, r.ndiaye-fairbanks@; old it-security@ DL left in place). SCIM provisioning sync failing separately — escalated to Tier 2, ticket SM-20931, callback within 4 business hours. Billing discrepancy: invoiced 140 seats vs 120 licensed — passed to billing. Agent promised one month free credit. Agent obtained and used owner password by phone (security concern).
+
+Notable details:
+- Affected users corrected from ~40 to 112 (all Denver SSO users); Phoenix password users unaffected.
+- Cert rotation date corrected from "the thirtieth" (end of August) to September 3; old cert expired September 7 (day before call, call date 2026-09-08).
+- New certificate valid until September 3, 2029.
+- First metadata download defaulted to inactive/expired cert; second attempt succeeded.
+- Escalation ticket SM-20931; Tier 2 callback within four business hours.
+- Billing: invoiced 140 seats vs 120 licensed.
+- Security contact was dead DL it-security@fennimore-tile.com; expiry warning emails (30-day and 7-day) went there; new contacts added: mina.c-r@ and r.ndiaye-fairbanks@; "Send certificate expiry reminders to all workspace owners" enabled.
+- Agent shared another customer's info: Pellmont Freight, admin Gary Tolliver-Shea.
+- Agent obtained owner password "Riverstone77!" and logged in as customer.
+- Break-glass owner emergency access link issued, expires in 24 hours, logged in audit trail.
+- "Allow IdP-initiated login" is on.
+- Caller name: Wilhelmina "Mina" Castellanos-Reid; IT director Rosalind Ndiaye-Fairbanks joined from plane; IdP admin Dariusz on paternity leave.
+- SCIM sync failing since around same time, different error code, possibly API token.
+
+Quality reasons:
+- Verified identity properly via emailed code before making changes.
+- Methodical, systematic troubleshooting correctly isolated expired SAML signing certificate.
+- Requested and used the customer's account password over the phone — serious security violation.
+- Promised a full month free credit outside his authority (credits handled by account manager; issue was customer-side).
+- Disclosed another customer's name and admin details (Pellmont Freight / Gary Tolliver-Shea).
+
+Score 2.

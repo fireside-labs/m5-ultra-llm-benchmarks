@@ -1,0 +1,29 @@
+## Estimate chain
+
+1. **Total light vehicles:** 245,000 households × 1.7 vehicles/household = **416,500 light vehicles**.
+2. **EVs in 2030 (midpoint):** State projection 8–16%, take 12% midpoint → 416,500 × 0.12 ≈ **50,000 EVs**. (Low: 33,300; high: 66,600.)
+3. **Split by home charging:** Assume 30% of EV owners lack home charging (midpoint of 25–35%) → 15,000 without, 35,000 with home charging.
+4. **Annual miles per driver:** 200 miles/week × 52 weeks = **10,400 miles/year**.
+5. **Sessions for drivers without home charging:** 70% of miles from DC fast = 7,280 miles/year ÷ 150 miles/session = **48.5 sessions/year**. For 15,000 drivers → 15,000 × 48.5 = **727,500 sessions/year**.
+6. **Sessions for drivers with home charging:** 24 sessions/year (twice a month) × 35,000 = **840,000 sessions/year**.
+7. **Fleet sessions:** 1,500 EVs × 5 sessions/week × 52 weeks = **390,000 sessions/year**.
+8. **Total sessions/year:** 727,500 + 840,000 + 390,000 = **1,957,500 sessions/year**.
+9. **Port throughput at 25% utilization:** 0.25 × 24 hours = 6 hours/day; 40 min/session = 0.667 hours → 6 ÷ 0.667 = 9 sessions/day/port; × 365 = **3,285 sessions/year/port**.
+10. **Ports needed:** 1,957,500 ÷ 3,285 ≈ **596 ports**, rounded to **600**.
+11. **Range check:** Low (8% EV, 25% no home charging): 33,320 EVs → 8,330 without home charging → 404,000 sessions; 24,990 with home charging → 599,760 sessions; + 390,000 fleet = 1,393,760 sessions → **424 ports**. High (16% EV, 35% no home charging): 66,640 EVs → 23,324 without → 1,131,000 sessions; 43,316 with → 1,039,584 sessions; + 390,000 fleet = 2,560,584 sessions → **780 ports**.
+
+## Result
+
+ESTIMATE: 600  
+RANGE: 425 - 780  
+DECISION: $12M is not enough; at $140k–$220k per port it builds only 55–86 new ports, covering roughly 10–15% of the total need (or about 10–15% of the ~554 additional ports beyond the existing 46).
+
+## Key sensitivities
+
+1. **EV adoption rate (8–16%):** This single input swings the EV count from 33,300 to 66,600, driving the port need from ~425 to ~780 — a near 2× range.
+2. **Share of EV owners lacking home charging (25–35%):** This group uses DC fast chargers ~2× as often as home-charging drivers (48.5 vs. 24 sessions/year), so a 10-point shift in this share changes the total by roughly 100 ports.
+3. **Port utilization ceiling (25%) and session time (40 min):** These set port throughput at ~3,285 sessions/year. If real-world utilization can safely reach 30% (or session time drops to 30 min), the port count falls by 20–25%; if queues appear below 25%, the count rises.
+
+## Recommendation
+
+Treat the $12M as a first tranche, not the full solution: build the 55–86 ports it funds in locations that serve the highest-need users first — near multi-unit housing, along major corridors, and at fleet depots — and design grid connections so ports can be added later without redoing transformers. Revisit the EV adoption projection and the home-charging share annually; these two variables alone can move the need from ~425 to ~780 ports, so the city should not commit to a single target now. Consider public-private partnerships or utility co-funding to close the gap, and pilot a utilization-monitoring program to validate the 25% queue threshold before scaling. Finally, recheck the fleet estimate (1,500 EVs, 5 sessions/week) — it is a fixed 390,000 sessions/year and alone justifies about 120 ports, so a small error there has a large effect.

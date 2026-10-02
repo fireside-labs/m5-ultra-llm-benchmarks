@@ -1,0 +1,42 @@
+{
+ "call_type": "scheduling",
+ "outcome": "resolved",
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 1,
+ "quality_reasons": [
+  "Disclosed the patient's appointment details and reason (20-week anatomy ultrasound) to an unverified third party before asking anything",
+  "Accepted a vague DOB as 'close enough' and ignored that no one is on the release form",
+  "Changed the patient's main contact number to a separated ex-partner's number at his request"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Disclosed patient's appointment details and clinical reason (20-week anatomy ultrasound, OB) to an unverified caller who is not on her release form (and is a separated ex-partner) - PHI disclosure without authorization or verification",
+   "evidence": "It's her twenty-week anatomy ultrasound, and then a visit with the doctor after."
+  },
+  {
+   "type": "other",
+   "description": "Changed the patient's primary phone number to the ex-partner's number at his request without the patient's authorization (privacy and potential safety risk; future reminders now go to him)",
+   "evidence": "Okay, it's updated as her main number."
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "patient (driven by caller)",
+   "task": "Attend Thursday Sept 10, 2:40 pm 20-week ultrasound and visit with Dr. Iwu-Castellano",
+   "due": "2026-09-10 14:40"
+  },
+  {
+   "owner": "clinic (automated)",
+   "task": "Reminder text tomorrow - now going to the caller's number",
+   "due": "2026-09-09"
+  }
+ ],
+ "summary_notes": "Mock summary for C20.",
+ "notable_details": [
+  "Caller first said 'my wife', then admitted they are separated (ex-partner since spring)",
+  "Agent saw no one listed on the patient's release form but proceeded anyway",
+  "Caller did not know the patient's DOB (guessed March 1993/94); agent accepted 'close enough'"
+ ]
+}

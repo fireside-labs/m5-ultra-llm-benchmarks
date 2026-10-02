@@ -1,0 +1,36 @@
+{
+  "call_type": "billing_dispute",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 5,
+  "quality_reasons": [
+    "Verified the caller via a six-digit code sent to the account owner's email before discussing account details",
+    "Accurately diagnosed the 'double charge' as two separate subscriptions and confirmed which workspace was the active one before making changes",
+    "Refund of the most recent $49 charge correctly followed the stated 30-day policy, and the agent declined the out-of-policy request for older months",
+    "Offered a suitable resolution (free Read-Only tier) that preserved the customer's data and stopped future charges",
+    "Empathetic and warm throughout despite heavy small talk extending the call"
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "agent (Matthias)",
+      "task": "Send email confirming the Archive workspace downgrade to Read-Only and the $49 refund, for the customer's accountant",
+      "due": "unspecified"
+    },
+    {
+      "owner": "billing (Tallyforge)",
+      "task": "Process $49 refund to Mastercard ending 6604",
+      "due": "5 to 7 business days"
+    }
+  ],
+  "summary_notes": "Customer Saoirse Lindgren-Abara (Halden Studio) called disputing what appeared to be a duplicate $49 charge on her Mastercard ending 6604. Identity verified via emailed six-digit code. Investigation showed two workspaces on the Studio plan: 'Halden Studio' (active, 4 users) and 'Halden Studio Archive' (only the customer, unused for billing since ~February), both renewing on the 20th. Archive had been billing since last November (10 months). Archive downgraded to free Read-Only tier per customer request; most recent $49 charge refunded within the 30-day policy window (older months not refundable). Main workspace unchanged. Confirmation email to be sent; refund in 5-7 business days.",
+  "notable_details": [
+    "The 'duplicate charge' was actually two separate $49/month Studio plan subscriptions: 'Halden Studio' and 'Halden Studio Archive', both renewed on the 20th",
+    "The Archive workspace had been running and billing since last November - ten months (~$490 total) - but only the most recent $49 charge was refundable under the 30-day policy",
+    "Archive workspace last opened around February (to look up an old invoice for a client who had claimed to pay but had not)",
+    "Main 'Halden Studio' workspace has 4 users (customer, two designers, part-time bookkeeper) with bank connection and client portal; it remains unchanged on the Studio plan",
+    "Refund goes to Mastercard ending 6604, expected in 5-7 business days",
+    "Identity verified via six-digit code 441902 sent to the account owner's email before any account discussion"
+  ]
+}

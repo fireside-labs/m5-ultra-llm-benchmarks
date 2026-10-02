@@ -1,0 +1,78 @@
+{
+  "call_type": "billing_dispute",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Corwin provided incorrect out-of-network and collections information",
+    "Corwin failed to verify caller identity before discussing account",
+    "Ines accurately identified and corrected coding errors",
+    "Ines verified identity and offered prompt-pay discount",
+    "Multiple long holds and misrouted transfer"
+  ],
+  "flags": [
+    {
+      "type": "identity_verification",
+      "description": "Corwin discussed account details without verifying the caller's identity.",
+      "evidence": "Nah, you're fine, I got you. There's only one of you in here."
+    },
+    {
+      "type": "misinformation",
+      "description": "Corwin incorrectly told the patient he was out of network and that the bill would go to collections despite an open dispute.",
+      "evidence": "And you were out of network, that's why it's so high. ... If it's not paid by Friday it goes to collections."
+    },
+    {
+      "type": "policy_violation",
+      "description": "Corwin's statement that the account would go to collections contradicts the IVR message that disputed accounts are placed on hold.",
+      "evidence": "If it's not paid by Friday it goes to collections."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "Ines",
+      "task": "Submit corrected claim to Halvard (recode 99285 to 99214, fix diagnosis side)",
+      "due": "2026-09-22"
+    },
+    {
+      "owner": "Ines",
+      "task": "Call patient with Halvard's reprocessing result",
+      "due": "2026-10-06"
+    },
+    {
+      "owner": "Ines",
+      "task": "Send portal message confirming corrected claim submission",
+      "due": "2026-09-22"
+    },
+    {
+      "owner": "Patient",
+      "task": "Send urgent care discharge papers via portal to billing attention Ines",
+      "due": "2026-09-22"
+    },
+    {
+      "owner": "Patient",
+      "task": "Fill out and return Halvard accident questionnaire if received",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Patient",
+      "task": "Call nurse line (option 4) for amlodipine refill",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Patient called to dispute $1,284 urgent care bill. Initial agent Corwin incorrectly stated out-of-network and threatened collections despite open dispute. Transferred to coding specialist Ines who verified identity, identified coding errors (wrong procedure code, wrong side), corrected claim to 99214, fixed diagnosis, placed hold, and will submit corrected claim to Halvard. Estimated responsibility ~$184 with 20% prompt-pay discount. Patient also needs amlodipine refill; advised to call nurse line. Follow-up call promised by Oct 6.",
+  "notable_details": [
+    "Date of service is 09/05/2026, not 09/15 as printed on statement.",
+    "Claim number 2609-33418.",
+    "Original procedure code 99285 (ER level 5) corrected to 99214 (established patient moderate).",
+    "Diagnosis code corrected from left wrist (S63.502A) to right wrist (S63.501A).",
+    "Estimated patient responsibility after correction: ~$184 (75 copay + 109 x-ray coinsurance).",
+    "Prompt-pay discount of 20% noted if paid within 30 days of corrected statement.",
+    "Dispute ticket D58812 remains open.",
+    "Ines extension: 2271.",
+    "Patient needs amlodipine refill; has 4 left; will call nurse line (option 4).",
+    "Patient believes he paid $75 copay at urgent care desk on 09/05; no payment posted; will look for receipt.",
+    "Statement date error is a known display issue; claim to Halvard has correct date.",
+    "Location code issue at Millbrook urgent care caused scrubber to miss ER code."
+  ]
+}

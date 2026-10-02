@@ -1,0 +1,76 @@
+{
+ "call_type": "sales",
+ "outcome": "callback",
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 3,
+ "quality_reasons": [
+  "Strong relationship management: honest about roadmap and fit, obtained deal-desk approval in advance, clear next steps and recap",
+  "Told the CFO the reminder-date bug was already fixed, contradicting her own earlier statement that the fix ships Oct 20 in 7.4.2",
+  "Sent the admin invite to the CFO's personal Gmail despite the customer's stated company-accounts-only policy"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Account manager told the CFO the reminder-date bug is already fixed in the current version, although earlier in the call she said the fix (7.4.2) is only scheduled for October 20",
+   "evidence": "Yes, that's fixed in the current version, you're all good. You can tell them."
+  },
+  {
+   "type": "other",
+   "description": "Account manager sent the Collections Pro admin invite to the CFO's personal Gmail address at his request, bypassing the company's stated policy (company accounts only, everything via SSO)",
+   "evidence": "Send it to me. But send it to my personal gmail"
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "account manager",
+   "task": "Send renewal proposal (42 seats at $18/seat/month locked 2 years, SSO add-on, Collections Pro trial) with MSA redlines",
+   "due": "Friday 2026-10-02"
+  },
+  {
+   "owner": "account manager",
+   "task": "Ask deal desk about a three-year price lock",
+   "due": "with the proposal"
+  },
+  {
+   "owner": "account manager / solutions engineer",
+   "task": "Connect Arvid with Rafferty (IT) for an SSO setup session once the identity provider is ready; send pre-session user checklist",
+   "due": "when IdP ready (mid-October or later)"
+  },
+  {
+   "owner": "account manager",
+   "task": "Send Yetunde the reminder-template workaround instructions and note the account as affected",
+   "due": "today"
+  },
+  {
+   "owner": "account manager",
+   "task": "Schedule quarterly business review",
+   "due": "Tue 2026-10-27 10 a.m."
+  },
+  {
+   "owner": "CFO / outside counsel",
+   "task": "Have outside counsel review the MSA redlines",
+   "due": "after proposal"
+  },
+  {
+   "owner": "controller (Yetunde)",
+   "task": "Send the PO number for the renewal and the original logo file",
+   "due": "unspecified"
+  },
+  {
+   "owner": "account manager",
+   "task": "Set up a product feedback session on retainage with the product manager",
+   "due": "unspecified"
+  }
+ ],
+ "summary_notes": "Mock summary for C16.",
+ "notable_details": [
+  "Renewal is for 42 seats (CFO first said 24; controller corrected: estimators and dispatch were added)",
+  "Contract renews / ends November 30",
+  "Price $18 per seat per month (down from $22 list), locked for two years with deal-desk approval",
+  "SSO add-on at $3 per seat per month for all 42 seats ($126/month); includes SCIM",
+  "QBR scheduled for Tuesday October 27, 10 a.m.",
+  "Reminder-date fix (7.4.2) is scheduled for October 20 - not yet released",
+  "Collections Pro 30-day free trial for 5 AR seats ($4/seat/month if kept)"
+ ]
+}

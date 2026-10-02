@@ -1,0 +1,80 @@
+{
+  "call_type": "saas_support",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Asked customer for admin password, a security risk",
+    "Promised a full month credit without authorization",
+    "Disclosed another customer's name and incident details",
+    "Resolved SSO issue effectively but with serious policy violations"
+  ],
+  "flags": [
+    {
+      "type": "security",
+      "description": "Agent requested the customer's admin password, which is a security risk and violates policy.",
+      "evidence": "read me the temporary admin password you use for the Stackmoor owner account?"
+    },
+    {
+      "type": "unauthorized_commitment",
+      "description": "Agent promised a full month free credit without authorization, as credits are normally handled by the account manager.",
+      "evidence": "I'll make sure you get a full month free on your next invoice. I'll put that through myself."
+    },
+    {
+      "type": "privacy_disclosure",
+      "description": "Agent disclosed another customer's name and incident details to this customer.",
+      "evidence": "we actually had almost exactly this last week with Pellmont Freight. Their admin, Gary Tolliver-Shea, uploaded the old certificate instead of the new one after a rotation, and their whole warehouse team was locked out for a day."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent",
+      "task": "Send email summary of the call",
+      "due": "unspecified"
+    },
+    {
+      "owner": "customer",
+      "task": "Remove six dispatch users from SSO enforcement exceptions",
+      "due": "end of day"
+    },
+    {
+      "owner": "customer",
+      "task": "Update security contact address (add Mina and Rosalind)",
+      "due": "unspecified"
+    },
+    {
+      "owner": "customer",
+      "task": "Set calendar reminder for certificate expiry",
+      "due": "today"
+    },
+    {
+      "owner": "Tier 2",
+      "task": "Call back regarding SCIM sync escalation (ticket SM-20931)",
+      "due": "within 4 business hours"
+    },
+    {
+      "owner": "billing team",
+      "task": "Reach out to customer about invoice seat discrepancy",
+      "due": "unspecified"
+    },
+    {
+      "owner": "agent",
+      "task": "Apply full month free credit to next invoice",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Customer Mina (account owner) reported SSO login failure for 112 Denver users. Root cause: IdP certificate rotated on Sept 3, old cert expired Sept 7, Stackmoor had old cert. Agent verified identity, troubleshooted, identified issue, had IT director download new metadata, uploaded, SSO restored. Also escalated SCIM sync issue to Tier 2 (ticket SM-20931). Agent asked for password (security issue), promised unauthorized credit, disclosed another customer's info. Customer to remove exceptions, update security contact. Billing issue noted.",
+  "notable_details": [
+    "User count corrected from 40 to 112 (all Denver office users on SSO).",
+    "Certificate rotation date corrected from Aug 30 to Sept 3.",
+    "Customer name: Wilhelmina Castellanos-Reid, email mina.c-r@fennimore-tile.com.",
+    "IT director: Rosalind Ndiaye-Fairbanks.",
+    "Agent mentioned another customer: Pellmont Freight, admin Gary Tolliver-Shea.",
+    "Break-glass owner emergency access link used.",
+    "SCIM sync failing, escalated to Tier 2, ticket SM-20931.",
+    "Invoice discrepancy: billed for 140 seats, only 120 licensed.",
+    "Security contact was a dead distribution list; updated with Mina and Rosalind.",
+    "Six dispatch users added to SSO enforcement exceptions, to be removed end of day."
+  ]
+}

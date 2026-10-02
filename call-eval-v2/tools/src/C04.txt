@@ -1,0 +1,44 @@
+@id C04
+@date 2026-09-18 16:05
+@line Ostrander Pharmacy (Brightwater) - Eastgate counter
+@direction inbound
+@target 2500
+@seed 404
+@speaker A PHARMACIST = pharmacist (Oluwaseun)
+@speaker C CALLER = patient (Lionel)
+---
+A: Ostrander Pharmacy Eastgate, this is Oluwaseun, I'm one of the pharmacists. How can I help?
+C: Yeah, hi. Okay. So I'm looking at my bank app right now and you guys charged me twice. Twice! Twelve fifty and twelve fifty. For one prescription.
+A: Oh, I'm sorry, let's figure that out. Can I get your name and date of birth first?
+C: Lionel Ferreira-Quist. Six, thirty, nineteen-ninety.
+A: And the phone number on your profile?
+C: Five-five-five, oh-one-four-eight.
+A: Thank you, Lionel, I've got you. So this was the order through our app, the one you paid for yesterday?
+C: Yeah, the, uh, the [inaudible] the vitamin D, the big one, and the allergy spray. I paid in the app. And now there's two charges.
+A: Okay. [typing] So on our side I see one payment, twelve fifty, for the order. Can you look at the two charges in your bank app — does one of them say "pending" anywhere, or are they both "posted"?
+C: Uh... hold on. [pause] Oh. Okay. One says pending. The top one. Pending.
+A: Okay, that's what I thought. When you save a card in the app, the processor puts a temporary authorization hold on it, same amount, and that pending one drops off by itself, usually in three to five business days. You're only actually charged once.
+C: Oh. So it's not really two.
+A: Not really two. If it's still there after five business days, call us back and I'll have our billing folks push the release, but it almost always just falls off.
+C: Okay. Huh. That's— okay, sorry, I came in hot.
+A: [laughs] No, it looks exactly like a double charge. Everybody calls about it.
+C: Okay, good. So that's fine. Can I just not save my card then? So it doesn't do that?
+A: You can, but then you'd enter the card each time. The hold only happens on the first payment with a newly saved card, so honestly, from here on it should just be one line.
+C: Oh, okay. Then I'll leave it. And the allergy spray, is that covered? It was like zero dollars last time.
+A: Let me look. [typing] Yep, the fluticasone spray went through insurance, zero copay. The twelve fifty is the vitamin D, the fifty-thousand-unit one.
+C: Okay, makes sense.
+#fill pharmacy_queue smalltalk2
+C: Okay, second thing, while I've got you. I'm traveling. I leave October ninth, for three weeks, for work, and my zolpidem runs out like right in the middle. Can I get it early? Like, now?
+A: So, zolpidem's a controlled medication, so by law and by our policy we can't fill it this early. It's, let me see, it isn't due until October fourteenth, so that's twenty-six days early right now.
+C: Ugh. Seriously? It's a sleep pill.
+A: I know, I know. But what we can do is ask your prescriber for a vacation override. It's a note that says you're traveling and it's okay to fill early, and then your insurance usually allows it once. I can send that request to Dr. Abernathy-Coles today.
+C: Okay. Yeah. Do that.
+A: And you'd want to call or check the app a few days before the ninth. If she approves it, we can fill it a few days before you leave instead of on the fourteenth.
+C: Okay. That works.
+#fill pharmacy_queue
+A: And one more thing, the order you placed yesterday — the app has it going to Millbrook for pickup. Is that right? You usually come here to Eastgate.
+C: Oh. No, Eastgate. Millbrook's across town. Can you switch it?
+A: Yep, I'll move it to the Eastgate counter. It'll be ready tomorrow morning, and you'll get a text when it's ready.
+C: Great. Thank you. Seriously, you were super helpful. Sorry I yelled about the charge thing.
+A: You didn't yell. [laughs] Have a good one, Lionel.
+C: You too.

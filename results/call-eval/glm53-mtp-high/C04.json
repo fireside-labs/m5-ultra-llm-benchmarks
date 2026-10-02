@@ -1,0 +1,46 @@
+{
+  "call_type": "pharmacy_refill",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 5,
+  "quality_reasons": [
+    "Verified identity with name, date of birth and address before accessing the profile",
+    "Proactively arranged a three-day emergency supply so the patient would not run out of medication",
+    "Set clear expectations and a concrete fallback (patient to nudge the doctor's office if no word by tomorrow afternoon)",
+    "Accommodated a pickup-location change to Harbor Road and confirmed the text number",
+    "Friendly, patient tone throughout despite slow system and background noise"
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "pharmacy technician (Lena)",
+      "task": "Send request to Dr. Lindqvist-Mbeki's office for a new lisinopril 20 mg once-daily prescription, noting the patient runs out after tomorrow",
+      "due": "today (during/ immediately after the call)"
+    },
+    {
+      "owner": "pharmacy (Harbor Road location)",
+      "task": "Prepare three-day emergency supply of lisinopril 10 mg (transferred from Ferris Avenue) for pickup",
+      "due": "after 4:00 PM today"
+    },
+    {
+      "owner": "pharmacy",
+      "task": "Fill the new 20 mg prescription at Harbor Road and text the patient when ready",
+      "due": "unspecified (expected same day or next day after doctor's response)"
+    },
+    {
+      "owner": "patient (Philippa Oyelaran-Groot)",
+      "task": "Call Dr. Lindqvist-Mbeki's office to nudge the prescription if no word from the pharmacy",
+      "due": "by tomorrow afternoon"
+    }
+  ],
+  "summary_notes": "Patient Philippa Oyelaran-Groot (DOB 09/14/1959) called for a lisinopril refill. Dose was increased from 10 mg to 20 mg two weeks ago by Dr. Lindqvist-Mbeki; patient has been taking two 10 mg tablets daily and has two pills left. No new 20 mg prescription on file. Technician sent a prescription request to the doctor's office and arranged a three-day emergency supply of 10 mg (two tablets daily) transferred to the Harbor Road location, ready after 4:00 PM today. Patient will pick up there while staying at her sister's (recovering from hip surgery). Texts to cell ending 6109 confirmed. Patient to call the doctor's office if no update by tomorrow afternoon.",
+  "notable_details": [
+    "Dose corrected during the call: lisinopril increased from 10 mg to 20 mg daily two weeks ago; patient instructed to take two 10 mg tablets until the new prescription arrives",
+    "Prescription on file has zero refills remaining",
+    "Pickup location changed from Ferris Avenue to Harbor Road; patient staying at her sister's for a couple of weeks after the sister's hip surgery",
+    "Text number ending in 6109 confirmed as the patient's cell",
+    "Patient reported the phone menu is confusing - pressing 3 routed her somewhere unexpected; she pressed 0 to reach an agent",
+    "Patient had only two pills left at time of call (enough through tomorrow morning)"
+  ]
+}

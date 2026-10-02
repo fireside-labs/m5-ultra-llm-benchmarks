@@ -1,0 +1,47 @@
+## First steps
+
+1. **Pull the raw call data: calls per 30-minute interval, per day, and abandonment by interval.** Why now: the Monday 8:00–11:00 spike (22% of weekly calls in 6.7% of hours) is almost certainly what drives the 9-minute average, but you need the half-hour curve to confirm it and to size any staffing or deflection fix. Needs: phone system admin, call-center manager.
+
+2. **Shadow 6–8 agents for a morning, timing each step of a call, especially refill-status and appointment booking.** Why now: handle time jumped 37% (4.1 → 5.6 min) after the EHR switch; you need to know if it's the EHR screens, a workflow change, or training. This is the single biggest controllable cost. Needs: call-center manager, an EHR superuser.
+
+3. **Quantify the refill-status calls: can the IVR, portal, or an automated text answer "where is my refill?"** Why now: 31% of calls are refill status — the most automatable reason. If you can deflect even half of those, you cut volume ~15% and flatten the Monday peak. Needs: phone-system vendor, pharmacy/clinical IT.
+
+4. **Map the 26% of transferred calls: from which menu option, to where, and why.** Why now: transfers burn agent time and patient patience, and they're a symptom of a 7-option menu routing wrong. Fixing routing is free capacity. Needs: phone-system admin, call-center manager.
+
+5. **Investigate the 18% repeat callers: are they unresolved first calls, or the same issue re-checked?** Why now: if first-call resolution is poor, you're paying for the same call twice. Track resolution rate per agent and per reason. Needs: call-center manager, QA.
+
+6. **Stand up a daily dashboard: wait time, abandonment, handle time, calls/hour, by interval.** Why now: you need to see week-over-week movement on the actual target metric, not anecdotes. Needs: IT or a spreadsheet-savvy analyst, one hour.
+
+7. **Meet with agents for 30 minutes: what's slow in the EHR, and what do callers ask that the menu should handle?** Why now: they know the exact friction points and will tell you the truth faster than any report. Needs: call-center manager to run it, no executive in the room.
+
+8. **Test a callback option with a small pilot (e.g., offer it only on Monday mornings).** Why now: it's the cheapest proposed fix ($40k/yr) and you can validate uptake and patient satisfaction before committing. Needs: phone-system vendor, call-center manager.
+
+## Measure first
+
+1. **Total weekly call volume and the per-half-hour curve, especially Monday 8:00–11:00.** Decision: whether 4 new agents actually cover the peak, or whether they'd just sit idle Tuesday–Friday. If the spike is 3.3x the average rate, 4 agents may not be enough on Monday and too many the rest of the week.
+
+2. **Average handle time by call reason, and specifically the EHR-related lookup time (e.g., time to pull a refill status).** Decision: whether fixing the EHR workflow can recover ~27% capacity (1.5 min/call) for near-zero cost — which would make hiring 4 agents unnecessary.
+
+3. **Abandonment rate by time of day, and the actual wait experienced by abandoners.** Decision: where the real pain is, and whether a callback feature would convert abandoners into satisfied callers or just mask the queue.
+
+4. **Deflection potential for refill-status calls: what % of those callers already have portal access, and can the IVR or an automated text give the status?** Decision: whether to invest in IVR/portal automation (likely cheaper than hiring) vs. the callback add-on vs. hiring.
+
+5. **Transfer rate and the specific menu paths that lead to transfers.** Decision: whether re-routing the IVR can cut handle time and wait without any new headcount.
+
+6. **Cost per resolved call, including repeat calls (i.e., total calls ÷ unique issues).** Decision: the ROI comparison — $260k/yr for 4 agents vs. $40k/yr callback vs. automation. If 18% of callers call twice, you're paying ~18% extra for the same work; fixing resolution beats adding capacity.
+
+## What would kill the idea
+
+- **Proposal (a) — hire 4 agents:** Kill it if the data shows the Monday 8–11 spike is the bottleneck and 4 agents on the same 8–17 shift still can't cover it (they'd be idle the rest of the week). Kill it if the EHR handle-time problem is the real driver — you'd be paying $260k/yr to staff around a fixable process problem. Kill it if you can't even fill the 2 existing vacancies; 4 more positions won't magically fill.
+
+- **Proposal (b) — callback add-on:** Kill it if the COO/board means "under 2 minutes of actual hold" as a hard metric — callback changes the experience but doesn't reduce the 9-minute average for those who wait, and it could look like gaming the number. Kill it if the pilot shows low opt-in (patients won't trust a callback) or if the phone system can't integrate cleanly.
+
+- **My leading idea — fix EHR handle time + deflect refill calls + restructure Monday staffing:** Kill it if the handle-time increase turns out to be a deliberate new process (not an EHR inefficiency) that can't be shortened. Kill it if the refill-status calls actually require clinical judgment (e.g., patients need a pharmacist, not a status readout). Kill it if the call data shows the queue is uniform all week — meaning it's a pure capacity shortage and no amount of deflection or scheduling will hit <2 minutes.
+
+## Top 3 priorities
+
+1. **Fix the EHR-driven handle time.** Recovering the 1.5 min/call (5.6 → 4.1 min) is a ~27% capacity gain for near-zero cost — the equivalent of ~3 agents, without the $260k/yr or hiring risk. This is the biggest lever and the most controllable.
+
+2. **Deflect the 31% refill-status calls via IVR, portal, or automated text.** This cuts total volume by up to a third, and because these calls cluster on Monday morning, it directly flattens the peak that creates the 9-minute queue.
+
+3. **Restructure staffing around the Monday 8–11 peak** (staggered shifts, part-time coverage, or targeted overtime) rather than hiring 4 full-time agents on the same shift. The spike is 22% of weekly calls in 3 hours; you need capacity exactly there, not uniformly across the week.

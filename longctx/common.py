@@ -1,5 +1,5 @@
 """Shared helpers: tokenizer, exact-length prompt slicing, streaming client, system info."""
-import json, os, pathlib, platform, subprocess, time
+import json, os, pathlib, platform, re, subprocess, time
 
 import numpy as np
 import requests
@@ -125,7 +125,15 @@ def system_info(engine, model_path=None):
         llama_cpp = pathlib.Path(os.path.expanduser(os.environ.get("LLAMA_CPP", str(home / "bench/llama.cpp"))))
         info["engine_version"] = _run([str(llama_cpp / "build/bin/llama-server"), "--version"])
     elif engine == "omlx":
-        info["engine_version"] = _run(["/opt/homebrew/bin/omlx", "--version"])
+        # Ask the running server's own install, not whichever omlx is on PATH. The process renames
+        # itself "omlx-server" and hides its argv, but its open files show which site-packages it loaded.
+        exe = "/opt/homebrew/bin/omlx"
+        files = _run(["/bin/sh", "-c", "lsof -p $(pgrep -f omlx-server | head -1) 2>/dev/null"])
+        m = re.search(r"(\S+)/lib/python[0-9.]+/site-packages/", files)
+        if m and pathlib.Path(m.group(1), "bin/omlx").exists():
+            exe = str(pathlib.Path(m.group(1), "bin/omlx"))
+        info["engine_version"] = _run([exe, "--version"])
+        info["engine_binary"] = exe
     if model_path:
         mp = pathlib.Path(os.path.expanduser(model_path))
         info["model_path"] = str(mp)

@@ -1,0 +1,80 @@
+{
+  "call_type": "saas_support",
+  "outcome": "escalated",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Identity was properly verified via emailed code before discussing the account, and the agent ran a thorough, systematic troubleshooting process.",
+    "Serious security lapse: the agent asked the customer to read out her admin password over the phone and used it to access her account, saying 'we do it all the time'.",
+    "Unauthorized commitment: the agent promised a full month free on the next invoice despite stating credits are normally handled by the account manager under the SLA.",
+    "Privacy lapse: the agent shared another customer's incident details, including the customer name and admin's name (Pellmont Freight / Gary Tolliver-Shea).",
+    "Root cause was accurately identified (expired IdP signing certificate) and SSO was fully restored and verified during the call."
+  ],
+  "flags": [
+    {
+      "type": "security",
+      "description": "The Tier 1 agent requested and accepted the account owner's password over the phone and used it to log into her admin console, an insecure credential-handling practice.",
+      "evidence": "Can you, um, read me the temporary admin password you use for the Stackmoor owner account? ... Yeah, we do it all the time, it's just quicker."
+    },
+    {
+      "type": "unauthorized_commitment",
+      "description": "The agent promised a full month free credit and said he would process it himself, even though he had just stated credits are normally handled by the account manager per the SLA.",
+      "evidence": "Look, I'll make sure you get a full month free on your next invoice. I'll put that through myself."
+    },
+    {
+      "type": "privacy_disclosure",
+      "description": "The agent disclosed details of another customer's incident, including the customer's name and their admin's full name, to a different customer.",
+      "evidence": "we actually had almost exactly this last week with Pellmont Freight. Their admin, Gary Tolliver-Shea, uploaded the old certificate instead of the new one"
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "Tier 2 engineering team",
+      "task": "Call customer back regarding failing SCIM provisioning sync and double-check SSO configuration (ticket SM-20931)",
+      "due": "Within four business hours"
+    },
+    {
+      "owner": "Customer (Mina Castellanos-Reid)",
+      "task": "Remove the six dispatch users from the SSO enforcement exceptions list so they are back under normal security policy",
+      "due": "End of day"
+    },
+    {
+      "owner": "Agent (Arjun)",
+      "task": "Send email summary of the call, ticket history, and cleanup items (exceptions removal, security contact update)",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Billing team",
+      "task": "Reach out to customer about last invoice billing 140 seats versus 120 licensed",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Customer (Mina Castellanos-Reid)",
+      "task": "Set a shared calendar reminder ahead of certificate expiry dates",
+      "due": "Today"
+    },
+    {
+      "owner": "Customer (Mina Castellanos-Reid)",
+      "task": "Request a full workspace export as a backup",
+      "due": "Quarterly"
+    }
+  ],
+  "summary_notes": "Inbound priority support call from Mina Castellanos-Reid, verified workspace owner of Fennimore Tile and Stone. Company-wide SSO login failure affecting 112 Denver users since Monday (initially estimated ~40); Phoenix password-based users unaffected. Root cause: IdP signing certificate rotated September 3 by Dariusz (now on leave); old certificate expired September 7 and was never updated in Stackmoor; expiry warning emails went to a dead distribution list (it-security@fennimore-tile.com). IT director Rosalind Ndiaye-Fairbanks joined from a plane, downloaded the correct metadata XML (first download defaulted to the inactive cert), and Mina uploaded it; SSO confirmed restored via multiple test logins. Owner break-glass access issued (24h expiry). Six dispatch users added to SSO enforcement exceptions, to be removed end of day. Security contacts updated to Mina and Rosalind; expiry reminders to all owners enabled. SCIM sync failure escalated to Tier 2, ticket SM-20931, callback within four business hours. Separate billing discrepancy (140 seats billed vs 120 licensed) referred to billing team. Agent promised one month free credit and obtained the customer's password by phone - both need review.",
+  "notable_details": [
+    "Certificate rotation date corrected: customer initially said 'the thirtieth, end of August' but the IdP event is dated September 3; old certificate expired September 7, 2026 (the day before the call); new certificate valid until September 3, 2029.",
+    "Affected user count corrected from 'about forty' to 112 - everyone in the Denver office on SSO; Phoenix staff on password login were unaffected.",
+    "First login failure in Stackmoor logs occurred just after midnight (workspace time zone: Mountain) on the morning the issue started, consistent with a fixed-time certificate expiry.",
+    "Escalation ticket number for the SCIM sync failure: SM-20931; Tier 2 to call back within four business hours.",
+    "Agent used a documented 'Owner emergency access' break-glass link (24-hour expiry, from security@stackmoor.com) to restore the owner's access; audit trail entries visible under Security events.",
+    "Six dispatch users (including Teodor) added to SSO enforcement exceptions with password setup emails sent; agent stressed they must be removed once SSO is fixed because exceptions bypass SSO protections.",
+    "Security contact was the dead distribution list it-security@fennimore-tile.com; Mina added mina.c-r@fennimore-tile.com and r.ndiaye-fairbanks@fennimore-tile.com, left the old contact in place pending Rosalind's confirmation, and enabled 'Send certificate expiry reminders to all workspace owners'.",
+    "First metadata download from the IdP defaulted to the inactive/expired certificate, causing an 'Invalid certificate: certificate has expired' error before the correct active cert was selected.",
+    "Separate billing issue raised at the end of the call: last invoice billed 140 seats but the company has only 120 licensed; agent could not view invoices and passed it to the billing team.",
+    "Agent promised a full month free on the next invoice for the poor error messaging, despite stating credits are normally handled by the account manager.",
+    "Agent read the customer's admin password aloud over the phone ('Rivestone77!') and logged in as her; customer was told she could change it afterwards.",
+    "Agent disclosed another customer's incident (Pellmont Freight, admin Gary Tolliver-Shea) as an anecdote.",
+    "Audit log review showed successful logins only from Denver and Phoenix locations; no unexpected sign-ins detected during the outage window.",
+    "Agent noted the 'Allow IdP-initiated login' setting is on (recorded for internal notes, not related to the issue)."
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "call_type": "billing_dispute",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 5,
+  "quality_reasons": [
+    "Verified identity before discussing charges or medications.",
+    "Correctly identified one posted payment and one pending authorization hold and explained the expected drop-off timeframe.",
+    "Followed controlled-substance policy for zolpidem and offered a prescriber vacation override rather than an early fill.",
+    "Corrected the pickup location and set clear follow-up expectations for the override and order readiness."
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "pharmacist",
+      "task": "Send vacation override request to Dr. Abernathy-Coles for early zolpidem fill",
+      "due": "today (2026-09-18)"
+    },
+    {
+      "owner": "caller",
+      "task": "Check app or call pharmacy a few days before October 9 for override approval and early fill",
+      "due": "a few days before 2026-10-09"
+    },
+    {
+      "owner": "caller",
+      "task": "Call back if the pending $125 authorization hold remains after five business days",
+      "due": "after five business days"
+    },
+    {
+      "owner": "billing team",
+      "task": "Push release of pending authorization hold if caller reports it remains after five business days",
+      "due": "if pending charge remains after five business days"
+    },
+    {
+      "owner": "pharmacist",
+      "task": "Move order pickup from Millbrook to Eastgate counter",
+      "due": "immediate"
+    },
+    {
+      "owner": "pharmacy",
+      "task": "Text caller when order is ready",
+      "due": "tomorrow morning"
+    },
+    {
+      "owner": "Dr. Abernathy-Coles",
+      "task": "Review vacation override request for early zolpidem fill",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Patient Lionel Ferreira-Quist called about an apparent double $125 charge for an app order. Pharmacist verified identity and found one posted payment plus one pending authorization hold; explained the hold should drop in 3-5 business days. Patient also requested early zolpidem due travel starting October 9; medication is not due until October 14, so pharmacist sent a vacation override request to Dr. Abernathy-Coles and advised checking/calling before October 9. The order pickup was corrected from Millbrook to Eastgate, ready tomorrow morning with text notification. Fluticasone spray had zero copay; $125 was vitamin D.",
+  "notable_details": [
+    "Patient name: Lionel Ferreira-Quist; DOB: 06/30/1990; phone: 555-0148.",
+    "App order placed yesterday; two $125 entries: one posted, one pending authorization hold.",
+    "Pending hold expected to drop in 3-5 business days; billing release only if it remains.",
+    "Medications: vitamin D 50,000 unit ($125), fluticasone allergy spray (zero copay), zolpidem.",
+    "Zolpidem not due until October 14; travel starts October 9 for three weeks; 26 days early.",
+    "Vacation override request to Dr. Abernathy-Coles; caller to check/call a few days before October 9.",
+    "Order pickup corrected from Millbrook to Eastgate; ready tomorrow morning with text.",
+    "Pharmacist asked permission to use speakerphone due keyboard use."
+  ]
+}

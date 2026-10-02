@@ -1,0 +1,107 @@
+
+
+{
+  "call_type": "saas_support",
+  "outcome": "escalated",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Tier 1 changed the account billing email before completing identity verification, creating a security/verification lapse.",
+    "Tier 1 gave incorrect information that posted late fees cannot be reversed; Tier 2 later corrected this.",
+    "The customer experienced extended hold time, including a 6m20s transfer hold with distorted hold music.",
+    "Tier 2 handled the technical issue well, identified the bug, attached the account to the ticket, and provided workarounds."
+  ],
+  "flags": [
+    {
+      "type": "privacy_disclosure",
+      "description": "Agent disclosed the account email address on file before verifying the caller.",
+      "evidence": "the email on file is accounts at ferncliff joinery dot com."
+    },
+    {
+      "type": "identity_verification",
+      "description": "Agent changed the account billing email before completing identity verification and then sent the verification code to the newly changed address.",
+      "evidence": "I already updated it, so I'll just send it to the billing address instead, that's yours now."
+    },
+    {
+      "type": "misinformation",
+      "description": "Tier 1 incorrectly told the customer that posted late fees cannot be reversed.",
+      "evidence": "once a late fee posts to an invoice it can't be reversed. The system locks it."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "Customer (Odile)",
+      "task": "Reverse the $35 late fee on INV-20422.",
+      "due": "right after this call"
+    },
+    {
+      "owner": "Customer (Odile)",
+      "task": "Confirm the new billing email address using the confirmation link.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Customer (Odile)",
+      "task": "Add Junie as a Staff user instead of sharing the customer password.",
+      "due": "this afternoon"
+    },
+    {
+      "owner": "Customer (Odile)",
+      "task": "Review the exported reminder history for September 1-22 to identify affected clients.",
+      "due": "later"
+    },
+    {
+      "owner": "Customer (Odile)",
+      "task": "Send Hartwell Kitchens a statement for the year.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Customer (Odile)",
+      "task": "Switch to the annual plan before renewal.",
+      "due": "before October 20"
+    },
+    {
+      "owner": "Customer (Odile)",
+      "task": "Switch the reminder template back to a date-inclusive template after 7.4.2 is released.",
+      "due": "after 7.4.2 release"
+    },
+    {
+      "owner": "Tier 2 support (Priyanka)",
+      "task": "Email the customer a summary of the call, ticket number TF-88213, and workaround steps.",
+      "due": "today"
+    },
+    {
+      "owner": "Tier 2 support (Priyanka)",
+      "task": "Inform Kwame that late fees can be reversed.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Account owner (Gordon)",
+      "task": "Change the account login email if needed.",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Odile at Ferncliff Joinery reported reminder emails showing due dates one day early and two $35 late fees charged on due dates. Tier 2 identified bug TF-88213 introduced in 7.4: due dates converted to UTC, causing early reminders and late-fee job at 7:01 p.m. Central the day before. Customer reversed INV-20417 fee and will reverse INV-20422. Workarounds applied: late-fee grace period set to one day and no-date reminder template. Billing email changed to odile.m s at ferncliff joinery dot com pending confirmation; login email still accounts-at and requires owner. Account attached to ticket; summary email promised. Customer plans annual plan before Oct 20 renewal.",
+  "notable_details": [
+    "Customer: Odile Marchetti-Sung, bookkeeper at Ferncliff Joinery.",
+    "Account owner identified as Gordon / Mr. Ferncliff.",
+    "Invoice corrected to INV-20417 after customer initially misread it as 20470.",
+    "INV-20417 amount: $4,812.50; due September 15; issued August 16; net 30.",
+    "Second affected invoice: INV-20422, Brookfield Renovations, $35 late fee.",
+    "Hartwell Kitchens paid INV-20417 on September 15 at 2:47 p.m. by ACH.",
+    "Hartwell late fee posted September 14 at 7:01 p.m. Central, before the due date.",
+    "Brookfield Renovations paid INV-20422 on September 18 at 10:15 a.m. by card.",
+    "Brookfield late fee posted September 17 at 7:01 p.m. Central, before the due date.",
+    "Total late fees: $70; INV-20417 fee reversed during the call; INV-20422 still to be reversed.",
+    "Bug tracked as TF-88213, introduced in release 7.4 on September 2; fix is in 7.4.2.",
+    "Root cause: due dates converted to UTC before formatting, causing one-day-early reminders and late-fee job at midnight UTC, 7 p.m. Central.",
+    "61 reminders were sent between September 1 and September 22.",
+    "Billing email changed to odile.m s at ferncliff joinery dot com, pending confirmation.",
+    "Login email remains accounts at ferncliff joinery dot com and requires the account owner to change.",
+    "Workarounds applied: late-fee grace period changed from 0 to 1 day; reminder template switched to Friendly reminder, no date.",
+    "Renewal date is October 20; customer plans to switch to annual plan before renewal.",
+    "Junie is to be added as a Staff user; plan includes three free Staff seats and currently uses one.",
+    "Customer asked about deposit invoices; advised to use Deposit schedule for new invoices after 7.4.2.",
+    "Hartwell client Moe requested annual invoice download; advised statement or client portal Download all."
+  ]
+}

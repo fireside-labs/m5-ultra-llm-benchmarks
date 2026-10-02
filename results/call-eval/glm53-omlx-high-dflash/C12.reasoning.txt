@@ -1,0 +1,37 @@
+
+Let me analyze.
+
+Call type: complaint_escalation (main purpose is to file a complaint). Outcome: escalated (formal grievance opened, supervisor involved). Sentiment start: negative. End: neutral-ish ("Hm. Fine." then polite ending) — probably neutral.
+
+Quality score: The agent made an unauthorized commitment ("we'll definitely cover your lost wages. I'll make sure of it") which the supervisor walked back. Lots of small talk, unannounced hold? The hold was announced ("one moment while I bring her on") and 2 minutes. Screen timeouts, chatty. Identity verification done correctly. Supervisor handled well. Score 3 (mixed: one notable lapse — unauthorized commitment; plus excessive small talk/inefficiency). Maybe 3.
+
+Flags:
+- unauthorized_commitment: agent promised lost wages coverage without authority. Evidence: "we'll definitely cover your lost wages. I'll make sure of it."
+- Possibly misinformation? The text vs packet discrepancy — that's the underlying issue, not the call handling. Could flag as policy_violation/misinformation about the conflicting prep instructions? The flag is about how the call was handled; the conflicting instructions are the root cause. Could include a flag for misinformation (text message instructions contradicted written packet). I think it's reasonable to flag as misinformation since patient received incorrect instructions via text. Evidence: "the text message said I could have clear liquids up to two hours before my arrival" vs packet "nothing to eat or drink after midnight". I'll include it.
+- Clinical safety: diabetic on insulin not asked about during prep — patient guessed insulin doses. That's a safety issue in prior handling. Flag as clinical_safety. Evidence: "I was guessing on my insulin doses during the prep, which was scary."
+
+Action items:
+- Supervisor: open formal grievance G-260411, written acknowledgment within 5 business days, written response after review — due: within 5 business days (acknowledgment); response unspecified.
+- Supervisor: approve/cover second prep kit cost — approved now.
+- Supervisor: include lost wages reimbursement request in grievance for review committee — unspecified.
+- Supervisor/GI nurse: nurse call before April 30 to review prep and insulin plan — before Thursday, April 30.
+- Supervisor: reschedule colonoscopy April 30, 7:30 arrival — done during call.
+- Agent: note "electronic preferred" — done.
+
+Notable details:
+- Grievance number G-260411.
+- Rescheduled colonoscopy: Thursday, April 30, 2026, arrival 7:30 AM, same endoscopy center.
+- Patient diabetic, on insulin; wasn't asked previously.
+- Conflicting prep instructions: text said clear liquids until 2 hours before; mailed packet said nothing after midnight.
+- Lost wages reimbursement not guaranteed; review committee decides; prep kit cost approved.
+- Patient prefers electronic communication.
+- Pharmacy on Ferris Avenue confirmed.
+- Caller was told to bring photo ID and insurance card.
+- Caller name Henrietta Moss-Okwuosa, DOB 7/17/1968, phone 555-240-7713.
+- Cancellation via reply to reminder text.
+
+Summary notes ≤120 words.
+
+Quality reasons: verified identity properly; empathetic and escalated to supervisor appropriately; agent made unauthorized promise of lost-wage reimbursement that supervisor had to walk back; excessive small talk and technical delays extended the call; supervisor gave clear grievance info and rescheduled.
+
+Score: 3.

@@ -1,0 +1,484 @@
+
+We need answer user's request. Need produce final in Markdown with exact sections headings in order:
+## Missed issues
+A numbered list of at most 10 analytical problems most important first. For each: what it is, why matters, evidence numbers.
+## Looks like a problem but isn't
+Optional. One line each.
+## Top 3 priorities
+Exactly 3 numbered items: problems that most undermine conclusion/expansion decision, most important first.
+## Bottom line
+2-4 sentences: what can/cannot be concluded, what leadership do instead.
+
+Need review report. Need be concrete. Need use numbers. Need identify issues.
+
+Let's parse report carefully.
+
+Program: After hospital discharge, nurse calls patient three times first 14 days. Enrollment Jan-Dec 2025 at two partner hospitals Northgate and Riverside. Nurses enrolled patients who answered first call and agreed. Comparison group is all other patients discharged from same two hospitals same period.
+
+Data: readmissions from state all-payer claims, count any hospital in state. Used first discharge in 2025 only, no patient twice. Died within 30 days excluded from both groups. Patients who left program before completing all 3 calls (n=140) removed from program group.
+
+Headline: Program 1000 patients, 90 readmitted 9.0%; Comparison 1000, 184 18.4%.
+
+Result by discharge risk tier:
+Low risk: Program 800 readmitted 40 rate 5.0%; Comparison 200 readmitted 8 rate 4.0%.
+High risk: Program 200 readmitted 50 rate 25.0%; Comparison 800 readmitted 176 rate 22.0%.
+Total: Program 1000 90 9%; Comparison 1000 184 18.4%.
+Notice Simpson's paradox? In each tier program worse: low 5 vs 4, high 25 vs 22; overall program better because program group low risk 800 vs comparison 200. So confounding by risk tier. Huge.
+
+Balance check: age mean 67 vs 68, sex 54 vs 55 female. But not risk tier/hospital/language/timing/health status etc. Demographics don't explain difference? Not enough.
+
+Other findings:
+Spanish-language cohort: readmissions fell from 20% (2 of 10 comparison) to 0% (0 of 9 program). This is 100% reduction, recommend Spanish nurses priority. Tiny sample, CI huge, not robust. Also if program group includes only answered/agreed, Spanish speakers may differ. But main issue small n.
+
+Timing: 70% program discharged July-Dec; comparison 50%. July 1 measure changed from any readmission within 30 days to unplanned readmission within 30 days. Planned readmissions no longer count. This could bias if program group more after measure change, lower measured readmissions due to definition, not program. Need account. Evidence: 70% vs 50% after July. If after July excludes planned readmissions, rate lower. Could explain some/all.
+
+Northgate: opened meds-to-beds Feb 2025. 85% program from Northgate vs 40% comparison. Potential confounding: Northgate intervention may reduce readmissions. Program group enriched in Northgate. Also if meds-to-beds effective, program effect confounded. Need check. Also if Northgate has different risk mix.
+
+Expansion forecast: risk model catches 90% of patients later readmitted (sensitivity 90%) and specificity 70%. Across all partner hospitals, 13% discharged patients readmitted. Because a flagged patient is therefore 90% likely to be readmitted, enrolling every flagged patient (~12,000/year) should prevent roughly 12,000 × 90% × 50% = 5,400 readmissions/year.
+
+This forecast has multiple errors: PPV calculation wrong. Sensitivity 90%, specificity 70%, prevalence 13%. PPV = TP/(TP+FP) = 0.9*0.13 / (0.9*0.13 + 0.3*0.87) = 0.117/(0.117+0.261)=0.31. So flagged patient 31% likely readmitted, not 90%. Also if enrolling every flagged patient, number flagged = TP+FP = prevalence*12,000? Wait 12,000 flagged per year? If total discharges? It says enrolling every flagged patient (about 12,000 per year). If 12,000 flagged, expected readmissions among them = 12,000*PPV ≈ 3,720. Preventing 50% of readmissions among enrolled would be 1,860, not 5,400. If 12,000 is total population? They say enrolling every flagged patient (about 12,000 per year), likely flagged count. But formula 12,000 × 90% × 50% uses sensitivity as probability. Need point out. Also assumes program effect 50% from flawed study. Also assumes model performance same in all hospitals, same risk mix, reachability, enrollment, dose, effect generalizes. Also 12,000 flagged may be impossible capacity? Not in numbers? Could mention staffing? But numbers: 1,000 program patients over year at two hospitals; 12,000 per year across all partner hospitals (12x). Need capacity? Not given but could be practical. But analytical problem: extrapolation from 2 hospitals to all; no effect size; no cost; no IT.
+
+Program group selection: Nurses enrolled patients who answered first call and agreed. This is self-selection/availability bias. People reachable and consenting may be healthier/more engaged/lower readmission. Comparison all other patients includes unreachable, deceased? Deceased excluded from both groups. But program group excludes those who did not answer/decline? Need know how many eligible? They say patients who left before completing all 3 calls n=140 removed from program group. That's per-protocol? Also if only 1,000 program patients, 140 removed = 12.3% of completers? Wait if program group 1000 after removing 140 dropouts? Original program enrolled maybe 1,140. Removing noncompleters introduces bias: those who drop may differ, perhaps higher risk or less engaged. Also comparison group includes patients who did not answer/decline, not comparable. Need mention.
+
+Denominator/comparison group: "all other patients discharged from same two hospitals" but they show comparison 1,000. If all other patients, why exactly 1,000? Possibly sampled? Need check if comparison group was selected/matched. If all other patients, comparison count likely thousands, not exactly 1,000. The table says comparison 1,000. Inconsistency: comparison group is all other patients but only 1,000; maybe random sample? Need flag denominator ambiguity. It matters because selection of comparison could bias. Evidence: text says all other patients; table shows 1,000. Also risk tier counts: low 200, high 800 total 1000. If all other patients, why exactly 1000? Could be trimmed/matched? Not described. This is a data integrity/selection issue.
+
+Excluding deaths: Excluding deaths within 30 days from both groups. Death is competing risk; excluding can bias if program affects death or if high-risk patients die. If program reduces death, excluding deaths may inflate readmissions? Or if program group has more deaths excluded, denominator changes. But report says excluded both groups. Need know counts. It can bias if differential. Important? Maybe moderate.
+
+Readmissions counted to any hospital in state, good. But first discharge only. If patients readmitted, first discharge only; okay. But if program calls after discharge and might prompt seeking care, could increase ED/obs? But outcome readmission.
+
+Completers only: Program group = patients who completed all 3 calls? They removed 140 who left before completing. This is post-randomization (not randomized) selection. If program effect requires completion, but intention-to-treat would include all enrolled. Removing dropouts can overstate effect if dropouts have worse outcomes or less benefit. Evidence: n=140 removed; if original 1,140, 12.3%. Need mention.
+
+No randomization or adjustment: observational. Need propensity/risk adjustment. Evidence: tier distribution imbalanced.
+
+Risk tier counts: Program low risk 800, high 200; comparison low 200, high 800. This is extreme. In each tier program worse. So headline effect entirely due to case mix. Need top priority.
+
+Measure change: July 1 change from any to unplanned. Program more July-Dec (70% vs 50%). If program group more likely measured under less strict definition, readmission rate lower independent of program. Need quantify? We can estimate potential. Suppose overall rates? Need not. But can say if program group had comparison timing distribution, difference may shrink. Could derive bounds? Maybe not. But can mention.
+
+Northgate confounder: meds-to-beds. 85% program Northgate vs 40% comparison. If meds-to-beds reduces readmissions, program group benefits. Also Northgate could have lower baseline readmission. Need not know effect. Evidence.
+
+Spanish cohort: tiny n. 10 and 9. 0/9 vs 2/10. 95% CI? Could compute but not necessary. Need say cannot conclude 100% reduction; one event difference. Also language cohort likely confounded by hospital/interpreter availability.
+
+Expansion forecast: PPV misused. Need maybe compute expected flagged and PPV. If 12,000 flagged per year? Need compute if 12,000 flagged and model PPV 31% => 3,720 expected readmissions, 50% reduction => 1,860, not 5,400. If 12,000 is total discharges? Then flagged = 12,000*(TP+FP proportion) = 12,000*0.378? Wait TP rate=0.117, FP rate=0.261, total flagged rate=0.378. Flagged = 4,536. Expected readmissions among flagged=12,000*0.117=1,404. 50% reduction=702. But report says enrolling every flagged patient (about 12,000 per year), so likely flagged count. But could be total discharges? Let's parse: "Across all partner hospitals, 13% of discharged patients are readmitted. Because a flagged patient is therefore 90% likely to be readmitted, enrolling every flagged patient (about 12,000 per year) should prevent roughly 12,000 × 90% × 50% = 5,400 readmissions per year." They use 12,000 flagged. If total discharges? They say enrolling every flagged patient (about 12,000 per year) = flagged count. So use PPV. But need also if 12,000 flagged across all partner hospitals, what total discharges? If model flagged rate 37.8%, total discharges = 12,000/0.378=31,746. Expected readmissions total 4,127. Flagged true positives 3,720. So prevent 1,860 if 50% effect. If they intended 12,000 total discharges? Then prevent 702. Either way 5,400 impossible because total readmissions at 13% of 12,000 = 1,560. If 12,000 total discharges, cannot prevent 5,400 > total readmissions. If 12,000 flagged, cannot prevent 5,400 because expected readmissions among flagged at PPV 31% is 3,720. Good point: 5,400 exceeds total readmissions expected among flagged if prevalence 13%; if 12,000 total discharges, 5,400 > 1,560 total. Need mention.
+
+Also "Because a flagged patient is therefore 90% likely to be readmitted" confuses sensitivity with PPV. Need top priority.
+
+Program effect size: headline 9 vs 18.4 = 50% reduction? They claim cuts in half. But tier-specific show increase. So no.
+
+No confidence intervals/significance. Need mention? Maybe in missed issues but top 3? Could include. But most important are confounding, forecast math, selection/dropouts. Need list up to 10. Need include enough. Need not be too many.
+
+Need consider "Looks like a problem but isn't": things handled adequately:
+- Using state all-payer claims to count readmissions to any hospital avoids missing out-of-network readmissions.
+- Excluding deaths from both groups avoids differential denominator? But still competing risk; maybe not adequate. But can say if deaths excluded equally? Not enough. Could say first discharge only avoids double counting.
+- Reporting readmissions by risk tier is good even though it reveals confounding. But "looks like problem but isn't"? Maybe "using first discharge only" and "all-payer claims". Need one line each.
+
+Need ensure exactly section headings. Top 3 priorities exactly 3 numbered items. Bottom line 2-4 sentences.
+
+Need be careful: "Missed issues" at most 10. Need number 1-8 or 1-10. Each item: what it is, why matters, evidence. Use numbers.
+
+Need maybe include "complete case/dropout" as issue. Need maybe include "comparison group definition inconsistency". Need maybe include "no CI". Need maybe include "timing/measure change". Need maybe include "Northgate meds-to-beds". Need maybe include "Spanish tiny sample". Need maybe include "forecast PPV". Need maybe include "generalization to all hospitals". Need maybe include "selection on answering/agreeing". Need maybe include "exclusion of deaths". Need maybe include "risk tier imbalance / Simpson's paradox". Need maybe include "no adjustment / no randomization". Need maybe include "program group only completers". Need maybe include "capacity/feasibility"? But analytical. Need at most 10. Prioritize.
+
+Let's rank:
+1. Simpson's paradox / risk tier confounding: headline effect due to case mix; in each tier program worse. Most important.
+2. Expansion forecast math error: PPV vs sensitivity; 5,400 impossible; correct ~1,860 if 12,000 flagged and 50% effect, or lower. Also assumes effect.
+3. Selection bias: program only patients who answered/agreed and completed all calls; comparison all others; 140 dropouts removed; no ITT; self-selection.
+4. Hospital confounding: Northgate meds-to-beds; 85% vs 40%; unadjusted.
+5. Timing/measure change: July 1 definition change; 70% vs 50% program after; outcome definition not comparable.
+6. Comparison group inconsistency: says all other patients but exactly 1,000; unknown sampling/matching; risk tier counts not natural.
+7. No uncertainty/CI; small differences in tiers, Spanish tiny; cannot distinguish noise.
+8. Spanish language recommendation based on n=9/10; 0/9 vs 2/10; no CI; confounding.
+9. Extrapolation from two hospitals to all partner hospitals; effect, model performance, staffing, patient mix unknown; 12,000 flagged capacity.
+10. Competing risk/death exclusion: excluding deaths can bias if differential; need counts. But may be lower.
+
+Could combine 3 and 6? Need maybe separate. Need at most 10. Maybe 9 is enough. Need include "balance check inadequate"? Could combine with confounding. But maybe as separate: balance only age/sex, ignores risk tier/hospital/language/timing. But already in #1. Need not duplicate.
+
+Need ensure each missed issue has evidence in report with numbers. For #1: low risk 5.0 vs 4.0, high 25.0 vs 22.0; program 800 low vs comp 200; comp 800 high vs program 200. Weighted average? Program low risk 80%, comp high risk 80%. This flips. Good.
+
+#2: sensitivity/specificity/prevalence. Compute PPV. Need show math. Use 13% prevalence, 90% sens, 70% spec => PPV 31%. If 12,000 flagged, expected readmits among flagged 3,720; 50% reduction 1,860. If 12,000 total discharges, total readmits 1,560 so 5,400 impossible. Need careful: They say 12,000 flagged. Use that. Also maybe if 12,000 total discharges? Could include alternative. It matters.
+
+#3: Program enrolled patients who answered first call and agreed; comparison all other. Dropouts n=140 removed. If 1000 completers, original 1,140; 12.3% removed. Need note denominator: if 1,000 after removing 140, pre-dropout 1,140. If original program group? It says program patients 1,000; removed 140. So yes. It matters: reachable/engaged patients lower risk; dropouts may higher risk. Need maybe not know original but can infer.
+
+#4: Northgate. 85% vs 40%. If meds-to-beds reduces readmissions, effect confounded. Also program group may be Northgate patients with lower readmission due to service.
+
+#5: July 1 measure change. 70% vs 50% program discharged July-Dec. Since after July "unplanned" excludes planned readmissions, program group measured under more permissive definition. If planned readmissions common, bias. Need maybe quantify: If program group had 50% after, rate lower? We can say cannot separate.
+
+#6: Comparison group all other but exactly 1,000. Also risk tier distribution unnatural. Could be post-hoc selection. Need mention.
+
+#7: No confidence intervals/p-values. The tier differences: low risk 5 vs 4 on 800/200; high 25 vs 22 on 200/800. Could be noise. But overall 9 vs 18.4 maybe significant? But confounded. Need say no uncertainty.
+
+#8: Spanish cohort: 0/9 vs 2/10; 100% reduction meaningless. Need maybe compute exact CI? Could but not needed. Maybe mention 95% CI for 0/9 maybe 0-33.6%; for 2/10 2.5-55.6. But don't need. Use numbers.
+
+#9: Generalization: two hospitals, 2,000 patients; forecast 12,000 flagged across all. Need effect may not hold; staffing? 3 calls per patient * 12,000 = 36,000 calls, plus setup; current 1,000 completers *3=3,000 calls. Could mention capacity not analyzed. It's analytical/operational. But if only numbers in report, can compute 12x volume. Need maybe include.
+
+#10: Death exclusion. Excluding deaths within 30 days from both groups can bias if program affects mortality or if high-risk die before readmission. Need counts not provided. Maybe less important. Could also include "competing risk" as issue.
+
+Need maybe include "program group high risk readmission 25% vs comparison 22%" means program not beneficial in high-risk, which is target for expansion. This is crucial: expansion to risk-flagged patients; high-risk tier program worse. Need emphasize.
+
+Need maybe include "risk model catches 90% of readmitted but specificity 70%; flagged patient 90% likely" is wrong. Top.
+
+Need "Looks like a problem but isn't" optional. Need one line each. Could include:
+- Counting readmissions to any state hospital via all-payer claims is appropriate and reduces outcome undercounting.
+- Using first discharge only prevents double counting the same patient.
+- Reporting risk-tier results, even though inconvenient, is transparent and allows detection of confounding.
+- Excluding deaths from both groups avoids some denominator bias, though competing risks still need review. But if not adequate? It says excluded both groups. Is that adequate? Maybe not because if program affects death or high risk die, but at least symmetric. Could phrase "at least avoids differential loss from death if applied identically". But maybe not adequate. Need "actually handles adequately". I'd include first two and maybe third. Need one line each.
+
+Need Top 3 priorities exactly 3 numbered items. Could choose #1, #2, #3? Or #1, #2, #4/5? The most undermine conclusion/expansion. Conclusion: program cuts readmissions in half. Expansion: to all hospitals and risk-flagged. The top three likely: 1 risk confounding/Simpson; 2 forecast PPV math; 3 selection bias/completer/self-selection. But hospital/timing also major confounding. Which is most? Need prioritize. The tier-specific results show program worse within tiers; that alone invalidates. Then forecast impossible. Then selection bias (including dropouts and answering) undermines. But Northgate and timing are also confounding. Could combine in top 3: #1 confounding by risk tier, hospital, timing. #2 forecast math. #3 selection/dropout. But user says exactly 3 numbered items: problems that most undermine. Could make each item broad. Need maybe not duplicate missed issues? It's okay. Top 3 should be concise.
+
+Need bottom line 2-4 sentences. Need say cannot conclude program halves readmissions; data show higher rates in both risk tiers and confounding; forecast overstates by order of magnitude; do not expand. Instead conduct randomized or well-matched evaluation, pre-specify outcome definition, intention-to-treat, adjust for hospital/timing/language, calculate PPV and capacity; pilot at controlled scale.
+
+Need ensure Markdown headings exactly. Could have lists. Need not include extra headings. Need maybe not use bold? okay.
+
+Let's think deeper to ensure no missed subtle statistical issues.
+
+Report says "Nurses enrolled patients who answered the first call and agreed to take part. The comparison group is all other patients discharged from same two hospitals in same period." This means program group is not random. Also "Patients who left the program before completing all 3 calls (n = 140) were removed from the program group." If they removed from program group, but not from comparison? It's not equivalent. If program group 1000 after removal, original 1140. But maybe program group 1000 includes dropouts? It says patients who left before completing all 3 calls (n=140) were removed from the program group. Then headline Program patients 1,000. So yes completers only. If original 1,140, 140/1,140=12.3%. If original 1,000? Could be removed from 1,140. Need phrase "if the 1,000 completers are after removing 140, the original cohort was ~1,140". Use conditional because report not explicit. Could say "the 140 removals equal ~12% of a 1,140-patient enrolled cohort if 1,000 is completers". Good.
+
+Risk tier: Program low risk 800, high 200. Comparison low 200, high 800. Weighted rates. If program had comparison tier mix: expected program rate if same mix? In each tier program worse. Could compute counterfactual: If program had comparison mix (20% low, 80% high), program expected rate = 0.2*5% + 0.8*25% = 21.0%, vs comparison 18.4%. If comparison had program mix (80% low,20% high), comparison expected = 0.8*4% + 0.2*22% = 7.6%, vs program 9.0%. Nice. Could include in #1 evidence maybe. But not necessary; but helpful. Need not overdo. But desired oververbosity 9, can include detailed. But "Do not pad lists". Need concise but thorough.
+
+Could include "The balance check is inadequate because risk tier is far more imbalanced than age/sex." Evidence: low risk 800 vs 200. This is part of #1. Could separate as "balance check ignores variables that predict outcome". But top.
+
+Timing: July 1 measure changed from any to unplanned. Program group 70% after, comparison 50%. Need maybe quantify potential bias. Let's attempt rough: If planned readmissions are X% of any readmissions, after July rate lower by (1-X). Program has 20 percentage points more after July. If planned readmissions 20% of all, difference due to timing ~0.2*0.2 = 4 percentage points? Actually if before rate 20%, after unplanned rate 16% (20% planned). Program 70% after vs comp 50%: weighted measured rates: program 0.3*20 +0.7*16=17.2? comp 0.5*20+0.5*16=18.0? Not huge. But if planned 50%, program 0.3*20+0.7*10=13; comp 15. Could explain a few points. Need not quantify. But can say unadjusted.
+
+Northgate: 85% vs 40%. If Northgate lower readmission due to meds-to-beds, confounding. Also if Northgate opened Feb; program group more Northgate and maybe later. Need maybe check timing: Northgate program patients 85% over year; meds-to-beds Feb; could reduce readmissions. Need not know.
+
+Spanish: "readmissions fell from 20% (2 of 10 in comparison) to 0% (0 of 9 program). This is a 100% reduction". Need note relative risk with zero denominator? 0/9 = 0; 2/10=20%; absolute reduction 20 percentage points, not 100% reduction in readmissions? Relative reduction 100% of observed events, but small. Need recommend priority based on 2 events. Also language may be correlated with hospital/interpreter. Need mention.
+
+Forecast: Let's compute PPV precisely:
+Prevalence P(D)=0.13. Sens=0.9. Spec=0.7 => FPR=0.3.
+PPV = 0.9*0.13 / (0.9*0.13 + 0.3*0.87) = 0.117/(0.117+0.261)=0.117/0.378=0.3095238. So 31%.
+If flagged count = 12,000, expected readmitted among flagged = 12,000*0.3095 = 3,714.3. 50% effect => 1,857.1. If use rounded 31% => 3,720, 1,860.
+If 12,000 is total discharges, flagged = 12,000*0.378=4,536; readmitted among flagged = 12,000*0.117=1,404; 50% => 702. Total readmissions = 1,560, so 5,400 impossible. Need maybe include both to be robust. But not too complex. Could state "even under their own 12,000 flagged assumption...". Good.
+
+Also "model catches 90% of patients later readmitted" and "specificity 70%" maybe model performance in original population; across all partner hospitals prevalence 13%. Need if model flagged every patient? No.
+
+Could also discuss number needed to treat? If true effect 50% relative reduction among high risk? But high risk readmission 22-25. If enroll 12,000 flagged with PPV 31%, NNT? Not needed.
+
+Potential issue: Program group had 1,000, comparison 1,000. If comparison is all other patients, maybe they selected 1,000 to match? If matched, should say. Without matching, all other patients likely more than 1,000. Could be a typo? But as reviewer, flag.
+
+Potential issue: "Patients who died within 30 days excluded from both groups." If readmission outcome, death before readmission is competing risk; excluding deaths can bias if program group has different mortality. Also if program prevents death, patients survive to readmission, could increase readmission; excluding deaths may hide. Need mention.
+
+Potential issue: "first discharge in 2025 only" means if patient readmitted then discharged again, readmission after first discharge counted within 30 days, but readmission index? okay. But if patient discharged, readmitted within 30, then readmission may have its own subsequent readmission; not counted. Fine.
+
+Potential issue: "Readmissions come from state all-payer claims database" may have lag/incomplete claims; but not given. Could mention if recent discharges incomplete? But not needed.
+
+Potential issue: "Nurse calls three times in first 14 days" but program group only completers; dose-response? Not analyzed. Not major.
+
+Potential issue: "Comparison group all other patients" includes patients who may have been enrolled at other hospitals? No.
+
+Potential issue: "Expansion to every hospital we partner with" but study only two hospitals; external validity. Need include.
+
+Potential issue: "risk model catches 90% of readmitted" sensitivity and specificity may be from training data; across all hospitals maybe calibration different. Include in generalization.
+
+Potential issue: "12,000 flagged per year" maybe capacity: 3 calls each = 36,000 calls. If 1,000 patients at two hospitals completed, 3,000 calls; 12x. Need staffing. Need maybe not analytical but decision. Include in generalization/operational.
+
+Need decide final missed issues list. Need at most 10. Let's create 8 or 9. Need most important first.
+
+Proposed Missed issues:
+1. Case-mix inversion (Simpson's paradox): program group low risk, comparison high risk; within tiers program worse. Evidence numbers.
+2. Forecast uses sensitivity as PPV and overstates preventable events. Evidence PPV math.
+3. Program group is self-selected and completers-only; comparison includes unreachable/decliners; 140 dropouts removed. Evidence.
+4. Hospital confounding: Northgate meds-to-beds; 85% vs 40%. Evidence.
+5. Outcome definition changed mid-year; program group more July-Dec. Evidence.
+6. Comparison group construction is unclear/inconsistent: all other patients but exactly 1,000; no randomization/matching; risk tier counts suggest post-hoc selection. Evidence.
+7. No uncertainty estimates; tier and Spanish differences may be noise. Evidence: high risk 25 vs 22, low 5 vs 4, Spanish 0/9 vs 2/10.
+8. Spanish-language priority based on tiny sample and zero events. Evidence.
+9. Generalization from two hospitals to all partner hospitals and 12,000 flagged lacks operational and model validation. Evidence: 2,000 total patients vs 12,000 flagged; 3 calls each.
+10. Death exclusion/competing risk not analyzed. Evidence: deaths excluded from both groups but counts unknown.
+
+Could combine 7 and 8? But 8 is specific. Need maybe 10 okay. But "Do not pad lists". 10 might be okay if each sharp. Could reduce to 8 to be sharper. Need include death? Maybe not top. But user asks at most 10; not need all. Could include 8. Let's see which are most important. Maybe death exclusion less important than Spanish? Spanish is recommendation priority, but small. Need include because report recommends. Need include uncertainty. Could combine uncertainty with Spanish? e.g. "Small-sample findings are overinterpreted (Spanish and tier differences)". But each item should be distinct. Could combine Spanish and no CI: "No uncertainty and tiny subgroup conclusions". But missed issues should be analytical problems. Could combine.
+
+Need maybe include "Balance check only age/sex" as separate? It's part of case mix. Could mention in #1.
+
+Need maybe include "No intention-to-treat" separate from self-selection? Could combine.
+
+Let's craft list of 8:
+1. Simpson's paradox/risk imbalance.
+2. Forecast PPV error and impossible 5,400.
+3. Selection bias: reachable/consenting + completers only + comparison all others.
+4. Hospital confounding: Northgate meds-to-beds.
+5. Midyear outcome definition change and timing imbalance.
+6. Comparison group inconsistency/unknown sampling: all other but 1,000; no described matching; risk tier distribution.
+7. No uncertainty and overinterpretation of tiny Spanish cohort. (Could include Spanish evidence.)
+8. External validity/operational capacity: two hospitals to all, 12,000 flagged, 3 calls. Maybe include death? Hmm.
+
+Need death? Could be 9. But maybe not essential. The request wants missed issues; death exclusion is analytical. But if list 8, maybe enough. Need maybe include "excluded deaths" in Looks like a problem but isn't? No, it's not fully handled. Could include as missed issue 9. But top 3 unaffected. Need not include all. Let's include 9 with death? It is a real issue. But "Do not pad". If each sharp, okay. Maybe 9 is fine. Need at most 10.
+
+Let's evaluate if "excluded deaths" might be considered handled adequately? They excluded from both groups. But if program group has more deaths excluded, could change rates. Need counts not given. It is a missed issue. But maybe less important. Include near end.
+
+Need maybe include "outcome ascertainment complete"? Not problem. Looks like problem but isn't: all-payer claims, first discharge only, risk tier reported. Need maybe include "using state all-payer claims counts readmissions to any hospital". Good.
+
+Need ensure "Looks like a problem but isn't" optional. We can include 3 one-liners. Need one line each.
+
+Need Top 3 priorities exactly 3 numbered items. Could be:
+1. The risk-tier inversion: program group had 80% low risk vs comparison 20%, and program rates were worse in both tiers; headline 9.0 vs 18.4 is case mix, not effect.
+2. The expansion math is invalid: PPV ~31%, not 90%; 5,400 prevented readmissions is not supported (max ~1,860 under 50% effect if 12,000 flagged).
+3. The program cohort is self-selected and completers-only, with hospital/timing confounding; no valid comparison to estimate effect.
+But top 3 maybe should not combine too much? Exactly 3. Good.
+
+Need Bottom line: 2-4 sentences. Example:
+"You can conclude that the 1,000 completed-program patients had lower observed readmissions than the 1,000 comparison patients, but you cannot conclude the nurse-call program caused a 50% reduction because the groups differ dramatically by risk, hospital, timing, and selection, and within risk tiers the program rates are higher. You can conclude the expansion forecast is mathematically wrong and overstates potential benefit by roughly 3× (or more). Leadership should not expand; instead run a randomized or propensity-matched evaluation with intention-to-treat analysis, fixed outcome definitions, and a revised PPV-based forecast/capacity plan." That's 3 sentences. Need maybe "what should leadership do instead?" yes.
+
+Need ensure no contradictions: If within risk tiers program worse, but high risk 25 vs 22, low 5 vs 4. Could be noise. But at least no evidence benefit. Need say cannot conclude. Good.
+
+Let's think about potential nuance: The comparison group "all other patients" might include patients who didn't answer first call, but also those who declined. If program group only those who answered and agreed, there is selection. But if nurses called all patients? Did all other patients get called? It says nurses enrolled patients who answered first call and agreed. It doesn't say all patients were called? "After hospital discharge, a nurse calls the patient three times... Nurses enrolled patients who answered the first call and agreed." Likely they attempted calls to all? Comparison all other includes those not reached/declined. Need mention.
+
+Potential nuance: "Patients who left the program before completing all 3 calls (n=140) were removed from the program group." If they left after some calls, maybe they are still exposed. Removing them is per-protocol. If dropouts have higher readmission, bias. If dropouts lower, could bias opposite. Need say direction unknown but threatens.
+
+Potential nuance: "Comparison group is all other patients discharged" but if program group only completers, comparison includes patients who might have been enrolled but not completed? No, all other means not enrolled. But if 140 left program, they are not in comparison? They were removed from program, but where did they go? If they are "all other patients" maybe not; they were enrolled initially, so not all other. The report says removed from program group; maybe not in analysis. This creates missing outcome denominator. Need mention: 140 removed outcomes unknown; if they readmitted, program rate higher. Evidence: if 140 readmitted at 25%, add 35 => 125/1140=11.0%, still lower but less. Could compute? Maybe not. But could use as sensitivity. Need maybe mention in #3: "If the 140 dropouts were included at the high-risk rate, the program rate would rise; the analysis discards them." Could estimate: If dropouts have average rate 18.4%, 140*0.184=25.8; total 115.8/1140=10.2%, still lower. If dropouts high risk 25% => 35; 125/1140=11.0. If all 140 readmitted => 224/1140=19.6, worse. But not needed. But could state unknown.
+
+Potential nuance: "Patients who died within 30 days excluded from both groups." If deaths are excluded, then patients who die cannot be readmitted; excluding them removes competing risk. If program reduces mortality, more high-risk survive to readmit, maybe program readmission rate higher. It might be appropriate if outcome is readmission among survivors? But for program decision, death is important. Need mention.
+
+Potential nuance: "Readmissions from state all-payer claims" could include planned transfers, but measure changed. Good.
+
+Potential nuance: "Risk model catches 90% of patients later readmitted" maybe sensitivity, but if specificity 70%, flagged false positives 26.1% of population. Need maybe note model flags 37.8% of all discharges, so if 12,000 flagged total discharges ~31,746. Not necessary but could include.
+
+Potential nuance: "Because a flagged patient is therefore 90% likely to be readmitted" confuses conditional probability direction. Need explicitly: sensitivity P(flag|readmit)=90%, not P(readmit|flag). Good.
+
+Potential nuance: "Readmissions fell from 20% to 0%" with n=10 and n=9. Could compute exact binomial confidence interval: 0/9 95% CI 0-33.6%; 2/10 2.5-55.6%. But not needed. Could mention "one case difference". It's sharp.
+
+Potential nuance: The headline "cuts 30-day readmissions in half" from 18.4 to 9.0 is 51% relative reduction. But tier-specific relative changes: low +25%, high +14%. So no.
+
+Potential nuance: "Balance check: age mean 67 vs 68 and sex 54 vs 55" but risk tier distribution massively different. Need mention.
+
+Potential nuance: "Expansion forecast: enrolling every flagged patient about 12,000 per year" If model flags 37.8%, total discharges 31,746; 13% readmit = 4,127 total readmissions. Preventing 5,400 impossible. Good point. But if 12,000 flagged, total readmissions among flagged 3,714; 5,400 > 3,714. So impossible. Include.
+
+Need maybe include "sensitivity 90% and specificity 70% across all partner hospitals, 13% readmitted" but if model performance not same? Could mention in forecast issue: even if correct, uses wrong probability; also assumes same sensitivity/specificity and effect.
+
+Need maybe include "prevent roughly 12,000 × 90% × 50%" assumes every flagged patient enrolled and reachable, and program effect applies to all flagged including false positives? If false positives won't readmit, program can't prevent. Good.
+
+Let's think about how to format "Missed issues" each item. Could be:
+1. **Case-mix inversion (Simpson's paradox).** ... Evidence: ...
+Need no extra headings. Numbered list. Each item includes what, why, evidence. Good.
+
+Need ensure "at most 10" maybe 9. Let's draft 9 items.
+
+Detailed draft:
+
+## Missed issues
+1. **The groups are not comparable; the headline is Simpson's paradox.** The program group is low-risk and the comparison group high-risk. In low-risk, program 5.0% vs comparison 4.0%; in high-risk, 25.0% vs 22.0%. Program had 800/1,000 low risk vs comparison 200/1,000; comparison had 800/1,000 high risk vs program 200/1,000. Thus the overall 9.0% vs 18.4% can be produced by case mix, and the within-tier rates actually favor comparison. This invalidates causal claim and especially expansion to high-risk patients.
+
+2. **Expansion forecast treats sensitivity as probability of readmission and overstates benefit.** Sensitivity 90% is P(flag | readmitted), not P(readmitted | flag). With 13% prevalence and 70% specificity, PPV = 0.9*0.13/(0.9*0.13+0.3*0.87)=31%. If 12,000 flagged, expected readmissions among them ~3,720; a 50% effect would prevent ~1,860, not 5,400. If 12,000 were total discharges, total readmissions at 13% are only 1,560, making 5,400 impossible.
+
+3. **Program cohort is self-selected and analyzed as completers only.** Program includes only patients who answered and agreed; comparison is all other patients. The 140 who left before completing 3 calls were removed, likely making 1,000 completers out of ~1,140 enrolled. Reachable, consenting, and compliant patients may have lower readmission risk, and dropouts' outcomes are discarded. This can bias the program rate downward.
+
+4. **Northgate's meds-to-beds service is a major unadjusted confounder.** 85% of program patients came from Northgate vs 40% of comparison. Northgate started meds-to-beds in Feb 2025, which plausibly reduces readmissions. Without adjusting for hospital or pre/post service, part or all of the 9.4-point difference may be due to this service, not nurse calls.
+
+5. **The outcome definition changed during the year and program patients are concentrated after the change.** 70% of program patients were discharged July–December vs 50% of comparison. On July 1, the measure changed from any readmission to unplanned readmission, so planned readmissions no longer count. The program group is more likely to be measured under the less stringent definition, biasing its rate down.
+
+6. **The comparison group is inconsistently described and likely selected.** The report says comparison is "all other patients," but the table shows exactly 1,000, and the risk-tier split (200 low, 800 high) is not a natural all-patient denominator. If the 1,000 were sampled, matched, or trimmed, that selection must be shown; otherwise the denominator and baseline risk are unknown.
+
+7. **No uncertainty is provided, and small differences are treated as findings.** The tier differences (5.0% vs 4.0%; 25.0% vs 22.0%) and the Spanish cohort (0/9 vs 2/10) are not accompanied by confidence intervals or tests. With 9-10 patients per Spanish group, zero events vs two events is one case difference and cannot support a 100% reduction or priority recommendation.
+
+8. **External validity and operational capacity are not established.** The study is two hospitals and 2,000 analyzed patients, but expansion targets all partner hospitals and ~12,000 flagged patients/year. That is 36,000 calls if 3 calls each, vs ~3,000 calls for the analyzed program group, with unknown staffing, model performance, patient mix, and true effect in other hospitals.
+
+9. **Death exclusion may bias readmission rates.** Patients who died within 30 days were excluded from both groups, but the report gives no counts. If mortality or competing risk differs by group, excluding deaths can change the denominator and the observed readmission rate; for a program aimed at high-risk patients, death and readmission must be analyzed together.
+
+Is #7 combining uncertainty and Spanish. Good. But Spanish is a recommendation. Need maybe separate? It's okay.
+
+Could #6 be too speculative? It is a problem: inconsistency. Good.
+
+Could #8 include capacity; analytical? Yes.
+
+Need maybe "Looks like a problem but isn't" one line each. Need optional. Could include:
+- Using state all-payer claims to count readmissions to any hospital is a strength, not a weakness, because it captures out-of-network readmissions.
+- Using each patient's first discharge only avoids double-counting the same patient within 2025.
+- Reporting results by risk tier, even though it undermines the headline, is good transparency because it lets the reviewer detect case-mix bias.
+Maybe also "Excluding deaths from both groups is at least symmetric, though still not enough." But that's not fully adequate. Avoid.
+
+Need Top 3 priorities exactly 3 numbered items. Could be:
+1. **Risk-tier confounding/Simpson's paradox**: ...
+2. **Expansion forecast math**: ...
+3. **Invalid comparison group/selection and confounding (self-selection, completers, hospital/timing)**: ...
+Need exactly 3. Could mention evidence. Good.
+
+Need Bottom line 2-4 sentences. Need maybe 3. Ensure not too long? Fine.
+
+Let's consider if "Missed issues" list has 9 items, top 3 priorities duplicates. That's okay. Need "most important first". Our #1, #2, #3. Is #3 selection more important than hospital/timing? Maybe yes. But hospital/timing are confounders. Could top 3 #1 case mix, #2 forecast, #3 selection/confounding. Good.
+
+Potential issue: In #3, "likely making 1,000 completers out of ~1,140 enrolled" is assumption. Need phrase carefully: "If the 1,000 are after removing 140, the original enrolled cohort was ~1,140". Good.
+
+Potential issue: "Program group had 800 low risk vs comparison 200" but risk tier assigned at discharge by our risk model. If model flags high risk, program group low risk? How? Maybe nurses enrolled low risk more? Or risk model not used for enrollment? It says risk model tier assigned at discharge. Program group 80% low. This is huge. Good.
+
+Potential issue: "Comparison group all other patients" but exactly 1,000; if all other patients, why only 1,000? Need maybe if all other patients at two hospitals over year likely >1,000. Good.
+
+Potential issue: "Spanish-language cohort" maybe program group 9, comparison 10; if total program 1,000, language cohort 9? Could be 0.9%; comparison 1%. Very small. Need maybe mention language group not representative. Good.
+
+Potential issue: "Nurses enrolled patients who answered first call" but if program group 1,000, how many attempts? Unknown. Need mention denominator unknown. Good.
+
+Potential issue: "All other patients" includes patients who may have been contacted and declined, which could be similar to program group except consent. If consenters lower risk, bias. Good.
+
+Potential issue: "Patients who died within 30 days excluded from both groups" maybe if death within 30 days, they can't be readmitted; excluding them can bias if program reduces mortality. Need include. Good.
+
+Need maybe mention "no adjustment for language, insurance, comorbidity, discharge disposition". Balance only age/sex. Could include in #1 or #6. Maybe #1: balance check ignores risk tier. Good.
+
+Let's refine each missed issue for clarity and evidence.
+
+1. **Case-mix inversion / Simpson's paradox.** What: groups differ by risk; program low risk, comparison high risk. Why: outcome rates differ by risk strongly; overall comparison biased. Evidence: low 5 vs 4; high 25 vs 22; program 800 low vs comp 200; comp 800 high vs program 200. Also age/sex balance not enough. This invalidates conclusion.
+
+2. **Forecast PPV error.** What: uses sensitivity as PPV. Why: expansion benefit overestimated. Evidence: sens 90, spec 70, prevalence 13 => PPV 31; 12,000 flagged expected readmits 3,720; 50% effect 1,860; 5,400 > possible. Good.
+
+3. **Selection/completer bias.** What: program only answered/agreed/completed; comparison all other; 140 removed. Why: healthier/reachable patients, dropouts missing. Evidence: enrollment description; n=140; if 1,000 after removal, 12.3% removed. Good.
+
+4. **Northgate confounding.** Evidence 85 vs 40, meds-to-beds Feb. Why: service may reduce readmissions. Good.
+
+5. **Timing/measure change.** Evidence 70 vs 50, July 1 change. Why: program more after less strict measure. Good.
+
+6. **Comparison group denominator inconsistency.** Evidence: all other but exactly 1,000; risk tier counts. Why: unknown selection/matching. Good.
+
+7. **No uncertainty / overinterpretation.** Evidence: no CI; tier differences small; Spanish 0/9 vs 2/10. Why: cannot distinguish noise. Good.
+
+8. **External validity/capacity.** Evidence: two hospitals, 2,000 analyzed vs 12,000 flagged; 3 calls each = 36,000 calls vs 3,000. Why: cannot assume effect/capacity. Good.
+
+9. **Death exclusion/competing risk.** Evidence: deaths excluded both groups, counts unknown. Why: differential competing risk can bias. Good.
+
+Could #7 include Spanish recommendation: yes.
+
+Need maybe include "The risk model's 90% sensitivity not enough; specificity 70% means many false positives; if enroll every flagged, many won't readmit." This is in #2.
+
+Need maybe include "The program effect of 50% is not established; using it in forecast is circular." Could mention in #2: forecast assumes 50% reduction from headline despite no causal evidence. Good.
+
+Need maybe include "The high-risk tier, the target of expansion, showed worse program rate 25 vs 22." In #1 and top 3.
+
+Potential issue: If model flags high risk, but program group low risk. The expansion to all flagged patients would enroll high risk, where program did worse. Need emphasize. In #1: "Expansion to flagged/high-risk patients is especially unsupported because high-risk program rate 25% vs comparison 22%." Good.
+
+Potential issue: The forecast says "risk model catches 90% of patients later readmitted" but if enrolling every flagged patient, need number flagged. If model flags 12,000 per year, with specificity 70% and prevalence 13, total discharges ~31,746. Could mention to show 12,000 flagged implies many false positives. But maybe too detailed. Could include in #2: "At 13% prevalence and 70% specificity, only 31% of flagged patients are expected to be readmitted; the other 69% are false positives." Good.
+
+Potential issue: "Readmissions fell from 20% to 0%" maybe if program group 0/9, cannot compute relative risk? It can, but unstable. Need no.
+
+Need maybe include "The report says 'cuts in half' but tier-specific rates increased." Good.
+
+Let's consider alternative top 3: #1 case mix, #2 forecast, #4 Northgate? But selection is more fundamental. Need top 3 not necessarily separate from missed issues. Could top 3: 1 case-mix inversion, 2 invalid comparison due to self-selection/completers/hospital/timing, 3 forecast error. But user says most undermine conclusion or expansion decision. Conclusion undermined by case mix and comparison; expansion undermined by forecast. Good.
+
+Need ensure Top 3 exactly numbered items, not nested? Could be:
+## Top 3 priorities
+1. ...
+2. ...
+3. ...
+No sub-bullets? It's okay. But if include bullets inside, still one item? To be safe, one sentence each.
+
+Need final answer only sections. No intro. Need headings exactly. Use Markdown. Ensure no extra text before first heading. Good.
+
+Let's draft final carefully.
+
+Check word count maybe moderate.
+
+Potential improvements: In #1, use weighted expected rates to show case mix. Could include one sentence: "If the program group had the comparison group's tier mix, its expected rate would be 0.2×5% + 0.8×25% = 21%, above comparison's 18.4%." This is sharp. But maybe too much? It helps. Need not too long. Could include. Let's verify: Program tier-specific rates: low 5, high 25. Comparison mix 20 low, 80 high => expected program rate 21%. Comparison actual 18.4. So program would be worse. If comparison had program mix: 0.8*4 +0.2*22=7.6 vs program 9.0. Good. Include maybe.
+
+Potential #2: If 12,000 flagged, expected readmits 3,720; 50% effect 1,860. But if 12,000 total discharges, total readmits 1,560. Need be clear which assumption. The report says "enrolling every flagged patient (about 12,000 per year)" so flagged. Include alternative in parentheses. Good.
+
+Potential #3: If 140 dropouts removed, original enrolled 1,140. But if original not, still n=140. Need say "if 1,000 is after removal". Good.
+
+Potential #6: "all other patients" but exactly 1,000; if all other patients, denominator likely larger. Could say "the table's comparison row is exactly 1,000, matching program count, suggesting sampling/matching not described." Good.
+
+Potential #7: "No uncertainty" and Spanish. Need maybe not separate Spanish? It's okay. But Spanish recommendation is in Other findings; should be called out. Could have separate #7 no uncertainty and #8 Spanish. But then list 10. Maybe better: #7 no uncertainty; #8 Spanish tiny. But #7 evidence includes Spanish. It's okay.
+
+Need maybe include "Spanish-language cohort" in Missed issues because report recommends priority. It's in #7. Good.
+
+Potential #8 external validity/capacity: Use numbers: 2 hospitals, 2,000 analyzed; 12,000 flagged; 3 calls = 36,000 calls; program analyzed 1,000 => 3,000 calls. Good. But if program group 1,000 completers, 3 calls each = 3,000. Good.
+
+Potential #9 death: Need maybe "excluding deaths from both groups" could be okay if death counts similar. But no counts. Good.
+
+Need "Looks like a problem but isn't" one line each. Could include:
+- Using the state all-payer claims database to count readmissions to any hospital is appropriate and reduces missing outcome bias.
+- Using only each patient's first 2025 discharge avoids double-counting the same patient.
+- Reporting tier-specific results is transparent and allows the reviewer to detect the case-mix problem.
+Maybe "The age/sex balance checks are fine as descriptive checks, but they are not sufficient" - not "isn't". Avoid.
+
+Need ensure "Looks like a problem but isn't" optional. We'll include.
+
+Let's consider if any statement is too strong: "within-tier rates actually favor comparison" yes. But low risk difference 1 percentage point maybe not statistically significant; but direction. Say "do not favor program; high-risk is worse." Good.
+
+Potential issue: The comparison group "all other patients" might include patients who did not answer first call but could be enrolled later? Not relevant.
+
+Potential issue: The program group includes only patients who completed all 3 calls; but outcome readmission within 30 days. If they complete calls by day 14, okay. If they left before completing, maybe due to readmission? If readmission caused dropout, removing them biases. Good.
+
+Potential issue: "Patients who died within 30 days excluded from both groups" if readmission outcome, deaths before readmission are not readmissions. In survival analysis, excluding deaths may be okay if outcome is readmission among survivors, but for overall program benefit, death matters. Good.
+
+Potential issue: "Readmissions to any hospital in state counted" but if patient moves out of state, not counted. Not given. Not needed.
+
+Potential issue: "Specificity 70%" maybe false positive rate 30%. Good.
+
+Need maybe compute number of false positives among 12,000 flagged: 12,000*(1-PPV)=8,280 false positives. Preventing 5,400 means program would have to prevent more readmissions than true positives 3,720. Good. Could mention.
+
+Need maybe include "The forecast assumes 50% reduction from headline, but headline is confounded." Good.
+
+Let's write final with clear concise but detailed. Ensure headings exactly. Need no additional headings. Use numbered lists. Top 3 exactly 3 numbered items. Bottom line 2-4 sentences. Let's count bottom line sentences.
+
+Draft final:
+
+## Missed issues
+1. **Case-mix inversion / Simpson's paradox.** ...
+...
+
+Need maybe "most important first". Good.
+
+Top 3 priorities:
+1. **Fix the causal comparison before believing the headline.** The tier table shows program patients were much lower risk (800 low vs 200 comparison) and program rates were higher within both tiers (5.0% vs 4.0%; 25.0% vs 22.0%), so the 9.0% vs 18.4% result is not evidence of benefit.
+2. **Correct the expansion forecast.** With 13% prevalence, 90% sensitivity, and 70% specificity, PPV is ~31%, not 90%; 12,000 flagged patients imply ~3,720 readmissions, so even a true 50% reduction prevents ~1,860, not 5,400.
+3. **Repair selection/confounding.** The program group is self-selected and completers-only (140 removed), enriched in Northgate (85% vs 40%) and post-July (70% vs 50%), so the comparison group cannot support a causal effect.
+
+Bottom line: "The report shows an observed lower readmission rate in the program group, but it does not show the program caused it; the groups differ by risk, hospital, timing, and selection, and within risk tiers the program rates are worse. The expansion forecast is mathematically invalid and overstates benefit by at least roughly 3× under its own assumptions. Leadership should pause expansion and require a randomized or well-matched evaluation with intention-to-treat analysis, fixed outcome definitions, adjusted risk/hospital/timing, and a revised PPV/capacity model before scaling." Count sentences: 3. Good.
+
+Need ensure "at least roughly 3×" correct: 5,400 / 1,860 = 2.9. Good.
+
+Potential issue: If true effect 50% and PPV 31%, prevented 1,860. If they intended total discharges, overstatement even larger. Good.
+
+Need maybe in #2 "if 12,000 were total discharges, total readmissions 1,560". Good.
+
+Let's ensure no missing requested "For each: what it is, why it matters for the conclusion, and the evidence in the report (use the numbers)." Each item should explicitly include evidence. Need maybe make each item sentence with evidence. Good.
+
+Let's refine each missed issue to include "why" clearly.
+
+1: "This matters because the headline effect and expansion to flagged patients depend on comparing like with like; here the program group is mostly low risk and the comparison mostly high risk." Evidence. Good.
+
+2: "This matters because expansion decision hinges on expected preventable readmissions." Evidence. Good.
+
+3: "This matters because reachable/consenting/completers may have lower readmission risk independent of calls; removing dropouts discards potential failures." Evidence.
+
+4: "This matters because meds-to-beds could reduce readmissions, making program look better." Evidence.
+
+5: "This matters because measured outcome definition differs by period; program group more after less strict." Evidence.
+
+6: "This matters because if comparison was selected to match 1,000, unknown selection could bias baseline risk." Evidence.
+
+7: "This matters because differences may be chance; Spanish recommendation based on tiny n." Evidence.
+
+8: "This matters because effect, model performance, and capacity may not generalize." Evidence.
+
+9: "This matters because deaths are competing risk; if differential, rates biased." Evidence.
+
+Need maybe include "No confidence intervals" in #7. Good.
+
+Potential concern: #6 may overlap with #3. But okay.
+
+Need maybe include "Balance check only age/sex" in #1. Good.
+
+Let's think if there is any issue with "Spanish-language cohort: readmissions fell from 20% (2 of 10 comparison) to 0% (0 of 9 program). This is a 100% reduction". If 0/9, relative reduction 100%, but absolute reduction 20 percentage points. Need maybe mention "0/9 cannot support 100% reduction". Good.
+
+Potential issue: "Timing: 70% of program patients discharged July-Dec. For comparison 50%. On July 1 hospitals changed measure from any to unplanned." Could the comparison group also after July 50%; but program 70%. Need adjust. Good.
+
+Potential issue: "Northgate opened meds-to-beds in February 2025. 85% program from Northgate vs 40% comparison." Could also interact with timing: Northgate after Feb. Good.
+
+Potential issue: "Risk model catches 90% of patients later readmitted" but if model used to assign tiers, program group low risk? Could be model not used for enrollment. Not relevant.
+
+Potential issue: "All partner hospitals" but risk model specificity/sensitivity maybe derived from Brightwater? Need mention in #8.
+
+Potential issue: "12,000 flagged per year" maybe if model flags 37.8%, total discharges 31,746. Could include in #8: "12,000 flagged at 37.8% flag rate implies ~31,700 total discharges; the study only analyzed 2,000." But maybe too much. Could include in #2 or #8. Need not.
+
+Let's maybe include in #2: "At these rates, the model would flag 37.8% of discharges (11.7% true positives + 26.1% false positives), so 12,000 flagged implies ~31,700 total discharges and only ~3,720 true readmissions among flagged." This is detailed but sharp. But maybe too much. Could include concise.
+
+Need avoid overlong. But desired oververbosity 9. Fine.
+
+Let's produce final. Ensure no analysis in final. Use exact headings. Need no bold headings? Use ##. Good.
+
+Double-check final sections order:
+## Missed issues
+## Looks like a problem but isn't
+## Top 3 priorities
+## Bottom line
+
+Yes.
+
+Need "Top 3 priorities" exactly 3 numbered items. If each item has sub-bullets, might be considered more? Use one paragraph per numbered item. Good.
+
+Need "Looks like a problem but isn't" one line each. Use bullets? one line each. Good.
+
+Let's final.

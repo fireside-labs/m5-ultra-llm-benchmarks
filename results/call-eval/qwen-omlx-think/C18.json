@@ -1,0 +1,60 @@
+{
+  "call_type": "post_procedure_followup",
+  "outcome": "escalated",
+  "sentiment_start": "positive",
+  "sentiment_end": "neutral",
+  "quality_score": 5,
+  "quality_reasons": [
+    "Verified patient identity with date of birth before discussing care.",
+    "Obtained and documented patient permission before discussing care with his son.",
+    "Corrected the prednisolone dosing from three to four times daily and reinforced drop spacing.",
+    "Recognized new floaters, flashes, and curtain as urgent retinal red flags and arranged immediate ophthalmology evaluation.",
+    "Maintained empathy and clarity despite multiple interruptions and system delays."
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "Patient and son",
+      "task": "Go to Corrowind Eye Clinic urgent entrance on Westbrook Road for same-hour evaluation; bring drops and discharge papers; avoid bending or lifting until seen.",
+      "due": "within the hour"
+    },
+    {
+      "owner": "Nurse",
+      "task": "Call on-call ophthalmologist Dr. Achebe-Lindqvist after the call.",
+      "due": "right after this call"
+    },
+    {
+      "owner": "Patient and son",
+      "task": "Administer both antibiotic and prednisolone eye drops four times daily, waiting five minutes between drops.",
+      "due": "ongoing"
+    },
+    {
+      "owner": "Son",
+      "task": "Correct medication chart to show prednisolone four times daily.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Nurse",
+      "task": "Document patient permission to discuss care with son.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Billing team",
+      "task": "Call patient about duplicate $40 copay charge from ClearPay.",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Outbound post-op follow-up after right-eye cataract surgery. Patient verified by DOB and authorized son Jules to discuss care. Drops reviewed: antibiotic tan cap and prednisolone white cap both four times daily, five minutes apart; son corrected chart from three to four times daily. Night shield used. Patient reported new floaters, flashes, and gray curtain in operated eye; nurse advised urgent same-hour evaluation, instructed son to go to Corrowind Eye Clinic urgent entrance on Westbrook Road, bring drops/discharge papers, avoid bending/lifting, and said on-call ophthalmologist Dr. Achebe-Lindqvist would be called. Secondary issue: duplicate $40 copay charge via ClearPay; nurse will route to billing.",
+  "notable_details": [
+    "Patient: Cyrus Delacroix-Mensah; DOB April 1, 1948.",
+    "Surgery: cataract surgery on Tuesday, right eye.",
+    "Son Jules authorized to discuss care; permission documented.",
+    "Medication correction: prednisolone white cap changed from three times daily to four times daily; antibiotic tan cap four times daily; wait five minutes between drops.",
+    "Night shield worn every night.",
+    "New symptoms: floaters, flashes, and gray curtain/shadow from the right side in the operated eye.",
+    "Urgent plan: Corrowind Eye Clinic urgent entrance on Westbrook Road within the hour; bring drops and discharge papers; avoid bending/lifting; go to emergency department if unable to get there.",
+    "On-call ophthalmologist: Dr. Achebe-Lindqvist.",
+    "Billing issue: $40 copay paid at front desk Tuesday, then charged again yesterday via ClearPay; billing team to call.",
+    "Patient initially thought the new visual symptoms were part of healing."
+  ]
+}

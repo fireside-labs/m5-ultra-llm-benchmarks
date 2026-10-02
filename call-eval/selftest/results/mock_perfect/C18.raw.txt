@@ -1,0 +1,41 @@
+{
+ "call_type": "post_procedure_followup",
+ "outcome": "escalated",
+ "sentiment_start": "positive",
+ "sentiment_end": "negative",
+ "quality_score": 5,
+ "quality_reasons": [
+  "Recognised retinal-detachment red flags (new floaters, flashes, curtain) and escalated urgently with clear instructions and an ED fallback",
+  "Verified identity and documented verbal permission before speaking to the son",
+  "Caught the steroid-drop frequency error by checking against discharge orders"
+ ],
+ "flags": [],
+ "action_items": [
+  {
+   "owner": "nurse",
+   "task": "Call on-call ophthalmologist Dr. Achebe-Lindqvist to expect the patient",
+   "due": "immediately"
+  },
+  {
+   "owner": "son / patient",
+   "task": "Go to Corrowind Eye Clinic urgent entrance on Westbrook Road within the hour (ED if needed); bring drops and discharge papers; no bending/lifting",
+   "due": "within the hour"
+  },
+  {
+   "owner": "son",
+   "task": "Correct prednisolone to four times daily on the home chart",
+   "due": "today"
+  },
+  {
+   "owner": "nurse / billing team",
+   "task": "Pass the duplicate $40 ClearPay copay to billing and have them call the patient",
+   "due": "unspecified"
+  }
+ ],
+ "summary_notes": "Mock summary for C18.",
+ "notable_details": [
+  "Raised at the very end: copay paid at the desk Tuesday, then ClearPay portal charged $40 again",
+  "Prednisolone was being given 3x/day at home instead of the prescribed 4x/day",
+  "Symptoms are in the operated right eye and began this morning (floaters, flashes, gray curtain from the side)"
+ ]
+}

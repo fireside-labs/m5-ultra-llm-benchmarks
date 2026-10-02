@@ -1,0 +1,28 @@
+## Missed issues
+
+1. **The plan breaches the Harrow contract on day one.** The contract requires Harrow's data to run on hardware "not shared with any other workload," but the plan runs training and Harrow inference on the same machine. Under Option A this means procuring *additional* dedicated hardware on top of $310k — roughly $475k if the answer is another 4-GPU server, before rack fees — while Option B solves compliance for free by dedicating one server to Harrow.
+2. **Option A arrives ~10 weeks after the pilot starts.** Lead time is 16 weeks; Harrow starts in 6. "Order this week" cannot put the 8-GPU server under the pilot, and the memo offers no stopgap for weeks 6–16+. Option B's 3-week lead lands ~3 weeks *before* launch.
+3. **The 8-GPU server cannot go in the existing rack.** It draws 10.2 kW against 6.5 kW free (8 kW limit − 1.5 kW existing). Both options actually need the second rack ($1.1k/month ≈ $39.6k over the 3-year support window), which appears in neither total — but a single 4-GPU server (5.1 kW) does fit, which enables a phased buy with no new rack.
+4. **The cloud comparison is a strawman, and the fine-tune costs ~$3k to rent.** Break-even is computed against 24/7 rental ($41k/month), but the only 8-GPU job is the quarterly fine-tune: 30 h × $98/h ≈ $2,940 (~$11.8k/year). Renting it removes the main reason to want A's interconnect; on B the 1.6x penalty costs just 18 extra hours per quarter on owned gear.
+5. **The purchase is mis-sized for the workload.** 85% of jobs use 1–2 GPUs and 12% use 4; only 3% need 8. Eight owned GPUs is built for the rarest job, while 4-GPU-class capacity (bought one server at a time) matches the actual distribution.
+6. **It ignores the board's capital-flexibility constraint.** With 14 months of runway and a Series A pending, $310–330k is the wrong shape of commitment. Option B splits naturally into two $165k tranches. The ~8-month break-even sits inside runway but rests on the flawed 24/7 comparison in point 4.
+7. **Residual-value risk is worse for A.** After 2 years a 4-GPU returns ~55% (−$74k on $165k) versus ~40% for the 8-GPU (−$186k on $310k), "with fewer buyers." If the roadmap shifts post-Series A, B loses far less and can be sold one unit at a time.
+8. **Single point of failure for the first paying customer.** Under the memo's plan, Harrow's endpoint shares a machine with training jobs — reboots, crashes, driver updates — and next-business-day support means up to a full business day of pilot downtime per incident. A dedicated 4-GPU isolates the customer.
+9. **The queue problem isn't solved by the memo's own plan.** The 3-hour median wait comes from contention on one shared box; once Harrow gets contractually required dedicated hardware, Option B leaves training at today's 4-GPU capacity, so the wait persists until a second *training* server is added. The memo never reconciles "dedicated Harrow hardware" with "queue relief" — the two goals compete for the same GPUs.
+10. **Harrow's serving load is never sized.** If the endpoint needs 1–2 GPUs (consistent with the 85% profile), a dedicated 4-GPU is ample; if it needs 8, neither option as quoted works. No inference-load numbers appear anywhere.
+
+## Looks like a problem but isn't
+
+- Option B's networking cost — the 200 GbE cards and switch are already inside the $330k.
+- Support parity — both quotes carry identical 3-year next-business-day on-site coverage.
+- The 1.6x cross-server slowdown is measured, not guessed — the measurement is fine; it's just given far more decision weight than a job that is 3% of volume and runs quarterly deserves.
+
+## Top 3 priorities
+
+1. **Harrow launch: compliant dedicated hardware on site within 6 weeks.** This alone rules out Option A as written (16-week lead, sharing banned) and points directly at a 4-GPU server with a 3-week lead.
+2. **Capital shape: minimum spend now, second tranche after Series A.** Phased $165k purchases fit the board's constraint; a $310k+ commitment now does not.
+3. **Right-sizing: own 4-GPU-class capacity, rent the 8-GPU spike.** A workload that is 85% 1–2-GPU jobs, with one quarterly 8-GPU job rentable for ~$2,940, does not justify 8 owned GPUs.
+
+## Bottom line
+
+Reject Option A as written. Order one 4-GPU server this week ($165k, arrives in 3 weeks, fits the existing rack), dedicate it to Harrow, keep renting the current 4-GPU box for training, and rent the quarterly fine-tune (~$2,940); buy the second 4-GPU — plus the $1.1k/month second rack it requires — after Series A closes or when training demand justifies it. This week, also confirm with legal that a dedicated owned server with access logging satisfies Harrow's clause, and measure Harrow's serving GPU requirement — if it needs more than 4 GPUs, revisit before signing anything.

@@ -1,0 +1,1451 @@
+{
+ "mock_padded": {
+  "R01": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "priorities"
+   ],
+   "n_units": 19,
+   "units_over_cap": 4,
+   "answer_words": 253,
+   "items_hit": {
+    "G1": "8. Price criterion uses a discounted year-1 price; renewal list price $303k with up to 8% increases plus a $95k implementation fee make Tallis the most expensive over 3 years",
+    "G2": "9. Tallis cannot handle the union shift-differential and overtime-averaging rules (only 'on the roadmap'), while the other two configured them in the sandbox",
+    "G3": "10. Tallis references are small, single-site, non-union customers; nothing shows it works at 1,400 employees across 9 sites with unions",
+    "G4": "4. Stakeholders should be consulted more broadly.",
+    "G5": "12. Uptime figures are marketing claims; Tallis offers no uptime SLA while the others contract 99.9% with credits"
+   },
+   "items_missed": [
+    "G6",
+    "G7",
+    "G8",
+    "G9"
+   ],
+   "priorities_hit": {},
+   "decoys_hit": {
+    "D1": "1. Security / compliance certification of the vendors was not checked",
+    "D2": "2. Integration with the ERP was not verified",
+    "D3": "3. Vendor support levels / hours were not compared"
+   },
+   "decoys_recognised": [],
+   "sections_missing": [
+    "bottom"
+   ],
+   "missing_file": false,
+   "task_score": 44.4
+  },
+  "R02": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "priorities"
+   ],
+   "n_units": 18,
+   "units_over_cap": 3,
+   "answer_words": 261,
+   "items_hit": {
+    "G1": "8. Simpson's paradox: the program does worse within each risk tier (5.0% vs 4.0%, 25% vs 22%); the overall gap comes from enrolling mostly low-risk patients",
+    "G2": "9. Selection bias: enrollment required answering the first call and agreeing, so the program group is systematically more reachable, engaged and healthier",
+    "G3": "10. Survivorship / per-protocol bias: 140 dropouts who didn't complete all 3 calls were removed from the program group only",
+    "G4": "11. Confounding by site: Northgate launched meds-to-beds in the same period and supplies 85% of program patients vs 40% of comparison",
+    "G5": "12. Small samples and no uncertainty: the Spanish-language '100% reduction' is 2/10 vs 0/9, and no confidence intervals are given anywhere"
+   },
+   "items_missed": [
+    "G6",
+    "G7",
+    "G8"
+   ],
+   "priorities_hit": {},
+   "decoys_hit": {
+    "D1": "1. Readmissions to other hospitals are not captured",
+    "D2": "2. Patients with multiple discharges may be double-counted",
+    "D3": "3. The groups may differ in age or sex"
+   },
+   "decoys_recognised": [],
+   "sections_missing": [
+    "bottom"
+   ],
+   "missing_file": false,
+   "task_score": 43.0
+  },
+  "R03": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "priorities"
+   ],
+   "n_units": 19,
+   "units_over_cap": 4,
+   "answer_words": 304,
+   "items_hit": {
+    "G1": "8. Medicaid managed-care contracts forbid billing members for missed appointments (34% of patients, and the highest no-show group)",
+    "G2": "9. Two commercial contracts require 90 days' written notice to the plan before a new patient-facing fee; the memo's 60-day patient notice doesn't cover it",
+    "G3": "10. Text-only reminders won't reach many patients: 15% have no mobile number, 41% have no texting opt-in, and the templates are English-only while 22% prefer Spanish",
+    "G4": "11. Equity and access: fees and balance holds deter low-income patients (who no-show most), delaying care and pushing them to the ED or out of the practice",
+    "G5": "12. The fee doesn't address the actual causes of no-shows (transportation 38%, work/childcare 19%); fixes for those are missing"
+   },
+   "items_missed": [
+    "G6",
+    "G7",
+    "G8",
+    "G9"
+   ],
+   "priorities_hit": {},
+   "decoys_hit": {
+    "D1": "1. Urgent or same-day sick visits could be blocked by the balance hold",
+    "D2": "2. There is no grace period or hardship waiver",
+    "D3": "3. Patients are not told about the policy in advance"
+   },
+   "decoys_recognised": [],
+   "sections_missing": [
+    "bottom"
+   ],
+   "missing_file": false,
+   "task_score": 38.6
+  },
+  "R04": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "priorities"
+   ],
+   "n_units": 18,
+   "units_over_cap": 3,
+   "answer_words": 291,
+   "items_hit": {
+    "G1": "8. Single point of failure: one box runs both training and the paying customer's live endpoint; any failure or maintenance takes everything down (with next-business-day repair)",
+    "G2": "9. Utilization mismatch: 85% of jobs use 1-2 GPUs and only 3% use 8, so the interconnect advantage rarely matters while two boxes reduce queueing between users",
+    "G3": "10. Lead time: the 8-GPU server takes 16 weeks to arrive, but the paying pilot starts in 6 weeks (4-GPU servers ship in 3)",
+    "G4": "11. Power: the 8-GPU server draws ~10.2 kW but the rack has only 6.5 kW free (8 kW limit minus 1.5 kW), so it needs a second rack too",
+    "G5": "12. The Harrow contract requires dedicated hardware not shared with any other workload; one shared box for training and Harrow violates it, whereas one of two servers can be dedicated"
+   },
+   "items_missed": [
+    "G6",
+    "G7",
+    "G8"
+   ],
+   "priorities_hit": {},
+   "decoys_hit": {
+    "D1": "1. Networking between two servers for distributed training was not considered",
+    "D2": "2. Warranty / hardware support not considered",
+    "D3": "3. The memo doesn't compare buying with renting cloud capacity"
+   },
+   "decoys_recognised": [],
+   "sections_missing": [
+    "bottom"
+   ],
+   "missing_file": false,
+   "task_score": 49.5
+  },
+  "R05": {
+   "empty": false,
+   "sections_found": [
+    "variables",
+    "priorities"
+   ],
+   "n_units": 20,
+   "units_over_cap": 5,
+   "answer_words": 255,
+   "items_hit": {
+    "V1": "3. Communication with the team could be improved.",
+    "V2": "6. Payer mix and reimbursement: Medicaid/uninsured share determines revenue per visit and financial sustainability",
+    "V3": "7. Access: travel time, public transit, parking, walkability and hours for the target population",
+    "V4": "8. Competition and cannibalization: competitor capacity nearby, and patients pulled from our own existing clinic/hospital rather than new patients",
+    "V5": "9. Workforce: ability to recruit and retain physicians, nurses and staff willing to work at that site",
+    "V6": "10. Regulatory and zoning approvals: zoning/permitted use, permitting, licensing and timelines for medical/imaging use",
+    "V7": "11. Total real-estate and build-out cost: rent, lease terms, renovation, imaging shielding and time to open",
+    "V8": "12. Referral and downstream flows: links to the hospital, specialists, imaging and lab; keeping patients in-network"
+   },
+   "items_missed": [
+    "V9",
+    "V10",
+    "V11",
+    "V12",
+    "V13"
+   ],
+   "priorities_hit": {},
+   "sections_missing": [
+    "mind"
+   ],
+   "missing_file": false,
+   "task_score": 54.6
+  },
+  "R06": {
+   "empty": false,
+   "sections_found": [
+    "variables",
+    "priorities"
+   ],
+   "n_units": 20,
+   "units_over_cap": 5,
+   "answer_words": 291,
+   "items_hit": {
+    "V1": "5. The actual threat model: which specific risk does self-hosting remove (retention, training on data, subprocessors, breach) and can it be handled contractually (e.g., zero retention) instead",
+    "V2": "6. Regulatory and contractual requirements: customer agreements, audits, data-protection obligations already satisfied by the vendor agreement",
+    "V3": "7. Output quality on Northfold's own tasks: summaries and decision letters must be evaluated against the current API on a representative test set",
+    "V4": "5. The actual threat model: which specific risk does self-hosting remove (retention, training on data, subprocessors, breach) and can it be handled contractually (e.g., zero retention) instead",
+    "V5": "9. Total cost of ownership: GPUs, power, data-center space, staff and on-call vs per-token API cost at 40k docs/month",
+    "V6": "9. Total cost of ownership: GPUs, power, data-center space, staff and on-call vs per-token API cost at 40k docs/month",
+    "V7": "11. Capacity and latency at quarter-end peaks: sizing hardware for peak vs idle the rest of the time",
+    "V8": "12. Model licence terms of the open-weight model (commercial-use restrictions, acceptable-use clauses)",
+    "V9": "10. Operational capacity and skills: two engineers can't run a production GPU inference stack with 24/7 on-call, upgrades and monitoring",
+    "V11": "7. Output quality on Northfold's own tasks: summaries and decision letters must be evaluated against the current API on a representative test set"
+   },
+   "items_missed": [
+    "V10",
+    "V12",
+    "V13"
+   ],
+   "priorities_hit": {},
+   "sections_missing": [
+    "mind"
+   ],
+   "missing_file": false,
+   "task_score": 65.6
+  },
+  "R07": {
+   "empty": false,
+   "sections_found": [
+    "for",
+    "priorities"
+   ],
+   "n_units": 23,
+   "units_over_cap": 8,
+   "answer_words": 327,
+   "items_hit": {
+    "F1": "5. Safety: far fewer traffic deaths and injuries, especially for pedestrians and cyclists",
+    "F2": "6. Public health: cleaner air and less noise in the densest part of the city",
+    "F3": "7. Economic vitality: more foot traffic, dwell time and spending; space for outdoor dining and events",
+    "F4": "7. Economic vitality: more foot traffic, dwell time and spending; space for outdoor dining and events",
+    "F5": "9. Climate: lower emissions and a nudge toward low-carbon travel",
+    "F6": "8. Space efficiency: road and parking space is reallocated to people, transit lanes, green space or housing"
+   },
+   "items_missed": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6"
+   ],
+   "cruxes_hit": {},
+   "cruxes_missed": [
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+   ],
+   "balance": "side section(s) missing",
+   "sections_missing": [
+    "against",
+    "cruxes",
+    "mind",
+    "lean"
+   ],
+   "missing_file": false,
+   "task_score": 33.5
+  },
+  "R08": {
+   "empty": false,
+   "sections_found": [
+    "for",
+    "priorities"
+   ],
+   "n_units": 23,
+   "units_over_cap": 8,
+   "answer_words": 284,
+   "items_hit": {
+    "F1": "5. Focused individual productivity: fewer interruptions and more deep-work time",
+    "F2": "6. Talent pool and hiring: recruit beyond commuting distance and widen diversity of candidates",
+    "F3": "6. Talent pool and hiring: recruit beyond commuting distance and widen diversity of candidates",
+    "F4": "8. Retention: flexibility is valued; mandating office days drives attrition, especially of top performers",
+    "F5": "9. Cost: less office space and real estate",
+    "F6": "9. Cost: less office space and real estate"
+   },
+   "items_missed": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6"
+   ],
+   "cruxes_hit": {},
+   "cruxes_missed": [
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+   ],
+   "balance": "side section(s) missing",
+   "sections_missing": [
+    "against",
+    "cruxes",
+    "mind",
+    "lean"
+   ],
+   "missing_file": false,
+   "task_score": 35.2
+  },
+  "R09": {
+   "empty": false,
+   "sections_found": [
+    "steps",
+    "priorities"
+   ],
+   "n_units": 17,
+   "units_over_cap": 2,
+   "answer_words": 235,
+   "items_hit": {
+    "G1": "5. Staff to the arrival pattern: Monday 8-11 gets 22% of calls while everyone works an identical 8-5 shift; measure demand by interval and stagger/shift schedules",
+    "G2": "6. Remove refill-status calls (31%) at the source: proactive text/portal status updates and pharmacy notifications",
+    "G3": "7. Failure demand: 18% call 2+ times about the same issue; find why first contact doesn't resolve it",
+    "G4": "8. Handle time rose from 4.1 to 5.6 min after the EHR switch (~37% more workload); fix EHR workflow/training",
+    "G5": "9. The 9-minute figure excludes the 21% who hang up: measure abandonment and true demand, not just answered-call wait",
+    "G6": "10. Menu and routing: 7 IVR options and 26% transfers waste capacity; simplify routing",
+    "G7": "11. Define the target properly: service level by interval (e.g., % answered within X seconds) and abandonment, not an average",
+    "G8": "12. Fill the 2 vacancies first and understand attrition before adding 4 new positions"
+   },
+   "items_missed": [
+    "G9",
+    "G10"
+   ],
+   "priorities_hit": {},
+   "sections_missing": [
+    "measure",
+    "kill"
+   ],
+   "missing_file": false,
+   "task_score": 66.2
+  },
+  "R10": {
+   "empty": false,
+   "sections_found": [
+    "chain",
+    "priorities"
+   ],
+   "n_units": 17,
+   "units_over_cap": 2,
+   "answer_words": 227,
+   "items_hit": {
+    "F1": "5. EV count: households x vehicles per household x EV share (8-16%) gives ~33k-67k EVs",
+    "F2": "6. Home-charging access: 25-35% of EV owners lack home charging and depend on public fast charging",
+    "F3": "7. Session frequency: 200 mi/week x 70% from DC fast / 150 mi per session = ~0.9 sessions/week for drivers without home charging",
+    "F4": "8. Drivers with home charging still add substantial load: ~2 sessions/month x the majority of EVs (~16k sessions/week, comparable to the no-home group)",
+    "F5": "9. Ride-hail and delivery fleets: 1,500 EVs x 5 sessions/week = 7,500 sessions/week",
+    "F6": "7. Session frequency: 200 mi/week x 70% from DC fast / 150 mi per session = ~0.9 sessions/week for drivers without home charging",
+    "F7": "11. Subtract the 46 existing ports",
+    "F8": "11. Subtract the 46 existing ports"
+   },
+   "items_missed": [
+    "F9",
+    "F10"
+   ],
+   "priorities_hit": {},
+   "estimate": {
+    "value": null,
+    "range": null,
+    "decision": null,
+    "point_score": 0.0,
+    "decision_ok": false
+   },
+   "sections_missing": [
+    "result",
+    "recommendation"
+   ],
+   "missing_file": false,
+   "task_score": 55.7
+  }
+ },
+ "mock_perfect": {
+  "R01": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 16,
+   "units_over_cap": 0,
+   "answer_words": 347,
+   "items_hit": {
+    "G1": "1. Price criterion uses a discounted year-1 price; renewal list price $303k with up to 8% increases plus a $95k implementation fee make Tallis the most expensive over 3 years",
+    "G2": "2. Tallis cannot handle the union shift-differential and overtime-averaging rules (only 'on the roadmap'), while the other two configured them in the sandbox",
+    "G3": "3. Tallis references are small, single-site, non-union customers; nothing shows it works at 1,400 employees across 9 sites with unions",
+    "G4": "4. Features were scored by one person from vendor-scripted demos; the payroll team that will use the system never saw them",
+    "G5": "5. Uptime figures are marketing claims; Tallis offers no uptime SLA while the others contract 99.9% with credits",
+    "G6": "6. Lock-in: proprietary data export and a 6-month termination fee make leaving Tallis expensive",
+    "G7": "7. Vendor viability: a 3-year-old 40-person startup mid-fundraise is a risk for mission-critical payroll",
+    "G8": "8. Scoring arithmetic: the weights add up to 110%, not 100%",
+    "G9": "9. Artificial urgency: the expiring year-1 price pressures a rushed decision on a system needed in 11 months"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "G1": "1. Price criterion uses a discounted year-1 price; renewal list price $303k with up to 8% increases plus a $95k implemen",
+    "G2": "2. Tallis cannot handle the union shift-differential and overtime-averaging rules (only 'on the roadmap'), while the oth",
+    "G3": "3. Tallis references are small, single-site, non-union customers; nothing shows it works at 1,400 employees across 9 sit"
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1",
+    "D2",
+    "D3"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  },
+  "R02": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 15,
+   "units_over_cap": 0,
+   "answer_words": 340,
+   "items_hit": {
+    "G1": "1. Simpson's paradox: the program does worse within each risk tier (5.0% vs 4.0%, 25% vs 22%); the overall gap comes from enrolling mostly low-risk patients",
+    "G2": "2. Selection bias: enrollment required answering the first call and agreeing, so the program group is systematically more reachable, engaged and healthier",
+    "G3": "3. Survivorship / per-protocol bias: 140 dropouts who didn't complete all 3 calls were removed from the program group only",
+    "G4": "4. Confounding by site: Northgate launched meds-to-beds in the same period and supplies 85% of program patients vs 40% of comparison",
+    "G5": "5. Small samples and no uncertainty: the Spanish-language '100% reduction' is 2/10 vs 0/9, and no confidence intervals are given anywhere",
+    "G6": "6. Base-rate neglect: with 13% prevalence, 90% sensitivity and 70% specificity, only about 31% of flagged patients are readmitted, not 90%",
+    "G7": "7. Metric definition change: from July, planned readmissions no longer count, and the program group is more concentrated after July (70% vs 50%)",
+    "G8": "8. The forecast double-counts the effect: a 50% reduction is assumed although the within-tier data show no benefit, and it is applied to all flagged patients"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "G1": "1. Simpson's paradox: the program does worse within each risk tier (5.0% vs 4.0%, 25% vs 22%); the overall gap comes fro",
+    "G2": "2. Selection bias: enrollment required answering the first call and agreeing, so the program group is systematically mor",
+    "G3": "3. Survivorship / per-protocol bias: 140 dropouts who didn't complete all 3 calls were removed from the program group on"
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1",
+    "D2",
+    "D3"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  },
+  "R03": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 16,
+   "units_over_cap": 0,
+   "answer_words": 390,
+   "items_hit": {
+    "G1": "1. Medicaid managed-care contracts forbid billing members for missed appointments (34% of patients, and the highest no-show group)",
+    "G2": "2. Two commercial contracts require 90 days' written notice to the plan before a new patient-facing fee; the memo's 60-day patient notice doesn't cover it",
+    "G3": "3. Text-only reminders won't reach many patients: 15% have no mobile number, 41% have no texting opt-in, and the templates are English-only while 22% prefer Spanish",
+    "G4": "4. Equity and access: fees and balance holds deter low-income patients (who no-show most), delaying care and pushing them to the ED or out of the practice",
+    "G5": "5. The fee doesn't address the actual causes of no-shows (transportation 38%, work/childcare 19%); fixes for those are missing",
+    "G6": "6. Revenue projections are overstated: Medicaid exempt, first miss waived, 31% collection rate on small charges, and lost patients (9% left after collections) cost more than the fee brings in",
+    "G7": "7. Double-booking makes chronic lateness worse: 61% of sessions already run 20+ minutes late, so both-show days cascade delays, wait times and provider burnout",
+    "G8": "8. Staff workload shifts rather than disappears: fee disputes, waiver requests, balance conversations at booking, opt-in collection and inbound calls from patients who miss texts",
+    "G9": "9. No measurement plan: no pilot, baseline or control, and no tracking of unintended effects (attrition, ED use, complaints, no-shows by payer)"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "G1": "1. Medicaid managed-care contracts forbid billing members for missed appointments (34% of patients, and the highest no-s",
+    "G3": "2. Text-only reminders won't reach many patients: 15% have no mobile number, 41% have no texting opt-in, and the templat",
+    "G4": "3. Equity and access: fees and balance holds deter low-income patients (who no-show most), delaying care and pushing the"
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1",
+    "D2",
+    "D3"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  },
+  "R04": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 15,
+   "units_over_cap": 0,
+   "answer_words": 384,
+   "items_hit": {
+    "G1": "1. Single point of failure: one box runs both training and the paying customer's live endpoint; any failure or maintenance takes everything down (with next-business-day repair)",
+    "G2": "2. Utilization mismatch: 85% of jobs use 1-2 GPUs and only 3% use 8, so the interconnect advantage rarely matters while two boxes reduce queueing between users",
+    "G3": "3. Lead time: the 8-GPU server takes 16 weeks to arrive, but the paying pilot starts in 6 weeks (4-GPU servers ship in 3)",
+    "G4": "4. Power: the 8-GPU server draws ~10.2 kW but the rack has only 6.5 kW free (8 kW limit minus 1.5 kW), so it needs a second rack too",
+    "G5": "5. The Harrow contract requires dedicated hardware not shared with any other workload; one shared box for training and Harrow violates it, whereas one of two servers can be dedicated",
+    "G6": "6. Rent the rare 8-GPU fine-tune in the cloud (~30 h x $98 = ~$3k per quarter) instead of buying for it",
+    "G7": "7. Resale value: 4-GPU servers keep ~55% after 2 years vs ~40% for 8-GPU systems with fewer buyers",
+    "G8": "8. Capital flexibility: with 14 months of runway and a board request to keep capex flexible, buying one 4-GPU server now and a second later is possible only with Option B"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "G2": "1. Utilization mismatch: 85% of jobs use 1-2 GPUs and only 3% use 8, so the interconnect advantage rarely matters while ",
+    "G3": "2. Lead time: the 8-GPU server takes 16 weeks to arrive, but the paying pilot starts in 6 weeks (4-GPU servers ship in 3",
+    "G4": "3. Power: the 8-GPU server draws ~10.2 kW but the rack has only 6.5 kW free (8 kW limit minus 1.5 kW), so it needs a sec"
+   },
+   "decoys_hit": {},
+   "decoys_recognised": [
+    "D1",
+    "D2",
+    "D3"
+   ],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  },
+  "R05": {
+   "empty": false,
+   "sections_found": [
+    "variables",
+    "priorities",
+    "mind"
+   ],
+   "n_units": 17,
+   "units_over_cap": 0,
+   "answer_words": 269,
+   "items_hit": {
+    "V1": "1. Demand and need in the catchment: population size, growth, age mix, disease burden and unmet need",
+    "V2": "2. Payer mix and reimbursement: Medicaid/uninsured share determines revenue per visit and financial sustainability",
+    "V3": "3. Access: travel time, public transit, parking, walkability and hours for the target population",
+    "V4": "4. Competition and cannibalization: competitor capacity nearby, and patients pulled from our own existing clinic/hospital rather than new patients",
+    "V5": "5. Workforce: ability to recruit and retain physicians, nurses and staff willing to work at that site",
+    "V6": "6. Regulatory and zoning approvals: zoning/permitted use, permitting, licensing and timelines for medical/imaging use",
+    "V7": "7. Total real-estate and build-out cost: rent, lease terms, renovation, imaging shielding and time to open",
+    "V8": "8. Referral and downstream flows: links to the hospital, specialists, imaging and lab; keeping patients in-network",
+    "V9": "9. Mission and equity: serving underserved neighborhoods, community benefit obligations of a non-profit, health disparities",
+    "V10": "10. Site physical suitability: size, layout, visibility, ADA accessibility, safety, signage and room for walk-in flow",
+    "V11": "11. Growth and flexibility: room to expand, future population shifts, lease flexibility/exit options",
+    "V12": "12. Hazard and continuity risks: flood zone, disaster exposure, utility reliability; also: Strategic fit and partnerships: employers, schools, community organizations, the system's network strategy an",
+    "V13": "12. Hazard and continuity risks: flood zone, disaster exposure, utility reliability; also: Strategic fit and partnerships: employers, schools, community organizations, the system's network strategy an"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "V1": "1. Demand and need in the catchment: population size, growth, age mix, disease burden and unmet need",
+    "V2": "2. Payer mix and reimbursement: Medicaid/uninsured share determines revenue per visit and financial sustainability",
+    "V3": "3. Access: travel time, public transit, parking, walkability and hours for the target population"
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  },
+  "R06": {
+   "empty": false,
+   "sections_found": [
+    "variables",
+    "priorities",
+    "mind"
+   ],
+   "n_units": 17,
+   "units_over_cap": 0,
+   "answer_words": 326,
+   "items_hit": {
+    "V1": "1. The actual threat model: which specific risk does self-hosting remove (retention, training on data, subprocessors, breach) and can it be handled contractually (e.g., zero retention) instead",
+    "V2": "2. Regulatory and contractual requirements: customer agreements, audits, data-protection obligations already satisfied by the vendor agreement",
+    "V3": "3. Output quality on Northfold's own tasks: summaries and decision letters must be evaluated against the current API on a representative test set",
+    "V4": "1. The actual threat model: which specific risk does self-hosting remove (retention, training on data, subprocessors, breach) and can it be handled contractually (e.g., zero retention) instead",
+    "V5": "5. Total cost of ownership: GPUs, power, data-center space, staff and on-call vs per-token API cost at 40k docs/month",
+    "V6": "5. Total cost of ownership: GPUs, power, data-center space, staff and on-call vs per-token API cost at 40k docs/month",
+    "V7": "7. Capacity and latency at quarter-end peaks: sizing hardware for peak vs idle the rest of the time",
+    "V8": "8. Model licence terms of the open-weight model (commercial-use restrictions, acceptable-use clauses)",
+    "V9": "6. Operational capacity and skills: two engineers can't run a production GPU inference stack with 24/7 on-call, upgrades and monitoring",
+    "V10": "10. Hybrid options: redaction/de-identification before the API, routing only the most sensitive documents to a local model",
+    "V11": "3. Output quality on Northfold's own tasks: summaries and decision letters must be evaluated against the current API on a representative test set",
+    "V12": "12. Migration effort and risk: re-engineering prompts and pipelines, regression testing, parallel run and rollback; also: Vendor dependency/availability: outages, price changes or policy changes at th",
+    "V13": "12. Migration effort and risk: re-engineering prompts and pipelines, regression testing, parallel run and rollback; also: Vendor dependency/availability: outages, price changes or policy changes at th"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "V1": "1. The actual threat model: which specific risk does self-hosting remove (retention, training on data, subprocessors, br",
+    "V4": "1. The actual threat model: which specific risk does self-hosting remove (retention, training on data, subprocessors, br",
+    "V2": "2. Regulatory and contractual requirements: customer agreements, audits, data-protection obligations already satisfied b",
+    "V3": "3. Output quality on Northfold's own tasks: summaries and decision letters must be evaluated against the current API on "
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  },
+  "R07": {
+   "empty": false,
+   "sections_found": [
+    "for",
+    "against",
+    "cruxes",
+    "mind",
+    "lean"
+   ],
+   "n_units": 18,
+   "units_over_cap": 0,
+   "answer_words": 309,
+   "items_hit": {
+    "F1": "1. Safety: far fewer traffic deaths and injuries, especially for pedestrians and cyclists",
+    "F2": "2. Public health: cleaner air and less noise in the densest part of the city",
+    "F3": "3. Economic vitality: more foot traffic, dwell time and spending; space for outdoor dining and events",
+    "F4": "3. Economic vitality: more foot traffic, dwell time and spending; space for outdoor dining and events",
+    "F5": "5. Climate: lower emissions and a nudge toward low-carbon travel",
+    "F6": "4. Space efficiency: road and parking space is reallocated to people, transit lanes, green space or housing",
+    "A1": "1. Business harm: shops and restaurants lose customers who drive, especially suburban shoppers, and may relocate to malls",
+    "A2": "2. Accessibility: disabled and elderly people and others with limited mobility depend on door-to-door car access",
+    "A3": "3. Equity: people from areas with poor transit, shift workers and lower-income commuters lose access to downtown jobs and services",
+    "A4": "4. Displacement: traffic and parking pressure move to the surrounding neighborhoods and ring roads",
+    "A5": "5. Logistics and services: deliveries, trades, emergency vehicles and residents' needs are harder to serve",
+    "A6": "6. Transit readiness and implementation: without enough transit capacity first, access collapses; enforcement costs, political backlash"
+   },
+   "items_missed": [],
+   "cruxes_hit": {
+    "C1": "1. Are the alternatives (transit, cycling, park-and-ride, accessible options) good enough that people who drive now can still reach downtown?",
+    "C2": "2. What is the net effect on downtown businesses and the local economy in this specific city (more walkers vs fewer drivers)?",
+    "C3": "3. Does car traffic disappear (mode shift / fewer trips) or just move to surrounding areas?",
+    "C4": "4. Values: how to weigh residents' and pedestrians' quality of life against access for people who drive in, and who bears the costs"
+   },
+   "cruxes_missed": [],
+   "balance": {
+    "recall_for": 1.0,
+    "recall_against": 1.0,
+    "words_for": 91,
+    "words_against": 99
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  },
+  "R08": {
+   "empty": false,
+   "sections_found": [
+    "for",
+    "against",
+    "cruxes",
+    "mind",
+    "lean"
+   ],
+   "n_units": 18,
+   "units_over_cap": 0,
+   "answer_words": 266,
+   "items_hit": {
+    "F1": "1. Focused individual productivity: fewer interruptions and more deep-work time",
+    "F2": "2. Talent pool and hiring: recruit beyond commuting distance and widen diversity of candidates",
+    "F3": "2. Talent pool and hiring: recruit beyond commuting distance and widen diversity of candidates",
+    "F4": "4. Retention: flexibility is valued; mandating office days drives attrition, especially of top performers",
+    "F5": "5. Cost: less office space and real estate",
+    "F6": "5. Cost: less office space and real estate",
+    "A1": "1. Collaboration and innovation: spontaneous interactions, weak ties and cross-team idea flow decline",
+    "A2": "2. Mentoring and early-career development: juniors learn by observation and quick feedback; onboarding is harder",
+    "A3": "3. Culture, cohesion and trust erode; loneliness and isolation rise",
+    "A4": "4. Coordination costs: slower communication, more meetings and messages, time-zone and async friction",
+    "A5": "5. Management and accountability: harder to observe and evaluate work; risk of shirking or of invasive monitoring",
+    "A6": "6. Two-tier workforce: proximity bias favours those in the office; unequal home setups"
+   },
+   "items_missed": [],
+   "cruxes_hit": {
+    "C1": "1. Does remote-by-default raise or lower productivity for this company's kinds of work, measured as output rather than activity, including team-level and long-run effects?",
+    "C2": "2. Can mentoring, onboarding and early-career growth be made to work remotely, or do juniors fall behind?",
+    "C3": "3. Does innovation and cross-team collaboration actually depend on in-person contact, or can deliberate gatherings substitute?",
+    "C4": "4. Values: how much weight to give employee autonomy and wellbeing versus organisational cohesion and control"
+   },
+   "cruxes_missed": [],
+   "balance": {
+    "recall_for": 1.0,
+    "recall_against": 1.0,
+    "words_for": 74,
+    "words_against": 81
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  },
+  "R09": {
+   "empty": false,
+   "sections_found": [
+    "steps",
+    "measure",
+    "kill",
+    "priorities"
+   ],
+   "n_units": 16,
+   "units_over_cap": 0,
+   "answer_words": 277,
+   "items_hit": {
+    "G1": "1. Staff to the arrival pattern: Monday 8-11 gets 22% of calls while everyone works an identical 8-5 shift; measure demand by interval and stagger/shift schedules",
+    "G2": "2. Remove refill-status calls (31%) at the source: proactive text/portal status updates and pharmacy notifications",
+    "G3": "3. Failure demand: 18% call 2+ times about the same issue; find why first contact doesn't resolve it",
+    "G4": "4. Handle time rose from 4.1 to 5.6 min after the EHR switch (~37% more workload); fix EHR workflow/training",
+    "G5": "5. The 9-minute figure excludes the 21% who hang up: measure abandonment and true demand, not just answered-call wait",
+    "G6": "6. Menu and routing: 7 IVR options and 26% transfers waste capacity; simplify routing",
+    "G7": "7. Define the target properly: service level by interval (e.g., % answered within X seconds) and abandonment, not an average",
+    "G8": "8. Fill the 2 vacancies first and understand attrition before adding 4 new positions",
+    "G9": "9. Callback/virtual hold improves experience and abandonment but adds no capacity; work is deferred, not removed",
+    "G10": "10. Portal deflection only reaches the 35% with active portals; activation and other channels matter (equity, older patients)"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "G1": "1. Staff to the arrival pattern: Monday 8-11 gets 22% of calls while everyone works an identical 8-5 shift; measure dema",
+    "G2": "2. Remove refill-status calls (31%) at the source: proactive text/portal status updates and pharmacy notifications",
+    "G3": "3. Failure demand: 18% call 2+ times about the same issue; find why first contact doesn't resolve it"
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  },
+  "R10": {
+   "empty": false,
+   "sections_found": [
+    "chain",
+    "result",
+    "priorities",
+    "recommendation"
+   ],
+   "n_units": 15,
+   "units_over_cap": 0,
+   "answer_words": 290,
+   "items_hit": {
+    "F1": "1. EV count: households x vehicles per household x EV share (8-16%) gives ~33k-67k EVs",
+    "F2": "2. Home-charging access: 25-35% of EV owners lack home charging and depend on public fast charging",
+    "F3": "3. Session frequency: 200 mi/week x 70% from DC fast / 150 mi per session = ~0.9 sessions/week for drivers without home charging",
+    "F4": "4. Drivers with home charging still add substantial load: ~2 sessions/month x the majority of EVs (~16k sessions/week, comparable to the no-home group)",
+    "F5": "5. Ride-hail and delivery fleets: 1,500 EVs x 5 sessions/week = 7,500 sessions/week",
+    "F6": "3. Session frequency: 200 mi/week x 70% from DC fast / 150 mi per session = ~0.9 sessions/week for drivers without home charging",
+    "F7": "7. Subtract the 46 existing ports",
+    "F8": "7. Subtract the 46 existing ports",
+    "F9": "9. Leverage other sources: private charging operators, utilities, grants, and cheaper Level 2 / workplace charging",
+    "F10": "10. Phase and target: put first ports where residents lack home charging; build in stages and revisit as adoption becomes clearer"
+   },
+   "items_missed": [],
+   "priorities_hit": {
+    "F1": "1. EV count: households x vehicles per household x EV share (8-16%) gives ~33k-67k EVs",
+    "F2": "2. Home-charging access: 25-35% of EV owners lack home charging and depend on public fast charging",
+    "F4": "3. Drivers with home charging still add substantial load: ~2 sessions/month x the majority of EVs (~16k sessions/week, c"
+   },
+   "estimate": {
+    "value": 600.0,
+    "range": [
+     430.0,
+     780.0
+    ],
+    "decision": "no - $12m buys roughly 55-85 ports, about 10-15% of the ~600 needed.",
+    "point_score": 1.0,
+    "decision_ok": true
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 100.0
+  }
+ },
+ "mock_shuffled": {
+  "R01": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 15,
+   "units_over_cap": 0,
+   "answer_words": 340,
+   "items_hit": {},
+   "items_missed": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7",
+    "G8",
+    "G9"
+   ],
+   "priorities_hit": {},
+   "decoys_hit": {},
+   "decoys_recognised": [],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 22.2
+  },
+  "R02": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 16,
+   "units_over_cap": 0,
+   "answer_words": 390,
+   "items_hit": {},
+   "items_missed": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7",
+    "G8"
+   ],
+   "priorities_hit": {},
+   "decoys_hit": {},
+   "decoys_recognised": [],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 22.2
+  },
+  "R03": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 15,
+   "units_over_cap": 0,
+   "answer_words": 384,
+   "items_hit": {},
+   "items_missed": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7",
+    "G8",
+    "G9"
+   ],
+   "priorities_hit": {},
+   "decoys_hit": {},
+   "decoys_recognised": [],
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 22.2
+  },
+  "R04": {
+   "empty": false,
+   "sections_found": [
+    "variables",
+    "priorities",
+    "mind"
+   ],
+   "n_units": 17,
+   "units_over_cap": 0,
+   "answer_words": 269,
+   "items_hit": {
+    "G8": "11. Growth and flexibility: room to expand, future population shifts, lease flexibility/exit options"
+   },
+   "items_missed": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7"
+   ],
+   "priorities_hit": {},
+   "decoys_hit": {
+    "D3": "7. Total real-estate and build-out cost: rent, lease terms, renovation, imaging shielding and time to open",
+    "D1": "8. Referral and downstream flows: links to the hospital, specialists, imaging and lab; keeping patients in-network"
+   },
+   "decoys_recognised": [],
+   "sections_missing": [
+    "issues",
+    "bottom"
+   ],
+   "missing_file": false,
+   "task_score": 12.5
+  },
+  "R05": {
+   "empty": false,
+   "sections_found": [
+    "variables",
+    "priorities",
+    "mind"
+   ],
+   "n_units": 17,
+   "units_over_cap": 0,
+   "answer_words": 326,
+   "items_hit": {
+    "V5": "5. Total cost of ownership: GPUs, power, data-center space, staff and on-call vs per-token API cost at 40k docs/month",
+    "V7": "5. Total cost of ownership: GPUs, power, data-center space, staff and on-call vs per-token API cost at 40k docs/month"
+   },
+   "items_missed": [
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V6",
+    "V8",
+    "V9",
+    "V10",
+    "V11",
+    "V12",
+    "V13"
+   ],
+   "priorities_hit": {},
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 18.2
+  },
+  "R06": {
+   "empty": false,
+   "sections_found": [
+    "for",
+    "against",
+    "cruxes",
+    "mind",
+    "lean"
+   ],
+   "n_units": 18,
+   "units_over_cap": 0,
+   "answer_words": 309,
+   "items_hit": {
+    "V3": "4. Values: how to weigh residents' and pedestrians' quality of life against access for people who drive in, and who bears the costs"
+   },
+   "items_missed": [
+    "V1",
+    "V2",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8",
+    "V9",
+    "V10",
+    "V11",
+    "V12",
+    "V13"
+   ],
+   "priorities_hit": {},
+   "sections_missing": [
+    "variables",
+    "priorities"
+   ],
+   "missing_file": false,
+   "task_score": 10.4
+  },
+  "R07": {
+   "empty": false,
+   "sections_found": [
+    "for",
+    "against",
+    "cruxes",
+    "mind",
+    "lean"
+   ],
+   "n_units": 18,
+   "units_over_cap": 0,
+   "answer_words": 266,
+   "items_hit": {
+    "F4": "5. Cost: less office space and real estate"
+   },
+   "items_missed": [
+    "F1",
+    "F2",
+    "F3",
+    "F5",
+    "F6",
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6"
+   ],
+   "cruxes_hit": {},
+   "cruxes_missed": [
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+   ],
+   "balance": {
+    "recall_for": 0.2,
+    "recall_against": 0.0,
+    "words_for": 74,
+    "words_against": 81
+   },
+   "sections_missing": [],
+   "missing_file": false,
+   "task_score": 18.2
+  },
+  "R08": {
+   "empty": false,
+   "sections_found": [
+    "steps",
+    "measure",
+    "kill",
+    "priorities"
+   ],
+   "n_units": 16,
+   "units_over_cap": 0,
+   "answer_words": 277,
+   "items_hit": {},
+   "items_missed": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6",
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6"
+   ],
+   "cruxes_hit": {},
+   "cruxes_missed": [
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+   ],
+   "balance": "side section(s) missing",
+   "sections_missing": [
+    "for",
+    "against",
+    "cruxes",
+    "mind",
+    "lean"
+   ],
+   "missing_file": false,
+   "task_score": 0.0
+  },
+  "R09": {
+   "empty": false,
+   "sections_found": [
+    "chain",
+    "result",
+    "priorities",
+    "recommendation"
+   ],
+   "n_units": 15,
+   "units_over_cap": 0,
+   "answer_words": 290,
+   "items_hit": {},
+   "items_missed": [
+    "G1",
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6",
+    "G7",
+    "G8",
+    "G9",
+    "G10"
+   ],
+   "priorities_hit": {},
+   "sections_missing": [
+    "steps",
+    "measure",
+    "kill"
+   ],
+   "missing_file": false,
+   "task_score": 1.7
+  },
+  "R10": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "notissues",
+    "priorities",
+    "bottom"
+   ],
+   "n_units": 16,
+   "units_over_cap": 0,
+   "answer_words": 347,
+   "items_hit": {},
+   "items_missed": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6",
+    "F7",
+    "F8",
+    "F9",
+    "F10"
+   ],
+   "priorities_hit": {},
+   "estimate": {
+    "value": null,
+    "range": null,
+    "decision": null,
+    "point_score": 0.0,
+    "decision_ok": false
+   },
+   "sections_missing": [
+    "chain",
+    "result",
+    "recommendation"
+   ],
+   "missing_file": false,
+   "task_score": 1.4
+  }
+ },
+ "mock_sloppy": {
+  "R01": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "priorities"
+   ],
+   "n_units": 11,
+   "units_over_cap": 0,
+   "answer_words": 144,
+   "items_hit": {
+    "G1": "6. Total cost of ownership over 3 years makes Tallis the most expensive once the $95k implementation fee is added.",
+    "G4": "1. Stakeholders should be consulted more broadly.",
+    "G5": "3. Uptime figures are marketing claims; Tallis offers no uptime SLA while the others contract 99.9% with credits",
+    "G7": "8. If Tallis goes out of business, our payroll is stranded - the others are 15+ years old and profitable."
+   },
+   "items_missed": [
+    "G2",
+    "G3",
+    "G6",
+    "G8",
+    "G9"
+   ],
+   "priorities_hit": {},
+   "decoys_hit": {
+    "D1": "3. No security review of the vendors.",
+    "D2": "4. ERP integration risk is not addressed.",
+    "D3": "5. Support coverage and response times are not compared across vendors."
+   },
+   "decoys_recognised": [],
+   "sections_missing": [
+    "bottom"
+   ],
+   "missing_file": false,
+   "task_score": 29.2
+  },
+  "R02": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "priorities"
+   ],
+   "n_units": 11,
+   "units_over_cap": 0,
+   "answer_words": 155,
+   "items_hit": {
+    "G1": "6. Stratified by tier, the program looks worse (5.0% vs 4.0%; 25% vs 22%); the headline gap is driven by case mix.",
+    "G4": "7. The improvement may be due to another intervention (bedside medication delivery) rather than the calls.",
+    "G5": "2. Small samples and no uncertainty: the Spanish-language '100% reduction' is 2/10 vs 0/9, and no confidence intervals are given anywhere",
+    "G7": "8. The readmission definition changed on July 1, which mechanically lowers program rates.",
+    "G8": "3. The forecast double-counts the effect: a 50% reduction is assumed although the within-tier data show no benefit, and it is applied to all flagged patients"
+   },
+   "items_missed": [
+    "G2",
+    "G3",
+    "G6"
+   ],
+   "priorities_hit": {},
+   "decoys_hit": {
+    "D3": "1. Stakeholders should be consulted more broadly.",
+    "D1": "3. Patients readmitted at other hospitals may be missed.",
+    "D2": "4. Same patient could appear multiple times - duplicates inflate counts."
+   },
+   "decoys_recognised": [],
+   "sections_missing": [
+    "bottom"
+   ],
+   "missing_file": false,
+   "task_score": 38.6
+  },
+  "R03": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "priorities"
+   ],
+   "n_units": 11,
+   "units_over_cap": 0,
+   "answer_words": 154,
+   "items_hit": {
+    "G1": "6. Charging Medicaid members the no-show fee would breach our payer contracts.",
+    "G2": "2. Two commercial contracts require 90 days' written notice to the plan before a new patient-facing fee; the memo's 60-day patient notice doesn't cover it",
+    "G4": "7. Balance holds create a barrier to access; patients may delay chronic-care visits and end up in the ED.",
+    "G5": "3. The fee doesn't address the actual causes of no-shows (transportation 38%, work/childcare 19%); fixes for those are missing",
+    "G7": "8. If both double-booked patients show, everyone waits longer and providers burn out."
+   },
+   "items_missed": [
+    "G3",
+    "G6",
+    "G8",
+    "G9"
+   ],
+   "priorities_hit": {},
+   "decoys_hit": {
+    "D1": "3. Patients with urgent needs might be turned away for an unpaid balance.",
+    "D2": "4. No hardship waiver or grace for a first offense.",
+    "D3": "5. Patients won't know about the new fee before it starts."
+   },
+   "decoys_recognised": [],
+   "sections_missing": [
+    "bottom"
+   ],
+   "missing_file": false,
+   "task_score": 34.3
+  },
+  "R04": {
+   "empty": false,
+   "sections_found": [
+    "issues",
+    "priorities"
+   ],
+   "n_units": 11,
+   "units_over_cap": 0,
+   "answer_words": 158,
+   "items_hit": {
+    "G1": "6. No redundancy - with next-business-day repair, an outage could last days.",
+    "G4": "7. It exceeds the 8 kW rack limit, so Option A also needs a second rack at $1.1k/month.",
+    "G6": "3. Rent the rare 8-GPU fine-tune in the cloud (~30 h x $98 = ~$3k per quarter) instead of buying for it",
+    "G7": "8. Two smaller servers are more liquid if we need to sell later."
+   },
+   "items_missed": [
+    "G2",
+    "G3",
+    "G5",
+    "G8"
+   ],
+   "priorities_hit": {},
+   "decoys_hit": {
+    "D1": "3. Two servers need a fast network between them; the memo ignores interconnect costs.",
+    "D2": "4. No warranty or vendor support plan is mentioned.",
+    "D3": "5. The memo never compares buying hardware with renting cloud GPUs."
+   },
+   "decoys_recognised": [],
+   "sections_missing": [
+    "bottom"
+   ],
+   "missing_file": false,
+   "task_score": 29.2
+  },
+  "R05": {
+   "empty": false,
+   "sections_found": [
+    "variables",
+    "priorities"
+   ],
+   "n_units": 12,
+   "units_over_cap": 0,
+   "answer_words": 129,
+   "items_hit": {
+    "V1": "3. Communication with the team could be improved.",
+    "V3": "8. Visibility and signage for a walk-in urgent care.",
+    "V4": "6. Competitor urgent care across the street and existing capacity nearby.",
+    "V6": "1. Regulatory and zoning approvals: zoning/permitted use, permitting, licensing and timelines for medical/imaging use",
+    "V7": "7. Build-out cost including X-ray shielding and time to open.",
+    "V8": "3. Referral and downstream flows: links to the hospital, specialists, imaging and lab; keeping patients in-network",
+    "V10": "8. Visibility and signage for a walk-in urgent care.",
+    "V13": "9. Partnerships with employers, schools and community organizations."
+   },
+   "items_missed": [
+    "V2",
+    "V5",
+    "V9",
+    "V11",
+    "V12"
+   ],
+   "priorities_hit": {},
+   "sections_missing": [
+    "mind"
+   ],
+   "missing_file": false,
+   "task_score": 46.9
+  },
+  "R06": {
+   "empty": true,
+   "missing_file": false,
+   "task_score": 0.0
+  },
+  "R07": {
+   "empty": false,
+   "sections_found": [
+    "for",
+    "against",
+    "other",
+    "lean"
+   ],
+   "n_units": 9,
+   "units_over_cap": 0,
+   "answer_words": 95,
+   "items_hit": {
+    "F1": "1. Safety: removing cars sharply cuts pedestrian injuries and deaths.",
+    "F2": "2. Cleaner air and less noise in the core.",
+    "F3": "3. Pedestrianized streets increase foot traffic and dwell time, which boosts spending.",
+    "F4": "4. Street and parking space can be reallocated to people, plazas and green space.",
+    "F5": "5. Climate: cuts carbon emissions from short car trips.",
+    "F6": "6. Buses get faster and more reliable once cars are out of the core."
+   },
+   "items_missed": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6"
+   ],
+   "cruxes_hit": {},
+   "cruxes_missed": [
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+   ],
+   "balance": {
+    "recall_for": 1.0,
+    "recall_against": 0.0,
+    "words_for": 68,
+    "words_against": 7
+   },
+   "sections_missing": [
+    "cruxes",
+    "mind"
+   ],
+   "missing_file": false,
+   "task_score": 36.3
+  },
+  "R08": {
+   "empty": false,
+   "sections_found": [
+    "for",
+    "against",
+    "other",
+    "lean"
+   ],
+   "n_units": 9,
+   "units_over_cap": 0,
+   "answer_words": 77,
+   "items_hit": {
+    "F1": "1. Fewer interruptions mean more deep, focused work.",
+    "F2": "1. Fewer interruptions mean more deep, focused work.",
+    "F3": "1. Fewer interruptions mean more deep, focused work.",
+    "F4": "4. Retention: people value flexibility and quit over office mandates.",
+    "F5": "5. Savings on office space and real estate.",
+    "F6": "5. Savings on office space and real estate."
+   },
+   "items_missed": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6"
+   ],
+   "cruxes_hit": {},
+   "cruxes_missed": [
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+   ],
+   "balance": {
+    "recall_for": 1.0,
+    "recall_against": 0.0,
+    "words_for": 50,
+    "words_against": 7
+   },
+   "sections_missing": [
+    "cruxes",
+    "mind"
+   ],
+   "missing_file": false,
+   "task_score": 38.4
+  },
+  "R09": {
+   "empty": false,
+   "sections_found": [
+    "steps",
+    "priorities"
+   ],
+   "n_units": 9,
+   "units_over_cap": 0,
+   "answer_words": 122,
+   "items_hit": {
+    "G1": "2. The timeline seems aggressive.",
+    "G4": "4. Fix EHR workflows and training to bring handle time back down.",
+    "G5": "1. The 9-minute figure excludes the 21% who hang up: measure abandonment and true demand, not just answered-call wait",
+    "G6": "2. Menu and routing: 7 IVR options and 26% transfers waste capacity; simplify routing",
+    "G7": "5. Measure the wait distribution (90th percentile), not the mean.",
+    "G10": "6. Portal-based fixes miss the 65% who aren't enrolled, often older patients."
+   },
+   "items_missed": [
+    "G2",
+    "G3",
+    "G8",
+    "G9"
+   ],
+   "priorities_hit": {
+    "G1": "3. Define the target properly: service level by interval (e.g., % answered within X seconds) and abandonment, not an ave"
+   },
+   "sections_missing": [
+    "measure",
+    "kill"
+   ],
+   "missing_file": false,
+   "task_score": 51.9
+  },
+  "R10": {
+   "empty": false,
+   "sections_found": [
+    "chain",
+    "result",
+    "priorities"
+   ],
+   "n_units": 6,
+   "units_over_cap": 0,
+   "answer_words": 59,
+   "items_hit": {
+    "F8": "1. The budget buys about 80 ports at $150k each."
+   },
+   "items_missed": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6",
+    "F7",
+    "F9",
+    "F10"
+   ],
+   "priorities_hit": {},
+   "estimate": {
+    "value": 80.0,
+    "range": [
+     60.0,
+     100.0
+    ],
+    "decision": "yes, $12m is roughly enough for the city's needs.",
+    "point_score": 0.0,
+    "decision_ok": false
+   },
+   "sections_missing": [
+    "recommendation"
+   ],
+   "missing_file": false,
+   "task_score": 12.3
+  }
+ }
+}

@@ -1,0 +1,28 @@
+## Missed issues
+
+1. **Lead time makes Option A infeasible for the Harrow pilot.** The pilot starts in 6 weeks; the 8-GPU configuration has a 16-week lead time, while the 4-GPU servers ship in 3 weeks. Ordering Option A this week means no dedicated hardware exists for Harrow's contract, which requires dedicated, non-shared processing.
+2. **Power limit contradicts the memo's placement claim.** The existing rack has an 8 kW limit with 1.5 kW used (6.5 kW free). Option A draws 10.2 kW, so it cannot go in the existing rack as the memo states. It requires a second rack at $1.1k/month, a cost omitted from the comparison. Option B fits one server in the existing rack (1.5 + 5.1 = 6.6 kW) and needs a second rack for the other.
+3. **Workload mismatch: 97% of jobs use ≤4 GPUs.** The 8-GPU node is only for the quarterly fine-tune (3% of jobs). Two 4-GPU nodes provide two independent schedulers, directly attacking the 3-hour median queue wait for the 85% of jobs using 1–2 GPUs, which is the actual operational pain point.
+4. **Resale value flips the cost advantage.** 8-GPU systems resell at 40% ($124k), while 4-GPU systems resell at 55% ($181.5k for two). Net cost over 2 years: Option A = $186k, Option B = $148.5k. Option B is $37.5k cheaper in net TCO despite the $20k higher upfront price.
+5. **The 1.6x interconnect slowdown is trivial to mitigate.** The quarterly fine-tune takes 30 hours; split across two servers it takes 48 hours (18 hours extra). Renting an 8-GPU cloud instance for this job costs $98/hour × 30 = $2,940 per quarter ($11,760/year). Buying a $310k node to save 18 hours per quarter is a massive over-investment.
+6. **Harrow's dedicated hardware requirement forces idling the 8-GPU node.** If Option A is dedicated to Harrow, it cannot run the 85% of 1–2 GPU jobs, leaving them with no hardware for 16 weeks. Option B allows dedicating one 4-GPU to Harrow and using the other for internal jobs.
+7. **Cash runway and board flexibility constraint.** Runway is 14 months, and the board asked for capital flexibility until Series A closes. Option B's higher resale value and the ability to sell one server independently (55% resale) provides better downside protection than a single 8-GPU node.
+8. **The cloud break-even analysis is flawed.** The memo's $41k/month assumes 24/7 rental of an 8-GPU. Actual needs are a dedicated 4-GPU for Harrow (rentable for roughly half, ~$20k/month) and a 30-hour 8-GPU rental per quarter. The purchase does not break even in 8 months under real usage; it's a sunk cost for an over-provisioned node.
+9. **Queue wait is the real problem, not interconnect speed.** The memo highlights the 3-hour median wait but doesn't quantify it. Two 4-GPU nodes double the available nodes, cutting wait times for the 85% of 1–2 GPU jobs. The 8-GPU node doesn't help this because it's a single node and can't run multiple independent jobs efficiently without complex scheduling.
+
+## Looks like a problem but isn't
+
+- The $20k higher upfront cost of Option B is negligible compared to the $37.5k resale advantage.
+- The 1.6x interconnect slowdown only affects a 30-hour quarterly job, easily covered by cloud rental.
+- The 3-year support contract is adequate for both options.
+- Administering two servers is minor compared to the scheduling and power constraints.
+
+## Top 3 priorities
+
+1. **Meet the Harrow pilot deadline (6 weeks).** Only Option B (3-week lead time) or cloud rental can achieve this; Option A (16-week lead time) is disqualified.
+2. **Match hardware to actual workload (97% ≤4 GPUs).** Two 4-GPU nodes reduce queue wait and avoid paying for an 8-GPU node that is idle 97% of the time.
+3. **Optimize net TCO and cash flexibility.** Option B's higher resale value (55% vs 40%) and lower net cost ($148.5k vs $186k) aligns with the board's request for capital flexibility.
+
+## Bottom line
+
+Recommend Option B: order two 4-GPU servers this week to meet the Harrow pilot in 6 weeks. Place one in the existing rack (fits under 8 kW) and the second in a new rack ($1.1k/month). Rent an 8-GPU cloud instance for the quarterly fine-tune ($2,940/quarter) instead of buying a dedicated 8-GPU node, which has a 16-week lead time, worse resale, and violates the power limit. This addresses the queue wait, satisfies Harrow's dedicated hardware requirement, and preserves cash.

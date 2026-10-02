@@ -1,0 +1,73 @@
+
+
+{
+  "call_type": "sales",
+  "outcome": "callback",
+  "sentiment_start": "positive",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Rep built rapport, kept the call focused, and scheduled a trial and live walkthrough.",
+    "Rep accurately explained pricing, card fees, data export, and that BAA is only on Enterprise.",
+    "Rep later gave contradictory and incorrect HIPAA assurance that patient details are fine in invoice notes on Starter.",
+    "Rep did not correct the misinformation before the call ended."
+  ],
+  "flags": [
+    {
+      "type": "misinformation",
+      "description": "Rep incorrectly assured the prospect that patient details can be included in invoice notes on Starter after stating Starter does not include a BAA.",
+      "evidence": "Oh, you're covered, honestly. Everything's encrypted, we're on the same infrastructure as the big guys. You're totally fine to put patient details in the invoice notes, people do it all the time."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "REP",
+      "task": "Set up trial workspace to start October 1 and end October 15.",
+      "due": "today"
+    },
+    {
+      "owner": "REP",
+      "task": "Send calendar invite for live walkthrough with front desk person.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "REP",
+      "task": "Send quote for seven Starter seats with annual discount.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "REP",
+      "task": "Check prospect's booking system integration and include result in follow-up email.",
+      "due": "follow-up email"
+    },
+    {
+      "owner": "REP",
+      "task": "Ensure solutions person covers accounting integration in the demo.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "PROSPECT",
+      "task": "Review quote with husband.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "PROSPECT",
+      "task": "Attend live walkthrough.",
+      "due": "Tuesday October 6 at 11:00"
+    }
+  ],
+  "summary_notes": "Outbound sales follow-up with Rosalind, owner of Kettering Lane Physio. She needs invoicing/payment links for 7 users, packages/deposits, calendar sync, and adoption support. Rep recommended Starter at $12/seat/month with 20% annual discount, explained card fees, and scheduled trial to start Oct 1 ending Oct 15. Live walkthrough set for Tue Oct 6 at 11:00; quote and integration check promised. Rep initially correctly stated BAA only on Enterprise, but later incorrectly assured prospect patient details are fine in invoice notes on Starter, creating a privacy/compliance concern.",
+  "notable_details": [
+    "Prospect corrected seat count from eleven to seven.",
+    "Trial date corrected from starting today/ending October 8 to starting October 1/ending October 15.",
+    "Front desk person Ilse is out until October 1.",
+    "Practice: Kettering Lane Physio; primary user Ilse.",
+    "Recommended plan: Starter, 7 seats, $12/seat/month, 20% annual discount.",
+    "Card processing: 2.6% + $0.30; bank transfers: $0.50 flat.",
+    "BAA only on Enterprise; Starter/Growth do not include BAA.",
+    "Rep later incorrectly said patient details are fine in invoice notes on Starter.",
+    "Unknown booking system with purple logo; integration to be checked.",
+    "Busy season summer; avoid go-live then.",
+    "Prospect concerned about adoption and staff forgetting mobile taps."
+  ]
+}

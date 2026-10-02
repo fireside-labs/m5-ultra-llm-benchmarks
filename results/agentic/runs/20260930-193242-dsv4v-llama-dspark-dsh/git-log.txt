@@ -1,0 +1,378 @@
+60f261ca8f89470c357ea683e678bc7b886ee0d51790822077milestone 1: project scaffold
+
+3	0	.gitignore
+26	0	README.md
+12	0	index.html
+2019	0	package-lock.json
+20	0	package.json
+16	0	src/game.ts
+10	0	src/main.ts
+13	0	tests/smoke.test.ts
+20	0	tsconfig.json
+13	0	vite.config.ts
+2d77b4755e6414e4fafeecc3645a26f7edea5e761790822123milestone 2: seeded rng
+
+28	0	src/rng.ts
+28	0	src/types.ts
+83	0	tests/rng.test.ts
+b6e424270fc76413f42b6e24f21a3d142ba18c171790822168milestone 3: tile map model
+
+94	0	src/map.ts
+124	0	tests/map.test.ts
+d9a6c2723411f6f2450be37cc0f41d65b0a9daea1790822285milestone 4: dungeon generator
+
+162	0	src/dungeon.ts
+123	0	tests/dungeon.test.ts
+6f60c4ef2fa5a522f0c73bedaf8f6f4d096b4c181790822393milestone 5: canvas renderer and camera
+
+38	0	src/camera.ts
+88	0	src/renderer.ts
+46	0	tests/camera.test.ts
+68	0	tests/renderer.test.ts
+48	0	tests/setup.ts
+1	0	vite.config.ts
+71b5ba701e60132990da04669c3950caeb5b4f9f1790822446milestone 6: player movement
+
+60	0	src/input.ts
+17	0	src/movement.ts
+74	0	tests/input.test.ts
+51	0	tests/movement.test.ts
+7aedbefde475e6faf7bc0a1c5967b4978d35f9f51790822526milestone 7: field of view and fog of war
+
+34	0	src/fog.ts
+94	0	src/fov.ts
+36	0	tests/fog.test.ts
+82	0	tests/fov.test.ts
+1ce0719bd92486911d179031f938e62dc58071881790822559milestone 8: entities and components
+
+60	0	src/entity.ts
+66	0	tests/entity.test.ts
+cacebba8cbfef4a62800958d0aa202829c35990b1790822641milestone 9: monsters
+
+213	0	src/monster.ts
+108	0	tests/monster.test.ts
+508280a1a80cc8d616de049f235815469411e0a61790822685milestone 10: a* pathfinding
+
+100	0	src/pathfinding.ts
+62	0	tests/pathfinding.test.ts
+8d0f905fbc5d8f6e787fdd35ef37713a20c683f71790822716milestone 11: turn scheduler
+
+49	0	src/scheduler.ts
+76	0	tests/scheduler.test.ts
+f8b3f9495a2cfe4dd1a8a5d233710e8d66fb7d871790822831milestone 12: combat
+
+39	0	src/combat.ts
+74	0	src/messageLog.ts
+99	0	tests/combat.test.ts
+68	0	tests/messageLog.test.ts
+01fde300c886e23458a3f457e68e6afbe5e0c6a71790822941milestone 13: items
+
+87	0	src/inventory.ts
+169	0	tests/inventory.test.ts
+2318d1fa53228f64ff13ffece38503a5440a15101790822993milestone 14: inventory ui
+
+83	0	src/inventoryUI.ts
+113	0	tests/inventoryUI.test.ts
+d6ea7a949b10aa894e48737ae7b3fffdee2bb8531790823055milestone 15: multiple levels
+
+78	0	src/levels.ts
+111	0	tests/levels.test.ts
+1404c930132c1a4092744b47620f96d64c381c941790823191milestone 16: save and load
+
+101	0	src/save.ts
+34	0	src/storage.ts
+86	0	tests/save.test.ts
+35	0	tests/storage.test.ts
+a26b95c5a0d6a8a02b7cf1e8242d969b157290501790823227milestone 17: status effects
+
+41	0	src/status.ts
+88	0	tests/status.test.ts
+004df824242d21a9693e6ee9f1703d87048958481790823279milestone 18: traps
+
+98	0	src/trap.ts
+82	0	tests/trap.test.ts
+176ff12f2d11aaba5942bd9c2406a61602dbdd771790823378milestone 19: shops and gold economy
+
+83	0	src/shop.ts
+86	0	tests/shop.test.ts
+5dbd0747d324ecb5fae9f7ae3fdd9bdde72a0da21790823426milestone 20: experience and classes
+
+88	0	src/player.ts
+94	0	tests/player.test.ts
+a05ad37ae7313e9e8abaa15ad2c662eacfb4e0861790823524milestone 21: skills and targeting
+
+140	0	src/skill.ts
+119	0	tests/skill.test.ts
+374678fe24a90f4bcd40eb945d0d8788f82ec7421790823610milestone 22: boss monster
+
+110	0	src/boss.ts
+81	0	tests/boss.test.ts
+3374d7663da7c65940268dac5dca29a640d63ee91790823650milestone 23: sound effects
+
+93	0	src/sound.ts
+40	0	tests/sound.test.ts
+639e8a818e92f942a5279f40cb452e0680d8ee7a1790823772milestone 24: settings screen
+
+98	0	src/settings.ts
+112	0	src/settingsUI.ts
+90	0	tests/settings.test.ts
+57	0	tests/settingsUI.test.ts
+c4e59abb26384780909fa7cdef65a91163f6db101790823819milestone 25: accessibility
+
+45	0	src/accessibility.ts
+5	0	src/messageLog.ts
+53	0	tests/accessibility.test.ts
+91068652fdd9bdcba6c0b3c4b6a9e00ab42a37491790823864milestone 26: achievements
+
+77	0	src/achievements.ts
+67	0	tests/achievements.test.ts
+e9abf5505283548833dffefcad170d916e67372f1790824043milestone 27: replay system
+
+164	0	src/engine.ts
+51	0	src/replay.ts
+71	0	tests/replay.test.ts
+6b0180ccd413a1de026285185eb803e3159d39051790824221milestone 28: performance pass
+
+27	12	src/engine.ts
+58	26	src/pathfinding.ts
+29	0	tests/bench/performance.test.ts
+4844ce20f7240aea2c82f3b111407fe15678c6591790824313milestone 29: end-to-end tests
+
+16	13	src/engine.ts
+47	0	tests/e2e/gameLoop.test.ts
+12c8b20f77f3647fa6c47a2bcebcc6a6dc49e3291790824493milestone 30: documentation
+
+135	0	CHANGELOG.md
+83	0	docs/ARCHITECTURE.md
+47	0	docs/CONTRIBUTING.md
+84	5	src/game.ts
+1	1	src/renderer.ts
+3	2	tests/smoke.test.ts
+ef5ce250e6cc08e0cd9f85586d8150f62d4e24721790824551milestone 4: dungeon doors
+
+36	0	src/dungeon.ts
+18	0	tests/dungeon.test.ts
+a522ed8814e436e2395c671ef6b4c9b800e5e6301790824611milestone 9: more monsters and item generation
+
+32	0	src/itemGen.ts
+12	0	src/monster.ts
+52	0	tests/itemGen.test.ts
+24f1dd7a2bdbca95d74d3ec9c731133e7f996ddb1790824755milestone 12: player combat in engine and integration tests
+
+39	2	src/engine.ts
+84	0	tests/integration.test.ts
+898662571715d59168f98ad916331a8c152cbf9b1790824793milestone 29: game wiring integration tests
+
+42	0	tests/game.test.ts
+34de60bbacf6d0153c57d17cdfb097a05b27007a1790825020milestone 11: fix speed-based scheduler and add ordering tests
+
+21	11	src/scheduler.ts
+16	0	tests/combat.test.ts
+6	0	tests/fov.test.ts
+13	0	tests/scheduler.test.ts
+7ccae60c55f69c34dc5372dd132fea6692b949a01790825201milestone 13: loot drops and pickup
+
+21	2	src/engine.ts
+37	0	tests/integration.test.ts
+2c65e0594c9355b3d6850c3ee468c327b6e44ca01790825223milestone 13: loot drops and pickup
+
+4	5	src/engine.ts
+992e1270166c2d1934881abd8ff8c1de6f81811e1790825401milestone 15: engine stairs and descent
+
+49	5	src/engine.ts
+22	0	tests/integration.test.ts
+7b6a807d63064bacb2ccda043c8873c779b24bbd1790825486milestone 24: remappable keybindings wired into input
+
+70	21	src/input.ts
+42	0	tests/input.test.ts
+67e972653d0d80e9e6d4412e6c6517e21c39568d1790825621milestone 11: integrate monster speed into engine turn ordering
+
+56	28	src/engine.ts
+9e8120f4c0b03375c6e193ca189fe2cb321c58f11790825736milestone 5: draw entities in the renderer
+
+5	0	src/game.ts
+30	0	src/renderer.ts
+25	0	tests/renderer.test.ts
+45817e8b38708a7c99ddecc789026f0b140212731790825823milestone 26: achievements unlock through gameplay
+
+6	0	src/engine.ts
+27	0	tests/integration.test.ts
+c5c6c33a257d7e5149b0b58ca938421d10c03c741790826055milestone 18: traps and poison in the engine
+
+60	4	src/engine.ts
+26	0	tests/integration.test.ts
+9a9e5951154043c81cf724a1eda5df27e8bebd1a1790826069milestone 18: traps and poison in the engine
+
+1	1	src/engine.ts
+18dc00fc5cdbca279d8e80b91f26eac1b58ac7191790826176milestone 22: boss on depth 10
+
+20	1	src/engine.ts
+16	0	tests/integration.test.ts
+d6b095a64eabf9f8dab1e0f48e80f897dbabd12c1790826333milestone 21: skill action in the engine
+
+41	3	src/engine.ts
+27	0	tests/integration.test.ts
+be6ce7741fe4abaecf0062a07bba0152b0595de71790826579milestone 16: full engine state save/load
+
+8	0	src/achievements.ts
+143	1	src/engine.ts
+25	2	src/rng.ts
+30	0	tests/integration.test.ts
+dae9dc8095aa7037b29290c2bbe0066ee04701c91790826669milestone 19: shops and gold in the engine
+
+23	0	src/engine.ts
+34	0	tests/integration.test.ts
+6359e26805a525e3f989ddbea4b1b496784c88b01790826910milestone 23: wire sound, mute and theme into the game
+
+22	0	src/game.ts
+8	1	src/renderer.ts
+22	0	tests/game.test.ts
+10	0	tests/renderer.test.ts
+d972f9ab20fb11050f9531ad0de00edc819b1cdb1790826981milestone 25: screen-reader announcements in the game
+
+9	0	src/game.ts
+11	0	tests/game.test.ts
+d54086b03bea583486338da27aca58108e58e9f51790827046milestone 27: replay persistence via storage
+
+22	0	tests/replay.test.ts
+46b3d63188eb9abb8d89c74ccc3e46874d7a25481790827354milestone 14: inventory UI and inventory in the engine
+
+35	1	src/engine.ts
+19	1	src/game.ts
+20	0	tests/game.test.ts
+9099452c1a883edeab45de3571352d0b865d64141790827611milestone 6/7/10: movement, fov and pathfinding edge cases
+
+21	0	tests/fov.test.ts
+22	0	tests/movement.test.ts
+27	0	tests/pathfinding.test.ts
+93e22ba46e0b7408ba4647eb5f3e862d08a94b071790827677milestone 20: player class and levelling tests
+
+28	0	tests/integration.test.ts
+1bfae75cc78c4a525b8f2b9275f3eace8bf140851790827844milestone 24: settings integration and e2e skills
+
+9	1	src/game.ts
+1	1	tests/e2e/gameLoop.test.ts
+13	0	tests/game.test.ts
+99911dea2dedc1e626b3437eb804ba5a5cd78c441790827924milestone 30: document second-loop extensions
+
+28	0	CHANGELOG.md
+14	6	docs/ARCHITECTURE.md
+73b346fc0322be9959eadbfc8bc6faee4a23ea001790828113milestone 28: optimize monster turn scheduling and add benchmarks
+
+11	19	src/engine.ts
+32	0	tests/bench/performance.test.ts
+1066c0a68eaabce476e25b78d02127c68bd444c41790828245milestone 8/22: entity and boss component integration tests
+
+33	0	tests/integration.test.ts
+a67222911730d6f5038cab0febc623437251bc381790828479milestone 16/5: in-game save/load and ground-loot rendering
+
+38	1	src/game.ts
+39	0	tests/game.test.ts
+5b0ac1ac245a3ac22e53a6adecaa23aefbf45ceb1790828500milestone 16/5: in-game save/load and ground-loot rendering
+
+1	1	src/game.ts
+40e6ac0e1c4e2c2b329ef67e26b03c8830d6abfa1790828593milestone 9: monster behaviour edge cases
+
+34	0	tests/monster.test.ts
+674efb3d9f04237fd6b63658501cc615b2452ef21790828912milestone 22: boss phase progression and boss handling in engine
+
+10	4	src/engine.ts
+21	0	tests/integration.test.ts
+5d125d9a80d29b2d75e1c71bf7a6cc5d8baa067c1790829163milestone 17: confusion status randomises movement
+
+11	2	src/engine.ts
+17	0	tests/integration.test.ts
+204984c6e2744865b29b4aab80850f52abb432161790829378milestone 26: gold and item achievements in the engine
+
+5	1	src/engine.ts
+16	0	tests/integration.test.ts
+d7744945078eef5c3415085d30d59035b8a223e51790829504milestone 17/24: poison lethality and settings theme tests
+
+12	0	tests/game.test.ts
+12	0	tests/integration.test.ts
+3f209c18568e12a8c48ee770aaf6526953ee5e241790829635milestone 13: equipment bonuses in engine combat
+
+12	2	src/engine.ts
+19	0	tests/integration.test.ts
+05913d4ad96310253e4a9e6b6f04f88ec2c4b1b01790829733milestone 29: multi-level e2e scenario tests
+
+30	0	tests/e2e/gameLoop.test.ts
+b74fec6629ccd57816f133aa4d701ffba8c5363d1790829864milestone 4/26: large-map connectivity and collector achievement tests
+
+19	0	tests/dungeon.test.ts
+11	0	tests/integration.test.ts
+ab256f0fec1f3bf4de9ad6069768109db123656f1790830051milestone 22/26: boss-slayer achievement
+
+4	0	src/engine.ts
+20	0	tests/integration.test.ts
+0a42a80a820f5197b8d7628c1a23e5bac7ce51df1790830167milestone 24: settings persistence via storage
+
+19	0	tests/settings.test.ts
+33ac4bc50baf5666c49a993b504967282164e0801790830313milestone 17: haste and slow affect skill cooldown
+
+10	1	src/engine.ts
+20	0	tests/integration.test.ts
+b112cf63f16f1b4e386514248000e9935a96b2541790830373milestone 17: haste and slow affect skill cooldown
+
+14	6	tests/integration.test.ts
+1ed50b45f01d2d7845b54307533c1848f13841131790830537milestone 19: shop selling in the engine
+
+11	1	src/engine.ts
+12	0	tests/integration.test.ts
+e82eed821f5a22cfe6896afd23480c8b1dd98f661790830639milestone 21: skill damage verification tests
+
+29	0	tests/integration.test.ts
+a8b021c41d1959378de75763fbdecc8a885d8ce71790830739milestone 15: HUD depth update test
+
+11	0	tests/game.test.ts
+b4f4aae81ec56c36fe1d24060b7dbbf0b74d9a801790830958milestone 14: keyboard navigation in the inventory UI
+
+41	0	src/game.ts
+17	0	tests/game.test.ts
+f6b91e2cf831af59785952e940281f9590ea2a2b1790830992milestone 14: keyboard navigation in the inventory UI
+
+3	2	src/game.ts
+0ae3a5b94249f1a59685e1c0974f81cb1762d53c1790831103milestone 22: boss attack scales with phase
+
+3	0	tests/integration.test.ts
+127e41e9e376344608eadbf682a22ab90f387e851790831208milestone 16/26: achievements persist through save/load
+
+13	0	tests/integration.test.ts
+bc9ed45e20885ae003400c2529857c2c2e344c361790831371milestone 19: shop indicator in the HUD
+
+2	1	src/game.ts
+11	0	tests/game.test.ts
+aa2ce7155288de614a7486e636f3d31ebf62fc861790831527milestone 17: status effects shown in the HUD
+
+3	1	src/game.ts
+12	0	tests/game.test.ts
+0888d3e0e5ec81e85a748d8eae2c3764afb811081790831650milestone 12/21: skill message in the game log
+
+1	0	src/game.ts
+10	0	tests/game.test.ts
+6c943eb8803aa49c7374e14e2aae9378b3cded2a1790831784milestone 13: effective attack and defense in the HUD
+
+6	1	src/game.ts
+10	0	tests/game.test.ts
+1403ee91bc8a216c7ef11c80c88160ad8ecad6c61790831913milestone 20: player level in the HUD
+
+1	1	src/game.ts
+8	0	tests/game.test.ts
+e8f1ceaf7ca5cd3a3ec0b76a56d498b47ffacf0a1790832144milestone 12: log damage taken in the game
+
+15	5	src/game.ts
+18	0	tests/game.test.ts
+567d632e29eeb60113f6897af16c017c094760c31790832285milestone 20: player class in the HUD
+
+4	3	src/game.ts
+8	0	tests/game.test.ts
+7ee276f238fa33e088dfdf8631469c58942b2b591790832385milestone 25: pickup announcement test
+
+9	0	tests/game.test.ts
+039f424af48ee419d5bd9610186668156a221d1b1790832528milestone 21: player skill in the HUD
+
+1	1	src/game.ts
+8	0	tests/game.test.ts
+23c121b55062ce5175dc85ff2e375bc7b3a304dd1790832659milestone 14: equipped items marked in inventory view
+
+13	1	tests/game.test.ts

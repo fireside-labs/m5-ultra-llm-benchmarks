@@ -1,0 +1,58 @@
+{
+  "call_type": "complaint_escalation",
+  "outcome": "escalated",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Empathetic and attentive handling by agent and supervisor",
+    "Identity verified before discussing account",
+    "Unauthorized promise of lost wages by agent, later corrected by supervisor",
+    "Formal grievance opened and rescheduling arranged",
+    "Minor system logouts caused delays"
+  ],
+  "flags": [
+    {
+      "type": "unauthorized_commitment",
+      "description": "Agent promised to cover lost wages without authority; supervisor later clarified it is subject to review committee decision.",
+      "evidence": "we'll definitely cover your lost wages"
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "Patient Relations",
+      "task": "Send written acknowledgment of grievance",
+      "due": "within 5 business days"
+    },
+    {
+      "owner": "Patient Relations",
+      "task": "Send written response after grievance review",
+      "due": "unspecified"
+    },
+    {
+      "owner": "GI nurse",
+      "task": "Call patient to review prep and insulin plan",
+      "due": "before April 30"
+    },
+    {
+      "owner": "Billing team",
+      "task": "Reimburse cost of second prep kit",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Patient",
+      "task": "Bring photo ID and insurance card to new appointment",
+      "due": "April 30"
+    }
+  ],
+  "summary_notes": "Patient filed complaint about conflicting prep instructions (text vs packet) leading to cancelled colonoscopy. Grievance G-260411 opened. Rescheduled for April 30 at 7:30 AM. Lost wages request included in grievance, not guaranteed. Prep kit cost approved. GI nurse to call re prep and insulin plan. Patient is diabetic on insulin. Electronic communication preferred.",
+  "notable_details": [
+    "Grievance number G-260411",
+    "New appointment April 30, 7:30 AM",
+    "Patient diabetic on insulin; needs insulin plan for prep day",
+    "Conflicting instructions: text said clear liquids up to 2 hours before, packet said nothing after midnight",
+    "Agent promised lost wages but supervisor corrected that it's subject to review",
+    "Prep kit cost ~$30 approved for reimbursement",
+    "Patient prefers electronic communication"
+  ]
+}

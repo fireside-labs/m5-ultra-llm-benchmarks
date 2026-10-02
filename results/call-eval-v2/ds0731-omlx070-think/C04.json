@@ -1,0 +1,44 @@
+{
+  "call_type": "billing_dispute",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 5,
+  "quality_reasons": [
+    "Verified identity before discussing account details",
+    "Clearly explained the pending charge and authorization hold",
+    "Handled controlled substance refill request correctly with vacation override option",
+    "Corrected pickup location and confirmed order readiness"
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "pharmacist",
+      "task": "Send vacation override request to Dr. Abernathy-Coles",
+      "due": "today"
+    },
+    {
+      "owner": "caller",
+      "task": "Check app or call a few days before October 9th to confirm override approval",
+      "due": "a few days before October 9th"
+    },
+    {
+      "owner": "caller",
+      "task": "Call back if pending charge remains after five business days",
+      "due": "after five business days"
+    },
+    {
+      "owner": "pharmacy",
+      "task": "Prepare order for pickup at Eastgate counter",
+      "due": "tomorrow morning"
+    }
+  ],
+  "summary_notes": "Lionel called about an apparent double charge for an app order; pharmacist explained one charge is pending and will drop off in 3-5 business days. Confirmed fluticasone spray is covered at $0 copay; vitamin D is $12.50. Requested early fill of zolpidem due to travel; pharmacist will send a vacation override request to Dr. Abernathy-Coles. Also corrected pickup location from Millbrook to Eastgate; order will be ready tomorrow morning.",
+  "notable_details": [
+    "Caller: Lionel Ferreira-Quist, DOB 6/30/1990, phone 555-0148",
+    "Order: vitamin D 50,000-unit ($12.50) and fluticasone spray (covered, $0 copay)",
+    "Double charge explained: one pending, drops in 3-5 business days",
+    "Zolpidem due 10/14; travel starts 10/9 for 3 weeks; vacation override requested from Dr. Abernathy-Coles",
+    "Pickup location changed from Millbrook to Eastgate; order ready tomorrow morning"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+ "call_type": "saas_support",
+ "outcome": "escalated",
+ "sentiment_start": "negative",
+ "sentiment_end": "positive",
+ "quality_score": 2,
+ "quality_reasons": [
+  "Technically strong: diagnosed the expired SSO certificate, used documented break-glass and enforcement exceptions, restored SSO during the call, clear recap",
+  "Asked the customer to read out her admin password",
+  "Disclosed another customer's name and admin and their incident",
+  "Promised a full month's credit himself despite saying credits are handled by the account manager under the SLA"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Agent disclosed another customer's name (Pellmont Freight), their admin's name and details of their incident - confidentiality breach",
+   "evidence": "we actually had almost exactly this last week with Pellmont Freight"
+  },
+  {
+   "type": "other",
+   "description": "Agent promised a full free month of service credit on his own, after stating credits are handled by the account manager under the SLA (outside authority/policy)",
+   "evidence": "I'll make sure you get a full month free on your next invoice. I'll put that through myself."
+  },
+  {
+   "type": "other",
+   "description": "Agent asked the customer to read out her account password and logged in as her - credential-sharing security violation",
+   "evidence": "read me the temporary admin password you use for the Stackmoor owner account"
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "customer (Mina)",
+   "task": "Remove the six dispatch users from the SSO enforcement exceptions list at end of day",
+   "due": "2026-09-08 end of day"
+  },
+  {
+   "owner": "Tier 2 engineering",
+   "task": "Call back within 4 business hours on escalation SM-20931 re SCIM provisioning sync failure (possibly the API token) and double-check SSO config",
+   "due": "within 4 business hours"
+  },
+  {
+   "owner": "agent",
+   "task": "Email the customer a summary of the call",
+   "due": "today"
+  },
+  {
+   "owner": "billing team",
+   "task": "Investigate invoice billed for 140 seats vs 120 licensed",
+   "due": "unspecified"
+  },
+  {
+   "owner": "customer",
+   "task": "Update security contacts (done during call: Mina and Rosalind added; old it-security list kept pending confirmation) / enable certificate expiry reminders",
+   "due": "done/ongoing"
+  }
+ ],
+ "summary_notes": "Mock summary for C10.",
+ "notable_details": [
+  "Certificate was actually rotated on Sept 3 (not Aug 30 as first stated); old cert expired Sept 7 and the new one was never uploaded to Stackmoor",
+  "Affected users corrected from ~40 to 112 (entire Denver office on SSO); Phoenix users on passwords unaffected",
+  "Separate issue raised at the very end: last invoice billed 140 seats but only 120 are licensed",
+  "First metadata upload failed because the IT director exported the inactive/expired certificate; the active one (valid to Sept 3, 2029) worked"
+ ]
+}

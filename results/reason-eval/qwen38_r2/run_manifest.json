@@ -1,0 +1,20 @@
+{
+  "label": "qwen38_r2",
+  "model": "qwen-flash-next",
+  "url": "http://127.0.0.1:8000/v1/chat/completions",
+  "params": {
+    "max_tokens": 16384,
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "seed": null,
+    "stream": true,
+    "extra_body": {
+      "chat_template_kwargs": {
+        "enable_thinking": true
+      }
+    }
+  },
+  "system_prompt_sha": "bb415136f745fcbc",
+  "tasks_sha": "9f5dbacab493156c",
+  "updated": "2026-10-01T10:30:37"
+}

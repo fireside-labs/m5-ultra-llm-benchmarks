@@ -1,0 +1,72 @@
+
+
+## Missed issues
+
+1. **The no-show fee conflicts with payer contracts.**  
+   What: The $75 fee is expressly prohibited for Medicaid managed-care members and may violate commercial notice terms.  
+   Why: Billing prohibited patients creates recoupment, audits, penalties, plan termination risk, and disputes; it also means a large share of expected fee revenue is not collectible.  
+   Evidence: 34% of patients are Medicaid managed care; contracts state “Provider shall not bill members for missed appointments”; two commercial contracts require 90 days’ written notice before any new patient-facing fee.
+
+2. **Text-only reminders will miss many patients.**  
+   What: Replacing staff calls with English-only automated texts assumes patients have mobile numbers, documented opt-in, and English.  
+   Why: If reminders do not reach patients, no-shows may not fall, staff may spend time fixing missed reminders, and patients may be charged without fair notice.  
+   Evidence: 41% have no opt-in, 15% have no mobile number, 22% prefer Spanish; the texting vendor sends English-only templates and requires opt-in.
+
+3. **No-show and fee-revenue targets are overstated.**  
+   What: The memo assumes no-shows fall to 8% and fees yield $90k/year.  
+   Why: Medicaid has the highest no-show rate but cannot be billed; first misses and hardships are waived; $75 is below $100 where collection is 31%; many no-shows are due to transportation or work, not willingness.  
+   Evidence: Medicaid no-show rate is 27% vs. 12% commercial and 11% Medicare; first missed appointment is waived; hardship waivers exist; collection rate on charges below $100 is 31%; reasons include transportation 38% and work/childcare 19%.
+
+4. **Balance holds may suppress visits rather than collect balances.**  
+   What: Requiring payment over $200 before non-urgent booking may turn patients away before collecting.  
+   Why: Patients who cannot pay may delay care, go elsewhere, or generate lower-value urgent visits; lost visits cost $148 each, and balance pressure already correlates with attrition.  
+   Evidence: 9% of patients with balances over $200 left within 6 months of receiving a collections letter; average visit brings in $148; collection rate on small patient charges is 31%.
+
+5. **Double-booking will worsen already-late sessions.**  
+   What: Adding a second patient to the first slot creates overbooking without a capacity model.  
+   Why: If both patients show, wait times, provider overtime, satisfaction, and clinical safety risks increase; late sessions may cascade.  
+   Evidence: 61% of sessions already end more than 20 minutes late; provider sessions are 4 hours.
+
+6. **Staff time savings are likely illusory.**  
+   What: Text-only plus fees and balance holds shifts work from reminder calls to opt-in, language, exception, dispute, and hold management.  
+   Why: The 30 hours may not be freed; front desk may spend more time handling patients who were not reached, fee waivers, balance negotiations, and complaints.  
+   Evidence: 41% have no opt-in, 15% have no mobile number, 22% prefer Spanish; the policy includes first-miss and hardship waivers and a balance hold.
+
+7. **The package concentrates harm on Medicaid, Spanish-speaking, and low-income patients.**  
+   What: The fee, text-only reminders, and balance hold all hit populations with higher no-show rates and lower ability to pay.  
+   Why: This can worsen access, equity, complaints, churn, and payer/regulatory scrutiny.  
+   Evidence: 34% are Medicaid with a 27% no-show rate; 22% prefer Spanish; Medicaid contracts prohibit missed-appointment billing; balance hold applies above $200.
+
+8. **Rollout timeline and consent are incomplete.**  
+   What: 60-day patient notice and signature at next visit do not satisfy payer notice or guarantee enforceable consent.  
+   Why: Commercial contracts require 90 days; patients who avoid visits may be billed without signing; disputes and refunds increase.  
+   Evidence: two commercial contracts require 90 days’ written notice; patients sign updated policy at next visit; policy is effective January 1.
+
+9. **Billing automation is not production-ready.**  
+   What: Sandbox testing does not prove the system can apply fees only to eligible patients and honor waivers.  
+   Why: Auto-applying fees to Medicaid, first misses, or hardship cases creates wrong statements, refunds, and complaints.  
+   Evidence: vendor confirmed sandbox testing only; policy includes automatic first-miss waiver and hardship waivers; Medicaid prohibition applies.
+
+10. **No pilot or net-impact model is defined.**  
+   What: The memo lacks baseline volume, patient mix, denominator, and net revenue/access metrics.  
+   Why: Partners cannot verify whether $90k fee revenue, $205k balance recovery, 30 hours, and 8% no-show are real after waivers, churn, write-offs, and added work.  
+   Evidence: expected impacts are asserted; the fact sheet shows conflicting payer, collection, churn, reminder, and schedule constraints.
+
+## Looks like a problem but isn't
+
+- The urgent/same-day visit carve-out reduces immediate safety-net risk from balance holds.
+- The first-miss waiver and hardship waivers prevent automatic charging for every missed appointment.
+- The 60-day mailing/posting and signature step is a reasonable patient-communication baseline, though not sufficient for payers.
+- Billing-system automation can reduce manual fee errors once payer-specific and waiver logic is built.
+
+## Top 3 priorities
+
+1. **Get written payer/legal clearance for the no-show fee and balance hold before approval.** Confirm whether Medicaid plans prohibit or allow any missed-appointment charge, obtain 90-day commercial notices, and build payer-specific exclusion logic; do not bill Medicaid members.
+
+2. **Replace “text only” with a reachable reminder system before cutting calls.** Add Spanish templates, opt-in capture, and manual calls or letters for patients with no mobile number, no opt-in, or high-risk language needs; measure reach and no-shows by payer and language.
+
+3. **Delay January 1 and run a 90-day pilot with net metrics.** Test the fee only on contractually eligible patients and track fee collection, waivers, disputes, balance recovery, churn, visit volume, wait times, and staff hours; approve clinic-wide only if net revenue and access hold.
+
+## Bottom line
+
+Reject the memo as written. Do not implement the no-show fee, text-only reminders, or balance hold on January 1. Approve only a 90-day pilot limited to contractually eligible patients, with multilingual/opt-in-aware reminders, payer-specific fee logic, and net-revenue/patient-access metrics. If payer contracts cannot be amended and reminders cannot reach unopted-in, Spanish-speaking, and no-mobile patients, abandon the fee and text-only plan and pursue transportation, scheduling, and targeted manual outreach fixes.

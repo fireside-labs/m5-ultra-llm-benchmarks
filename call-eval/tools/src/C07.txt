@@ -1,0 +1,93 @@
+@id C07
+@date 2026-03-16 14:30
+@line Corrowind Ambulatory Surgery Center - Pre-Admission Nursing
+@direction outbound
+@target 7500
+@speaker A NURSE = pre-admission nurse
+@speaker C PATIENT = patient
+---
+C: Yeah, hello.
+A: Hi there, this is Hal, I'm a nurse with the Corrowind surgery center, calling for Cornelius Ashdown-Pike.
+C: Speaking.
+A: Great. Mr. Ashdown-Pike, I'm calling to do your pre-admission phone interview for your surgery on Thursday. It usually takes about twenty, twenty-five minutes. Is now still a good time?
+C: Yeah, they told me you'd call. I've got my, um, my folder here.
+A: Perfect. First, can you confirm your date of birth?
+C: August thirtieth, nineteen fifty-six.
+A: Thank you. And you're scheduled for a laparoscopic cholecystectomy, gallbladder removal, with Dr. Vanterpool-Iyer, this Thursday, March nineteenth. Is that what you understand you're having done?
+C: That's it. Gallbladder. I'm ready to get rid of the thing, honestly. These attacks are killing me.
+A: I bet. Okay. So I'll go through your health history, your medications, and then the instructions for the day of. Stop me any time.
+C: Okay.
+A: Any heart problems? High blood pressure, heart attack, irregular heartbeat?
+C: Blood pressure, yeah, for years. And the, um, the AFib. The irregular one. Since, uh, twenty-nineteen? Twenty-twenty.
+A: Okay, high blood pressure and atrial fibrillation. Any stents, pacemaker?
+C: No, nothing like that.
+A: Any lung problems? Asthma, COPD, sleep apnea?
+C: Sleep apnea. I've got the machine. The CPAP.
+A: Okay, so please bring your CPAP machine with you Thursday, they'll want to use it in recovery.
+C: Oh. Okay. I wouldn't have thought of that. Bring the CPAP.
+A: Any problems with anesthesia in the past? You or anyone in your family?
+C: Um, I get sick when I wake up. Every time. Throwing up.
+A: Okay, post-op nausea, I'll note that for anesthesia, they can give you something ahead of time for it.
+C: That would be great.
+#fill smalltalk
+A: Any diabetes? Kidney problems? Liver problems, other than the gallbladder?
+C: No diabetes. Kidneys are fine, they said. No liver.
+A: Any recent illness? Colds, fevers, anything in the last couple weeks?
+C: Uh, I had a chest cold last week. Still have a little bit of a cough, mostly in the mornings. But it's mostly gone.
+A: Okay. And, allergies?
+C: Um, I don't think— oh wait, there's one, I always forget, it's, um—
+A: That's okay, if you think of it, just tell me. Let's do medications. Do you have your list?
+C: Got it right here. My wife typed it up. Okay. Lisinopril, twenty milligrams, in the morning.
+A: Lisinopril twenty. Okay.
+C: Metoprolol, the twenty-five, twice a day.
+A: Metoprolol twenty-five twice a day.
+C: Atorvastatin, forty, at night.
+A: Okay.
+C: Eliquis. Five milligrams, twice a day. That's for the AFib.
+A: Okay, Eliquis, five, twice a day.
+C: Omeprazole, twenty, in the morning.
+A: Mm-hm.
+C: Tamsulosin, point four, at bedtime. The prostate one.
+A: Okay.
+C: Ibuprofen, when I need it, for my back. Maybe a couple times a week.
+A: Okay, so the ibuprofen, I'm going to have you stop that now, no ibuprofen, no Advil, no Aleve, nothing like that for the next seven days before surgery. You can use Tylenol instead for your back.
+C: No ibuprofen. Okay. Tylenol.
+A: Anything else? Vitamins, supplements?
+C: A multivitamin and fish oil.
+A: Stop the fish oil too until after surgery, it can affect bleeding a little. Multivitamin is fine.
+C: Okay. Stop the fish oil.
+A: Okay. So for everything else, just keep taking your regular medications as usual. On the morning of surgery, take your lisinopril— actually, skip the lisinopril the morning of, the anesthesiologists prefer that. Take your metoprolol and your omeprazole with a small sip of water. Everything else, just as usual.
+C: Okay. Skip the lisinopril Thursday morning, metoprolol and omeprazole with a sip.
+A: Exactly.
+#fill clinic_admin
+C: Oh! Penicillin. That's the allergy. I get hives.
+A: Penicillin, hives. Thank you. And actually, I see it's already on your chart from your clinic visits, penicillin with hives, so we're good. I've confirmed it.
+C: Okay, good. I always forget it.
+A: Now, eating and drinking. So the instructions in your packet say nothing to eat or drink after midnight the night before.
+C: Right, so, that's what I wanted to ask you about. Because I got a text message this morning, from you guys, the automated one, and it says I can have clear liquids up to two hours before arrival. So which one is it? Because I really don't want to show up and get sent home.
+A: Hmm. Yeah, I've heard about that. Honestly, I think the text is the newer guideline, so, um, go with the text. Clear liquids are fine until two hours before you arrive. Water, apple juice, black coffee, no milk.
+C: So I can have coffee? Black coffee? That would honestly save my life, I'm a coffee guy.
+A: [laughs] Black coffee is a clear liquid, so yes, until two hours before arrival.
+C: Okay. But the packet—
+A: The packet's probably just old. I'll double-check with anesthesia tomorrow and give you a call back to confirm, along with your arrival time.
+C: Okay. So you'll call me tomorrow.
+A: Yes, tomorrow, Tuesday, by end of day.
+#fill smalltalk clinic_admin
+A: So arrival. Right now it says arrival five-forty-five a.m. at the surgery center, the main entrance on Corrowind Parkway. Surgery is planned for seven-fifteen. That might change by a little, so I'll confirm when I call back.
+C: Five-forty-five. Ugh. [laughs] Okay.
+A: You'll need an adult to drive you home, you can't drive or take a taxi or rideshare alone after anesthesia, and someone should stay with you for the first twenty-four hours.
+C: My son, Theo, he's going to drive me and stay over.
+A: Perfect. Can I get his phone number for the chart?
+C: Sure, it's five-five-five, seven-zero-one, two-two-eight-three.
+A: Five-five-five, seven-zero-one, two-two-eight-three. Theo Ashdown-Pike?
+C: Yes.
+A: Okay. Wear loose comfortable clothes, no jewelry, no lotions. Shower the night before and the morning of with the antibacterial soap in your packet.
+C: Got it. The soap.
+#fill clinic_admin smalltalk
+A: Okay, I think that's everything from my side. Any questions for me?
+C: Um... no. Oh, wait. Actually, scratch Theo. He just texted me, he can't get off work Thursday, they've got an inspection. So my neighbor's going to do it. Bev. Bev Lindgren-Shaw. She's retired, she's got all the time in the world.
+A: Okay, Bev Lindgren-Shaw. Can she stay with you overnight too?
+C: She said she'll stay the night, yeah. Her number is five-five-five, seven-zero-one, nine-nine-one-zero.
+A: Five-five-five, seven-zero-one, nine-nine-one-zero. Okay, I've updated your driver. And I'll call you tomorrow about the fluids and the arrival time.
+C: Sounds good. Thanks, Hal.
+A: You're welcome. Take care, Mr. Ashdown-Pike.

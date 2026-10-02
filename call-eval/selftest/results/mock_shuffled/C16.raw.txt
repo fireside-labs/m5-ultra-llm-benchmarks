@@ -1,0 +1,48 @@
+{
+ "call_type": "sales",
+ "outcome": "callback",
+ "sentiment_start": "positive",
+ "sentiment_end": "positive",
+ "quality_score": 2,
+ "quality_reasons": [
+  "Good discovery and next steps (security review with the decision-maker, documentation, proposal)",
+  "Contradicted her own statement: told the prospect a BAA/HIPAA coverage is available on Team after saying BAA is Enterprise-only",
+  "Disclosed another client's name and pricing"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Rep told the prospect the Team plan is HIPAA compliant and Stackmoor will sign a BAA, contradicting her earlier statement that BAAs are Enterprise-only; prospect plans to store PHI (visit notes) on Team",
+   "evidence": "We're fully HIPAA compliant, and we'll sign a BAA with you, no problem at all."
+  },
+  {
+   "type": "other",
+   "description": "Rep disclosed another client's name (Halloway Pediatrics) and their negotiated per-seat price ($9/seat)",
+   "evidence": "Halloway Pediatrics, they're one of our clients"
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "rep",
+   "task": "Send invite for security review call with compliance officer Theodora and Stackmoor security team, Tue Oct 6, 10 am",
+   "due": "2026-10-06 10:00"
+  },
+  {
+   "owner": "rep",
+   "task": "Send SOC 2 report and security questionnaire answers ahead of the review",
+   "due": "before 2026-10-06"
+  },
+  {
+   "owner": "rep",
+   "task": "Send proposal for 85 seats",
+   "due": "2026-10-02 (Friday)"
+  }
+ ],
+ "summary_notes": "Mock summary for C17.",
+ "notable_details": [
+  "Seat count corrected from 60 to 85 (adds ~25 per-diem contractors)",
+  "Hard deadline: current vendor contract ends January 15; must be live before then",
+  "Final sign-off belongs to compliance officer Theodora, not the caller",
+  "Reason for switching: current vendor had a data breach last spring (staff data exposed)"
+ ]
+}

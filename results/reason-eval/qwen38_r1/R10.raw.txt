@@ -1,0 +1,40 @@
+
+
+## Estimate chain
+
+1. Household light vehicles = 245,000 households × 1.7 vehicles/household = 416,500 light vehicles. Assumption: fleet vehicles are handled separately.
+
+2. Household EVs in 2030: use the midpoint of the state range, 12% (range 8–16%).  
+   Midpoint household EVs = 416,500 × 0.12 = 49,980 EVs.  
+   Low = 416,500 × 0.08 = 33,320 EVs.  
+   High = 416,500 × 0.16 = 66,640 EVs.
+
+3. EV owners lacking home charging: use the midpoint of the staff range, 30% (range 25–35%).  
+   Midpoint no-home EVs = 49,980 × 0.30 = 14,994 EVs.  
+   Midpoint home-charged EVs = 49,980 − 14,994 = 34,986 EVs.
+
+4. DC fast sessions per household EV per week:  
+   No-home charging: 200 miles/week × 70% DC fast energy / 150 miles per session = 0.933 sessions/week.  
+   Home charging: 2 sessions/month × 12 months / 52 weeks = 0.462 sessions/week.  
+   Assumption: all DC fast sessions counted here are served by public DC fast ports.
+
+5. Resident public DC fast sessions per week:  
+   Midpoint = 14,994 × 0.933 + 34,986 × 0.462 = 30,142 sessions/week.  
+   Low, using 8% EVs and 25% no-home charging = 19,309 sessions/week.  
+   High, using 16% EVs and 35% no-home charging = 41,761 sessions/week.
+
+6. Fleet public DC fast sessions per week = 1,500 fleet EVs × 5 sessions/week = 7,500 sessions/week.  
+   Assumption: these fleet fast-charge sessions use public DC fast ports rather than dedicated depot chargers.
+
+7. Total public DC fast sessions per week:  
+   Midpoint = 30,142 + 7,500 = 37,642 sessions/week.  
+   Low = 19,309 + 7,500 = 26,809 sessions/week.  
+   High = 41,761 + 7,500 = 49,261 sessions/week.
+
+8. Occupied port-hours per week: each session occupies a port for 40 minutes = 0.667 hours.  
+   Midpoint = 37,642 × 0.667 = 25,095 port-hours/week.  
+   Low = 26,809 × 0.667 = 17,872 port-hours/week.  
+   High = 49,261 × 0.667 = 32,841 port-hours/week.
+
+9. Usable occupied hours per port per week: 24 hours/day × 7 days/week × 25% maximum average utilization = 42 hours/port/week.  
+   Assumption: the 

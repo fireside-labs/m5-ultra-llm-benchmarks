@@ -1,0 +1,35 @@
+@id C08
+@date 2026-07-14 16:22
+@line Stackmoor (project management SaaS) - Customer Support
+@direction inbound
+@target 2000
+@speaker A AGENT = support engineer
+@speaker C CUSTOMER = workspace admin at a customer company
+---
+A: Stackmoor support, this is Kenji. How can I help?
+C: Hi Kenji. I'm, um, I'm in a bit of a bind. I need to export our time report to CSV for payroll by five o'clock and the export just fails. Every time.
+A: Oh no, okay, let's get you sorted. Can I get the email on your account and your workspace name?
+C: It's odalys at ferrante-mwangi-studio dot com, and the workspace is "FM Studio."
+A: Thanks. I just sent a six-digit code to that email, can you read it to me?
+C: Hold on... four-one-nine, two-two-seven.
+A: That's it, thank you, you're verified. Okay, what exactly happens when you export?
+C: I go to Reports, Time, set it to last month, hit Export, CSV, and it spins for like a minute and then says "Export failed, try again later." I've tried later. [laughs] Many laters.
+A: [laughs] Understood. Let me check your workspace. [typing] Okay, I see you're on the Team Classic plan. Can I put you on a quick hold while I check something?
+C: Sure. Please be quick, though.
+#hold 260
+A: Thanks so much for holding, sorry that was longer than I meant. So, here's what's going on. On the Team Classic plan, the CSV export has a cap of five thousand rows, and your report for last month is about seven thousand two hundred rows, because it's broken out per entry. Instead of telling you that, it just fails, which is a bug, and I'm sorry about that.
+C: Oh. Great. So I can't do it?
+A: You can, there are two workarounds. One, export to Excel format, XLSX, which doesn't have the cap. Or two, split it into two date ranges, like the first and second half of the month.
+C: Can payroll take Excel? Um... yeah, actually, they can. Let me try it. [typing] Reports... Time... Export... XLSX... It's working. It's downloading. Oh, thank God.
+A: [laughs] Great!
+C: Okay, I'll just open it and— yeah, it's all there. Okay. Phew.
+#fill smalltalk
+A: I've filed the bug with our engineering team so the CSV export gives a proper message, and I've linked your account to it so you'll get an email when it's fixed. Your ticket number is four-four-zero-nine-one.
+C: Four-four-zero-nine-one. Thank you.
+A: Is there anything else?
+C: Um, no— well, unrelated, but the weekly digest emails stopped coming too. Since, uh, last Tuesday, I think. But honestly nobody reads them, so whatever.
+A: Oh, I'll add that to the ticket, it might be related to the same export service. I'll make a note to check it.
+C: Sure. Also, we're up for renewal in like two weeks, so, um, if Classic is going to keep doing this, I might need to talk to someone about the plans.
+A: That makes sense. I can have your account manager reach out with the options, no pressure.
+C: Yeah, that'd be fine. Okay, thank you, Kenji, you saved my afternoon.
+A: Glad to help. Good luck with payroll!

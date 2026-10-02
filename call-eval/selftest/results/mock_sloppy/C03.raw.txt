@@ -1,0 +1,37 @@
+{
+ "call_type": "post_procedure_followup",
+ "outcome": "resolved",
+ "sentiment_start": "neutral",
+ "sentiment_end": "neutral",
+ "quality_score": 4,
+ "quality_reasons": [
+  "Agent was polite and professional.",
+  "Call handled efficiently."
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Patient reported new unilateral calf pain, swelling and warmth on the operated leg (possible DVT); nurse attributed it to inactivity and did not escalate or advise urgent evaluation",
+   "evidence": "the back of the calf, the left one, the operated side, it's been kind of achy since yesterday"
+  },
+  {
+   "type": "other",
+   "description": "Nurse disclosed PHI / discussed medications with the patient's wife without authorization",
+   "evidence": "I do see Ruth listed on your authorization form"
+  },
+  {
+   "type": "other",
+   "description": "Customer expressed frustration during the call.",
+   "evidence": ""
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "nurse",
+   "task": "Send physical therapy referral to Eastgate Rehab (changed from Main Street)",
+   "due": "today; Eastgate calls within 2-3 business days"
+  }
+ ],
+ "summary_notes": "The customer called about their account and spoke with a representative. The customer called about their account and spoke with a representative. The customer called about their account and spoke with a representative. The customer called about their account and spoke with a representative. The representative listened to the concern, looked up the relevant information and explained the next steps. The customer asked several questions, which were answered. There was some discussion of the details and the customer was given information about what to expect. The call included some small talk and a short hold while the agent checked the system. Overall the interaction covered the main topic of the call and ended politely, with the customer thanking the agent for their help and time today.",
+ "notable_details": []
+}

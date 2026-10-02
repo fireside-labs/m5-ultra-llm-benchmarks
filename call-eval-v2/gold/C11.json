@@ -1,0 +1,127 @@
+{
+ "call_id": "C11",
+ "call_type": "post_procedure_followup",
+ "outcome": "escalated",
+ "outcome_accept": ["callback"],
+ "sentiment_start": "negative",
+ "sentiment_end": "positive",
+ "sentiment_end_accept": ["neutral"],
+ "quality_score": 2,
+ "quality_reasons": [
+  {"id": "Q1", "text": "Nurse was warm, patient and reassuring, built good rapport, and correctly explained referred shoulder pain",
+   "match": [["warm", "empath", "reassur", "rapport", "friendly", "kind", "caring", "patient and", "supportive", "compassion", "shoulder"]]},
+  {"id": "Q2", "text": "Serious clinical safety misses: acetaminophen from three sources not caught, the 101.8 fever with incision redness not addressed, and a tub bath recommended against discharge instructions",
+   "match": [["acetaminophen", "tylenol", "apap", "nyquil", "fever", "101", "temperature", "bath", "tub", "redness", "infection", "safety"]]},
+  {"id": "Q3", "text": "Appropriately conferenced the on-call surgical PA for the drain question",
+   "match": [["\\bpa\\b", "physician assistant", "surgical team", "on.call", "drain", "conferenc", "escalat"]]}
+ ],
+ "flags": [
+  {"id": "F1",
+   "text": "Acetaminophen overdose risk not caught: patient takes hydrocodone/acetaminophen (Norco), plus Extra Strength Tylenol two every six hours, plus NyQuil at night; the nurse said Tylenol is fine instead of warning about the combined acetaminophen total",
+   "evidence": "Oh, yeah, I'm also taking regular Tylenol. The Extra Strength. Two every six hours, like the bottle says.",
+   "paraphrases": [
+    "The nurse failed to recognise that the patient is taking acetaminophen from several sources (Norco, Extra Strength Tylenol and NyQuil), exceeding the safe daily maximum.",
+    "Patient's combined Tylenol intake likely exceeds 4 g/day, with liver toxicity risk, but the nurse reassured her it was fine.",
+    "Clinical safety: duplicate acetaminophen products (hydrocodone-APAP plus OTC Tylenol plus nighttime cold medicine) not identified."
+   ],
+   "negatives": ["Nurse told the patient no alcohol while on hydrocodone.", "Patient takes Extra Strength Tylenol as directed on the bottle."],
+   "match": [["acetaminophen", "tylenol", "apap", "paracetamol", "nyquil", "norco"], ["overdos", "exceed", "too much", "4 ?g\\b", "4,000", "4000", "four grams", "maximum", "\\bmax\\b", "daily limit", "combined", "duplicat", "multiple (products|sources)", "several sources", "three sources", "hepat", "liver", "toxic", "doubl", "stack", "total", "plus", "on top of", "in addition", "also contain", "contains acetaminophen", "has acetaminophen", "with tylenol in"]]},
+  {"id": "F2",
+   "text": "Fever not properly assessed: the husband corrected the temperature to 101.8 last night (with a red, warm ring around the umbilical incision), but the nurse treated it as a low-grade 100.8, never addressed 101.8 (above her own call-back threshold of 101) and relayed 100.8 to the PA",
+   "evidence": "no, Immy, last night it was a hundred and one point eight, I wrote it down",
+   "paraphrases": [
+    "The husband reported a temperature of 101.8 F, which the nurse ignored, calling it a low-grade fever and not escalating possible infection.",
+    "Possible post-operative wound infection (fever plus warm redness at the belly-button incision) dismissed as normal healing.",
+    "Nurse missed the corrected temperature reading of 101.8 and told the PA she was only low-grade, so the fever was never escalated."
+   ],
+   "negatives": ["Nurse explained the shoulder pain was referred gas pain.", "Low-grade temperature after surgery is common."],
+   "match": [["fever", "temp(erature)?\\b", "101", "hundred (and )?one", "febrile", "\\bred(ness)?\\b", "infect", "incision"], ["101\\.8", "hundred (and )?one point eight", "dismiss", "not (address|escalat|assess|act)", "never (address|escalat|assess|act|mention)", "ignor", "overlook", "missed", "fail", "inadequate", "should have", "without (escalat|assess)", "under.?(estimat|react)", "normal healing", "minimi[sz]", "not (relayed|reported|mentioned)"]]},
+  {"id": "F3",
+   "text": "Nurse recommended a warm tub bath for back soreness, contradicting the discharge instructions she had read earlier (no tub baths, hot tubs or swimming for two weeks) while the patient has fresh incisions and a drain",
+   "evidence": "a nice warm bath would help with the soreness",
+   "paraphrases": [
+    "The nurse told the patient to soak in the tub, although the discharge instructions prohibit baths for two weeks.",
+    "Incorrect advice: tub bath suggested three days after surgery with a JP drain in place.",
+    "Misinformation: bath recommended contrary to post-op wound-care instructions."
+   ],
+   "negatives": ["Nurse confirmed showers are allowed after 48 hours."],
+   "match": [["bath", "\\btub\\b", "soak"], ["contradict", "discharge", "two weeks", "2 weeks", "instruction", "incorrect", "misinform", "wrong", "against", "not allowed", "prohibit", "conflict", "advis", "recommend", "told", "suggest", "encourag", "contrary", "drain", "incision", "infection"]]}
+ ],
+ "decoys": [
+  {"id": "D1",
+   "text": "Nurse dismissed the patient's right shoulder pain",
+   "why_not": "Right shoulder pain after laparoscopy is classic referred pain from the CO2 gas; the nurse explained it correctly and gave red-flag advice (sudden worsening, shortness of breath, chest pain -> 911).",
+   "evidence": "That's the gas they use to inflate your belly.",
+   "paraphrases": [
+    "The patient's right shoulder pain was attributed to gas without a proper assessment.",
+    "Nurse brushed off new shoulder pain as referred pain from surgery."
+   ],
+   "match": [["shoulder"]]},
+  {"id": "D2",
+   "text": "Nurse discussed the patient's medical details with her husband, a third party",
+   "why_not": "The verified patient explicitly said on the call that Rob can be told anything; the nurse documented her consent.",
+   "evidence": "So you can talk to him about anything, whatever you need, he knows more than me right now.",
+   "paraphrases": [
+    "Patient health information was shared with the husband on speakerphone without written authorization.",
+    "Privacy: the nurse discussed medications and symptoms with the spouse."
+   ],
+   "match": [["husband", "spouse", "\\brob\\b", "third.party", "family member"], ["privacy", "disclos", "authori[sz]", "consent", "discuss", "shar", "hipaa", "phi"]]},
+  {"id": "D3",
+   "text": "Nurse did not answer the drain question herself and deferred it to the surgical PA",
+   "why_not": "Drain management belongs to the surgical team; conferencing the on-call PA, who answered with the removal protocol, was the correct escalation.",
+   "evidence": "So that one I'm actually going to hand over to the surgical team",
+   "paraphrases": [
+    "The nurse deflected the drain question to the on-call physician assistant instead of answering it.",
+    "Drain question was handed off to the surgical team, delaying an answer."
+   ],
+   "match": [["\\bpa\\b", "physician assistant", "surgical team", "surgeon", "on.call"], ["defer", "deflect", "hand(ed)? (it )?(off|over)", "pass(ed)? (it )?(off|on)", "did not answer", "didn't answer", "instead of answering", "drain"]]}
+ ],
+ "acceptable_flags": [
+  {"id": "OK1", "text": "Phone menu option 3 routes refill calls to billing; patient needed three tries", "match": [["menu", "press", "billing", "phone (tree|system)", "ivr", "three tries", "third try", "option"]]},
+  {"id": "OK2", "text": "Controlled pain medication refill needs the surgeon; patient running low", "match": [["refill", "running low", "nine left", "controlled"]]},
+  {"id": "OK3", "text": "Constipation since surgery / opioid side effects", "match": [["constipat", "bowel", "stool"]]},
+  {"id": "OK4", "text": "NyQuil plus hydrocodone sedation / drowsiness interaction", "match": [["sedat", "drows", "sleepy", "respirat", "cns"]]},
+  {"id": "OK5", "text": "Long hold to reach the PA / headset cutting out", "match": [["hold", "cutting out", "headset", "wait"]]}
+ ],
+ "action_items": [
+  {"id": "A1", "owner": "nurse", "task": "Send a hydrocodone refill request to Dr. Vasquez-Lim's team via the message line", "due": "tonight; addressed tomorrow morning",
+   "match": [["refill", "more (pain )?(pills|medication)"], ["hydrocodone", "norco", "pain", "narcotic", "vasquez", "surgeon", "message"]]},
+  {"id": "A2", "owner": "Larkspur surgical office", "task": "Call the patient tomorrow (Friday) to schedule a drain check early next week", "due": "Friday Sept 25",
+   "match": [["drain"], ["check", "schedul", "call", "appointment", "remov", "pull"]]},
+  {"id": "A3", "owner": "husband/patient", "task": "Keep emptying the drain and recording output twice a day; removal when under 30 mL/24h for two days", "due": "ongoing",
+   "match": [["record", "log", "notebook", "measur", "track", "empty", "emptying", "output"]]},
+  {"id": "A4", "owner": "patient", "task": "Attend post-op follow-up with Dr. Vasquez-Lim at Larkspur, Friday October 2 at 1:15 pm; ask for a work note for school", "due": "2026-10-02 13:15",
+   "match": [["follow.?up", "post.?op (visit|appointment)", "oct(ober)?\\.? ?2\\b", "10/2\\b", "october (2nd|second)", "work note"]]},
+  {"id": "A5", "owner": "patient", "task": "Call back if temperature goes over 101, the incision redness spreads past a pen line, or no bowel movement by Saturday", "due": "as needed",
+   "match": [["call (back|us|the nurse|again)", "contact", "reach out", "seek care"], ["101", "fever", "temperature", "redness", "spread", "bowel", "saturday", "worse"]]},
+  {"id": "A6", "owner": "husband", "task": "Pick up an over-the-counter powder laxative at Ostrander Eastgate tomorrow after work; patient to take it daily with the stool softener", "due": "tomorrow",
+   "match": [["laxative", "polyethylene", "powder", "stool softener", "docusate", "miralax"]]},
+  {"id": "A7", "owner": "nurse", "task": "Update preferred pharmacy to Ostrander Eastgate", "due": "during call",
+   "match": [["pharmac", "ostrander"], ["eastgate", "updat", "chang"]]}
+ ],
+ "subtle_facts": [
+  {"id": "S1", "text": "Temperature was 101.8 last night per the husband's written log (not just the 100.8 reading this afternoon)",
+   "evidence": "last night it was a hundred and one point eight",
+   "negatives": ["Low-grade temperature of 100.8 this afternoon."],
+   "match": [["101\\.8", "hundred (and )?one point eight"]]},
+  {"id": "S2", "text": "JP drain output was 40 mL this morning (110 -> 70/60 -> 55/50 -> 40), not 14; removal when under 30 mL in 24 h for two days",
+   "evidence": "Forty, yeah. Four-zero.",
+   "negatives": ["Drain output about 14 mL this morning."],
+   "match": [["\\b40 ?(ml|mls|mil|cc|milliliter)", "forty (ml|mls|mil|cc|milliliter)", "40 milli", "drain[^|]{0,60}\\b40\\b", "\\b40\\b[^|]{0,40}drain"]]},
+  {"id": "S3", "text": "Post-op follow-up is Friday October 2 at 1:15 pm at Larkspur (not the 12th)",
+   "evidence": "I've got it as Friday, October second, at one-fifteen in the afternoon.",
+   "negatives": ["Follow-up appointment on October 12."],
+   "match": [["oct(ober)?\\.? ?0?2\\b", "10/0?2\\b", "october (2nd|second)", "1:15", "one.fifteen"]]},
+  {"id": "S4", "text": "Preferred pharmacy changed from Ostrander Millbrook to Ostrander Eastgate (open until nine)",
+   "evidence": "We moved them to the Ostrander at Eastgate",
+   "match": [["eastgate"], ["pharmac", "ostrander"]]},
+  {"id": "S5", "text": "Patient is also taking NyQuil at night for a cough and sleep",
+   "evidence": "Rob's been giving me the NyQuil at night",
+   "match": [["nyquil", "night.?time cold", "cold medicine"]]},
+  {"id": "S6", "text": "Surgery (laparoscopic cholecystectomy) was Monday September 21 at Larkspur, with a JP drain left in because the gallbladder was inflamed",
+   "evidence": "Monday the twenty-first.",
+   "negatives": ["Surgery on September 12."],
+   "match": [["(sept(ember)?\\.?|9/) ?21\\b", "21st", "twenty.first"]]}
+ ],
+ "themes": ["T_IVR_MISROUTE"]
+}

@@ -1,0 +1,223 @@
+@id C16
+@date 2026-09-29 11:00
+@line Tallyforge - Account Management, renewal and expansion call (video meeting, audio only transcribed)
+@direction outbound (scheduled meeting)
+@target 20000
+@seed 1616
+@diar_drop 0.12
+@speaker A AM = Tallyforge account manager (Delphine)
+@speaker S SE = Tallyforge solutions engineer (Arvid), joins mid-call for the SSO discussion
+@speaker C CUSTOMER = CFO of a mechanical / HVAC contracting company
+@speaker D CUSTOMER_2 = the company's controller
+---
+A: Hi Yetunde! Can you hear me okay?
+D: Hi Delphine, yes, I can hear you. Can you [inaudible] me? I'm in the small conference room, the one with the echo.
+A: I can hear you fine. A tiny bit of echo, but it's okay. Is Mortimer joining?
+D: He is, he's coming from a jobsite, so he might be in the truck. He said start without him and he'll jump in.
+A: Perfect. So, my plan for today, and stop me if you want something different: quick check-in on how things are going, then your renewal, which is coming up end of November, then I'd love to show you two things, the Collections Pro module and single sign-on, since I know your IT folks asked about it. I've got an hour, but I'm happy to finish early.
+D: That sounds good. And I have a couple of complaints for you. [laughs] Small ones. Well, one medium one.
+A: [laughs] Good, I want to hear them. I'd rather hear them from you than find out at renewal.
+#fill sales_chat smalltalk2 @A=A @C=D
+#note participant joined (audio only)
+C: Hello? Hello, can you hear me? It's Mortimer.
+A: Hi Mortimer! Yes, we can hear you. A bit of road noise.
+C: Yeah, I'm in the truck, I'm pulled over, I'm in a parking lot outside a Wendy's, it's very glamorous. [laughs] Go ahead, don't let me slow you down.
+A: [laughs] No problem. We were just about to start. So, Yetunde was saying she has a medium-sized complaint. Do you want to start there?
+D: Sure. So— the reminder emails. Our customers got reminders saying the invoice was due the fourteenth, when the invoice itself said the fifteenth. And our AR clerk, Bettina, spent about a week apologizing to people. A couple of our general contractors were pretty annoyed, they have very strict AP cycles.
+A: Oh no. I'm sorry. When did that start, do you know?
+D: Early September, I think. We noticed it around the tenth.
+A: Okay. Let me check on that, I think I've seen something internally about reminder dates. Give me one second, I'm going to ask in our support channel while we keep talking.
+D: Sure.
+C: Is this the thing where the dates are off by a day? Bettina told me about it. I thought it was us.
+D: It's not us, Mort, I checked. Every single reminder.
+C: Okay. Well, that's— okay, good, I guess. [laughs] Not good. You know what I mean.
+#fill sales_chat connection_issues @A=A @C=C
+A: Okay, so, I'm still waiting on support, but let's keep moving. How's everything else going? How's adoption with the field teams?
+D: Honestly, really well. The estimators love the mobile app, they can generate an estimate and convert it to an invoice from the truck. That alone saved us probably two days a month at month-end.
+C: That was the hole— the whole reason we bought it. I was tired of getting estimates on napkins. [laughs]
+A: [laughs] I love that. Napkin estimates. And the service dispatch team, are they on it yet?
+D: They are, since August. That's actually why our seat count went up.
+A: That's great to hear. Can I ask what month-end looks like now, compared to before?
+D: Before Tallyforge, month-end was, honestly, five or six days of chasing paper. The techs would hand in work orders, someone would type them up, I'd reconcile against the job costing. Now the invoices are already in the system when the job closes, so month-end is two, maybe three days. The bottleneck now is really just the retainage stuff.
+A: Retainage. Tell me more, that's something I hear from a lot of contractors.
+D: So on the big commercial jobs, the GC holds back ten percent of each progress payment until the job is done. Retainage. And Tallyforge doesn't really have a concept of that, so Bettina tracks it in a spreadsheet and then at the end we invoice the retainage as a separate line. It works, but it's clunky, and it's easy to lose track. We had one job last year where we forgot to bill the retainage for, like, four months.
+C: Six months. It was six months. The Holloway Street job. I remember because I found it. [laughs]
+D: [laughs] Six months.
+A: Oof. Okay. So, I'll be honest, retainage isn't in the product today. It's on the roadmap, and I know the product team has talked to a few contractors about it. I can't give you a date, and I'm not going to pretend it's coming next month. What I can do is put you in touch with the product manager for a feedback session, if you'd be up for that. They really like hearing from customers who actually use progress billing.
+D: I'd do that. Bettina would love that, she has opinions. [laughs]
+A: [laughs] Perfect, those are the best sessions. I'll set it up.
+C: Make sure they know it's a real problem. Not a nice-to-have.
+A: I'll make sure. I'll put it in exactly those words.
+D: And one more little thing, while we're at it. The PDF invoices— our logo comes out blurry. It looks fine on screen, and then on the PDF it's fuzzy. It's not a big deal, but it looks a little cheap when it goes to a hospital system or something.
+A: Hmm, that's usually the logo file being too small. Do you know what size the file is?
+D: No idea. Bettina uploaded it two years ago.
+A: If you can send me the original logo file, the biggest one you have, I'll have support check it and re-upload it. A PNG at least a thousand pixels wide usually fixes it.
+D: Okay, I'll dig it up. I think marketing has it. Well, "marketing." It's Mort's nephew. [laughs]
+C: Hey. He's very talented. [laughs]
+A: Right, I saw the seat count bump. So for the renewal, let's talk about seats. Mortimer, what are you thinking for next year?
+C: Twenty-four. We're at twenty-four users, right?
+D: Forty-two, Mort. Forty-two. We added the field estimators in the spring and then the dispatch team in August. Twenty-four was last year.
+C: Forty-two? Wow. Okay. I— I signed that, didn't I.
+D: You signed it. [laughs]
+C: [laughs] Okay, forty-two. Not twenty-four. Forty-two. Write that down before I change my mind.
+A: Forty-two seats, written down. And I can confirm forty-two active users on my side as of this morning.
+#fill sales_discovery sales_chat @A=A @C=C
+C: Can I ask— sorry, I'm looking at a chiller right now through the windshield, there's a crane lifting it onto the roof. Hospital retrofit. Very exciting.
+D: Is that the St. Brendan's job?
+C: No, it's the medical office building on Fairmount. St. Brendan's is next spring.
+A: That sounds like a big lift. Literally. [laughs]
+C: [laughs] Eight tons. I'm not getting out of the truck until it's on the roof.
+A: Smart. Okay, so, while we wait on support, just a quick look at your usage numbers. Last quarter you sent about nineteen hundred invoices through Tallyforge, and the average time from invoice to payment was about forty-seven days.
+D: Forty-seven. Yeah, that sounds right, unfortunately. The GCs are slow.
+A: That's pretty typical for commercial construction. Residential service customers are much faster, right?
+D: Much faster. The residential service calls, people pay on the spot, mostly by card on the tech's tablet. It's the commercial work that drags.
+A: Right. Keep that forty-seven in mind, I'll come back to it with Collections Pro.
+A: Okay, the support channel came back. So, the reminder-date issue is a known bug that came in with release 7.4 at the start of September. The reminder emails convert the due date to a different time zone before printing it, so for customers in the Americas it shows one day early. The fix is in 7.4.2, which is scheduled for October twentieth.
+D: October twentieth. Okay. That's almost a month away.
+A: I know. I'm sorry. In the meantime support recommends either a one-day late-fee grace period, if you use late fees, or switching to the reminder template that doesn't print the due date.
+D: We don't use late fees, thank goodness. I'll switch the template. Bettina will be relieved.
+A: I'll send you the instructions after the call. And I'll put a note on your account so support knows you're affected.
+D: Thank you.
+#note participant (Mortimer) audio disconnected
+D: I think we lost Mortimer.
+A: Looks like it. He might be calling back in.
+D: He's probably getting his Frosty. [laughs] He'll be back.
+A: [laughs] Okay. Should we wait or keep going?
+D: Keep going. He mostly cares about the price. [laughs] I'll fill him in.
+#fill sales_chat smalltalk2 @A=A @C=D
+A: Okay, so, renewal. Your current contract ends November thirtieth. Right now you're on Business at the list price of twenty-two dollars per seat per month, billed annually.
+D: Right.
+A: For the renewal, I want to reward you for growing with us. I can do eighteen dollars per seat per month. And I can lock that price for two years. I actually went to our deal desk before this call, and I got sign-off yesterday for up to twenty-four months at eighteen. So that's approved, I'm not making promises I can't keep.
+D: Eighteen for two years. That's— that's a good number. Mortimer will like that.
+A: I hope so. And if you want annual or two-year upfront payment, there's no extra discount on top of that, the eighteen already includes it.
+D: Okay. Understood.
+#fill sales_discovery connection_issues @A=A @C=D
+#note participant (Mortimer) joined
+C: Sorry, sorry, I lost signal. What did I miss?
+D: Price. Eighteen a seat for two years.
+C: Eighteen? From twenty-two? Okay. I'll take that. Can we do three years?
+A: For three years I'd have to go back to deal desk. I can ask, but I can't promise that today. Two years at eighteen is what I have approved.
+C: Fair enough. Ask them. If they say no, two years is fine.
+A: I'll ask and let you know when I send the proposal.
+#diar off
+C: And the reminder thing, did you find out?
+D: It's a bug, Mort, on their side, I'll tell you after.
+C: Okay, okay.
+D: —and they gave a workaround—
+C: [crosstalk] —fine, fine, as long as it's—
+#diar on
+A: Shall we look at Collections Pro? I think it might be relevant given what you said about general contractors.
+#fill sales_discovery sales_chat @A=A @C=C
+A: Okay, I'm sharing my screen. Can you both see it?
+D: I see it.
+C: I'm on my phone, I see a tiny version. [laughs] It's fine, talk me through it.
+A: So Collections Pro adds three things. One, a collections dashboard that shows days-sales-outstanding by customer, with aging buckets. Two, automated escalation sequences, so instead of just reminders, you can have a polite reminder, then a firmer one, then a task for someone to call. And three, a customer-facing payment portal where they can pay by ACH with no fee to you.
+D: The ACH one is interesting. Our GCs hate paying by card.
+A: Most construction customers do. And just to give you a sense of results, a construction supply company in your region that turned it on last year cut their days-sales-outstanding by about a third over six months. I can't name them, but I can tell you they had a very similar customer mix to yours, lots of general contractors.
+C: A third. That's a lot.
+A: It was their best year, they told me. Your mileage may vary, of course.
+D: What does it cost?
+A: Collection Spro is four dollars per seat per month, but you can license it for just the AR team, so it doesn't need all forty-two seats. For you that'd probably be, what, five seats?
+D: Five. Bettina, me, two people in A R, and the, um, office manager.
+D: And can we change the escalation messages? Some of our GCs, we've worked with them for twenty years, I don't want an automated email that sounds like a debt collector going to them.
+A: Absolutely. Every step is editable, and you can set different sequences for different customer groups. A lot of customers make a "gentle" sequence for long-time partners and a firmer one for everyone else. And any step can be a task for a person instead of an email, so for your longtime GCs it can just be "Bettina calls them."
+D: Okay. That's good. That's actually how we'd want it.
+C: Can it send texts? Half these guys never read email.
+A: Not texts today, it's email and, uh, tasks. [crosstalk] Texts are something people ask for, but I don't want to promise it.
+C: Fair enough.
+D: And the ACH portal, is there a fee for the customer?
+A: No fee for the customer, and for you it's a flat fifty cents per ACH payment, which is a lot less than the card fees you're paying now.
+D: Okay, that's significantly less. We pay almost three percent on cards.
+A: Right, so on a twenty-thousand-dollar progress payment, that's fifty cents instead of almost six hundred dollars.
+C: Okay, now you have my [inaudible]. [laughs]
+A: Five seats, so twenty dollars a month. And I can give you a thirty-day free trial starting today, if you want to see it with real data.
+C: Let's do the trial. Why not.
+#fill sales_chat smalltalk2 @A=A @C=C
+A: Okay, and the other topic: single sign-on. I've asked Arvid from our solutions engineering team to join for this part, he should be— oh, there he is.
+#note participant (Arvid, Tallyforge solutions engineer) joined
+S: Hi everyone, Arvid here. Sorry, I was finishing another call. I hear you're looking at SSO?
+D: Yes. Our IT contractor, Rafferty, says by the end of the year everything has to be behind single sign-on. That's our new policy, actually. All company systems through SSO, company accounts only, no personal email logins.
+S: Makes sense, we see that a lot. So SSO on Tallyforge is an add-on, three dollars per seat per month. It supports SAML with any of the main identity providers, and it includes SCIM, so when someone leaves and IT disables them in your directory, they lose Tallyforge access automatically.
+D: That's the part rafter, Rafferty cares about. Off boarding.
+S: Exactly. And you can turn on "enforce SSO," which blocks password logins entirely, and restrict sign-ins to your company domain. We recommend both.
+D: Okay. And how long does it take to set up?
+S: If your identity provider is ready, about an hour. I'd do a working session with Rafferty, we exchange metadata, test with one user, then roll out.
+D: And what happens to users who aren't on SSO? Like, we have a couple of outside people, our bookkeeper contractor, she's not in our directory.
+S: You can exempt specific users from SSO enforcement. They'd keep a password login with two-factor required. It's a per-user setting, and it's logged, so your auditors can see who's exempt.
+D: Okay. Good. That's one person, maybe two.
+S: That's very normal.
+D: And if we turn on SSO, do people lose their history? Their saved estimates, their drafts?
+S: No, nothing changes in the data. We match the SSO login to the existing user by email address, so everyone keeps their account. That's why it matters that the email addresses in Tallyforge match your directory exactly.
+D: Ah. Okay. We had an email migration in August, so some of those might be out of date.
+S: Then before the session, I'd export your user list and have Rafferty compare it to the directory. I'll send a short checklist.
+D: That would be very helpful.
+D: Rafferty said he won't have the identity provider set up until sometime next month. Mid-October, maybe later.
+S: That's fine. When he's ready, I'll do the session. Delphine can connect us.
+A: I'll make that intro. Arvid, thank you.
+S: Happy to. I'll drop off, but reach out any time. [inaudible] both. Nice to meet you both.
+#note participant (Arvid) left
+#fill sales_discovery connection_issues @A=A @C=C
+A: So, SSO at three dollars a seat. Do you want that in the proposal for all forty-two seats?
+D: Yes, include it. All forty-two.
+C: That's another, what— forty-two times three—
+D: A hundred twenty-six a month, Mort.
+C: Okay. Fine. If Rafferty says we need it, we need it.
+A: I'll add it.
+#fill sales_chat smalltalk2 @A=A @C=D
+D: Sorry— sorry, can you hold on one second? My son's school is calling.
+A: Of course.
+#pause 45
+D: Sorry about that. He forgot his cleats for soccer. Again. Third time this month. [laughs]
+A: [laughs] Oh no. Does someone have to drive them over?
+D: My husband's doing it. I'm not leaving this meeting. [laughs]
+C: Priorities.
+D: Exactly.
+A: How old is he?
+D: Eleven. He's a goalkeeper. Which means he thinks he doesn't need cleats. [laughs]
+A: [laughs] Very goalkeeper logic.
+#fill sales_chat smalltalk2 @A=A @C=D
+C: Okay, while I've got you, contract stuff. After the two years, what happens? You jack the price up?
+A: [laughs] No. After the lock, the standard agreement caps any renewal increase at seven percent per year. That's in the master agreement today, it's not something special I'm doing.
+C: Seven percent cap. Okay. And payment terms, we pay net thirty, right? We don't pay upfront.
+A: Right now you're on annual billing, net thirty. That stays the same. If you ever wanted monthly billing, it's possible but the price is a bit higher, so I wouldn't recommend it.
+C: No, annual's fine. Just— put a PO number on the invoice this time. Last year it came without one and our AP sat on it for a month.
+A: [laughs] I'll make sure. What's the PO?
+D: I'll send it to you, we cut a new one at renewal.
+A: Perfect. Send it whenever, and I'll put it on the order form.
+C: And while we're at it— payroll. Are you going to try to sell me payroll?
+A: [laughs] I was going to mention it, but only mention it. You're on a different payroll provider, and with union jobs and certified payroll, I'll be honest, our payroll module doesn't do certified payroll reports yet. So it's probably not a fit for you right now.
+C: Huh. Okay. I appreciate you not pushing it.
+A: I'd rather you trust me next year. [laughs]
+#diar off
+C: Yetunde, are we still on the union thing with Local 12, the reporting?
+D: Yes, every week, it's in the other system.
+C: Okay, so yeah, no. Not now.
+D: Not now.
+#diar on
+A: Totally understand. If that changes, I'll let you know.
+A: Okay, so let me wrap up the commercial pieces. Forty-two seats on Business at eighteen dollars per seat per month, locked for two years. SSO add-on for all forty-two at three dollars. Collections Pro thirty-day trial for five seats, and if you keep it, four dollars per seat. And I'll ask deal desk about three years. Renewal date stays November thirtieth.
+D: That all sounds right.
+C: Can I ask— the reminder thing. Is that fixed now? Because I've got the collections team asking me, and I want to tell them it's done.
+A: Yes, that's fixed in the current version, you're all good. You can tell them.
+C: Great. Good. One less thing.
+D: [typing] Okay.
+C: And for the Collections Pro trial, who gets the admin invite?
+A: I'd send it to whoever will set it up. Usually the CFO or the controller.
+C: Send it to me. But send it to my personal gmail, IT is useless, they still haven't set up my new company account since the email migration, and Rafferty says SSO isn't till next month anyway. It's mort dot ashgrove dot c-v at gmail dot com.
+A: Sure, no problem. [typing] Mort dot ashgrove dot c-v at gmail... okay, sent. You should see it in a minute.
+C: Got it. It's here.
+D: [quietly] Mort...
+C: What? It's fine. It's just a trial.
+#fill sales_chat connection_issues @A=A @C=C
+A: Okay. Next steps from my side: I'll send the proposal by Friday, October second, with the forty-two seats, the two-year price, SSO, and the Collections Pro trial details. I'll ask deal desk about three years. I'll connect Arvid with Rafferty for the SSO setup once the identity provider is ready. And I'll send Yetunde the reminder-template workaround today.
+D: Great.
+A: From your side, Mortimer, you mentioned your lawyer wants to look at the master agreement changes?
+C: Yeah, our outside counsel will want to review the MSA. Send the redlines with the proposal and I'll get it to her.
+A: Will do. And I'd love to set up a quarterly business review, maybe end of October, once you've had a few weeks with Collections Pro. How's October twenty-seventh?
+D: Tuesday the twenty-seventh... works for me. Mort?
+C: Twenty-seventh is fine. Morning.
+A: October twenty-seventh, ten a.m. I'll send the invite.
+D: Perfect.
+C: Thanks, Delphine. Good call. Eighteen bucks, I'll take it. [laughs]
+A: [laughs] Thank you both. Talk soon.
+D: Bye!

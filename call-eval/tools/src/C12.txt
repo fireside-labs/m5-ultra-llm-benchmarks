@@ -1,0 +1,47 @@
+@id C12
+@date 2026-04-15 08:31
+@line Corrowind Health Partners - Main Line (routed to Patient Services)
+@direction inbound
+@target 4000
+@speaker A AGENT = patient services representative
+@speaker C CALLER = patient
+@speaker S SUPERVISOR = patient relations supervisor
+---
+A: Corrowind Patient Services, this is Noor speaking, how can I help?
+C: Yes. Hi. I want to file a complaint. A real one. Not a "thanks for your feedback" one.
+A: Okay. I'm sorry you're upset, and I want to help. Can I start with your name and date of birth so I can pull up your record?
+C: Henrietta Moss-Okwuosa. July seventeenth, nineteen sixty-eight.
+A: And can you confirm the phone number on your account?
+C: Five-five-five, two-four-zero, seven-seven-one-three.
+A: Thank you, Ms. Moss-Okwuosa, you're verified. Tell me what happened.
+C: Yesterday I was supposed to have my colonoscopy. At the endoscopy center. I did the prep. Do you know what the prep is? I spent the whole night before in the bathroom drinking that disgusting stuff. I took the day off work, unpaid. My sister drove in to take me. And when I checked in, the nurse asked me when I last had anything to drink, and I said I had a cup of black coffee at six, because your text message said I could have clear liquids up to two hours before my arrival. And she looked at me like I was crazy and said, no, the instructions say nothing after midnight, and the anesthesiologist cancelled me. Cancelled. After all of that.
+A: Oh, Ms. Moss-Okwuosa. I'm so sorry. That's awful.
+C: And then I go home and I look at the packet they mailed me, and yes, it says nothing to eat or drink after midnight. And the text says clear liquids until two hours before. They say two different things! Which one am I supposed to follow? How is a patient supposed to know?
+A: You're right, they shouldn't say different things. Honestly, you're not the first person to tell me about this this week, so I'm going to make sure this gets to the right people.
+C: Well, good. Because it's ridiculous.
+#fill smalltalk clinic_admin
+C: And I want to know who's paying for this. I lost a day of pay. My sister lost a day. I have to buy the prep again, that's thirty-something dollars.
+A: I completely understand. You know what, we'll definitely cover your lost wages. I'll make sure of it. You shouldn't be out of pocket for our mistake.
+C: Okay. Well. Thank you. I want that in writing.
+A: Of course. And I think the best thing is for me to bring in my supervisor in Patient Relations so we can open a formal complaint. Is that okay?
+C: Yes. That's what I want.
+A: Okay, one moment while I bring her on.
+#hold 120
+S: Hi, Ms. Moss-Okwuosa, this is Celia Banerjee-Strom, I'm the patient relations supervisor. Noor filled me in. I'm so sorry about yesterday.
+C: Thank you.
+S: I'm opening a formal grievance right now. Your grievance number is G-two-six-zero-four-one-one. You'll get a written acknowledgment within five business days, and a written response once we've reviewed it with the endoscopy center and the team that sends the text reminders.
+C: G-260411. Okay. And the lost wages? Noor said you'd cover that.
+S: So, I want to be honest with you. Reimbursement for things like lost wages is something our review committee decides as part of the grievance. I can't promise it on this call. But I'll make sure your request is part of the grievance, and the cost of the second prep kit is something we can cover, I'm approving that now.
+C: So now it's not guaranteed.
+S: I know that's not what you want to hear, and I'm sorry for the confusion. I'll include Noor's statement in the record.
+C: Hm. Fine.
+#fill smalltalk
+S: Let's also get you rescheduled. I see an opening on Thursday, April thirtieth, arrival at seven-thirty in the morning, same endoscopy center. Does that work?
+C: April thirtieth. Yes, I'll make it work.
+S: And I'll have the GI nurse call you before then to go over the prep, and to tell you, in writing, exactly what you can and can't drink, so there's no question this time.
+C: Yes. Please. And— the nurse should know, I'm diabetic, I'm on insulin. Nobody asked me about that last time either, and I was guessing on my insulin doses during the prep, which was scary.
+S: Thank you for telling me. That's important. I'll put that in the request so the GI nurse goes over your insulin plan for the prep day specifically.
+C: Okay.
+S: Is there anything else I can do for you today?
+C: No. Just fix the instructions so this doesn't happen to someone else.
+S: That's exactly what this grievance will do. Thank you for calling us, Ms. Moss-Okwuosa.

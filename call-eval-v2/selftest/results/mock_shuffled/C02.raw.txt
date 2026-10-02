@@ -1,0 +1,56 @@
+{
+ "call_type": "pharmacy_refill",
+ "outcome": "callback",
+ "sentiment_start": "neutral",
+ "sentiment_end": "neutral",
+ "quality_score": 2,
+ "quality_reasons": [
+  "Nobody caught that the patient is taking two of the new 20 mg white tablets (40 mg/day), even with lightheadedness and a 94/58 reading dismissed as fine",
+  "The ibuprofen/NSAID interaction question was promised to the pharmacist and never answered",
+  "Pharmacist was proactive on the prior auth, arranged a $4 bridge fill and confirmed consent before talking to the son"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Patient says she has been taking 'two of the white ones' since Monday (advice meant for the old 10 mg pink tablets); the pharmacist later confirms the white tablets are the new 20 mg strength, so she is taking 40 mg/day of lisinopril - nobody connected the two statements or corrected her, even though she reported lightheadedness and a 94/58 reading",
+   "evidence": "I been taking two of the white ones since Monday like the young man said"
+  },
+  {
+   "type": "other",
+   "description": "Patient asked whether she can take ibuprofen (Advil) with her blood-pressure pill; the tech promised the pharmacist would go over it, but the pharmacist never addressed it (and the patient had already taken two Advil)",
+   "evidence": "she'll go over the ibuprofen thing with you, okay? I'll put it in my note for her"
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "pharmacist",
+   "task": "Call Dr. Lindqvist's office to resend the prior authorization and confirm where it is going",
+   "due": "today"
+  },
+  {
+   "owner": "pharmacy",
+   "task": "Call Rafael (preferred contact 555-0191) when the 90-day supply is approved",
+   "due": "when PA approved"
+  },
+  {
+   "owner": "son (Rafael)",
+   "task": "Pick up 30-day bridge fill of lisinopril 20 mg ($4) plus atorvastatin at Millbrook counter",
+   "due": "Thursday after 2 pm"
+  },
+  {
+   "owner": "son (Rafael)",
+   "task": "If the PA drags past next week, call Halvard member services to check whether anything was received",
+   "due": "after one week"
+  }
+ ],
+ "summary_notes": "Mock summary for C03.",
+ "notable_details": [
+  "30-day copay is $4.00 (tech first said forty dollars)",
+  "Lisinopril Rx number 771042",
+  "Pharmacist did a 30-day bridge fill of lisinopril 20 mg while the PA is pending",
+  "Pickup Thursday (Sept 17) after 2 pm at the Millbrook counter, not Eastgate",
+  "Halvard shows no PA request on file although the office says it faxed twice (Sept 9 and Monday)",
+  "Patient's home BP reading this morning was 94/58 (previously 150-160), called 'great' by the tech",
+  "Son Rafael added as preferred contact, 555-0191"
+ ]
+}

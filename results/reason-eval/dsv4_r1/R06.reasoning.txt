@@ -1,0 +1,52 @@
+1.  **Analyze the Request**:
+    *   Role: Senior generalist advisor, steering work, looking at the whole problem first, naming variables that drive outcomes, spotting missed points, separating real problems from apparent ones, prioritizing ruthlessly, finding cruxes of disagreements. Reason only from facts given plus general reasoning. State assumptions if numbers are missing. Be concrete and specific. No padding, fewer sharper points. Most important points first.
+    *   Task: Advise the CEO of Northfold Claims Services on the decision to replace a commercial cloud LLM API with an open-weight model hosted in their own data center.
+    *   Facts given: Fictional 300-person company. Processes disability/injury insurance claims. Uses commercial cloud LLM API for summarizing medical records and drafting decision letters. Handles ~40,000 docs/month. Volume peaks at quarter end. API vendor has signed DPA customers require. Two engineers maintain integration. New CISO proposes replacing cloud API with open-weight model hosted in own data center "because data is sensitive".
+    *   Output format: Exactly three sections in this order:
+        *   `## Variables` (numbered list, max 12, most important first. For each: one line on why it matters, and how to measure/check it).
+        *   `## Top 3 priorities` (exactly 3 numbered items, most important first).
+        *   `## What would change my mind` (2-5 bullets, findings that would flip the decision).
+
+2.  **Deconstruct the Problem**:
+    *   The CISO's reasoning is "data is sensitive". But the vendor has already signed the DPA. Is the CISO's concern about legal compliance, or about technical risk (data exfiltration, breach), or about something else (vendor lock-in, cost)?
+    *   The core decision is a trade-off between cloud API (managed, likely high quality, easy scaling) vs self-hosted open-weight (full control, but requires significant MLOps expertise, GPU hardware, maintenance, and potentially lower quality).
+    *   Key variables to consider:
+        *   *Actual data sensitivity/regulatory requirement*: Is the DPA sufficient? What does the contract/regulator say? (Legal/Compliance)
+        *   *Model quality/accuracy*: Open-weight models might be less capable than the best commercial API (e.g., GPT-4, Claude). Accuracy in medical summarization and decision letters is critical (legal/regulatory risk, customer satisfaction). Need to benchmark.
+        *   *Total Cost of Ownership (TCO)*: Cloud API is pay-per-use, scales down when idle. Self-hosted requires GPU hardware, electricity, cooling, storage, and staff time (the 2 engineers are already stretched). Need to calculate cost per document at peak vs average.
+        *   *Scalability & Latency*: 40k docs/month, peaks at quarter end. Can the data center handle peak load? Can the open-weight model meet latency SLAs? Cloud API scales elastically.
+        *   *Maintenance & Ops Burden*: The 2 engineers currently maintain the integration. Self-hosting means they need to manage the model server, GPU drivers, retraining/fine-tuning, security patching, uptime. This is a huge burden.
+        *   *Security & Threat Model*: Is the data actually at risk in the cloud? DPA is signed. What is the actual threat model? Is it insider threat, external breach, or just perception? Self-hosting introduces new risks (misconfiguration, physical security, patching).
+        *   *Model Fine-tuning/Retraining*: Do they need to adapt the model to specific medical terminology? Cloud API might have better out-of-box performance. Self-hosted might need fine-tuning which requires data science expertise.
+        *   *Vendor Lock-in / Exit strategy*: Cloud API is a dependency. Self-hosting is a different kind of dependency (hardware, talent).
+        *   *Compliance/Audit trail*: Does self-hosting make audit easier or harder? Cloud API might have better logging, but data residency might be an issue. The DPA is signed, so residency is presumably handled.
+        *   *Data Residency*: Where is the cloud API hosted? The DPA covers this. Self-hosting is on-prem, which might be a perception of safety but not necessarily a legal requirement.
+        *   *Cost of failure*: What happens if the model makes an error in a claim decision? Who is liable? Cloud API might have indemnification clauses. Self-hosted, the liability is entirely on Northfold.
+        *   *Skills gap*: The 2 engineers are integration engineers, not ML engineers. Can they actually run an open-weight model effectively?
+        *   *Peak load handling*: Quarter end peak. Self-hosting needs to provision for peak, wasting resources during off-peak. Cloud API is elastic.
+
+3.  **Select and Rank Top Variables (Max 12)**:
+    1.  **Regulatory & Contractual Data Requirements** (Is the DPA actually sufficient? What does the regulator or the insurers actually require? The CISO's claim might be based on a misunderstanding of the threat model vs. compliance). Measure: Review DPA, insurance contracts, and GDPR/PHI (or equivalent) regulations.
+    2.  **Model Quality & Accuracy on Medical Text** (Open-weight models may perform worse on complex medical summarization and legal letter drafting, leading to costly claim errors). Measure: Run a blind benchmark of the cloud API vs the candidate open-weight model on a sample of 100-200 actual (anonymized) documents, scored by expert claims adjusters.
+    3.  **Total Cost of Ownership (TCO) & Scaling** (Cloud API is OPEX, elastic. Self-hosting is CAPEX + OPEX for GPUs, power, cooling, and must be sized for quarter-end peak). Measure: Calculate cost per document for cloud API (current bill) vs. projected cost for self-hosted (hardware amortized over 3 years + power + cooling + 2 engineers' time at 50%+ FTE).
+    4.  **Operational Burden & Engineering Capacity** (2 engineers maintain the integration. Self-hosting requires 24/7 monitoring, patching, GPU driver updates, model updates, and handling hardware failures). Measure: Estimate the FTE increase required for self-hosting (likely 1.5-2x current workload). Check if they have ML/DevOps skills.
+    5.  **Security & Threat Model** (The DPA is signed. Is the CISO's concern about a real technical risk (data exfiltration, breach) or a perceived risk? Self-hosting introduces new risks like misconfiguration, physical theft, and patching lag). Measure: Conduct a formal threat model comparing the two options, considering attack surface, insider threats, and incident response capability.
+    6.  **Peak Load Elasticity** (Quarter-end peaks. Cloud API scales automatically. Self-hosted needs to be provisioned for peak, leading to idle capacity 75% of the time). Measure: Quantify the peak-to-average ratio (e.g., 2x or 3x) and calculate the cost of idle GPU capacity.
+    7.  **Liability & Error Handling** (Cloud API vendor likely has SLAs and indemnification. Self-hosted, Northfold is 100% liable for any erroneous decision letters). Measure: Review cloud API contract for indemnification and SLA. Assess internal QA processes for self-hosted model outputs.
+    8.  **Data Residency & Audit Trail** (Cloud API DPA covers residency. Self-hosting changes the audit trail and may complicate multi-tenant insurer requirements). Measure: Verify where cloud API processes data (region). Assess if self-hosting simplifies or complicates customer audits.
+    9.  **Vendor Lock-in & Exit Strategy** (Cloud API is a dependency. Self-hosting is a dependency on hardware and scarce ML talent. Which is easier to reverse?). Measure: Assess the ease of switching cloud providers vs. the cost of decommissioning a data center GPU cluster.
+    10. **Model Governance & Versioning** (Medical/insurance decisions need reproducibility. Cloud API versions change. Self-hosted models can be pinned, but require active management to stay current with medical knowledge). Measure: Check cloud API's versioning policy. Assess internal capability to retrain/fine-tune open-weight models.
+    11. **Data Privacy in Training** (Does the cloud API train on the data? The DPA likely prevents this. Self-hosted ensures no training on data, but that's already covered by DPA). Measure: Confirm the DPA explicitly prohibits training on Northfold's data.
+    12. **Time to Implement** (Cloud API is live. Self-hosting requires procurement, setup, integration, and testing, potentially delaying other initiatives). Measure: Estimate project timeline (e.g., 6-12 months) vs. benefit gained.
+
+4.  **Select Top 3 Priorities**:
+    *   The crux is: *Is the CISO's concern a real risk that the DPA doesn't cover, and does the benefit of self-hosting outweigh the massive operational and quality costs?*
+    *   Top 1: **Model Quality & Accuracy** (If the open-weight model is worse, the whole business is at risk. This is the non-negotiable).
+    *   Top 2: **Total Cost of Ownership & Operational Burden** (The 2 engineers and the CAPEX for GPUs will likely dwarf the cloud API bill, especially with peak scaling. This is the economic crux).
+    *   Top 3: **Security & Threat Model** (The CISO's premise. If the DPA already mitigates the risk, the CISO's argument collapses. If the DPA is insufficient, then maybe there is a case, but self-hosting might not be the only solution).
+
+5.  **What would change my mind**:
+    *   If the DPA is actually insufficient (e.g., the vendor has a history of breaches, or the regulator explicitly forbids off-premises processing of this data), then the CISO has a point, but the solution might be a different cloud provider, not necessarily self-hosting.
+    *   If the open-weight model achieves *equal or better* accuracy on the benchmark, and the TCO calculation shows self-hosting is cheaper (which is unlikely given the 40k/month volume and peak scaling, but possible if the cloud bill is exorbitant).
+    *   If the 2 engineers are actually ML engineers in disguise with spare capacity, and the company has a strong track record of running critical infrastructure on-prem.
+    *   If a regulatory audit is imminent and the auditors specifically flag the cloud API as a material risk that the DPA doesn't cover.

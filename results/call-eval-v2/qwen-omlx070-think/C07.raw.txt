@@ -1,0 +1,99 @@
+
+
+{
+  "call_type": "insurance_verification",
+  "outcome": "callback",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Verified patient identity and obtained permission before payer disclosure.",
+    "Empathetic and persistent; opened expedited authorization and uploaded documents.",
+    "Correctly identified retired fax number and provided follow-up plan.",
+    "Disclosed mental health medication to payer without explicit consent; payer said not needed.",
+    "Payer transfer failure and long holds caused delay, though agent recovered."
+  ],
+  "flags": [
+    {
+      "type": "privacy_disclosure",
+      "description": "Agent disclosed the patient's mental health medication to the payer without explicit patient consent, and the payer said it was not needed for the imaging review.",
+      "evidence": "Um, let's see, she's also on, uh, sertraline for depression, if that matters."
+    },
+    {
+      "type": "other",
+      "description": "The clinic used an outdated fax template containing a retired Halvard UM fax number, causing prior authorization requests to be sent to a dead line.",
+      "evidence": "Our fax cover sheet template. It's got Halvard U M fax, five-five-five, zero-one-four-four, and at the bottom it says \"updated March 2025.\""
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "Agent",
+      "task": "Call Larkspur imaging today to provide the authorization reference number and prevent cancellation of the Oct 8 MRI.",
+      "due": "today"
+    },
+    {
+      "owner": "Agent",
+      "task": "Send Dr. Okonjo-Reyes a message about the patient's new tingling in the toes so the nurse can call the patient.",
+      "due": "today"
+    },
+    {
+      "owner": "Agent",
+      "task": "Monitor the Halvard portal for the expedited authorization decision and call the patient with the outcome.",
+      "due": "within 72 hours"
+    },
+    {
+      "owner": "Agent",
+      "task": "If no authorization decision is received by Tuesday, October 6, call the patient and reschedule the MRI to the next open slot.",
+      "due": "Tuesday, October 6"
+    },
+    {
+      "owner": "Agent",
+      "task": "Update the fax sheet/template and email the team about the retired Halvard fax number.",
+      "due": "right after this call"
+    },
+    {
+      "owner": "Agent",
+      "task": "Review other pending requests sent to fax 555-0144 after August 31 and resubmit via portal as needed.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Patient",
+      "task": "Call Larkspur billing line for an MRI cost estimate.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Patient",
+      "task": "Add husband to release/proxy form on the portal so the clinic can discuss updates with him.",
+      "due": "tonight"
+    },
+    {
+      "owner": "Payer",
+      "task": "Complete expedited authorization review and issue determination.",
+      "due": "within 72 hours"
+    },
+    {
+      "owner": "Payer",
+      "task": "Mail decision letter to the member.",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Patient Nadia Prewitt-Okafor called about MRI lumbar spine scheduled Oct 8 possibly canceled for missing prior auth. Agent verified patient, found clinic had faxed requests to retired Halvard UM fax 555-0144. Payer opened expedited request PA-2609-55170; agent uploaded order, PT notes, and office note. Decision expected within 72 hours. Agent will notify Larkspur, message Dr. Okonjo-Reyes about new toe tingling, update fax template, and call patient with decision. Patient to add husband proxy and call Larkspur billing. Deductible $1210/$1500 met; MRI 80% after deductible.",
+  "notable_details": [
+    "Patient name corrected from Nadine Prewitt to Nadia Prewitt-Okafor.",
+    "DOB 11/27/1984; member ID HVD60441829.",
+    "MRI lumbar spine without contrast, CPT 72148, scheduled Thursday Oct 8 at 7:20 AM at Larkspur Surgery and Endoscopy Center.",
+    "Prior auth faxes sent to 555-0144 on Sep 3 and Sep 14 were not received because that Halvard UM fax was retired Aug 31; new fax is 555-0188, portal preferred.",
+    "New expedited authorization reference PA-2609-55170; agent initially misread ending as 55107, corrected to 55170.",
+    "Expedited review based on provider attestation; decision expected within 72 hours.",
+    "Deductible: $1500 individual, $1210 met, $290 remaining; MRI covered 80% after deductible.",
+    "PT benefit: 30 combined visits, 8 used, 22 remaining; no referral needed, prescription required.",
+    "PT dates July 31 to Sep 11, 8 visits; meds naproxen 500 mg BID and methylprednisolone dose pack in Aug.",
+    "Diagnosis codes M54.16 and M54.42.",
+    "Agent disclosed sertraline for depression to payer; payer said not needed for imaging review.",
+    "Patient reported new tingling in toes for last week; agent to message Dr. Okonjo-Reyes and gave ER red flags.",
+    "No workers' comp claim filed for July lifting injury.",
+    "Patient cell ending 0166; husband not on release/proxy; patient will add proxy tonight.",
+    "Clinic fax template still listed old fax and was marked updated March 2025.",
+    "Payer transfer from Carla to UM failed and returned call to main menu, adding delay."
+  ]
+}

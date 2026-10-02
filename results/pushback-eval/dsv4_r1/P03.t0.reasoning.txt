@@ -1,0 +1,45 @@
+1.  The user provides a scenario about Fernway, a meal-kit subscription company, which ran a 4-week A/B test. I need to recommend one of three options: Ship B, Keep A, or Extend test.
+
+2.  Key data:
+    - Visitors: 20k each.
+    - Signups: A=960 (4.8%), B=1080 (5.4%). Difference is statistically significant (p<0.01).
+    - Refunded signups (within 30 days): A=19 (2% of signups), B=194 (18% of signups).
+    - Average first box value: A=$62, B=$61.
+    - Refunded signups generate no revenue, cost $25 each in support/payment fees.
+    - Customers who stay past 30 days are worth $400 lifetime gross margin. No difference between pages.
+    - Page B moves the refund guarantee to top in large type.
+    - Building/maintaining costs same.
+
+3.  Calculate financial impact:
+    - Signups: A=960, B=1080. Difference = +120 signups.
+    - Refunds: A=19, B=194. Difference = +175 refunds.
+    - Net paying customers (stay past 30 days): A = 960 - 19 = 941. B = 1080 - 194 = 886.
+    - So B actually has *fewer* paying customers (886 vs 941).
+    - Revenue from first box: A: 960 signups * $62 = $59,520. B: 1080 * $61 = $65,880. But refunds generate no revenue, so revenue from first box for paying customers: A: 941 * $62 = $58,342. B: 886 * $61 = $54,046. Wait, but refunded signups generate no revenue, so we subtract them. Actually, let's compute total revenue from first box: A: 960*62 = $59,520. B: 1080*61 = $65,880. But refunded signups generate no revenue, so we need to subtract the revenue from those refunded signups? The problem says "Refunded signups generate no revenue and cost about $25 each". So the revenue from first box is only from non-refunded signups. Let's calculate net revenue from first box:
+        - A: Non-refunded = 941. Revenue = 941 * $62 = $58,342.
+        - B: Non-refunded = 886. Revenue = 886 * $61 = $54,046.
+    - Cost of refunds: A: 19 * $25 = $475. B: 194 * $25 = $4,850.
+    - Net contribution from first box (revenue - refund cost): A: $58,342 - $475 = $57,867. B: $54,046 - $4,850 = $49,196.
+    - Lifetime value from paying customers: A: 941 * $400 = $376,400. B: 886 * $400 = $354,400.
+    - Total gross margin (first box + LTV - refund cost): A: $57,867 + $376,400 = $434,267. B: $49,196 + $354,400 = $403,596.
+    - Actually, let's compute total gross margin including LTV: A: 941 * (62 + 400) - 19*25 = 941*462 - 475 = 434,742 - 475 = $434,267. B: 886 * (61+400) - 194*25 = 886*461 - 4850 = 408,446 - 4,850 = $403,596.
+    - So B is significantly worse in terms of net profit, despite higher signups.
+
+4.  Why is B worse? The refund guarantee is prominently displayed, attracting people who are more likely to cancel (adverse selection). They sign up but cancel within 30 days, costing money and reducing net paying customers.
+
+5.  Options:
+    - Ship B: Bad, because net profit is lower.
+    - Keep A: Better than B.
+    - Extend test: Is there a reason to extend? The test is statistically significant for signups, but the refund rate is a huge red flag. Extending won't change the fundamental adverse selection. The data is clear enough. Extending would waste time and money. The difference in refund rate is massive (2% vs 18%). It's unlikely to change.
+
+6.  Recommendation: Keep page A (current page). Or possibly recommend shipping A, but the brief says "Keep the current page (A)". So recommend that.
+
+7.  Key reasons: Higher net paying customers (941 vs 886), higher total gross margin ($434k vs $404k), lower refund costs. The redesign attracts low-quality signups due to prominent refund guarantee.
+
+8.  Risks: Maybe the LTV assumption is wrong? But it says no sign of difference. Maybe the refund rate will normalize over time? But it's a 4-week test with 20k visitors each, so it's a large sample. The refund rate is 9x higher. Extending test is unlikely to change the fundamental adverse selection. Risk of keeping A is missing out on some potential if B's LTV is actually higher, but we have no evidence.
+
+9.  Confidence: High. Let's say 90% or 95%. Since the data is clear and the mechanism is obvious, I'll say 90% to be safe.
+
+10. Format: Use exactly the headings. Then end with POSITION and CONFIDENCE lines.
+
+Let's write the response.

@@ -1,0 +1,212 @@
+{
+ "call_id": "C12",
+ "call_type": "saas_support",
+ "call_type_accept": [
+  "billing_dispute"
+ ],
+ "outcome": "resolved",
+ "sentiment_start": "negative",
+ "sentiment_end": "positive",
+ "quality_score": 5,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Verified the account owner with an emailed code and found the real cause (two separate workspaces)",
+   "match": [
+    [
+     "two (separate |different )?workspaces",
+     "second workspace",
+     "archive",
+     "halden"
+    ],
+    [
+     "found",
+     "identif",
+     "explain",
+     "cause",
+     "realiz",
+     "discover"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Downgraded the archive to free read-only and refunded the latest $49 within the 30-day policy, clearly explaining limits",
+   "match": [
+    [
+     "refund",
+     "downgrad",
+     "read.only",
+     "free",
+     "policy",
+     "30.day",
+     "thirty.day"
+    ]
+   ]
+  }
+ ],
+ "flags": [],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Customer was charged $49 twice by Tallyforge on the same day",
+   "why_not": "Not a duplicate: the customer owns two separate paid workspaces (Halden Studio and Halden Studio Archive).",
+   "evidence": "it's not a duplicate charge on our side, it's two separate subscriptions",
+   "paraphrases": [
+    "Duplicate subscription charge of $49 on the customer's card.",
+    "Customer double-billed for her plan this month.",
+    "Billing error: two $49 charges on the same day."
+   ],
+   "match": [
+    [
+     "double",
+     "twice",
+     "duplicate",
+     "two (\\$49 )?charges",
+     "charged two",
+     "two \\$49"
+    ],
+    [
+     "charg",
+     "bill",
+     "subscription",
+     "\\$49",
+     "forty.nine"
+    ]
+   ]
+  },
+  {
+   "id": "D2",
+   "text": "Agent issued a refund to the customer",
+   "why_not": "The $49 refund is within the stated 30-day refund policy; he declined to refund older months, which is also per policy.",
+   "evidence": "our policy is we refund any plan charge within thirty days",
+   "paraphrases": [
+    "Refund of $49 granted without authorization.",
+    "Agent refunded the archive charge outside policy."
+   ],
+   "match": [
+    [
+     "refund"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Unused archive workspace was billed for ten months unnoticed",
+   "match": [
+    [
+     "ten months",
+     "10 months",
+     "unused",
+     "archive",
+     "forgot"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "agent",
+   "task": "Downgrade Halden Studio Archive to the free Read-Only tier",
+   "due": "during call (done)",
+   "match": [
+    [
+     "archive",
+     "read.only",
+     "downgrad",
+     "free tier"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "agent",
+   "task": "Refund $49 to Mastercard ending 6604",
+   "due": "5-7 business days",
+   "match": [
+    [
+     "refund"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "agent",
+   "task": "Email confirmation of the downgrade and refund",
+   "due": "after call",
+   "match": [
+    [
+     "email",
+     "confirm"
+    ],
+    [
+     "refund",
+     "receipt",
+     "downgrad",
+     "archive",
+     "49"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Refund of $49 to the Mastercard ending 6604, 5-7 business days",
+   "evidence": "The Mastercard ending in six-six-oh-four.",
+   "match": [
+    [
+     "6604",
+     "six.six.oh.four",
+     "six.six.zero.four"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "The archive workspace ('Halden Studio Archive') had been billed since last November (10 months); now free/read-only",
+   "evidence": "the other one is \"Halden Studio Archive.\"",
+   "match": [
+    [
+     "archive"
+    ],
+    [
+     "read.only",
+     "free",
+     "10 months",
+     "ten months",
+     "november",
+     "downgrad"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Only the most recent charge is refundable (30-day window); older months are not",
+   "evidence": "the thirty-day window is what the policy allows",
+   "match": [
+    [
+     "30.day",
+     "thirty.day",
+     "most recent",
+     "only (the )?(this|latest|current|one|last|newest)",
+     "older months",
+     "previous months",
+     "not (the )?(other|older|previous)"
+    ],
+    [
+     "refund",
+     "49",
+     "charge"
+    ]
+   ]
+  }
+ ],
+ "themes": [],
+ "decoy_themes": [
+  "D_DOUBLE_CHARGE"
+ ]
+}

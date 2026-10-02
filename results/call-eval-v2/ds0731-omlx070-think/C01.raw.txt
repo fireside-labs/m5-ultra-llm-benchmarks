@@ -1,0 +1,42 @@
+{
+  "call_type": "scheduling",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 4,
+  "quality_reasons": [
+    "Verified patient identity and obtained consent to discuss with daughter.",
+    "Corrected own error about new patient status promptly.",
+    "Provided accurate pre-visit instructions including fasting labs.",
+    "Updated contact phone number correctly after patient correction.",
+    "Handled technical issues and hold with clear communication."
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "Agent (Noor)",
+      "task": "Send confirmation text to 555-0173",
+      "due": "2026-09-15"
+    },
+    {
+      "owner": "Patient (Teodoro)",
+      "task": "Bring photo ID, insurance card, and current medication list to appointment",
+      "due": "2026-10-15"
+    },
+    {
+      "owner": "Patient (Teodoro)",
+      "task": "Arrive 20 minutes early for fasting blood draw (no food after midnight, water allowed)",
+      "due": "2026-10-15"
+    }
+  ],
+  "summary_notes": "Scheduled six-month checkup with Dr. Okonkwo-Hale for Teodoro Vance-Ibarra on 10/15/2026 at 10:40 AM. Patient to arrive 20 min early for fasting labs (cholesterol/A1c). Updated contact phone to 555-0173 (removed landline). Confirmation text to be sent today. Patient's daughter Marisol on line with patient consent. Reminded to bring ID, insurance card, and medication list.",
+  "notable_details": [
+    "Patient DOB: April 2, 1945.",
+    "Address: 220 Larchmont Way (no apartment).",
+    "Phone number corrected from 555-0137 to 555-0173 by patient.",
+    "Appointment: Thursday, October 15, 2026 at 10:40 AM.",
+    "Fasting labs: cholesterol and A1c; nothing to eat after midnight, water fine.",
+    "Agent initially misread new patient banner, corrected.",
+    "Patient's daughter Marisol handles appointments."
+  ]
+}

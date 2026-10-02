@@ -1,0 +1,59 @@
+{
+ "call_type": "saas_support",
+ "outcome": "resolved",
+ "sentiment_start": "neutral",
+ "sentiment_end": "neutral",
+ "quality_score": 4,
+ "quality_reasons": [
+  "Agent was curt, sarcastic and condescending (rude tone, interrupted the owner)",
+  "Every answer was accurate and complete: correct root-cause diagnosis (encoding/diacritic), working XLSX workaround, verified identity and got explicit owner authorization, clear recap and follow-up"
+ ],
+ "flags": [],
+ "action_items": [
+  {
+   "owner": "customer",
+   "task": "Use XLSX (default export format now XLSX) or Windows-1252 CSV for future payroll exports",
+   "due": "future runs"
+  },
+  {
+   "owner": "accountant (Sunniva)",
+   "task": "Accept the Accountant-role invite",
+   "due": "within 7 days (today)"
+  },
+  {
+   "owner": "agent (Marguerite)",
+   "task": "Email a written summary with the knowledge-base article on export encodings",
+   "due": "today"
+  },
+  {
+   "owner": "agent (Marguerite)",
+   "task": "Log a request with engineering to put the CSV encoding option on the main export screen",
+   "due": "unspecified"
+  },
+  {
+   "owner": "customer (Ambrose)",
+   "task": "Update the mobile app from 7.2 to 7.4.1 (turn on automatic updates)",
+   "due": "unspecified"
+  },
+  {
+   "owner": "customer and accountant",
+   "task": "Set up cash tips / paid tips earning types for the four Saturday tasting-room staff and enter tips each run; decide PTO retroactivity with accountant on Monday",
+   "due": "Monday / each pay run"
+  },
+  {
+   "owner": "accountant (Sunniva)",
+   "task": "Send Ambrose the resale-certificate form again (sales tax on wholesale)",
+   "due": "unspecified"
+  }
+ ],
+ "summary_notes": "Mock summary for C09.",
+ "notable_details": [
+  "The failing payroll run is PR-0918 (Sept 18), first misread as PR-0981",
+  "Root cause: employee Zo\u00eb Abernathy-Quill changed her name to include a diaeresis (\u00eb) on Sept 9; Tallyforge exports UTF-8 but Ledgerline reads Windows-1252",
+  "Workaround: export as XLSX (now the default); alternatively CSV encoding Windows-1252; imported 12 of 12 rows",
+  "Hollis Varga's net pay is $1,850 (owner first read $1,815 from the wrong column)",
+  "Plan renews November 1 at the same price (the 'upcoming changes' email was about the optional expense module)",
+  "Mobile app is on 7.2, which has a known payroll crash; current version 7.4.1",
+  "The accidental draft 'PR-0918 copy' was created via 'Duplicate as draft' on Sept 19 and was deleted; finalized run untouched"
+ ]
+}

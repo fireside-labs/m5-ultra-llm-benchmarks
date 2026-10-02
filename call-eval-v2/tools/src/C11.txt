@@ -1,0 +1,415 @@
+@id C11
+@date 2026-09-24 19:08
+@line Brightwater Family Medicine - Nurse Line (evening queue); Larkspur Surgery & Endoscopy Center on-call surgical PA conferenced in
+@direction inbound
+@target 28000
+@seed 1111
+@diar_drop 0.15
+@speaker I IVR = Brightwater automated phone system
+@speaker A NURSE = Brightwater nurse-line registered nurse (Felipe)
+@speaker C PATIENT = patient (Imogen)
+@speaker H SPOUSE = patient's husband (Rob), on speakerphone in the same room
+@speaker P SURGICAL_PA = Larkspur on-call surgical physician assistant (Dana)
+---
+I: Thank you for calling Brightwater Family Medicine. If this is a medical emergency, hang up and dial nine-one-one. For appointments, press one. For billing, press two. For prescription refills, press three. For the nurse line, press four.
+C: [keypad tone] Four. Four, Rob, it's four, not three. I told you.
+H: [background] I didn't say anything.
+I: You have reached the nurse line. Your call may be recorded for quality and training. All of our nurses are currently helping other callers. Please stay on the line.
+#hold 140
+#fill hold_announce transfer_wait
+I: Thank you for your patience. A nurse will be with you shortly.
+#hold 95
+A: Brightwater nurse line, this is Felipe, I'm one of the registered nurses. Who am I speaking with?
+C: Oh thank God, a person. Hi. Hi. Sorry. This is Imogen, Imogen Tessaro-Blythe. I— okay, I'm going to be honest, this is my third try tonight.
+A: Oh no. I'm sorry. What happened with the first two?
+C: So I wanted to ask about the pain pills, right, so I figured that's a pharmacy thing, so I pressed three for the prescription refills, and it put me in, like, billing? And billing's closed, so it just played a message about statements and hung up on me. And then I did it again because I thought I fat-fingered it. Same thing. Billing. So the third time I just pressed four for you guys.
+A: Yeah, you're not the first person who's told me that this week, honestly. Something with the menu. I'm sorry. You got me now, though.
+C: I got you now. Okay.
+A: Okay. So before anything else, can I get your date of birth, Imogen?
+C: April third, nineteen eighty-one.
+A: April third, eighty-one. And can you spell the last name for me? I want to make sure I pull up the right chart, we have a, a lot of hyphens in this system. [laughs]
+C: [laughs] T-E-S-S-A-R-O, hyphen, B-L-Y-T-H-E.
+A: Perfect. And the address on file is on, um, Aldergrove Lane?
+C: Forty-two Aldergrove Lane, yes.
+A: Great, thank you, you're verified. So I can see here— oh, okay, you had surgery this week.
+C: Yes. The gallbladder. On the— on the twelfth— no, what am I saying. Monday. The twenty-first. Monday the twenty-first. My brain is mush.
+A: [laughs] That's the anesthesia and the pain meds, that's allowed. Okay, so I've got a laparoscopic cholecystectomy on Monday September twenty-first at Larkspur, with Dr. Vasquez-Lim.
+C: That's her. She was lovely. I only met her for like four minutes but she was lovely.
+A: [laughs] That's surgeons. Okay. And is someone with you?
+C: Yes, my husband Rob is here, you're on speaker. He's— honestly he's been doing all my pills and the drain and everything, I'm useless. So you can talk to him about anything, whatever you need, he knows more than me right now.
+H: Hi. Rob. Hi.
+A: Hi Rob. Okay, that's great, thank you, Imogen, I'll note that you're okay with Rob being part of the conversation. So. What's going on tonight, what made you call?
+C: Okay so, a bunch of things. I wrote them on my hand. [laughs] Literally on my hand, Rob wouldn't give me paper.
+H: There was paper right there.
+C: There was not paper right there. Okay. One, the pain pills. Two, the drain thing. Three, I just— I feel kind of crummy and I don't know if it's normal crummy or bad crummy.
+A: Before we dive in, just so I have the background: how did the gallbladder thing start? Was this planned for a while, or did it come on fast?
+C: Oh, it's been a saga. Since, like, March? I kept getting these attacks after dinner. Like a fist under my ribs, on the right, going through to my back. I thought it was heartburn. I was eating antacids like candy.
+H: She was eating them like candy. We bought the big tub.
+C: And then in July I had a really bad one, the worst one, at like two in the morning, and Rob drove me to the emergency room, and they did the ultrasound and said, yep, gallstones, a lot of them, "your gallbladder is full of gravel," the doctor said. Gravel!
+A: [laughs] That's a very doctor way to put it.
+C: And then it took forever to get the surgery scheduled, because of, you know, the referral, and then the surgeon had a waiting list, and then I had to do the pre-op stuff, the bloodwork and the EKG and the— whatever. So it was finally Monday.
+A: Okay. So from July to September of trying to avoid fatty food, probably.
+C: I have not had a french fry since July. I dream about french fries.
+H: She talks about french fries in her sleep.
+C: I do not.
+H: "Curly ones." That's what you said. Last night.
+C: [laughs] Oh my God. Okay, that might be true.
+A: [laughs] Well, the good news is, once you're healed up, most people can go back to eating pretty normally. Maybe ease into the curly fries.
+C: That's the dream.
+A: And how did the day of surgery go? Anything unusual they told you about? Anything that came up?
+C: No, they said it went fine. The doctor came out and told Rob it went fine, it was a little inflamed, so they left the drain in, which, I was not expecting the drain. Nobody told me about a drain. I woke up and there was a tube coming out of me.
+H: She said "a little more inflamed than we expected." And "it came out in one piece." Which, I don't know what the alternative is. I didn't ask.
+A: [laughs] Yeah, sometimes they decide on the drain during the surgery, depending on what they see. Okay. That's helpful. Thank you.
+A: Okay. Those are all really good reasons to call. Let's go one at a time. And I'm going to have your discharge paperwork up in front of me while we talk, so I can see what Larkspur sent you home with.
+C: Okay.
+#fill nurse_chat smalltalk family_side
+A: Alright, I've got the discharge instructions from Larkspur up. Do you have your copy there too?
+C: Rob, do we have the— the packet. The white packet. With the— yeah.
+H: It's on the fridge.
+C: He has it on the fridge.
+A: [laughs] Everyone puts it on the fridge. Okay. So I'll just go through the highlights with you, since I've got you, and then we'll get to your questions. Wound care: you can shower after forty-eight hours, so you're past that, let the water run over the incisions, pat them dry, don't scrub. And it says no tub baths, no hot tubs, no swimming for two weeks. Okay?
+C: Okay. Showers yes, baths no.
+A: Showers yes. Diet: you can eat normally but go easy on fatty, greasy stuff for the first week or two, some people get loose stools after gallbladder removal.
+C: Oh, I've had the opposite problem. [laughs] Sorry. TMI.
+A: [laughs] Nothing is TMI on the nurse line, believe me. We'll come back to that. Activity: walking is encouraged, no lifting over ten pounds for, um, two weeks, no driving while you're taking the narcotic pain medicine.
+C: I'm not driving anywhere. Rob's driving everywhere.
+H: I'm the chauffeur.
+A: Good. Okay, and the medications they sent you home with. I'm seeing, um, the hydrocodone with acetaminophen, the five-three-twenty-five, one to two tablets every six hours as needed for pain, and the stool softener, docusate, twice a day.
+C: Yes. The— the hydro-coat-own. Is that how you say it? Rob calls them the Norcos.
+H: That's what the bottle— well the bottle doesn't say Norco, the pharmacist called it that.
+A: Same thing. Norco's a brand name for it. Hydrocodone, and the acetaminophen is mixed in.
+C: Right, the ones with the Tylenol in them, Rob says. That's what the pharmacist told him. "These have Tylenol in them."
+A: Mm-hm.
+C: So the question I had about those, I'm running low already, like, I have, Rob, how many?
+H: Nine. There's nine left.
+C: Nine left, and I'm taking them, I don't know, I'm trying not to take them but I'm taking them, and I don't know what happens when they run out. Can I get more? That's what I was trying to ask the pharmacy.
+A: Okay. Good question. So the hydrocodone is a controlled medication, the surgeon's office has to be the one that writes for more, the pharmacy can't just refill it, and our office can't either since it's Dr. Vasquez-Lim's prescription. What I can do is send a message to her team tonight with a refill request, and they'll look at it tomorrow.
+C: Oh, okay. That'd be great.
+A: I'll do that. And how often are you taking them right now?
+C: Um... Rob?
+H: Usually one, sometimes two, every six hours. More like every six to eight. She tries to stretch it.
+A: Okay, that's within what it says. Good.
+#fill nurse_chat nurse_smalltalk smalltalk2
+A: Okay, so let's talk about the pain itself. On a zero to ten, zero no pain and ten the worst you can imagine, where are you right now?
+C: Right now? Like a five. A five-ish. When I first wake up it's a seven, because everything's stiff.
+A: Okay, five now, seven in the morning. And where is it? Is it the incisions, is it inside, is it somewhere else?
+C: The incisions are sore, like, when I laugh, which Rob keeps making me do—
+H: I do not.
+C: —he does, he does it on purpose. But the weird thing, the thing I actually wanted to ask about, is my shoulder. My right shoulder. It's like a— a stabbing, achy thing up on top, right here, and I didn't even have surgery on my shoulder! I had it on my stomach! So I'm like, did they drop me? Did they drop me on the table?
+A: [laughs] No, they didn't drop you. That's actually really, really common after laparoscopic surgery. They inflate your belly with carbon dioxide gas so they can see and work, right? And afterwards some of that gas hangs around under the diaphragm and it irritates a nerve, and your brain reads it as shoulder pain. Usually the right shoulder. It's called referred pain.
+C: Seriously?
+A: Seriously. That's the gas they use to inflate your belly. It usually gets better over a few days. Walking helps it move and get absorbed. Some people find a heating pad on the shoulder helps, on low, not on the incisions. Is it getting better or worse since Monday?
+C: Better, I guess. Monday night it was horrible. Now it's just— annoying.
+A: That's the typical pattern. If it got suddenly much worse, or you got short of breath with it, or chest pain, that's a different story and you'd call nine-one-one. But what you're describing sounds like the gas.
+C: Okay. Huh. Okay, that's actually a relief. Rob, it's the gas.
+H: I told you it was the gas.
+C: You said it was "probably gas," you meant my— never mind.
+A: [laughs]
+#fill family_side smalltalk nurse_chat
+C: Sorry, the dog is— he wants to be on the couch and he's not allowed on the couch right now because of my stomach.
+A: Smart. A dog jumping on you right now would not be fun.
+C: He's sixty pounds of bad decisions.
+A: [laughs] Okay. So you said the other thing is you're feeling, quote, crummy. Tell me what crummy means.
+C: Okay. So. Like, tired, which I get, I had surgery. But kind of— achy? All over? Kind of like when you're coming down with something. And I don't want to eat much.
+A: Okay. Have you had any nausea or vomiting?
+C: Little nausea. No throwing up. Monday night I threw up once but that was the anesthesia, the nurse said that's normal.
+A: Yeah, that's normal on the day of. And since then just a bit of nausea, no vomiting.
+C: Right.
+A: Are you able to keep fluids down?
+C: Yes. I'm drinking. Rob's making me drink this electrolyte stuff that tastes like a blue raspberry crayon.
+H: It's good for you.
+C: It tastes like a crayon, Rob.
+A: [laughs] Keep drinking the crayon. Okay, bowel movements. You said earlier the opposite problem.
+C: [laughs] Yeah. Nothing since before surgery. Monday morning was the last.
+A: Okay, so that's Thursday now, three days. That's really common with the hydrocodone, it slows everything down, plus the anesthesia. Are you taking the docusate, the stool softener?
+C: The, um, the dock-you-sate. The little red ones? Rob?
+H: [inaudible] — yeah, twice a day, the red gel caps.
+A: Good. You can add a gentle laxative too, something like polyethylene glycol, the powder you mix in a drink, once a day, that's over the counter. And walking helps that too. If you go past, say, Saturday with nothing, or your belly gets really swollen and hard and you're vomiting, call us back.
+C: Okay. Powder thing. Walking.
+H: We have that, the powder. From when— from my thing last year.
+A: Perfect, check the expiration date but that should be fine.
+#fill nurse_smalltalk smalltalk2 connection_issues
+A: Okay, I want to go back to the pain medicine for a sec, because I want to make sure I have the whole picture of what you're taking. So the hydrocodone, one or two every six to eight hours. Anything else for pain? Anything over the counter?
+C: Oh, yeah, I'm also taking regular Tylenol. The Extra Strength. Two every six hours, like the bottle says. Rob set alarms on his phone.
+H: I have like nine alarms. My phone is just alarms now.
+A: [laughs] Okay. And is that helping?
+C: I think so? Like, the hydrocodone takes the edge off and then the Tylenol in between kind of keeps it from spiking. The surgery people said to try to use the Tylenol so I don't need as many of the narcotic ones.
+A: Yeah, that's the idea. Tylenol's fine. Tylenol's actually great, we want you using that so you can lean on the narcotic less. Any ibuprofen, Advil, Motrin, anything like that?
+C: No, they said no ibuprofen for— for something, I don't remember, Rob?
+H: For a few days, they said. Because of bleeding or something.
+A: Okay, that's fine, just follow what Larkspur told you on that. So the hydrocodone and the Tylenol. Okay. Good.
+C: Is that okay? Like, both?
+A: Yeah, lots of people do that. Tylenol's fine.
+C: Okay. Good. I was worried that was, like, doubling up or something.
+A: No, you're good.
+#fill nurse_chat family_side smalltalk
+A: How's the appetite, by the way, are you eating anything?
+C: A little. Toast. Crackers. Soup. Our neighbor, Mrs. Kowalczyk-Brandt, brought over chicken soup, which was so sweet, she's eighty and she walked it over in the rain.
+A: Oh, that's lovely.
+C: And I had, like, half a banana this morning. And coffee. Can I have coffee? I had coffee. Was I allowed to have coffee?
+A: [laughs] Coffee is fine. Just keep drinking water too, coffee can dehydrate you a little.
+C: Okay. What about wine? Not, like, a lot. Just a glass. Rob says no.
+H: I said ask the nurse.
+A: Rob's right on this one. No alcohol while you're on the hydrocodone. They don't mix, they both make you drowsy and can slow down your breathing. Once you're off the narcotic, a glass of wine is fine.
+C: Okay. Ugh. Fine.
+H: Told you.
+C: You said "ask the nurse." That's not "told you."
+A: [laughs] I'm staying out of this one.
+#fill family_side nurse_chat
+C: Sorry, our daughter just came in. Clio, honey, Mommy's on the phone with the nurse. ... Yes. ... The nurse. ... A man nurse, yes. ... Because men can be nurses, honey. ... Okay. Go brush your teeth.
+A: [laughs] How old?
+C: Nine. She's been very worried about me. She made me a get well card with a gallbladder on it. It's green. It has a face.
+A: Oh, I love that.
+C: It's on the fridge. Next to the discharge packet. [laughs]
+A: The fridge is doing a lot of work in your house.
+C: The fridge is holding this family together.
+A: Okay. So, the achy, coming-down-with-something feeling. Have you checked your temperature at all?
+C: Yes. Rob bought one of those— the forehead ones, the gun.
+H: The scanner.
+C: The scanner. And I took it this afternoon, it was a hundred point eight.
+H: [crosstalk] —no, Immy, last night it was a hundred and one point eight, I wrote it down—
+C: [crosstalk] —this afternoon it was—
+A: [crosstalk] —okay, so a hundred point eight this afternoon.
+C: Yeah, a hundred point eight.
+A: Okay. A hundred point eight is what we'd call a low-grade temp. That's honestly pretty common the first few days after surgery, your body's doing a lot of healing, there's inflammation. Make sure you're up walking, and doing the deep breathing, did they give you the little breathing thing? The plastic thing with the ball?
+C: The incentive spiro— spirometer. Yes. I hate it.
+A: [laughs] Everybody hates it. Do it anyway, ten times an hour while you're awake. That actually helps prevent a fever from your lungs not opening up all the way.
+C: Ten times an hour? Oh my God.
+A: I know. Put it next to the remote.
+H: [inaudible] —in the notebook, the one from last— [background noise]
+C: Rob, she's— he's talking, hold on. Okay. Ten times an hour.
+A: Any chills, shaking?
+C: Kind of chilly last night. I had the big blanket on. But I'm always cold, Rob keeps the house like a meat locker.
+H: It's sixty-eight.
+C: It's a meat locker.
+A: [laughs] Okay. Keep an eye on it. If it gets over a hundred and one, call us back. Okay?
+C: Okay. Over a hundred and one, call back.
+#fill nurse_smalltalk smalltalk2 family_side
+A: Okay, before we go further, let me just double-check your regular medications on file, the ones you were on before surgery, so I know what else is in the mix. I've got levothyroxine, seventy-five micrograms, every morning, and a birth control pill. Anything else? Any vitamins, supplements?
+C: The levo— the thyroid one, yes. Every morning. I've been taking it. And the pill, yes. And, um, a vitamin D, the gummy one. That's it.
+A: Okay, and allergies, I've got penicillin, rash.
+C: Penicillin, yes. I broke out in hives when I was like twelve.
+A: Okay, that's what I have. Are you able to take the levothyroxine okay, on an empty stomach, with everything going on?
+C: Rob gives it to me first thing with water before the coffee. He read the little paper.
+H: Thirty minutes before food. It says it on the paper.
+A: Perfect. You're a great nurse, Rob.
+H: I'm learning on the job.
+C: He's going to want a raise.
+A: [laughs] Okay. And peeing okay? No burning, no trouble going?
+C: Peeing's fine. That's the one thing that works. [laughs]
+A: [laughs] We'll take it.
+#fill nurse_smalltalk family_side
+#diar off
+H: Sorry, my phone, it's my mom, she's called four times today. Hang on. ... Hi Mom. ... She's fine. ... She's on the phone with the nurse. ... No, the nurse. From the clinic. ... I'll call you back. ... Yes. ... I'll call you back. Love you. Bye.
+C: His mother thinks I'm dying.
+H: She does not think you're dying. She thinks you should be eating more.
+C: She wants to send a lasagna.
+A: [laughs] Accept the lasagna. Maybe in a week.
+C: Accept the lasagna in a week.
+#diar on
+A: How's the ride been, the car? Some people find the seatbelt rubs right on the incisions.
+C: Oh my God, yes. Coming home from Larkspur, every bump. Rob hit every pothole on Route nine.
+H: The potholes are not my fault. The county—
+C: Every one, Rob.
+A: [laughs] A little folded towel between the belt and your belly helps. Keep the belt on, just pad it.
+C: Oh, that's good. Towel. Okay.
+A: And for getting in and out of bed: roll onto your side first, then push up with your arms, that way you're not using your stomach muscles to sit straight up.
+C: The log roll. The nurse at Larkspur showed me. I forgot about it.
+A: That's the one. It makes a big difference.
+C: Okay. I'll try it tonight.
+A: Okay, let's talk about the incisions. How do they look? Have you been looking at them?
+C: Rob looks at them. I can't look. I get woozy.
+H: They look— I mean, they look like cuts. There's four little ones. They have the glue on them, not stitches.
+A: That's the skin glue, yeah. It'll flake off on its own in a week or two, don't pick at it. Any drainage coming from them, any pus, anything that smells?
+H: No smell. No pus.
+C: The one by my belly button is kind of red around it. Like pinkish. Like a ring. And it feels warm, kind of, when I put my hand there. Is that the glue? Am I allergic to the glue?
+A: A little bit of pink around an incision is normal healing, especially the belly button one, because that's usually the biggest one, that's where they take the gallbladder out. Is it spreading? Like, getting bigger?
+C: I don't know. Rob?
+H: [inaudible] maybe? I didn't— I didn't measure it.
+A: If you want, you can take a pen and draw a little line around the edge of the pink. That way you can see if it's spreading. If it spreads past the line, or you see pus, or it starts to really hurt, call us.
+C: Okay, a pen. Rob, get a pen.
+H: Now?
+C: Not now. Later.
+A: [laughs] Later's fine.
+#fill nurse_chat connection_issues smalltalk
+A: Okay. And then the drain. You said there's a question about the drain?
+C: Yes, the drain. So they left a drain in, like a tube with a little bulb on the end, like a grenade.
+A: A JP drain, yeah. Jackson-Pratt. It's got the bulb.
+C: Yes. And Rob's been emptying it, and writing it down, and the question is, when does it come out? Because it is disgusting and I keep catching it on things.
+#diar off
+H: So I empty it in the morning and at night, and I write it in the notebook. The little measuring cup they gave us.
+C: He's very good at it.
+H: This morning it was about fourteen— well. Somewhere around there. I'd have to look at the notebook, I wrote it, it's in the kitchen.
+A: Okay. What color is it?
+H: Kind of pink. Pinkish, clearish. Like— like watered-down fruit punch.
+A: That's what we like to see. Has it been going down day to day?
+H: I think so. The first day was more. I'd have to look.
+C: He'd have to look.
+A: Okay. So the drain is something the surgical team manages, not us here at the clinic. They decide when it comes out based on the amounts. So that one I'm actually going to hand over to the surgical team, they'll know their protocol for when it gets pulled.
+H: Okay. Should I go get the notebook?
+A: Yeah, if you can grab it while I see if I can get the on-call surgical PA from Larkspur on the line.
+#diar on
+C: Rob, go get the notebook.
+H: I'm going, I'm going.
+#fill family_side hold_announce
+A: Okay, Imogen, I'm going to try to conference in the on-call PA for Dr. Vasquez-Lim's team. It might take a few minutes because I have to go through their answering service. Is it okay if I put you on a brief hold?
+C: Yeah, that's fine. I'm not going anywhere. Literally. [laughs]
+A: [laughs] Okay. Hang tight.
+#hold 260
+#fill hold_announce transfer_wait
+C: [to Rob] —no, he's getting the surgery people. The PA. ... I don't know, a physician assistant. ... Did you find it? ... Okay. ... No, the green one. The green notebook. ... Okay.
+#hold 180
+#note conference line connected: Larkspur on-call answering service
+A: Imogen, are you still there? I've got the PA on the line.
+C: I'm here.
+P: Hi, this is Dana, I'm the physician assistant on call for Dr. Vasquez-Lim's team tonight. Who do I have?
+A: Hi Dana, it's Felipe from the Brightwater nurse line. I've got Imogen Tessaro-Blythe on with me, and her husband Rob is there too, she's fine with him being on. She's post-op day three from a lap chole with Dr. Vasquez-Lim on Monday the twenty-first, she's got a JP drain in, and the main question for you is when the drain comes out. Other than that, pain's controlled on the hydrocodone and Tylenol, she had a low-grade temp of a hundred point eight this afternoon, otherwise stable.
+P: Okay, great, thank you. Hi Imogen. How are you holding up?
+C: Hi. I'm— okay. I'm sick of the grenade.
+P: [laughs] Everyone hates the grenade. Okay, so what I need is the output. Rob, do you have the numbers?
+H: Yes, I've got the notebook. Okay. So Monday night, um, after we got home, it was a hundred and ten, I think, it says one-ten. Tuesday was, um, seventy in the morning, sixty at night. Wednesday fifty-five and, uh, fifty. And then this morning— this morning it's forty.
+P: And you said about forty milliliters this morning?
+H: Forty, yeah. Four-zero. Clear-ish, kind of pink.
+P: Okay, perfect. That's exactly the trend we want, it's coming down nicely. Our protocol is that we pull it when it's under thirty milliliters in twenty-four hours, for two days in a row. So you're not quite there yet. Keep emptying it and recording twice a day, morning and evening, just like you're doing, you're doing a great job.
+H: Thank you.
+C: He's very proud of the notebook.
+P: He should be, honestly, it's better than most of the charts I see. [laughs] So what I'm going to do is have our office call you tomorrow, Friday, to set up a drain check, probably early next week, and if the numbers are under thirty by then, we pull it in the office. Takes like ten seconds.
+C: Does it hurt?
+P: It's a weird feeling, more than painful. Like a long pull. Then it's done.
+C: Oh God. Okay.
+P: Any other questions for me while I've got you?
+C: Um— the pain pills, Felipe was going to—
+A: I was going to send a refill request for the hydrocodone to Dr. Vasquez-Lim's team. Dana, should I still send that through the message line, or—
+P: Yes, send it through the message line, it'll go to her inbox and she'll address it in the morning, I can't write controlled scripts after hours for her patients.
+A: Okay, perfect, I'll do that.
+P: Alright, Imogen, keep up the walking, keep emptying the drain, and we'll talk tomorrow. Felipe, thanks for looping me in.
+A: Thank you, Dana.
+#note surgical PA left the conference
+#fill nurse_chat smalltalk2 nurse_smalltalk
+A: Okay, Imogen, it's just me again.
+C: Can I ask you one more thing about the drain, since Dana's gone? Can I shower with it?
+A: Yes, you can shower with the drain in. Pin the bulb to a lanyard or a cloth belt around your waist so it's not hanging and pulling. Pat the drain site dry afterward. They probably gave you a little gauze for around the tube.
+C: They did. Rob's been changing it.
+H: Once a day. With the tape.
+A: Perfect. If the skin around the tube gets really red, or it leaks a lot around the tube instead of into the bulb, or the tube falls out, call Larkspur. That's their after-hours number on your discharge sheet.
+C: Okay. Lanyard. Rob, we have the lanyard from your conference thing.
+H: The one that says "Regional Sales Summit"?
+C: Yes. I'll wear it with pride.
+A: [laughs] Perfect.
+#fill smalltalk2 nurse_chat
+A: So the drain, you heard her, call coming tomorrow to set up a drain check.
+C: Okay. That was helpful. She was nice.
+A: She is. Okay, couple more things and then I'll let you go. How are you sleeping?
+C: Ugh. Badly. I can't get comfortable, I can only sleep on my back and I'm a side sleeper. And I've got this little cough, not a bad one, just a tickle, which hurts the incisions.
+A: Yeah, hug a pillow against your belly when you cough, it splints the incisions, it helps a lot.
+C: Oh, that's smart. Rob, pillow.
+C: She means when you cough, babe, not now. [laughs]
+A: [laughs] And for the sleeping, some people do better propped up in a recliner for the first week.
+C: We don't have a recliner. Rob's been, um, Rob's been giving me the NyQuil at night, the, the nighttime cold medicine, the green one, because of the tickle and so I can sleep. Is that okay?
+H: Just the one cup. The little cup.
+A: Okay. That's— yeah, if it's helping you sleep. Just don't take it within a couple hours of the hydrocodone, they can both make you sleepy, so space them out.
+C: Okay. Space them out.
+H: [inaudible] the alarms. More alarms.
+C: [laughs] More alarms.
+#fill family_side smalltalk connection_issues
+C: Hello? Felipe? You're cutting out.
+A: Can you hear me now? Hello?
+C: Okay, now I can. You went all robot for a second.
+A: Sorry, it's our headsets. They've been doing that. If I drop, call back and press four, and ask for me, Felipe.
+C: Press four. Okay.
+A: Okay, where were we. I was asking about work. Are you working right now, what do you do?
+C: I teach music at the middle school. Seventh and eighth grade band.
+A: Oh, wow. That's a loud job.
+C: [laughs] It's a very loud job. I've got a sub through, um, the second week of October, I think? I put in for two weeks. And then the question is when can I go back, because I have to carry stuff, like, the music stands and the, the tuba cases, the kids are supposed to carry their own but they don't.
+A: Okay, so no lifting over ten pounds for two weeks, that's on your discharge sheet, so no tuba cases for a bit. Your surgeon will clear you at the follow-up visit, and if you need a work note for the school, that's the visit to ask for it, they'll write you one.
+C: Okay. Ask for a work note at the follow-up.
+H: I'll put it in the notebook.
+C: He'll put it in the notebook.
+A: [laughs] The notebook is the MVP.
+H: The notebook is everything.
+#fill smalltalk2 nurse_smalltalk
+C: Can I ask something kind of dumb?
+A: There's no dumb questions on the nurse line.
+C: When can I— like— hug my kid normal? She keeps wanting to climb on me and I keep having to say no and she gets sad.
+A: Oh, that's not dumb at all. So a gentle hug, sitting down, from the side, is fine. Just no climbing on your belly, no jumping on you, for the next couple of weeks. Maybe have her sit next to you and read together, or she can help Rob with the notebook. [laughs]
+C: Oh, she'd love that. She'd love being in charge of the notebook.
+H: Absolutely not. The notebook is mine.
+C: [laughs] He's very territorial.
+C: Oh, and— can I ask— my back. My lower back is killing me. Not the surgery. Just from lying on the couch for three days like a, like a beached whale.
+A: [laughs] Yeah, that's really common, being stuck in one position. Walking will help that too.
+C: I've been walking. Rob walks me up and down the hallway like a dog.
+H: [laughs] Like a very slow dog.
+C: Excuse me.
+A: [laughs] Honestly, a nice warm bath would help with the soreness. Just relax in the tub for a bit, get those back muscles to loosen up. Heat's great for that.
+C: Oh, that sounds amazing. I would kill for a bath right now.
+A: Yeah, treat yourself. Put some music on.
+C: Okay. Rob, I'm taking a bath tonight.
+H: I'll run it.
+#diar off
+C: I've got her on the alarm schedule for everything. Every six hours, she doesn't miss one. Hydro, Tylenol, Tylenol, hydro.
+C: He's very proud of the alarms.
+A: [laughs] Hey, it works.
+#diar on
+#diar off
+C: Can I show him the pills? Like, describe them? Because I'm not totally sure which is which sometimes when Rob's not here.
+A: Sure, go ahead.
+C: Okay so there's a big white oval one with a line in the middle, that's the—
+H: That's the hydrocodone. The Norco.
+C: —and then the red gel ones, that's the stool softener. And then the Tylenol, the Extra Strength, those are the red and white capsule ones, the caplets.
+A: Okay. Good. And the thyroid one is the little one, probably purple or—
+C: Purple. Little purple.
+H: Seventy-five. Purple.
+A: That sounds right. If you ever aren't sure, the pharmacy can look at the imprint for you, or there's the pill identifier on the bottle label. But it sounds like you've got a system.
+C: Rob has a system. I have a hand with writing on it.
+#diar on
+A: [laughs] Between the two of you, you've got it covered.
+C: Rob, you should ask her— him— sorry, Felipe, about your thing.
+H: Oh, it's nothing.
+C: He's not sleeping either. He wakes up every time I move.
+A: That's really common for caregivers, honestly. Rob, make sure you're eating and getting some rest too. If someone can come sit with her for a couple of hours, let them. Your mom with the lasagna, maybe.
+H: [laughs] My mom would move in if I let her.
+C: Absolutely not.
+A: [laughs] A couple of hours. Not moving in.
+H: Okay. Fair.
+#fill family_side smalltalk2
+A: Okay. And I see your preferred pharmacy on file is the Ostrander at Millbrook. Is that still right? I want to make sure the refill goes to the right place if Dr. Vasquez-Lim sends it.
+C: Oh— no, actually, we moved my prescriptions. We moved them to the Ostrander at Eastgate, because it's closer and the Millbrook one closes at six and Rob gets off at five-thirty and it's, it's a whole thing with the traffic.
+A: Got it. So Ostrander Eastgate. I'll update that in your chart right now.
+C: Thank you. The Eastgate one's open till nine.
+A: [typing] Okay. Preferred pharmacy updated to Ostrander Pharmacy, Eastgate counter.
+H: Should I pick up the, the powder thing, the laxative, while I'm there tomorrow? We might be out, actually.
+A: Sure, it's over the counter, any of the store brands are fine.
+H: I'll pick it up at the Eastgate one tomorrow after work.
+#fill nurse_smalltalk family_side smalltalk2
+A: Okay, and your follow-up visit. I'm showing a post-op appointment with Dr. Vasquez-Lim at Larkspur. Do you have that date?
+C: It's the— the twelfth? Rob?
+H: No, it's sooner than that. It's next week.
+A: I've got it as Friday, October second, at one-fifteen in the afternoon.
+C: Oh, the second. Not the twelfth. Friday the second.
+A: Friday, October second, one-fifteen, Larkspur, with Dr. Vasquez-Lim. They'll probably check the incisions and, depending on the drain, that might happen then too if it hasn't come out yet.
+C: Okay. Rob, write it in the notebook.
+H: It's in the notebook.
+C: Of course it is.
+A: [laughs]
+#fill nurse_chat connection_issues smalltalk
+A: One more question while I have you: any calf pain, swelling in one leg, any shortness of breath, chest pain?
+C: No. None of that.
+A: Good. That's what we watch for with blood clots after surgery. Keep walking, that's the best prevention. If you ever had one leg swell up and hurt, or sudden shortness of breath, that's a nine-one-one call, not a nurse-line call.
+C: Okay. Legs fine. Breathing fine. Except the tickle.
+A: The tickle's fine. Hug the pillow.
+C: Hug the pillow. Okay.
+#fill nurse_chat smalltalk
+C: Oh, and also— sorry— the billing, while I was stuck in billing earlier, the recording said something about statements. Am I going to get a bill for the surgery? Because insurance said they'd—
+A: Honestly, I'm not the right person for billing, I'm sorry, I don't have any visibility into that. Larkspur bills separately from us anyway. If you get a statement and something looks off, you can call the number on the statement. Option two. [laughs] Supposedly.
+C: [laughs] Option two, which might get me the pharmacy.
+A: At this point, who knows.
+A: Alright. So let me just recap what we talked about so you've got it all in one place, and you can stop me if I got anything wrong.
+C: Okay.
+A: Shoulder pain: that's from the gas, normal, walking and a heating pad on low. Bowels: keep the stool softener twice a day, add the over-the-counter powder laxative once a day, Rob's picking that up; if nothing by Saturday or your belly gets hard and swollen with vomiting, call. Pain: hydrocodone one to two every six hours as needed, plus the Tylenol, that's all fine, and I'm sending the refill request to Dr. Vasquez-Lim's team tonight, they'll handle it tomorrow. Temperature: you had a low-grade one, keep up the breathing exercises, walk, and if it goes over a hundred and one, call us back. Incisions: draw a line around the pink one so you can see if it spreads. Drain: keep emptying and recording it twice a day, Larkspur is calling you tomorrow to set up a drain check. Follow-up visit Friday October second at one-fifteen. Pharmacy updated to Ostrander Eastgate. And go take that bath tonight. [laughs]
+C: That's a lot. But okay. Okay, I feel a lot better, honestly. I was kind of panicking.
+A: That's what we're here for. Call any time, twenty-four seven. Just— press four. Not three.
+C: [laughs] Not three. Definitely not three.
+H: We'll put that in the notebook too.
+A: [laughs] Take care, Imogen. Feel better. Bye, Rob.
+C: Thank you so much, Felipe. Bye.
+H: Bye, thanks.

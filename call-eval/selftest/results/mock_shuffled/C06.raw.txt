@@ -1,0 +1,62 @@
+{
+ "call_type": "pre_procedure",
+ "outcome": "callback",
+ "sentiment_start": "neutral",
+ "sentiment_end": "neutral",
+ "quality_score": 2,
+ "quality_reasons": [
+  "Did not address the anticoagulant (Eliquis/apixaban) at all: told patient to keep taking regular meds, even while stopping ibuprofen and fish oil for bleeding risk",
+  "Resolved conflicting fasting instructions by guessing ('go with the text') instead of confirming with anesthesia first",
+  "Otherwise organised, thorough history (CPAP, PONV, allergy confirmation, driver details)"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Patient on Eliquis (apixaban) for AFib was told to keep taking regular medications; no anticoagulant hold instructions given and surgeon/anesthesia not consulted before a surgical procedure",
+   "evidence": "Eliquis. Five milligrams, twice a day. That's for the AFib."
+  },
+  {
+   "type": "other",
+   "description": "Nurse told the patient to follow the text message (clear liquids/black coffee until 2 h before arrival), contradicting the written packet (nothing after midnight), without first confirming with anesthesia",
+   "evidence": "go with the text. Clear liquids are fine until two hours before you arrive"
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "nurse",
+   "task": "Confirm fasting rules with anesthesia and call patient back with confirmation and arrival time",
+   "due": "2026-03-17 end of day"
+  },
+  {
+   "owner": "patient",
+   "task": "Bring CPAP machine on the day of surgery",
+   "due": "2026-03-19"
+  },
+  {
+   "owner": "patient",
+   "task": "Stop ibuprofen/NSAIDs and fish oil before surgery (use Tylenol)",
+   "due": "now, 7 days pre-op"
+  },
+  {
+   "owner": "patient",
+   "task": "Skip lisinopril the morning of surgery; take metoprolol and omeprazole with a sip of water",
+   "due": "2026-03-19 morning"
+  },
+  {
+   "owner": "patient",
+   "task": "Arrange driver/overnight companion (neighbor Bev Lindgren-Shaw)",
+   "due": "2026-03-19"
+  },
+  {
+   "owner": "patient",
+   "task": "Shower night before and morning of with antibacterial soap",
+   "due": "2026-03-18/19"
+  }
+ ],
+ "summary_notes": "Mock summary for C07.",
+ "notable_details": [
+  "Driver changed at the very end: son Theo can't; neighbor Bev Lindgren-Shaw will drive and stay overnight (number ending 9910)",
+  "Patient had a chest cold last week and still has a morning cough (anesthesia-relevant; not acted on)",
+  "Patient takes Eliquis 5 mg twice daily for atrial fibrillation"
+ ]
+}

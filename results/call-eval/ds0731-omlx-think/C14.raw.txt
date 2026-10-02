@@ -1,0 +1,86 @@
+{
+  "call_type": "billing_dispute",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Agent disclosed spouse's account information without authorization",
+    "Long hold times and system delays",
+    "Supervisor resolved issue thoroughly and empathetically",
+    "Missed callback commitment from previous call",
+    "Initial agent failed to identify duplicate charges"
+  ],
+  "flags": [
+    {
+      "type": "privacy_disclosure",
+      "description": "Agent Brent disclosed patient's husband's account details to the patient without authorization.",
+      "evidence": "I'm afraid Brent shouldn't have shared that information."
+    },
+    {
+      "type": "missed_commitment",
+      "description": "A callback promised by Kyle on September 8th was never made, contributing to the collections referral.",
+      "evidence": "Kyle told me billing would call me back by Friday the eleventh. Nobody called."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "supervisor",
+      "task": "Submit recall request to collections agency",
+      "due": "immediate"
+    },
+    {
+      "owner": "supervisor",
+      "task": "Place billing hold on patient's account",
+      "due": "immediate"
+    },
+    {
+      "owner": "supervisor",
+      "task": "Issue refunds for three duplicate charges ($45 each) to Visa ending 1186 and HSA ending 7720",
+      "due": "7-10 business days"
+    },
+    {
+      "owner": "billing director",
+      "task": "Call patient regarding escalation",
+      "due": "by Wednesday"
+    },
+    {
+      "owner": "supervisor",
+      "task": "Apply $50 goodwill credit to account",
+      "due": "next statement"
+    },
+    {
+      "owner": "supervisor",
+      "task": "Mail letter with recap and send copy to patient portal",
+      "due": "today"
+    },
+    {
+      "owner": "financial counselor",
+      "task": "Call patient regarding financial assistance programs",
+      "due": "within 2 business days"
+    },
+    {
+      "owner": "nurse/pharmacist",
+      "task": "Call patient about blood pressure medication options",
+      "due": "today"
+    },
+    {
+      "owner": "patient's husband",
+      "task": "Call billing to address his account",
+      "due": "this afternoon"
+    }
+  ],
+  "summary_notes": "Patient called regarding duplicate ClearPay copay charges leading to collections. Supervisor confirmed three duplicate charges ($45 each) and issued refunds, recalled collections, placed billing hold, applied $50 goodwill credit, and escalated to billing director. Also referred patient to financial counseling and nurse for blood pressure medication concerns. Privacy incident: agent disclosed husband's account info without authorization; supervisor reported to privacy office. Husband to call to address his account.",
+  "notable_details": [
+    "Duplicate charges: March 9/11, May 4/6, July 13/15, each $45.",
+    "Refunds to Visa ending 1186 and HSA ending 7720.",
+    "Collections referral amount $135 for patient, $212.40 for husband.",
+    "Patient skipping blood pressure meds since August.",
+    "Supervisor's name: Danielle Okafor-Brandt.",
+    "Patient's name: Gwendolyn Achterberg-Lowe.",
+    "Husband's name: Reinhold Achterberg-Lowe.",
+    "Callback promise from Kyle on 9/8 not kept.",
+    "Goodwill credit $50.",
+    "Billing director call expected by Wednesday."
+  ]
+}

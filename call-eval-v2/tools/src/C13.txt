@@ -1,0 +1,342 @@
+@id C13
+@date 2026-09-29 14:20
+@line Brightwater Family Medicine - Patient Relations (escalated to Millbrook Practice Manager)
+@direction inbound
+@target 33000
+@seed 1313
+@diar_drop 0.14
+@speaker I IVR = Brightwater automated phone system
+@speaker A AGENT = patient relations representative (Odessa)
+@speaker C CALLER = patient's daughter, healthcare power of attorney (Philippa)
+@speaker M MANAGER = Millbrook site practice manager (Bernard)
+@speaker O PATIENT = patient (Ottoline, 84), on the daughter's speakerphone for part of the call
+---
+I: Thank you for calling Brightwater Family Medicine. If this is a medical emergency, hang up and dial nine-one-one. For appointments, press one. For billing, press two. For prescription refills, press three. For the nurse line, press four. To share feedback or speak with patient relations, press six. To hear these options again, press nine.
+C: [keypad tone]
+I: I'm sorry, I didn't understand your selection. For appointments, press one. For billing, press two. For prescription refills, press three. For the nurse line, press four. To share feedback or speak with patient relations, press six.
+C: I pressed six. I pressed— [keypad tone] Six.
+I: You have reached patient relations. Our representatives are helping other callers. Your call is important to us. Please stay on the line.
+#hold 210
+#fill hold_announce transfer_wait
+C: [to someone in the room] Mom, I'm on hold. ... With the doctor's office. ... The inhaler, Mom. ... Yes, again. ... No, I'm not yelling at anyone. ... I'm going to be very polite. ... Okay, I'm going to be firm. Polite and firm.
+O: [background] Tell them your mother is eighty-four years old.
+C: I will tell them, Mom.
+O: [background] And that I was a schoolteacher for thirty-one years.
+C: [laughing] I don't think that's relevant, Mom.
+O: [background] It's always relevant.
+#hold 120
+I: Thank you for continuing to hold. You can also share feedback online through the patient portal.
+C: [muttering] I've shared feedback online. Three times.
+#hold 150
+A: Patient relations, this is Odessa. Thank you for holding. How can I help you today?
+C: Hi. Odessa. Okay. My name is Philippa Garrow-Nakamura, and I'm calling about my mother, Ottoline Garrow. I'm her healthcare power of attorney. And I want to file a complaint, a formal one, because I have been calling your practice for three weeks about her inhaler and nothing has happened, and last week she ended up in urgent care because she couldn't breathe.
+A: Oh, I'm so sorry. That sounds really frightening. Okay, I want to help you with this. Let me pull up your mother's chart first. Can you give me her date of birth?
+C: November second, nineteen forty-one.
+A: November second, forty-one. And her name again, Ottoline—
+C: Garrow. G-A-R-R-O-W. Just the one name, not hyphenated, I'm the hyphenated one. [laughs, not really]
+A: Okay, I've got Ottoline Garrow. And you said you're her power of attorney— let me just check that we have that on file before we go into anything, because I'm not able to discuss her care otherwise.
+C: You have it. I've given it to you, like, three times.
+A: I'm sure, I just have to look. [typing] Okay. Yes, I see a healthcare power of attorney document, scanned March 2025, naming Philippa Garrow-Nakamura as agent. Can you confirm your own date of birth for me, so I can match it to the document?
+C: June eighteenth, nineteen seventy-three.
+A: Thank you, that matches. Okay, you're all set, I can talk with you about your mother's care.
+C: Okay. Thank you. Sorry, I'm— I'm not mad at you. I'm just mad.
+A: You're allowed to be. I'd be mad too. And I can see the address we have is on Pell Street?
+C: No, that's old. That's her house, we sold the house. She moved into assisted living in August. Linden Court, it's on— it's Linden Court Assisted Living, unit two-fourteen. Two-one-four.
+A: Okay, Linden Court, unit two-fourteen. I'll update that. Do you have the street address for Linden Court?
+C: Nine hundred Fallowfield Road. Nine-zero-zero.
+A: [typing] Nine hundred Fallowfield Road, unit two-fourteen. Okay. That's updated.
+C: That might be part of the problem, honestly, if things are getting mailed to the old house.
+A: It could be. Okay. So tell me what's been happening, from the beginning, and I'm going to take notes for the complaint.
+#fill smalltalk ehr_navigation
+A: Before you start— what's the best number to reach you at, for the complaint file? Is it the number you're calling from?
+C: Yes, this is my cell. Five-five-five, oh-one-two-nine. That's the best one. I'm a vice principal at a high school, so I can't always pick up during the day, but I'll call back.
+A: Oh, wow, a vice principal. That's a job.
+C: [laughs] It's a job. Today I suspended two kids for setting off a fire extinguisher in the band room, and then I sat in my car in the parking lot and called you. So.
+A: [laughs] Okay, so you've had a day.
+C: I've had a month. I've had a month, Odessa.
+A: I hear you. Okay. Cell, five-five-five, oh-one-two-nine. And is it okay to leave a voicemail with details about your mother's care on that number?
+C: Yes. It's my phone. Nobody else touches it.
+A: Okay, I'll note that. And just so you know how this works: I'm writing everything down as a formal complaint, which means it goes to the practice leadership and it gets a written response. And separately from the complaint, I'll try to get the actual problem moving today, because a letter in thirty days doesn't help your mother breathe.
+C: Thank you. That's— yes. That's exactly it.
+#fill smalltalk hold_announce
+C: Sorry, can you hold on, the aide is— [muffled] Yes, she's had her lunch. ... She ate the soup, not the sandwich. ... Okay. Thank you. ... Sorry. I'm sitting in my mother's room at Linden Court now, I drove over after school. The aides come in and out.
+A: That's no problem at all.
+C: It's a nice place. I want to say that. It's a nice place. The staff are wonderful. She hated leaving the house, but she couldn't do the stairs anymore. And she couldn't do the stairs because she couldn't breathe. So. It's all the same problem, really.
+A: That's a lot of change for her this year.
+C: It is. And I'm an only child, so it's all me. My husband helps, but it's my mother, so.
+A: Of course.
+C: Okay. So. My mother has COPD. She's had it for, God, twelve years? She used to smoke, she quit in the nineties, but, you know. The damage is done. And she's been on the same inhaler forever, the, um, the orange one, and it stopped really working, she was getting winded just walking to the dining room at Linden Court.
+A: Okay.
+C: So on September first, she saw Dr. Benedetti-Kahn, at the Millbrook office. I took her. And he said, okay, let's switch her to the newer one, the triple one, the— I can never say it. The flu-tick-a-zone, you-meck-lid-in-ee-um, villain— vilanterol. The one-a-day one. The green and grey one.
+A: The fluticasone, umeclidinium, vilanterol, okay. I see that he prescribed that on September first.
+C: Yes. And he said, it's going to need a prior authorization from her insurance, from Halvard, but don't worry, the office will take care of that, it usually takes a few days.
+A: Okay.
+C: A few days. It has been four weeks. Four weeks tomorrow.
+A: I'm so sorry.
+C: So the pharmacy, Ostrander, the one at Millbrook, they said, we're waiting on the PA, call your doctor's office. So on— I want to get the dates right, I wrote everything down. On September eighth, I called, and I talked to a nurse, Gail. Very nice woman. And Gail said, "Oh, I see, the PA was faxed on the second, let me look into it." And she said she would personally walk it over to whoever does the authorizations, and she said she would call me on Friday, the eleventh, herself, and let me know.
+A: Okay, Gail, September eighth, she was going to call you Friday the eleventh.
+C: Right. So. And then I called again on the fifteenth, because I hadn't, I— anyway. I talked to somebody at the front desk, I don't know her name, and she said it had been faxed again on the tenth, and that it was "with the insurance."
+A: Okay. And then?
+C: And then nothing. And then on Saturday, the— the ninth— no, what am I saying, the nineteenth, Saturday the nineteenth, Linden Court called me at six in the morning because my mother couldn't catch her breath, and they wanted to send her to the ER, and she refused, she hates the ER, so I drove over and took her to the urgent care on Corliss Street.
+A: Oh no.
+C: And the urgent care doctor, very good, she gave her a breathing treatment, the nebulizer, and steroids, prednisone, five days. And she said this is a COPD flare, and she said, why isn't she on a maintenance inhaler that works? And I said, believe me, I'm trying.
+A: I'm so sorry. That's awful.
+C: And I want to tell you what it was like, so it's in the complaint, because I don't think people understand. When I got to Linden Court that morning she was sitting on the edge of the bed, leaning forward with her hands on her knees, like this, you know, the tripod thing, and her lips were kind of grey. And the aide had the oxygen thing on her finger and it said eighty-six. Eighty-six. Her normal is like ninety-two.
+A: Oh my goodness.
+C: And she's saying, "I'm fine, I'm fine, don't fuss," in between breaths. In between every word. "I'm. Fine." And I'm thinking, she is not fine.
+A: That must have been terrifying.
+C: I've never driven so carefully and so fast at the same time. And at the urgent care they took her right back, they didn't make her wait, thank God, they put her on the nebulizer, and after twenty minutes she was pinker. And then a second one. And then they watched her for like two hours, and they said she could go home with the steroids, but if it happened again, ER, no arguments.
+A: I'm so glad she was okay.
+C: She was okay. This time. That's what I keep thinking. This time.
+A: I'm putting all of this in, word for word as much as I can.
+C: And the urgent care doctor asked me, she said, "who's her pulmonologist?" And I said she doesn't have one, her primary manages it. And she said, "well, her primary needs to get her on a maintenance inhaler." And I said, I know! I know! He tried! It's stuck!
+A: [typing] Okay.
+C: And she wrote it all down in the discharge papers, I have them, I can send them. She wrote "maintenance inhaler pending insurance authorization, follow up with PCP." Follow up with PCP. I've been following up with PCP for four weeks.
+A: I'm so sorry. Please do send those papers, you can upload them in the portal or bring them in, and they'll be part of her chart.
+C: Okay.
+#fill smalltalk2 hold_announce
+C: So. That's where we are. She's been out of the old inhaler, by the way, since the twentieth, because the pharmacy said the new one replaces it so they didn't refill the old one. So she's got nothing except the rescue one.
+C: And— sorry— the pharmacy situation is its own thing. Every time I call Ostrander, I get someone different, and they look it up and they say, "waiting on prior authorization," and I say, "for how long," and they say, "you'd have to ask your doctor." And then I call you guys, and you say it was faxed. And it's like a ping-pong ball. I am the ping-pong ball.
+A: That's a terrible feeling. I'm sorry.
+C: And the portal! I sent messages in the portal. The portal says "your message has been delivered." Delivered to who? A void? A void with a logo?
+A: [laughs] I'm sorry, I shouldn't laugh.
+C: No, laugh. If you don't laugh you cry. I've done the crying.
+A: Okay. And just so I've got it right for the complaint, she's out of her old maintenance inhaler since the twentieth, she's only on the rescue inhaler, and the new one hasn't been filled because it's waiting on authorization.
+C: Correct.
+A: And her other medications, she's okay on those? Nothing else held up?
+C: She's fine on the rest. The blood pressure one, the, um, amlo— amlodipine. The little white one. And a cholesterol one. And a vitamin. Those are all through Linden Court's pharmacy service now, they come in the bubble packs. It's only the inhalers that are through Ostrander, because the bubble packs don't do inhalers.
+A: Okay, that's helpful. Just the inhaler.
+#fill ehr_navigation smalltalk2
+A: Okay. Let me look at what's in the chart about the authorization. [typing]
+#fill ehr_navigation smalltalk2
+A: Okay, I'm looking at the prescription record. So I see the fluticasone-umeclidinium-vilanterol, one puff twice a day, prescribed nine-one. And there's a status note on the authorization from the pharmacy side that says— okay. It looks like Halvard denied it.
+C: Denied it? Denied it? Nobody told me it was denied! Why would they deny it? She's eighty-four with COPD!
+A: I— I'm just reading what it says, it says, um, "PA status: not approved." I'm sorry, I'm not the clinical side, I'm just seeing the note.
+C: This is unbelievable. So they denied it, and nobody told us, and nobody appealed it, and she's been sitting there for three weeks puffing on the blue inhaler.
+A: And I'm sorry, I know you're frustrated, but before I transfer you I want to ask the questions I have to ask for the complaint form, so it's complete and nobody has to call you back to ask. Is that okay? It's quick.
+C: Fine. Go.
+A: What outcome are you hoping for? Like, what would make this right, in your words?
+C: In my words? My mother gets her inhaler. This week. And somebody figures out why this happened so it doesn't happen to the next old lady. And somebody calls me back when they say they're going to call me back.
+A: [typing] Okay. "Inhaler this week. Root cause. Reliable callbacks." And is there anyone at the practice you want to recognize, positively? We ask that too.
+C: [laughs] Positively? Um. Honestly, Dr. Benedetti-Kahn is wonderful. He's always been wonderful with her. This isn't about him. And the girl at the Millbrook front desk, the one with the braids, she's always very sweet with my mother.
+A: That's nice to hear. I'll put that in. Okay, and how would you like to receive the written response, mail or the portal?
+C: Mail. To me, not to my mother. I don't trust the portal anymore.
+A: That's fair. And your mailing address?
+C: Sixty-one Thornbury Way. Same town.
+A: [typing] Sixty-one Thornbury Way. Okay. And— one more— has your mother had any other problems with us that you'd want included? Anything that's related?
+C: Last year there was a mix-up where she got a bill for a flu shot that should have been free. But that got fixed. Somebody fixed it in one call. That was fine. I'm not here about that.
+A: Okay, I'll leave that out then. That's everything for the form.
+A: I understand. I think this needs to go to someone who can actually look into the authorization and do something about it today. I'd like to get our practice manager for the Millbrook office on the line, his name is Bernard. Would that be okay? It might be a little bit of a hold.
+C: Yes. Yes, please. Someone with authority.
+A: Okay. And I'm opening the formal complaint now, too, so this is documented no matter what. Let me get that number for you before I transfer. [typing] Your complaint reference number is C-R, twenty-six, eleven, ninety-three.
+C: C-R-twenty-six... eleven ninety-three?
+A: C-R dash two-six dash one-one-nine-three. You'll get a written response within thirty days, that's our policy for formal complaints, but I'm hoping Bernard can get things moving way before that.
+C: CR-26-1193. Okay. I wrote it on my hand. Okay.
+A: Alright, I'm going to place you on a brief hold while I reach Bernard. Please don't hang up.
+C: I won't.
+#hold 330
+#fill hold_announce transfer_wait
+C: [to someone in the room] No, Mom, still on hold. ... I know. ... I know, Mom. ... Just— drink your tea. ... No, I'm not putting you on yet.
+#hold 240
+#note transferred to Millbrook practice manager
+M: Hi, Ms. Garrow-Nakamura? This is Bernard Ashdown-Pryce, I'm the practice manager for the Millbrook office. Odessa filled me in. First of all, I'm really sorry. I'm sorry about your mother, and I'm sorry about the runaround.
+C: Thank you. Thank you for— okay. Hi.
+M: Odessa gave me the outline, but I'd like to go through it myself, if that's okay, because I want to understand exactly where this broke. And I'll be honest with you up front about what I can and can't do on this call, so you're not surprised. I can dig into the authorization and get it moving today, I can talk to the clinical team, and I can make sure your complaint gets a real answer. What I can't do on the phone is decide anything financial. If it's reimbursing something, writing something off, covering an outside bill, anything financial has to go to our risk-management committee. I can submit it to them, and I will if it's warranted, but I can't promise the outcome.
+C: Okay. That's fair. At least you're telling me.
+M: Okay. So let me pull it all up. Give me just a minute.
+#fill escalation_hold ehr_navigation @A=M
+M: Okay, while that loads— can I ask a little bit about how your mom's doing day to day? Not the clinical stuff, I'm not a clinician, I just want to understand the impact for the complaint.
+C: Sure. So before all this, she'd go to the dining room for every meal, she'd go to the Tuesday bingo, she'd go to the little chapel on Sunday. She's very social. She's the one who knows everybody's business.
+M: [laughs] There's always one.
+C: She's the one. And now she mostly stays in her room. She eats in her room. She says she doesn't want to sit on the bench in front of everybody. She's embarrassed. And she's eighty-four and she's never been embarrassed about anything in her life.
+M: That's hard to hear.
+C: It's hard to watch.
+M: I can only imagine. My own mother is seventy-nine, she's in Arizona, and every time my sister calls me about her I get a pit in my stomach. So I— well, I don't know exactly, but I have some idea.
+C: Then you know.
+M: I have some idea. Okay. The work queue is up now.
+#fill escalation_hold ehr_navigation @A=M
+M: So, let me tell you what I'm looking at, so it's not a mystery. When a doctor prescribes something that needs a prior authorization, it goes into a work queue for our referrals-and-authorizations team. Someone on that team fills out the payer's form, attaches the chart notes, and sends it to the payer. Then the payer either approves, denies, or asks for more information. And then the pharmacy gets the answer electronically.
+C: Okay.
+M: So the work item for your mom's inhaler was created September first. It was worked September second— that's the first fax. And then it sat in "submitted, awaiting payer response." And then on the tenth someone saw it was still waiting and re-faxed it. And then it went back to "awaiting payer response." And it just... sat there.
+C: Nobody thought, hey, it's been three weeks, maybe call the insurance?
+M: There's supposed to be a follow-up at seven days. Somebody did the re-fax at around day eight, which is the follow-up, but they re-sent it the same way. Nobody picked up the phone and called Halvard. If they had, Halvard would have said, we don't have it.
+C: So it's a fax problem and a nobody-called problem.
+M: It's both. You're right.
+M: Okay. So I've got the chart, the prescription, and the authorization work queue up side by side. First thing: I want to correct something. I know Odessa read you "not approved," and I can see why, that's how the pharmacy screen shows it. But it wasn't denied. Halvard never received it. When I look at the pharmacy's actual response from Halvard, the code is "no prior authorization request on file." Not a denial. There's nothing to appeal, because they never got it.
+C: They never got it? But Gail said it was faxed. And the front desk said it was faxed again.
+M: It was faxed. Twice. I'm looking at the fax confirmations right now. September second, and September tenth. Both say "transmission OK."
+C: So where did it go?
+M: That's what I'm trying to— hang on. [typing] Okay. Both went to the same number. Five-five-five, oh-one-four-four. That's the number we've always used for Halvard prior auths. Let me just... I want to check something. [typing] Hmm.
+C: What?
+M: Give me a second. I want to be sure before I say it.
+#fill ehr_navigation escalation_hold @A=M
+M: Okay. So. I found it. Halvard sent out a provider bulletin in August. That fax line, the oh-one-four-four line, was retired on August thirty-first. After that, prior auth requests have to go to a new fax, five-five-five, oh-one-eight-eight, or through their provider portal. So both of our faxes went to a line that, as far as I can tell, just accepts the transmission and— nobody's on the other end.
+C: You're kidding me.
+M: I wish I were.
+C: So for four weeks, my mother has been waiting on a fax that went into a black hole.
+M: Yes. That's exactly what happened. And honestly— I'm going to be straight with you— if it happened to your mother, it's probably happening to other patients too. So I'm going to deal with that as well. But first your mom.
+C: [exhales] Okay. Okay. At least it's an answer. That's the first actual answer I've gotten.
+M: I'm sorry it took this long to get one.
+#fill smalltalk2 connection_issues @A=M
+M: Okay, so here's what I'm going to do on the authorization. I'm going to resubmit it today, myself, through the Halvard provider portal, not the fax, and I'm going to mark it expedited, because she's had an exacerbation and an urgent care visit since, and that's exactly what expedited is for. Halvard's expedited turnaround is seventy-two hours, often faster.
+C: Today?
+M: Today. Before I leave. I'll do it right after we hang up.
+C: Okay.
+C: Can I ask— what if they deny it? For real this time? What happens then?
+M: Good question. If Halvard denies it, there are two paths. One, Dr. Benedetti-Kahn can appeal, with a letter about why she needs this one specifically, and with the urgent care visit, that's a strong case. Two, sometimes the plan wants you to try a different inhaler first, a preferred one on their list, and the doctor can switch to that if it makes sense for her. Either way it wouldn't be another four weeks. I'd make sure of that.
+C: Is that step therapy? I read about step therapy online. At two in the morning. Which you're not supposed to do.
+M: [laughs] Yeah, that's what step therapy is. Try the cheaper one first. I don't actually know yet if Halvard requires that for this one. The portal will tell me when I submit it, it asks for the "prior therapies tried" and she's been on the orange one for years, so she may already qualify.
+C: She's been on the orange one since twenty-nineteen.
+M: Good. That'll help. I'll put that in.
+C: Okay. Okay. I'm trying not to get my hopes up.
+M: I understand. I'll tell you exactly what I hear when I hear it.
+#fill smalltalk2 ehr_navigation @A=M
+M: And while I'm in here— Odessa mentioned the dose was twice a day, I just want to make sure you have the right instructions, because that matters. I'm looking at Dr. Benedetti-Kahn's actual order. It's one inhalation, once daily. Not twice. It's a once-a-day inhaler, that's the whole point of it.
+C: Once a day. Okay. Odessa said twice.
+M: The screen she was looking at shows the old inhaler's directions underneath, I think she read the wrong line. It's once daily. One inhalation, once a day, same time every day.
+C: Okay. One, once a day. Good, because my mother would not do twice a day. She barely does once.
+M: [laughs] That's very common.
+#fill escalation_hold smalltalk @A=M
+C: Actually— hold on. She wants to talk. My mother. I'm at Linden Court, I'm sitting in her room. Can I put her on speaker for a minute? She's been listening to half of this and making faces.
+M: Of course. Hello, Mrs. Garrow.
+O: Hello? Is this the doctor?
+M: No, ma'am, I'm Bernard, I'm the manager at the Millbrook office. I'm working on getting your new inhaler approved.
+O: Well, it's about time, young man.
+M: [laughs] It is, ma'am. You're absolutely right.
+O: And don't you go telling Philippa about my private business, now. [pause] Oh, I'm only kidding. She knows everything. She knows more than I do. She's my power of attorney, she has a paper.
+C: [laughs] Mom.
+O: She does. She has a paper. She's very bossy with the paper.
+M: [laughs] We have the paper, too, ma'am.
+O: Good. Then you can both boss me.
+C: Mom, tell him about the breathing.
+O: Oh, the breathing. It's no good. I get to the end of the hallway and I have to sit on the bench. There's a little bench, they put it there for us. I sit on that bench every day like a, like a pigeon.
+M: I'm sorry, Mrs. Garrow.
+O: The urgent care girl was lovely. The doctor. She gave me the steam thing. The mask.
+C: The nebulizer.
+O: The nebulizer. And those pills, the steroids, they made me wide awake, I watched television until three in the morning. I know all about a family in Utah with nineteen children now.
+M: [laughs] Steroids will do that.
+O: Well. Is that all? I'm going back to my program.
+C: That's all, Mom. Thank you.
+O: Thank you, young man. Get the inhaler.
+M: I will, ma'am.
+#fill family_side smalltalk2
+M: Can you give me just two minutes on hold? I want to look up exactly what Halvard's expedited criteria say, so I can word the request right.
+C: Sure.
+#hold 140
+C: [to her mother] He's looking something up. ... Yes, Mom, he's nice. ... Bernard. ... I don't know if he's married, Mom. ... Mom. Stop.
+O: [background] I'm just asking.
+C: You used the blue one again? ... When? ... Just now, while I was talking? ... Okay. ... No, it's fine, you're allowed. It's fine.
+O: [background] I got winded getting the remote.
+C: Okay. ... Just sit. Just sit for a minute.
+O: [background] I'm sitting. I'm always sitting.
+C: [sighs]
+#hold 60
+M: Thanks for holding. Okay, I've got it. Under Halvard's criteria, a recent urgent care or ER visit for the same condition qualifies, so I'll include the urgent care note. Can you tell me the name of the urgent care, so I can request the records?
+C: Corliss Street Urgent Care. On Corliss Street. [laughs] Obviously.
+M: [laughs] Okay, I'll fax them a records request— to a working fax number, I promise— and I'll attach whatever they send. But I won't wait for it, I'll submit today with what we have and add their note when it comes.
+C: Okay.
+C: Sorry. She's— she's a character.
+M: She's wonderful.
+C: She is. She's also stubborn as a mule. Okay. Where were we.
+#diar off
+C: Mom, the aide is here. ... Hi, come in.
+O: Ottoline, time for your vitals, honey, I'll be quick.
+C: That's— sorry, that's Marguerite, the aide. She's taking her blood pressure.
+M: No problem at all, take your time.
+C: She's doing the oxygen thing on her finger, too.
+O: Ninety-one. That's okay for her, she runs low. I'll write it down. And she used the inhaler again after lunch, I put that on the sheet too.
+C: Thank you, Marguerite.
+O: Mm-hm. Bye, Ottoline, I'll be back with your tea.
+#diar on
+C: Okay. Sorry. She's gone.
+M: No apology needed. They take good care of her, it sounds like.
+C: They do. They really do. Marguerite's my favorite. She sneaks her the good cookies.
+M: [laughs] That's important.
+#fill connection_issues smalltalk2 @A=M
+M: So, while I've got you, I want to understand what happened with the calls, because that's the other half of this. You said you talked to Gail on the eighth.
+C: Yes.
+M: Let me open the contact log. This shows every phone contact attached to your mother's chart. [typing] Okay, it's loading, it's slow.
+C: Everything's slow.
+M: [laughs] It is. Okay.
+#fill ehr_navigation escalation_hold @A=M
+#diar off
+C: Can I ask you something while that loads? Because this is the part that scares me. She's been on just the blue one, the rescue one, since the old one ran out on the twentieth.
+M: The albuterol, yeah.
+C: The albuterol. And she's using the blue one six, seven times a day now. Every time she walks to the dining room. Every time she goes to the bathroom, practically. The aides at Linden Court have been writing it down because they have to, it's their policy, and it's six, seven puffs a day, every day.
+M: Okay.
+C: And the urgent care doctor, when she discharged her, she said, if she needs the rescue inhaler more than four times a day, call her doctor. Those were her words. More than four times a day, call the doctor. So that's— I mean, that's part of why I'm calling today. She's over that every single day.
+M: Okay. Well, honestly, the best thing for that is to get her on the new maintenance inhaler, which is exactly what we're doing. Once she's on the once-daily one, she shouldn't need the blue one nearly as much.
+C: Okay. I hope so.
+M: That's the goal. Okay, the log's up.
+#diar on
+M: So, here's what I see in the contact log. September eighth, incoming call from you, taken by Gail, R-N. Her note says, "Daughter/POA calling re: PA status for new inhaler. PA faxed 9/2. Will look into it and follow up with daughter." Then September fifteenth, incoming call from you, front desk, "PA re-faxed 9/10, pending with insurance." And then today. That's what's in here.
+C: Okay.
+M: Was there anything else? Any other calls you made?
+C: No, those are the ones. The eighth, the fifteenth, and today. And the portal messages, I sent two portal messages.
+M: Let me see those. [typing] Yes, two portal messages, the twelfth and the twenty-first, both routed to the Millbrook nurse pool. Both marked "read." No reply from us on either.
+C: Read, but no reply.
+M: I'm sorry. That's not acceptable. I'm going to talk to the nurse team about the portal pool.
+C: Okay.
+#fill escalation_hold smalltalk @A=M
+C: Can I ask— is Gail there today? I'd like to— I don't know. I don't want to get her in trouble. I liked her. But I'd like to know what happened.
+M: Gail's actually out this week. She's on vacation. I'll be talking with her when she's back about the follow-up process, and about how that note got handled. I want to understand it from her side too.
+C: Okay. That's fair. I really don't want her fired or anything. She was kind. I think she just— got busy.
+M: I hear you. It's about the process, mostly. Our nurses carry a lot.
+C: I know. I know they do.
+#fill escalation_hold smalltalk @A=M
+C: And then— while I've got you, a practical question. When the new inhaler does get approved, will Ostrander know automatically? Or do I have to call them?
+M: The approval goes electronically to the pharmacy, they'll get it the same day. But honestly, given everything, I'd call them anyway once I let you know it's approved. Just to make sure it's actually in the queue to be filled.
+C: Okay. Can they deliver it to Linden Court? She can't really get out.
+M: Ostrander does delivery for assisted living facilities, I'm pretty sure, but you'd want to set that up with them. They'll need the Linden Court address.
+C: Okay. I'll call them.
+M: And when it comes, someone should show her how to use it, it's a different kind of device from the orange one. It's a dry powder, you don't press anything, you just open it and breathe in. The pharmacist can go over it, or the nurse when she comes in for her next visit.
+C: Okay. She'll need someone to show her twice. And then show me, so I can show her the third time.
+M: [laughs] That sounds about right.
+M: Okay. One thing I want to do for your mother right now, while the authorization goes through. Sometimes the office has sample inhalers from the manufacturer, a starter pack, maybe a week's supply. I can't promise we have that exact one in the cabinet, but I'm going to ask Dr. Benedetti-Kahn's nurse to check this afternoon, and if we have it, you could pick it up at Millbrook tomorrow.
+C: Oh, that would be amazing. That would be— yes. Please.
+M: I'll check and I'll let you know either way.
+C: Okay.
+M: And let me give you my direct line, so you're not going through the main number and the menu again. It's the main Millbrook number, and then extension forty-four seventeen.
+C: Forty-four seventy?
+M: Forty-four, one-seven. Four-four-one-seven.
+C: Four-four-one-seven. Okay. Writing it on my other hand. [laughs]
+M: [laughs] I'm going to be on your hand all day.
+#fill connection_issues family_side @A=M
+C: Okay, and then— I hate to even bring this up, but— the urgent care. They sent a bill. Two hundred and forty dollars. Her insurance covered part of it, but this is what's left, and I just— she's on a fixed income, and it feels insane that she has to pay for an urgent care visit that only happened because you guys sent a fax into a black hole.
+M: No, I hear you. And you're right, it's directly connected.
+C: I'm not trying to get money out of anyone, I just—
+M: No, I get it. Okay, look. You know what, we'll cover the urgent care bill, don't worry about it. Send it to me, attention Bernard, at the Millbrook office, and I'll take care of it.
+C: Really?
+M: Really. It's the least we can do. You shouldn't be paying for our mistake.
+C: Oh. Okay. Thank you. That's— thank you. I really didn't expect that.
+M: Mail it or drop it off, or you can scan it and send it through the portal, attention me, Bernard Ashdown-Pryce. Whatever's easiest.
+C: I'll scan it. I'll do it tonight.
+#fill smalltalk2 escalation_hold @A=M
+M: Okay, and the bigger problem. The fax number. I'm going to update the Halvard prior-auth number in our payer directory today, so it's the new fax, the oh-one-eight-eight, and the portal link. And I'm going to send a note to all the Millbrook staff who do authorizations, and copy the other sites, Eastgate and Harbor Street, because they all use the same directory. And I want to pull a list of every Halvard PA we faxed to the old number since September first, because I'd bet your mom's isn't the only one sitting in limbo.
+C: Thank you. Honestly, that makes me feel— better, that someone's going to fix it for other people too. Some of the ladies at Linden Court are on Halvard. Mrs. — well, never mind. Lots of them.
+M: I'm sure. Okay.
+C: Can I ask— why didn't anyone at the pharmacy or the insurance tell you the number was dead? Like, wouldn't Halvard know?
+M: That's a fair question. They sent the bulletin, and it looks like it went to a general inbox and nobody acted on it. That's on us, not on them. I'll be including that in the complaint response too.
+C: Okay. I appreciate you saying that.
+#fill ehr_navigation smalltalk @A=M
+C: One more question and then I'll let you go. If this happens again, with anything, what do I do? Who do I call? Because calling the main number and pressing buttons is clearly not working for me.
+M: Call me. Extension four-four-one-seven. If I'm not at my desk, leave a voicemail, I check them every day, and I'll call you back the same day or the next morning.
+C: Okay.
+M: And I'd also say, for your mom specifically, if her breathing gets worse, don't wait for us on the phone. If she's struggling, Linden Court should call nine-one-one or you take her to urgent care like you did.
+C: She won't go to the ER.
+M: I know. But it's still the advice.
+C: I know. I'll fight her on it if I have to. I've had practice.
+#fill smalltalk escalation_hold @A=M
+M: So let me recap, so we're on the same page and you have it in writing on your hands. [laughs]
+C: [laughs] Both hands. Go.
+M: One: I'm resubmitting your mother's prior authorization for the fluticasone-umeclidinium-vilanterol today through the Halvard portal, marked expedited. Two: the dose, for when she gets it, is one inhalation, once daily. Three: I'm asking Dr. Benedetti-Kahn's nurse to check for samples today and I'll let you know. Four: I'll call you by Thursday, October first, with the authorization status, whether or not it's approved by then. Five: you're sending me the urgent care bill, and we'll cover it. Six: I'm fixing the fax number for the whole practice. And Odessa's complaint, CR-26-1193, stays open, and you'll get the written response within thirty days.
+C: Okay. That's— that's a real list. Thank you. And her address is updated, right, Odessa did that?
+M: Let me look. [typing] Yes, Linden Court Assisted Living, nine hundred Fallowfield Road, unit two-fourteen. That's in there.
+C: Good. Okay.
+M: Anything else I can do today?
+C: No. I think— no. I'm still upset, I'm not going to pretend I'm not. But you actually figured out what happened, which nobody else did, and that matters.
+M: That's completely fair. You have every right to be upset. I'll call you Thursday. And if anything changes with your mom before then, if she gets worse, take her in, don't wait on us.
+C: Okay. I will.
+M: Take care, Ms. Garrow-Nakamura. And tell your mother I'm working on it.
+C: She'll ask you about it every day. [laughs] Bye, Bernard.
+M: [laughs] Bye now.

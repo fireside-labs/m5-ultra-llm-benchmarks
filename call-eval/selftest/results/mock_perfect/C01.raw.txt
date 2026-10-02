@@ -1,0 +1,30 @@
+{
+ "call_type": "scheduling",
+ "outcome": "resolved",
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 5,
+ "quality_reasons": [
+  "Verified identity (name, DOB, street number) before discussing the appointment",
+  "Caught the caller's weekday/date mix-up and read back the final slot",
+  "Asked appropriate follow-up about the chest tightness (already evaluated) and gave safety-net advice"
+ ],
+ "flags": [],
+ "action_items": [
+  {
+   "owner": "agent",
+   "task": "Send appointment confirmation text to the new mobile number",
+   "due": "within minutes"
+  },
+  {
+   "owner": "caller",
+   "task": "Bring updated (January) insurance card to the visit",
+   "due": "2026-04-16"
+  }
+ ],
+ "summary_notes": "Mock summary for C01.",
+ "notable_details": [
+  "Appointment rebooked for Thursday April 16 at 9:40 (caller first said 'Wednesday the 14th'; the 14th is a Tuesday)",
+  "Callback number changed: old number ending 8802 replaced by new mobile ending 4471"
+ ]
+}

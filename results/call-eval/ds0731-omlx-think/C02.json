@@ -1,0 +1,49 @@
+{
+  "call_type": "billing_dispute",
+  "outcome": "callback",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Verified identity with phone number and date of birth before discussing account details.",
+    "Corrected the copay amount from $40 to $45 after the patient provided receipts.",
+    "Initiated a refund request for the duplicate charge and added a note to the account.",
+    "Made an unauthorized commitment of a 48-hour refund, contradicting the stated 7-10 business day policy.",
+    "Did not provide a reference number when the patient requested one."
+  ],
+  "flags": [
+    {
+      "type": "unauthorized_commitment",
+      "description": "Agent guaranteed a 48-hour refund, which is outside the stated 7-10 business day review policy.",
+      "evidence": "I'll make sure you get it back in forty-eight hours. Guaranteed."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent",
+      "task": "Submit refund request for duplicate charge",
+      "due": "unspecified"
+    },
+    {
+      "owner": "agent",
+      "task": "Add note to account about the duplicate charge discussion",
+      "due": "unspecified"
+    },
+    {
+      "owner": "billing team",
+      "task": "Call back to confirm refund processed",
+      "due": "Friday (2026-03-20)"
+    }
+  ],
+  "summary_notes": "Patient called about a duplicate charge for a visit on the 26th. Two charges of $45 each on card ending 3318. Agent verified identity, corrected copay amount, initiated refund request, and promised a callback by Friday. Agent also made an unauthorized 48-hour refund guarantee. Patient mentioned her daughter may have a similar issue and may call.",
+  "notable_details": [
+    "Visit date is the 26th (likely February 26, 2026).",
+    "Card ending in 3318 was charged twice for $45 each.",
+    "Copay amount corrected from $40 to $45.",
+    "Patient uses ClearPay portal, which auto-charged without her action.",
+    "Agent promised a callback by Friday (2026-03-20) from billing team.",
+    "Patient's daughter is also a patient and may have a similar duplicate charge.",
+    "Patient requested a reference number but was not provided one.",
+    "Agent had to log in again due to password expiration."
+  ]
+}

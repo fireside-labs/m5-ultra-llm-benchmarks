@@ -1,0 +1,53 @@
+@id C01
+@date 2026-09-15 09:12
+@line Brightwater Family Medicine - Eastgate - Appointments
+@direction inbound
+@target 2200
+@seed 101
+@speaker A AGENT = scheduling representative (Noor)
+@speaker C CALLER = patient's adult daughter (Marisol)
+@speaker P PATIENT = patient (Teodoro), on speakerphone
+---
+A: Good morning, Brightwater Family Medicine Eastgate, this is Noor, how can I help?
+C: Hi, um, good morning. I'm calling for my dad, he's— he's right here, I've got him on speaker. Say hi, Papi.
+P: Hello? Hello. Yes. [background TV]
+C: Can you turn that down? ... Thank you. Okay. So he needs to come in for his, um, his checkup, the six-month one with Dr. Okonkwo-Hale, and the reminder card says he's due.
+A: Sure, I can help with that. Since it's for your dad, can I speak with him for a second just to verify?
+C: Yeah, go ahead.
+A: Mr.— can you tell me your full name and date of birth, sir?
+P: Teodoro Vance-Ibarra. Birthday is, uh, April the second, nineteen forty-five.
+A: And your address?
+P: Two-two-oh Larchmont Way. Apartment... no, no apartment. Just two-twenty.
+A: Perfect, thank you, I've got you. And is it okay if I go over your appointment details with your daughter on the line?
+P: Yes, yes. She can hear everything. She handles all my appointments, my doctor stuff, everything. I can't keep track anymore.
+C: [laughs] He keeps track of the baseball scores just fine.
+P: That's different.
+A: [laughs] Fair enough. Okay, so, um, I'll be honest, I'm looking at Dr. Okonkwo-Hale's schedule and it says she isn't taking new patients right now—
+C: Oh, no, he's not new, he's been seeing her for like six years.
+A: —oh, sorry, you're right, I was reading the new-patient banner. That's only for new patients. He's established, so that's not an issue at all. My mistake.
+C: Okay, phew.
+#fill clinic_admin ehr_navigation
+A: So I have a couple of openings. Mornings are better?
+C: Mornings, yes, definitely. He's— afternoons he naps.
+P: I don't nap. I rest my eyes.
+A: [laughs] Okay. So I have Wednesday the fourteenth... no, sorry, I'm on the wrong month. October. I have Thursday, October fifteenth at ten-forty, or Tuesday the twentieth at eight-thirty.
+C: The fourteenth works— oh wait, you said that's the wrong one. Um. The Thursday. The fifteenth. Ten-forty.
+A: Thursday October fifteenth at ten-forty. And she's also got a standing order for fasting labs, the cholesterol and A1c, so he'll want to come about twenty minutes early for the blood draw, and nothing to eat after midnight, water's fine.
+C: Twenty minutes early, nothing after midnight. Got it, Papi?
+P: No breakfast. Terrible.
+A: You can bring a snack for after.
+#fill smalltalk
+A: Now, I want to make sure the reminder goes to the right place. The phone on file is a landline ending in, um, oh-four-nine-two.
+C: Oh, that's the old house phone, we disconnected that. He has a cell now. It's five-five-five, oh-one-three-seven.
+P: No, no. Oh-one-seven-three. Seven-three.
+C: Is it? ... Let me look. [pause] Yeah, he's right, it's oh-one-seven-three. Sorry. Five-five-five, oh-one-seven-three.
+A: Five-five-five, zero-one-seven-three. Updated, and I'll remove the landline. I'll send a confirmation text to that number today.
+C: Perfect.
+A: And if you could bring a current list of his medications to the visit, that would really help the doctor.
+C: I'll bring it. I have it on my phone. I'll print it.
+P: The little white pills and the—
+C: I have the list, Papi.
+A: [laughs] Sounds like you're in good hands. Anything else I can help with today?
+C: No, that's it. Thank you so much, Noor, you made that really easy.
+P: Thank you, young lady.
+A: You're both very welcome. Have a great day.

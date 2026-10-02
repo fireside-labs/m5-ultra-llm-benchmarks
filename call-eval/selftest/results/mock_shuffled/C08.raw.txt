@@ -1,0 +1,46 @@
+{
+ "call_type": "insurance_verification",
+ "outcome": "callback",
+ "sentiment_start": "neutral",
+ "sentiment_end": "neutral",
+ "quality_score": 3,
+ "quality_reasons": [
+  "Verified identity, read back the corrected member ID, clearly explained why prior authorization is required",
+  "Promised to transfer the caller to billing for a duplicate copay and then ended the call without doing so"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Agent promised to transfer the patient to billing about the duplicate ClearPay copay at the end of the call, then ended the call without transferring (commitment not honoured; billing issue left unaddressed)",
+   "evidence": "I'll transfer you over to them at the end of our call"
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "agent",
+   "task": "Submit prior authorization for lumbar MRI to Granite Meridian with physician notes",
+   "due": "today"
+  },
+  {
+   "owner": "agent",
+   "task": "Call patient when the authorization decision arrives (5-7 business days) to schedule the MRI",
+   "due": "~next week"
+  },
+  {
+   "owner": "patient",
+   "task": "Upload photos of the front and back of the new insurance card (and secondary card if found) to the portal",
+   "due": "tonight"
+  },
+  {
+   "owner": "billing team",
+   "task": "Review/refund the duplicate $45 ClearPay copay (promised transfer never happened)",
+   "due": "unspecified"
+  }
+ ],
+ "summary_notes": "Mock summary for C09.",
+ "notable_details": [
+  "Member ID corrected: last digit is 9 not 6 (GMH447182009)",
+  "Patient was double-charged a $45 copay via ClearPay (mentioned mid-call)",
+  "Patient likely has secondary coverage through his wife's employer plan (card not provided)"
+ ]
+}

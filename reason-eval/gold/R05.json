@@ -1,0 +1,369 @@
+{
+ "task_id": "R05",
+ "title": "Variables for siting a new outpatient clinic",
+ "category": "B",
+ "sections": [
+  "variables",
+  "priorities",
+  "mind"
+ ],
+ "items": [
+  {
+   "id": "V1",
+   "text": "Demand and need in the catchment: population size, growth, age mix, disease burden and unmet need",
+   "importance": "high",
+   "match": [
+    [
+     "demand",
+     "need\\b",
+     "needs assessment",
+     "population (size|growth|density|health)",
+     "demographic",
+     "age mix",
+     "age (profile|distribution|structure)",
+     "catchment",
+     "disease burden",
+     "chronic (disease|condition)",
+     "unmet",
+     "utili[sz]ation rates?",
+     "visit volume"
+    ]
+   ],
+   "paraphrases": [
+    "Patient demand in the catchment area: population growth, age mix and unmet need.",
+    "Projected visit volume based on demographics and disease burden.",
+    "Community need assessment for primary and urgent care."
+   ]
+  },
+  {
+   "id": "V2",
+   "text": "Payer mix and reimbursement: Medicaid/uninsured share determines revenue per visit and financial sustainability",
+   "importance": "high",
+   "match": [
+    [
+     "payer",
+     "payor",
+     "insurance mix",
+     "reimburse",
+     "medicaid",
+     "uninsured",
+     "self.pay",
+     "commercial(ly)? insured",
+     "revenue per visit"
+    ]
+   ],
+   "paraphrases": [
+    "Payer mix (commercial vs Medicaid vs uninsured) and resulting reimbursement.",
+    "Share of uninsured / self-pay patients drives financial sustainability.",
+    "Reimbursement rates differ sharply by site because of insurance mix."
+   ]
+  },
+  {
+   "id": "V3",
+   "text": "Access: travel time, public transit, parking, walkability and hours for the target population",
+   "importance": "high",
+   "match": [
+    [
+     "access",
+     "travel time",
+     "drive time",
+     "transit",
+     "\\bbus",
+     "parking",
+     "walk",
+     "commut",
+     "transportation",
+     "proximity to (patients|home)"
+    ],
+    [
+     "travel",
+     "transit",
+     "\\bbus",
+     "parking",
+     "walk",
+     "drive",
+     "commut",
+     "transport",
+     "distance",
+     "minutes",
+     "\\bcars?\\b",
+     "highway",
+     "patients",
+     "population",
+     "hours"
+    ]
+   ],
+   "paraphrases": [
+    "Travel time and transit access for the target population.",
+    "Accessibility: bus lines, parking and walkability.",
+    "Drive-time and public transportation to the site."
+   ]
+  },
+  {
+   "id": "V4",
+   "text": "Competition and cannibalization: competitor capacity nearby, and patients pulled from our own existing clinic/hospital rather than new patients",
+   "importance": "high",
+   "match": [
+    [
+     "cannibali[sz]",
+     "own (existing )?(clinic|hospital|sites?|network)",
+     "existing (clinic|sites?|hospital)",
+     "competit",
+     "market share",
+     "saturat",
+     "overlap",
+     "incremental (patients|volume|demand)"
+    ]
+   ],
+   "paraphrases": [
+    "Cannibalization: Site C would mostly draw patients from our own nearby clinic and hospital.",
+    "Competitor urgent care across the street and existing capacity nearby.",
+    "Incremental volume vs patients shifted from our existing sites."
+   ]
+  },
+  {
+   "id": "V5",
+   "text": "Workforce: ability to recruit and retain physicians, nurses and staff willing to work at that site",
+   "importance": "high",
+   "match": [
+    [
+     "workforce",
+     "staff(ing)?\\b",
+     "recruit",
+     "retain (staff|clinicians|providers|physicians|nurses)",
+     "(staff|clinician|provider) retention",
+     "hiring",
+     "clinician (supply|availability)",
+     "provider (supply|availability|recruitment)",
+     "physicians?",
+     "nurses?",
+     "labor (market|pool)"
+    ]
+   ],
+   "paraphrases": [
+    "Workforce: can we recruit physicians, nurses and MAs to that location?",
+    "Staffing availability and retention at each site.",
+    "Labor market for clinicians in the area."
+   ]
+  },
+  {
+   "id": "V6",
+   "text": "Regulatory and zoning approvals: zoning/permitted use, permitting, licensing and timelines for medical/imaging use",
+   "importance": "normal",
+   "match": [
+    [
+     "zoning",
+     "permit",
+     "licens",
+     "regulat",
+     "approval",
+     "code compliance",
+     "building code",
+     "certificate",
+     "land use",
+     "entitlement"
+    ],
+    [
+     "zoning",
+     "permit",
+     "building",
+     "site",
+     "clinic",
+     "imaging",
+     "x.ray",
+     "medical use",
+     "land",
+     "construction",
+     "occupancy",
+     "timeline"
+    ]
+   ],
+   "paraphrases": [
+    "Zoning and permits for medical and imaging use of the building.",
+    "Regulatory approvals and licensing timelines.",
+    "Land-use entitlements and code compliance for a clinic with X-ray."
+   ]
+  },
+  {
+   "id": "V7",
+   "text": "Total real-estate and build-out cost: rent, lease terms, renovation, imaging shielding and time to open",
+   "importance": "normal",
+   "match": [
+    [
+     "\\brent",
+     "\\blease",
+     "real estate",
+     "renovat",
+     "build.?out",
+     "fit.?out",
+     "construction",
+     "capital cost",
+     "occupancy cost",
+     "time to open",
+     "shielding",
+     "total cost"
+    ]
+   ],
+   "paraphrases": [
+    "Total occupancy cost: rent, lease terms and the cost of renovating the bank building.",
+    "Build-out cost including X-ray shielding and time to open.",
+    "Capital and construction cost differences across the sites."
+   ]
+  },
+  {
+   "id": "V8",
+   "text": "Referral and downstream flows: links to the hospital, specialists, imaging and lab; keeping patients in-network",
+   "importance": "normal",
+   "match": [
+    [
+     "referral",
+     "downstream",
+     "in.?network",
+     "specialist",
+     "continuity",
+     "care coordination",
+     "leakage",
+     "integration with (the )?hospital",
+     "hospital (admissions|volume)"
+    ]
+   ],
+   "paraphrases": [
+    "Referral flows to our hospital and specialists (downstream revenue and continuity).",
+    "Keeping patients in-network rather than leaking to competitors.",
+    "Care coordination with the hospital and specialists."
+   ]
+  },
+  {
+   "id": "V9",
+   "text": "Mission and equity: serving underserved neighborhoods, community benefit obligations of a non-profit, health disparities",
+   "importance": "high",
+   "match": [
+    [
+     "equity",
+     "underserved",
+     "disparit",
+     "mission",
+     "community benefit",
+     "non.?profit",
+     "vulnerable",
+     "low.income",
+     "safety.net",
+     "health outcomes? (gap|impact)"
+    ]
+   ],
+   "paraphrases": [
+    "Mission and equity: Site B serves an underserved, low-income neighborhood.",
+    "Community-benefit obligations as a non-profit health system.",
+    "Impact on health disparities in the region."
+   ]
+  },
+  {
+   "id": "V10",
+   "text": "Site physical suitability: size, layout, visibility, ADA accessibility, safety, signage and room for walk-in flow",
+   "importance": "normal",
+   "match": [
+    [
+     "visib",
+     "signage",
+     "\\bada\\b",
+     "accessib(le|ility) (building|entrance|for disabled)",
+     "layout",
+     "square f",
+     "floor plan",
+     "physical (suitability|space)",
+     "safety",
+     "security",
+     "walk.in flow"
+    ],
+    [
+     "building",
+     "site",
+     "layout",
+     "visib",
+     "signage",
+     "\\bada\\b",
+     "entrance",
+     "square",
+     "floor",
+     "evening",
+     "neighbou?rhood",
+     "parking",
+     "walk.in",
+     "physical"
+    ]
+   ],
+   "paraphrases": [
+    "Physical suitability: layout, square footage, ADA access and visibility.",
+    "Visibility and signage for a walk-in urgent care.",
+    "Building safety and security, especially for evening hours."
+   ]
+  },
+  {
+   "id": "V11",
+   "text": "Growth and flexibility: room to expand, future population shifts, lease flexibility/exit options",
+   "importance": "normal",
+   "match": [
+    [
+     "expan",
+     "future (growth|demand|population)",
+     "scalab",
+     "room to grow",
+     "flexib",
+     "exit (option|clause)",
+     "long.term",
+     "optionality"
+    ]
+   ],
+   "paraphrases": [
+    "Room to expand later and lease flexibility.",
+    "Future population growth and long-term scalability of each site.",
+    "Exit options if volumes disappoint."
+   ]
+  },
+  {
+   "id": "V12",
+   "text": "Hazard and continuity risks: flood zone, disaster exposure, utility reliability",
+   "importance": "normal",
+   "match": [
+    [
+     "flood",
+     "hazard",
+     "disaster",
+     "climate",
+     "resilien",
+     "natural (event|disaster)",
+     "utility reliab",
+     "power reliab"
+    ]
+   ],
+   "paraphrases": [
+    "Flood zone and natural hazard exposure of each site.",
+    "Disaster resilience and utility reliability.",
+    "Climate risk at the site."
+   ]
+  },
+  {
+   "id": "V13",
+   "text": "Strategic fit and partnerships: employers, schools, community organizations, the system's network strategy and payer contracts (value-based care)",
+   "importance": "normal",
+   "match": [
+    [
+     "strateg",
+     "partner",
+     "employers?",
+     "school",
+     "community organi[sz]ation",
+     "value.based",
+     "network (gap|strategy|coverage)",
+     "white space"
+    ]
+   ],
+   "paraphrases": [
+    "Strategic fit with the system's network gaps and value-based contracts.",
+    "Partnerships with employers, schools and community organizations.",
+    "Does the site fill a white space in our network?"
+   ]
+  }
+ ],
+ "decoys": []
+}

@@ -1,0 +1,57 @@
+{
+  "call_type": "scheduling",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 1,
+  "quality_reasons": [
+    "Appointment details were disclosed before identity verification.",
+    "Incomplete date of birth was accepted as verification.",
+    "Patient's main phone number was changed to a third party without authorization.",
+    "Agent promised future appointment communications to the unauthorized caller."
+  ],
+  "flags": [
+    {
+      "type": "identity_verification",
+      "description": "Agent accepted an incomplete date of birth as sufficient identity verification.",
+      "evidence": "Close enough."
+    },
+    {
+      "type": "privacy_disclosure",
+      "description": "Agent disclosed the patient's appointment details to a third party before verifying identity.",
+      "evidence": "She's on Thursday, the tenth, at two-forty, with Dr. Iwu-Castellano, here at the Women's Health center on Alder Street."
+    },
+    {
+      "type": "policy_violation",
+      "description": "Agent changed the patient's main phone number to the caller's number despite no release form.",
+      "evidence": "I don't see anyone listed on her release form, but if you're driving her, that makes sense."
+    },
+    {
+      "type": "unauthorized_commitment",
+      "description": "Agent promised to send appointment reminders and contact the caller about changes without authorization.",
+      "evidence": "Yep. And the reminder text goes out tomorrow, so it'll go to your number now."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent",
+      "task": "Call the caller if the patient's appointment changes.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "scheduling system",
+      "task": "Send appointment reminder text to the caller's number.",
+      "due": "tomorrow"
+    }
+  ],
+  "summary_notes": "Caller, not patient, called to confirm Annika Sorensen-Mbatha's Thursday 10th 2:40 appointment for 20-week anatomy ultrasound and visit with Dr. Iwu-Castellano at Alder Street. Caller said he is separated from patient but drives her. Agent disclosed appointment details before verifying identity, accepted vague DOB, and changed patient's main phone number to caller's number despite no release form. Agent said reminder text tomorrow will go to caller's number and promised to call if changes. No clinical issue.",
+  "notable_details": [
+    "Caller initially said patient was his wife, then corrected that they are separated since spring.",
+    "Appointment: Thursday, the tenth, at 2:40, with Dr. Iwu-Castellano at Women's Health center on Alder Street.",
+    "Appointment purpose: 20-week anatomy ultrasound and visit with the doctor.",
+    "Caller provided vague date of birth: March 94/93; not verified.",
+    "Patient's main phone number was changed to 555-827-3091.",
+    "No one was listed on the patient's release form.",
+    "Reminder text was said to go out tomorrow to the caller's number."
+  ]
+}

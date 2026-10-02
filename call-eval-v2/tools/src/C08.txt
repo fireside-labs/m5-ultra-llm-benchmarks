@@ -1,0 +1,172 @@
+@id C08
+@date 2026-09-17 10:12
+@line Brightwater Family Medicine - Eastgate front desk (appointments); brief transfer to Referrals
+@direction inbound
+@target 12000
+@seed 808
+@diar_drop 0.12
+@speaker A AGENT = front-desk scheduler (Tamsin)
+@speaker C CALLER = parent calling for himself and his son
+@speaker K CALLER_SON = caller's son, in the room (background)
+@speaker R REFERRALS = referrals coordinator
+---
+A: Brightwater Family Medicine, Eastgate, this is Tamsin, how can I help you?
+C: Hi, yeah, hi Tamsin. Okay. Finally a human. Um, so, I'm— this is Gideon Achebe-Lund, I need to make a couple of appointments. One for my son and one for me. And, uh, honestly I already got bounced once.
+A: Oh no, I'm sorry. Bounced where?
+C: So I— I called the main number and I pressed three, because the card on the fridge says three is refills, and I also need a refill on his inhaler, and I ended up in, like, billing? Patient Financial something. And the lady there was nice but she was like, "this is billing, hon, I'll send you to appointments," and so here I am.
+A: Ugh, yeah. Ever since they redid the phone menu that keeps happening, you're not the first one this week. Sorry about that. I can put a refill request in for the inhaler from here, so you don't have to go round again.
+C: Oh, that would be great.
+A: Okay so, let's, um, let's start with you since you're the one on the phone. Can I get your date of birth?
+C: November thirtieth, nineteen seventy-eight.
+A: And the address we have on file?
+C: Forty-two Pennyroyal Drive.
+A: Perfect, Gideon, I've got you. And your son, what's his name and date of birth?
+C: Ezra. Ezra Achebe-Lund. March fourth, two thousand eleven. He's fifteen.
+K: [background] Fifteen and a half.
+C: [laughs] Fifteen and a half, sorry, he wants that on the record.
+A: [laughs] Noted. Okay, I see Ezra, and I see you listed as parent and guarantor on his account. Great.
+#fill smalltalk office_smalltalk family_side
+A: So what are we booking for Ezra?
+C: Sports physical. He's doing, uh, winter track, indoor track, and the school needs the physical done before the first meet, which is, um, sometime in November I think. They gave us a form.
+A: Okay, perfect. Who does he usually see?
+C: Doctor, um, Sato? Is it Sato?
+A: Dr. Sato, yes, she's his primary. Okay so, Dr. Sato only does physicals on Tuesdays, so let me look at Tuesdays for you.
+C: Tuesdays are bad. He has practice Tuesdays and Thursdays starting in October, but Tuesdays he also has, um, the robotics thing.
+A: Okay hold on, let me— [typing] oh, wait, I'm wrong, sorry, she added Thursday afternoons this fall for sports physicals. It's a new block. So Tuesdays and Thursdays.
+C: Oh, Thursday could work if it's late enough.
+A: Let me see what she has.
+#fill ehr_navigation clinic_admin
+A: Okay, and, um, before I forget, about you. Your own visit. I'm going to have to book you at Harbor Street, not here. The adult side at Eastgate is closed for renovation through, I think, November. They're redoing the whole second floor. So all the adult medicine visits are going over to Harbor Street for now. Pediatrics is still open here at Eastgate, that's the first floor, so Ezra's fine here.
+C: Harbor Street. Okay. That's the one by the, um, by the old train depot?
+A: That's the one. There's a parking lot behind it, it's free.
+C: Okay. Okay, that's actually closer to my work.
+A: Oh good, there you go. A silver lining.
+#fill smalltalk2 office_smalltalk
+A: Okay, so for Ezra with Dr. Sato, the first Thursday I have is October twenty-second, at three o'clock.
+C: Three... hmm. School gets out at two fifty and it's a fifteen-minute drive, and he has to, uh— three's tight.
+A: I also have three-thirty the same day.
+C: Three-thirty is better. Let's do three-thirty.
+A: Okay, Thursday October twenty-second, three-thirty, Dr. Sato, here at Eastgate, pediatrics, first floor. That's for the sports physical.
+C: Twenty-second, three-thirty. Got it. Ezra, write that down.
+K: [background] It's in my phone.
+C: He says it's in his phone. [laughs]
+A: [laughs] Love that.
+#fill ehr_navigation family_side
+A: Okay, and there's— hmm. While I'm in his chart. I see he was in on the third with Dr. Sato, too, the, um— oh, that one's flagged, it's marked confidential, adolescent clinic, so I can't really— well, it was just a follow-up, so she might want to, you know, check in on that at the physical too, I'll put a note.
+C: Huh. On the third? He didn't— okay. His mom probably took him. We, uh, we split the week. Okay.
+A: Mm-hm. Anyway. So that's Ezra's physical. Do you have the school form?
+C: I have the form, it's the, uh, it's a green one. "Athletic pre-participation" something.
+A: Perfect. Bring that green sports form with you, signed by you on the parent page, and Dr. Sato will fill out the rest at the visit.
+C: Signed by me. Okay.
+C: Oh, and, um, the form. I should ask. Does the doctor need anything from us before, like, his shot records? The school nurse said something about a tetanus thing.
+A: Let me look. [typing] Hmm, his immunizations look up to date in our system, the last one I see is from his eleven-year visit, and then, um, I see a flu shot last October. The school sometimes asks for the record printed out, Dr. Sato can print that at the visit.
+C: Oh perfect. Because last year the school lost it. Twice.
+A: [laughs] Schools.
+C: I'm not kidding. Twice. I had to drive over with a paper copy, and the lady at the office was like, "oh, we have it, it was in the wrong folder."
+A: Of course it was.
+K: [background] Dad, it was in Coach Mbeki's folder.
+C: It was in the coach's folder, apparently. Thank you, Ezra.
+A: [laughs] Okay, so, printed record at the visit. I'll add that to the appointment note so she remembers. "Print immunization record for school." There.
+C: You're a lifesaver.
+#diar off
+A: And has he had any, um— the physical form usually asks about, like, fainting, chest pain with exercise, that kind of thing. You don't have to answer now, it's just, Dr. Sato goes through it.
+C: No, nothing like that. Just the asthma, and that's been pretty quiet. He uses the inhaler before races sometimes.
+A: Okay. That's normal for a lot of the runners.
+C: Yeah, the coach said half the team has one.
+#diar on
+#fill smalltalk office_smalltalk
+A: Now the inhaler. Which inhaler is it?
+C: It's the, um, the rescue one, the albuterol. The blue one.
+A: [typing] I see albuterol, uh, "al beauty roll" — sorry, my dictation is being silly — albuterol HFA. I'll send a refill request over to Dr. Sato's nurse team, they usually turn those around in a day or two, and it'll go to the Ostrander pharmacy here at Eastgate unless you want it somewhere else.
+C: Eastgate is fine. The pharmacy's still open, right?
+A: The pharmacy counter is open, yes. It's just the adult clinic upstairs that's closed.
+C: Okay.
+#fill clinic_admin ehr_navigation
+A: Okay, so now you. What's the visit for?
+C: My knee. My left knee. I— okay so this is embarrassing. I was coaching his little cousin's soccer team and I, uh, I tried to demonstrate something.
+A: [laughs] Oh no.
+C: Yeah. It's been, like, a month. It's not terrible but it clicks and it swells up after I go on the stairs. My, um, my wife— my ex-wife, sorry, habit— Ezra's mom says I need to just go to orthopedics. But I don't know if I need a referral for that with my insurance.
+A: Okay so with Halvard you'd usually need a referral from your primary for orthopedics. Let me see if one's already in there. Actually, you know what, I'm going to see if referrals can take a quick look while I've got you, they're right down the hall. But first let's get you booked with your primary, because they'll want to see the knee first anyway.
+C: Okay, that makes sense.
+#fill smalltalk2 smalltalk office_smalltalk
+A: [typing] Oh — before I book you, is the insurance still the same? I have a Halvard card from, um, twenty twenty-four on file.
+C: No, actually, we— my job switched plans in July, it's still Halvard but it's a new card. Hold on, I have it here. Ezra, can you hand me my wallet? The— on the counter. Thanks. Okay. It's, uh, H, dash, seven seven three zero one.
+A: H-seven-seven-three-zero-one. And the group number?
+C: Group is... B-four-four-two. Wait— hold on. No, I read that wrong, I'm looking at it upside-down without my glasses. The member ID is H, seven, seven, three, one, zero. Seven-seven-three-one-zero. Sorry.
+A: No problem. H-seven-seven-three-one-zero. Let me fix that. [typing] And group B-four-four-two?
+C: B-four-four-two, yes.
+A: Okay, H-77310. And is Ezra on the same plan?
+C: Same plan, he'd be on my— it's a family plan, so, yeah, I think he'd have the same number with a dash-oh-two or something.
+A: That's usually how Halvard does it. I'll update both and the system will check eligibility overnight.
+#fill ehr_navigation clinic_admin
+C: So with the knee, should I be doing anything until then? Like ice it or—
+A: I can't really give medical advice from the front desk, but if it gets a lot worse, like if it locks up or you can't put weight on it, you can call the nurse line, that's option four, or go to urgent care.
+C: Option four. Not option three. [laughs]
+A: [laughs] Not option three. Option four should actually get you the nurses.
+C: I'll trust you.
+A: And honestly if you just call back and ask for Eastgate front desk they can transfer you too.
+C: Good to know.
+#fill smalltalk2 family_side
+C: Sorry, I'm also— I'm making his lunch for tomorrow while we talk. Is that, uh, can you hear the, the blender?
+A: I can hear something. [laughs] Smoothie?
+C: Protein smoothie. Coach's orders. It's, like, spinach and peanut butter. It's disgusting.
+K: [background] It's not disgusting.
+C: He says it's not disgusting. He's wrong.
+A: [laughs] My son drinks something similar, it's green, it smells like a lawn.
+C: Exactly! A lawn!
+A: Okay, so for you, at Harbor Street, the soonest with your primary, Dr. Lindqvist, is Monday October twelfth at nine-twenty in the morning.
+C: Monday the twelfth, nine-twenty. That works. I'll go in late to work.
+A: Okay, you're booked: Monday October twelfth, nine-twenty a.m., Dr. Lindqvist, at the Harbor Street office. Since it's your first time at that site, can you get there about fifteen minutes early? They'll want you to do a quick check-in form there, it's a different front desk system.
+C: Fifteen minutes early. Sure.
+#fill smalltalk office_smalltalk family_side
+C: Oh, and while I— is there any way to get Ezra in earlier than the twenty-second? If something opens up?
+A: I can put him on the cancellation list for Dr. Sato's Thursday block. If something opens up we'll text you.
+C: Yes, please.
+C: Can I ask something? His mom. Celeste. Can she also get the texts for Ezra's appointment? Because she might be the one driving him, depending on the week.
+A: Let me check if she's on his account. [typing] Yes, I see Celeste Achebe listed as parent too, with a cell number. I can turn on reminders to both of you.
+C: Oh, she's already on there. Okay, yeah, both of us, please.
+A: Done, both parents will get the reminder for the twenty-second.
+C: She's going to say I forgot something anyway. [laughs]
+A: [laughs] That's what reminders are for.
+C: Honestly, the co-parenting calendar is the most complicated thing in my life. We have an app for it. The app has a bug where it shows everything an hour off, so we just, we both kind of ignore it and text each other.
+A: Oh no. [laughs] That's a whole other phone tree.
+C: It really is.
+A: Okay. Now let me try referrals for your knee. I'm going to transfer you to Paloma in referrals, she can see what Halvard needs. It might be a short hold.
+C: Okay.
+#note transferred to Referrals
+#hold 140
+#fill hold_announce transfer_wait
+R: Hi, this is Paloma in referrals, am I speaking with Gideon?
+C: Yes, hi.
+R: Hi Gideon. Tamsin said you need an orthopedics referral for your knee. Can you just confirm your date of birth for me?
+C: November thirtieth, seventy-eight.
+R: Thank you. Okay, so, I see Tamsin booked you with Dr. Lindqvist on the twelfth. Here's the thing. For Halvard, the referral has to come from the visit. So Dr. Lindqvist will see you on the twelfth, and if she agrees you need ortho, she'll put the referral in that day, and I'll send it electronically to Corran Orthopedics, that's who we use. Corran will call you to schedule, usually within five business days of when I send it.
+C: Oh. So I can't just get it now.
+R: Not with your plan, I'm sorry. If I sent it without the visit note, Halvard would bounce it, and then you'd be waiting even longer.
+C: No, I get it. Okay.
+R: I'll put a note on your appointment so I'm watching for it on the twelfth.
+C: Thank you, Paloma.
+R: Of course. Do you want me to send you back to Tamsin?
+C: Uh, yeah, I think she was going to give me a— yeah.
+R: Okay, one sec.
+#note transferred back to front desk
+#hold 35
+#diar off
+A: Tamsin, hi, you're back.
+C: I'm back. Paloma was great. So the knee, the referral comes after the visit.
+A: Yeah, that's Halvard's thing. Okay, anything else I can do for you?
+C: Um, let me think. Ezra, do you need anything? No? He's shaking his head.
+#diar on
+#fill smalltalk2 connection_issues
+C: Oh, one more question. For my appointment on the twelfth— that's the same place as always, right? Eastgate? Just so I don't go to the wrong building.
+A: Yep, same place, you'll be all set. Just check in at the front desk when you get there.
+C: Perfect. Okay. I'm writing it on the calendar.
+A: And you'll both get text confirmations, one for Ezra and one for you, to the cell on file, the one ending in, um, eight-eight-one-two?
+C: That's mine, yeah.
+A: Great. And the reminder will come two days before.
+#fill family_side smalltalk
+A: Okay, so just to recap. Ezra: Thursday October twenty-second, three-thirty, Dr. Sato, sports physical, bring the green form signed. He's on the cancellation list. Inhaler refill request going to Dr. Sato's nurses, to the Eastgate pharmacy. And you: Monday the twelfth, nine-twenty with Dr. Lindqvist, get there fifteen minutes early. And I updated your insurance to the new card.
+C: That's everything. You've been really helpful. Sorry about the whole, uh, phone tree saga.
+A: Not your fault at all. Have a good rest of your day, Gideon. Bye, Ezra!
+K: [background] Bye!
+C: Bye, thanks.

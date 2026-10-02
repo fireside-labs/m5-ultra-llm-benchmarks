@@ -1,0 +1,415 @@
+{
+ "call_id": "C08",
+ "call_type": "scheduling",
+ "outcome": "resolved",
+ "sentiment_start": "negative",
+ "sentiment_start_accept": [
+  "neutral"
+ ],
+ "sentiment_end": "positive",
+ "sentiment_end_accept": [
+  "neutral"
+ ],
+ "quality_score": 3,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Friendly and efficient: booked both visits, updated insurance, sent a refill request, arranged referral help and the cancellation list",
+   "match": [
+    [
+     "friendly",
+     "efficient",
+     "helpful",
+     "warm",
+     "courteous",
+     "polite",
+     "thorough",
+     "proactive",
+     "booked both",
+     "cancellation list",
+     "refill request"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Privacy lapse: mentioned the son's confidential adolescent-clinic visit to the father",
+   "match": [
+    [
+     "confidential",
+     "adolescent",
+     "privacy",
+     "disclos"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "Told the caller his visit was at Eastgate ('same place') after booking it at Harbor Street",
+   "match": [
+    [
+     "eastgate",
+     "harbou?r",
+     "location",
+     "same place",
+     "wrong (site|place|building|office)"
+    ]
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "id": "F1",
+   "text": "Agent disclosed to the father that his 15-year-old son had a confidential adolescent-clinic visit with Dr. Sato on Sept 3 (a follow-up), information marked confidential",
+   "evidence": "it's marked confidential, adolescent clinic, so I can't really— well, it was just a follow-up",
+   "paraphrases": [
+    "Scheduler revealed the existence and nature of the minor's confidential visit on the 3rd to the parent.",
+    "Privacy breach: the agent mentioned the son's adolescent clinic follow-up even though it was flagged confidential.",
+    "Disclosed a teen's confidential appointment to his father without the teen's consent."
+   ],
+   "negatives": [
+    "Agent shared the son's sports physical appointment time with the father."
+   ],
+   "match": [
+    [
+     "confidential",
+     "adolescent",
+     "visit on (the|sept(ember)?\\.?) ?(3|third)",
+     "(earlier|prior|previous|other|separate|september 3) (visit|appointment)",
+     "follow.?up (visit )?(with|from) (dr\\.? )?sato",
+     "sensitive (visit|appointment)"
+    ],
+    [
+     "disclos",
+     "reveal",
+     "mention",
+     "told",
+     "shar",
+     "privacy",
+     "breach",
+     "confidential",
+     "without"
+    ]
+   ]
+  },
+  {
+   "id": "F2",
+   "text": "Agent told the caller his Oct 12 appointment was at the 'same place as always, Eastgate' although she had booked it at Harbor Street because Eastgate adult medicine is closed for renovation",
+   "evidence": "Yep, same place, you'll be all set.",
+   "paraphrases": [
+    "Incorrect location: the agent confirmed Eastgate when the father's visit is actually at Harbor Street.",
+    "Agent contradicted herself, saying the appointment was at the usual Eastgate office after booking Harbor Street, so the patient may go to the wrong building.",
+    "Misinformation about the visit site - Eastgate adult clinic is closed for renovation but the caller was told 'same place'."
+   ],
+   "negatives": [
+    "Agent said Dr. Sato only does physicals on Tuesdays, then corrected to Thursdays."
+   ],
+   "match": [
+    [
+     "eastgate",
+     "harbou?r",
+     "same place",
+     "location",
+     "wrong (site|building|office|clinic|place)",
+     "\\bsite\\b"
+    ],
+    [
+     "wrong",
+     "incorrect",
+     "contradict",
+     "misinform",
+     "confirm",
+     "told",
+     "said",
+     "actually",
+     "closed",
+     "renovat",
+     "confus",
+     "inconsisten",
+     "mistaken"
+    ]
+   ]
+  }
+ ],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Agent discussed the 15-year-old son's sports physical appointment and inhaler with his father",
+   "why_not": "The father is the listed parent/guarantor of a minor and the sports physical and refill are not confidential; sharing them is permitted.",
+   "evidence": "I see you listed as parent and guarantor on his account",
+   "paraphrases": [
+    "Agent gave the son's appointment details to the father without the minor's permission.",
+    "Minor's health information (inhaler, physical booking) shared with a parent on the phone.",
+    "The scheduler booked and discussed the teenager's physical with his dad."
+   ],
+   "match": [
+    [
+     "physical",
+     "inhaler",
+     "albuterol",
+     "appointment (time|detail|info)"
+    ],
+    [
+     "father",
+     "parent",
+     "dad",
+     "guardian"
+    ]
+   ]
+  },
+  {
+   "id": "D2",
+   "text": "Agent told the caller Dr. Sato only does physicals on Tuesdays",
+   "why_not": "She immediately checked and corrected herself: Dr. Sato added Thursday afternoons, and the visit was booked on a Thursday.",
+   "evidence": "oh, wait, I'm wrong, sorry, she added Thursday afternoons this fall for sports physicals",
+   "paraphrases": [
+    "Gave incorrect information that physicals were only available on Tuesdays.",
+    "Agent initially misinformed the caller about Dr. Sato's physical days (Tuesdays only)."
+   ],
+   "match": [
+    [
+     "tuesday"
+    ],
+    [
+     "sato",
+     "physical",
+     "only",
+     "day"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Phone menu option 3 for refills routes callers to billing",
+   "match": [
+    [
+     "press",
+     "phone (menu|tree)",
+     "option",
+     "\\bivr\\b",
+     "rout",
+     "bounced",
+     "transfer"
+    ],
+    [
+     "billing",
+     "financial",
+     "refill"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Eastgate adult clinic closed for renovation causing site changes",
+   "match": [
+    [
+     "renovat",
+     "closed"
+    ]
+   ]
+  },
+  {
+   "id": "OK3",
+   "text": "Referral cannot be issued until the primary-care visit (plan requirement)",
+   "match": [
+    [
+     "referral",
+     "ortho"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "front desk (Tamsin)",
+   "task": "Send text confirmations for both appointments to the caller's cell; reminders two days before",
+   "due": "today / 2 days before each visit",
+   "match": [
+    [
+     "confirm",
+     "text",
+     "remind"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "caller",
+   "task": "Bring the green athletic pre-participation (sports physical) form signed on the parent page",
+   "due": "Oct 22 visit",
+   "match": [
+    [
+     "sports",
+     "physical",
+     "pre.?participation",
+     "green",
+     "athletic"
+    ],
+    [
+     "form"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "front desk / Dr. Sato's nurse team",
+   "task": "Send albuterol inhaler refill request for Ezra to Dr. Sato's nurses, to Ostrander Eastgate pharmacy",
+   "due": "1-2 days",
+   "match": [
+    [
+     "inhaler",
+     "albuterol",
+     "refill"
+    ]
+   ]
+  },
+  {
+   "id": "A4",
+   "owner": "referrals (Paloma) / Dr. Lindqvist",
+   "task": "Orthopedics referral to Corran Orthopedics after the Oct 12 visit if the doctor agrees; Corran calls to schedule within 5 business days",
+   "due": "after Oct 12",
+   "match": [
+    [
+     "referral",
+     "ortho",
+     "corran",
+     "knee"
+    ]
+   ]
+  },
+  {
+   "id": "A5",
+   "owner": "front desk",
+   "task": "Update insurance to new Halvard card H-77310 (group B-442) for caller and son; eligibility check overnight",
+   "due": "today",
+   "match": [
+    [
+     "insurance",
+     "member id",
+     "77310",
+     "halvard",
+     "eligibility"
+    ]
+   ]
+  },
+  {
+   "id": "A6",
+   "owner": "caller",
+   "task": "Arrive 15 minutes early to the Oct 12 visit for site check-in form",
+   "due": "Oct 12",
+   "match": [
+    [
+     "early",
+     "15 min",
+     "fifteen min"
+    ]
+   ]
+  },
+  {
+   "id": "A7",
+   "owner": "front desk",
+   "task": "Put Ezra on Dr. Sato's Thursday cancellation list; text if earlier slot opens",
+   "due": "ongoing",
+   "match": [
+    [
+     "cancellation",
+     "wait.?list",
+     "earlier"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Son's sports physical: Thursday Oct 22 at 3:30 pm with Dr. Sato at Eastgate pediatrics (3:00 was offered first, declined)",
+   "evidence": "Okay, Thursday October twenty-second, three-thirty, Dr. Sato",
+   "negatives": [
+    "Ezra's physical is on Oct 22 at 3:00 pm"
+   ],
+   "match": [
+    [
+     "3:30",
+     "three.thirty",
+     "15:30"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Father's own visit is Monday Oct 12, 9:20 am with Dr. Lindqvist at the Harbor Street office (Eastgate adult side closed for renovation)",
+   "evidence": "I'm going to have to book you at Harbor Street, not here",
+   "negatives": [
+    "Father's appointment is Oct 12 at Eastgate"
+   ],
+   "match": [
+    [
+     "harbou?r st"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "New Halvard member ID H-77310 (first misread as 77301), group B-442",
+   "evidence": "The member ID is H, seven, seven, three, one, zero.",
+   "negatives": [
+    "New insurance member ID H-77301"
+   ],
+   "match": [
+    [
+     "77310",
+     "7-7-3-1-0"
+    ]
+   ]
+  },
+  {
+   "id": "S4",
+   "text": "Must bring the green athletic pre-participation form signed by the parent",
+   "evidence": "Bring that green sports form with you, signed by you on the parent page",
+   "match": [
+    [
+     "green",
+     "pre-?participation",
+     "sports form",
+     "athletic form",
+     "physical form",
+     "school form"
+    ]
+   ]
+  },
+  {
+   "id": "S5",
+   "text": "Caller first pressed 3 for refills in the phone menu and was routed to billing",
+   "evidence": "I pressed three, because the card on the fridge says three is refills",
+   "match": [
+    [
+     "press(ed|ing)? (3|three)",
+     "option (3|three)",
+     "refill (line|option)",
+     "phone (menu|tree)",
+     "\\bivr\\b"
+    ],
+    [
+     "billing",
+     "financial"
+    ]
+   ]
+  },
+  {
+   "id": "S6",
+   "text": "Ortho referral can only be sent after the Oct 12 primary-care visit; it goes to Corran Orthopedics",
+   "evidence": "Corran will call you to schedule, usually within five business days",
+   "match": [
+    [
+     "corran"
+    ]
+   ]
+  }
+ ],
+ "themes": [
+  "T_IVR_MISROUTE"
+ ]
+}

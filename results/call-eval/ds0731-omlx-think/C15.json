@@ -1,0 +1,40 @@
+{
+  "call_type": "pharmacy_refill",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Disclosed prescription list without verifying caller identity",
+    "Provided medical advice on drug interaction without pharmacist authority",
+    "Friendly and efficient handling of refill",
+    "Processed early refill with cash option"
+  ],
+  "flags": [
+    {
+      "type": "privacy_disclosure",
+      "description": "Technician disclosed the patient's medication list before verifying the caller's identity.",
+      "evidence": "I see you've got alprazolam, the point five, sertraline, and a cholesterol one."
+    },
+    {
+      "type": "clinical_safety",
+      "description": "Technician gave medical advice that alprazolam and zolpidem can be taken together without consulting a pharmacist.",
+      "evidence": "I mean, lots of people take both. You should be fine."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "patient",
+      "task": "Pick up alprazolam refill at front counter with ID",
+      "due": "2026-08-17 15:00"
+    }
+  ],
+  "summary_notes": "Patient requested early refill of alprazolam 0.5mg due to vacation. Technician processed refill, ready at 3 PM; cash payment if insurance rejects. Patient also mentioned starting zolpidem and asked about interaction; technician advised it's fine. No identity verification performed; medication list disclosed. Flagged for privacy and clinical safety.",
+  "notable_details": [
+    "Patient leaves on 22nd; refill last filled July 30, 30-day supply, so early.",
+    "Patient has alprazolam 0.5, sertraline, and a cholesterol medication.",
+    "Patient started zolpidem (Ambien) from another pharmacy.",
+    "Refill ready at 3 PM; patient needs ID for pickup.",
+    "Technician had multiple technical issues during call."
+  ]
+}

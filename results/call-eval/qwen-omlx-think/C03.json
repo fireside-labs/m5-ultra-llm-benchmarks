@@ -1,0 +1,70 @@
+{
+  "call_type": "post_procedure_followup",
+  "outcome": "resolved",
+  "sentiment_start": "positive",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Verified patient identity and confirmed spouse was on authorization before discussing medications.",
+    "Provided clear post-op instructions and corrected the physical therapy referral to Eastgate.",
+    "Failed to escalate unilateral calf pain, swelling, and warmth after knee surgery, a possible DVT red flag.",
+    "Handled the conflicting pre-op instruction complaint with empathy but did not provide a definitive resolution."
+  ],
+  "flags": [
+    {
+      "type": "clinical_safety",
+      "description": "The nurse did not escalate a possible DVT symptom reported after knee surgery.",
+      "evidence": "the back of the calf, the left one, the operated side, it's been kind of achy since yesterday. And it's, uh, it looks a little swollen, like tighter than the other one. Kind of warm, maybe."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "nurse",
+      "task": "Mention the conflicting preoperative instructions to the manager",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Eastgate Rehab",
+      "task": "Call the patient to schedule physical therapy",
+      "due": "within two or three business days"
+    },
+    {
+      "owner": "patient",
+      "task": "Start baby aspirin 81 mg once daily",
+      "due": "today"
+    },
+    {
+      "owner": "patient",
+      "task": "Remove the big dressing and cover incisions with Band-Aids, keeping them dry",
+      "due": "tomorrow, day five"
+    },
+    {
+      "owner": "patient",
+      "task": "Do ankle pumps every hour while awake, ten at a time",
+      "due": "every hour while awake"
+    },
+    {
+      "owner": "patient",
+      "task": "Attend post-op visit with Dr. Okonjo-Reyes",
+      "due": "Thursday, March 12 at 1:30"
+    },
+    {
+      "owner": "patient",
+      "task": "Call the after-hours line if fever over 100.4, incisions become red/hot, or pus drainage occurs",
+      "due": "any time if symptoms occur"
+    }
+  ],
+  "summary_notes": "Post-op follow-up for Augustin Pereira-Lund after left knee arthroscopy on Monday. Pain 3-4/10, taking acetaminophen and stopped oxycodone. Dressing removal tomorrow, PT referral changed to Eastgate, post-op visit March 12 at 1:30. Spouse Ruth was authorized and confirmed medications; baby aspirin restart today. Patient reported left calf pain, swelling, and warmth; nurse advised elevation and ankle pumps but did not escalate possible DVT. Spouse also raised conflicting pre-op NPO instructions that caused a prior cancellation; nurse will mention to manager.",
+  "notable_details": [
+    "Patient: Augustin Pereira-Lund; DOB February 2, 1964.",
+    "Procedure: left knee arthroscopy with Dr. Okonjo-Reyes on Monday.",
+    "Post-op visit: Thursday, March 12 at 1:30.",
+    "Physical therapy referral corrected from Main Street Rehab to Eastgate Rehab.",
+    "Spouse Ruth is listed on the patient's HIPAA authorization and participated in medication review.",
+    "Acetaminophen: 500 mg, two tablets every six hours; oxycodone stopped after first night.",
+    "Amlodipine restarted Tuesday; baby aspirin 81 mg daily restart today.",
+    "Dressing removal: tomorrow, day five; keep incisions dry and avoid soaking.",
+    "Reported left calf pain, swelling, and warmth since yesterday; not escalated.",
+    "Prior surgery on the 23rd was cancelled due to conflicting NPO instructions: mailed packet said nothing after midnight, text said clear liquids up to two hours before."
+  ]
+}

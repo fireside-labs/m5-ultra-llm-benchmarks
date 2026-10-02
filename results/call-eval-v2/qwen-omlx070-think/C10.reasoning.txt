@@ -1,0 +1,271 @@
+
+We need answer user's request: analyze transcript and return ONE JSON object conforming schema, no markdown. Need produce final JSON only. Need carefully analyze.
+
+We need determine call_type: main purpose. Outbound pre-admission nursing call for colonoscopy, transferred to scheduling. Main purpose pre_procedure. Could be scheduling? It includes pre-procedure instructions and scheduling follow-up. Line says Pre-Admission Nursing transferred to Scheduling. Main purpose pre_procedure.
+
+Outcome: resolved? Nurse gave instructions, transferred to scheduler, scheduler emailed prep calendar, driver form, booked follow-up, text reminder. Main issue handled. resolved.
+
+Sentiment_start: caller? Outbound call to spouse initially. Spouse neutral/positive? "Oh, he's out... Is this about Friday?" neutral. Maybe positive? Start first minute: spouse cooperative, neutral. Use neutral.
+Sentiment_end: patient positive: "Thank you. You too." positive.
+
+Quality_score: Need rate staff overall. Nurse verified spouse on release form and DOB, verified patient DOB. Gave accurate instructions? Need check for errors. There is a serious inconsistency: Nurse initially says stop apixaban last dose Monday night fifth, none Tue Wed Thu Fri morning. Later recap says "stop the Eliquis Wednesday morning". That's contradictory and potentially dangerous misinformation. Also earlier says restart day after depending doctor. The recap error could be serious. Also nurse says authorization pending but later tells patient "you're all set, nothing for you to do there" regarding insurance. Is that misinformation? She said authorization still pending, office faxed twice, should come through. Later says all set. Could be inaccurate or premature. Need flag misinformation. Also maybe privacy disclosure? Nurse spoke to spouse before verifying? She checked release form and DOB before going over anything. Good. Spouse is authorized. No privacy flag. Identity verification done. Clinical safety: patient reported recent cold/cough; nurse checked with anesthesia and gave return precautions. Good. But medication instruction inconsistency is clinical safety/misinformation. Also fish oil stop seven days before starting this Friday, Oct 2. Procedure Oct 9, seven days before is Oct 2, okay. Apixaban: last dose Monday night Oct 5, none Tue-Fri morning. That's 3 days off? Monday night last, Tuesday, Wednesday, Thursday, Friday morning none. If procedure Friday morning, okay. Recap says stop Wednesday morning, which would be only ~2 days? Actually if stop Wednesday morning, last dose Tuesday night? Not same. Dangerous. Flag misinformation/clinical_safety.
+
+Also scheduler follow-up date: initially says one-fifty— sorry, one-fifteen. Use corrected one-fifteen. Arrival time corrected from 7:45 old template to 6:45. Use corrected. Phone number corrected: patient says 555-0138, spouse corrects 555-0139. Use final. Cell number 555-0124. Email wof58@mailbridge.com. Driver Phil Haddad. Follow-up Oct 22 1:15 pm. Text reminder Thursday morning. Parking Entrance B Wellstone, second floor desk. Reschedule 48 hours.
+
+Action items:
+- Patient: take last apixaban Monday night Oct 5, none Tue-Fri morning; restart as directed Friday. due Oct 5? Could list tasks. Need every follow-up commitment or task stated. Could include many. Need owner and due. We can include key tasks.
+- Patient: stop fish oil starting Friday Oct 2. due Oct 2.
+- Patient: take half glargine 20 units Thursday night Oct 8. due Oct 8.
+- Patient: no metformin Friday morning Oct 9. due Oct 9.
+- Patient: take lisinopril with sip water Friday morning. due Oct 9.
+- Patient: check sugar Friday morning and before leaving, bring meter. due Oct 9.
+- Patient: call if fever >=100.4, cough worse, SOB before Friday. due unspecified/before Friday.
+- Patient: call after-hours if vomit prep and can't keep down. due unspecified.
+- Patient: arrive 6:45 a.m. Friday Oct 9, second floor endoscopy suite, Entrance B parking. due Oct 9.
+- Driver Phil Haddad: stay with patient, come in to get, sign driver attestation. due Oct 9.
+- Scheduler: email prep calendar and driver attestation form to wof58@mailbridge.com. due unspecified (during call? sent). Could owner scheduler, due during call/unspecified.
+- Scheduler: text reminder Thursday morning. due Oct 8 morning.
+- Patient: call at least 48 hours ahead if reschedule. due unspecified.
+- Patient: attend follow-up Oct 22 1:15 pm with Dr. Lindqvist-Amaro, Loretta can attend. due Oct 22.
+- Nurse/office: monitor insurance authorization pending? Nurse said keep an eye on it. due unspecified. But later said all set. Could include office monitor authorization.
+- Doctor: tell patient when restart apixaban depending findings. due Oct 9.
+- Nurse: note hernia for doctor. due unspecified.
+- Anesthesia team: maybe note nausea, snoring. Not action.
+
+Need flags:
+1 misinformation: recap contradicts earlier apixaban hold instructions. Evidence: "stop the Eliquis Wednesday morning" vs earlier "last dose Monday night, the fifth". Need one evidence quote. Could use recap quote. Description: nurse's final recap incorrectly stated stop Eliquis Wednesday morning, conflicting with earlier instruction last dose Monday night, creating risk of incorrect anticoagulant hold. type misinformation or clinical_safety? Schema flags type includes misinformation, clinical_safety. Which better? It's inaccurate info given to customer, also clinical safety. Could include one flag type misinformation. Maybe also clinical_safety? Could include two? Need avoid overflagging? The instruction says flag accuracy problems. One flag enough. But if multiple serious failures? Score maybe 2 due serious safety/accuracy failure. Could also flag insurance misinformation: nurse said authorization pending then later "you're all set, nothing for you to do there". Is that a flag? It could be inaccurate or misleading. But maybe authorization came through? She didn't say it came through. She said "Yep, you're all set, nothing for you to do there." Could be based on pending? It might be misinformation. Need decide. The call has a serious medication recap error. Also possible unauthorized commitment? Scheduler says Loretta welcome because on release form, okay. No.
+
+Could flag "missed_commitment"? Nurse promised to keep eye on authorization, but no evidence not kept. Not flag.
+
+Could flag "policy_violation" for patient saying writes password sticky note? That's customer, not staff. Not flag.
+
+Could flag "security" for staff saying password changes every 30 days? Not violation. Patient says sticky note, not staff. No.
+
+Could flag "privacy_disclosure"? Nurse disclosed procedure and med info to spouse after verifying release form and DOB. OK. But did nurse disclose to spouse before verifying? She said "May I speak with Wendell?" spouse says she handles medical. Nurse says "Let me just check one thing before I go over anything with you. I do see you on his release form... Can you confirm DOB?" Then confirms. Good.
+
+Could flag "identity_verification"? No, done.
+
+Could flag "clinical_safety" for telling patient mild cough fine without fever? She consulted anesthesia. OK.
+
+Could flag "misinformation" for insurance all set while authorization pending. Evidence: "I'm showing the authorization is still pending with Halvard." and later "Yep, you're all set, nothing for you to do there." Need one evidence quote. Could include as separate flag. Is it serious? It could cause patient not to follow up on pending authorization. But nurse said office faxed twice, should come through. Later all set maybe means no action needed by patient, not that authorization approved. Could be not misinformation. But "you're all set" could be misleading. Maybe not flag to avoid overflagging. But quality reasons can mention pending authorization not clearly resolved.
+
+Quality_score: 2 or 3? 5 excellent, 4 minor, 3 mixed one notable lapse, 2 poor serious compliance/safety/accuracy failure or several notable lapses. The medication recap error is serious safety/accuracy failure. So score 2. But overall nurse was empathetic, verified, consulted anesthesia, gave detailed instructions. However final recap error could lead to wrong anticoagulant hold. That's serious. Score 2. Quality_reasons: verified authorized spouse and patient; gave detailed prep and med instructions; consulted anesthesia for cough; but final recap contradicted apixaban hold; insurance authorization status communicated inconsistently; long call with many system delays but patient patient. Need 2-5 reasons.
+
+Need summary_notes <=120 words. Include corrected details. Maybe:
+"Outbound pre-admission call for Wendell Osei-Fairbanks, colonoscopy with Dr. Lindqvist-Amaro Friday Oct 9. Authorized spouse Loretta answered; DOB 4/3/1958 verified. Nurse reviewed meds: apixaban last dose Mon Oct 5, none Tue-Fri AM; metformin skip Fri AM; glargine 20 units Thu night; lisinopril Fri AM with sip; stop fish oil Oct 2. Prep: clear liquids after light breakfast before 9 AM Thu; first half 6 PM Thu, second half 1:45 AM Fri done by 2:45, NPO after 4:45. Arrival corrected to 6:45 AM, second-floor endoscopy suite, Entrance B parking. Driver Phil Haddad 555-0139. Follow-up Oct 22 1:15 PM. Email wof58@mailbridge.com; text 555-0124. Authorization pending; recap error on Eliquis." Count maybe 118? Need <=120. Let's count roughly: Outbound(1) pre-admission2 call3 for4 Wendell5 Osei-Fairbanks6 colonoscopy7 with8 Dr.9 Lindqvist-Amaro10 Friday11 Oct12 9.13 Authorized14 spouse15 Loretta16 answered17; DOB18 4/3/1958 19 verified20. Nurse21 reviewed22 meds23: apixaban24 last25 dose26 Mon27 Oct28 5,29 none30 Tue-Fri31 AM32; metformin33 skip34 Fri35 AM36; glargine37 20 38 units39 Thu40 night41; lisinopril42 Fri43 AM44 with45 sip46; stop47 fish48 oil49 Oct50 2.51 Prep52: clear53 liquids54 after55 light56 breakfast57 before58 9 59 AM60 Thu61; first62 half63 6 64 PM65 Thu66, second67 half68 1:45 69 AM70 Fri71 done72 by73 2:4574, NPO75 after76 4:4577. Arrival78 corrected79 to80 6:45 81 AM82, second-floor83 endoscopy84 suite85, Entrance86 B87 parking88. Driver89 Phil90 Haddad91 555-013992. Follow-up93 Oct94 22 95 1:15 96 PM97. Email98 wof58@mailbridge.com99; text100 555-0124101. Authorization102 pending103; recap104 error105 on106 Eliquis107. Good.
+
+Notable_details: include corrected arrival time, follow-up time, phone number, DOB, email, cell, driver, authorization pending, medication recap error, hernia, family history, nausea, snoring, partial denture, wedding ring, weight corrected? Weight: patient says two-ten? two-fifteen, spouse says two-twenty, nurse says not two-twenty, I'll put two-fifteen. Use final two-fifteen. Also fish oil stop date, prep times, A1c 7.2, recent cold, no fever, anesthesia consult, insurance Halvard pending, reschedule 48 hours, parking, second floor, text reminder. Need specific details careful reviewer not miss. Use final/corrected values.
+
+Need ensure JSON valid. No markdown. Need all required fields. flags array objects with type enum. action_items owner task due. due string. Could include many action items. Need not too many? Fine.
+
+Need consider call_type maybe pre_procedure. outcome resolved. sentiment_start neutral, end positive.
+
+Need quality_score 2. quality_reasons 2-5.
+
+Need flags:
+- type misinformation: "Final recap incorrectly stated to stop Eliquis Wednesday morning, conflicting with earlier instruction to take last dose Monday night, Oct 5." evidence: "stop the Eliquis Wednesday morning". Could also include earlier? Evidence short verbatim quote. Use exact from transcript: "stop the Eliquis Wednesday morning". Good.
+- type misinformation: "Nurse initially said Halvard authorization was still pending but later told patient he was all set with insurance, without confirming approval." evidence: "I'm showing the authorization is still pending with Halvard." Or later quote. Need one evidence. Could use "Yep, you're all set, nothing for you to do there." Description includes both. Is this a flag? Maybe yes. But if not, could be overflag. The prompt says do not flag decisions correctly follow policy. Here not necessarily incorrect, but inconsistent. It may be a notable lapse. Score 2 already due med error. Additional flag okay if genuine. But if authorization pending, telling all set could be misinformation. I'd include? Need be careful: Nurse said "authorization is still pending... office faxed twice, so it should come through. I'll keep an eye on it." Later patient asks "so I'm all set with insurance then?" Nurse: "Yep, you're all set, nothing for you to do there." Could mean no patient action, not that authorization approved. But "all set" could be misleading. It is a compliance/accuracy problem? Maybe not a flag if interpreted as no action. But quality_reasons can mention inconsistent insurance status. Flags should be problems in how handled. I'd include as misinformation? Hmm.
+
+Could flag "clinical_safety" instead of misinformation for apixaban. The type enum includes clinical_safety: symptom warranted escalation but dismissed, etc. Misinformation: incorrect information given. The recap is incorrect information. Use misinformation.
+
+Could flag "other" for system delays? Not compliance. No.
+
+Could flag "policy_violation" for scheduler saying Loretta can attend because release form? Correct. No.
+
+Could flag "security" for staff mentioning password? No.
+
+Need action_items due: Use dates as stated. For tasks with no explicit due, "unspecified". Need owner names. Could include "Patient", "Driver", "Scheduler", "Nurse", "Doctor". Ensure due strings.
+
+Potential issue: action_items "every follow-up commitment or task stated in the call". We can include many. Need not exhaustive? It says every. We should include all commitments. Let's enumerate from transcript:
+- Nurse: "I'll keep an eye on it" insurance authorization. Owner nurse/office, due unspecified.
+- Nurse: "I'll put a note for the doctor" hernia. Owner nurse, due unspecified.
+- Nurse: "Scheduling can help with that at the end of the call" follow-up. Scheduler did.
+- Nurse: transfer to scheduling. Done.
+- Scheduler: email prep calendar and driver attestation form. Owner scheduler, due during call/unspecified.
+- Scheduler: booked follow-up. Done.
+- Scheduler: text reminder day before. Owner scheduler, due Thursday morning (Oct 8).
+- Scheduler: validate parking ticket? Patient bring ticket, office validate. Owner patient? task bring parking ticket; owner office validate? Could include patient bring ticket due Oct 9.
+- Scheduler: call at least 48 hours ahead if reschedule. Owner patient, due unspecified.
+- Patient tasks med/prep as above.
+- Driver tasks.
+- Doctor: tell restart apixaban depending findings. Owner doctor, due Oct 9.
+- Patient: call if fever/cough worse/SOB before Friday. Owner patient, due before Friday Oct 9.
+- Patient: call after-hours if vomit prep. Owner patient, due unspecified.
+- Patient: bring ID, insurance card, medication list, reading glasses, warm clothing, meter. due Oct 9.
+- Patient: leave partial at home or cup, no jewelry, wedding ring taped. due Oct 9.
+- Patient: no alcohol 24h, no driving until next day, no big decisions. due after procedure.
+- Patient: attend follow-up Oct 22 1:15 pm, Loretta can attend. due Oct 22.
+- Patient: send text to cell 555-0124? Scheduler task.
+- Patient: provide email? done.
+- Patient: call back if cut off? Scheduler said keep going, not commitment.
+
+Need not overdo but include key. JSON can have many action items. Ensure due values as stated: "Friday, October 9", "Thursday, October 8", "Monday, October 5", "Friday, October 2", "unspecified", "Thursday morning", "at least 48 hours before Friday, October 9", "after procedure", etc.
+
+Need summary_notes not too long. Could include recap error? Yes.
+
+Need notable_details array. Include:
+- "Procedure: colonoscopy with Dr. Lindqvist-Amaro, Friday, October 9, 2026."
+- "DOB: April 3, 1958."
+- "Authorized spouse: Loretta Osei-Fairbanks, release form signed in June."
+- "Arrival time corrected from 7:45 a.m. to 6:45 a.m."
+- "Follow-up corrected from 1:50 p.m. to 1:15 p.m. on Thursday, October 22."
+- "Driver phone corrected from 555-0138 to 555-0139."
+- "Patient cell for text: 555-0124."
+- "Email: wof58@mailbridge.com."
+- "Insurance: Halvard; authorization pending at start; nurse later said no patient action needed."
+- "Medication recap error: nurse said stop Eliquis Wednesday morning despite earlier last dose Monday night, October 5."
+- "Recent cold/cough without fever; anesthesia nurse cleared mild cough; return precautions fever >=100.4, worsening cough, shortness of breath."
+- "Family history: father had colon cancer."
+- "Secondary issue: umbilical hernia; nurse noted for doctor."
+- "Anesthesia history: knee surgery 2019/2020? patient uncertain, post-op nausea/vomiting once; no CPAP, snoring."
+- "Weight recorded as 215 lb after patient uncertainty; height 5'11"."
+- "Parking: Entrance B off Wellstone Avenue, validate ticket; check in second-floor endoscopy suite."
+- "Reschedule notice: at least 48 hours ahead."
+- "Fish oil stop date: Friday, October 2."
+- "Prep times: first half 6 p.m. Thursday Oct 8; second half 1:45 a.m. Friday Oct 9, finish by 2:45; NPO after 4:45."
+- "Med instructions: apixaban last dose Mon Oct 5; glargine 20 units Thu night; metformin skip Fri AM; lisinopril Fri AM with sip."
+Need maybe not too many but okay.
+
+Need ensure no markdown. JSON only.
+
+Double-check schema: additionalProperties false at top. flags items additionalProperties false. action_items items additionalProperties false. All required. quality_score integer. sentiment enums. outcome enum. call_type enum.
+
+Potential issue: "sentiment_start" customer's sentiment first minute. Outbound call, spouse answers. She is neutral. Could be positive? "Oh, he's out... Is this about Friday?" neutral. Use neutral.
+
+Potential issue: outcome "resolved" vs "callback"? Main issue pre-procedure instructions and scheduling completed. resolved.
+
+Potential issue: call_type "pre_procedure" vs "scheduling". Main purpose pre-admission nursing. Use pre_procedure.
+
+Potential issue: quality_score 2 due serious error. Need quality_reasons specific. 2-5. Example:
+["Verified authorized spouse and patient identity before disclosure.", "Provided detailed prep, medication, and arrival instructions and consulted anesthesia for recent cough.", "Final recap incorrectly changed the apixaban hold to Wednesday morning, conflicting with earlier instructions.", "Insurance authorization status was communicated inconsistently as pending and then all set.", "Call was lengthy with repeated system delays, but staff remained patient and empathetic."]
+This is 5. Good.
+
+Flags:
+1 misinformation: description, evidence.
+2 misinformation: insurance. evidence maybe "I'm showing the authorization is still pending with Halvard." But description says later all set. Need evidence quote from transcript. Could use "Yep, you're all set, nothing for you to do there." That's the problematic statement. But to show inconsistency, evidence can be that. Description includes pending. Good.
+Could also flag clinical_safety for apixaban? If we already flag misinformation, maybe enough. But type clinical_safety might be more apt. The flag examples include "incorrect information given to customer" under misinformation. Use misinformation.
+
+Could flag "missed_commitment"? Nurse promised to keep eye on authorization, but no evidence not kept. No.
+
+Could flag "other" for recap error? No.
+
+Need ensure evidence verbatim. Use exact quotes:
+- "stop the Eliquis Wednesday morning" (transcript: "stop the Eliquis Wednesday morning" yes in recap: "stop the Eliquis Wednesday morning, half your glargine...")
+- "Yep, you're all set, nothing for you to do there." exact? Transcript: "Yep, you're all set, nothing for you to do there." yes.
+
+Could include flag type "clinical_safety" for apixaban with evidence "stop the Eliquis Wednesday morning". But if we include two flags, one misinformation one clinical_safety? Might be redundant. Maybe one flag type clinical_safety: "Final recap gave incorrect anticoagulant hold timing, which could lead to unsafe apixaban interruption." evidence. But prompt examples: incorrect information given -> misinformation. Use misinformation.
+
+Need action_items: Let's craft concise but complete.
+1 owner "Patient", task "Take last dose of apixaban Monday night, October 5; no doses Tuesday through Friday morning; restart only as directed by doctor after procedure.", due "Monday, October 5".
+2 owner "Patient", task "Stop fish oil starting Friday, October 2.", due "Friday, October 2".
+3 owner "Patient", task "Light low-fiber breakfast before 9 a.m. Thursday, October 8; clear liquids only after that.", due "Thursday, October 8".
+4 owner "Patient", task "Start first half of prep at 6 p.m. Thursday, October 8.", due "Thursday, October 8 at 6 p.m.".
+5 owner "Patient", task "Start second half of prep at 1:45 a.m. Friday, October 9 and finish by 2:45 a.m.; nothing by mouth after 4:45 a.m. except lisinopril sip.", due "Friday, October 9 at 1:45 a.m.".
+6 owner "Patient", task "Take 20 units insulin glargine Thursday night instead of 40 units.", due "Thursday, October 8 at bedtime".
+7 owner "Patient", task "Skip metformin Friday morning.", due "Friday, October 9 morning".
+8 owner "Patient", task "Take lisinopril Friday morning with a small sip of water.", due "Friday, October 9 morning".
+9 owner "Patient", task "Check blood sugar when waking Friday and before leaving; bring meter.", due "Friday, October 9".
+10 owner "Patient", task "Call if fever 100.4 or higher, worsening cough, or shortness of breath before Friday.", due "Before Friday, October 9".
+11 owner "Patient", task "Call after-hours number if vomiting prevents keeping prep down.", due "Unspecified".
+12 owner "Patient", task "Arrive at 6:45 a.m. Friday, October 9; check in at second-floor endoscopy suite; park at Entrance B off Wellstone Avenue and bring ticket for validation.", due "Friday, October 9 at 6:45 a.m.".
+13 owner "Patient", task "Bring ID, insurance card, medication list, reading glasses, warm clothing, and meter; leave partial denture at home if possible; no jewelry except wedding ring may be taped.", due "Friday, October 9".
+14 owner "Driver Phil Haddad", task "Stay in waiting area or be reachable and return within 15 minutes; come in to get patient; sign driver attestation form.", due "Friday, October 9".
+15 owner "Doctor", task "Tell patient when to restart apixaban after procedure depending on findings.", due "Friday, October 9".
+16 owner "Nurse", task "Monitor Halvard authorization status.", due "Unspecified".
+17 owner "Nurse", task "Note umbilical hernia for doctor.", due "Unspecified".
+18 owner "Scheduler", task "Email prep calendar and driver attestation form to wof58@mailbridge.com.", due "Unspecified".
+19 owner "Scheduler", task "Send text reminder with arrival time and address to 555-0124.", due "Thursday morning, October 8".
+20 owner "Patient", task "Attend follow-up with Dr. Lindqvist-Amaro on Thursday, October 22 at 1:15 p.m.; Loretta may attend.", due "Thursday, October 22 at 1:15 p.m.".
+21 owner "Patient", task "Call at least 48 hours ahead if rescheduling.", due "Unspecified".
+22 owner "Patient", task "No alcohol for 24 hours, no driving until next day, no big decisions after procedure.", due "After procedure".
+Maybe too many but okay. Need due strings not too long? fine.
+
+Could combine tasks to reduce. But "every follow-up commitment" maybe okay. Need ensure owner for scheduler email due maybe "during call" because she said sending. Use "During call". But due as stated? She says "I'm sending". Use "During call". Text due "Thursday morning". Good.
+
+Potential issue: action_items due for "Call at least 48 hours ahead if rescheduling" due "At least 48 hours before Friday, October 9". Good.
+
+Need summary_notes maybe mention recap error? It's for account/patient file. Could include. Need <=120 words. Our summary 107. Good.
+
+Need notable_details maybe include final corrected values. Ensure no contradictions. Use final/corrected values. For weight: "Weight recorded as 215 lb after patient uncertainty; height 5'11"." Good.
+
+Need maybe include "authorization pending" but later all set. Notable detail: "Halvard authorization was pending during nurse portion; scheduler did not revisit insurance." Good.
+
+Need final JSON. Ensure no trailing commas. Use double quotes. Escape? No special.
+
+Let's think if any other compliance issue: Nurse asked spouse DOB before confirming release? She said sees release form then asks DOB. Good. She disclosed procedure to spouse after verification. Good.
+
+Did nurse verify patient identity? Yes DOB. Good.
+
+Did scheduler verify identity? Transferred from nurse, patient already verified. OK.
+
+Did nurse give incorrect fish oil stop date? "stop it seven days before, so starting this Friday, October second." Procedure Oct 9. Seven days before Oct 9 is Oct 2. OK.
+
+Did nurse say "stop Eliquis Wednesday morning" in recap. Could be a transcription error? We must use transcript, not correct. It is a flag.
+
+Did nurse say "authorization still pending" and later "all set". Could be flag. If include, quality_reasons mention. Good.
+
+Could there be unauthorized commitment: Scheduler says Loretta welcome because release form. OK.
+
+Could there be privacy disclosure to neighbor? No.
+
+Could there be security: patient says writes password on sticky note. Not staff. No.
+
+Could there be policy violation: scheduler says free parking validate. OK.
+
+Could there be clinical safety: patient asked stop blood thinner earlier; nurse correctly refused. Good.
+
+Could there be missed commitment: Nurse said "I'll keep an eye on it" authorization. No evidence not kept. Not flag.
+
+Could there be misinformation: "authorization is still pending... should come through" not necessarily incorrect. Later all set maybe not. But flag maybe too aggressive. However quality_score 2 due med error. If we include insurance flag, might be seen as overflag. The prompt says do not flag things handled correctly. Is telling patient all set with insurance while authorization pending a failure? It could be misleading. But maybe nurse meant no patient action. The patient asked "so I'm all set with insurance then?" Nurse: "Yep, you're all set, nothing for you to do there." If authorization pending, patient indeed has nothing to do; office following up. So not necessarily misinformation. Could avoid flag. But quality_reasons can say "insurance authorization status was communicated inconsistently" as minor lapse. But if not flag, okay. Need flags only problems. The med error definitely problem. Maybe only one flag. But quality_score 2 due serious failure. If only one flag, okay.
+
+Could the med recap error be transcription error? The transcript says speech-to-text errors not corrected. But we cannot assume. It is in transcript. Flag.
+
+Need maybe flag "clinical_safety" because incorrect anticoagulant hold could cause stroke/bleeding. Type misinformation is fine. The flag description can mention safety.
+
+Quality_score: If one serious failure, 2. Good.
+
+Need final JSON only. Let's craft carefully.
+
+Check JSON validity:
+{
+ "call_type": "pre_procedure",
+ "outcome": "resolved",
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 2,
+ "quality_reasons": [...],
+ "flags": [
+  {"type":"misinformation","description":"...","evidence":"stop the Eliquis Wednesday morning"}
+ ],
+ "action_items": [...],
+ "summary_notes": "...",
+ "notable_details": [...]
+}
+
+Need ensure evidence quote exact lower-case? Transcript: "stop the Eliquis Wednesday morning" yes.
+
+Maybe include second flag? Let's decide. The instructions: flags: compliance, privacy, security, patient-safety, or accuracy problems... and commitments made without authority or not kept. Examples: incorrect information given. The recap error is enough. Insurance inconsistency maybe accuracy problem. But if we include, could be considered flagging a decision that correctly follows policy? Not exactly. Hmm.
+
+Maybe include flag type "misinformation" for insurance? Evidence: "I'm showing the authorization is still pending with Halvard." Description: "Staff later told the patient he was all set with insurance without confirming that the pending Halvard authorization had been approved." This is a potential accuracy problem. But if authorization pending, telling all set could cause patient not to worry, but office following up. It might not be harmful. The prompt says do not flag things handled correctly. Was it handled correctly? Nurse said keep an eye on it, then all set no action. Could be correct. I'd not flag to avoid false positive. But quality_reasons can mention "insurance authorization status was communicated inconsistently". That's okay.
+
+Could there be a flag for "missed_commitment" because nurse said "I'll keep an eye on it" but then said all set? No.
+
+Need maybe flag "other" for system delays? Not compliance. No.
+
+Action items: If we include "Monitor Halvard authorization status" owner Nurse due unspecified. Good.
+
+Need summary_notes maybe not include flag? It can. <=120 words. Let's refine summary:
+"Outbound pre-admission call for Wendell Osei-Fairbanks, colonoscopy with Dr. Lindqvist-Amaro Friday Oct 9. Authorized spouse Loretta answered; DOB 4/3/1958 verified. Nurse reviewed meds: apixaban last dose Mon Oct 5, none Tue-Fri AM; metformin skip Fri AM; glargine 20 units Thu night; lisinopril Fri AM with sip; stop fish oil Oct 2. Prep: clear liquids after light breakfast before 9 AM Thu; first half 6 PM Thu, second half 1:45 AM Fri done by 2:45, NPO after 4:45. Arrival corrected to 6:45 AM, second-floor endoscopy suite, Entrance B parking. Driver Phil Haddad 555-0139. Follow-up Oct 22 1:15 PM. Email wof58@mailbridge.com; text 555-0124. Authorization pending; recap error on Eliquis."
+Count 107. Good.
+
+Notable_details: Need maybe include "DOB April 3, 1958". Good.
+
+Potential issue: "call_type" pre_procedure but includes scheduling follow-up. OK.
+
+Potential issue: "sentiment_start" maybe positive because spouse friendly? First minute: "Oh, he's out... you can probably hear him... Is this about Friday?" neutral. OK.
+
+Potential issue: "sentiment_end" patient says "Thank you. You too. Bye." positive. OK.
+
+Need final no markdown. Ensure JSON strings no unescaped newlines? Can have newlines in JSON formatting, okay. But final should be valid. Use arrays.
+
+Let's produce final.

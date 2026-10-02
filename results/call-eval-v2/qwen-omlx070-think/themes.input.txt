@@ -1,0 +1,310 @@
+### C01 (scheduling, outcome: resolved)
+Summary: Patient Teodoro Vance-Ibarra, verified by name/DOB/address, scheduled six-month checkup with Dr. Okonkwo-Hale for Thu Oct 15, 2026 at 10:40. Adult daughter Marisol on speaker; patient authorized disclosure. Agent corrected initial new-patient banner misread. Patient is established. Fasting cholesterol/A1c labs ordered: arrive 20 minutes early, nothing after midnight, water okay. Bring photo ID, insurance card, current medication list. Contact updated: old landline ending 0492 removed; cell 555-0173 confirmed after correction; confirmation text to be sent today.
+Notable details:
+- Final appointment: Thursday, October 15, 2026 at 10:40; initial '14th' was wrong month.
+- Patient is established, not a new patient.
+- Final cell phone: 555-0173; old landline ending 0492 was disconnected and removed.
+- Patient authorized daughter to receive appointment details.
+- Fasting cholesterol/A1c labs: arrive 20 minutes early, nothing after midnight, water okay.
+- Bring photo ID, insurance card, and current medication list.
+- Agent initially misread new-patient banner but corrected it before booking.
+- Confirmation text to be sent to 555-0173 today.
+Flags:
+- [misinformation] Agent initially gave incorrect information that the doctor was not taking new patients, though the patient was established; the error was corrected before booking.
+
+### C02 (billing_dispute, outcome: resolved)
+Summary: Patient called after reaching billing instead of pharmacy; also questioned $146.20 statement. Identity verified with DOB and old address. Agent explained insurance allowed $182, paid $130; patient responsibility $51.20 (copay $40 plus $11.20 strep-test deductible) plus $95 July 29 no-show fee. Agent corrected initial misread copay from $15.20 to $51.20. Agent waived the $95 no-show fee, despite stating waivers over $50 require lead approval. Patient paid $51.20 by Visa ending 2914, balance zero. Address updated to 18 Wrenfield Court Apt 3B. Statement via portal and receipt by email promised; pharmacy direct line provided for albuterol refill.
+Notable details:
+- Caller initially wanted an albuterol refill but reached billing; pharmacy direct line 555-0162 was provided.
+- Statement total was $146.20: $51.20 patient responsibility plus $95 no-show fee from July 29.
+- Agent initially misread the copay as $15.20, then corrected it to $51.20, consisting of $40 copay plus $11.20 strep-test deductible.
+- Insurance allowed $182 and paid $130 for the sinus visit.
+- Agent stated fee waiver authority up to $50 but waived the $95 no-show fee without lead approval.
+- Address was updated from 440 Sable Ridge Road to 18 Wrenfield Court, Apartment 3B; zip ends in 41.
+- Payment was made with Visa ending 2914 and the balance was zero.
+- Two accounts with a similar name were visible; agent verified the correct account and left the other alone.
+- Caller raised a brother-in-law collections concern; agent declined to access the third-party account and confirmed the caller was not in collections.
+- Statement copy was to be sent via portal and receipt emailed to the email on file, D-kirwan-o at gmail.
+Flags:
+- [unauthorized_commitment] Agent waived a $95 no-show fee without lead approval despite stating that waivers over $50 require lead approval.
+
+### C03 (pharmacy_refill, outcome: callback)
+Summary: Beatriz Almeida-Hough called for a 90-day lisinopril 20 mg refill. The claim rejected for prior authorization; Halvard showed no PA despite Dr. Lindqvist’s office faxing it twice. Pharmacist Ingrid arranged a 30-day bridge fill at $4, ready Thursday after 2 at Millbrook, with atorvastatin. She will call the office today to resend the PA and contact Rafael when the 90-day is approved. Rafael was added as preferred contact with patient authorization. Technician verified identity but gave unsupervised reassurance about dizziness/low BP and promised pharmacist review of ibuprofen, which was not addressed.
+Notable details:
+- Patient: Beatriz Almeida-Hough, DOB 02/04/1959, address 1410 Corbel Street.
+- Medication corrected: lisinopril 20 mg, one tablet daily, 90-day supply from Dr. Lindqvist, received on the 8th.
+- Partial fill: 15 tablets mailed Monday; patient took two old 10 mg tablets since Monday after old supply ran out Sunday.
+- Insurance: Halvard, member number ending 61; new card in January was same number/design change.
+- 90-day lisinopril claim rejected for prior authorization; office faxed PA on the 9th and Monday, but Halvard showed no request received.
+- Bridge plan: 30-day lisinopril 20 mg at $4 copay, ready Thursday after 2 at Millbrook, not Eastgate.
+- Atorvastatin 40 mg, 90-day, due and will be in same bag.
+- Latanoprost corrected from 'Latin a prost'; filled on the 2nd, not due; unopened refrigerated, opened room temp about six weeks.
+- Prescription number for lisinopril: 771042.
+- Copay corrected from $40 to $4 for 30-day generic lisinopril.
+- Cash price for 90 generic lisinopril 20 mg: about $18.
+- Rafael, son, authorized for prescriptions/insurance and added as preferred contact; number 555-0191; texts only for pickup, calls/voicemail for PA.
+- Patient reported BP 94/58 and lightheadedness; technician attributed to heat and said lower is better.
+- Ibuprofen question for knee pain was raised and promised for pharmacist but not addressed.
+- Flu shot offered at pickup tomorrow, no copay; patient undecided.
+- Long hold: caller waited approximately 29 minutes for pharmacist transfer.
+Flags:
+- [clinical_safety] Technician provided clinical reassurance about dizziness and low blood pressure outside scope instead of escalating to a pharmacist.
+- [missed_commitment] Technician promised the pharmacist would review the caller's ibuprofen question, but the pharmacist did not address it during the call.
+
+### C04 (billing_dispute, outcome: resolved)
+Summary: Patient Lionel Ferreira-Quist called about an apparent double $125 charge for an app order. Pharmacist verified identity and found one posted payment plus one pending authorization hold; explained the hold should drop in 3-5 business days. Patient also requested early zolpidem due travel starting October 9; medication is not due until October 14, so pharmacist sent a vacation override request to Dr. Abernathy-Coles and advised checking/calling before October 9. The order pickup was corrected from Millbrook to Eastgate, ready tomorrow morning with text notification. Fluticasone spray had zero copay; $125 was vitamin D.
+Notable details:
+- Patient name: Lionel Ferreira-Quist; DOB: 06/30/1990; phone: 555-0148.
+- App order placed yesterday; two $125 entries: one posted, one pending authorization hold.
+- Pending hold expected to drop in 3-5 business days; billing release only if it remains.
+- Medications: vitamin D 50,000 unit ($125), fluticasone allergy spray (zero copay), zolpidem.
+- Zolpidem not due until October 14; travel starts October 9 for three weeks; 26 days early.
+- Vacation override request to Dr. Abernathy-Coles; caller to check/call a few days before October 9.
+- Order pickup corrected from Millbrook to Eastgate; ready tomorrow morning with text.
+- Pharmacist asked permission to use speakerphone due keyboard use.
+
+### C05 (no_show_followup, outcome: resolved)
+Summary: Outbound no-show follow-up for Harlan Brecken-Ayodele. Identity verified. Missed Sep 15 A1c recheck; no-show fee waived per first-miss policy. Rebooked Dr. Ruiz-Pakula Tue Oct 6 8:15 a.m. at Millbrook; A1c lab active, no fasting. Insurance updated to Halvard member H220846, group WHS9110. Patient reported fasting glucose 240 and no test strips; escalated to nurse. Nurse sent TrueStep strips/lancets to Ostrander Millbrook, gave red-flag instructions, and scheduled nurse visit Mon Sep 21 8 a.m. Patient to log glucose twice daily. Initial PHI disclosed to unverified third party; promised direct line not provided.
+Notable details:
+- Patient verified: Harlan Brecken-Ayodele, DOB February 2, 1978, 44 Tannery Row Apt 2.
+- Missed appointment was Tuesday at 9:00 a.m. with Dr. Ruiz-Pakula for endocrinology follow-up and A1c recheck.
+- No-show fee of $40 was waived automatically because it was the first missed visit in 12 months.
+- Rebooked appointment corrected to Tuesday, October 6 at 8:15 a.m. with Dr. Ruiz-Pakula at Millbrook second floor; agent initially read 8:50 before correcting to 8:15.
+- A1c lab order is active, no appointment needed, and no fasting is required for A1c by itself.
+- Insurance updated to Halvard Health Plan, member ID H220846, group WHS9110; patient switched through warehouse in August.
+- Best contact number corrected to cell 555-0191; current number is house/roommate phone.
+- Fasting glucose corrected from 140 to 240 this morning.
+- Patient has been out of test strips since the weekend; meter is TrueStep Mini.
+- Nurse sent TrueStep strips, 100 count, and lancets to Ostrander Millbrook.
+- Nurse visit scheduled for Monday, September 21 at 8:00 a.m.; patient should bring log or meter.
+- Red-flag instructions: glucose over 300 or vomiting, belly pain, confusion, or shortness of breath requires urgent care or ER same day.
+- Patient works nights, schedule flips, takes metformin twice daily mostly, no insulin, and takes blood pressure medication.
+- Care coordinator promised a direct line to avoid billing menu but did not provide it.
+- Transfer to nurse line involved a long hold of approximately 19 minutes and technical issues.
+Flags:
+- [privacy_disclosure] The care coordinator disclosed the patient's diabetes appointment and A1c recheck details to an unverified third party before patient verification.
+- [missed_commitment] The care coordinator promised to provide a direct line to avoid the billing menu but did not provide it during the call.
+
+### C06 (saas_support, outcome: escalated)
+Summary: Odile at Ferncliff Joinery reported reminder emails showing due dates one day early and two $35 late fees charged on due dates. Tier 2 identified bug TF-88213 introduced in 7.4: due dates converted to UTC, causing early reminders and late-fee job at 7:01 p.m. Central the day before. Customer reversed INV-20417 fee and will reverse INV-20422. Workarounds applied: late-fee grace period set to one day and no-date reminder template. Billing email changed to odile.m s at ferncliff joinery dot com pending confirmation; login email still accounts-at and requires owner. Account attached to ticket; summary email promised. Customer plans annual plan before Oct 20 renewal.
+Notable details:
+- Customer: Odile Marchetti-Sung, bookkeeper at Ferncliff Joinery.
+- Account owner identified as Gordon / Mr. Ferncliff.
+- Invoice corrected to INV-20417 after customer initially misread it as 20470.
+- INV-20417 amount: $4,812.50; due September 15; issued August 16; net 30.
+- Second affected invoice: INV-20422, Brookfield Renovations, $35 late fee.
+- Hartwell Kitchens paid INV-20417 on September 15 at 2:47 p.m. by ACH.
+- Hartwell late fee posted September 14 at 7:01 p.m. Central, before the due date.
+- Brookfield Renovations paid INV-20422 on September 18 at 10:15 a.m. by card.
+- Brookfield late fee posted September 17 at 7:01 p.m. Central, before the due date.
+- Total late fees: $70; INV-20417 fee reversed during the call; INV-20422 still to be reversed.
+- Bug tracked as TF-88213, introduced in release 7.4 on September 2; fix is in 7.4.2.
+- Root cause: due dates converted to UTC before formatting, causing one-day-early reminders and late-fee job at midnight UTC, 7 p.m. Central.
+- 61 reminders were sent between September 1 and September 22.
+- Billing email changed to odile.m s at ferncliff joinery dot com, pending confirmation.
+- Login email remains accounts at ferncliff joinery dot com and requires the account owner to change.
+- Workarounds applied: late-fee grace period changed from 0 to 1 day; reminder template switched to Friendly reminder, no date.
+- Renewal date is October 20; customer plans to switch to annual plan before renewal.
+- Junie is to be added as a Staff user; plan includes three free Staff seats and currently uses one.
+- Customer asked about deposit invoices; advised to use Deposit schedule for new invoices after 7.4.2.
+- Hartwell client Moe requested annual invoice download; advised statement or client portal Download all.
+Flags:
+- [privacy_disclosure] Agent disclosed the account email address on file before verifying the caller.
+- [identity_verification] Agent changed the account billing email before completing identity verification and then sent the verification code to the newly changed address.
+- [misinformation] Tier 1 incorrectly told the customer that posted late fees cannot be reversed.
+
+### C07 (insurance_verification, outcome: callback)
+Summary: Patient Nadia Prewitt-Okafor called about MRI lumbar spine scheduled Oct 8 possibly canceled for missing prior auth. Agent verified patient, found clinic had faxed requests to retired Halvard UM fax 555-0144. Payer opened expedited request PA-2609-55170; agent uploaded order, PT notes, and office note. Decision expected within 72 hours. Agent will notify Larkspur, message Dr. Okonjo-Reyes about new toe tingling, update fax template, and call patient with decision. Patient to add husband proxy and call Larkspur billing. Deductible $1210/$1500 met; MRI 80% after deductible.
+Notable details:
+- Patient name corrected from Nadine Prewitt to Nadia Prewitt-Okafor.
+- DOB 11/27/1984; member ID HVD60441829.
+- MRI lumbar spine without contrast, CPT 72148, scheduled Thursday Oct 8 at 7:20 AM at Larkspur Surgery and Endoscopy Center.
+- Prior auth faxes sent to 555-0144 on Sep 3 and Sep 14 were not received because that Halvard UM fax was retired Aug 31; new fax is 555-0188, portal preferred.
+- New expedited authorization reference PA-2609-55170; agent initially misread ending as 55107, corrected to 55170.
+- Expedited review based on provider attestation; decision expected within 72 hours.
+- Deductible: $1500 individual, $1210 met, $290 remaining; MRI covered 80% after deductible.
+- PT benefit: 30 combined visits, 8 used, 22 remaining; no referral needed, prescription required.
+- PT dates July 31 to Sep 11, 8 visits; meds naproxen 500 mg BID and methylprednisolone dose pack in Aug.
+- Diagnosis codes M54.16 and M54.42.
+- Agent disclosed sertraline for depression to payer; payer said not needed for imaging review.
+- Patient reported new tingling in toes for last week; agent to message Dr. Okonjo-Reyes and gave ER red flags.
+- No workers' comp claim filed for July lifting injury.
+- Patient cell ending 0166; husband not on release/proxy; patient will add proxy tonight.
+- Clinic fax template still listed old fax and was marked updated March 2025.
+- Payer transfer from Carla to UM failed and returned call to main menu, adding delay.
+Flags:
+- [privacy_disclosure] Agent disclosed the patient's mental health medication to the payer without explicit patient consent, and the payer said it was not needed for the imaging review.
+- [other] The clinic used an outdated fax template containing a retired Halvard UM fax number, causing prior authorization requests to be sent to a dead line.
+
+### C08 (scheduling, outcome: resolved)
+Summary: Gideon Achebe-Lund called for himself and son Ezra. Verified identity. Ezra booked sports physical with Dr. Sato at Eastgate Thu Oct 22 3:30 pm; bring signed green athletic form; added to cancellation list; reminders to both parents; albuterol HFA refill request sent to Dr. Sato's nurses for Eastgate pharmacy. Gideon booked with Dr. Lindqvist at Harbor Street Mon Oct 12 9:20 am, arrive 15 min early; adult Eastgate closed. Insurance updated to Halvard H-77310 group B-442 for both. Referrals explained ortho referral must follow visit; Paloma noted. Agent incorrectly confirmed Eastgate when caller asked location.
+Notable details:
+- Caller: Gideon Achebe-Lund, DOB 11/30/1978, address 42 Pennyroyal Drive.
+- Son: Ezra Achebe-Lund, DOB 03/04/2011; caller corrected age to 15 and a half.
+- Ezra sports physical booked Thu Oct 22, 2026, 3:30 pm with Dr. Sato at Eastgate pediatrics, first floor.
+- Ezra added to Dr. Sato's Thursday cancellation list; reminders to Gideon and Celeste Achebe.
+- Albuterol HFA rescue inhaler refill request sent to Dr. Sato's nurse team for Eastgate pharmacy.
+- Gideon knee visit booked Mon Oct 12, 2026, 9:20 am with Dr. Lindqvist at Harbor Street, not Eastgate; arrive 15 minutes early.
+- Adult medicine at Eastgate closed for renovation through November; pediatrics and pharmacy remain open.
+- Insurance updated to Halvard member ID H-77310, group B-442; corrected from initially read H-77301.
+- Ezra is on same family plan; caller believed member ID may have -02 suffix, not confirmed.
+- Eligibility check will run overnight.
+- Orthopedics referral must be generated from Dr. Lindqvist visit; Paloma will send to Corran Orthopedics if indicated; Corran to call within 5 business days.
+- Ezra has a confidential adolescent clinic follow-up on the third; agent noted it for Dr. Sato without disclosing details.
+- Bring signed green athletic pre-participation form; Dr. Sato to print immunization record for school.
+- Immunizations appear up to date: last 11-year visit and flu shot last October.
+- Text confirmations/reminders to cell ending 8812; reminder two days before.
+- Parking validation available at Eastgate front desk with ticket; Harbor Street has free parking lot.
+- Agent incorrectly confirmed Eastgate as location for Gideon's Oct 12 appointment after booking Harbor Street.
+- Transfer to referrals involved a long hold despite being described as short.
+Flags:
+- [privacy_disclosure] Agent disclosed the existence and follow-up nature of a confidential adolescent clinic visit to the parent.
+- [misinformation] Agent incorrectly confirmed that Gideon's October 12 appointment was at Eastgate after booking it at Harbor Street.
+
+### C09 (saas_support, outcome: resolved)
+Summary: Inbound Tier 2 payroll support for Pemberton Coffee Roasters. PR-0918 CSV export failed in Ledgerline due to UTF-8/Windows-1252 encoding mismatch caused by Zoë Abernathy-Quill's diaeresis. Resolved by exporting PR-0918 as XLSX; 12/12 imported. Default export set to XLSX. Deleted draft PR-0918 copy. Accountant Sunniva Rask authorized and invited with Accountant role. Agent advised on tips, garnishment, PTO, SSO certificate, reminder-date bug fix 7.4.2 Oct 20, app update, renewal Nov 1. Will email summary and log encoding UI request.
+Notable details:
+- Payroll run corrected from PR-0981 to PR-0918; September 18 finalized run with 12 employees.
+- Root cause: Tallyforge UTF-8 CSV vs Ledgerline Windows-1252 import; XLSX export imported 12/12 and default export set to XLSX.
+- Zoë Abernathy-Quill changed name spelling to include diaeresis on September 9, causing row 7 invalid-character error.
+- Draft 'PR-0918 copy' created September 19 at 8:40 a.m. was deleted; finalized PR-0918 untouched.
+- Sunniva Rask (Rask and Holloway) was authorized on the recorded line and invited with Accountant role; invite expires in seven days; email stated as sunniva@raskholloway.com.
+- New employee Dmitri Volkov-Haas start date September 28; bank info on sticky note to be shredded; he must enter bank details via employee portal.
+- Rosa Ilunga-Park PTO balance 4.8 hours is correct under September 1 effective date; retroactive change requires business/accounting decision.
+- Tips: cash and card tips must be reported; enable Cash tips and Paid tips for Rosa, Dmitri (starting next week), Kofi, and Zoë.
+- Wage garnishment order: create Garnishment deduction, attach order PDF, set payee to agency, use cap field; details not read on recorded line.
+- Reminder emails show due date one day early due known bug since 7.4; fix in 7.4.2 on October 20; late fees off for account.
+- Mobile app version 7.2.x has known payroll crash; update to 7.4.1.
+- Subscription renews November 1 at same monthly price; 'upcoming changes' email was optional expense module.
+- W-2s generate January 15, e-filed by January 31; paper copies cost extra.
+- SSO login issue: password logins succeeded; agent suspected certificate expiry and advised calendar reminder; no explicit certificate renewal action stated.
+
+### C10 (pre_procedure, outcome: resolved)
+Summary: Outbound pre-admission call for Wendell Osei-Fairbanks, colonoscopy with Dr. Lindqvist-Amaro Friday Oct 9. Authorized spouse Loretta answered; DOB 4/3/1958 verified. Nurse reviewed meds: apixaban last dose Mon Oct 5, none Tue-Fri AM; metformin skip Fri AM; glargine 20 units Thu night; lisinopril Fri AM with sip; stop fish oil Oct 2. Prep: clear liquids after light breakfast before 9 AM Thu; first half 6 PM Thu, second half 1:45 AM Fri done by 2:45, NPO after 4:45. Arrival corrected to 6:45 AM, second-floor endoscopy suite, Entrance B parking. Driver Phil Haddad 555-0139. Follow-up Oct 22 1:15 PM. Email wof58@mailbridge.com; text 555-0124. Authorization pending; recap error on Eliquis.
+Notable details:
+- Procedure: colonoscopy with Dr. Lindqvist-Amaro, Friday, October 9, 2026.
+- Patient DOB: April 3, 1958.
+- Authorized spouse: Loretta Osei-Fairbanks, release form signed in June.
+- Arrival time corrected from 7:45 a.m. to 6:45 a.m.
+- Follow-up time corrected from 1:50 p.m. to 1:15 p.m. on Thursday, October 22.
+- Driver phone corrected from 555-0138 to 555-0139.
+- Patient cell for text reminder: 555-0124.
+- Email: wof58@mailbridge.com.
+- Insurance: Halvard; authorization was pending during the nurse portion; nurse later said no patient action was needed.
+- Medication recap error: nurse said stop Eliquis Wednesday morning despite earlier instruction to take the last dose Monday night, October 5.
+- Recent cold/cough without fever; anesthesia nurse cleared mild cough; return precautions for fever 100.4 or higher, worsening cough, or shortness of breath.
+- Family history: father had colon cancer.
+- Secondary issue: umbilical hernia; nurse noted it for the doctor.
+- Anesthesia history: knee surgery around 2019 or 2020 with post-op nausea and one episode of vomiting; no CPAP, but snoring.
+- Weight recorded as 215 lb after patient uncertainty; height 5'11".
+- Parking: Entrance B off Wellstone Avenue, validate ticket; check in at second-floor endoscopy suite, not main lobby.
+- Reschedule notice: call at least 48 hours ahead.
+- Fish oil stop date: Friday, October 2.
+- Prep times: first half 6 p.m. Thursday, October 8; second half 1:45 a.m. Friday, October 9, finish by 2:45 a.m.; nothing by mouth after 4:45 a.m.
+Flags:
+- [misinformation] The nurse's final recap incorrectly changed the apixaban hold timing, conflicting with the earlier instruction and creating a potential anticoagulant-safety risk.
+
+### C11 (post_procedure_followup, outcome: escalated)
+Summary: Patient Imogen Tessaro-Blythe, post-op day 3 lap chole (9/21), called nurse line. Husband Rob present and authorized. Concerns: pain, right shoulder gas pain, low-grade temp 100.8, constipation, JP drain. Nurse verified identity, gave wound/diet/activity instructions, sent hydrocodone refill request to surgeon team, updated pharmacy to Ostrander Eastgate, and conferenced Larkspur PA. Drain output 40 mL AM, trending down; Larkspur to call Friday for drain check. Follow-up Oct 2 1:15. Safety note: nurse later advised a bath despite earlier no tub baths and did not warn about acetaminophen total with Norco.
+Notable details:
+- Surgery date corrected to Monday, September 21, 2026; patient initially said twelfth.
+- Follow-up corrected to Friday, October 2, 2026 at 1:15 PM with Dr. Vasquez-Lim at Larkspur; patient initially said twelfth.
+- Current temperature reported as 100.8 F this afternoon; spouse mentioned 101.8 F last night, but current value used.
+- JP drain output: Monday night 110 mL, Tuesday 70/60 mL, Wednesday 55/50 mL, this morning 40 mL.
+- Larkspur drain protocol: pull when output is under 30 mL/24h for two consecutive days.
+- Preferred pharmacy changed from Ostrander Millbrook to Ostrander Eastgate.
+- Patient authorized husband Rob to participate and receive information.
+- Medications: hydrocodone-acetaminophen 5/325, docusate, levothyroxine 75 mcg, birth control pill, vitamin D gummy.
+- Allergy: penicillin rash.
+- Patient also taking Extra Strength Tylenol 2 tablets every 6 hours with Norco; nurse did not address total acetaminophen limit.
+- Nurse gave conflicting advice: earlier no tub baths for two weeks, later recommended a warm bath.
+- IVR issue: pressing 3 for prescription refills routed to billing, causing two failed attempts.
+- Constipation: no bowel movement since Monday morning; advised OTC polyethylene glycol once daily and call if none by Saturday.
+- Shoulder pain assessed as referred gas pain; red flags include sudden worsening, shortness of breath, or chest pain.
+- Patient is a middle-school music teacher; sub through second week of October; needs work note at follow-up.
+- Larkspur office to call Friday to schedule drain check, likely early next week.
+- Nurse sent hydrocodone refill request to Dr. Vasquez-Lim's team; controlled refill cannot be written after hours by on-call PA.
+- Patient denied calf pain, one-sided leg swelling, shortness of breath, and chest pain.
+Flags:
+- [clinical_safety] Nurse advised a tub bath despite earlier discharge instruction prohibiting tub baths for two weeks and despite incisions and a JP drain.
+- [clinical_safety] Nurse approved taking Extra Strength Tylenol with hydrocodone-acetaminophen without warning about total acetaminophen limit.
+
+### C12 (billing_dispute, outcome: resolved)
+Summary: Customer reported two $49 charges on the same day. Identity verified via emailed code. Billing found two active Studio subscriptions tied to the same login/card: Halden Studio and Halden Studio Archive, both renewed on the twentieth. Archive had been active since last November and had not sent invoices since February. Agent downgraded Archive to free Read-Only, refunded the current $49 charge to Mastercard ending 6604, and explained refund timing of 5-7 business days. Main workspace remains unchanged. Confirmation email to be sent. Customer accepted outcome and sentiment improved.
+Notable details:
+- Customer: Saoirse Lindgren-Abara, owner of Halden Studio.
+- Two workspaces tied to same login/card: Halden Studio and Halden Studio Archive.
+- Both workspaces were on Studio plan at $49/month and renewed on the twentieth.
+- Archive workspace had been active since last November, about 10 months.
+- Archive had not sent an invoice since February.
+- Main Halden Studio workspace has four users; Archive has one user.
+- Archive downgraded to free Read-Only tier; no more charges for it.
+- $49 refund issued to Mastercard ending 6604, expected in 5 to 7 business days.
+- Agent promised email confirming downgrade and refund.
+- Main workspace remains on Studio plan with no changes.
+
+### C13 (complaint_escalation, outcome: escalated)
+Summary: Philippa Garrow-Nakamura, POA for mother Ottoline Garrow (84, COPD), complained that a fluticasone/umeclidinium/vilanterol inhaler PA submitted 9/1 was never received by Halvard because practice faxed to retired number. Patient had urgent care 9/19 for exacerbation and is using rescue inhaler 6-7 times/day. Odessa verified POA, updated address, opened complaint CR-26-1193, and escalated to Millbrook manager Bernard. Bernard resubmitted PA expedited, corrected dose to once daily, will check samples, request urgent care records, fix fax directory, audit other Halvard PAs, and call by 10/1. Caller will send urgent care bill; manager promised coverage despite earlier financial-authority caveat.
+Notable details:
+- Patient: Ottoline Garrow, DOB 11/02/1941; caller/POA: Philippa Garrow-Nakamura, DOB 06/18/1973; POA document scanned March 2025.
+- Address updated from Pell Street to Linden Court Assisted Living, 900 Fallowfield Road, unit two-fourteen; caller also said 'two-one-four,' creating ambiguity.
+- Best callback: caller cell 555-0129; voicemail with care details authorized; written complaint response requested by mail to 61 Thornbury Way.
+- Complaint reference CR-26-1193; written response due within 30 days.
+- Prescription: fluticasone-umeclidinium-vilanterol prescribed 09/01/2026; dose corrected from Odessa's 'twice a day' to one inhalation once daily.
+- Patient out of old maintenance inhaler since 09/20; using albuterol rescue inhaler 6-7 times/day, exceeding urgent care instruction to call if more than 4 times/day.
+- Urgent care visit 09/19 at Corliss Street Urgent Care: nebulizer, prednisone 5 days, SpO2 86%.
+- PA faxed 09/02 and 09/10 to Halvard fax 555-0144, retired 08/31; correct fax 555-0188 or provider portal.
+- Halvard never received the PA; it was not a denial. Expedited resubmission planned; expedited turnaround 72 hours.
+- Portal messages sent 09/12 and 09/21 were marked read with no reply; Gail promised callback 09/11 but did not call.
+- Urgent care bill $240; manager promised to cover it despite earlier stating financial decisions require risk-management committee.
+- Manager direct extension 4417; callback promised by Thursday 10/01/2026.
+- Practice will update payer directory, notify Millbrook/Eastgate/Harbor Street, and audit Halvard PAs faxed to old number since 09/01.
+Flags:
+- [misinformation] Odessa initially told the caller that Halvard had denied the prior authorization, although the manager later found that Halvard had never received the request.
+- [unauthorized_commitment] Bernard promised to cover the patient's urgent care bill after earlier stating that financial decisions must go to the risk-management committee and that he could not promise the outcome.
+- [missed_commitment] A nurse previously promised to call the caller back on September 11 about the prior authorization but did not do so.
+
+### C14 (billing_dispute, outcome: callback)
+Summary: Patient disputed $1,284 urgent-care bill. First agent failed verification, incorrectly said out-of-network and collections despite dispute, and misrouted transfer. Coding specialist verified patient, confirmed in-network, identified coding error (99285 instead of 99214), statement date error (Sep 5 not Sep 15), and left/right wrist diagnosis error. Corrected replacement claim submitted, account hold placed, prompt-pay 20% noted, portal confirmation promised. Estimated patient responsibility about $184. Specialist will call by Oct 6 after Halvard reprocessing; patient to send urgent-care papers and any copay receipt via portal and call nurse line for amlodipine refill.
+Notable details:
+- Date of service corrected to September 5, 2026; statement incorrectly printed September 15.
+- Original claim number: 2609-33418.
+- Dispute ticket: D58812.
+- Visit code corrected from 99285 to 99214; x-ray code 73100, two views.
+- Diagnosis corrected from left wrist sprain (S63.502A) to right wrist sprain (S63.501A).
+- Patient is in network with Halvard PPO; out-of-network statement was incorrect.
+- Estimated patient responsibility after corrected claim: about $184 ($75 urgent-care copay plus $109 x-ray coinsurance).
+- Prompt-pay discount: 20% if paid within 30 days of corrected statement.
+- Account hold placed to prevent collections while corrected claim is processed.
+- Specialist extension: 2271; callback promised within 10 business days, by October 6.
+- Patient needs amlodipine refill; advised to call nurse line, press 4.
+- Patient's spouse Lucia asked about an unbilled August visit; specialist correctly required separate verification.
+- No September 5 $75 copay payment posted; patient to check for receipt/card charge.
+- Statement date printing error and urgent-care location master-data issue reported internally.
+- Call was misrouted to appointments scheduler Bree during transfer to coding.
+- Patient recorded the call on his end.
+Flags:
+- [identity_verification] Billing representative discussed account and statement details before verifying the caller's identity.
+- [misinformation] Billing representative incorrectly told the patient he was out of network.
+- [policy_violation] Billing representative incorrectly stated that an open billing dispute would not prevent the account from going to collections.
+- [missed_commitment] The agent promised to transfer the caller to coding but the transfer reached appointments instead.
+
+### C15 (sales, outcome: callback)
+Summary: Outbound sales follow-up with Rosalind, owner of Kettering Lane Physio. She needs invoicing/payment links for 7 users, packages/deposits, calendar sync, and adoption support. Rep recommended Starter at $12/seat/month with 20% annual discount, explained card fees, and scheduled trial to start Oct 1 ending Oct 15. Live walkthrough set for Tue Oct 6 at 11:00; quote and integration check promised. Rep initially correctly stated BAA only on Enterprise, but later incorrectly assured prospect patient details are fine in invoice notes on Starter, creating a privacy/compliance concern.
+Notable details:
+- Prospect corrected seat count from eleven to seven.
+- Trial date corrected from starting today/ending October 8 to starting October 1/ending October 15.
+- Front desk person Ilse is out until October 1.
+- Practice: Kettering Lane Physio; primary user Ilse.
+- Recommended plan: Starter, 7 seats, $12/seat/month, 20% annual discount.
+- Card processing: 2.6% + $0.30; bank transfers: $0.50 flat.
+- BAA only on Enterprise; Starter/Growth do not include BAA.
+- Rep later incorrectly said patient details are fine in invoice notes on Starter.
+- Unknown booking system with purple logo; integration to be checked.
+- Busy season summer; avoid go-live then.
+- Prospect concerned about adoption and staff forgetting mobile taps.
+Flags:
+- [misinformation] Rep incorrectly assured the prospect that patient details can be included in invoice notes on Starter after stating Starter does not include a BAA.
+
+### C16
+(no analysis available for this call)

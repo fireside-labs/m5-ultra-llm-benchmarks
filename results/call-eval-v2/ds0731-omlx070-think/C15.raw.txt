@@ -1,0 +1,60 @@
+{
+  "call_type": "sales",
+  "outcome": "callback",
+  "sentiment_start": "positive",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Provided clear pricing and feature details, and set up a trial and follow-up meeting.",
+    "Built rapport and addressed the prospect's concerns about adoption and data export.",
+    "Gave contradictory and potentially incorrect HIPAA advice regarding BAA requirements and patient details in invoices.",
+    "Committed to checking the booking system integration and sending a quote, but did not confirm these during the call."
+  ],
+  "flags": [
+    {
+      "type": "misinformation",
+      "description": "Rep incorrectly assured the prospect that they are HIPAA-compliant on the Starter plan without a BAA and that patient details can be placed in invoice notes, contradicting earlier statement that BAA is only on Enterprise.",
+      "evidence": "you're covered, honestly. Everything's encrypted, we're on the same infrastructure as the big guys. You're totally fine to put patient details in the invoice notes, people do it all the time."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "REP",
+      "task": "Set up trial workspace starting October 1st",
+      "due": "October 1st"
+    },
+    {
+      "owner": "REP",
+      "task": "Send calendar invite for walkthrough on Tuesday October 6th at 11am",
+      "due": "unspecified"
+    },
+    {
+      "owner": "REP",
+      "task": "Send quote for seven Starter seats with annual discount",
+      "due": "unspecified"
+    },
+    {
+      "owner": "REP",
+      "task": "Check booking system integration and include in follow-up email",
+      "due": "unspecified"
+    },
+    {
+      "owner": "PROSPECT",
+      "task": "Review quote with husband",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Sales call with Rosalind, owner of Kettering Lane Physio, a physiotherapy practice. Discussed invoicing and payment collection pain points. Rep recommended Starter plan at $12/seat/month with 20% annual discount. Set up 14-day trial starting Oct 1, ending Oct 15. Scheduled walkthrough with front desk person Ilse on Tue Oct 6 at 11am. Rep to send quote and check integration with booking system. Noted concern about HIPAA; rep gave potentially incorrect advice about BAA and patient details in invoices.",
+  "notable_details": [
+    "Practice name: Kettering Lane Physio",
+    "Number of users: 7 seats",
+    "Front desk person: Ilse",
+    "Trial dates: Oct 1 to Oct 15",
+    "Walkthrough: Tue Oct 6 at 11am",
+    "Pricing: $12/seat/month, 20% annual discount",
+    "Card processing: 2.6% + $0.30, bank transfer $0.50",
+    "BAA only on Enterprise plan",
+    "Prospect's husband does books",
+    "Prospect is skeptical but positive"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "call_type": "saas_support",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 5,
+  "quality_reasons": [
+    "Verified identity properly via six-digit code sent to the account email before discussing account details",
+    "Accurately checked the purchase date (August 15) and correctly determined the customer was within the 14-day refund window",
+    "Followed security best practice by sending a secure link instead of taking card numbers over the phone",
+    "Set up the correct replacement plan (Team monthly, three seats) on the new card and confirmed workspace data would be preserved",
+    "Empathetic and patient throughout despite repeated technical glitches and background noise"
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "billing support (Pita)",
+      "task": "Process full refund of the annual Business plan (10 seats) to the original Visa ending in 2209",
+      "due": "5-7 business days"
+    },
+    {
+      "owner": "billing support (Pita)",
+      "task": "Send email confirmations for the refund and the new Team monthly plan",
+      "due": "unspecified"
+    },
+    {
+      "owner": "customer (Benedikt)",
+      "task": "Add new card (ending 5530) via secure link to fund the Team monthly plan",
+      "due": "completed during the call"
+    }
+  ],
+  "summary_notes": "Customer accidentally purchased an annual Business plan (10 seats) on 2026-08-15 instead of the intended monthly Team plan (3 seats). Agent verified identity via emailed six-digit code, confirmed the purchase was 11 days old and within the 14-day refund window, and processed a full refund to the original Visa ending 2209 (customer is canceling that card; agent correctly explained the bank will still credit the refund). New card ending 5530 was added via secure link and a Team monthly plan for 3 seats was activated the same day. Refund ETA 5-7 business days; email confirmations promised. Issue fully resolved; customer satisfied.",
+  "notable_details": [
+    "Purchase date was August 15, 2026; call date August 26, so 11 days elapsed - within the 14-day refund window (customer initially believed he was outside it)",
+    "Refund must go to the original Visa ending 2209, which the customer is canceling; agent explained the bank will still route the credit",
+    "New payment card ends in 5530, added via secure link, not read over the phone",
+    "Replacement plan is Team monthly for 3 seats, activated same day; workspace 'Szymanski-Roe Design' and its contents remain unchanged",
+    "Customer's name is Benedikt; account email ben@szymanski-roe-design.com",
+    "Agent promised to call back on the number on file if the call disconnected",
+    "Agent experienced repeated system issues (forced password change every 30 days, slow system, monitor glitches); IT reportedly 'looking into it'"
+  ]
+}

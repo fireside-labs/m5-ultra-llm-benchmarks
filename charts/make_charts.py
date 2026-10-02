@@ -6,7 +6,7 @@ Usage:  python charts/make_charts.py      (from the repo root; BENCH_RESULTS ove
 Reads   results/longctx/*.jsonl, results/mtp/*.jsonl (labels starting "test-" ignored;
         the newest file wins when a label appears in more than one file) and the newest
         results/replay/*-{qwen,ds}-replay-{omlx,llama}.jsonl
-Writes  01_*.png ... 10_*.png next to this script, at 2x (figsize in inches x 200 dpi).
+Writes  01_*.png ... 12_*.png next to this script, at 2x (figsize in inches x 200 dpi).
 Pure CPU / file reading - never contacts a server.
 """
 import glob
@@ -663,7 +663,7 @@ def chart10():
                f"DeepSeek-V4-Flash, DSpark off · the same {n} requests (every 5th step of a real 1,044-step agent "
                f"session, ~2k new tokens each, up to 256 output tokens) sent in order to each engine.\n"
                f"At 300-420k: TTFT {bo[0]:.1f} s (oMLX) vs {bl[0]:.1f} s (llama.cpp); decode {bo[1]:.0f} vs "
-               f"{bl[1]:.0f} t/s. Real turns reverse the synthetic 64-token result in chart 05.",
+               f"{bl[1]:.0f} t/s. Real turns reverse what a synthetic 64-token follow-up test suggests.",
                f"{HW}\n{DS_CAVEAT} oMLX = 0731 oQ4e, kernel build; llama.cpp = Vision-Exp UD-Q8_K_XL. "
                f"Dots = individual requests; lines = rolling median over 15 consecutive requests. Both servers start "
                f"with an empty cache; each request reuses the previous request's prefix. Decode panel omits requests "
@@ -709,7 +709,91 @@ def chart10():
         print(k, {b: v for b, v in data[k]["bands"].items()}, f"total {data[k]['cum'][-1]:.1f} min",
               "requests", len(data[k]["rows"]))
 
+# ------------------------------------------------- oMLX 0.7.0 kernel build ---
+Q70 = "qwen-oq8e-omlx070"  # newest *-qwen-oq8e-omlx070.jsonl; QO above is the Homebrew rc1 run (no custom kernels)
+HW070 = HW.replace("oMLX 0.7.0rc1", "oMLX 0.7.0 kernel build (custom kernels); rc1 = Homebrew 0.7.0rc1 without custom "
+                                     "kernels")
+QWEN070_SETUP = "llama.cpp Q8_0 vs oMLX oQ8e, 0.7.0 kernel build (block cache on, MTP off) · 3 reps, medians."
+
+
+def chart11():
+    fig, (a1, a2) = plt.subplots(1, 2, figsize=(8.5, 5.8))
+    p70, prc, pll = (by_depth(k, "cold", "prefill_tps") for k in (Q70, QO, QL))
+    d70, dll = by_depth(Q70, "cold", "decode_tps"), by_depth(QL, "cold", "decode_tps")
+    # left: cold prefill
+    xr, yr = xy(prc)
+    a1.plot(xr, yr, color=MUTED, lw=LW, ls=(0, (4, 2.5)), zorder=2, marker="o", ms=MS - 1.5, mfc=SURFACE, mec=MUTED,
+            mew=1.2, label="oMLX Homebrew rc1, no custom kernels")
+    x1, y1 = line(a1, p70, C_OMLX, "oMLX 0.7.0 kernel build")
+    x2, y2 = line(a1, pll, C_LLAMA, "llama.cpp Q8_0")
+    note(a1, x1[-1], y1[-1], f"{y1[-1]:,.0f}", dx=0, dy=9, ha="center", va="bottom")
+    note(a1, xr[-1], yr[-1], f"rc1 {yr[-1]:,.0f}", dx=0, dy=9, ha="center", va="bottom", size=8)
+    note(a1, x2[-1], y2[-1], f"{y2[-1]:,.0f}", dx=0, dy=-9, ha="center", va="top")
+    a1.set_ylim(0, max(y1) * 1.2)
+    a1.set_ylabel("Cold prefill (tokens/s)")
+    a1.set_title("Prefill", loc="left", fontsize=10.5, color=INK, weight="bold")
+    # right: decode after a cold prompt
+    x3, y3 = line(a2, d70, C_OMLX, "oMLX 0.7.0 kernel build")
+    x4, y4 = line(a2, dll, C_LLAMA, "llama.cpp Q8_0")
+    note(a2, x3[-1], y3[-1], f"{y3[-1]:.0f}", dx=0, dy=9, ha="center", va="bottom")
+    note(a2, x4[-1], y4[-1], f"{y4[-1]:.1f}", dx=0, dy=-9, ha="center", va="top")
+    a2.set_ylim(0, max(y3) * 1.18)
+    a2.set_ylabel("Decode (tokens/s)")
+    a2.set_title("Decode", loc="left", fontsize=10.5, color=INK, weight="bold")
+    for ax in (a1, a2):
+        ax.set_xlim(0, 280)
+        kfmt(ax)
+        comma(ax)
+        ax.set_xlabel("Context depth (prompt tokens, cold)")
+    ly = frame(fig, (a1, a2), f"Qwen3.8-Flash-Next 8-bit: oMLX 0.7.0 vs llama.cpp at 250k, "
+                              f"{y1[-1] / y2[-1]:.1f}x prefill and {y3[-1] / y4[-1]:.1f}x decode",
+               QWEN070_SETUP + f"\nThe kernel build takes oMLX prefill at 250k from {yr[-1]:,.0f} t/s "
+                               f"(Homebrew rc1) to {y1[-1]:,.0f} t/s ({y1[-1] / yr[-1]:.1f}x). "
+                               f"Decode = up to 256 tokens after the cold prompt.",
+               f"{HW070}\n{PROMPTS}\nSource: {fname(Q70)}, {fname(QO)}, {fname(QL)}",
+               legend_rows=1, ax_titles=True, wspace=0.32)
+    h = [Line2D([], [], color=C_OMLX, lw=LW, marker="o", ms=MS, mec=SURFACE, mew=RING),
+         Line2D([], [], color=MUTED, lw=LW, ls=(0, (4, 2.5)), marker="o", ms=MS - 1.5, mfc=SURFACE, mec=MUTED,
+                mew=1.2),
+         Line2D([], [], color=C_LLAMA, lw=LW, marker="o", ms=MS, mec=SURFACE, mew=RING)]
+    fig.legend(h, ["oMLX 0.7.0 kernel build", "oMLX rc1, no custom kernels (prefill only)", "llama.cpp Q8_0"],
+               loc="upper left", bbox_to_anchor=(0.2 / 8.5, ly), ncol=3, borderaxespad=0, columnspacing=1.4)
+    save(fig, "11_qwen_070_vs_llama_depth.png")
+    print(f"chart11 250k: prefill 0.7.0 {y1[-1]:.1f}, rc1 {yr[-1]:.1f}, llama {y2[-1]:.1f}; "
+          f"decode 0.7.0 {y3[-1]:.2f}, llama {y4[-1]:.2f}")
+
+
+def chart12():
+    cold = by_depth(Q70, "cold", "ttft_s")
+    w4k, w64 = by_depth(Q70, "warm", "ttft_s", 4096), by_depth(Q70, "warm", "ttft_s", 64)
+    fig, ax = plt.subplots(figsize=(8, 5.6))
+    xa, ya = line(ax, cold, C_OMLX, "cold (new conversation)", marker="s", hollow=True)
+    xb, yb = line(ax, w4k, C_OMLX, "next turn, +4k tokens")
+    xc, yc = line(ax, w64, C_OMLX, "next turn, +64 tokens", marker="D")
+    for lineobj in ax.lines[-1:]:
+        lineobj.set_markersize(MS - 1)
+    log_seconds(ax)
+    ax.set_ylim(0.1, 200)
+    ax.set_xlim(0, 300)
+    kfmt(ax)
+    note(ax, xa[-1], ya[-1], f"cold: {ya[-1]:.0f} s")
+    note(ax, xb[-1], yb[-1], f"+4k: {yb[-1]:.1f} s", dy=5)
+    note(ax, xc[-1], yc[-1], f"+64: {yc[-1]:.1f} s", dy=-5)
+    ax.set_xlabel("Context depth (tokens already in the conversation)")
+    ax.set_ylabel("Time to first token (seconds, log scale)")
+    ax.legend(loc="lower right")
+    frame(fig, ax, f"Pay prefill once (Qwen, 250k): first answer {ya[-1]:.0f} s, next turn {yc[-1]:.1f}-{yb[-1]:.1f} s",
+          "Qwen3.8-Flash-Next 8-bit (oQ8e), oMLX 0.7.0 kernel build, prompt cache on, MTP off · 3 reps, medians."
+          "\nHollow squares = cold prompt; filled = next turn in the same conversation "
+                          "(64 or 4,096 new tokens, earlier prefix reused from the cache).",
+          "Apple M5 Ultra Mac Studio, 256 GB unified memory, macOS 27.0.1 · oMLX 0.7.0 built from source with custom kernels"
+          f"\n{PROMPTS} The +4k step adds 4,096 new tokens instead of 64.\n"
+          f"Source: {fname(Q70)}")
+    save(fig, "12_qwen_cold_vs_warm_070.png")
+    print(f"chart12 250k: cold {ya[-1]:.2f} s, warm+4k {yb[-1]:.3f} s, warm+64 {yc[-1]:.3f} s")
+
 
 if __name__ == "__main__":
-    for fn in (chart1, chart2, chart3, chart4, chart5, chart6, chart7, chart8, chart9, chart10):
+    for fn in (chart1, chart2, chart3, chart4, chart5, chart6, chart7, chart8, chart9, chart10, chart11,
+               chart12):
         fn()

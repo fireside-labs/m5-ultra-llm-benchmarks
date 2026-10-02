@@ -1,0 +1,41 @@
+label,task,category,score,coverage,priorities,decoy_avoidance,cruxes,balance,estimate,structure,words,items_missed,cruxes_missed,decoys_hit,priorities_hit,sections_missing
+mock_padded,R01,A,44.4,0.667,0.0,0.0,,,,0.667,253,G6 G7 G8 G9,,D1 D2 D3,,bottom
+mock_padded,R02,A,43.0,0.643,0.0,0.0,,,,0.667,261,G6 G7 G8,,D1 D2 D3,,bottom
+mock_padded,R03,A,38.6,0.571,0.0,0.0,,,,0.667,304,G6 G7 G8 G9,,D1 D2 D3,,bottom
+mock_padded,R04,A,49.5,0.75,0.0,0.0,,,,0.667,291,G6 G7 G8,,D1 D2 D3,,bottom
+mock_padded,R05,B,54.6,0.684,0.0,,,,,0.667,255,V9 V10 V11 V12 V13,,,,mind
+mock_padded,R06,B,65.6,0.833,0.0,,,,,0.667,291,V10 V12 V13,,,,mind
+mock_padded,R07,C,33.5,0.5,,,0.0,0.0,,0.2,327,A1 A2 A3 A4 A5 A6,C1 C2 C3 C4,,,against cruxes mind lean
+mock_padded,R08,C,35.2,0.526,,,0.0,0.0,,0.2,284,A1 A2 A3 A4 A5 A6,C1 C2 C3 C4,,,against cruxes mind lean
+mock_padded,R09,D,66.2,0.857,0.0,,,,,0.5,235,G9 G10,,,,measure kill
+mock_padded,R10,D,55.7,0.867,0.0,,,,0.0,0.5,227,F9 F10,,,,result recommendation
+mock_perfect,R01,A,100.0,1.0,1.0,1.0,,,,1.0,347,,,,G1 G2 G3,
+mock_perfect,R02,A,100.0,1.0,1.0,1.0,,,,1.0,340,,,,G1 G2 G3,
+mock_perfect,R03,A,100.0,1.0,1.0,1.0,,,,1.0,390,,,,G1 G3 G4,
+mock_perfect,R04,A,100.0,1.0,1.0,1.0,,,,1.0,384,,,,G2 G3 G4,
+mock_perfect,R05,B,100.0,1.0,1.0,,,,,1.0,269,,,,V1 V2 V3,
+mock_perfect,R06,B,100.0,1.0,1.0,,,,,1.0,326,,,,V1 V4 V2 V3,
+mock_perfect,R07,C,100.0,1.0,,,1.0,1.0,,1.0,309,,,,,
+mock_perfect,R08,C,100.0,1.0,,,1.0,1.0,,1.0,266,,,,,
+mock_perfect,R09,D,100.0,1.0,1.0,,,,,1.0,277,,,,G1 G2 G3,
+mock_perfect,R10,D,100.0,1.0,1.0,,,,1.0,1.0,290,,,,F1 F2 F4,
+mock_shuffled,R01,A,22.2,0.0,0.0,1.0,,,,1.0,340,G1 G2 G3 G4 G5 G6 G7 G8 G9,,,,
+mock_shuffled,R02,A,22.2,0.0,0.0,1.0,,,,1.0,390,G1 G2 G3 G4 G5 G6 G7 G8,,,,
+mock_shuffled,R03,A,22.2,0.0,0.0,1.0,,,,1.0,384,G1 G2 G3 G4 G5 G6 G7 G8 G9,,,,
+mock_shuffled,R04,A,12.5,0.083,0.0,0.333,,,,0.333,269,G1 G2 G3 G4 G5 G6 G7,,D3 D1,,issues bottom
+mock_shuffled,R05,B,18.2,0.158,0.0,,,,,1.0,326,V1 V2 V3 V4 V6 V8 V9 V10 V11 V12 V13,,,,
+mock_shuffled,R06,B,10.4,0.111,0.0,,,,,0.333,309,V1 V2 V4 V5 V6 V7 V8 V9 V10 V11 V12 V13,,,,variables priorities
+mock_shuffled,R07,C,18.2,0.1,,,0.0,0.5,,1.0,266,F1 F2 F3 F5 F6 A1 A2 A3 A4 A5 A6,C1 C2 C3 C4,,,
+mock_shuffled,R08,C,0.0,0.0,,,0.0,0.0,,0.0,277,F1 F2 F3 F4 F5 F6 A1 A2 A3 A4 A5 A6,C1 C2 C3 C4,,,for against cruxes mind lean
+mock_shuffled,R09,D,1.7,0.0,0.0,,,,,0.25,290,G1 G2 G3 G4 G5 G6 G7 G8 G9 G10,,,,steps measure kill
+mock_shuffled,R10,D,1.4,0.0,0.0,,,,0.0,0.25,347,F1 F2 F3 F4 F5 F6 F7 F8 F9 F10,,,,chain result recommendation
+mock_sloppy,R01,A,29.2,0.417,0.0,0.0,,,,0.667,144,G2 G3 G6 G8 G9,,D1 D2 D3,,bottom
+mock_sloppy,R02,A,38.6,0.571,0.0,0.0,,,,0.667,155,G2 G3 G6,,D3 D1 D2,,bottom
+mock_sloppy,R03,A,34.3,0.5,0.0,0.0,,,,0.667,154,G3 G6 G8 G9,,D1 D2 D3,,bottom
+mock_sloppy,R04,A,29.2,0.417,0.0,0.0,,,,0.667,158,G2 G3 G5 G8,,D1 D2 D3,,bottom
+mock_sloppy,R05,B,46.9,0.579,0.0,,,,,0.667,129,V2 V5 V9 V11 V12,,,,mind
+mock_sloppy,R06,B,0.0,0.0,0.0,,,,,0.0,0,,,,,
+mock_sloppy,R07,C,36.3,0.5,,,0.0,0.086,,0.5,95,A1 A2 A3 A4 A5 A6,C1 C2 C3 C4,,,cruxes mind
+mock_sloppy,R08,C,38.4,0.526,,,0.0,0.117,,0.5,77,A1 A2 A3 A4 A5 A6,C1 C2 C3 C4,,,cruxes mind
+mock_sloppy,R09,D,51.9,0.571,0.333,,,,,0.5,122,G2 G3 G8 G9,,,G1,measure kill
+mock_sloppy,R10,D,12.3,0.133,0.0,,,,0.0,0.75,59,F1 F2 F3 F4 F5 F6 F7 F9 F10,,,,recommendation

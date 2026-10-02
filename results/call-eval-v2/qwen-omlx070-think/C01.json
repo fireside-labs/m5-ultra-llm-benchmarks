@@ -1,0 +1,59 @@
+{
+  "call_type": "scheduling",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 4,
+  "quality_reasons": [
+    "Verified patient identity and obtained explicit authorization for daughter on line.",
+    "Corrected initial new-patient misread before booking.",
+    "Updated contact information after patient corrected daughter's number.",
+    "Provided clear fasting lab and arrival instructions.",
+    "Minor inefficiencies: 35-second hold and mouse issue."
+  ],
+  "flags": [
+    {
+      "type": "misinformation",
+      "description": "Agent initially gave incorrect information that the doctor was not taking new patients, though the patient was established; the error was corrected before booking.",
+      "evidence": "it says she isn't taking new patients right now"
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent",
+      "task": "Send appointment confirmation text to 555-0173",
+      "due": "2026-09-15"
+    },
+    {
+      "owner": "agent",
+      "task": "Remove disconnected landline ending 0492 from patient record",
+      "due": "2026-09-15"
+    },
+    {
+      "owner": "agent",
+      "task": "Call back if disconnected using number on file",
+      "due": "if disconnected"
+    },
+    {
+      "owner": "caller",
+      "task": "Bring photo ID, insurance card, and current medication list to appointment",
+      "due": "2026-10-15 10:40"
+    },
+    {
+      "owner": "patient",
+      "task": "Fast after midnight and arrive 20 minutes early for fasting labs",
+      "due": "2026-10-15 10:20"
+    }
+  ],
+  "summary_notes": "Patient Teodoro Vance-Ibarra, verified by name/DOB/address, scheduled six-month checkup with Dr. Okonkwo-Hale for Thu Oct 15, 2026 at 10:40. Adult daughter Marisol on speaker; patient authorized disclosure. Agent corrected initial new-patient banner misread. Patient is established. Fasting cholesterol/A1c labs ordered: arrive 20 minutes early, nothing after midnight, water okay. Bring photo ID, insurance card, current medication list. Contact updated: old landline ending 0492 removed; cell 555-0173 confirmed after correction; confirmation text to be sent today.",
+  "notable_details": [
+    "Final appointment: Thursday, October 15, 2026 at 10:40; initial '14th' was wrong month.",
+    "Patient is established, not a new patient.",
+    "Final cell phone: 555-0173; old landline ending 0492 was disconnected and removed.",
+    "Patient authorized daughter to receive appointment details.",
+    "Fasting cholesterol/A1c labs: arrive 20 minutes early, nothing after midnight, water okay.",
+    "Bring photo ID, insurance card, and current medication list.",
+    "Agent initially misread new-patient banner but corrected it before booking.",
+    "Confirmation text to be sent to 555-0173 today."
+  ]
+}

@@ -1,0 +1,365 @@
+
+We need answer user's request: analyze transcript and return ONE JSON object conforming schema, no markdown. Need think in English (same language as user request). Need produce final JSON only.
+
+We need carefully analyze transcript.
+
+Call: outbound three-way with payer. Clinic authorization coordinator Wendell calls patient Evander, then payer Thistlecrest. Purpose: verify benefits and prior authorization for sleep study, then schedule. Main purpose? Could be insurance_verification or scheduling? The call starts because insurance inactive, need verify benefits and get prior authorization started. Then after PA, schedules. Call type enum: scheduling, pre_procedure, post_procedure_followup, no_show_followup, billing_dispute, insurance_verification, pharmacy_refill, complaint_escalation, saas_support, sales, other. Main purpose likely insurance_verification because verifying benefits and prior authorization. But also scheduling. The line says Sleep Medicine Authorizations. The main purpose is authorization/insurance verification. Use insurance_verification.
+
+Outcome: resolved? They got PA approved, scheduled appointment, explained. Main issue handled during call. Yes resolved.
+
+Sentiment start: patient neutral? At start just hello, yes. No negative. neutral. End: positive? "Thank you, Wendell. You made that easy." positive.
+
+Quality score: Need rate staff handled overall. Agent verified patient identity before discussing insurance? At start verified DOB and last four phone. Good. Got patient consent to share info with payer. Payer asked consent. Agent accurate? There is a serious issue: after payer says deductible $1500, $380 met, $1120 remaining, 20% coinsurance, in-network only. Then agent tells patient "you're fully covered... won't owe anything out of pocket." That's inaccurate/misinformation. Also later agent books Ridgeline May 12 despite payer said Ridgeline out-of-network and authorization must be Westbrook. That's serious accuracy/policy/safety? It could lead to denied claim or wrong facility. Also agent says "I think it's covered for the two" after payer said one night approved, second separate authorization. That's misinformation/unauthorized commitment. Also maybe privacy? Agent disclosed patient info to payer with consent. Payer verified. No privacy flag. Identity verification done. Unauthorized commitments: telling patient fully covered, two nights covered, booking out-of-network Ridgeline. Need flags.
+
+Quality score likely 2 due serious accuracy failures: misinformation about coverage and booking out-of-network despite PA for Westbrook. Also maybe missed commitment? Agent promised fax notes today, send instructions portal. Not missed. Maybe long holds? Payer holds, not staff? Agent placed patient on hold? The call had payer holds, but agent handled. Could be 2. Need quality_reasons 2-5.
+
+Flags:
+- misinformation: agent told patient fully covered/no out-of-pocket despite deductible/coinsurance. Evidence: "Honestly, you're fully covered. It's approved, so you won't owe anything out of pocket."
+- misinformation/unauthorized_commitment? Agent said two nights covered: "Oh, um, yeah, I think it's covered for the two. We'll see after the first one." Payer approved one night only, second separate. Could be misinformation.
+- policy_violation? Booking Ridgeline out-of-network after payer said authorization must be Westbrook. Evidence: "Ridgeline is showing as out-of-network... authorization would have to be for Westbrook." and "let's do Ridgeline, May twelfth." Type maybe policy_violation or misinformation. It's a serious accuracy/policy failure. Could flag as policy_violation: scheduled out-of-network facility despite authorization requiring in-network Westbrook. Evidence combine? Need short verbatim quote. Could use "Ridgeline is showing as out-of-network for this plan." and "let's do Ridgeline, May twelfth." But evidence should be short verbatim quote from transcript. Could choose one quote that shows issue: "let's do Ridgeline, May twelfth." But description explains. Or "Ridgeline is showing as out-of-network for this plan." Need evidence quote. Maybe use "Ridgeline is showing as out-of-network for this plan." as evidence of out-of-network, but flag is booking. Could include both? Evidence field string, can include two quotes separated? It says short verbatim quote. Better one quote: "let's do Ridgeline, May twelfth." Description: Agent scheduled patient at Ridgeline despite payer stating Ridgeline is out-of-network and authorization must be for Westbrook. Evidence quote from booking. That's okay.
+- unauthorized_commitment? "I think it's covered for the two" maybe unauthorized commitment. Type unauthorized_commitment. Evidence: "I think it's covered for the two."
+- misinformation for fully covered. Could also unauthorized_commitment? It's inaccurate coverage statement. Use misinformation.
+- maybe clinical_safety? Not really.
+- identity_verification? handled correctly, no flag.
+- privacy_disclosure? handled with consent, no flag.
+- missed_commitment? none.
+- security? patient joked sticky note, agent didn't flag? Not business staff issue.
+- policy_violation? maybe telling patient no out-of-pocket is misinformation.
+
+Need action_items: every follow-up commitment/task stated.
+- Agent: fax clinical notes to Thistlecrest within two business days? Payer says fax within two business days. Agent says "I'll fax the clinical notes to Thistlecrest today". Owner agent, task fax clinical notes to Thistlecrest, due today (or within two business days? Use stated final? Agent says today; payer says within two business days. Action item due: today? Could include "today (within two business days)" but due should date/time/timeframe as stated. Maybe "today". But payer requirement within two business days. Could have two? Better one: owner agent, task fax clinical notes to Thistlecrest, due "today (within two business days)". Schema string. But "as stated" maybe "today".
+- Agent: send sleep lab instructions in patient portal. due unspecified.
+- Agent: note electronic preferred, text reminders, copy notes to portal? These are tasks? "I'll note electronic preferred", "I'll mark that", "I'll leave email on file for statements", "I'll mark that" for copy notes. Could include as action items? Every follow-up commitment or task stated. Yes maybe include:
+  - Agent: update patient preferences to electronic communications and text reminders. due unspecified.
+  - Agent: send copy of today's notes to patient portal. due unspecified.
+  - Agent: add account note for front desk. due unspecified.
+But maybe too many. Need every follow-up commitment. Include main ones.
+- Patient: bring photo ID, insurance card, medication list, pajamas, regular meds, no nap, no caffeine after noon, parking ticket for validation. These are instructions, not follow-up commitments? Could be action items owner patient. The rule says every follow-up commitment or task stated. Patient tasks for appointment. Include maybe:
+  - Patient: arrive at Ridgeline Sleep Lab Tuesday May 12 at 8:30 p.m. due May 12 8:30 p.m.
+  - Patient: bring photo ID, insurance card, medication list, comfortable pajamas, regular medications. due May 12.
+  - Patient: avoid napping and caffeine after noon on May 12. due May 12.
+  - Patient: bring parking ticket to front desk for validation. due May 12.
+But action_items may be too many. Need every follow-up commitment or task stated. Could include appointment and prep. But owner customer/patient. Due date.
+- Payer? No action.
+- Agent: if disconnected, call patient back on number. Not needed because not disconnected. Could be commitment? "if we get disconnected I'll try you right back" conditional. Maybe not action item.
+- Agent: refresh record, update emergency contact, confirm pharmacy, email, mailing address. Completed during call, not follow-up.
+- Agent: fax notes today, send instructions portal, send copy notes portal, note electronic preferred/text reminders, account note. Include.
+
+Need summary_notes <=120 words. Concise. Include corrected details: new insurance Thistlecrest effective Apr 1 2026, member ID, PA number, one night approved, Westbrook in-network, Ridgeline out-of-network, but agent booked Ridgeline May 12. Need note for file. Must be factual. Maybe: "Outbound three-way call with patient and Thistlecrest. Patient’s insurance changed to Thistlecrest effective 04/01/2026. Benefits verified: $1,500 deductible, $380 met, $1,120 remaining, 20% coinsurance; sleep studies in-network only. PA PA-2026-0441973 approved for one night attended in-lab polysomnography at Westbrook, valid through 06/30/2026; clinical notes fax within two business days. Agent incorrectly told patient no out-of-pocket and two nights covered, then scheduled Ridgeline May 12 despite Ridgeline out-of-network. Patient prefers electronic/text reminders; portal copy requested." Word count? Let's count: Outbound(1) three-way2 call3 with4 patient5 and6 Thistlecrest7. Patient’s8 insurance9 changed10 to11 Thistlecrest12 effective13 04/01/2026 14. Benefits15 verified16: $1,500 17 deductible18, $380 19 met20, $1,120 21 remaining22, 20%23 coinsurance24; sleep25 studies26 in-network27 only28. PA29 PA-2026-0441973 30 approved31 for32 one33 night34 attended35 in-lab36 polysomnography37 at38 Westbrook39, valid40 through41 06/30/2026 42; clinical43 notes44 fax45 within46 two47 business48 days49. Agent50 incorrectly51 told52 patient53 no54 out-of-pocket55 and56 two57 nights58 covered59, then60 scheduled61 Ridgeline62 May63 12 64 despite65 Ridgeline66 out-of-network67. Patient68 prefers69 electronic/text70 reminders71; portal72 copy73 requested74. Good.
+
+Notable_details: specific details reviewer should not miss. Include:
+- Patient name Evander Tsiolkas-Moreau, DOB 03/11/1985, phone last four 6602.
+- New insurance Thistlecrest Health Plan effective April 1, 2026; member ID THC50288144? Need format: T-H-C five-zero-two-eight-eight-one-four-four. Could write THC50288144? The transcript says T-H-C, five-zero-two-eight-eight-one-four-four. Use final corrected: THC50288144. Provider number 1-800-555-0199.
+- Provider NPI 1284409173? Agent says one-two-eight-four-four-zero-nine-one-seven-three. That's 11 digits? NPI usually 10. Could be 1284409173? Let's count: 1 2 8 4 4 0 9 1 7 3 = 10? Wait "one-two-eight-four-four-zero-nine-one-seven-three": 1,2,8,4,4,0,9,1,7,3 = 10. Good.
+- Facility NPIs: Ridgeline 1660428195? "one-six-six-zero-four-two-eight-one-nine-five" = 10? 1 6 6 0 4 2 8 1 9 5 = 10. Westbrook 1991330782? "one-nine-nine-one-three-three-zero-seven-eight-two" = 10.
+- Benefits: deductible $1500, met $380, remaining $1120, 20% coinsurance, in-network only.
+- PA number PA-2026-0441973, one night, Westbrook, valid through June 30 2026, clinical notes fax within two business days.
+- Agent incorrectly stated fully covered/no out-of-pocket and two nights covered.
+- Agent scheduled Ridgeline May 12 despite out-of-network; Westbrook next opening May 27.
+- Appointment: Ridgeline Sleep Lab Tuesday May 12, arrival 8:30 p.m., done around 6 a.m.
+- Patient preferences: electronic preferred, text reminders, email on file for statements, no interpreter/accommodations, pharmacy Ferris Avenue, emergency contact same, mailing address same, portal copy requested.
+- Cancellation via reply to reminder text.
+- Parking: patient garage east side level 2 skybridge, front desk validates with ticket.
+- Bring ID, insurance card, medication list, pajamas, regular meds, no nap, no caffeine after noon.
+- Payer representative Desirée.
+- Call had long holds but not necessarily notable? Could include.
+Need not too many? Notable_details array can be many. Ensure final values.
+
+Flags evidence must be verbatim quotes. Need exact from transcript. Let's collect exact quotes:
+- "Honestly, you're fully covered. It's approved, so you won't owe anything out of pocket." exact at 00:33:35.
+- "Oh, um, yeah, I think it's covered for the two. We'll see after the first one." exact at 00:39:28.
+- "Ridgeline is showing as out-of-network for this plan." exact at 00:22:39? Actually PAYER: "Okay. So the Westbrook location is in-network with Thistlecrest. The Ridgeline location is showing as out-of-network for this plan. It's not contracted with us." Could quote "The Ridgeline location is showing as out-of-network for this plan." exact.
+- "let's do Ridgeline, May twelfth." exact at 00:38:47: "Ridgeline is sooner, so let's do Ridgeline, May twelfth." Could quote "let's do Ridgeline, May twelfth."
+- For policy violation maybe evidence "let's do Ridgeline, May twelfth." Description includes out-of-network.
+- For misinformation two nights evidence "I think it's covered for the two."
+- For unauthorized commitment? "I think it's covered for the two." Could be unauthorized_commitment. But also misinformation. Need avoid duplicate? Could have both? Maybe one flag type unauthorized_commitment for two nights, one misinformation for fully covered, one policy_violation for booking out-of-network. Good.
+- Could flag "unauthorized_commitment" for telling patient fully covered? It's not commitment, it's misinformation. Use misinformation.
+- Could flag "policy_violation" for booking out-of-network. Good.
+- Could flag "misinformation" for two nights? But type unauthorized_commitment better.
+- Could flag "clinical_safety"? No.
+- Could flag "other" for scheduling out-of-network? Policy violation.
+
+Quality reasons:
+- "Verified patient identity and obtained consent before sharing information with payer."
+- "Obtained PA and explained payer’s in-network requirement and one-night approval."
+- "Provided incorrect coverage information by telling patient there would be no out-of-pocket cost."
+- "Booked out-of-network Ridgeline despite PA requiring Westbrook."
+- "Suggested two nights might be covered after payer approved only one night."
+Score 2.
+
+Need ensure JSON valid. No markdown. Use double quotes. No trailing commas.
+
+Potential issue: call_type: Could be scheduling because final booking? But main purpose authorization. The line says Sleep Medicine Authorizations. Use insurance_verification.
+
+Outcome: resolved? Despite errors, main issue handled? PA obtained and appointment scheduled. But errors mean not fully correct. Outcome enum based on caller's main issue handled. Yes resolved. Could be unresolved because wrong facility? But call achieved PA and schedule, albeit wrong. Main issue handled during call. Use resolved.
+
+Sentiment_start: neutral. Could be positive? Patient says Hello? neutral. End positive.
+
+Action items details:
+Need owner strings. Use "agent", "patient". Due strings.
+List:
+1 owner agent, task "Fax clinical notes to Thistlecrest", due "today (within two business days)".
+2 owner agent, task "Send sleep lab instructions to patient portal", due "unspecified".
+3 owner agent, task "Send copy of today's notes to patient portal", due "unspecified".
+4 owner agent, task "Update patient preferences: electronic preferred, text reminders, email on file for statements", due "unspecified".
+5 owner agent, task "Add account note for front desk", due "unspecified".
+6 owner patient, task "Arrive at Ridgeline Sleep Lab for sleep study", due "May 12, 2026 8:30 p.m."
+7 owner patient, task "Bring photo ID, insurance card, medication list, comfortable pajamas, and regular medications", due "May 12, 2026".
+8 owner patient, task "Avoid napping and caffeine after noon on study day", due "May 12, 2026".
+9 owner patient, task "Bring parking ticket to front desk for garage validation", due "May 12, 2026".
+Maybe too many but okay. "every follow-up commitment or task stated". Include conditional callback? Maybe not.
+Could include "Agent: call patient back if disconnected" due "if disconnected". But not a follow-up after call? It's a commitment. Could include: owner agent, task "Call patient back if disconnected", due "if disconnected". But call not disconnected. Maybe not.
+Could include "Agent: note no interpreter/accommodations" completed. Not follow-up.
+Could include "Agent: confirm emergency contact, pharmacy, email, mailing address" completed. Not follow-up.
+
+Need due for fax: Payer says within two business days, agent says today. Use "today (within two business days)" acceptable.
+
+Notable_details: Need final corrected values. Include appointment at Ridgeline despite PA Westbrook. Maybe note "Agent scheduled Ridgeline May 12; this conflicts with PA requiring Westbrook." Good.
+
+Potential privacy: Agent asked patient to read member ID and provider number, then shared with payer with consent. Payer asked consent. No flag.
+
+Potential security: Patient says writes password on sticky note. Not staff. No flag.
+
+Potential policy: Agent says "I'm supposed to ask" interpreter, no issue.
+
+Potential misinformation: Agent says "Just your photo ID and insurance card, same as always" but patient maybe new? Not issue.
+
+Potential unauthorized commitment: "I'll fax clinical notes today" within authority? okay.
+
+Potential missed commitment: none.
+
+Need ensure evidence quotes are verbatim. Let's verify exact:
+[00:33:35] AGENT: Honestly, you're fully covered. It's approved, so you won't owe anything out of pocket.
+Quote: "Honestly, you're fully covered. It's approved, so you won't owe anything out of pocket."
+[00:39:28] AGENT: Oh, um, yeah, I think it's covered for the two. We'll see after the first one.
+Quote: "Oh, um, yeah, I think it's covered for the two. We'll see after the first one."
+[00:22:39] PAYER: Okay. So the Westbrook location is in-network with Thistlecrest. The Ridgeline location is showing as out-of-network for this plan. It's not contracted with us.
+Quote: "The Ridgeline location is showing as out-of-network for this plan."
+[00:38:47] AGENT: Now let's get you on the schedule. I have Ridgeline on Tuesday, May twelfth, or the next opening at Westbrook is Wednesday, May twenty-seventh. Ridgeline is sooner, so let's do Ridgeline, May twelfth.
+Quote: "let's do Ridgeline, May twelfth."
+Could use evidence for policy violation: "Ridgeline is sooner, so let's do Ridgeline, May twelfth." exact. Good.
+
+Could include flag for misinformation about two nights as unauthorized_commitment. Evidence exact.
+
+Could include flag for misinformation about no out-of-pocket. Good.
+
+Could include flag for policy_violation booking out-of-network. Good.
+
+Could include flag for misinformation about two nights? Already unauthorized. Maybe also misinformation? Not necessary.
+
+Quality score 2 due serious accuracy failures. Need quality_reasons 2-5. Use 5.
+
+Need summary_notes at most 120 words. Ensure no markdown. JSON string can contain semicolons.
+
+Need final JSON only. Ensure no newline? okay.
+
+Double-check schema: additionalProperties false. Required all. flags items required type description evidence. action_items required owner task due. quality_score integer. sentiment enums. call_type enum. outcome enum.
+
+Potential issue: "due" for action items should be date/time or timeframe as stated or unspecified. For patient tasks due "May 12, 2026" okay. For fax due "today (within two business days)" maybe not exactly stated but combines. Could use "today" because agent stated. But payer requirement within two business days. Maybe due "today (within two business days)" is okay. To be safe, due "today". But if reviewer expects two business days. Could include task "Fax clinical notes to Thistlecrest within two business days" due "today". Hmm.
+Action item: owner agent, task "Fax clinical notes to Thistlecrest", due "within two business days (agent said today)". This is timeframe as stated. Good.
+
+Need maybe include "Agent: send sleep lab instructions in patient portal" due unspecified. "Agent: send copy of today's notes to portal" due unspecified. "Agent: update preferences" due unspecified. "Agent: add account note" due unspecified.
+
+Could include "Patient: reply to reminder text to cancel if needed" due unspecified? It's instruction. Maybe not.
+
+Need notable_details maybe include "Payer representative: Desirée". Good.
+
+Let's craft JSON carefully.
+
+Potential issue with member ID: transcript: "T-H-C, five-zero-two-eight-eight-one-four-four". Could be THC50288144? Count: THC + 50288144 = 11? 5 0 2 8 8 1 4 4 = 8, total 11. Maybe member ID is THC50288144. Use as read. Could include "THC50288144". Provider number "1-800-555-0199". NPIs as digits.
+
+Potential issue: PA number: "P-A, two-zero-two-six, zero-four-four-one-nine-seven-three" -> PA-2026-0441973? Agent says PA-2026-0441973. Use that.
+
+Potential issue: date of call 2026-04-21. PA valid from today through June 30, 2026. Appointment May 12, 2026. Use year.
+
+Potential issue: "attended in-lab polysomnography, CPT 95810". Include.
+
+Potential issue: "Epworth score 16, BMI 34, hypertension". Notable? Could include clinical indications? Maybe not necessary but careful reviewer? Could include in notable_details? It's clinical info. But summary enough. Notable_details can include "Clinical indications: loud snoring, witnessed apneas, daytime sleepiness, Epworth 16, BMI 34, hypertension; in-lab due to hypertension/split-night possibility." Good.
+
+Potential issue: "Dr. Abernathy-Osei ordered sleep study". Include.
+
+Potential issue: "insurance inactive in system due to new coverage effective April 1". Include.
+
+Potential issue: "Westbrook next opening May 27". Include.
+
+Potential issue: "Agent incorrectly told patient fully covered". Include.
+
+Potential issue: "Patient had long hold with payer, but remained patient". Not necessary.
+
+Need ensure summary_notes not too long. It includes errors. Good.
+
+Let's consider if quality_score should be 3? The agent did many good things but serious misinformation and wrong facility. Score 2 fits "serious compliance, safety or accuracy failure". Multiple serious failures. 2.
+
+Could there be a privacy flag because agent disclosed patient info to payer before payer verified? Agent got patient consent before. Payer asked consent. No.
+
+Could there be identity_verification flag because payer didn't verify patient identity? Payer asked member name, DOB, member ID and consent. That's verification. No.
+
+Could there be unauthorized_commitment for scheduling Ridgeline? It's not commitment outside authority? It's scheduling out-of-network contrary to PA. Policy violation.
+
+Could there be missed_commitment for not booking Westbrook? Not a commitment.
+
+Could there be misinformation for "you're fully covered" and "two nights". Good.
+
+Need final JSON no markdown. Ensure valid escaping? No special quotes inside? Use double quotes, apostrophes okay. JSON strings can contain apostrophe. Need escape double quotes inside? We won't use quotes inside strings except maybe not. Evidence quotes are inside JSON string, need escape double quotes? If evidence string includes double quotes? We can include quote without surrounding quotes? The evidence field should be short verbatim quote. We can put the text without quotation marks to avoid escaping. But "verbatim quote" can be just text. If include quotes, need escape. Better no surrounding quotes. But evidence should be quote; text itself enough. For evidence with apostrophe, okay. For evidence with double quotes? none.
+
+Example:
+"evidence": "Honestly, you're fully covered. It's approved, so you won't owe anything out of pocket."
+This is valid JSON because apostrophe not special. Good.
+
+Need ensure no trailing comma.
+
+Let's draft final:
+{
+  "call_type": "insurance_verification",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Verified patient identity and obtained consent before sharing information with the payer.",
+    "Obtained prior authorization and captured the payer’s in-network and one-night approval requirements.",
+    "Told the patient there would be no out-of-pocket cost despite deductible and coinsurance information.",
+    "Suggested two nights might be covered after the payer approved only one night.",
+    "Scheduled the out-of-network Ridgeline location despite the authorization requiring Westbrook."
+  ],
+  "flags": [
+    {
+      "type": "misinformation",
+      "description": "Agent incorrectly told the patient the study would be fully covered with no out-of-pocket cost.",
+      "evidence": "Honestly, you're fully covered. It's approved, so you won't owe anything out of pocket."
+    },
+    {
+      "type": "unauthorized_commitment",
+      "description": "Agent suggested a second sleep-study night might be covered after the payer approved only one night and required a separate authorization for a second night.",
+      "evidence": "Oh, um, yeah, I think it's covered for the two. We'll see after the first one."
+    },
+    {
+      "type": "policy_violation",
+      "description": "Agent scheduled the patient at Ridgeline even though the payer stated Ridgeline was out-of-network and the authorization had to be for Westbrook.",
+      "evidence": "Ridgeline is sooner, so let's do Ridgeline, May twelfth."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent",
+      "task": "Fax clinical notes to Thistlecrest",
+      "due": "within two business days (agent said today)"
+    },
+    {
+      "owner": "agent",
+      "task": "Send sleep lab instructions to the patient portal",
+      "due": "unspecified"
+    },
+    {
+      "owner": "agent",
+      "task": "Send a copy of today's notes to the patient portal",
+      "due": "unspecified"
+    },
+    {
+      "owner": "agent",
+      "task": "Update patient preferences to electronic preferred, text reminders, and email on file for statements",
+      "due": "unspecified"
+    },
+    {
+      "owner": "agent",
+      "task": "Add an account note for the front desk",
+      "due": "unspecified"
+    },
+    {
+      "owner": "patient",
+      "task": "Arrive at Ridgeline Sleep Lab for the sleep study",
+      "due": "May 12, 2026 8:30 p.m."
+    },
+    {
+      "owner": "patient",
+      "task": "Bring photo ID, insurance card, medication list, comfortable pajamas, and regular medications",
+      "due": "May 12, 2026"
+    },
+    {
+      "owner": "patient",
+      "task": "Avoid napping and caffeine after noon on the study day",
+      "due": "May 12, 2026"
+    },
+    {
+      "owner": "patient",
+      "task": "Bring the parking ticket to the front desk for garage validation",
+      "due": "May 12, 2026"
+    }
+  ],
+  "summary_notes": "Outbound three-way call with patient and Thistlecrest. Patient’s insurance changed to Thistlecrest effective 04/01/2026. Benefits verified: $1,500 deductible, $380 met, $1,120 remaining, 20% coinsurance; sleep studies in-network only. PA PA-2026-0441973 approved for one night attended in-lab polysomnography at Westbrook, valid through 06/30/2026; clinical notes fax within two business days. Agent incorrectly told patient no out-of-pocket and two nights covered, then scheduled Ridgeline May 12 despite Ridgeline out-of-network. Patient prefers electronic/text reminders; portal copy requested.",
+  "notable_details": [
+    "Patient: Evander Tsiolkas-Moreau, DOB 03/11/1985, phone last four 6602.",
+    "New insurance: Thistlecrest Health Plan effective April 1, 2026; member ID THC50288144; provider number 1-800-555-0199.",
+    "Provider NPI: 1284409173; Ridgeline facility NPI: 1660428195; Westbrook facility NPI: 1991330782.",
+    "Benefits: $1,500 individual deductible, $380 met, $1,120 remaining, 20% coinsurance after deductible; sleep studies covered in-network only.",
+    "PA PA-2026-0441973 approved for one night CPT 95810 at Westbrook, valid through June 30, 2026; second titration night requires separate authorization with results.",
+    "Clinical indications: loud snoring, witnessed apneas, daytime sleepiness, Epworth score 16, BMI 34, hypertension; in-lab requested due to hypertension and possible split-night titration.",
+    "Agent incorrectly stated patient would owe nothing out of pocket and that two nights might be covered.",
+    "Agent scheduled Ridgeline Sleep Lab on Tuesday, May 12, 2026, arrival 8:30 p.m., despite Ridgeline being out-of-network; Westbrook next opening was May 27, 2026.",
+    "Patient preferences: electronic preferred, text reminders, email on file for statements, no interpreter/accommodations, pharmacy on Ferris Avenue, emergency contact and mailing address unchanged.",
+    "Patient requested a copy of today's notes in the portal; portal password reset may be needed.",
+    "Study prep: bring photo ID, insurance card, medication list, comfortable pajamas, regular medications; no nap and no caffeine after noon; front desk can validate parking with ticket."
+  ]
+}
+
+Check summary word count again with punctuation: Outbound1 three-way2 call3 with4 patient5 and6 Thistlecrest7. Patient’s8 insurance9 changed10 to11 Thistlecrest12 effective13 04/01/2026 14. Benefits15 verified16: $1,500 17 deductible18, $380 19 met20, $1,120 21 remaining22, 20%23 coinsurance24; sleep25 studies26 in-network27 only28. PA29 PA-2026-0441973 30 approved31 for32 one33 night34 attended35 in-lab36 polysomnography37 at38 Westbrook39, valid40 through41 06/30/2026 42; clinical43 notes44 fax45 within46 two47 business48 days49. Agent50 incorrectly51 told52 patient53 no54 out-of-pocket55 and56 two57 nights58 covered59, then60 scheduled61 Ridgeline62 May63 12 64 despite65 Ridgeline66 out-of-network67. Patient68 prefers69 electronic/text70 reminders71; portal72 copy73 requested74. Good.
+
+Need maybe "call_type" could be "scheduling" because after PA they schedule. But main purpose? The call was outbound to verify benefits and start PA. Use insurance_verification.
+
+Potential issue: "outcome" resolved despite wrong scheduling? The caller's main issue (authorization) handled. Yes.
+
+Potential issue: "sentiment_end" positive? Patient says thank you, made easy. yes.
+
+Potential issue: flags evidence for policy violation: quote "Ridgeline is sooner, so let's do Ridgeline, May twelfth." exact? Transcript: "Ridgeline is sooner, so let's do Ridgeline, May twelfth." yes.
+
+Potential issue: action item "Add an account note for the front desk" due unspecified. Agent said "I'm just going to put a little note on the account" during call, not follow-up? It is a task stated, but completed during call. Action items are follow-up commitments or tasks stated. Could include completed tasks? It says every follow-up commitment or task stated in the call. Maybe include only follow-up after call. Account note is during call, not follow-up. But "task stated" could include. To avoid over-inclusion, maybe remove completed during call tasks? But "I'll note electronic preferred" is during call. "I'll mark that" during call. They are commitments but immediate. The rule says follow-up commitment or task stated. Could include immediate tasks? It's okay. But maybe action_items should be future tasks. Fax, portal sends, patient prep. Account note maybe immediate. Could remove to keep focused. But "every follow-up commitment" not every immediate note. Let's decide. Include only future: fax notes, send instructions, send copy notes, patient appointment prep. Preferences updates are immediate but could be account updates. Maybe not. But if omitted, not a follow-up. The rule says every follow-up commitment or task stated. "I'll note electronic preferred" is a task but not follow-up? It is a commitment to update record. Could include. But too many not harmful. Schema doesn't limit.
+
+Need ensure action_items owner "agent" not "AGENT". okay.
+
+Potential issue: "due": "within two business days (agent said today)" includes parentheses. okay.
+
+Potential issue: notable_details includes "portal password reset may be needed" inferred from patient doesn't know password. It's okay but maybe not explicit? Patient says doesn't know password. Could say "Patient does not know portal password." Better factual. Change to "Patient does not know portal password; reset via forgot-password link or front desk." Good.
+
+Potential issue: "email on file for statements" agent said leave email on file for statements. okay.
+
+Potential issue: "no interpreter/accommodations" patient says all set. okay.
+
+Potential issue: "phone last four 6602" verified. okay.
+
+Potential issue: "provider number" is on back for providers, not necessarily payer provider line? okay.
+
+Potential issue: "member ID THC50288144" maybe should preserve hyphens? Use as read. okay.
+
+Potential issue: "NPI 1284409173" maybe transcript has 11? Let's recount: one-two-eight-four-four-zero-nine-one-seven-three = 1 2 8 4 4 0 9 1 7 3 = 10. Good.
+
+Potential issue: Ridgeline NPI: one-six-six-zero-four-two-eight-one-nine-five = 1 6 6 0 4 2 8 1 9 5 = 10. Westbrook: one-nine-nine-one-three-three-zero-seven-eight-two = 1 9 9 1 3 3 0 7 8 2 = 10.
+
+Potential issue: "CPT nine-five-eight-one-zero" = 95810. Good.
+
+Potential issue: "diagnosis suspected obstructive sleep apnea" include? Could add notable. Maybe not necessary but good. Add to clinical indications? "diagnosis suspected obstructive sleep apnea". Could include.
+
+Potential issue: "Dr. Abernathy-Osei" include. Add notable: "Ordering provider: Dr. Abernathy-Osei." Good.
+
+Potential issue: "Payer representative Desirée" include. Add.
+
+Need maybe not too many notable_details but okay.
+
+Let's refine notable_details:
+- Patient...
+- Ordering provider...
+- New insurance...
+- Provider/facility NPIs...
+- Benefits...
+- PA...
+- Clinical indications...
+- Agent errors...
+- Scheduling conflict...
+- Preferences...
+- Portal...
+- Study prep...
+- Payer rep...
+Maybe 12 items. Fine.
+
+Need ensure JSON valid with apostrophe in Patient’s? It's Unicode right single quote? In summary I used Patient’s (curly). JSON allows Unicode. okay. Could use straight apostrophe to be safe. Use "Patient's". In evidence transcript has "you're" straight? It's ASCII apostrophe. okay.
+
+Let's produce final JSON only. Ensure no markdown fences. final.

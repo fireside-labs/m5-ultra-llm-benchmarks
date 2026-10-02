@@ -1,0 +1,37 @@
+
+Let me identify recurring themes across calls.
+
+1. IVR phone menu misrouting (refill option routes to billing): C01 (option 2 misroutes), C02 (refill calls misrouted to billing), C05 (prescriptions option misroutes to billing), C08 (option 3 routes to billing), C11 (option 3 misrouted to billing twice), C14 (option 3 reached billing). That's 6 calls. Very strong theme.
+
+2. Retired Halvard fax line / PA faxes never received: C03 (faxed PA twice, Halvard shows nothing), C07 (faxed to retired UM fax 555-0144, retired 8/31), C10 (Halvard auth pending, faxed twice), C13 (faxes to retired line 555-010-144). That's 4 calls. Serious - delayed care, COPD flare, MRI cancellation risk.
+
+3. Reminder-date bug (release 7.4, due date one day early, fix 7.4.2): C06, C09, C16. 3 calls. Also late fees posted (C06). SaaS bug.
+
+4. Misinformation from staff contradicting correct info given earlier: C06 (late fees can't be reversed), C08 (wrong location), C10 (insurance settled), C13 (PA denied, dose), C14 (out of network), C15 (BAA), C16 (bug fixed). That's broad. Maybe theme "staff giving incorrect/contradictory information" — 7 calls. Could split but keep as one theme.
+
+5. Missed commitments / promised callbacks never happened: C03 (ibuprofen counseling), C05 (direct line never provided), C06 (promised to stay on line), C07 (transfer dumped), C13 (nurse callback, portal messages). Also long holds: C03 (29 min), C05 (19 min), C06 (~45 min), C07 (lengthy holds), C11 (18+21 min). Maybe two themes: long hold times/transfer failures (C03, C05, C06, C07, C11, C14 misrouted transfer) and missed callbacks (C03, C05, C06, C13).
+
+6. Clinical safety issues in phone triage: C03 (double dose dismissed), C10 (apixaban conflicting instructions), C11 (bath advice, acetaminophen load). 3 calls. Serious.
+
+7. Identity verification failures: C02 (two accounts matched, verified correctly - not a failure), C06 (billing email updated before verification), C14 (Corwin no verification). 2 calls.
+
+8. Unauthorized commitments / exceeding authority: C02 (waived $95 fee), C07 (attested urgent), C13 (cover bill). 3 calls.
+
+9. Insurance changes / new Halvard cards requiring updates: C05, C08, C03 (card reissued). Maybe not a "problem" theme.
+
+10. Agent misreading numbers/dates (misread amounts, dates, IDs): C01 (wrong month), C02 ($15.20), C03 ($40 copay), C05 (times, glucose), C07 (ref number, deductible), C08 (member ID), C10 (arrival time, follow-up), C12... This is recurring — data entry/reading errors. Could be a theme: agents misreading details requiring in-call correction. Many calls. But is it a "problem"? Yes, quality issue.
+
+Pick top 8 ranked by frequency and severity:
+
+1. IVR misrouting (6 calls: C01, C02, C05, C08, C11, C14)
+2. Retired fax line / PA never received (C03, C07, C10, C13) — 4 calls, serious clinical impact
+3. Misinformation/contradictory info from staff (C06, C08, C10, C13, C14, C15, C16) — 7 calls
+4. Clinical safety in triage (C03, C10, C11) — 3 calls, most serious
+5. Long holds / failed transfers (C03, C05, C06, C07, C11, C14) — 6 calls
+6. Missed commitments/callbacks (C03, C05, C06, C13) — 4 calls
+7. Reminder-date bug 7.4 (C06, C09, C16) — 3 calls
+8. Unauthorized commitments exceeding authority (C02, C07, C13) — 3 calls
+
+That's 8. Identity verification (C06, C14) could swap with #8 but unauthorized commitments is 3 calls. Keep as is.
+
+Output JSON only.

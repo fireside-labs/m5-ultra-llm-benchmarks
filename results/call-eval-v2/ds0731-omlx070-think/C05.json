@@ -1,0 +1,77 @@
+{
+  "call_type": "no_show_followup",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Disclosed PHI (missed diabetes appointment) to an unidentified person before verifying identity",
+    "Promised to provide the direct line to avoid billing menu but never gave it",
+    "Long hold time (~19 minutes) during transfer to nurse line",
+    "Otherwise empathetic, verified identity, and appropriately escalated clinical concern"
+  ],
+  "flags": [
+    {
+      "type": "privacy_disclosure",
+      "description": "Agent revealed the reason for the call (missed diabetes appointment) to the person who answered the phone before verifying the patient's identity.",
+      "evidence": "I'm calling for Harlan about his missed diabetes appointment on Tuesday, the A1c recheck with Dr. Ruiz-Pakula."
+    },
+    {
+      "type": "missed_commitment",
+      "description": "Agent promised to give the patient the direct line to avoid the billing menu but did not provide it during the call.",
+      "evidence": "before we hang up I'll give you the direct line so you don't get stuck in billing again."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "Agent (Wren)",
+      "task": "Provide direct line to patient to avoid billing menu",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Nurse (Teodora)",
+      "task": "Send TrueStep strips (100 count) and lancets to Ostrander Millbrook pharmacy",
+      "due": "today"
+    },
+    {
+      "owner": "Patient",
+      "task": "Check glucose twice a day (on waking and before main meal) and log with times",
+      "due": "ongoing until nurse visit"
+    },
+    {
+      "owner": "Patient",
+      "task": "Attend nurse visit at Millbrook on Monday September 21 at 8:00 a.m.",
+      "due": "2026-09-21 08:00"
+    },
+    {
+      "owner": "Patient",
+      "task": "Attend appointment with Dr. Ruiz-Pakula on Tuesday October 6 at 8:15 a.m.",
+      "due": "2026-10-06 08:15"
+    },
+    {
+      "owner": "Patient",
+      "task": "Go to urgent care/ER if glucose over 300 or symptoms (vomiting, belly pain, confusion, shortness of breath)",
+      "due": "as needed"
+    },
+    {
+      "owner": "Agent (Wren)",
+      "task": "Text confirmation to patient's cell (555-0191)",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Outbound no-show follow-up for missed diabetes/A1c appointment with Dr. Ruiz-Pakula. Patient attempted to cancel but got stuck in billing menu. Rebooked for Oct 6 8:15am; no-show fee waived (first miss in 12 months). Insurance updated to new Halvard card (H220846, group WHS9110). Patient reported fasting glucose 240 this morning and out of test strips; transferred to nurse line. Nurse sent TrueStep strips to Ostrander Millbrook, advised twice-daily checks, scheduled nurse visit Mon Sep 21 8am. Patient to attend both visits.",
+  "notable_details": [
+    "Patient DOB 02/02/1978, address 44 Tannery Row Apt 2",
+    "Missed appointment was Tuesday (Sept 15) 9am",
+    "Patient works nights at warehouse since August, switched from days",
+    "New insurance card: Member ID H220846, group WHS9110 (Halvard)",
+    "Patient's cell: 555-0191 (house phone is roommate's)",
+    "Fasting glucose corrected from 140 to 240",
+    "Test strips out since weekend",
+    "Nurse visit Monday Sept 21 8am",
+    "Appointment Oct 6 8:15am",
+    "Pharmacy: Ostrander Millbrook",
+    "Patient has daughter (9) every other weekend",
+    "Parking: back lot free, front lot for bank"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "call_type": "post_procedure_followup",
+  "outcome": "escalated",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Thorough identity verification (DOB, spelled last name, address) before any clinical discussion, and spouse participation explicitly authorized and noted.",
+    "Appropriate escalation: conferenced in the Larkspur on-call surgical PA for the drain question with a clear, accurate clinical handoff summary.",
+    "Serious accuracy lapse: nurse recommended a warm bath for back soreness despite having read the discharge instruction of no tub baths for two weeks earlier in the same call.",
+    "Missed duplicate-acetaminophen risk: approved Extra Strength Tylenol and later NyQuil alongside hydrocodone/APAP 5-325 (up to two tablets every six hours) without flagging the combined acetaminophen load.",
+    "Very long waits: roughly 18 minutes in queue before the nurse answered, and a 'brief hold' for the PA conference that lasted about 21 minutes."
+  ],
+  "flags": [
+    {
+      "type": "clinical_safety",
+      "description": "The nurse advised a warm bath for back soreness, directly contradicting the discharge instruction she herself had read earlier in the call of no tub baths for two weeks, and the patient committed to taking a bath that night with a healing incision and JP drain in place.",
+      "evidence": "Honestly, a nice warm bath would help with the soreness. Just relax in the tub for a bit"
+    },
+    {
+      "type": "clinical_safety",
+      "description": "The nurse confirmed Extra Strength Tylenol was fine and later approved NyQuil at night without accounting for the acetaminophen already contained in the hydrocodone/APAP 5-325 taken up to two tablets every six hours, risking exceedance of the daily acetaminophen limit.",
+      "evidence": "Yeah, lots of people do that. Tylenol's fine."
+    },
+    {
+      "type": "other",
+      "description": "The IVR prescription-refill option (press 3) misrouted the caller to the closed billing line on two attempts, delaying the caller's access to the nurse line.",
+      "evidence": "it put me in, like, billing? And billing's closed, so it just played a message about statements and hung up on me."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "Nurse Felipe (Brightwater nurse line)",
+      "task": "Send hydrocodone refill request to Dr. Vasquez-Lim's team via the message line",
+      "due": "tonight (2026-09-24)"
+    },
+    {
+      "owner": "Larkspur surgical office",
+      "task": "Call patient to set up a drain check, likely early next week; pull drain if output under 30 mL/24h for two days",
+      "due": "tomorrow, Friday (2026-09-25)"
+    },
+    {
+      "owner": "Spouse (Rob)",
+      "task": "Pick up over-the-counter polyethylene glycol laxative at Ostrander Pharmacy, Eastgate",
+      "due": "tomorrow after work"
+    },
+    {
+      "owner": "Patient (Imogen)",
+      "task": "Draw a pen line around the edge of the pink area on the belly-button incision to monitor for spreading",
+      "due": "later today (unspecified)"
+    },
+    {
+      "owner": "Patient (Imogen)",
+      "task": "Continue emptying and recording JP drain output twice daily (morning and evening) in the notebook",
+      "due": "ongoing until drain removal"
+    },
+    {
+      "owner": "Patient (Imogen)",
+      "task": "Call Brightwater nurse line if temperature exceeds 101, no bowel movement by Saturday, or incision redness spreads/pus/drainage develops",
+      "due": "as needed / by Saturday"
+    },
+    {
+      "owner": "Patient (Imogen)",
+      "task": "Request a work note for the school at the post-op follow-up visit",
+      "due": "Friday, October 2 at 1:15 PM"
+    }
+  ],
+  "summary_notes": "Post-op day 3 nurse-line call after laparoscopic cholecystectomy Monday 2026-09-21 at Larkspur (Dr. Vasquez-Lim). Caller Imogen Tessaro-Blythe verified (DOB, name, address); husband Rob authorized to participate. Three issues: (1) running low on hydrocodone (9 tablets left) - refill request to be sent to surgeon's team tonight; (2) JP drain removal question - on-call PA Dana conferenced in; output trending down (40 mL Thursday AM), Larkspur to call Friday to schedule drain check; (3) feeling 'crummy' with low-grade temp 100.8 (spouse noted 101.8 the prior night) - spirometer, walking, call back if over 101. Preferred pharmacy updated to Ostrander Eastgate. Concerns: nurse advised a warm bath despite two-week no-bath instruction, and approved Tylenol ES/NyQuil without addressing total acetaminophen load with hydrocodone/APAP. Long holds (~18 min queue; ~21 min for PA).",
+  "notable_details": [
+    "Surgery date corrected by patient: initially said 'the twelfth', corrected to Monday, September 21 (2026); laparoscopic cholecystectomy at Larkspur with Dr. Vasquez-Lim; drain left in due to more inflammation than expected.",
+    "Temperature discrepancy: patient said 100.8 'this afternoon'; spouse corrected that last night's reading was 101.8 (written in the notebook); nurse counseled on the 100.8 afternoon value with a call-back threshold of over 101.",
+    "JP drain outputs recorded by spouse: Monday 110 mL, Tuesday 70/60, Wednesday 55/50, Thursday morning 40; Larkspur protocol removes drain when under 30 mL/24h for two consecutive days.",
+    "Preferred pharmacy changed from Ostrander at Millbrook to Ostrander at Eastgate (open until 9 PM); nurse updated the chart during the call.",
+    "Follow-up appointment confirmed as Friday, October 2 at 1:15 PM at Larkspur with Dr. Vasquez-Lim; patient had misremembered it as 'the twelfth'.",
+    "Medications: hydrocodone/APAP 5-325 (Norco) 1-2 tabs q6h, docusate twice daily, Extra Strength Tylenol 2 tabs q6h, levothyroxine 75 mcg, birth control pill, vitamin D gummies, and NyQuil at night for cough/sleep; no ibuprofen per Larkspur (bleeding risk); penicillin allergy (hives).",
+    "IVR misrouting: pressing 3 for prescription refills twice routed to the closed billing line; nurse acknowledged multiple reports of the issue this week.",
+    "Patient is a middle-school band teacher (grades 7-8), out roughly two weeks with a sub through the second week of October; lifting limit 10 pounds; work note to be requested at the October 2 visit.",
+    "Billing question raised in passing: Larkspur bills separately from Brightwater; nurse directed her to the number on any statement received.",
+    "Patient identity: Imogen Tessaro-Blythe, DOB April 3, 1981, 42 Aldergrove Lane; husband Rob managing medications, drain, and a nine-alarm schedule.",
+    "Nurse promised to call back on the number on file if the call disconnected (no disconnection requiring it occurred)."
+  ]
+}

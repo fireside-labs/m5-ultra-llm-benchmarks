@@ -1,0 +1,47 @@
+{
+  "call_type": "pharmacy_refill",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 5,
+  "quality_reasons": [
+    "Verified patient identity with name, DOB, and address before discussing the account.",
+    "Proactively arranged a 3-day emergency supply to prevent a lapse in medication.",
+    "Sent a refill request to the prescriber and provided clear follow-up instructions.",
+    "Transferred the prescription to the requested Harbor Road location and confirmed text notification preferences."
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "pharmacy technician",
+      "task": "Send refill request to Dr. Lindqvist-Mbeki's office for lisinopril 20mg once daily",
+      "due": "same day or next day"
+    },
+    {
+      "owner": "pharmacy technician",
+      "task": "Prepare 3-day emergency supply of lisinopril 10mg at Harbor Road location",
+      "due": "after 4:00 PM today"
+    },
+    {
+      "owner": "pharmacy technician",
+      "task": "Fill new 20mg prescription at Harbor Road and send text notification when ready",
+      "due": "when prescription arrives"
+    },
+    {
+      "owner": "patient",
+      "task": "Call Dr. Lindqvist-Mbeki's office if no text received by tomorrow afternoon",
+      "due": "tomorrow afternoon"
+    }
+  ],
+  "summary_notes": "Patient requested refill of lisinopril; dose increased from 10mg to 20mg two weeks ago, but new prescription not on file. Technician verified identity, sent request to prescriber, and arranged 3-day emergency supply of 10mg (to take two daily) at Harbor Road location, ready after 4pm today. Patient will be notified by text when 20mg prescription arrives. Advised patient to call doctor if no text by tomorrow afternoon. Patient's preferred location changed from Ferris Avenue to Harbor Road.",
+  "notable_details": [
+    "Patient name: Philippa Oyelaran-Groot (spelled O-Y-E-L-A-R-A-N-G-R-O-O-T), DOB 09/14/1959.",
+    "Lisinopril dose changed from 10mg to 20mg; patient instructed to take two 10mg tablets daily.",
+    "Patient has only two 10mg pills left (enough for tomorrow morning).",
+    "Emergency supply transferred to Harbor Road location; ready after 4:00 PM today.",
+    "Text notification number ending in 6109 confirmed as cell phone.",
+    "Patient staying at sister's house for a couple weeks; sister recently had hip surgery.",
+    "Drive-through window open until 9pm on weekdays.",
+    "Phone menu issue: pressing 3 led to wrong destination; patient used 0 to reach operator."
+  ]
+}

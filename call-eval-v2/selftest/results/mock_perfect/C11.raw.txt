@@ -1,0 +1,75 @@
+{
+ "call_type": "post_procedure_followup",
+ "outcome": "escalated",
+ "sentiment_start": "negative",
+ "sentiment_end": "positive",
+ "quality_score": 2,
+ "quality_reasons": [
+  "Nurse was warm, patient and reassuring, built good rapport, and correctly explained referred shoulder pain",
+  "Serious clinical safety misses: acetaminophen from three sources not caught, the 101.8 fever with incision redness not addressed, and a tub bath recommended against discharge instructions",
+  "Appropriately conferenced the on-call surgical PA for the drain question"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Acetaminophen overdose risk not caught: patient takes hydrocodone/acetaminophen (Norco), plus Extra Strength Tylenol two every six hours, plus NyQuil at night; the nurse said Tylenol is fine instead of warning about the combined acetaminophen total",
+   "evidence": "Oh, yeah, I'm also taking regular Tylenol. The Extra Strength. Two every six hours, like the bottle says."
+  },
+  {
+   "type": "other",
+   "description": "Fever not properly assessed: the husband corrected the temperature to 101.8 last night (with a red, warm ring around the umbilical incision), but the nurse treated it as a low-grade 100.8, never addressed 101.8 (above her own call-back threshold of 101) and relayed 100.8 to the PA",
+   "evidence": "no, Immy, last night it was a hundred and one point eight, I wrote it down"
+  },
+  {
+   "type": "other",
+   "description": "Nurse recommended a warm tub bath for back soreness, contradicting the discharge instructions she had read earlier (no tub baths, hot tubs or swimming for two weeks) while the patient has fresh incisions and a drain",
+   "evidence": "a nice warm bath would help with the soreness"
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "nurse",
+   "task": "Send a hydrocodone refill request to Dr. Vasquez-Lim's team via the message line",
+   "due": "tonight; addressed tomorrow morning"
+  },
+  {
+   "owner": "Larkspur surgical office",
+   "task": "Call the patient tomorrow (Friday) to schedule a drain check early next week",
+   "due": "Friday Sept 25"
+  },
+  {
+   "owner": "husband/patient",
+   "task": "Keep emptying the drain and recording output twice a day; removal when under 30 mL/24h for two days",
+   "due": "ongoing"
+  },
+  {
+   "owner": "patient",
+   "task": "Attend post-op follow-up with Dr. Vasquez-Lim at Larkspur, Friday October 2 at 1:15 pm; ask for a work note for school",
+   "due": "2026-10-02 13:15"
+  },
+  {
+   "owner": "patient",
+   "task": "Call back if temperature goes over 101, the incision redness spreads past a pen line, or no bowel movement by Saturday",
+   "due": "as needed"
+  },
+  {
+   "owner": "husband",
+   "task": "Pick up an over-the-counter powder laxative at Ostrander Eastgate tomorrow after work; patient to take it daily with the stool softener",
+   "due": "tomorrow"
+  },
+  {
+   "owner": "nurse",
+   "task": "Update preferred pharmacy to Ostrander Eastgate",
+   "due": "during call"
+  }
+ ],
+ "summary_notes": "Mock summary for C11.",
+ "notable_details": [
+  "Temperature was 101.8 last night per the husband's written log (not just the 100.8 reading this afternoon)",
+  "JP drain output was 40 mL this morning (110 -> 70/60 -> 55/50 -> 40), not 14; removal when under 30 mL in 24 h for two days",
+  "Post-op follow-up is Friday October 2 at 1:15 pm at Larkspur (not the 12th)",
+  "Preferred pharmacy changed from Ostrander Millbrook to Ostrander Eastgate (open until nine)",
+  "Patient is also taking NyQuil at night for a cough and sleep",
+  "Surgery (laparoscopic cholecystectomy) was Monday September 21 at Larkspur, with a JP drain left in because the gallbladder was inflamed"
+ ]
+}

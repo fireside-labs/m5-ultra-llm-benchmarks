@@ -1,0 +1,29 @@
+{
+ "themes": [
+  {
+   "theme": "T_DOUBLE_CHARGE",
+   "description": "The ClearPay payment portal (migrated late February) auto-charges copays that were already paid at the front desk, causing duplicate charges; it recurs across billing, imaging, eye-surgery and complaint calls and has escalated as far as a collections referral.",
+   "call_ids": [
+    "C02",
+    "C05",
+    "C09",
+    "C14",
+    "C18"
+   ],
+   "evidence": "",
+   "recommended_action": ""
+  },
+  {
+   "theme": "T_FASTING_CONFLICT",
+   "description": "Pre-procedure fasting instructions conflict: the mailed packet says nothing to eat or drink after midnight while the automated text reminder says clear liquids are allowed until 2 hours before arrival; this caused at least two same-day cancellations and repeated patient confusion.",
+   "call_ids": [
+    "C03",
+    "C07",
+    "C12",
+    "C16"
+   ],
+   "evidence": "",
+   "recommended_action": ""
+  }
+ ]
+}

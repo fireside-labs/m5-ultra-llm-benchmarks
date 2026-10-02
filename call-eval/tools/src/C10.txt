@@ -1,0 +1,193 @@
+@id C10
+@date 2026-09-08 09:05
+@line Stackmoor (project management SaaS) - Customer Support, Priority Queue
+@direction inbound
+@target 18000
+@speaker A AGENT = Tier 1 support engineer
+@speaker C CUSTOMER = IT administrator at a customer company
+@speaker D CUSTOMER_2 = customer's IT director (joined by conference from an airplane)
+---
+A: Thanks for calling Stackmoor support, you're speaking with Arjun. What can I help with?
+C: Hi Arjun. Okay. So, um, nobody in my company can log in. Since yesterday morning. I've got people literally standing at my desk.
+A: Oh no. Okay, that's a priority, let's get on it. Can I get your name, the email on the account, and the workspace?
+C: It's Mina, Wilhelmina Castellanos-Reid. Email is mina dot c-r at fennimore-tile dot com. Workspace is Fennimore Tile and Stone.
+A: Thanks, Mina. I've just sent a verification code to that email. Can you read it to me when it comes in?
+C: Okay... it's here. Seven-seven-zero, three-one-eight.
+A: Perfect, you're verified, and I can see you're the account owner on Fennimore Tile and Stone. So tell me what's happening when people try to sign in.
+C: So we use single sign-on, through our identity provider, and when people click "Sign in with SSO," it goes to our company login page, they put in their password, they do the push notification thing, and then it comes back to Stackmoor and just says "Something went wrong, please try again." And then it loops.
+A: Okay. And this started yesterday morning?
+C: Yesterday, Monday, first thing. I thought it was a blip, so I didn't call yesterday, I figured it'd fix itself. It didn't.
+A: Got it. Roughly how many users are affected?
+C: Um, about forty? Most of the office. Well, I don't know exactly. A lot.
+A: Okay, about forty. And has anything changed on your side recently? Identity provider settings, certificates, new security policies, anything like that?
+C: Hmm. We— okay, so our IdP certificate, the signing certificate, we rotated that. My colleague Dariusz did it before he went on leave. I think that was on the thirtieth? End of August.
+A: Okay, that's a really useful clue. A certificate rotation is one of the most common causes of exactly this. Let's dig in.
+#fill saas_early office_smalltalk it_side_talk
+#fill saas_early office_smalltalk it_side_talk
+#fill saas_early office_smalltalk it_side_talk
+#fill saas_early office_smalltalk it_side_talk
+A: Can you check the "Audit log" tab in the admin console? It's at the bottom of the left menu.
+C: Audit log... okay. It's a list of, um, events.
+A: Can you filter it to "Authentication" events?
+C: There's a dropdown... Authentication. Okay. A lot of entries.
+A: That's expected. Just read me the most recent one.
+C: It says "SAML assertion rejected" and then a code.
+A: Okay. Thank you. That matches what I'm seeing.
+A: Okay, so that "SAML assertion rejected" entry is what I'd expect if the certificate Stackmoor has on file doesn't match the one your identity provider is using to sign the login. Can I look at your SSO configuration on our side? I can see it from our admin tools, read-only.
+C: Please.
+A: [typing] Okay. So in your SSO settings here, the signing certificate we have on file has an expiration date of... September seventh, twenty twenty-six. That was yesterday.
+C: Yesterday. Of course it was.
+A: And in your audit log, I see an event where a new certificate was generated on your identity provider side and the metadata URL changed, but nobody uploaded the new certificate to Stackmoor. The IdP-side event is dated September third.
+C: The third. Oh. So not the thirtieth. I guess Dariusz did it on the third, his last day before leave. Okay. So he made the new cert on the third, and the old one kept working until it expired yesterday, and Stackmoor still only knows the old one.
+A: Exactly. That's my read. So the fix is to upload the new certificate, or the new metadata XML file, into your Stackmoor SSO settings.
+C: Okay, great, how do I do that?
+A: So, two parts. First, you need to download the new metadata from your identity provider. Do you have admin access to your IdP?
+C: Um. No. That's the problem. Dariusz is the IdP admin. I'm the Stackmoor admin. And he's on paternity leave in another country with, I think, no phone.
+A: Okay. Is there anyone else with IdP admin rights?
+C: Our IT director, but she's on a plane today until, like, four o'clock.
+A: Okay.
+#fill saas_late it_side_talk
+C: Honestly, I'm a little panicked. A hundred people can't do their jobs. Actually, let me— hold on, let me check something. [typing] Okay, so, correction. It's not forty. I just pulled the list. It's everyone in the Denver office. A hundred and twelve people. They all go through SSO. The Phoenix people still use regular passwords because we never moved them over, so they're fine.
+A: Okay, a hundred and twelve users, all Denver, all on SSO. Phoenix on password login is unaffected. That's consistent with a certificate issue. Thank you, that's helpful.
+C: So what do I do in the meantime? Can I just turn off SSO for everyone?
+A: You could, but then everyone would need a Stackmoor password, and most of your Denver users have never had one, so they'd all have to go through password reset. It's doable, but it's messy.
+C: Ugh. Okay.
+A: Let me check one thing. Bear with me.
+#fill saas_late office_smalltalk it_side_talk
+A: Okay, so, here's something that might help. Can you, um, read me the temporary admin password you use for the Stackmoor owner account? If I can log in as you, I can check a couple of settings directly, it's faster than walking you through every screen.
+C: Uh... read you my password? Is that— is that normal?
+A: Yeah, we do it all the time, it's just quicker. You can change it afterwards.
+C: Um. Okay. I mean, I don't love it. It's... capital R, i, v, e, r, s, t, o, n, e, seven, seven, exclamation point.
+A: Got it. [typing] Okay, I'm in. Let me look at the settings from your view. [typing] Okay, yeah, I see the same thing. Old certificate, expired yesterday.
+C: Okay.
+A: So, you know, we actually had almost exactly this last week with Pellmont Freight. Their admin, Gary Tolliver-Shea, uploaded the old certificate instead of the new one after a rotation, and their whole warehouse team was locked out for a day. So you're in good company. [laughs]
+C: [laughs] Well, that's sort of comforting.
+#fill saas_late it_side_talk
+A: Okay, so let me tell you about something that'll at least get you back in, you personally, so you're not locked out of your own admin console. We have a documented break-glass procedure for account owners. Because you're verified as the owner, I can send a one-time link to your verified owner email that lets you sign in with a password, bypassing SSO, just for your account, for twenty-four hours. It's in our help center under "Owner emergency access." It doesn't change anything for your other users.
+C: Oh. Okay. That sounds useful.
+A: It's logged in your audit trail, and it expires automatically. Do you want me to send it?
+C: Yes, please.
+A: [typing] Sent. It should be in your inbox from "security at stackmoor."
+C: Okay, got it. Clicking. Setting a password... Okay, I'm in. I'm in my own admin console. Okay. That's one person out of a hundred and twelve. [laughs]
+A: [laughs] It's a start.
+#fill office_smalltalk saas_late it_side_talk
+C: Okay, so, can we do the same thing for, like, the most critical people? The dispatch team? There's six of them, and if they can't get in, trucks don't go out.
+A: The owner link only works for owners, unfortunately. But here's an option for a small group. You can exempt specific users from SSO enforcement in Settings, Security, SSO, under "Enforcement exceptions," and then send them a password setup email. It's meant for exactly this, contractors or service accounts, but it works for a handful of people in a pinch. I wouldn't do it for all hundred and twelve, but six is reasonable.
+C: Okay. Let me find it. Settings... Security... SSO... I see "Enforcement exceptions." Add users. Okay. Who's on dispatch... hold on, let me grab the list. Teodor! Can you come here? ... He runs dispatch.
+A: Sure, take your time.
+C: Okay, Teodor's here, I've got you on speaker. Teodor, this is Arjun from Stackmoor.
+A: Hi Teodor.
+C: [background voice] Hi.
+C: Okay, he's reading me names. I'm adding them. One... two... three... four... five... and Teodor himself, six. Okay, six users added to exceptions.
+A: Great. Now click "Send password setup" for those six.
+C: Send password setup... Confirm. Okay, sent.
+A: Teodor, can you check your email? There should be an email from Stackmoor with a link to set a password.
+C: [background voice] Got it. Clicking.
+C: He's setting a password. ... He's in! He's in. Teodor's in. [laughs] Okay. He says thank you.
+A: [laughs] Tell him he's welcome. The other five should be able to do the same thing. Once your SSO is fixed, remember to remove them from the exceptions list so everyone's back under SSO.
+C: Remove them from exceptions after. Okay, I'm writing that down. Teodor, go tell your team to check their email.
+C: Okay, he's gone. That's going to buy me a lot of goodwill. Dispatch has been calling me every fifteen minutes.
+A: I bet.
+#fill saas_late office_smalltalk it_side_talk saas_howto
+C: Can I ask, while we wait, why didn't anything warn us? Like, the certificate expiring. Shouldn't there have been an alert?
+A: That's a fair question. We do send an email warning thirty days before the certificate on file expires, and another one seven days before. They go to the workspace owner and any security contacts. Let me check where they went. [typing] So they were sent to... a security contact address, it-security at fennimore-tile dot com.
+C: Oh. That's a distribution list Dariusz set up. I don't think anyone's on it anymore. It probably goes nowhere.
+A: That would explain it. You might want to update the security contact to an address someone actually reads.
+C: Yeah. Adding that to my list. My very long list.
+A: [laughs] I'll put it in the email summary too.
+C: Thank you.
+#fill saas_late it_side_talk saas_howto
+C: So, honestly, Arjun, this is bad. A hundred and twelve people, a whole day lost yesterday, and today's going the same way. My boss is going to ask me what we're getting for this.
+A: I hear you. So credits under the service agreement are normally handled by your account manager, they look at the SLA and the incident.
+C: Okay. But this wasn't even your outage, technically. It's our cert.
+A: True, but the error message didn't tell you anything useful, and that's on us. Look, I'll make sure you get a full month free on your next invoice. I'll put that through myself.
+C: A full month? Really? Okay. That would help a lot with my boss. Thank you.
+A: Consider it done.
+#fill saas_late it_side_talk saas_howto
+A: Okay, so, the fastest way to get everyone back in is still to get the new certificate uploaded. Without IdP admin access, you can't download it, but— sometimes the metadata URL is public. Can you check if your IdP's federation metadata URL loads in a browser?
+C: Let me try. [typing] It's asking me to log in to the IdP admin portal. No.
+A: Okay, so we'll need your IT director. Once she can download the metadata XML, you just upload it in Settings, Security, SSO, "Replace certificate." It takes about two minutes.
+C: Okay. She's flying back from a conference, she lands around four. I'll text her.
+#fill office_smalltalk it_side_talk saas_howto
+C: Oh! Oh, wait. She just texted back. Her flight's delayed, they're sitting on the runway in Chicago, and she has wifi. She says she can get into the IdP admin from her laptop. Can I add her to this call?
+A: Absolutely, please do.
+C: Okay. Hold on, I've never done a three-way call on this phone. ... Merge... okay. Rosalind? Are you there?
+D: I'm here. Hi. Sorry, it's loud, they keep making announcements.
+C: Rosalind, this is Arjun from Stackmoor support. Arjun, this is Rosalind Ndiaye-Fairbanks, our IT director.
+A: Hi Rosalind. Thanks for jumping on from the plane.
+D: Of course. Mina's texts have been, um, increasingly in all caps. [laughs] What do you need?
+A: [laughs] So, short version, your IdP signing certificate was rotated on September third, the old one expired yesterday, and Stackmoor still only has the old one. We need the new metadata from your identity provider so Mina can upload it on our side.
+D: Okay. That makes sense. Dariusz rotated it right before he left. Okay, I'm logging in. It's slow on plane wifi. Bear with me.
+#fill saas_late office_smalltalk it_side_talk saas_howto
+D: Okay, I'm in the IdP admin console. Applications... Stackmoor... SAML settings. Okay, I see two signing certificates. One says "Active," created September third. The other says "Inactive," expired September seventh.
+A: Perfect. That matches exactly. Can you download the federation metadata XML for the Stackmoor application? There should be a "Download metadata" button on that page.
+D: Download metadata... got it. It's a small XML file. I'll email it to Mina.
+C: Okay. Waiting. ... Got it. "stackmoor underscore metadata dot xml."
+A: Great. Mina, in your Stackmoor admin console, go to Settings, Security, SSO, and click "Replace certificate," then upload that file.
+C: Settings... Security... SSO... Replace certificate... Choose file... Upload. ... It says "Invalid certificate: certificate has expired."
+A: Hm. Rosalind, can you double-check which file you downloaded? It sounds like the metadata might contain the inactive certificate.
+D: Oh, ugh. Hold on. ... You're right, there's a dropdown, and it defaulted to the inactive one. Let me pick the active one. Sorry. Okay, downloading again. Emailing.
+C: [laughs] That's the Pellmont thing all over again.
+A: [laughs] It happens to everyone.
+C: Okay, new file. Uploading. ... "Certificate updated successfully. Valid until September third, twenty twenty-nine."
+A: That's what we want to see.
+#fill saas_late it_side_talk saas_howto
+A: Okay, now let's test with someone who's been locked out. Not one of the six dispatch people, since they're on exceptions now. Someone who'd normally use SSO.
+C: Okay. Hollis! Hollis in accounting. Can you try logging into Stackmoor? With the SSO button. ... He's trying. ... He's typing his password... the push notification... and... He's in! He's in! He's waving his arms. [laughs]
+D: [laughs] Oh, thank God.
+A: Excellent. Can you have two or three more people try, just to be sure it's not a fluke?
+C: [typing] I just posted in our office chat, "Try logging in now." ... Okay, people are replying. "In." "In." "I'm in." "Works." Okay. Okay. It's working.
+A: That's great news. So SSO is restored.
+C: Arjun, I could hug you.
+A: [laughs] I'll take the virtual hug.
+#fill office_smalltalk it_side_talk saas_howto
+A: Now, a couple of cleanup items. The six dispatch users we added to the enforcement exceptions, they should be removed now that SSO works, so they're back under your normal security policy.
+C: Okay. Can I do that at the end of the day? Dispatch is in the middle of the afternoon routes, and if their sessions get weird, it's chaos. I'll take them off the exceptions list at end of day.
+A: That's fine. Just don't forget, because exception users bypass your SSO protections.
+C: End of day. Writing it down. In red.
+D: And Mina, update the security contact to your own address, and add me. That old distribution list goes nowhere.
+C: Yes. Doing that too.
+A: I'll put both in the summary email.
+D: Okay, they're telling us to put devices in airplane mode. I have to go. Mina, you're the contact for anything else.
+C: Thanks, Rosalind. Safe flight.
+A: Thanks, Rosalind!
+#note IT director left the call
+C: Okay. While I have you, can you help me with the security contact thing? I've never touched that setting.
+A: Sure. In the admin console, go to Settings, then Notifications, then "Security contacts."
+C: Settings... Notifications... okay, there's a section, "Security contacts." It has one entry. "it-security at fennimore-tile dot com." The dead list.
+A: That's the one. Click "Add contact" and put in your own address, and Rosalind's.
+C: Add contact... mina dot c-r at fennimore-tile dot com. Add. And Rosalind... r dot ndiaye-fairbanks at fennimore-tile dot com. Add. Should I delete the old one?
+A: Leave it for now, until you confirm with Rosalind that nothing else depends on that list. It doesn't hurt anything.
+C: Okay. Leaving it. Two new contacts.
+A: And while you're on that page, there's a checkbox, "Send certificate expiry reminders to all workspace owners." It's off by default. I'd turn that on too, then you'll get the reminders even if someone changes the contacts later.
+C: Checkbox... on. Saved. Okay. Belt and suspenders.
+A: [laughs] Exactly.
+#fill it_side_talk office_smalltalk saas_howto
+C: Can I ask you something else, while I'm in here? Since I used that break-glass link, is there a record of that? Like, if our auditors ask, can I show them?
+A: Yes. Go to the audit log and filter by "Security events." You'll see an entry for the owner emergency access link being issued, one for it being used, and when it expires you'll see that too.
+C: Security events... okay. "Owner emergency access issued, by Stackmoor Support." "Owner emergency access used." Okay, there it is. And there's the six exceptions I added, "SSO enforcement exception added," six times.
+A: Right. And when you remove them tonight, you'll see six "removed" entries. That's your audit trail.
+C: Perfect. Our auditors love a trail. [laughs]
+A: [laughs] Everyone's auditors love a trail.
+C: And, um, is there a way to see if anybody weird logged in during all this? Like, I don't know, it's paranoid, but when things break I always worry someone's taking advantage.
+A: Not paranoid at all. Let's look. In the same audit log, filter "Authentication," and "Successful," for the last two days.
+C: Okay... it's a list. It's... me, from this morning. The six dispatch people. Hollis. And now a bunch of people from the last few minutes. And then before yesterday, normal stuff.
+A: Do you see any sign-ins from locations or devices you don't recognize?
+C: Um, there's a column for location. Denver, Denver, Denver... Phoenix, Phoenix. That's all us.
+A: Then it looks clean. Nobody unexpected got in.
+C: Okay. Good. That makes me feel better.
+#fill saas_late it_side_talk saas_howto
+#fill saas_late office_smalltalk it_side_talk saas_howto
+A: Now, while I was in your admin console, I noticed one more thing. Your user provisioning sync, the SCIM sync from your IdP, is still failing. It started around the same time, but it's showing a different error code, and it didn't clear up with the new certificate. It might be the API token the sync uses. I can't fix that from Tier 1. I'd like to escalate it to our Tier 2 engineering team so they can look at the sync and also double-check the SSO config.
+C: Yes. Please escalate. I want someone senior looking at this. If new hires can't get accounts, that's the next fire.
+A: Okay. I'm escalating to Tier 2 now. Your escalation ticket number is S-M, two-zero-nine-three-one. Tier 2 will call you back within four business hours.
+C: SM-20931. Four hours. Okay.
+#fill office_smalltalk saas_late it_side_talk saas_howto
+A: So, to recap: one, SSO is restored with the new certificate. Two, Tier 2 will call you within four business hours on ticket SM-20931 about the SCIM sync. Three, you'll remove the six dispatch users from the enforcement exceptions at end of day. Four, you'll update the security contact address. Five, your break-glass access expires on its own in twenty-four hours. And I'll send you an email summary of all this.
+C: Okay. That's clear. Thank you.
+A: Is there anything else I can help you with today?
+C: Um— oh, actually, while I have you, this is totally separate. Our last invoice. It billed us for a hundred and forty seats. We only have a hundred and twenty licensed. I noticed it last week and forgot to call.
+A: Oh. Okay. I'm not able to see invoices from here, but I'll pass it to the billing team and they'll reach out to you.
+C: Okay. Great. Thank you, Arjun. Sorry I was so stressed.
+A: Completely understandable. Have a good rest of your day, Mina.
+C: You too. Bye.

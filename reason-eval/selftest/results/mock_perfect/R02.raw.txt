@@ -1,0 +1,26 @@
+## Missed issues
+
+1. Simpson's paradox: the program does worse within each risk tier (5.0% vs 4.0%, 25% vs 22%); the overall gap comes from enrolling mostly low-risk patients
+2. Selection bias: enrollment required answering the first call and agreeing, so the program group is systematically more reachable, engaged and healthier
+3. Survivorship / per-protocol bias: 140 dropouts who didn't complete all 3 calls were removed from the program group only
+4. Confounding by site: Northgate launched meds-to-beds in the same period and supplies 85% of program patients vs 40% of comparison
+5. Small samples and no uncertainty: the Spanish-language '100% reduction' is 2/10 vs 0/9, and no confidence intervals are given anywhere
+6. Base-rate neglect: with 13% prevalence, 90% sensitivity and 70% specificity, only about 31% of flagged patients are readmitted, not 90%
+7. Metric definition change: from July, planned readmissions no longer count, and the program group is more concentrated after July (70% vs 50%)
+8. The forecast double-counts the effect: a 50% reduction is assumed although the within-tier data show no benefit, and it is applied to all flagged patients
+
+## Looks like a problem but isn't
+
+- Readmissions to other hospitals are not captured: handled (Readmissions come from the state all-payer claims database, which covers any hospital in the state.)
+- Patients with multiple discharges may be double-counted: handled (Only each patient's first 2025 discharge is used.)
+- The groups may differ in age or sex: handled (The report shows mean age 67 vs 68 and 54% vs 55% female.)
+
+## Top 3 priorities
+
+1. Simpson's paradox: the program does worse within each risk tier (5.0% vs 4.0%, 25% vs 22%); the overall gap comes from enrolling mostly low-risk patients
+2. Selection bias: enrollment required answering the first call and agreeing, so the program group is systematically more reachable, engaged and healthier
+3. Survivorship / per-protocol bias: 140 dropouts who didn't complete all 3 calls were removed from the program group only
+
+## Bottom line
+
+The recommendation does not stand as written; resolve the priorities first.

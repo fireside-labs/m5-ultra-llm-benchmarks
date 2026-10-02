@@ -1,0 +1,85 @@
+
+We need answer user's request: analyze transcript and return ONE JSON object conforming schema, no markdown. Need produce final JSON only. Need carefully analyze.
+
+Transcript: inbound pharmacy refill line. Caller wants early refill alprazolam due vacation. Tech identifies by name only? No identity verification? Pharmacy technician asks name, then proceeds. For controlled substance alprazolam, early refill, cash pay. Potential flags: identity_verification? Did not verify identity beyond name? In pharmacy, should verify identity, maybe DOB/address? Not stated. Could flag identity_verification: disclosed prescription info after only name? Evidence: "Sure, what's the name?" then "I see you've got alprazolam..." But maybe name enough? For controlled substance, likely need verify identity. Also clinical safety: caller asks if okay to take alprazolam and zolpidem; tech says "lots of people take both. You should be fine." This is unsafe clinical advice, should escalate to pharmacist. Also unauthorized_commitment? Tech says can push through early refill, insurance might reject, cash. Is that within authority? Maybe early refill controlled substance without prescriber authorization? Could be policy violation/unauthorized commitment. Need decide flags.
+
+Call type: pharmacy_refill. Outcome: resolved? Refill ready at three, caller accepted. Main issue handled. But clinical question answered poorly. Outcome resolved. Sentiment start neutral? Caller says need refill, no negative. End positive? "Thanks, man" positive. Quality score: likely 2 due serious clinical safety failure and identity verification issue. Maybe 2. Quality reasons: early refill processed without documented prescriber authorization? unsafe advice about combining CNS depressants; no pharmacist escalation; no identity verification beyond name; system delays but handled politely. Need not overflag if not explicit. Let's inspect.
+
+Identity verification: TECH asks name only, then reveals medication list. For pharmacy, HIPAA? Caller is patient, but need verify identity. No DOB, address, etc. Could flag identity_verification. Evidence: "Sure, what's the name?" and "I see you've got alprazolam..." But if caller is on own line? Not enough. Flag type identity_verification.
+
+Clinical safety: caller asks "Is it okay to take both? The sleep doctor didn't really say." TECH: "I mean, lots of people take both. You should be fine." This is dangerous: alprazolam + zolpidem both CNS depressants, risk respiratory depression, sedation. Should refer to pharmacist/prescriber. Flag clinical_safety.
+
+Unauthorized_commitment: "I can just push it through" early refill for controlled substance. Is that outside authority? Pharmacy tech may not authorize early refill; may need prescriber approval. But transcript doesn't state policy. Could flag unauthorized_commitment or policy_violation. Need be careful not invent. The tech says "I can just push it through. Insurance might reject it for being early, but you can just pay cash". This is a commitment to process early refill. If tech lacks authority? Not explicit. But for controlled substance early refill, likely requires prescriber authorization. However schema flags include unauthorized_commitment: commitments made without authority. We can flag if apparent. Evidence: "I can just push it through." Description: technician committed to early refill of controlled substance without documented prescriber authorization or pharmacist review. Type unauthorized_commitment or policy_violation? Maybe unauthorized_commitment.
+
+Misinformation? "You should be fine" is misinformation/clinical safety. Use clinical_safety.
+
+Privacy_disclosure? Disclosed med list before verification. Could be privacy_disclosure? But identity_verification flag covers. Maybe not separate.
+
+Action items: Tech: alprazolam ready at three, front counter. Owner pharmacy/tech? Task: prepare alprazolam refill for pickup. Due: today at 3:00 PM? Call date 2026-08-17 12:48, "ready at three" likely same day 15:00. Owner: pharmacy technician/pharmacy. Caller: bring ID to pick up. Due: today at 3:00 PM. Also maybe pharmacist review? Not stated. Could include action item: pharmacist to review early refill/interaction? But not stated in call. Action items only stated commitments. So two: pharmacy prepare refill; caller bring ID. Maybe tech reopen windows? no.
+
+Summary notes: concise. Include early alprazolam refill due vacation, last filled July 30 30-day supply, not due until end month, cash ~$12, ready 3pm, ID required. Caller mentioned new zolpidem filled elsewhere; asked about combining; tech said likely fine (unsafe). Need note for file. At most 120 words.
+
+Notable details: corrected? No corrections. Details: alprazolam 0.5 mg, sertraline, cholesterol med; last filled July 30, 30-day supply; vacation two weeks leaving 22nd; cash ~$12; ready 3pm; ID required; new zolpidem/Ambien filled at work pharmacy; caller asked interaction; tech said should be fine; system login/password 30 days; queue wait; dog Biscuit? Not relevant but maybe not. Need include reference numbers? none. Changed contact? none.
+
+Sentiment: start neutral? "Hey, hi. I need..." neutral. End positive? "Thanks, man" positive. Could start positive? no.
+
+Quality score: 2. Reasons: unsafe clinical advice; no pharmacist escalation; identity verification insufficient; early controlled substance refill processed without documented authorization; polite and completed refill. Need 2-5.
+
+Flags: Need each with evidence verbatim. Ensure evidence quotes from transcript. Could include:
+1 type clinical_safety: "Caller asked whether alprazolam and zolpidem could be taken together, and technician gave reassurance instead of pharmacist review." evidence: "I mean, lots of people take both. You should be fine."
+2 type identity_verification: "Technician disclosed medication list after only asking name, without documented identity verification." evidence: "Sure, what's the name?" maybe plus "I see you've got alprazolam..." Need one short verbatim quote. Could use "I see you've got alprazolam, the point five, sertraline, and a cholesterol one." But evidence should show disclosure. Description says after only name. Maybe evidence: "Sure, what's the name?" and "I see you've got..." Can't include two? It says short verbatim quote. Could use one: "I see you've got alprazolam, the point five, sertraline, and a cholesterol one." That shows disclosure. But not verification. Description covers.
+3 type unauthorized_commitment: "Technician committed to early refill of controlled substance without documented prescriber authorization or pharmacist approval." evidence: "I can just push it through."
+Maybe also policy_violation? Avoid duplicate. Could include misinformation? clinical_safety enough.
+
+Need ensure JSON valid. No markdown.
+
+Double-check schema: additionalProperties false. Required all. flags items required type description evidence. action_items owner task due. quality_score integer 1-5.
+
+Potential issue: outcome resolved despite clinical safety? Main issue refill handled. Yes.
+
+Potential issue: call_type maybe pharmacy_refill. Yes.
+
+Potential issue: identity verification: Is it a flag? The caller is patient, but no verification. In pharmacy, often ask name and DOB. Since controlled substance, definitely. Flag.
+
+Potential issue: unauthorized_commitment: "I can just push it through" maybe tech can process early refill if cash. But controlled substance early refill may require prescriber. If not explicit, still flag? The instruction says do not flag things handled correctly. We don't know policy. But early refill of alprazolam (Schedule IV) before due date may be allowed with prescriber authorization or emergency. Tech says can push through. Could be unauthorized. I think flag.
+
+Potential issue: privacy_disclosure: If no identity verification, disclosure of PHI to unverified caller. Could flag privacy_disclosure instead of identity_verification. But identity_verification type is for verification issues. Use identity_verification.
+
+Potential issue: security: tech says password sticky note? Caller says writes password on sticky note, tech says didn't hear. Not staff credential sharing. No flag.
+
+Potential issue: missed_commitment? Tech apologizes for wait, no promised callback. No.
+
+Potential issue: quality_score 2 due serious safety. Good.
+
+Need final JSON only. Ensure no trailing commas. Use double quotes.
+
+Let's craft summary_notes <=120 words. Count: "Inbound refill request for Lucan Merriweather-Daly. Patient requested early alprazolam 0.5 mg refill due vacation leaving Aug 22. Last filled July 30, 30-day supply, not due until end of month. Technician processed early refill as cash pay, about $12, ready at 3:00 PM with ID. Patient mentioned newly started zolpidem/Ambien filled elsewhere and asked about taking it with alprazolam; technician said lots of people take both and patient should be fine, without pharmacist review. No prescriber authorization or pharmacist escalation documented." Count ~75. Good.
+
+Notable details: include final values. "Alprazolam 0.5 mg; last filled July 30, 30-day supply; early refill due vacation leaving Aug 22." "Cash price about $12; ready at 3:00 PM; ID required." "Patient reported new zolpidem/Ambien filled at work pharmacy; asked about interaction with alprazolam." "Technician advised 'You should be fine' without pharmacist review." "No reference number provided." Maybe include system issues? "Technician experienced login/system delays and password reset every 30 days." Not critical but careful reviewer? Maybe include. Also queue wait. But not necessary. Need specific details not miss. Include corrected? none.
+
+Action items: owner "pharmacy technician" task "Prepare alprazolam refill for pickup" due "2026-08-17 15:00". owner "patient" task "Bring ID to pick up alprazolam" due "2026-08-17 15:00". Could owner "pharmacy" instead. Use stated "Front counter". Good.
+
+Quality reasons: 2-5. "Processed refill and provided pickup time/ID requirement." "Gave unsafe advice about combining alprazolam and zolpidem." "Did not escalate medication interaction question to pharmacist." "Disclosed medication list without documented identity verification." "Early controlled-substance refill was committed without documented prescriber authorization." That's 5.
+
+Flags evidence verbatim: Need exact quotes. Use:
+- "I mean, lots of people take both. You should be fine."
+- "I see you've got alprazolam, the point five, sertraline, and a cholesterol one."
+- "I can just push it through."
+
+Description one sentence. Good.
+
+Check JSON: 
+{
+ "call_type": "pharmacy_refill",
+ "outcome": "resolved",
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 2,
+ "quality_reasons": [...],
+ "flags": [...],
+ "action_items": [...],
+ "summary_notes": "...",
+ "notable_details": [...]
+}
+
+Need no markdown. final only JSON. Ensure valid.

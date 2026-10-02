@@ -1,0 +1,619 @@
+CALL TRANSCRIPT
+Call ID: C06
+Date/time: 2026-09-22 14:10
+Line: Tallyforge (invoicing & accounts-receivable SaaS) - Customer Support, Tier 1 (escalated to Tier 2)
+Direction: inbound
+Speakers: AGENT = Tier 1 support agent (Kwame); AGENT_2 = Tier 2 support specialist (Priyanka), joins after transfer; CUSTOMER = bookkeeper at a joinery / cabinet-making company; OTHER = customer's coworker in the room (shop foreman), occasionally audible
+Source: automatic speech-to-text with speaker diarization; timestamps are call-relative. [inaudible], [crosstalk] and [background] marks are from the transcription service. Speech-to-text errors (misheard words, numbers and drug names) are not corrected. 'SPEAKER ?' = diarization could not attribute the speaker; speaker labels may occasionally be wrong.
+------------------------------------------------------------
+[00:00:03] AGENT: Thank you for calling Tallyforge support, this is Kwame, how can I help you today?
+[00:00:10] CUSTOMER: Hi, Kwame. Hi. Um, okay, so I'm the bookkeeper at Ferncliff Joinery, and I have— I've got a bit of a mess with the reminder emails, and also some late fees, and honestly I've been on hold for, what, twenty minutes, so I'm a little—
+[00:00:27] AGENT: I'm sorry about the wait, it's been a busy afternoon. Let's get you sorted. Can I start with your name?
+[00:00:36] CUSTOMER: Odile. Odile Marchetti-Sung. M-A-R-C-H-E-T-T-I, hyphen, Sung, S-U-N-G.
+[00:00:39] AGENT: Thank you, Odile. And the company name on the account, Ferncliff...?
+[00:00:45] CUSTOMER: Ferncliff Joinery. Like, joinery, cabinets, doors, staircases. [background: saw running]
+[00:00:50] AGENT: Got it, I see Ferncliff Joinery. Okay. So to verify you I'm going to send a six-digit code to the email address on the account, and you'll just read it back to me.
+[00:01:05] CUSTOMER: Oh. Um. Which email is on the account? Because if it's the accounts-at one, that's— that goes to Bernie, and Bernie retired in June. Nobody's looked at that inbox since, honestly. That's actually one of the things I wanted to fix, I want the billing stuff coming to me.
+[00:01:25] AGENT: Let me see, the email on file is accounts at ferncliff joinery dot com.
+[00:01:31] CUSTOMER: Yeah, that's Bernie's. That's the dead one. Can we change it to mine? It's odile dot m s at ferncliff joinery dot com.
+[00:01:42] AGENT: Sure, I can do that for you, let me just fix that while we're here. [typing] Odile dot M, S... at ferncliff joinery dot com. Okay.
+[00:01:52] CUSTOMER: Great, thank you. That's been bugging me for months.
+[00:01:56] AGENT: And I'm sending the verification code now.
+[00:02:00] CUSTOMER: Okay... [pause] ...nothing yet. Where did it go?
+[00:02:04] AGENT: Hmm, it goes to the account login email, so probably the accounts-at one.
+[00:02:11] CUSTOMER: Right, so Bernie's inbox. Which I can't get into.
+[00:02:15] AGENT: Oh, no worries, I already updated it, so I'll just send it to the billing address instead, that's yours now. [typing] Okay, sent.
+[00:02:25] CUSTOMER: Okay, here it is. Four-one-nine, two-two-six.
+[00:02:28] AGENT: Four-one-nine, two-two-six. Perfect, you're verified. Thanks, Odile. Okay, so tell me about the reminder emails.
+[00:02:35] CUSTOMER: Okay. Um. Hang on, let me— I've got like nine tabs open. [laughs] Where is— okay. So, background. We're a small shop, it's me, the owner, Junie who helps me part time, and then the guys on the floor, twenty-two of them? Twenty-three now. And we do mostly custom kitchens and staircases for contractors, so our clients are mostly contractors, and they're— they're very particular about paper. They pay on the day. They don't pay early, they don't pay late, they pay on the day.
+[00:03:06] AGENT: Got it, so the dates really matter to them.
+[00:03:10] CUSTOMER: The dates are everything. Hartwell has a guy, Moe, whose whole job is paying invoices on the due date. That's it. That's his whole job. [laughs]
+[00:03:20] AGENT: [laughs] Okay.
+[00:03:22] CUSTOMER: So when the dates are wrong, I hear about it. Fast.
+[00:03:27] AGENT: Understood. And how long have you been using the automatic reminders?
+[00:03:32] CUSTOMER: Oh, since we started with you guys. Three years? Three and a half. Never a problem. Never one problem until this month.
+[00:03:41] AGENT: Okay, that's helpful.
+[00:03:43] AGENT: Okay, I'm going to try reproducing it on our test workspace with similar settings. Give me a couple minutes.
+[00:03:52] CUSTOMER: Sure.
+[00:04:38] AGENT: Okay, mine logs in fine, like, so it's like, something specific to your configuration. [inaudible] narrows it [inaudible]
+[00:04:45] CUSTOMER: is that good or bad?
+[00:04:49] AGENT: It's good for figuring it out. Bad for being quick. [laughs]
+[00:04:54] AGENT: Can you check whether your company uses a proxy or VPN for web traffic?
+[00:05:01] CUSTOMER: Um, there's a [inaudible] but only when we're remote. I'm in the office today.
+[00:05:06] AGENT: Okay. And the affected people are mostly mostly in the office too?
+[00:05:11] CUSTOMER: Yeah, mostly.
+[00:05:13] AGENT: Okay, so the VPN probably isn't involved.
+[00:05:17] CUSTOMER: is there a dark mode? This page is blinding.
+[00:05:22] AGENT: [laughs] There is, actually. It's under your profile, in Preferences.
+[00:05:27] CUSTOMER: Oh, I'm doing that later. My [inaudible] thank you.
+[00:05:31] AGENT: Okay, now go back to the main dashboard. The logo in the top left will take you there.
+[00:05:39] CUSTOMER: [clicking] Okay. Back home.
+[00:05:42] AGENT: Great.
+[00:05:43] AGENT: Can you check if the issue happens for users on uh- mobile too? Do you have anyone who uses the phone app?
+[00:05:53] CUSTOMER: Um, I think most of the field people do. Let me ask. [typing] ... Someone says the app is giving the same error.
+[00:06:02] AGENT: okay. That fits. It's not [inaudible]
+[00:06:05] CUSTOMER: okay, the page page is asking me if I want a tour. Should I mean, I take the tour?
+[00:06:12] AGENT: You can skip it for now. It's just uh, a walkthrough of the new layout.
+[00:06:18] CUSTOMER: Skip. [clicking]
+[00:06:19] AGENT: Okay, can you try opening a private window, like uh- an incognito window, and loading the login page there? That rules out any cached stuff.
+[00:06:31] CUSTOMER: Sure. uh, Um. Which one is— okay, I see it. New incognito window. Loading.
+[00:06:38] AGENT: And then just go to the usual URL.
+[00:06:42] CUSTOMER: It's... loading. Same thing. Spinning wheel and and then it bounces bounces me back.
+[00:06:48] AGENT: Okay. That's actually useful, it tells me it's not your browser cache. I'll note that.
+[00:06:54] AGENT: Can you go mm, to Settings, then um, Security, and just read me what's under "Session policy"?
+[00:07:01] CUSTOMER: Settings... Security... Session policy. It says, um, "Idle timeout: eight hours" and "Require re-authentication: um, daily."
+[00:07:09] AGENT: Okay, that's all standard. Nothing [inaudible] there.
+[00:07:13] CUSTOMER: Good. At least something's normal.
+[00:07:16] AGENT: Can you click on "Members" on the left side?
+[00:07:21] CUSTOMER: Members. Okay. It's a big list.
+[00:07:25] AGENT: There's a filter box at the top, can you type in your own name?
+[00:07:31] CUSTOMER: [typing] Okay, there I am.
+[00:07:34] AGENT: and next to your name, what does the role column say?
+[00:07:39] CUSTOMER: It says "Owner."
+[00:07:41] AGENT: um, Perfect. That's what I expected.
+[00:07:44] CUSTOMER: Can I ask, um, how long does something like this usually take to fix?
+[00:07:50] AGENT: It really depends on what we find. Some I mean, of these mm, are a five-minute fix once we know the cause. I don't want to promise a time until I know more.
+[00:08:02] CUSTOMER: Okay. That's honest at least.
+[00:08:06] CUSTOMER: Is Is there uh, any chance this is on your end? Like a bug?
+[00:08:13] AGENT: It's possible, and I like, haven't ruled it out. The status page is clean um, and I can't reproduce it in a test workspace, but I'm keeping it open as a possibility.
+[00:08:27] CUSTOMER: Okay. Fair.
+[00:08:29] CUSTOMER: So. Okay. We send all our invoices through Tallyforge, and we have the automatic reminders turned on, the ones that go out, you know, three days before the due date and then on the due date. And for about the last— since the beginning of the month, maybe— our clients are getting reminders that say the wrong due date.
+[00:08:53] AGENT: The wrong due date, okay.
+[00:08:56] CUSTOMER: A day early. The invoice says due September thirtieth, and the reminder email says "your invoice is due September twenty-ninth." And people are calling me going, which one is it? And a couple of them paid early which, fine, but a couple of them got really snippy.
+[00:09:14] AGENT: Okay. And this is on all invoices, or certain ones?
+[00:09:19] CUSTOMER: Every one I've checked. I checked, like, ten.
+[00:09:23] AGENT: Do you have one of the reminder emails handy? Like, could you read me what it says exactly?
+[00:09:30] CUSTOMER: Yeah, I forwarded one to myself. Okay, here. "Hi Hartwell Kitchens, this is a friendly reminder that invoice INV-two-oh-four-one-seven for four thousand, eight hundred twelve dollars and fifty cents is due on September fourteenth, twenty twenty-six. You can view and pay your invoice using the link below." And then the link. And then our logo. And when you click the link, the invoice says September fifteenth. Right there at the top. Due date, September fifteenth.
+[00:10:02] AGENT: Okay. So the email and the invoice disagree.
+[00:10:06] CUSTOMER: The email and the invoice disagree. That's the whole problem in one sentence. [laughs]
+[00:10:13] AGENT: Okay. And the amount in the email, the four thousand eight-twelve fifty, is that right?
+[00:10:19] CUSTOMER: Yes, that's right. It's just the date.
+[00:10:23] AGENT: Okay, let me pull up one of the invoices. Can you give me an invoice number?
+[00:10:31] CUSTOMER: Sure, um, the one that started all this is two oh four seventy— no, sorry, I'm reading it wrong. Two-oh-four-one-seven. I-N-V dash two oh four one seven. One-seven at the end.
+[00:10:44] AGENT: INV-20417. Let me look.
+[00:10:47] OTHER: [background] Odile, the Hartwell delivery, is that tomorrow or Thursday?
+[00:10:51] CUSTOMER: [to coworker] Thursday. Thursday morning, Dale. It's on the board. [to agent] Sorry. Shop floor.
+[00:10:58] AGENT: No problem. Okay, I've got INV-20417 open. Due date on the invoice is September fifteenth.
+[00:11:04] CUSTOMER: September fifteenth. Yes. And issued August sixteenth, net thirty.
+[00:11:09] AGENT: Net thirty, issued August sixteenth... yes, that matches.
+[00:11:13] CUSTOMER: Right, and that's the other thing. That one's the one with the late fee.
+[00:11:19] CUSTOMER: My manager just messaged me "any update?" for the, um, the fourth time.
+[00:11:25] AGENT: Oh no. Do you want me so, to write you a quick update you can paste?
+[00:11:32] CUSTOMER: no, I'll just [inaudible] him we're working on it. Which we are.
+[00:11:38] AGENT: We are.
+[00:11:40] CUSTOMER: Sorry, um, I'm going to close my door. People [inaudible] popping their heads in. ... Okay. Quiet.
+[00:11:47] AGENT: [laughs] Smart move.
+[00:11:49] CUSTOMER: I'm going to have mm, to give a presentation about [inaudible] at our Friday so, meeting, I just know it.
+[00:11:58] AGENT: [laughs] Well, you'll have the email summary to work from.
+[00:12:02] CUSTOMER: That's true. I'll just read it out loud. [laughs]
+[00:12:06] CUSTOMER: Do you like your job? Sorry, random question.
+[00:12:10] AGENT: [laughs] I do, actually. Every day's a puzzle.
+[00:12:14] CUSTOMER: That's a good way to look at it.
+[00:12:17] CUSTOMER: Okay, I'm in [inaudible] There's like a hundred things on the left.
+[00:12:23] AGENT: [crosstalk] Yeah, it's a long list. [inaudible] down to the section that says "Account."
+[00:12:29] CUSTOMER: [scrolling] Account... Account... okay, there.
+[00:12:32] SPEAKER ?: This uh- page looks [inaudible] from the last time I was here.
+[00:12:37] SPEAKER ?: Yeah, the design was refreshed a [inaudible] back. Everything's still there, it's just moved.
+[00:12:44] SPEAKER ?: I uh, liked the old one.
+[00:12:48] SPEAKER ?: [laughs] You're not the only one.
+[00:12:52] AGENT: How's the, um, how's the weather out there today?
+[00:12:56] CUSTOMER: oh, it's gray and drizzly. [laughs]
+[00:13:00] AGENT: [laughs] [inaudible] always how it goes.
+[00:13:04] CUSTOMER: i'll see the sun at lunch, maybe.
+[00:13:07] CUSTOMER: My coworker so, just brought me a donut. A sympathy donut. [laughs]
+[00:13:13] AGENT: [laughs] That's you know, a good coworker.
+[00:13:17] CUSTOMER: The best. Okay. Back to it.
+[00:13:20] CUSTOMER: You know, I've been in IT for fifteen years and it's uh, always something on a Monday.
+[00:13:27] AGENT: [laughs] Or a Tuesday.
+[00:13:30] CUSTOMER: Or a Tuesday. Or the day before a holiday. That's the real one.
+[00:13:36] AGENT: Oh, the day before a holiday is cursed.
+[00:13:40] CUSTOMER: Hold on, my phone's buzzing mm, nonstop, it's all the same people asking the same [inaudible] I'm going to put it face down.
+[00:13:49] AGENT: [crosstalk] [laughs] Good call.
+[00:13:52] CUSTOMER: Okay. It's face down. Out of sight, out of mind.
+[00:13:57] AGENT: Bear with me a second, I'm getting a reminder for a meeting. I'm declining it. You're you know, my priority.
+[00:14:05] CUSTOMER: [crosstalk] [laughs] Thank you, I feel special.
+[00:14:09] AGENT: [laughs] You are today.
+[00:14:11] AGENT: Okay so, I see the reminder log for that invoice. Reminder sent September twelfth, says... yep, it says "due September fourteenth." And the invoice says the fifteenth. So you're right, that's a day off.
+[00:14:24] CUSTOMER: Thank you. I'm not crazy.
+[00:14:27] AGENT: You're not crazy. [laughs] Okay, and then the late fee.
+[00:14:32] CUSTOMER: So, the client, Hartwell Kitchens, paid on the fifteenth. On the due date! And they got a thirty-five dollar late fee slapped on, on the fifteenth. Automatically. And the owner called me furious, because they've been with us eleven years and they've never paid late in their life.
+[00:14:52] AGENT: Okay. Yeah, I see the late fee posted on the fifteenth, thirty-five dollars.
+[00:14:58] CUSTOMER: And there's a second one. INV-20422. Same thing. Different client, Brookfield something, Brookfield Renovations. Thirty-five dollars. Also on the due date.
+[00:15:07] AGENT: [typing] INV-20422... yep. Thirty-five dollars, posted the eighteenth, which is also the due date.
+[00:15:15] CUSTOMER: So that's seventy dollars in late fees that shouldn't exist, and two clients who think we're running a scam.
+[00:15:22] AGENT: I understand. So, I can see what's happening, but I'm going to be honest, on the late fees, once a late fee posts to an invoice it can't be reversed. The system locks it.
+[00:15:37] CUSTOMER: What? It can't be reversed? That's— no. That can't be right.
+[00:15:42] AGENT: That's my understanding. What you could do is issue them a credit note for thirty-five dollars each, which kind of nets it out.
+[00:15:52] CUSTOMER: A credit note. So their statement shows a late fee AND a credit. That looks terrible. That looks worse.
+[00:16:01] AGENT: I know, it's not ideal.
+[00:16:04] CUSTOMER: Can I at least see which clients got the wrong reminders? Like, a list? Because I'd rather call them before they call me.
+[00:16:13] AGENT: Yeah, there's a reminder log. Go to Reports, then Communications, then Reminder history. You can filter by date.
+[00:16:21] CUSTOMER: Reports... Communications... I don't see Communications. I see Sales, Receivables, Taxes...
+[00:16:27] AGENT: Oh, sorry, it moved in the last release. It's under Receivables now, then "Reminder history" at the bottom.
+[00:16:34] CUSTOMER: Receivables... okay, yes, Reminder history. Oh. Oh, wow. That's a lot of rows.
+[00:16:41] AGENT: You can set the date filter to September first through today.
+[00:16:46] CUSTOMER: September first... to the twenty-second. Okay. That's, um, sixty-one reminders. Sixty-one!
+[00:16:52] AGENT: And you can export that to a spreadsheet, there's a download button at the top right.
+[00:17:00] CUSTOMER: Okay, I'll do that later, I'll go through them. Sixty-one. Lord.
+[00:17:05] [caller placed on hold]
+[00:19:25] [hold ended - 2m20s]
+[00:19:26] AGENT: Thanks for holding, sorry, I was checking our internal knowledge base to see if there's an article on this.
+[00:19:35] CUSTOMER: And?
+[00:19:37] AGENT: There's nothing published yet. Just an internal note to send reminder-date tickets to Tier 2.
+[00:19:43] CUSTOMER: Well, that's something.
+[00:19:46] AGENT: Bear with um, me, I'm pulling up the same screen on my side so so we're looking at the same thing.
+[00:19:56] CUSTOMER: Okay.
+[00:19:57] AGENT: [clicking] Okay. I'm there too.
+[00:20:00] CUSTOMER: [to coworker] No, the printer on three is a different problem. ... Did you try turning it off um, and on? ... Okay, I'll look at it after this. ... After this. Sorry, Arjun.
+[00:20:13] AGENT: [crosstalk] No problem.
+[00:20:15] CUSTOMER: Everything breaks at once. It's a law.
+[00:20:19] CUSTOMER: Sorry, I clicked "edit" uh- by like, accident. Is that bad?
+[00:20:24] AGENT: No, nothing changes until you click save. Just click cancel.
+[00:20:30] CUSTOMER: [clicking] Cancel. Okay. Phew.
+[00:20:33] AGENT: [laughs] It's very forgiving.
+[00:20:35] SPEAKER ?: [background voice] Mina, do you you want anything from the sandwich place?
+[00:20:41] SPEAKER ?: [to coworker] Turkey, no [inaudible] ... Thank you! I'll pay you back. ... I owe you.
+[00:20:48] SPEAKER ?: Okay, lunch is handled. [laughs]
+[00:20:51] SPEAKER ?: [laughs] Crucial.
+[00:20:53] CUSTOMER: [to coworker] Your password for the accounting software? That's a different system. ... Did you try the uh- reset link? ... [inaudible] I'll reset it for you after this. Write down your username.
+[00:21:09] AGENT: You're running a whole help desk over there.
+[00:21:13] CUSTOMER: [laughs] I am the help desk.
+[00:21:17] CUSTOMER: [to coworker] The new hire like, starts Monday? ... Okay, does she need a laptop? ... And a mm, phone? ... you know, Okay, put it in the form. The form. Please use the form.
+[00:21:32] AGENT: [laughs] The form.
+[00:21:33] CUSTOMER: Nobody ever uses the form.
+[00:21:36] CUSTOMER: [to coworker] Yes, I put in the ticket for the badge reader. ... No, they said next week. ... I don't make the rules.
+[00:21:48] CUSTOMER: Sorry. Badge reader at the side door. It's been a whole saga.
+[00:21:54] AGENT: Sounds like it.
+[00:21:55] SPEAKER ?: There's a little banner at the top asking me to take a survey.
+[00:22:01] SPEAKER ?: [laughs] You can close that. The little "x."
+[00:22:06] SPEAKER ?: [clicking] Gone.
+[00:22:08] AGENT: I mean, So if so, you scroll all the way down on that page, there's a section at the very bottom that most people don't notice.
+[00:22:20] CUSTOMER: [scrolling] Oh, there is. I've never been down here.
+[00:22:24] AGENT: [laughs] [inaudible] has. It's like the basement.
+[00:22:29] CUSTOMER: [background voice] Mina, there's cake uh- in the kitchen. It's Ana's birthday.
+[00:22:34] CUSTOMER: [to coworker] Save me a piece! A big one! ... Thank you.
+[00:22:40] CUSTOMER: [inaudible] [inaudible] There's cake. [laughs]
+[00:22:43] AGENT: [laughs] I mean, Now we really have to fix this.
+[00:22:47] CUSTOMER: [to coworker] Can you tell everyone in the break room to stop asking me? I'll send an email. ... Thank you.
+[00:22:56] CUSTOMER: Sorry. I'm deputizing people.
+[00:22:59] AGENT: [laughs] Smart.
+[00:23:01] CUSTOMER: Okay, so is this a— is this a bug? Like, is this on your end? Because I didn't change anything.
+[00:23:08] AGENT: It does look like it might be on our end. We had a release at the start of the month, 7.4, and I've seen a couple of tickets about reminder emails since then, but I don't have the details.
+[00:23:24] CUSTOMER: A couple of tickets. So it's not just us.
+[00:23:29] AGENT: I don't want to say for sure. Let me check the settings on your account first, just to rule things out. Can you go to Settings, then Invoicing, then Reminders?
+[00:23:41] CUSTOMER: Settings... Invoicing... okay. Reminders.
+[00:23:44] AGENT: What does it say for time zone, at the top?
+[00:23:49] CUSTOMER: Time zone... America, Chicago. Which is right. We're in Chicago. Well, outside Chicago.
+[00:23:55] AGENT: Okay, that's correct. And the reminder schedule?
+[00:23:59] CUSTOMER: Three days before, on due date, and seven days after. And then the late fee is set to "apply on due date if unpaid." Which, I mean, they DID pay.
+[00:24:10] AGENT: Right. And when did Hartwell's payment come in? Like, what time?
+[00:24:16] CUSTOMER: Um, I'd have to look. It was the afternoon, I think. They pay through the link.
+[00:24:23] AGENT: Okay so it's possible the late fee job ran before the payment cleared. But that still doesn't explain the reminder date.
+[00:24:32] SPEAKER ?: Can we— is there someone above you, maybe, who'd know more about the release thing?
+[00:24:39] SPEAKER ?: Yeah, I think this might need to go to Tier 2. They have access to the engineering tickets.
+[00:24:46] SPEAKER ?: Okay. Will I have to explain everything again?
+[00:24:51] SPEAKER ?: No, I'll write it all up in the ticket before I transfer you, and I'll stay on until they pick up.
+[00:24:59] CUSTOMER: Okay. Thank you.
+[00:25:01] AGENT: Actually, while I'm writing it up, can you tell me roughly what time Hartwell's payment came through on the fifteenth? It'll help Tier 2.
+[00:25:10] CUSTOMER: Let me look. Payments... Hartwell... September fifteenth, two forty-seven p.m. Paid by ACH through the link.
+[00:25:17] AGENT: Two forty-seven p.m. And the late fee posted at... [typing] the log says the late fee job ran at, um, seven-oh-one p.m. on the fourteenth? That's weird. That's before the due date even started.
+[00:25:33] CUSTOMER: The fourteenth? So it charged them a late fee the night before the invoice was even due?
+[00:25:39] AGENT: That's what the timestamp says, seven-oh-one p.m. Central on the fourteenth. I'll put that in the note, that's really useful.
+[00:25:48] CUSTOMER: That's insane. Okay.
+[00:25:50] AGENT: Okay, and for the other one, Brookfield, do you know when they paid?
+[00:25:57] CUSTOMER: Brookfield paid... the eighteenth, ten fifteen in the morning. By card.
+[00:26:01] AGENT: Ten fifteen a.m. on the eighteenth. And their fee posted... seven-oh-one p.m. on the seventeenth. Same pattern.
+[00:26:10] CUSTOMER: Same pattern. Great. [sighs]
+[00:26:11] AGENT: [crosstalk] Okay, so you're going to see a a bunch of cards on this page, each one is a different section. Don't worry about most I mean, of them.
+[00:26:23] CUSTOMER: Okay, there's like eight of them.
+[00:26:26] AGENT: Yeah. We just care about one you know, of them for now. Scroll a little.
+[00:26:33] CUSTOMER: [scrolling] Okay.
+[00:26:34] AGENT: Perfect, stop there.
+[00:26:37] AGENT: There's a search bar at the very top of the settings menu, if that's easier. You can just type what you're looking [inaudible]
+[00:26:46] CUSTOMER: Oh. That would have been helpful ten minutes ago. [laughs]
+[00:26:50] AGENT: [laughs] I should have mentioned it.
+[00:26:54] AGENT: Okay, so if you go to the top-right corner, there's your profile picture, or your initials if you never uploaded one.
+[00:27:03] CUSTOMER: It's just initials. I never got around to a picture.
+[00:27:08] AGENT: [laughs] Most people don't. Click on that, and you'll see a dropdown.
+[00:27:13] CUSTOMER: Okay, I see it.
+[00:27:15] CUSTOMER: It's asking me if I'm sure I want to [inaudible] so, this page without saving.
+[00:27:21] AGENT: Did you change anything?
+[00:27:24] CUSTOMER: I don't think so. I just clicked around.
+[00:27:28] AGENT: Then [inaudible] fine to leave. Click "Leave."
+[00:27:32] CUSTOMER: Okay. [clicking]
+[00:27:34] AGENT: Okay, like, in this section, everything is grouped by category. It's a bit of a maze.
+[00:27:41] CUSTOMER: It really is. I feel like I need a map.
+[00:27:45] AGENT: [laughs] We get that a lot.
+[00:27:49] SPEAKER ?: Bear with me, I'm just checking what your account looks like from my side, the layout's a bit different for for us.
+[00:27:58] SPEAKER ?: Okay.
+[00:28:00] SPEAKER ?: [clicking] Okay, I see it. Go ahead.
+[00:28:03] CUSTOMER: [crosstalk] Wait, I mm, clicked something and now everything's in a different language.
+[00:28:09] AGENT: Oh no. [laughs] There's a little dropdown in the footer for language. Can you find it?
+[00:28:16] CUSTOMER: [scrolling] Here... okay. [clicking] like, English. Phew.
+[00:28:20] AGENT: crisis averted.
+[00:28:21] SPEAKER ?: Sometimes the settings page doesn't load all the way. If you know, you see a blank area, just scroll down a little and it'll pop in.
+[00:28:31] SPEAKER ?: Oh, yeah, it was blank. [scrolling] Okay, now it's there.
+[00:28:36] SPEAKER ?: Yeah, it lazy-loads. It's a known quirk.
+[00:28:40] AGENT: Can you check the little dropdown at the top of the page? It might be showing a different uh, workspace.
+[00:28:48] CUSTOMER: Oh— oh, yes. It was on the wrong one. Sorry.
+[00:28:53] AGENT: Easy to miss. you know, Switch it over.
+[00:28:56] CUSTOMER: [clicking] Okay. Now it's right.
+[00:28:59] SPEAKER ?: [background: printer] Sorry, that's the printer. It's, uh, it's right next to my desk. Worst seat in the building.
+[00:29:08] SPEAKER ?: [laughs] Oh no.
+[00:29:09] SPEAKER ?: Everyone comes by to pick up their printouts and asks me how it's going. It's going.
+[00:29:17] CUSTOMER: [crosstalk] Sorry, someone just walked into my office. ... Can it wait ten minutes? ... Thanks. Sorry about that.
+[00:29:26] AGENT: No problem at all.
+[00:29:29] CUSTOMER: [crosstalk] It's been, um, it's been one of those mornings.
+[00:29:34] AGENT: [laughs] I can imagine.
+[00:29:37] AGENT: Okay, before I transfer you, is there anything else on the account you wanted to look at?
+[00:29:44] CUSTOMER: Um, yes, actually, one more small thing. When we renew, which is— October twentieth, I think? — we want to switch to the annual plan. My boss says it's cheaper.
+[00:29:58] AGENT: It is, about two months free compared to monthly. Your renewal date is October twentieth, yep. I can make a note that you want annual at renewal.
+[00:30:08] CUSTOMER: Please. And does it switch automatically or do I have to do something?
+[00:30:15] AGENT: You'd click "switch to annual" under Plan before the twentieth, or Tier 2 can do it for you.
+[00:30:23] CUSTOMER: Okay, I'll do it myself, I don't trust anyone today. [laughs] No offense.
+[00:30:29] AGENT: [laughs] None taken. Okay. I've written up the ticket. I'm going to transfer you to Tier 2 now, please hold.
+[00:30:39] [transferred to Tier 2 support; hold music]
+[00:30:39] [caller placed on hold]
+[00:36:59] [hold ended - 6m20s]
+[00:37:00] [hold music becomes distorted, static]
+[00:37:15] CUSTOMER: Oh, that's awful. [holds phone away]
+[00:37:47] [hold music clears up]
+[00:37:47] CUSTOMER: Better. Sort of.
+[00:38:15] CUSTOMER: [yawns] Mm.
+[00:39:17] [hold music]
+[00:39:17] CUSTOMER: [to self] um, I should've made coffee before I called.
+[00:40:07] [recorded message: Thank you for calling. We are experiencing longer than usual hold times. We appreciate your patience.]
+[00:40:57] CUSTOMER: [to someone in the room] It just said "longer than usual." ... I don't know what usual is. ... Long, apparently.
+[00:41:51] CUSTOMER: [to someone in the room] Yes, I'll put it on on speaker. [click]
+[00:42:37] [hold music, on speakerphone]
+[00:42:37] [recorded message: To help us serve you better, please have any relevant paperwork ready when a representative answers.]
+[00:43:17] SPEAKER ?: [rustling papers] Paperwork. Okay. Where you know, did I put the— mm, ah. Here.
+[00:43:54] [recorded message: All representatives remain busy. Please continue to hold for the next available representative.]
+[00:44:49] CUSTOMER: [to self] next available. any day now.
+[00:45:38] CUSTOMER: [to self] okay, I'm gonna put it on speaker. [click] Can I still hear it? Yeah. Okay.
+[00:46:46] [hold music, faint, on speakerphone]
+[00:46:46] CUSTOMER: [background] [dishes clinking]
+[00:47:23] [hold music: piano loop resumes from the start]
+[00:48:38] CUSTOMER: [to self] I know every note of this uh, now. Every single note.
+[00:49:15] [recorded message: Thank you for holding. We are still working to connect you.]
+[00:49:55] SPEAKER ?: [to someone in the room] They're "still [inaudible] to connect me." ... I know. I know.
+[00:50:52] [hold music: same piano loop]
+[00:52:07] CUSTOMER: [drumming fingers on table]
+[00:52:39] CUSTOMER: [to self] okay, any second now.
+[00:52:43] SPEAKER ?: [typing in background] [to self] might as well answer some emails while I wait.
+[00:53:59] [hold music]
+[00:54:29] SPEAKER ?: [to self] Nope, still here.
+[00:54:32] CUSTOMER: [to someone in the room] No, they put me on hold again. ... I don't know, they had to look something up.
+[00:55:18] CUSTOMER: [to someone in the room] Can you let the dog out? He keeps scratching at the door.
+[00:56:05] [hold music]
+[00:56:05] [Tier 2 specialist joined; Tier 1 agent dropped off]
+[00:56:05] AGENT_2: Hi Odile, this is Priyanka on the Tier 2 team. Kwame wrote me a pretty thorough note, so I think I've got the picture, but tell me if I miss anything. You're seeing reminder emails with a due date one day earlier than the invoice, and two late fees that posted on the due date even though the clients paid on the due date.
+[00:56:29] CUSTOMER: Yes. Exactly. Thank you for reading it. Seventy dollars, two invoices, twenty-four-seventeen— sorry, two oh four one seven and two oh four two two.
+[00:56:39] AGENT_2: INV-20417 and INV-20422. Got them both open. Okay, so first, the reminder date. That's a known bug. It came in with 7.4, which went out September second. The reminder emails convert the due date to UTC before formatting, so for anyone west of UTC — which is everyone in the Americas — the date shows one day early.
+[00:57:01] CUSTOMER: Oh my God. So it's literally every remind— every reminder we've sent this month.
+[00:57:08] AGENT_2: Every reminder that included the due date, since September second, yes. I'm sorry. It's being tracked as an engineering ticket. TF-88213.
+[00:57:18] CUSTOMER: TF...?
+[00:57:19] AGENT_2: T-F, dash, eight-eight-two-one-three.
+[00:57:22] CUSTOMER: Eight-eight... sorry, my pen died. [background: rummaging] Okay. Eighty-two thirteen?
+[00:57:27] AGENT_2: Eight-eight, two-one-three. Double eight.
+[00:57:30] CUSTOMER: Double eight, two one three. Got it. TF-88213.
+[00:57:34] CUSTOMER: Sorry, I'm eating a granola bar. I skipped breakfast because of all this.
+[00:57:40] AGENT_2: Oh, no, go ahead. You need fuel.
+[00:57:43] CUSTOMER: [laughs] This is like, my fuel. Sad.
+[00:57:46] CUSTOMER: Can you see my mouse? I'm pointing at the thing.
+[00:57:52] AGENT_2: Your screen's a little behind on my end. Okay, now I see it. You're on the left menu.
+[00:57:59] CUSTOMER: Yeah, that.
+[00:58:00] AGENT_2: Do you mind sharing your screen? It's usually faster [inaudible] describing it.
+[00:58:05] CUSTOMER: Sure, how do I— oh, there's the button. Okay. Can mm, you see it?
+[00:58:11] AGENT_2: I see you know, your desktop. Can you you bring the browser to the I mean, front?
+[00:58:19] CUSTOMER: Oh, sorry. [clicking] There.
+[00:58:21] AGENT_2: Perfect, I see it now.
+[00:58:23] AGENT_2: Okay, I'm going to have you clear your cache. It won't delete anything important, just temporary files.
+[00:58:31] CUSTOMER: Okay, you're sure? I don't want to lose stuff.
+[00:58:34] AGENT_2: i'm sure. Your data's all on our side, not mm, in the browser.
+[00:58:41] CUSTOMER: Okay. [clicking] Done.
+[00:58:43] CUSTOMER: I have the feeling I've seen this error before, like months ago.
+[00:58:48] AGENT_2: It's a pretty generic error, so it can show up for um, different so, reasons. [inaudible] just keep narrowing it down.
+[00:58:57] CUSTOMER: Okay.
+[00:58:58] AGENT_2: Let's try logging out completely and logging back in. Sometimes the session gets stuck.
+[00:59:04] CUSTOMER: okay. [clicking] Logged you know, out. Logging back in. [typing] It's asking for the uh, code again.
+[00:59:12] AGENT_2: That's expected.
+[00:59:13] CUSTOMER: [typing] Okay. I'm in.
+[00:59:16] AGENT_2: Great, let's try that same thing again.
+[00:59:20] AGENT_2: Can you click on the little gear icon? Top right.
+[00:59:25] CUSTOMER: The gear. [clicking] Okay. It opened a panel.
+[00:59:29] AGENT_2: Great. Now scroll down a bit.
+[00:59:32] CUSTOMER: [scrolling] [inaudible]
+[00:59:34] AGENT_2: Okay, stop there. That's the section.
+[00:59:37] AGENT_2: you know, Can you like, open the developer console for me? It's F12, or right-click and "Inspect."
+[00:59:44] CUSTOMER: uh, okay. [clicking] Oh, that's a lot of stuff.
+[00:59:48] AGENT_2: [laughs] Ignore most mm, of it. Just click the tab that says "Console."
+[00:59:53] CUSTOMER: Okay. There's some red text.
+[00:59:56] AGENT_2: Can you scroll up to the top of so, the red?
+[01:00:02] AGENT_2: Okay, I'm going to try reproducing this uh- on my [inaudible] Bear with me.
+[01:00:08] CUSTOMER: [inaudible]
+[01:00:09] AGENT_2: [typing] [clicking] so, Hm. Okay. Mine looks a I mean, little different. Let me check something.
+[01:00:37] AGENT_2: Okay.
+[01:00:39] AGENT_2: Okay, can you drag the window a little to the left? Part of it's cut off on my side.
+[01:00:46] CUSTOMER: [dragging] Like that?
+[01:00:48] AGENT_2: A bit more. ... Perfect.
+[01:00:51] CUSTOMER: Wait, now it's asking me to log in again. Is that because of what we did?
+[01:00:58] AGENT_2: Yep, that's expected after clearing clearing things. Go ahead and log in.
+[01:01:04] CUSTOMER: Okay. [typing] And it wants the code from my like, phone. Hold on. [typing] Okay.
+[01:01:10] AGENT_2: Great.
+[01:01:12] AGENT_2: And the late fees are related, actually. The late-fee job reads the same converted date. So as far as it's concerned, the due date already passed the moment it hits midnight UTC, which is seven p.m. your time the day before. Hartwell paid in the afternoon on the fifteenth, but the job had already posted the fee.
+[01:01:36] CUSTOMER: So it's the same bug.
+[01:01:40] AGENT_2: Same root cause, yeah.
+[01:01:43] CUSTOMER: And Kwame found that it ran at seven-oh-one the night before. Is that the— is that the midnight thing?
+[01:01:51] AGENT_2: Exactly that. Seven p.m. Central is midnight UTC, the job kicks off right after, so seven-oh-one. Kwame's note was really helpful, actually, that's how I matched it so fast.
+[01:02:04] CUSTOMER: Okay, well, credit to Kwame for that part.
+[01:02:07] AGENT_2: [laughs] I'll pass it on.
+[01:02:11] CUSTOMER: Okay. And Kwame said the fees can't be reversed. Is that true? Because I really don't want to do credit notes.
+[01:02:20] AGENT_2: No, actually, Kwame had that wrong, and I'll make sure he knows. You can reverse a late fee. Open the invoice, click the three dots next to the late fee line, and choose "Reverse fee." It removes it completely, it doesn't leave a credit line, and the client gets an updated invoice with the fee gone.
+[01:02:42] CUSTOMER: Oh, thank God.
+[01:02:44] AGENT_2: Do you want to try it on INV-20417 while I'm on with you?
+[01:02:49] CUSTOMER: Yes. Okay. Opening it. Three dots... "Edit line," "Reverse fee." Okay. Reverse fee. It's asking for a reason.
+[01:02:57] AGENT_2: Just put "system error, TF-88213" or whatever you like.
+[01:03:01] CUSTOMER: [typing] System error... Okay. Done. It says "fee reversed." And the total went back to... yes. Back to the original amount.
+[01:03:09] AGENT_2: Perfect. You can do the same on 20422 whenever you like.
+[01:03:15] CUSTOMER: I'll do it right after this call. Okay, that's a relief.
+[01:03:20] AGENT_2: Do you want me to share my screen for a minute? I can show you what the bug looks like on our side, it might help when you talk to your clients.
+[01:03:33] CUSTOMER: Sure, why not.
+[01:03:35] AGENT_2: Okay, you should get a link in the chat... it's the little meeting icon at the bottom right of Tallyforge.
+[01:03:44] CUSTOMER: Bottom right... "Join screen share." Okay. Oh, I see your screen. Lots of tabs. [laughs]
+[01:03:51] AGENT_2: [laughs] Occupational hazard. Okay, so this is a test account, not yours. I'm creating an invoice dated today, due the thirtieth, and I'll hit "send reminder now." And... here's the preview. See, "due September twenty-ninth."
+[01:04:05] CUSTOMER: Oh, there it is. Same as mine.
+[01:04:09] AGENT_2: And if I switch this test account's time zone to London... preview again... "due September thirtieth." Correct.
+[01:04:16] CUSTOMER: So if we were in London it'd be fine.
+[01:04:21] AGENT_2: If you were in London it'd be fine. [laughs] Which I don't recommend as a workaround.
+[01:04:29] CUSTOMER: [laughs] I'd love to, honestly.
+[01:04:32] AGENT_2: Okay, I'm going to stop sharing.
+[01:04:35] CUSTOMER: Okay, it went away.
+[01:04:38] AGENT_2: like, I'm sorry, I think we [inaudible] a bad connection. If we get cut off, it's not you, it's the line.
+[01:04:47] CUSTOMER: Okay. If it happens, uh- do I call back the same number?
+[01:04:53] AGENT_2: [crosstalk] [inaudible] —still you know, there?
+[01:04:57] CUSTOMER: I'm here. You you know, cut out right when you were answering.
+[01:05:02] AGENT_2: Sorry, I was saying, let's just keep going for now. It seems okay again.
+[01:05:09] AGENT_2: [inaudible] coming through a little choppy. Are I mean, you you know, on Wi-Fi calling, maybe?
+[01:05:16] CUSTOMER: I— maybe? I don't really know how my phone works. [laughs]
+[01:05:22] AGENT_2: That's okay. Let's just keep going, um, I can mostly um, hear you.
+[01:05:28] AGENT_2: Okay, while that's loading, can I ask, does anyone else on your team see the same thing, or just you?
+[01:05:38] CUSTOMER: I don't actually know. Let me ask. [muffled] —hey, does yours do the spinning thing? ... [unmuffled] She says hers is fine. But she never uses this part.
+[01:05:49] AGENT_2: Okay, that's still useful. uh, Thanks.
+[01:05:52] CUSTOMER: She says she's "too smart" to use this part. [laughs]
+[01:05:58] AGENT_2: [laughs] Noted.
+[01:05:59] AGENT_2: Sorry, I think I muted myself by accident. Can you [inaudible] me now?
+[01:06:04] CUSTOMER: Yes, now I can. I was saying hello to nobody for a while. [laughs]
+[01:06:11] AGENT_2: i'm so sorry. [laughs] Okay, I'm here.
+[01:06:15] CUSTOMER: You froze for for a second there. Like, the sound mm, froze.
+[01:06:20] AGENT_2: Oh, sorry. Our phones go through the internet so sometimes it stutters.
+[01:06:25] CUSTOMER: Got Got it.
+[01:06:27] CUSTOMER: Can you hear me? I've got you on speaker because I'm, um, I'm cooking.
+[01:06:33] AGENT_2: I can hear you, it's just a [inaudible] echoey.
+[01:06:37] CUSTOMER: [crosstalk] Sorry, let me pick it up. [click] Okay. Now?
+[01:06:42] AGENT_2: Perfect.
+[01:06:43] AGENT_2: okay, can can you try try the same thing on your phone, just to see if it's the computer so, or the account?
+[01:06:53] CUSTOMER: uh- On my phone. Okay, one sec. [typing] Okay, I'm logging in on the app.
+[01:07:01] AGENT_2: Take your time.
+[01:07:03] CUSTOMER: Okay. It opened on the phone.
+[01:07:06] AGENT_2: Interesting. That's helpful.
+[01:07:08] SPEAKER ?: okay, let's try a different browser, just to rule things out. Do you have another one installed?
+[01:07:16] SPEAKER ?: Um... I think so. There's the the orange one?
+[01:07:21] SPEAKER ?: that works. mm, Let's try there.
+[01:07:24] SPEAKER ?: okay. [clicking] It's mm, opening. [typing] Logging in.
+[01:07:28] CUSTOMER: Hang on, you're uh- really echoey. Am I on speaker?
+[01:07:33] AGENT_2: Oh, so, I'm on a [inaudible] but let me— [click] is that better?
+[01:07:38] CUSTOMER: Yes. Much better. That was weird, I could hear myself.
+[01:07:43] AGENT_2: Sorry about that.
+[01:07:44] CUSTOMER: Sorry, I'm in the parking garage, the signal's terrible in here. Can you hear me at all?
+[01:07:52] AGENT_2: You're cutting in so, and out. I got maybe half of that.
+[01:07:58] CUSTOMER: okay, let me walk out to the street. [footsteps, echo] [inaudible] —better?
+[01:08:03] AGENT_2: Yes, much better. I can hear you clearly now.
+[01:08:07] CUSTOMER: Sorry, the Bluetooth in the car keeps— [inaudible] —there, I switched it to the phone.
+[01:08:13] AGENT_2: Oh, okay, that's clearer.
+[01:08:16] CUSTOMER: The mm, car is [inaudible] than me and I hate it.
+[01:08:21] CUSTOMER: Sorry, can you still hear me? I think I lost you for a sec.
+[01:08:27] AGENT_2: I'm here. I think it was your end, there was some static.
+[01:08:33] CUSTOMER: That's the dust collector, it does something to the wife— the Wi-Fi. Every time. Okay, go on.
+[01:08:40] CUSTOMER: Oh, and— what do I tell my clients? Hartwell especially. Moe is going to want an explanation in writing. He likes things in writing.
+[01:08:50] AGENT_2: That's fair. I can put a short paragraph in the summary email that you can forward or paste, something like, "our invoicing provider had a software issue that showed the wrong due date on reminder emails; your invoice due date was correct; the late fee has been removed." Would that help?
+[01:09:12] CUSTOMER: That would help a lot. Yes, please put that in.
+[01:09:18] AGENT_2: Will do.
+[01:09:20] AGENT_2: Can you tell uh, me what it says right under the [inaudible] at the top?
+[01:09:27] CUSTOMER: It's, so, um, it's some text about [inaudible] the account. And then a link that says "learn more."
+[01:09:35] AGENT_2: Okay, you're on the right page.
+[01:09:39] AGENT_2: can you tell me what you see in the box on the right side of that page?
+[01:09:48] CUSTOMER: It's sort of a summary card? With some text and a button.
+[01:09:53] AGENT_2: Great, that's the right page.
+[01:09:55] CUSTOMER: oh, my screen share stopped. Did it stop for you?
+[01:10:00] AGENT_2: Yeah, I lost it. Can you click "share" again?
+[01:10:05] CUSTOMER: [clicking] Okay. Now?
+[01:10:07] AGENT_2: Got it, thank you.
+[01:10:09] CUSTOMER: Okay, I think I clicked uh, on something and now there's a pop-up.
+[01:10:15] AGENT_2: what does it say at the top?
+[01:10:19] CUSTOMER: Something about... customizing my view.
+[01:10:22] AGENT_2: You can just cancel out of that one.
+[01:10:26] CUSTOMER: [crosstalk] Okay. [clicking] Cancelled.
+[01:10:29] AGENT_2: can you take a screenshot of that error for me? Just so I have it exactly.
+[01:10:36] CUSTOMER: How do I— oh, I mean, I know this this one. [clicking] Okay, I took it. Where do uh, I put it?
+[01:10:45] AGENT_2: You can paste it right into the chat window.
+[01:10:48] CUSTOMER: [inaudible] [pasting] Did that come through?
+[01:10:52] AGENT_2: Got it, thanks.
+[01:10:54] AGENT_2: Okay, can you scroll right? There's a column hiding off the edge.
+[01:10:59] CUSTOMER: [scrolling] Oh, there's more. I never knew I mean, that was there.
+[01:11:04] AGENT_2: [laughs] A lot of people don't.
+[01:11:07] SPEAKER ?: Could you try um, it I mean, in a private window? Sometimes an extension gets in I mean, the way.
+[01:11:15] SPEAKER ?: uh, A private window. How uh- do I—
+[01:11:20] SPEAKER ?: like, Usually it's in the menu with the three dots, "New private window" or "New incognito mm, window."
+[01:11:29] SPEAKER ?: Found it. Okay. Logging in again.
+[01:11:32] CUSTOMER: Can I just say, this is the most technical thing I've done all week. [laughs]
+[01:11:39] AGENT_2: [laughs] You're doing great.
+[01:11:41] CUSTOMER: I'm not, but thank you.
+[01:11:45] AGENT_2: is your computer up to date? Sometimes um, the operating system wants a restart and things get weird.
+[01:11:54] CUSTOMER: Oh, it's been asking asking me to restart for, like, ever. I keep clicking "later."
+[01:12:00] AGENT_2: [laughs] Everybody does that.
+[01:12:03] CUSTOMER: Is that the problem?
+[01:12:06] AGENT_2: Probably not, but it uh- doesn't hurt to keep in mind.
+[01:12:11] AGENT_2: Let me try something. I'm going to send you a link in the chat. Can you click on it?
+[01:12:20] CUSTOMER: Okay. [clicking] It opened a page. It's loading.
+[01:12:25] AGENT_2: Great. Just let it finish.
+[01:12:27] CUSTOMER: okay. It's done.
+[01:12:29] AGENT_2: Perfect, that refreshes some things on our side.
+[01:12:33] AGENT_2: Once you're in there, you'll see a few tabs along the top. Do uh, you see them?
+[01:12:41] CUSTOMER: Um, I see... "General," "Users," and then some others.
+[01:12:45] AGENT_2: Perfect. Stay on "General" for like, now.
+[01:12:49] CUSTOMER: So when does the bug get fixed?
+[01:12:53] AGENT_2: The fix is in 7.4.2. I don't have a firm date to give you yet, I can see engineering has it in progress. I'll add your account to the ticket so it's on their radar, and so you get an email when it's resolved.
+[01:13:09] CUSTOMER: Please. Please add us.
+[01:13:12] AGENT_2: Do you have a sense of how many of your clients actually got charged a late fee? Not just the wrong reminder, the fee.
+[01:13:22] CUSTOMER: Um, just the two, I think. Hartwell and Brookfield. Most of our clients pay a day or two before, so the fee doesn't trigger.
+[01:13:32] AGENT_2: Okay. You might want to check the Late fees report for September just to be sure. Receivables, Late fees.
+[01:13:40] CUSTOMER: Receivables... Late fees... September. Okay. Two rows. Hartwell, Brookfield. Thirty-five, thirty-five. Just those two.
+[01:13:46] AGENT_2: Okay, good, so seventy dollars total, and you've already reversed one.
+[01:13:52] CUSTOMER: Right.
+[01:13:53] AGENT_2: Doing it now. [typing] Okay. Ferncliff Joinery is attached to TF-88213. And honestly, you're not alone. Rhiannon over at Kittering Veterinary called about the exact same thing yesterday, she was furious, they had like fifteen clients complaining.
+[01:14:08] CUSTOMER: Oh. Ha. Well, at least it's not just me.
+[01:14:13] AGENT_2: No, definitely not just you.
+[01:14:16] CUSTOMER: [to coworker] Yes, I approved your software request. ... The one for the PDF thing. ... It should be there by tomorrow.
+[01:14:26] CUSTOMER: Okay. Sorry. Where [inaudible] we?
+[01:14:28] AGENT_2: No worries.
+[01:14:30] SPEAKER ?: Can you hear me okay? I'm on a headset, sometimes it cuts out.
+[01:14:35] SPEAKER ?: You're clear. Little bit of an echo, but it's fine.
+[01:14:40] SPEAKER ?: okay. Let me know know if it gets worse.
+[01:14:45] AGENT_2: you know, Sorry, my cat just walked across my keyboard. If you see a weird message in the chat, that was was her.
+[01:14:54] CUSTOMER: [laughs] I I didn't see anything. Yet.
+[01:14:58] AGENT_2: [laughs] She types better than me sometimes.
+[01:15:02] CUSTOMER: [background: phone ringing] Hold on, my desk phone. I'm going to ignore it. ... It stopped.
+[01:15:08] AGENT_2: [laughs] Good.
+[01:15:10] CUSTOMER: whoever it is will email. Or come to my desk. They always come to my desk.
+[01:15:16] CUSTOMER: Can you hold one sec? Someone's asking me about the coffee machine. ... No, I don't know why it's beeping. ... Okay. Sorry. Apparently I'm also in charge of the coffee machine.
+[01:15:29] AGENT_2: [laughs] The IT person is always in charge of the coffee machine.
+[01:15:34] CUSTOMER: Every time.
+[01:15:36] SPEAKER ?: [to coworker] The conference room screen? You have to press the input button twice. Twice. ... Yes, I'll write it on a sticky note. [inaudible]
+[01:15:46] SPEAKER ?: [laughs] The conference room screen like, is always a mystery.
+[01:15:51] SPEAKER ?: It's my nemesis.
+[01:15:53] CUSTOMER: You're very patient, by the way. I've been kind kind of short with you.
+[01:15:59] AGENT_2: Not at all. You've been great.
+[01:16:02] CUSTOMER: Thanks. I'll try to stay calm.
+[01:16:05] SPEAKER ?: [to coworker] No, we're not uh, switching to mm, a new phone system this year. ... I know the old one is old. ... Budget, Kevin. Budget.
+[01:16:15] SPEAKER ?: [laughs]
+[01:16:17] SPEAKER ?: Sorry. Kevin wants new phones.
+[01:16:20] CUSTOMER: Is this call being recorded? like, I'm just curious.
+[01:16:24] AGENT_2: yes, our calls are recorded for quality and training.
+[01:16:28] CUSTOMER: okay. Hi, training people. [laughs]
+[01:16:31] AGENT_2: [laughs] They'll appreciate that.
+[01:16:34] CUSTOMER: Is it, um, is it early for you? Where are you based?
+[01:16:39] AGENT_2: [crosstalk] We're uh- spread out, honestly. I'm mm, out west, so [inaudible] not too bad for me.
+[01:16:47] CUSTOMER: Oh nice. I've had, like, mm, three [inaudible] already. [laughs]
+[01:16:52] AGENT_2: [laughs] Only three?
+[01:16:54] CUSTOMER: [background voice] Mina, the label maker's out of tape.
+[01:16:58] CUSTOMER: [to coworker] Top drawer, left side. ... The other left. ... There you you know, go.
+[01:17:05] CUSTOMER: [laughs] I uh, know where everything is. That's my curse.
+[01:17:11] CUSTOMER: So in the meantime— because we've got maybe forty invoices going out next week, it's month-end-ish— what do I do? I can't have this happen again.
+[01:17:23] AGENT_2: Two things. First, change the late-fee grace period from zero days to one day. That's under Settings, Invoicing, Late fees, "Grace period." With one day, the job won't post anything until the day after the due date, even with the bug.
+[01:17:40] CUSTOMER: Grace period... late fees... okay. Zero. Change to one. Saved.
+[01:17:45] AGENT_2: Great. Second, for the reminders themselves, switch the reminder template to the one that doesn't print the due date — it's called "Friendly reminder, no date." It just says the invoice is coming due and links to it. The link shows the correct date.
+[01:18:02] CUSTOMER: Okay. Templates... "Friendly reminder, no date." Selected. [inaudible] Save. Okay.
+[01:18:07] AGENT_2: Once 7.4.2 is out you can switch it back.
+[01:18:12] CUSTOMER: Okay. Will someone tell me when that is?
+[01:18:15] AGENT_2: Since you're attached to the ticket, you'll get the resolution email. And I'll also send you a summary of today's call, with the ticket number and these two workaround steps, right after we hang up.
+[01:18:32] CUSTOMER: Thank you. Send it to the new email, the odile dot m s one.
+[01:18:37] AGENT_2: Let me check... [typing] Okay, the billing email shows your address. The login email is still the accounts-at one, by the way. And there's a pending confirmation on the billing email change, you should have a link in your inbox to confirm it.
+[01:18:54] CUSTOMER: Oh. Okay. I'll click that. And the login one, can that be changed too?
+[01:19:00] AGENT_2: The login email has to be changed by the account owner. Who's the owner?
+[01:19:06] CUSTOMER: Um, that'd be Mr. Ferncliff. Gordon. He's... not technical. [laughs]
+[01:19:10] AGENT_2: [laughs] That's okay. He can do it from his profile, or he can call in and we'll walk him through it.
+[01:19:18] CUSTOMER: [to coworker] Yes, the all-hands is still at three. ... No, I don't know if there's [inaudible] ... Ask Ana.
+[01:19:26] CUSTOMER: Sorry. I'm apparently also the events calendar.
+[01:19:30] CUSTOMER: [to coworker] I'll be on the phone for a while. Can you cover the walk-ups? Just write down their names and what they need. ... Thank you, you're a lifesaver.
+[01:19:42] CUSTOMER: Okay. Got backup.
+[01:19:45] AGENT_2: Good.
+[01:19:47] AGENT_2: Let me try one thing on you know, my end. Don't [inaudible] anything for a second.
+[01:19:53] CUSTOMER: Okay. Hands off.
+[01:20:15] AGENT_2: Okay, you can go ahead uh- and refresh now.
+[01:20:19] CUSTOMER: [clicking] Okay. Refreshed.
+[01:20:22] SPEAKER ?: [crosstalk] Okay, can can you try a a hard refresh for me? Control-shift-R, or command-shift-R if you're on a Mac.
+[01:20:30] SPEAKER ?: okay. [typing] Done. It's reloading.
+[01:20:34] SPEAKER ?: Great. Let's give um, it a [inaudible]
+[01:20:37] SPEAKER ?: Okay, it's back. Looks the same.
+[01:20:40] SPEAKER ?: Okay, that's actually useful to know.
+[01:20:44] CUSTOMER: [background voice] Did you see the email about the parking lot repaving?
+[01:20:50] CUSTOMER: [to coworker] Not now, Deb. ... I know, Friday, I saw it. ... Okay. Bye.
+[01:20:57] CUSTOMER: Sorry. Parking lot repaving. Very urgent. [laughs]
+[01:21:00] CUSTOMER: [to coworker] No, I can't give you admin rights. ... Because. so, ... Because I said so. [laughs] ... Put in a [inaudible]
+[01:21:10] AGENT_2: [laughs]
+[01:21:12] CUSTOMER: sorry. Everyone wants admin.
+[01:21:14] CUSTOMER: Sorry, my coworker is asking me something. [muffled] —I'm on with support. ... Yeah. [unmuffled] Sorry. Go you know, ahead.
+[01:21:23] AGENT_2: No problem.
+[01:21:25] AGENT_2: Can you zoom out a little? I want to see the whole screen.
+[01:21:30] CUSTOMER: how do I—
+[01:21:32] AGENT_2: Control-minus, or command-minus.
+[01:21:34] CUSTOMER: [typing] I mean, Oh, so, okay. Now everything's tiny.
+[01:21:38] AGENT_2: That's perfect for me. [laughs]
+[01:21:41] AGENT_2: Let uh- me just take a note of what we've tried so far, so I don't make like, you do it twice. [typing]
+[01:21:51] CUSTOMER: [crosstalk] Thank uh, you. I'd hate um, to clear everything again.
+[01:21:56] AGENT_2: [laughs] Understandable.
+[01:21:58] AGENT_2: I'm just going to mute for a second [inaudible] mm, I type, my keyboard is really loud. [muted]
+[01:22:30] AGENT_2: [unmuted] Okay, sorry, I'm back.
+[01:22:33] CUSTOMER: No problem.
+[01:22:35] AGENT_2: Which browser browser are you using?
+[01:22:38] CUSTOMER: uh, the blue one? The— I don't know. Whatever came so, with the computer.
+[01:22:45] AGENT_2: [laughs] No problem. Up in the top-left there should be a name.
+[01:22:51] CUSTOMER: Oh. Okay. Yes. That [inaudible]
+[01:22:53] AGENT_2: Great, thanks.
+[01:22:55] CUSTOMER: Oh, actually, while I have someone who knows things. [laughs] Can I ask a how-do-I question? It's not about the bug.
+[01:23:05] AGENT_2: Sure, go ahead.
+[01:23:08] CUSTOMER: So for the big staircase jobs we take a deposit, fifty percent up front, and right now I make two separate invoices, one for the deposit and one for the balance, and then I have to remember to link them in my head. Is there a better way?
+[01:23:26] AGENT_2: There is. When you create the invoice, under "Payment terms" there's an option called "Deposit schedule." You set fifty percent due on acceptance and fifty percent on the completion date, and it generates one invoice with two installments. Each installment gets its own reminder.
+[01:23:44] CUSTOMER: Its own reminder. Which, right now, would have the wrong date. [laughs]
+[01:23:50] AGENT_2: [laughs] Right now, yes, so maybe wait until 7.4.2 to switch those over. But the installments themselves are fine.
+[01:23:58] CUSTOMER: Okay. Deposit schedule. Under payment terms. I'm writing that down. "Deposit schedule." And can I convert the old ones, or just new ones?
+[01:24:09] AGENT_2: Just new ones. The existing pairs you'd leave as they are.
+[01:24:14] CUSTOMER: That's fine, most of them are finishing this month anyway. The Lindqvist staircase is the only long one, that's going till December. Gorgeous staircase, by the way. White oak. Floating treads.
+[01:24:27] AGENT_2: That sounds beautiful.
+[01:24:29] CUSTOMER: It is. The guys are very proud of it. Okay. Sorry. Back to business.
+[01:24:35] AGENT_2: No, it's nice to hear what people actually use Tallyforge for. Mostly I hear about errors. [laughs]
+[01:24:42] CUSTOMER: [laughs] I'll send you a picture. No, I won't, that's weird. [laughs]
+[01:24:48] AGENT_2: [laughs] Totally up to you.
+[01:24:51] CUSTOMER: And, um, the client portal thing, where clients log in and see all their invoices? Hartwell's Moe asked me if he can download all of their invoices for the year at once. For their auditor.
+[01:25:06] AGENT_2: He can, from the client portal there's a "Download all" button on the statements page, it gives a zip of PDFs. Or you can send him a statement from your side, Clients, Hartwell Kitchens, Statement, and choose the date range.
+[01:25:22] CUSTOMER: Okay, I'll send him the statement, that's easier than explaining the portal to Moe. [laughs]
+[01:25:30] AGENT_2: [laughs] Fair enough.
+[01:25:32] CUSTOMER: Okay. One more question. My assistant, Junie, she does a lot of the invoicing too. What if I just gave Junie my password? Would that be easier? Then she can log in as me when I'm out.
+[01:25:47] AGENT_2: Please don't do that. It's against our terms, and it means everything she does shows up as you in the audit log. Add her as a user instead. Your plan includes three free Staff seats and you're only using one.
+[01:26:03] CUSTOMER: Oh. I didn't know that. Okay. How do I add her?
+[01:26:09] AGENT_2: Settings, Team, Invite user. Put in her email, pick the Staff role. She'll get an invite and set her own password.
+[01:26:19] CUSTOMER: Okay. I'll do that this afternoon. She's going to be thrilled, she hates when I'm on vacation. [laughs]
+[01:26:28] SPEAKER ?: Oh— Gordon's here. Gordon, it's the software people, the date thing. ... Yes, the reminders. ... They know, it's a bug. ... No, it's not our fault. ... I'm fixing it.
+[01:26:40] SPEAKER ?: [laughs] Sorry, he wants to know if we're getting money back.
+[01:26:46] SPEAKER ?: For the subscription, you mean? I can't offer a subscription credit from Tier 2, that would go through your account manager, but I can note that you asked.
+[01:26:57] SPEAKER ?: No, no, it's fine. He means the clients' late fees. Which, we reversed. So, yes, Gordon. ... Yes. ... Okay, he's gone.
+[01:27:06] AGENT_2: [laughs] All good?
+[01:27:08] CUSTOMER: All good. He's sweet, he just worries. Where were we.
+[01:27:14] OTHER: [background] Odile! The glass guy's here!
+[01:27:18] CUSTOMER: [to coworker] One minute! [to agent] Sorry. I think that's everything.
+[01:27:23] AGENT_2: Let me recap. The reminder date and the late fees are the same bug, TF-88213, fixed in 7.4.2, and your account is attached. You reversed the fee on INV-20417 and you'll reverse INV-20422. You set the late-fee grace period to one day and switched to the no-date reminder template as a workaround. You'll confirm the new billing email from the link, and add Junie as a Staff user. I'll email you the summary today. And you're planning to switch to annual before your October twentieth renewal.
+[01:27:55] CUSTOMER: That's it. Thank you, Priyanka. Honestly, you've been a lifesaver.
+[01:28:01] AGENT_2: Happy to help. Sorry again for the trouble.
+[01:28:05] CUSTOMER: Bye now.
+[01:28:06] [call ended]

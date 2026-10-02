@@ -1,0 +1,48 @@
+{
+  "call_type": "pre_procedure",
+  "outcome": "escalated",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 4,
+  "quality_reasons": [
+    "Verified identity with name, date of birth and last four phone digits before discussing the appointment",
+    "Correctly declined to answer the clinical fasting question and escalated it urgently to the pre-procedure nurse team for a same-day callback",
+    "Proactively caught and corrected outdated appointment details (time and location) and updated the stale email on file",
+    "Recognized a recurring packet-vs-text instruction discrepancy and reported it to the team lead",
+    "Call was stretched by extended small talk, repeated audio/headset glitches and slow systems"
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "agent (Celeste, scheduling)",
+      "task": "Send urgent message to the pre-procedure nurse team requesting a callback to the patient about conflicting fasting instructions",
+      "due": "today (2026-05-04), before 5:00 PM"
+    },
+    {
+      "owner": "pre-procedure nurse team",
+      "task": "Call patient back with the correct eating/drinking instructions for the May 8 endoscopy",
+      "due": "today (2026-05-04), before 5:00 PM"
+    },
+    {
+      "owner": "agent (Celeste, scheduling)",
+      "task": "Report the conflicting packet vs. text reminder fasting instructions to the team lead so the discrepancy is fixed",
+      "due": "unspecified"
+    },
+    {
+      "owner": "patient",
+      "task": "Arrange an adult driver (partner) for the day of the procedure; no taxis or rideshares alone after sedation",
+      "due": "Friday, May 8, 2026"
+    }
+  ],
+  "summary_notes": "Patient Ottoline Ferraby-Nkemelu (DOB 10/02/1992) called to confirm details for upper endoscopy with Dr. Halvorsen-Adu on Friday, May 8, 2026. Identity verified (name, DOB, phone last four 8133). Appointment details corrected: arrive 7:00 a.m. (not 7:30) at Westbrook endoscopy center, second floor (not Main Street); prior email update missed because email on file was outdated - email updated to ottoline.fn@gmail.com (spoken 'ottoline dot f-n at gmail dot com'). Patient reported conflicting fasting instructions (packet: nothing after midnight; text: clear liquids until 2 hours before arrival). Agent correctly did not advise clinically and sent an urgent message to the pre-procedure nurse team for a same-day callback before 5 PM; discrepancy also reported to team lead (third such inquiry this week). Driver required due to sedation; parking validation available at front desk.",
+  "notable_details": [
+    "Corrected appointment details: Friday, May 8, 2026, arrive 7:00 a.m. (letter said 7:30) at Westbrook endoscopy center, second floor (letter said Main Street building)",
+    "Email on file was outdated, which is why the schedule change was missed; updated to ottoline.fn@gmail.com (spoken as 'ottoline dot f-n at gmail dot com')",
+    "Conflicting pre-procedure instructions: packet says nothing to eat or drink after midnight; text reminder says clear liquids fine up to 2 hours before arrival - agent noted this is the third such inquiry this week",
+    "Patient's phone number on file ends 8133, confirmed as best callback number",
+    "Patient mentioned in passing that pressing 4 on the phone menu routes somewhere unexpected; she pressed 0 repeatedly to get through",
+    "Agent reported glitchy headset all morning; IT 'looking into it'",
+    "Parking validation for the garage available at the front desk - patient was previously unaware and paid ~$12 last time",
+    "Patient prefers electronic communications only ('electronic preferred' noted on file)"
+  ]
+}

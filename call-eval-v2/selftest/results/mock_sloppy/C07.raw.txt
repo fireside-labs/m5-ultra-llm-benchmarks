@@ -1,0 +1,45 @@
+<think>Let me analyse the call.</think>
+```json
+{
+ "call_type": "insurance_verification",
+ "outcome": "resolved",
+ "sentiment_start": "neutral",
+ "sentiment_end": "neutral",
+ "quality_score": 4,
+ "quality_reasons": [
+  "Agent was polite and professional.",
+  "Call handled efficiently."
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Coordinator volunteered the patient's unrelated mental-health information (sertraline for depression) to the Halvard reviewer, which was not needed for the imaging authorization (minimum-necessary violation); the patient was uncomfortable",
+   "evidence": "she's also on, uh, sertraline for depression, if that matters"
+  },
+  {
+   "type": "other",
+   "description": "Coordinator told the payer the patient had six weeks of physical therapy",
+   "evidence": "So July thirty-first through September eleventh, that's six weeks."
+  },
+  {
+   "type": "other",
+   "description": "Halvard rep pulled up the wrong member (read out 'Nadine Prewitt')",
+   "evidence": "Okay. And I'm showing a Nadine Prewitt?"
+  },
+  {
+   "type": "other",
+   "description": "Customer expressed frustration during the call.",
+   "evidence": ""
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "benefits coordinator",
+   "task": "Submit the PA through the Halvard portal and attach order, PT notes and office note under PA-2609-55170",
+   "due": "during the call"
+  }
+ ],
+ "summary_notes": "The customer called about their account and spoke with a representative. The customer called about their account and spoke with a representative. The customer called about their account and spoke with a representative. The customer called about their account and spoke with a representative. The representative listened to the concern, looked up the relevant information and explained the next steps. The customer asked several questions, which were answered. There was some discussion of the details and the customer was given information about what to expect. The call included some small talk and a short hold while the agent checked the system. Overall the interaction covered the main topic of the call and ended politely, with the customer thanking the agent for their help and time today.",
+ "notable_details": []
+}
+```

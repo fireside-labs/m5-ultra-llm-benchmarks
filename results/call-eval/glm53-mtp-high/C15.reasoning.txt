@@ -1,0 +1,15 @@
+
+Key issues: technician gave clinical advice "lots of people take both, you should be fine" about combining alprazolam (benzodiazepine) and zolpidem (Z-drug) — both CNS depressants; this is a clinical safety issue and misinformation; should have referred to pharmacist. Also no identity verification — disclosed medication list (alprazolam, sertraline, cholesterol med) before verifying identity. Privacy disclosure flag. Also unauthorized commitment? "I can just push it through" early refill — insurance may reject; paying cash to bypass insurance early refill for a controlled substance (alprazolam is Schedule IV) — could be a policy concern but tech said insurance might reject; cash payment for early controlled substance refill is questionable. Could flag as policy_violation. Also sticky note password comment — caller's own, not staff; not a flag for business. Tech said "I didn't hear that" jokingly — fine.
+
+Outcome: resolved (refill approved, ready at 3pm). Sentiment start neutral, end positive. Quality score: 2 — serious clinical safety failure (advising on combining two sedatives) plus no identity verification. Maybe 2.
+
+Action items: patient to pick up alprazolam at 3pm at front counter with ID. Also implied: none else. Due: today at 3:00 PM (2026-08-17).
+
+Notable details: vacation leaving Aug 22 for two weeks; last filled July 30, 30-day supply; cash price ~$12; zolpidem filled at pharmacy near work; IT system glitchy, password reset every 30 days; hold music complaints; dog Biscuit; ID required at pickup.
+
+Flags:
+1. privacy_disclosure — medication list disclosed without identity verification. Evidence: "I see you've got alprazolam, the point five, sertraline, and a cholesterol one."
+2. clinical_safety — tech advised combining alprazolam and zolpidem is fine. Evidence: "I mean, lots of people take both. You should be fine."
+3. misinformation — same as above; maybe combine. Could also flag policy_violation for early cash refill of controlled substance without pharmacist involvement. I'll include three flags: privacy_disclosure, clinical_safety, policy_violation (early refill of Schedule IV controlled substance via cash to bypass insurance, without pharmacist review). Evidence: "I can just push it through... you can just pay cash for it".
+
+Quality score 2.

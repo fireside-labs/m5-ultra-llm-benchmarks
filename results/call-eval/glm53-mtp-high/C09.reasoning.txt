@@ -1,0 +1,33 @@
+
+The call: outbound pre-registration call for MRI scheduling. Identity verified (DOB + ZIP). Insurance verified, prior auth needed, agent will submit today and call back. Patient also raised billing issue (double copay $45 via ClearPay) — agent said she'd transfer to billing at end of call, but the call ended without transfer. That's a missed commitment → flag and outcome? Main issue: pre-registration/insurance verification — handled (eligibility checked, auth to be submitted). But the billing transfer promised didn't happen. Outcome: the main purpose (pre-registration) is pending callback for scheduling after auth. Hmm. Main call type: insurance_verification? Or scheduling? It's pre-registration for imaging — "pre_procedure" = pre-admission or pre-procedure instructions. The call is imaging pre-registration, verifying insurance to schedule MRI. I'd say call_type: insurance_verification seems closest since the main content was insurance verification and prior auth. But it's pre-registration... The purpose: verify insurance before scheduling MRI. I'll go with insurance_verification. Outcome: callback (agent will call back when auth decision arrives) — but also the billing transfer was promised and didn't happen (missed commitment). The main issue is pending a specific follow-up contact → callback. Escalated? Billing was to be transferred but wasn't — that's a missed commitment, not escalation. Outcome: callback.
+
+Sentiment: start neutral, end positive ("Sounds good").
+
+Quality: many technical issues (system slow, mouse died, screen logged out, sneeze/mute), lots of small talk, but verification done, accurate info, empathetic. The missed transfer to billing is a notable lapse. Score 3? "generally competent but with one notable lapse" — the missed billing transfer. Also long unannounced holds? Not really holds. Score 3.
+
+Flags:
+1. missed_commitment: promised transfer to billing at end of call did not happen; call ended without transfer. Evidence: "I'll transfer you over to them at the end of our call so they can take care of it."
+Also maybe sticky note password comment — patient said, not staff; not a flag for staff. Agent said "I didn't hear that" jokingly — fine.
+
+Action items:
+- Agent: submit prior authorization to Granite Meridian with Dr. Kowalczyk-Nnamdi's notes — due today (2026-03-27).
+- Agent: call patient when authorization decision received to schedule MRI — due "probably next week" / as soon as decision.
+- Patient: upload photo of front and back of insurance card to portal — tonight.
+- Patient (optional): upload wife's secondary insurance card if found — unspecified.
+- Billing transfer — missed; should it be an action item? It was a commitment stated. Include: Agent to transfer patient to billing for duplicate $45 copay charge — due "end of call" (not completed). Maybe include as action item with note. The schema just wants tasks stated. I'll include it.
+
+Notable details:
+- Member ID corrected: GMH-447-182-009 (last digit 9, not 6).
+- Group number 70315.
+- New insurance Granite Meridian Health Plan effective Jan 1; old plan ended December; patient switched jobs.
+- Subscriber is patient.
+- Duplicate copay charge $45: paid at desk, then ClearPay charged again.
+- Secondary insurance: wife's plan through her work, card not available.
+- Emergency contact confirmed unchanged.
+- No interpreter/accessibility accommodations needed.
+- Prior auth typically 5-7 business days.
+- Main entrance blue awning, check-in inside to left.
+- Patient DOB Dec 5, 1977; ZIP 97209.
+- Dr. Kowalczyk-Nnamdi ordered lumbar spine MRI; back pain two months.
+
+Summary notes ≤120 words.

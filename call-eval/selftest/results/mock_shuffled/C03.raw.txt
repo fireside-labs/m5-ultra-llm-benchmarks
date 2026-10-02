@@ -1,0 +1,41 @@
+{
+ "call_type": "pharmacy_refill",
+ "outcome": "callback",
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 4,
+ "quality_reasons": [
+  "Verified identity (name, DOB, address) before discussing the profile",
+  "Proactively solved the gap: prescriber request plus pharmacist-approved 3-day emergency supply",
+  "Placed caller on hold without asking permission (minor)"
+ ],
+ "flags": [],
+ "action_items": [
+  {
+   "owner": "pharmacy tech",
+   "task": "Send request to Dr. Lindqvist-Mbeki's office for a new lisinopril 20 mg once-daily prescription",
+   "due": "today"
+  },
+  {
+   "owner": "pharmacy",
+   "task": "Have 3-day emergency supply ready at Harbor Road after 4 pm",
+   "due": "2026-05-19 16:00"
+  },
+  {
+   "owner": "pharmacy",
+   "task": "Fill the 20 mg prescription at Harbor Road and text the patient when ready",
+   "due": "when prescriber responds"
+  },
+  {
+   "owner": "patient",
+   "task": "Call the prescriber's office if no update by tomorrow afternoon",
+   "due": "2026-05-20 afternoon"
+  }
+ ],
+ "summary_notes": "Mock summary for C04.",
+ "notable_details": [
+  "Dose was increased to 20 mg two weeks ago (patient taking two 10 mg tablets); profile still shows 10 mg and no new prescription was received",
+  "Pickup changed from Ferris Avenue to the Harbor Road location (staying with sister)",
+  "Patient has only two tablets left: out after tomorrow morning"
+ ]
+}

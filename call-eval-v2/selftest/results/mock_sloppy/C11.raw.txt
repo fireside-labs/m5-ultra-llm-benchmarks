@@ -1,0 +1,47 @@
+{
+ "call_type": "other",
+ "outcome": "resolved",
+ "sentiment_start": "neutral",
+ "sentiment_end": "neutral",
+ "quality_score": 4,
+ "quality_reasons": [
+  "Agent was polite and professional.",
+  "Call handled efficiently."
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Acetaminophen overdose risk not caught: patient takes hydrocodone/acetaminophen (Norco), plus Extra Strength Tylenol two every six hours, plus NyQuil at night; the nurse said Tylenol is fine instead of warning about the combined acetaminophen total",
+   "evidence": "Oh, yeah, I'm also taking regular Tylenol. The Extra Strength. Two every six hours, like the bottle says."
+  },
+  {
+   "type": "other",
+   "description": "Nurse dismissed the patient's right shoulder pain",
+   "evidence": "That's the gas they use to inflate your belly."
+  },
+  {
+   "type": "other",
+   "description": "Nurse discussed the patient's medical details with her husband, a third party",
+   "evidence": "So you can talk to him about anything, whatever you need, he knows more than me right now."
+  },
+  {
+   "type": "other",
+   "description": "Nurse did not answer the drain question herself and deferred it to the surgical PA",
+   "evidence": "So that one I'm actually going to hand over to the surgical team"
+  },
+  {
+   "type": "other",
+   "description": "Customer expressed frustration during the call.",
+   "evidence": ""
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "nurse",
+   "task": "Send a hydrocodone refill request to Dr. Vasquez-Lim's team via the message line",
+   "due": "tonight; addressed tomorrow morning"
+  }
+ ],
+ "summary_notes": "The customer called about their account and spoke with a representative. The customer called about their account and spoke with a representative. The customer called about their account and spoke with a representative. The customer called about their account and spoke with a representative. The representative listened to the concern, looked up the relevant information and explained the next steps. The customer asked several questions, which were answered. There was some discussion of the details and the customer was given information about what to expect. The call included some small talk and a short hold while the agent checked the system. Overall the interaction covered the main topic of the call and ended politely, with the customer thanking the agent for their help and time today.",
+ "notable_details": []
+}

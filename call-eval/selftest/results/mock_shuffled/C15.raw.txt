@@ -1,0 +1,36 @@
+{
+ "call_type": "scheduling",
+ "outcome": "callback",
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 5,
+ "quality_reasons": [
+  "Verified identity; proactively corrected the outdated arrival time and location",
+  "Stayed in scope on the clinical fasting question and routed urgently to the pre-procedure nurses",
+  "Reported the recurring packet/text inconsistency to the team lead and updated the stale email"
+ ],
+ "flags": [],
+ "action_items": [
+  {
+   "owner": "agent",
+   "task": "Send urgent message to pre-procedure nurse team to call patient today about fasting instructions",
+   "due": "today before 5 pm"
+  },
+  {
+   "owner": "agent",
+   "task": "Report packet/text fasting inconsistency to team lead",
+   "due": "today"
+  },
+  {
+   "owner": "patient",
+   "task": "Arrive 7:00 am Friday May 8 at Westbrook endoscopy center, 2nd floor, with an adult driver",
+   "due": "2026-05-08 07:00"
+  }
+ ],
+ "summary_notes": "Mock summary for C16.",
+ "notable_details": [
+  "Arrival time changed from 7:30 to 7:00 am",
+  "Location changed from Main Street to Westbrook endoscopy center (2nd floor); update had gone to an old email",
+  "Agent says she is the third caller this week about the packet/text conflict"
+ ]
+}

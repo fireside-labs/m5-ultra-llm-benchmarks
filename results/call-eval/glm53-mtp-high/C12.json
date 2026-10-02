@@ -1,0 +1,70 @@
+{
+  "call_type": "complaint_escalation",
+  "outcome": "escalated",
+  "sentiment_start": "negative",
+  "sentiment_end": "neutral",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Agent made an unauthorized commitment to reimburse lost wages, which the supervisor had to walk back on the same call",
+    "Identity was properly verified (name, DOB, phone) before any discussion of the record",
+    "Supervisor handled the escalation well: opened a formal grievance with a reference number, approved the prep-kit cost, and rescheduled the procedure",
+    "Significant time lost to small talk, repeated screen timeouts, and audio/device issues, making an already long call inefficient",
+    "Diabetic insulin safety concern raised in passing was captured and routed to the GI nurse"
+  ],
+  "flags": [
+    {
+      "type": "unauthorized_commitment",
+      "description": "The agent promised reimbursement of lost wages without authority, a promise the supervisor explicitly could not honor.",
+      "evidence": "we'll definitely cover your lost wages. I'll make sure of it."
+    },
+    {
+      "type": "misinformation",
+      "description": "The patient received contradictory prep instructions (text message vs. mailed packet), causing the cancelled colonoscopy.",
+      "evidence": "the text says clear liquids until two hours before. They say two different things!"
+    },
+    {
+      "type": "clinical_safety",
+      "description": "An insulin-dependent diabetic was left guessing her insulin doses during prep with no guidance, a safety gap only surfaced in passing near the end of the call.",
+      "evidence": "I'm diabetic, I'm on insulin. Nobody asked me about that last time either, and I was guessing on my insulin doses during the prep"
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "patient relations supervisor (Celia Banerjee-Strom)",
+      "task": "Open formal grievance G-260411 regarding contradictory prep instructions and the cancelled colonoscopy; send written acknowledgment",
+      "due": "within five business days"
+    },
+    {
+      "owner": "patient relations supervisor / grievance review committee",
+      "task": "Include the patient's lost-wages reimbursement request in the grievance for committee review and provide a written response after review with the endoscopy center and text-reminder team",
+      "due": "unspecified"
+    },
+    {
+      "owner": "patient relations supervisor",
+      "task": "Cover/approve the cost of the second prep kit (approved on the call)",
+      "due": "immediate (approved during call)"
+    },
+    {
+      "owner": "GI nurse",
+      "task": "Call the patient before the rescheduled procedure to review prep in writing, including a specific insulin plan for prep day",
+      "due": "before Thursday, April 30"
+    },
+    {
+      "owner": "patient (Henrietta Moss-Okwuosa)",
+      "task": "Attend rescheduled colonoscopy at the same endoscopy center; bring photo ID, insurance card, and medication list",
+      "due": "Thursday, April 30, arrival 7:30 AM"
+    }
+  ],
+  "summary_notes": "Patient Henrietta Moss-Okwuosa (DOB 7/17/1968) called to file a formal complaint after her 4/14 colonoscopy was cancelled by the anesthesiologist: her text reminder permitted clear liquids until 2 hours before arrival, but the mailed packet said nothing after midnight; she had black coffee at 6 AM and was cancelled. She completed prep, lost unpaid wages, and her sister lost a day. Agent Noor improperly promised lost-wage reimbursement; supervisor Celia Banerjee-Strom opened grievance G-260411, approved the ~$30 second prep kit, rescheduled the colonoscopy for Thu 4/30 at 7:30 AM, and arranged a GI nurse call to review prep and her insulin plan (patient is diabetic, on insulin, and guessed doses during prep). Patient prefers electronic communication; pharmacy on Ferris Avenue confirmed.",
+  "notable_details": [
+    "Grievance reference number: G-260411",
+    "Rescheduled colonoscopy: Thursday, April 30, arrival 7:30 AM, same endoscopy center",
+    "Patient is diabetic and insulin-dependent; she guessed her insulin doses during prep and no one asked about diabetes previously",
+    "Conflicting prep instructions: mailed packet said nothing to eat or drink after midnight; text message said clear liquids up to two hours before arrival",
+    "Lost-wages reimbursement is NOT guaranteed; it will be decided by the grievance review committee; only the second prep kit cost was approved",
+    "Patient prefers electronic communication over mailed documents",
+    "Preferred pharmacy confirmed as the one on Ferris Avenue",
+    "Cancellation process: patients can now reply to the reminder text to cancel",
+    "Agent's screen timed out twice due to a 2-minute idle logout and 30-day forced password changes; headset issues reported all week with IT 'looking into it'"
+  ]
+}

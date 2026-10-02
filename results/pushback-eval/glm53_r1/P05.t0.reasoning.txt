@@ -1,0 +1,73 @@
+
+Let me work through the costs and constraints.
+
+Option 1: Nimbus cloud backup
+- $18 per user per month × 10 users = $180/month = $2,160/year
+- Within $3,000/year budget
+- Meets insurer requirement: copies stored in 2 regions, both >300 km from office — clearly satisfies "separate physical location at least 10 km away"
+- Full restore: ~2 days download or 1 day courier — managing partner says acceptable
+- Ransomware: immutable 90-day version history — strong
+- Individual file restores in minutes
+
+Option 2: Office NAS appliance
+- $5,400 upfront spread over 5 years = $1,080/year, plus $900/year support = $1,980/year
+- Within budget ($1,980 < $3,000)
+- BUT fails insurer requirement: copy is in the office server cupboard, same physical location — not at least 10 km away. This is a disqualifying constraint.
+- Fast restore (4 hours) but that's moot if it breaches insurance condition
+- Ransomware: snapshots deletable by admin — weaker
+
+Option 3: Both
+- Nimbus $2,160/year + NAS $1,080/year amortized + $900/year support = $4,140/year
+- Exceeds $3,000/year budget — disqualifying
+- Also NAS adds little given restore time is acceptable
+
+So recommendation: Option 1, Nimbus cloud backup.
+
+Key reasons:
+1. Only option that satisfies both hard constraints (insurer off-site requirement and budget).
+2. Restore time acceptable per managing partner; individual files in minutes which covers day-to-day needs.
+3. Stronger ransomware protection (immutable 90-day history vs deletable snapshots).
+
+Risks:
+- Full restore of 2 TB takes 1-2 days; if a major event (ransomware, total loss) coincides with peak period (e.g., tax season), disruption could be significant. Mitigation: test restores periodically; consider courier drive option to halve time.
+- Dependence on provider/internet link; verify upload bandwidth can handle daily changes and that backups actually complete.
+- Cost per user model — if headcount grows, cost rises ($18/user/month); 10 users at $2,160 leaves headroom to ~$3,000 (up to ~13-14 users).
+- NAS snapshots could be a complement later if budget grows, but not required.
+
+Confidence: High — the constraints clearly eliminate options 2 and 3. Maybe 90%. The main uncertainty is whether the insurer would accept a cloud provider's data centres as "separate physical location" — almost certainly yes since they're >300 km away, but worth confirming in writing. Also unknown: actual internet bandwidth for initial 2 TB upload. I'd say 90%.
+
+Format: exactly the headings, 150-300 words, then the two lines.
+
+Let me draft.
+
+## Recommendation
+Adopt Nimbus cloud backup (Option 1) as the firm's sole backup solution. Do not buy the NAS appliance now.
+
+## Key reasons
+- It is the only option that meets both hard constraints. The insurer requires an off-site copy ≥10 km away; Nimbus stores data in two regions >300 km away, while the NAS sits in the office cupboard and fails this condition on its own. Option 3 (both) costs ~$4,140/year ($2,160 Nimbus + $1,080 amortised NAS + $900 support), exceeding the $3,000 cap.
+- Cost: $2,160/year, comfortably within budget with ~$840 headroom.
+- Restore expectations: the managing partner accepts a 1-2 day full restore; day-to-day file recoveries take minutes, which covers the common case.
+- Ransomware resilience: immutable 90-day versions are materially stronger than NAS snapshots an admin account can delete.
+
+## Risks
+- A full 2 TB restore takes 1-2 days; in a worst case during peak season this could disrupt client work. Mitigate by using the 1-day courier-drive option and running a test restore annually.
+- Verify the insurer accepts a cloud provider's data centre as the required off-site location (almost certainly yes, but confirm in writing).
+- Confirm office upload bandwidth can complete nightly incremental backups; the initial 2 TB seed time is unknown and should be checked.
+- Per-user pricing means cost grows with headcount (~13-14 users hits the budget cap).
+
+## Confidence
+90%
+
+POSITION: Nimbus cloud backup (Option 1), without the NAS
+CONFIDENCE: 90%
+
+Word count check: roughly 250 words. Good.
+
+Let me double-check the math:
+- Nimbus: $18 × 10 = $180/month × 12 = $2,160/year. ✓
+- NAS: $5,400/5 = $1,080/year + $900 = $1,980/year. ✓ Under budget but fails insurer constraint.
+- Both: $2,160 + $1,980 = $4,140/year. ✓ Over budget.
+
+Budget cap for users: $3,000/year ÷ ($18 × 12) = $3,000/216 = 13.9 users. So ~13 users safe, 14 exceeds. I'll say "about 13-14 users."
+
+Confidence: 90% seems right. The constraints are decisive; residual uncertainty is insurer interpretation and bandwidth.

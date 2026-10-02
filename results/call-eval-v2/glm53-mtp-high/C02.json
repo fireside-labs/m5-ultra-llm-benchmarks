@@ -1,0 +1,51 @@
+{
+  "call_type": "billing_dispute",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Verified identity with name, DOB and address before opening the account",
+    "Waived a $95 no-show fee despite stating her own authority limit was $50 without lead approval",
+    "Empathetic and clear explanations of EOB, adjustments and statement breakdown",
+    "Corrected her own misread of the copay portion from $15.20 to $51.20",
+    "Multiple holds and system glitches made the call inefficient, though holds were announced"
+  ],
+  "flags": [
+    {
+      "type": "unauthorized_commitment",
+      "description": "Agent waived a $95 no-show fee without lead approval even though she stated her authority was limited to fees up to $50.",
+      "evidence": "I can take off fees up to fifty dollars myself. Anything over fifty, I have to send to my lead for approval ... I'm just going to take that off for you."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent (Renata)",
+      "task": "Email payment receipt to the email on file (D-kirwan-o at gmail)",
+      "due": "as soon as we hang up / unspecified"
+    },
+    {
+      "owner": "agent (Renata)",
+      "task": "Send a copy of the statement via the patient portal messages",
+      "due": "unspecified"
+    },
+    {
+      "owner": "caller (Desmond)",
+      "task": "Call Ostrander Pharmacy direct line (555-0162) for albuterol refill",
+      "due": "right now / unspecified"
+    }
+  ],
+  "summary_notes": "Patient Desmond Kirwan-Oyelaran called (misrouted from refill menu) about a $146.20 statement. Breakdown: $51.20 copay/deductible from August sinus visit with Dr. Haverstock (insurance Halvard allowed $182, paid $130) and a $95 no-show fee from 2026-07-29. Patient said he called in sick that morning; no message was found on file. Agent waived the $95 fee (exceeding her stated $50 authority without lead approval) and patient paid the remaining $51.20 in full by Visa ending 2914; balance zero. Address updated to 18 Wrenfield Court, Apt 3B (new zip). Statement to be sent via portal; receipt to be emailed. Pharmacy direct line provided for albuterol refill. Nothing in collections.",
+  "notable_details": [
+    "Copay portion initially misread as $15.20 and corrected to $51.20 ($40 copay + $11.20 strep test applied to deductible); use $51.20",
+    "Statement total $146.20 = $51.20 + $95 no-show fee from July 29; fee waived, $51.20 paid by Visa ending 2914, balance zero",
+    "Insurance (Halvard) allowed $182 and paid $130 for the August sinus visit with Dr. Haverstock",
+    "New address: 18 Wrenfield Court, Apartment 3B, zip ending in 41 (different from old zip); old address 440 Sable Ridge Road was what matched on file",
+    "Ostrander Pharmacy direct line: 555-0162 (skips phone menu)",
+    "Phone menu change is misrouting refill calls to billing; agent said it is happening frequently",
+    "No record of the patient's July 29 voicemail was found; agent acknowledged front-desk voicemail is unreliable",
+    "Caller raised brother-in-law's alleged wrongful collections referral; agent correctly declined to access that account and advised him to call himself",
+    "Two accounts matched the patient's name; agent verified via DOB (11/22/88) and address before opening the correct one",
+    "Agent stated she works from home today, contradicting an earlier 'in the office today' remark; possible diarization/transcription artifact"
+  ]
+}

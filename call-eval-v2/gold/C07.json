@@ -1,0 +1,528 @@
+{
+ "call_id": "C07",
+ "call_type": "insurance_verification",
+ "outcome": "callback",
+ "outcome_accept": [
+  "escalated"
+ ],
+ "sentiment_start": "negative",
+ "sentiment_end": "neutral",
+ "sentiment_end_accept": [
+  "positive"
+ ],
+ "quality_score": 2,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Coordinator volunteered the patient's unrelated psychiatric history (sertraline for depression) to the payer, beyond the minimum necessary",
+   "match": [
+    [
+     "sertraline",
+     "traline",
+     "depression",
+     "psychiatric",
+     "mental health",
+     "unnecessar",
+     "minimum necessary",
+     "overshar",
+     "irrelevant",
+     "antidepressant"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Coordinator requested expedited review by claiming the doctor considers the MRI urgent, although the order says routine with no red flags",
+   "match": [
+    [
+     "urgent",
+     "expedit",
+     "routine"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "Persistent and proactive: navigated the IVR, found the root cause (retired fax line), resubmitted through the portal, confirmed receipt and kept the patient informed",
+   "match": [
+    [
+     "persist",
+     "root cause",
+     "\\bfax",
+     "portal",
+     "thorough",
+     "proactive",
+     "diligent",
+     "resubmit",
+     "empath",
+     "patient",
+     "kept .* informed"
+    ]
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "id": "F1",
+   "type": "privacy_disclosure",
+   "text": "Coordinator volunteered the patient's unrelated mental-health information (sertraline for depression) to the Halvard reviewer, which was not needed for the imaging authorization (minimum-necessary violation); the patient was uncomfortable",
+   "evidence": "she's also on, uh, sertraline for depression, if that matters",
+   "paraphrases": [
+    "Unnecessary disclosure of the patient's depression and antidepressant to the insurer.",
+    "Agent shared irrelevant psychiatric history with the payer without need or consent.",
+    "Mentioned the patient's sertraline use to the UM rep although it was not required for the MRI review."
+   ],
+   "negatives": [
+    "Coordinator gave the payer the member ID and date of birth with the patient's permission."
+   ],
+   "match": [
+    [
+     "sertraline",
+     "traline",
+     "depression",
+     "psychiatric",
+     "mental.health",
+     "antidepressant",
+     "psych (history|med)"
+    ],
+    [
+     "disclos",
+     "volunteer",
+     "shar",
+     "reveal",
+     "mention",
+     "told",
+     "gave",
+     "privacy",
+     "unnecessar",
+     "not (needed|relevant|required|necessary)",
+     "irrelevant",
+     "minimum",
+     "overshar",
+     "without (need|consent|permission)"
+    ]
+   ]
+  },
+  {
+   "id": "F2",
+   "type": "misinformation",
+   "text": "Coordinator requested expedited review and told Halvard the ordering doctor considers the MRI urgent, but the order he read earlier says priority routine, no red flags - urgency was misrepresented to the payer",
+   "evidence": "Yes. Yes, the doctor considers it urgent.",
+   "paraphrases": [
+    "Falsely attested that the provider considered the MRI urgent to get an expedited review; the order was routine.",
+    "Agent misrepresented the clinical urgency to the insurer to speed up the authorization.",
+    "Requested an expedited/urgent review contrary to the order's routine priority and no red flags."
+   ],
+   "negatives": [
+    "The coordinator asked whether the review could be completed before the October 8 appointment."
+   ],
+   "match": [
+    [
+     "urgent",
+     "urgency",
+     "expedit",
+     "rush",
+     "priority",
+     "72.hour",
+     "seventy.two"
+    ],
+    [
+     "routine",
+     "red flag",
+     "misrepresent",
+     "mislead",
+     "false",
+     "inaccurate",
+     "not (actually |really )?urgent",
+     "contradict",
+     "attest",
+     "exaggerat",
+     "overstat",
+     "inconsisten",
+     "without (the )?(doctor|provider|physician)",
+     "untrue",
+     "incorrect"
+    ]
+   ]
+  }
+ ],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Coordinator told the payer the patient had six weeks of physical therapy",
+   "why_not": "He then read the PT notes: initial eval July 31, discharge Sept 11, 8 visits = six weeks; the statement was accurate and documented.",
+   "evidence": "So July thirty-first through September eleventh, that's six weeks.",
+   "paraphrases": [
+    "Coordinator stated six weeks of physical therapy without verifying documentation.",
+    "Possibly inaccurate claim to the insurer that conservative therapy (PT) had been completed.",
+    "The agent may have overstated the length of PT to meet the plan's six-week requirement."
+   ],
+   "match": [
+    [
+     "physical therapy",
+     "\\bpt\\b",
+     "six weeks",
+     "6 weeks",
+     "conservative"
+    ]
+   ]
+  },
+  {
+   "id": "D2",
+   "text": "Halvard rep pulled up the wrong member (read out 'Nadine Prewitt')",
+   "why_not": "Only a name was read; the coordinator caught it immediately and the rep re-entered the ID before any information was given. Not a disclosure, and not Brightwater staff.",
+   "evidence": "Okay. And I'm showing a Nadine Prewitt?",
+   "paraphrases": [
+    "Payer representative read out another member's name (Nadine Prewitt), a privacy breach.",
+    "Wrong member record was accessed and disclosed during verification.",
+    "Insurance rep initially identified an incorrect member."
+   ],
+   "match": [
+    [
+     "nadine",
+     "wrong (member|name|patient|person|record|id)",
+     "another member",
+     "different member",
+     "other member",
+     "incorrect (member|name|id|record)"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Prior authorization faxed to Halvard's retired fax line (555-0144) and never received; outdated fax template",
+   "match": [
+    [
+     "\\bfax",
+     "0144",
+     "no (prior auth|request|record|pa|authori[sz]ation)",
+     "not received",
+     "never received",
+     "retired",
+     "pending",
+     "delay",
+     "template",
+     "cover sheet",
+     "authori[sz]ation"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "IVR loops, cold transfer back to the main menu, long holds",
+   "match": [
+    [
+     "ivr",
+     "hold",
+     "menu",
+     "wait",
+     "phone tree",
+     "transfer",
+     "carla"
+    ]
+   ]
+  },
+  {
+   "id": "OK3",
+   "text": "Work-related injury not filed as workers' comp",
+   "match": [
+    [
+     "workers'? ?comp",
+     "work injury",
+     "workplace injury",
+     "work.related"
+    ]
+   ]
+  },
+  {
+   "id": "OK4",
+   "text": "New toe tingling symptom (routed to the doctor)",
+   "match": [
+    [
+     "tingl",
+     "numb"
+    ]
+   ]
+  },
+  {
+   "id": "OK5",
+   "text": "Husband not on release form",
+   "match": [
+    [
+     "husband",
+     "release form",
+     "proxy"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "benefits coordinator",
+   "task": "Submit the PA through the Halvard portal and attach order, PT notes and office note under PA-2609-55170",
+   "due": "during the call",
+   "match": [
+    [
+     "upload",
+     "portal",
+     "attach",
+     "submit",
+     "clinical"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "Halvard UM",
+   "task": "Expedited determination",
+   "due": "within 72 hours",
+   "match": [
+    [
+     "72",
+     "seventy.two",
+     "decision",
+     "determination",
+     "review"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "benefits coordinator",
+   "task": "Call Larkspur imaging today with the reference number so the Oct 8 MRI is not cancelled",
+   "due": "today",
+   "match": [
+    [
+     "larkspur",
+     "imaging"
+    ],
+    [
+     "call",
+     "notify",
+     "let .* know",
+     "inform",
+     "contact",
+     "tell"
+    ]
+   ]
+  },
+  {
+   "id": "A4",
+   "owner": "benefits coordinator",
+   "task": "Watch the portal and call the patient with the decision (cell 555-0166)",
+   "due": "when decided",
+   "match": [
+    [
+     "call",
+     "notify",
+     "update",
+     "contact",
+     "inform"
+    ],
+    [
+     "decision",
+     "determination",
+     "approv",
+     "result",
+     "outcome",
+     "status"
+    ]
+   ]
+  },
+  {
+   "id": "A5",
+   "owner": "benefits coordinator",
+   "task": "If no decision by Tuesday Oct 6, call the patient and move the MRI to the next open slot",
+   "due": "2026-10-06",
+   "match": [
+    [
+     "october 6",
+     "oct\\.? 6\\b",
+     "10/6",
+     "tuesday",
+     "resched",
+     "move the mri",
+     "next (open|available) slot"
+    ]
+   ]
+  },
+  {
+   "id": "A6",
+   "owner": "benefits coordinator",
+   "task": "Update the fax sheet/template to 555-0188 or portal, email the team, tell the supervisor and check other pending requests sent to 0144",
+   "due": "today",
+   "match": [
+    [
+     "\\bfax",
+     "template",
+     "cover sheet",
+     "supervisor",
+     "pending requests",
+     "other requests",
+     "0188"
+    ]
+   ]
+  },
+  {
+   "id": "A7",
+   "owner": "benefits coordinator",
+   "task": "Message Dr. Okonjo-Reyes about the new toe tingling; her nurse will call the patient",
+   "due": "today",
+   "match": [
+    [
+     "tingl",
+     "numb",
+     "okonjo"
+    ]
+   ]
+  },
+  {
+   "id": "A8",
+   "owner": "patient",
+   "task": "Call Larkspur billing for a cost estimate",
+   "due": "unspecified",
+   "match": [
+    [
+     "estimate",
+     "cost",
+     "larkspur billing"
+    ]
+   ]
+  },
+  {
+   "id": "A9",
+   "owner": "patient",
+   "task": "Add husband via the release/proxy form on the portal",
+   "due": "tonight",
+   "match": [
+    [
+     "husband",
+     "release",
+     "proxy",
+     "spouse"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Halvard PA reference number is PA-2609-55170 (first read back wrongly as 55107)",
+   "evidence": "No— five-five-one, seven, zero. One-seven-zero at the end.",
+   "negatives": [
+    "Reference PA-2609-55107"
+   ],
+   "match": [
+    [
+     "55170",
+     "55.?170",
+     "five.five.one.seven.zero"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Root cause: Brightwater faxed the PA (Sept 3 and Sept 14) to Halvard's old UM fax 555-0144, retired Aug 31; new fax 555-0188 or the provider portal",
+   "evidence": "Zero-one-four-four was our old U M fax. That line was retired August thirty-first.",
+   "match": [
+    [
+     "0144",
+     "0188",
+     "retired",
+     "old (um )?fax",
+     "outdated fax",
+     "wrong fax",
+     "old number"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Marked expedited: decision within 72 hours (standard would be up to 15 calendar days)",
+   "evidence": "Expedited decisions are made within seventy-two hours.",
+   "match": [
+    [
+     "72",
+     "seventy.two"
+    ]
+   ]
+  },
+  {
+   "id": "S4",
+   "text": "MRI scheduled at Larkspur on Thursday October 8 at 7:20 a.m.; Larkspur will cancel if no authorization by Friday October 2",
+   "evidence": "if they don't have one by Friday, the second, they'd have to cancel",
+   "match": [
+    [
+     "october 2\\b",
+     "oct\\.? 2\\b",
+     "10/2\\b",
+     "friday,? (the )?(2nd|second)",
+     "7:20",
+     "seven.twenty"
+    ]
+   ]
+  },
+  {
+   "id": "S5",
+   "text": "Deductible: $1,210 of $1,500 met (rep first said $1,120), so $290 remaining, then 80% coverage",
+   "evidence": "So you'd have two hundred ninety left before the eighty percent kicks in.",
+   "negatives": [
+    "Deductible $1,120 met, $380 remaining."
+   ],
+   "match": [
+    [
+     "\\$?290\\b",
+     "two.ninety",
+     "two hundred (and )?ninety",
+     "1,?210",
+     "twelve.ten"
+    ]
+   ]
+  },
+  {
+   "id": "S6",
+   "text": "Brightwater's fax cover-sheet template still lists the retired 0144 number ('updated March 2025'), so everyone has been using it",
+   "evidence": "So everybody here's been using the template.",
+   "match": [
+    [
+     "template",
+     "cover sheet"
+    ]
+   ]
+  },
+  {
+   "id": "S7",
+   "text": "New symptom: tingling in the toes over the past week (message to be sent to Dr. Okonjo-Reyes)",
+   "evidence": "My leg's been, like, tingly in the toes the last week too.",
+   "match": [
+    [
+     "tingl",
+     "numb"
+    ],
+    [
+     "toe",
+     "foot",
+     "feet",
+     "leg"
+    ]
+   ]
+  },
+  {
+   "id": "S8",
+   "text": "Service is CPT 72148, MRI lumbar spine without contrast",
+   "evidence": "MRI lumbar spine without contrast, seven two one four eight.",
+   "match": [
+    [
+     "72148",
+     "seven.two.one.four.eight"
+    ]
+   ]
+  }
+ ],
+ "themes": [
+  "T_PA_FAX"
+ ]
+}

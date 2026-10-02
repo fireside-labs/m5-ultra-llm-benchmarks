@@ -1,0 +1,441 @@
+{
+ "call_id": "C06",
+ "call_type": "saas_support",
+ "outcome": "escalated",
+ "outcome_accept": [
+  "resolved"
+ ],
+ "sentiment_start": "negative",
+ "sentiment_end": "positive",
+ "sentiment_end_accept": [
+  "neutral"
+ ],
+ "quality_score": 3,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Tier 1 changed the billing email before identity verification and then verified via the newly changed address; also wrongly said late fees can't be reversed",
+   "match": [
+    [
+     "verif",
+     "billing email",
+     "email (change|update)",
+     "changed the (billing )?email",
+     "updated the (billing )?email",
+     "can'?t be reversed",
+     "cannot be reversed",
+     "wrong(ly)? (said|told|stated)",
+     "incorrect"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Tier 2 was knowledgeable and thorough: identified the known 7.4 UTC bug, corrected the fee-reversal error, gave workarounds and a clear recap",
+   "match": [
+    [
+     "tier 2",
+     "tier two",
+     "priyanka",
+     "second agent",
+     "specialist",
+     "workaround",
+     "recap",
+     "thorough",
+     "knowledgeable"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "Tier 2 disclosed another customer's name and contact and their complaint",
+   "match": [
+    [
+     "kittering",
+     "rhiannon",
+     "another customer",
+     "other customer",
+     "another client",
+     "other client",
+     "third.party"
+    ]
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "id": "F1",
+   "text": "Tier 1 agent changed the account's billing email at the caller's request before verifying her identity, then sent the verification code to the newly changed address (verification bypassed)",
+   "evidence": "Oh, no worries, I already updated it, so I'll just send it to the billing address instead",
+   "paraphrases": [
+    "Agent updated the contact email on the account before the caller was verified.",
+    "Verification code was sent to an email address the unverified caller had just supplied, defeating the identity check.",
+    "Account email modified prior to completing identity verification."
+   ],
+   "negatives": [
+    "Customer asked whether she could give her assistant her password.",
+    "The login email still points to the retired bookkeeper's inbox; the owner must change it to a new email address.",
+    "Billing email change is pending confirmation via a link sent to the new address."
+   ],
+   "match": [
+    [
+     "email",
+     "e-mail",
+     "contact (detail|info)",
+     "account detail"
+    ],
+    [
+     "before .{0,40}(verif|ident|authent)",
+     "prior to .{0,40}(verif|ident|authent)",
+     "unverified",
+     "not (yet )?verified",
+     "without (verif|ident|authent)",
+     "verification (was )?(bypass|circumvent|defeat|undermin)",
+     "bypass",
+     "circumvent",
+     "defeat",
+     "undermin",
+     "newly (changed|updated)",
+     "just (changed|updated|supplied|provided)",
+     "already updated"
+    ]
+   ]
+  },
+  {
+   "id": "F2",
+   "text": "Tier 2 specialist disclosed another customer's name (Kittering Veterinary), its office manager Rhiannon, and details of their complaint",
+   "evidence": "Rhiannon over at Kittering Veterinary called about the exact same thing yesterday, she was furious",
+   "paraphrases": [
+    "Agent shared confidential information about another client, naming Kittering Veterinary and its staff member.",
+    "Privacy breach: specialist revealed that another customer had called with the same complaint and named them.",
+    "Disclosed a different customer's identity and support interaction."
+   ],
+   "match": [
+    [
+     "kittering",
+     "rhiannon",
+     "another (customer|client|company|business|account)",
+     "other (customer|client|company|business)",
+     "different (customer|client|company)",
+     "third.party"
+    ]
+   ]
+  }
+ ],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Tier 1 told the customer that late fees cannot be reversed once posted (misinformation)",
+   "why_not": "Tier 2 explicitly corrected this in the same call ('Kwame had that wrong'), and the customer reversed one fee live; corrected, not a standing error.",
+   "evidence": "No, actually, Kwame had that wrong, and I'll make sure he knows. You can reverse a late fee.",
+   "paraphrases": [
+    "Agent gave incorrect information that a late fee is locked and can't be removed.",
+    "Kwame incorrectly stated posted late fees are irreversible and suggested credit notes instead.",
+    "Misinformation: the customer was told the late fees could not be undone."
+   ],
+   "match": [
+    [
+     "revers",
+     "undo",
+     "undone",
+     "irreversib",
+     "can'?t be removed",
+     "cannot be removed",
+     "locked",
+     "credit note"
+    ]
+   ]
+  },
+  {
+   "id": "D2",
+   "text": "Customer proposed sharing her login password with her assistant Junie",
+   "why_not": "Hypothetical question; the specialist said no and told her to add Junie as a Staff user - handled correctly.",
+   "evidence": "What if I just gave Junie my password?",
+   "paraphrases": [
+    "Credential sharing: the customer considered giving her password to her assistant.",
+    "Security risk: bookkeeper asked about letting Junie log in as her.",
+    "Password sharing with an assistant was discussed."
+   ],
+   "match": [
+    [
+     "password",
+     "credential",
+     "log in as",
+     "login as",
+     "shar(e|ing) (her |the |a )?(login|account)"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Systemic 7.4 bug: reminder emails show due date a day early and late fees applied early",
+   "match": [
+    [
+     "remind",
+     "due date",
+     "late fee",
+     "7\\.4",
+     "bug",
+     "utc",
+     "time ?zone",
+     "day early"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Long hold / wait before reaching support",
+   "match": [
+    [
+     "hold",
+     "wait"
+    ]
+   ]
+  },
+  {
+   "id": "OK3",
+   "text": "Login email still points to a retired employee's inbox; owner must change it",
+   "match": [
+    [
+     "bernie",
+     "login email",
+     "retired",
+     "dead inbox",
+     "owner"
+    ]
+   ]
+  },
+  {
+   "id": "OK4",
+   "text": "Tier 1 lacked knowledge of the known bug / knowledge base had no article",
+   "match": [
+    [
+     "knowledge base",
+     "no article",
+     "lack(ed)? knowledge",
+     "unaware"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "Tier 2 specialist",
+   "task": "Attach Ferncliff Joinery to engineering bug ticket TF-88213 so it is notified when fixed",
+   "due": "done during call; notification when 7.4.2 ships",
+   "match": [
+    [
+     "88213",
+     "engineering",
+     "bug"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "customer",
+   "task": "Reverse the late fee on INV-20422 (INV-20417 already reversed on the call)",
+   "due": "right after the call",
+   "match": [
+    [
+     "revers",
+     "remove",
+     "undo"
+    ],
+    [
+     "fee",
+     "20422",
+     "invoice"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "Tier 2 specialist",
+   "task": "Email a call summary with the ticket number, workaround steps and a client-facing explanation paragraph",
+   "due": "today",
+   "match": [
+    [
+     "email",
+     "send"
+    ],
+    [
+     "summary",
+     "ticket",
+     "88213",
+     "recap",
+     "write.?up",
+     "workaround"
+    ]
+   ]
+  },
+  {
+   "id": "A4",
+   "owner": "customer",
+   "task": "Confirm the billing email change via the confirmation link",
+   "due": "unspecified",
+   "match": [
+    [
+     "confirm",
+     "link",
+     "verif"
+    ],
+    [
+     "email",
+     "e-mail"
+    ]
+   ]
+  },
+  {
+   "id": "A5",
+   "owner": "customer",
+   "task": "Invite assistant Junie as a Staff user",
+   "due": "this afternoon",
+   "match": [
+    [
+     "junie",
+     "assistant",
+     "staff (user|seat|role)",
+     "add (her|a user)",
+     "invite"
+    ]
+   ]
+  },
+  {
+   "id": "A6",
+   "owner": "customer",
+   "task": "Switch to the annual plan before the Oct 20 renewal",
+   "due": "before 2026-10-20",
+   "match": [
+    [
+     "annual",
+     "yearly"
+    ]
+   ]
+  },
+  {
+   "id": "A7",
+   "owner": "account owner (Gordon)",
+   "task": "Change the login email from the retired accounts-at address (owner must do it or call in)",
+   "due": "unspecified",
+   "match": [
+    [
+     "login email",
+     "owner",
+     "gordon",
+     "accounts.at",
+     "bernie"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "First affected invoice is INV-20417 (misread at first as 20470); second is INV-20422",
+   "evidence": "Two-oh-four-one-seven. I-N-V dash two oh four one seven.",
+   "negatives": [
+    "Invoice INV-20470 was affected."
+   ],
+   "match": [
+    [
+     "20417",
+     "2041 ?7",
+     "two.oh.four.one.seven"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Two late fees of $35 each ($70 total) on INV-20417 (Hartwell Kitchens) and INV-20422 (Brookfield Renovations)",
+   "evidence": "So that's seventy dollars in late fees that shouldn't exist",
+   "match": [
+    [
+     "(?<!\\d)\\$?70\\b",
+     "seventy",
+     "\\$35",
+     "35 (each|dollars)",
+     "thirty.five"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Engineering bug ticket TF-88213 (caller first wrote 'eighty-two thirteen')",
+   "evidence": "T-F, dash, eight-eight-two-one-three.",
+   "negatives": [
+    "Ticket TF-82213."
+   ],
+   "match": [
+    [
+     "88213",
+     "88-213",
+     "eight.eight.two.one.three"
+    ]
+   ]
+  },
+  {
+   "id": "S4",
+   "text": "Workaround: late-fee grace period changed from 0 to 1 day and reminder template switched to 'Friendly reminder, no date' until 7.4.2",
+   "evidence": "change the late-fee grace period from zero days to one day",
+   "match": [
+    [
+     "grace",
+     "no.date",
+     "friendly reminder"
+    ]
+   ]
+  },
+  {
+   "id": "S5",
+   "text": "Late-fee job ran at 7:01 p.m. Central the evening BEFORE the due date (midnight UTC), even before Hartwell paid at 2:47 p.m. on the due date",
+   "evidence": "the log says the late fee job ran at, um, seven-oh-one p.m. on the fourteenth?",
+   "match": [
+    [
+     "7:01",
+     "7.01",
+     "seven.oh.one",
+     "night before",
+     "evening before",
+     "day before the due",
+     "midnight utc",
+     "before the due date"
+    ]
+   ]
+  },
+  {
+   "id": "S6",
+   "text": "Customer plans to switch to the annual plan at the Oct 20 renewal",
+   "evidence": "When we renew, which is— October twentieth, I think? — we want to switch to the annual plan.",
+   "match": [
+    [
+     "annual",
+     "yearly"
+    ],
+    [
+     "oct(ober)?\\.? ?20",
+     "10/20",
+     "renewal",
+     "renew"
+    ]
+   ]
+  },
+  {
+   "id": "S7",
+   "text": "61 reminders were sent since Sept 1 (all with the wrong date); billing email now odile.ms@, login email still the retired accounts-at inbox",
+   "evidence": "That's, um, sixty-one reminders. Sixty-one!",
+   "match": [
+    [
+     "\\b61\\b",
+     "sixty.one"
+    ]
+   ]
+  }
+ ],
+ "themes": [
+  "T_SAAS_DUE"
+ ]
+}

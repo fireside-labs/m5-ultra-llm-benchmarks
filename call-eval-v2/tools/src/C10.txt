@@ -1,0 +1,234 @@
+@id C10
+@date 2026-09-29 15:20
+@line Larkspur Surgery & Endoscopy Center - Pre-Admission Nursing (outbound; transferred to Scheduling)
+@direction outbound
+@target 15000
+@seed 1010
+@speaker N NURSE = Larkspur pre-admission registered nurse
+@speaker W SPOUSE = patient's wife
+@speaker C PATIENT = patient
+@speaker S SCHEDULER = Larkspur scheduling coordinator
+---
+#note outbound call placed, ringing
+W: Hello, Osei-Fairbanks residence.
+N: Hi, good afternoon! This is Coralie, I'm one of the pre-admission nurses at Larkspur Surgery and Endoscopy Center. May I speak with Wendell Osei-Fairbanks?
+W: Oh, he's out in the garage, he's— [background: power saw] you can probably hear him. This is his wife, Loretta. I handle all his medical stuff, honestly, he'd tell you that himself. Is this about Friday?
+N: It is, it's his pre-procedure call for Friday. Let me just check one thing before I go over anything with you. [typing] Okay... yes, I do see you on his release form. Loretta Osei-Fairbanks, spouse, signed in June. Can you confirm his date of birth for me?
+W: April third, nineteen fifty-eight.
+N: Perfect. Thank you, Loretta. So he's scheduled with Dr. Lindqvist-Amaro for a colonoscopy, Friday, October ninth. I'll need to talk with Wendell himself for the medication part, since he's the one taking them, but I can start with you on the general stuff if that's easier.
+W: Sure. He's going to be about five minutes, he's in the middle of cutting something. Don't let him tell you he's not nervous, by the way. He's nervous.
+N: [laughs] Everybody's nervous. It's honestly the prep people hate, not the procedure.
+W: That's what my sister said. She said the prep was the worst night of her life.
+N: [laughs] It's not fun. But it's one night. Has he picked up the prep kit from the pharmacy yet?
+W: Yes, it's on the counter. The big jug thing and the, um, the little packets.
+N: Okay, great. That's the split-dose kit. I'll go over the timing with him. And is there any change to his insurance since he scheduled?
+W: No, same, Halvard. Same card.
+N: Okay. I'm showing the authorization is still pending with Halvard. The office faxed it twice, so it should come through. I'll keep an eye on it.
+W: Pending. Okay. Is that normal?
+N: It happens. Sometimes they're slow.
+W: Okay.
+#fill nurse_smalltalk smalltalk @A=N @C=W
+W: Oh, here he comes. Wendell! It's the colonoscopy nurse. ... Wash your hands first. ... Okay, here he is.
+#pause 12
+C: Hello? This is Wendell.
+N: Hi Wendell, this is Coralie, pre-admission nurse at Larkspur. Thanks for coming in from the garage.
+C: [laughs] She told you about the garage. I'm building a— never mind. Hi.
+N: [laughs] Can you just confirm your date of birth for me?
+C: April third, fifty-eight.
+N: Great. So I'm going to go over your medications, your prep, and your arrival time for Friday, October ninth. It'll take maybe twenty minutes. Do you have a pen?
+C: Loretta's got a pen. She's got a whole notebook. [inaudible] Okay. Go ahead.
+N: Okay. Let's start with the med list. I have, um, apixaban five milligrams twice a day.
+C: The a pixie ban. Yes. For the heart thing, the A-fib.
+N: Right, the A-fib. Who prescribes that?
+C: Dr. Mbatha. The heart doctor.
+N: Okay. So that's a blood thinner, and for the colonoscopy we need you off it for a couple of days in case they remove any polyps. Per our protocol and the note from Dr. Mbatha's office, you'll take your last dose Monday night, the fifth, and then none Tuesday, Wednesday, Thursday, or Friday morning.
+C: Monday night, the fifth. Last one.
+W: [in background] Monday night. I'm writing it.
+N: Right. And then you'll restart it, usually the day after, but the doctor will tell you on Friday depending on what they find.
+C: Okay.
+N: Next I have metformin, five hundred, twice a day?
+C: The met for men. Yes.
+N: [laughs] Okay. Take it as normal through Thursday, but skip it Friday morning.
+C: Skip Friday morning.
+N: And insulin glargine, forty units at bedtime?
+C: The Lantus. Yeah. Forty.
+N: Okay. So your endocrinologist, Dr. Achterberg-Sowande, left instructions on file for this, which match our protocol: the night before the procedure, so Thursday night, take half your usual dose. So twenty units instead of forty. Because you'll be on clear liquids all day Thursday and we don't want your sugar dropping overnight.
+C: Twenty Thursday night.
+N: Twenty units Thursday night, and check your sugar when you wake up Friday. If it's under seventy, have a little clear apple juice, as long as it's before your cut-off time, and tell us when you arrive.
+C: Okay.
+W: [in background] Twenty units, Thursday. Got it.
+#fill nurse_smalltalk ehr_navigation @A=N @C=C
+N: How's your sugar been running in general? Do you know your last A1c?
+C: Seven point two? Something like that. Seven-two. In August.
+N: Seven-two, okay, that's pretty good.
+C: Dr. Achterberg-Sowande was happy. She said keep doing what I'm doing. Which is mostly not eating Loretta's pie. [laughs]
+W: [in background] You eat the pie.
+C: I eat a little pie.
+N: [laughs] A little pie is allowed. Do you check your sugar at home?
+C: Every morning. I have the little meter. Usually around one-twenty, one-thirty when I wake up.
+N: Okay, good. So you'll check Friday morning when you get up for the second half of the prep, and again before you leave the house. Bring the meter with you.
+C: Bring the meter.
+N: Okay, what else. Lisinopril twenty milligrams in the morning?
+C: Yes.
+N: You can take that Friday morning with a small sip of water. Any aspirin?
+C: I used to take the baby aspirin but Dr. Mbatha took me off it when he started the, the a pixie— the Eliquis. In the spring.
+N: Okay, good, so no aspirin. Anything over the counter? Supplements? Fish oil, vitamin E, anything like that?
+C: Fish oil. Loretta makes me take fish oil.
+W: [in background] It's good for him!
+N: [laughs] It is, but stop it seven days before, so starting this Friday, October second. It can make you bleed a little more.
+C: Stop the fish oil Friday. She's going to be upset.
+W: [in background] I heard that.
+N: [laughs] Okay. Any allergies? I have none on file.
+C: No allergies. Well. Cats. [laughs]
+N: [laughs] We don't use cats. Okay. Any recent illness? Colds, fevers, anything in the past couple of weeks?
+C: I had a cold. Last week. Coughing, stuffy. It's mostly gone. I still cough a little in the morning.
+N: Any fever?
+C: No, I don't think so. I didn't take it.
+N: Okay. Let me just check with anesthesia about the cough, give me two minutes, I'm going to put you on a brief hold.
+C: Sure.
+#hold 130
+N: Thanks for holding. So I talked to the anesthesia nurse, and a mild leftover cough without fever is fine. If you get a fever, a hundred point four or higher, or the cough gets worse, or you get short of breath, call us before Friday, because the anesthesia team might want to reschedule.
+C: Okay. Hundred point four.
+W: [in background] Do we even have a thermometer?
+C: Do we have a thermometer? ... She says we have the forehead one. The one that beeps.
+N: [laughs] The forehead one is fine.
+#fill nurse_smalltalk smalltalk connection_issues @A=N @C=C
+#diar off
+C: Sorry, can you say that again? The dog was barking.
+N: No problem. I was asking if you've ever had anesthesia before. Any problems with it?
+C: I had my knee done. In, um, twenty-nineteen? Twenty? They put me out. I was fine. A little sick after.
+N: Nausea after?
+C: A little. Threw up once in the car. Sorry, that's gross.
+N: No, that's helpful, I'll put it in so they can give you something for nausea. And any sleep apnea? Do you use a CPAP?
+C: No CPAP. Loretta says I snore.
+W: Like a chainsaw.
+N: [laughs] Okay, I'll note snoring, no diagnosed apnea.
+N: Do you wear dentures, hearing aids, glasses?
+C: Reading glasses. And I have a, a partial, on the top. A bridge thing.
+N: Okay, leave the partial at home if you can, or we'll give you a cup for it. And no jewelry, leave the wedding ring at home.
+C: I can't get it off anyway. [laughs] It's been on since nineteen eighty-two.
+N: [laughs] Then we'll tape it. That's fine.
+N: And your height and weight, roughly?
+C: Five-eleven. Weight is, uh, two-ten? Two-fifteen. Depends on the day.
+N: Two-ten, two-fifteen, okay.
+W: Two-twenty.
+C: It's not two-twenty.
+N: [laughs] I'll put two-fifteen.
+#diar on
+N: Okay, so now the prep. This is the important part.
+C: Okay.
+N: So Thursday, the eighth, the day before. You can have a light, low-fiber breakfast, like white toast, eggs, before nine a.m. After that, clear liquids only all day. Clear broth, apple juice, white grape, Jell-O but not red or purple, sports drinks, tea or coffee with no milk.
+C: No milk in the coffee. Ugh.
+N: [laughs] I know. Then at six p.m. Thursday you start the first half of the prep. You mix it in the jug to the line and drink a glass every fifteen minutes until it's gone, about half the jug.
+C: Six p.m. Half the jug.
+N: Then the second half is split, so you'll do the second half early Friday morning. Since your arrival time is, um, seven forty-five— no, sorry, that's the old template, I'm looking at the wrong line. Your arrival is six forty-five. Six forty-five a.m.
+C: Six forty-five. In the morning. Wow.
+N: First case of the day. It's actually the best slot, you're in and out. So the second half of the prep, you start at one forty-five a.m. and finish it by two forty-five. Then nothing by mouth after four forty-five, not even water, except the lisinopril sip.
+C: One forty-five a.m. Loretta, are you getting this?
+W: [in background] One forty-five. I'm setting an alarm.
+N: That's the split dose. It works much better than doing it all the night before.
+C: What if I can't, like, what if I throw it up? Because of the knee thing, I'm a puker.
+N: Good question. If you feel sick, slow down, take a break for thirty minutes, then keep going a little slower. Cold helps, and a straw. If you actually vomit and can't keep it down, call the after-hours number on your prep sheet, there's always someone on.
+C: Thirty minutes break. Cold and a straw.
+N: And sucking on a hard candy between glasses helps with the taste, just not red ones.
+C: Not red. Why not red?
+N: Red dye can look like blood on the camera.
+C: Huh. That's actually interesting. Okay.
+W: [in background] Ask about the Jell-O.
+C: Loretta wants to know about the Jell-O. My sister-in-law told her blue was fine, but somebody else said no blue.
+N: Lemon or lime is safest. Avoid red, purple and blue.
+C: Lemon or lime. Okay. Loretta, no blue.
+W: [in background] Fine. Lemon.
+C: Hey, um, Loretta was saying maybe I should stop the blood thinner earlier, to be safe? Like a week? Since they might take stuff out?
+N: No, please don't stop it earlier than we said. Stopping a blood thinner too long raises your risk of a stroke with the A-fib. Just follow what I told you.
+C: Okay. Loretta, she says no.
+W: [in background] Okay, okay. I was just asking.
+N: It's a good question, it's just better not to.
+#fill nurse_smalltalk ehr_navigation smalltalk @A=N @C=C
+N: Okay. Now, you'll need a driver. You can't drive yourself after sedation, and you can't take a taxi or rideshare alone. Someone has to pick you up and stay with you.
+C: Loretta was going to, but—
+W: [in background] I'm working Friday, I told you. I switched with Dana.
+C: She's working. She switched shifts. So— our neighbor. Phil. Phil Haddad. He offered. He's retired.
+N: Okay. Phil Haddad, neighbor. He'll need to either stay in the waiting area, or be reachable and back within fifteen minutes when we call. And he has to come in to get you, he can't wait in the car.
+C: He'll stay. He'll bring a book. He loves the waiting room, he says it's the only place nobody bothers him.
+N: [laughs] Perfect. Can I get his phone number for the chart?
+C: Loretta, what's Phil's number? ... Five five five, zero one, uh, three-eight.
+W: [in background] Three-nine. Zero-one-three-nine.
+C: Zero-one-three-nine. She's right. She's always right.
+N: Five-five-five, zero-one-three-nine. Got it.
+#fill nurse_smalltalk smalltalk @A=N @C=C
+C: Can I ask, um, how long does it take? The actual thing?
+N: The procedure itself is usually thirty to forty-five minutes. With check-in and recovery, plan for about three hours total.
+C: Three hours. Okay. Phil's going to finish his book.
+N: [laughs]
+C: And will they tell me what they found? Right away?
+N: The doctor will talk to you and Phil in recovery, and if they take any biopsies, those results take about a week, and the office will set up a follow-up with you. Scheduling can help with that at the end of the call.
+C: Okay. Because my dad had colon cancer. That's partly why— you know.
+N: I understand. That's important, and it's good you're doing this. Dr. Lindqvist-Amaro will know your family history, it's in your chart.
+C: Okay. Good.
+N: Do you have any questions about the actual day? What to wear, what to bring?
+C: What do I wear?
+N: Something comfortable and loose. Bring your ID, your insurance card, your medication list, and the reading glasses so you can sign the forms. And something warm, it's cold in recovery.
+C: Loretta is laughing because I'm always cold.
+N: [laughs] Then a sweatshirt. And Phil should bring his phone charged, in case we need to reach him.
+C: I'll tell him. He has a flip phone. [laughs] I'm not kidding.
+N: [laughs] A flip phone works.
+C: He's the last one in the state, I think.
+#diar off
+C: Can I bring my own book?
+N: Sure, but you won't read much, honestly. Check-in, the IV, the doctor comes by, the anesthesia team comes by, it goes fast.
+C: Okay. What about after? Can I eat?
+N: Yes, you can eat afterward, start light. Most people are starving. Soup, eggs, something easy. No alcohol for twenty-four hours, no driving until the next day, no big decisions, don't sign anything important.
+C: [laughs] Loretta says that's every day for me.
+#diar on
+W: [in background] Ask her about the hernia.
+C: Oh, and— Loretta says ask about the hernia. I have a little hernia, the belly button kind. Does that matter?
+N: I'll put a note for the doctor. Usually it doesn't change anything for a colonoscopy, but they'll look at it.
+C: Okay.
+#fill nurse_smalltalk ehr_navigation connection_issues @A=N @C=C
+N: Okay, I think that's everything. Let me do a quick recap so you and Loretta can double-check your notes.
+C: Go ahead.
+N: Arrival six forty-five a.m. Friday the ninth, Larkspur, main entrance. Driver Phil Haddad, staying with you. Light breakfast before nine on Thursday, then clear liquids. First half of the prep at six p.m. Thursday, second half at one forty-five a.m., done by two forty-five, nothing by mouth after four forty-five. Medications: stop the Eliquis Wednesday morning, half your glargine, so twenty units Thursday night, no metformin Friday morning, lisinopril with a sip of water Friday morning, and fish oil stops this Friday. And call us if you get a fever or the cough gets worse.
+C: Okay. I think we got all that. Loretta?
+W: [in background] Got it.
+C: Okay. And— so I'm all set with insurance then?
+N: Yep, you're all set, nothing for you to do there.
+C: Great. Good. That was the other thing she was worried about.
+N: Now, I'm going to transfer you to our scheduling coordinator, she'll email you the prep calendar and the driver form, and she can set up your follow-up with the doctor. Is that okay?
+C: Sure.
+N: Thank you, Wendell. Good luck Friday, you'll do great.
+C: Thanks, Coralie.
+#hold 45
+#note call transferred to Larkspur scheduling
+S: Hi, Wendell? This is Marisela in scheduling. Coralie said you're all done with the nurse part.
+C: I think so. My brain is full. [laughs]
+S: [laughs] I bet. Okay, I just need to send you a couple things. What's the best email?
+C: It's, uh, w-o-f, like the dog, wof fifty-eight at, um, it's the Mailbridge one. Mailbridge dot com.
+S: W-O-F-five-eight at mailbridge dot com?
+C: Yes.
+S: Okay, I'm sending the prep calendar, which has all the times Coralie gave you, and the driver attestation form. Phil just has to sign it when he gets here.
+C: Okay.
+S: And then for your follow-up with Dr. Lindqvist-Amaro to go over results, I have Thursday, October twenty-second, one-fifty— sorry, one-fifteen. One-fifteen p.m. Does that work?
+C: October twenty-second, one-fifteen. Yeah, I'm retired, everything works. [laughs]
+S: [laughs] Lucky. Okay, you're booked. It'll be in the email too.
+C: Where do we park on Friday?
+S: Entrance B, the parking garage off Wellstone Avenue. It's free for patients, just bring the ticket in and we'll validate it.
+C: Entrance B, Wellstone. Got it.
+S: And check in at the second-floor desk, the endoscopy suite, not the main lobby. The main lobby is for surgery, and people go there by mistake all the time and then they're running late.
+C: Second floor. Not the lobby. I'm writing it on my hand. [laughs]
+S: [laughs] Whatever works. And if anything comes up and you need to reschedule, please call us at least forty-eight hours ahead, because we have a waiting list and we can give the slot to someone else.
+C: Forty-eight hours. Okay. Hopefully not.
+S: Hopefully not! One more thing, do you want a text reminder the day before? It'll have the arrival time and the address.
+C: Sure. Send it to this number? No, wait, this is the house. Send it to my cell. Loretta, what's my cell number? ... I never call myself. [laughs] Five five five, zero one, two-four.
+S: Five-five-five, zero-one-two-four.
+C: That's it.
+S: Okay, you'll get a text Thursday morning.
+C: Great. While I've got you, can Loretta come with me on the twenty-second for the results? She wants to hear it herself.
+S: Of course, she's welcome in the room. She's on your release form, so the doctor can talk with both of you.
+C: Okay, good. She'll want to take notes. She has the notebook.
+S: [laughs] Bring the notebook.
+#fill smalltalk connection_issues @A=S @C=C
+S: Anything else I can help with?
+C: No, I think that's it. Thank you.
+S: You're welcome. Have a good evening, Wendell.
+C: You too. Bye.

@@ -1,0 +1,32 @@
+{
+  "call_id": "C15",
+  "call_type": "pharmacy_refill",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 1,
+  "quality_reasons": [
+    {"id": "Q1", "text": "No identity verification (name only) before reading out the medication list", "match": [["verif", "identit", "dob", "date of birth"]]},
+    {"id": "Q2", "text": "Pushed through an early refill of a controlled substance (alprazolam) without pharmacist review", "match": [["early", "controlled", "alprazolam", "benzodiazepine", "xanax"]]},
+    {"id": "Q3", "text": "Dismissed a potential benzodiazepine + zolpidem interaction instead of referring to the pharmacist", "match": [["zolpidem", "ambien", "interaction", "pharmacist"]]}
+  ],
+  "flags": [
+    {"id": "F1", "text": "Technician agreed to an early refill of a controlled substance (alprazolam, last filled 7/30, 30-day supply) as cash, bypassing insurance rejection, without pharmacist review", "evidence": "I can just push it through. Insurance might reject it for being early, but you can just pay cash", "match": [["alprazolam", "controlled", "benzodiazepine", "benzo", "xanax", "early refill", "refill early", "too soon", "early"], ["early", "polic", "pharmacist", "cash", "bypass", "controlled", "insurance"]]},
+    {"id": "F2", "text": "No identity verification (name only, no DOB/address) before disclosing the patient's medication list", "evidence": "I see you've got alprazolam, the point five, sertraline, and a cholesterol one.", "match": [["verif", "identit", "dob", "date of birth", "authenticat"]]},
+    {"id": "F3", "text": "Patient reported a new zolpidem prescription from another pharmacy; technician gave clinical reassurance about combining it with alprazolam instead of referring to the pharmacist (CNS-depressant interaction)", "evidence": "I mean, lots of people take both. You should be fine.", "match": [["zolpidem", "ambien", "interaction", "sleep (med|aid|pill)", "cns", "sedat"]]}
+  ],
+  "decoys": [],
+  "acceptable_flags": [
+    {"id": "OK1", "text": "Out-of-scope clinical advice by a technician", "match": [["scope", "clinical advice", "medical advice"]]},
+    {"id": "OK2", "text": "Medication profile incomplete (other pharmacy)", "match": [["profile", "other pharmacy", "another pharmacy"]]}
+  ],
+  "action_items": [
+    {"id": "A1", "owner": "pharmacy tech", "task": "Prepare early alprazolam refill (cash) for pickup", "due": "2026-08-17 15:00", "match": [["alprazolam", "refill", "ready", "pick.?up"]]},
+    {"id": "A2", "owner": "patient", "task": "Pick up at front counter at 3 pm with photo ID", "due": "2026-08-17 15:00", "match": [["\\bid\\b", "identification", "pick.?up", "3 ?pm", "3:00", "three"]]}
+  ],
+  "subtle_facts": [
+    {"id": "S1", "text": "Zolpidem (Ambien) was filled at a different pharmacy and is not on this pharmacy's profile", "evidence": "I got it filled at the place by my work", "match": [["zolpidem", "ambien"]]},
+    {"id": "S2", "text": "Alprazolam last filled July 30 (30-day supply); patient leaves on vacation Aug 22 for two weeks", "evidence": "I leave on the twenty-second", "match": [["22", "twenty-second", "july 30", "7/30", "two weeks", "2 weeks"]]}
+  ],
+  "themes": []
+}

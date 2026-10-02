@@ -1,0 +1,51 @@
+{
+  "call_type": "billing_dispute",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Empathetic and patient throughout the call",
+    "Accurate identification of duplicate charges and clear explanation",
+    "Unauthorized zeroing of $310 balance without supervisor approval",
+    "Provided clear refund timeline and reference number",
+    "Handled card dispute coordination well"
+  ],
+  "flags": [
+    {
+      "type": "unauthorized_commitment",
+      "description": "Agent zeroed a $310 balance without supervisor approval, exceeding his stated authority of $100.",
+      "evidence": "I'll just take care of the three-ten for you. I'll zero it out right now."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent",
+      "task": "Email summary with ticket number and details to patient",
+      "due": "unspecified"
+    },
+    {
+      "owner": "patient",
+      "task": "Withdraw card dispute with credit card company for March 5 charge",
+      "due": "tomorrow"
+    },
+    {
+      "owner": "agent",
+      "task": "Add note to account about the discussion",
+      "due": "unspecified"
+    },
+    {
+      "owner": "agent",
+      "task": "Add note to ticket that patient is withdrawing card dispute",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Patient called about duplicate copay charges for PT visits on 3/3 and 3/10. Agent verified identity, identified duplicate ClearPay auto-payments, created refund ticket CP-58871 for $60. Patient will withdraw card dispute for 3/5 charge. Agent also zeroed out $310 MRI balance without supervisor approval (policy violation). Agent to email summary. Patient satisfied.",
+  "notable_details": [
+    "Reference number CP-58871 (corrected from CP-58817)",
+    "Duplicate charges: $30 each for PT eval on 3/3 and follow-up on 3/10, auto-drafted via ClearPay on 3/5 and 3/12",
+    "Patient already disputed the 3/5 charge with credit card; agreed to withdraw",
+    "MRI balance of $310 from January was zeroed by agent without supervisor approval",
+    "Agent stated courtesy adjustment limit of $100 but exceeded it"
+  ]
+}

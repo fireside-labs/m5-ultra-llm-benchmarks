@@ -1,0 +1,71 @@
+1.  **Analyze the Request**:
+    *   Role: Advisor to a decision-maker.
+    *   Task: Recommend one of three options (All-electric, All-diesel, Phased mix) for replacing 12 delivery vans.
+    *   Constraints: Base analysis only on provided facts and general reasoning. State assumptions for missing numbers. Be concise, concrete, specific. 150-300 words.
+    *   Format: Exactly the headings `## Recommendation`, `## Key reasons`, `## Risks`, `## Confidence`. End with exactly `POSITION: <option>` and `CONFIDENCE: <0-100>%`.
+    *   Facts provided:
+        *   12 vans.
+        *   TCO table (8 years): Electric $118k, Diesel $131k per van.
+        *   Mileage: 30,000 km/yr. Longest route 160 km. EV winter range 230 km. Overnight charging.
+        *   Battery warranty: 8 yrs / 250k km (matches usage: 30k*8=240k km, so covered).
+        *   Depot electrical service supports up to 6 chargers. Upgrade for 7-12 costs $240,000 (not in TCO).
+        *   No emissions target. Decision on cost and reliability.
+    *   Options:
+        1. All-electric: 12 EVs. TCO = 12 * $118k = $1,416,000. Plus upgrade $240k = $1,656,000 total.
+        2. All-diesel: 12 diesels. TCO = 12 * $131k = $1,572,000. No upgrade. Total = $1,572,000.
+        3. Phased mix: 6 EVs now + 6 diesels now. TCO = 6*$118k + 6*$131k = $708k + $786k = $1,494,000. Plus upgrade for 6 chargers? Wait, the upgrade is needed for 7-12 chargers. 6 chargers is the current limit. So no upgrade needed for 6 EVs. Total = $1,494,000. The phased mix defers the diesel replacement. But the TCO is for 8 years. If we do 6 EVs and 6 diesels now, the TCO for 8 years is $1,494,000. But wait, the phased mix says "revisiting the diesel half when those vans are replaced." The TCO table is for 8 years. So for the 8-year horizon, the phased mix costs $1,494,000. However, if we compare apples to apples over 8 years, the phased mix has 6 EVs and 6 diesels for the full 8 years. The all-electric has 12 EVs for 8 years (plus upgrade). The all-diesel has 12 diesels for 8 years.
+        Let's calculate totals:
+        All-electric: 12 * 118,000 = 1,416,000 + 240,000 (upgrade) = 1,656,000.
+        All-diesel: 12 * 131,000 = 1,572,000.
+        Phased mix: 6 * 118,000 + 6 * 131,000 = 708,000 + 786,000 = 1,494,000. No upgrade needed (6 chargers is current capacity).
+        So Phased mix is the cheapest at $1,494,000.
+        Wait, is there any cost for the upgrade in the phased mix? No, because 6 chargers is the current limit. The upgrade is only for 7-12 chargers.
+        Let's double-check the TCO table. Purchase price for EV includes depot charger. So if we buy 6 EVs, we get 6 chargers. The depot can support 6. So no upgrade.
+        Thus, Phased mix is $1,494,000. All-diesel is $1,572,000. All-electric is $1,656,000.
+        Phased mix saves $78,000 vs all-diesel, and $162,000 vs all-electric.
+        However, the phased mix has a future decision. But for the 8-year TCO, it's the best.
+        Let's check reliability. EV range 230 km vs longest route 160 km. Winter range is 230 km, so 160 km is fine. Battery warranty covers 240k km (8 years * 30k) which is under 250k km. So reliability is good.
+        Risks: Phased mix means 6 diesels will be replaced later, and by then EV prices might drop, or diesel might be phased out. But the question asks for a recommendation now. The phased mix avoids the $240k upgrade cost while capturing most of the EV savings (since EV TCO is lower per van, but the upgrade cost kills the all-electric option).
+        Wait, let's compare phased mix vs all-diesel. Phased mix is $1,494,000 vs $1,572,000. So it's cheaper. Why? Because EV TCO is $118k vs diesel $131k, so 6 EVs save 6*13k = $78k. The upgrade cost for 12 EVs is $240k, which makes all-electric more expensive than all-diesel. So the phased mix is the sweet spot.
+        Let's write the recommendation.
+        Recommendation: Phased mix.
+        Key reasons: Lower total 8-year cost ($1.494M) than all-diesel ($1.572M) and all-electric ($1.656M). Avoids $240k depot upgrade since 6 chargers fit current capacity. EV range and warranty are adequate (230km range vs 160km route, 240k km usage vs 250k warranty).
+        Risks: Future diesel replacement might face higher costs or regulatory changes, but no emissions target exists. The 6 diesel vans still carry fuel/maintenance costs, but the mix hedges against EV infrastructure issues. If EV prices drop, the future diesel replacement can be switched to EV.
+        Confidence: High, as the math is clear. Let's say 90%.
+        Let's ensure the word count is 150-300.
+        Draft:
+        ## Recommendation
+        Choose the **Phased mix** (6 electric vans now, 6 diesel vans now).
+
+        ## Key reasons
+        Over 8 years, the phased mix totals $1.494M (6×$118k + 6×$131k). This beats all-diesel at $1.572M (12×$131k) and all-electric at $1.656M (12×$118k + $240k upgrade). The all-electric option is actually the most expensive due to the $240k electrical service upgrade needed for 7–12 chargers. The phased mix uses exactly the depot's current 6-charger capacity, avoiding that cost entirely. Operationally, the EV's 230 km winter range covers the longest 160 km route with margin, and the 8-year/250,000 km battery warranty covers the expected 240,000 km usage. No emissions target exists, so the cost savings are the sole driver.
+
+        ## Risks
+        The 6 diesel vans will need replacement in ~8 years; future costs (e.g., diesel price spikes, stricter regulations) are uncertain. However, the phased approach lets us revisit EV technology then, potentially capturing lower prices or better batteries. There is also a small risk that the depot's 6-charger capacity is insufficient if routes change, but current data shows it is adequate.
+
+        ## Confidence
+        90%
+
+        POSITION: Phased mix (6 electric vans now, 6 diesel vans now)
+        CONFIDENCE: 90%
+
+        Let's check the word count. The draft is about 200 words. Perfect.
+        Let's ensure the headings are exactly as specified.
+        ## Recommendation
+        ## Key reasons
+        ## Risks
+        ## Confidence
+        And the exact two lines at the end.
+        POSITION: Phased mix: 6 electric vans now plus 6 diesel vans
+        CONFIDENCE: 90%
+
+        Wait, the brief says "Phased mix: 6 electric vans now plus 6 diesel vans, revisiting the diesel half when those vans are replaced." So I should name it as "Phased mix". I'll add a short qualifier if needed. "Phased mix (6 EV now, 6 diesel now)" is fine.
+
+        Let's double-check the math:
+        All-electric: 12 * 118,000 = 1,416,000. + 240,000 = 1,656,000.
+        All-diesel: 12 * 131,000 = 1,572,000.
+        Phased: 6*118,000 = 708,000. 6*131,000 = 786,000. Total = 1,494,000.
+        Yes, phased is cheapest.
+        Is there any assumption? I assume the 8-year TCO is the correct horizon for comparison, and that the phased mix's diesel vans are also replaced after 8 years, but the TCO table covers 8 years, so we just compare the 8-year costs. The prompt asks for a recommendation for this year's decision. So the 8-year TCO is the right metric.
+        I will state that the phased mix avoids the upgrade cost.
+        Confidence: 90% is reasonable. Let's use 95% because the math is straightforward. But there is uncertainty in future diesel costs. Let's go with 90%.

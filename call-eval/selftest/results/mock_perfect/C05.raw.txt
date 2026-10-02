@@ -1,0 +1,42 @@
+{
+ "call_type": "billing_dispute",
+ "outcome": "resolved",
+ "sentiment_start": "negative",
+ "sentiment_end": "positive",
+ "quality_score": 3,
+ "quality_reasons": [
+  "Verified identity first, was transparent about the known ClearPay issue, opened a ticket and stated the correct refund timeline",
+  "Caught the card-dispute double-refund risk and arranged withdrawal",
+  "Waived the $310 balance himself despite having just stated that adjustments over $100 need supervisor approval"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Agent waived/zeroed a $310 balance on his own authority after stating courtesy adjustments over $100 require supervisor approval (adjustment outside policy)",
+   "evidence": "I'm just going to take care of the three-ten for you. I'll zero it out right now."
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "billing team",
+   "task": "Refund the two duplicate $30 ClearPay copay charges (ticket CP-58871) within 7-10 business days",
+   "due": "7-10 business days"
+  },
+  {
+   "owner": "caller",
+   "task": "Call credit card company to withdraw the dispute on the March 5 charge",
+   "due": "2026-03-25"
+  },
+  {
+   "owner": "agent",
+   "task": "Email a summary with the ticket number to the email on file",
+   "due": "today"
+  }
+ ],
+ "summary_notes": "Mock summary for C05.",
+ "notable_details": [
+  "Ticket number corrected from CP-58817 to CP-58871",
+  "Two separate visits (Mar 3 and Mar 10) were each double-charged: $60 total duplicate",
+  "Caller had already filed a credit-card dispute for the Mar 5 charge and agreed to withdraw it"
+ ]
+}

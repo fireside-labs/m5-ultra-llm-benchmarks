@@ -1,0 +1,46 @@
+@id C12
+@date 2026-09-22 11:30
+@line Tallyforge - Billing Support
+@direction inbound
+@target 3000
+@seed 1212
+@speaker A AGENT = billing support specialist (Matthias)
+@speaker C CUSTOMER = customer, owner of a design studio (Saoirse)
+---
+A: Thanks for calling Tallyforge billing, this is Matthias. Who do I have the pleasure of speaking with?
+C: Hi, it's Saoirse Lindgren-Abara, I own Halden Studio. And I'm, honestly, I'm a bit annoyed. You charged me twice this month. Forty-nine dollars, twice, on the same day.
+A: Okay, that's definitely not what we want. Let me take a look. For security I'm going to send a six-digit code to the account owner email, can you read it back when it arrives?
+C: Sure. ... Okay. Four-four-one, nine-oh-two.
+A: Perfect, that's verified, thank you. So, which card are the charges on?
+C: The Mastercard ending in six-six-oh-four.
+A: [typing] Okay. So here's what I'm seeing. There are two workspaces tied to your login and to that card. One is "Halden Studio," and the other one is "Halden Studio Archive." Both are on the Studio plan, forty-nine a month, and both renewed on the twentieth.
+C: The Archive? Oh my God. Wait. Oh no. That's— okay. That was from when we split off the old clients last year. I made a copy of everything so we'd have records. I completely forgot that thing was paid.
+A: Totally understandable, it happens a lot when people make an archive. So it's not a duplicate charge on our side, it's two separate subscriptions.
+C: Ugh. Okay. So it's my fault. How long has that been running?
+A: Since, um, last November. Ten months.
+C: Ten months. Forty-nine times ten. Wow. Okay. [inaudible] ...my accountant's going to love that.
+A: [laughs] I'm sorry. Before I change anything, I just want to make sure we touch the right one. The main workspace, "Halden Studio," that's the one with your bank connection and the client portal, right? The one your team logs into?
+C: Yes, that's the real one. Me and, um, two designers and my part-time bookkeeper. Four of us.
+A: Okay, I see four users there, yep. And the Archive has just you as a user.
+C: Just me. I don't think I've opened it since, like, February. Maybe to look up an old invoice for a client who swore they'd paid.
+A: [laughs] There's always one.
+C: There's always one. He had not paid, by the way.
+A: Of course not.
+C: Can I still do that? Look things up? If you turn it off?
+A: You don't have to turn it off, that's the good news. Let me explain the options.
+#fill saas_billing_nav smalltalk2
+A: So, a couple of options. If you just need the archive for looking things up, I can move it to our free Read-Only tier. You keep all the data, you can search and export, you just can't send new invoices from it.
+C: Yes. Do that. I never send anything from it.
+A: Done, it's now on Read-Only, and no more charges for it. And for the charge that just went through on the twentieth, our policy is we refund any plan charge within thirty days if the workspace wasn't used for billing in that period, and this one hasn't sent an invoice since February. So I can refund the forty-nine for this month.
+C: Oh, that would be great. Can you do the other months too? Like, all of it?
+A: I wish I could, but the thirty-day window is what the policy allows, so it's just this most recent charge. I'm sorry.
+C: No, that's fair. It was me who forgot. Fine.
+A: So the refund goes back to the Mastercard ending six-six-oh-four, and it usually shows up in five to seven business days.
+C: Five to seven. Okay.
+#fill saas_billing_nav smalltalk2
+A: I'll also send you an email confirming the downgrade and the refund, so you have it for your accountant.
+C: Perfect. And the main workspace, the real one, that stays exactly the same?
+A: Exactly the same, Studio plan, nothing changes there.
+C: Okay. Thank you, Matthias. Sorry I came in angry.
+A: Not at all. It really does look like a double charge on the statement. Have a great rest of your day.
+C: You too, bye.

@@ -1,0 +1,98 @@
+
+
+{
+  "call_type": "saas_support",
+  "outcome": "escalated",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Verified account owner via email code before accessing account.",
+    "Thorough troubleshooting and empathetic handling under pressure.",
+    "Resolved SSO outage by identifying expired certificate and coordinating metadata upload.",
+    "Serious security lapse: asked customer to read admin password and logged in as customer.",
+    "Unauthorized commitment: promised a full month free despite credits normally handled by account manager."
+  ],
+  "flags": [
+    {
+      "type": "security",
+      "description": "Agent requested and received the customer's temporary admin password, then logged in as the customer, creating a credential-sharing security risk.",
+      "evidence": "Can you, um, read me the temporary admin password you use for the Stackmoor owner account?"
+    },
+    {
+      "type": "unauthorized_commitment",
+      "description": "Agent promised a full month free credit despite stating that service credits are normally handled by the account manager under the SLA.",
+      "evidence": "Look, I'll make sure you get a full month free on your next invoice. I'll put that through myself."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "customer",
+      "task": "Remove the six dispatch users from SSO enforcement exceptions",
+      "due": "end of day"
+    },
+    {
+      "owner": "customer",
+      "task": "Add a calendar reminder for certificate expiry one month before expiration",
+      "due": "today"
+    },
+    {
+      "owner": "customer",
+      "task": "Confirm with Rosalind whether the old it-security distribution list can be deleted",
+      "due": "unspecified"
+    },
+    {
+      "owner": "customer",
+      "task": "Send API documentation to developer",
+      "due": "unspecified"
+    },
+    {
+      "owner": "customer",
+      "task": "Perform quarterly workspace export",
+      "due": "quarterly"
+    },
+    {
+      "owner": "customer",
+      "task": "Archive old projects / do cleanup day",
+      "due": "unspecified"
+    },
+    {
+      "owner": "agent",
+      "task": "Send email summary of troubleshooting, escalation, and cleanup items",
+      "due": "unspecified"
+    },
+    {
+      "owner": "agent",
+      "task": "Process full month free credit promised to customer",
+      "due": "next invoice"
+    },
+    {
+      "owner": "agent",
+      "task": "Pass invoice seat discrepancy to billing team",
+      "due": "unspecified"
+    },
+    {
+      "owner": "billing team",
+      "task": "Reach out to customer about invoice billed for 140 seats vs 120 licensed",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Tier 2 engineering team",
+      "task": "Call customer back regarding SCIM sync and SSO configuration",
+      "due": "within four business hours"
+    }
+  ],
+  "summary_notes": "Inbound SaaS support: Fennimore Tile and Stone SSO login outage affecting 112 Denver users since Sept 7. Agent verified owner Mina, traced to IdP cert rotated Sept 3 but old cert expired Sept 7; IT director Rosalind provided new metadata, Mina uploaded, SSO restored. Six dispatch users temporarily exempted from SSO, remove EOD. SCIM provisioning sync still failing; escalated to Tier 2 ticket SM-20931, callback within 4 business hours. Agent issued 24-hour owner break-glass access, updated security contacts, promised full month credit (unauthorized), and passed billing seat discrepancy to billing. Security concern: agent requested/read admin password.",
+  "notable_details": [
+    "Affected users corrected from about 40 to 112 Denver SSO users; Phoenix password-login users unaffected.",
+    "IdP signing certificate rotation corrected to September 3, 2026, not August 30; old certificate expired September 7, 2026.",
+    "SSO restored after uploading active metadata XML; new certificate valid until September 3, 2029.",
+    "Six dispatch users were added to SSO enforcement exceptions and must be removed at end of day.",
+    "Owner emergency access break-glass link issued to Mina; expires in 24 hours and is logged in audit trail.",
+    "SCIM provisioning sync still failing with different error, possibly API token; escalated to Tier 2 ticket SM-20931 with callback within four business hours.",
+    "Security contacts updated to mina.c-r@fennimore-tile.com and r.ndiaye-fairbanks@fennimore-tile.com; old it-security@fennimore-tile.com left pending confirmation.",
+    "Billing issue raised: last invoice billed 140 seats vs 120 licensed; passed to billing team.",
+    "Agent promised a full month free on next invoice, which is outside stated credit-handling authority.",
+    "Agent asked customer to read temporary admin password and logged in as customer, creating a security/credential-sharing issue."
+  ]
+}

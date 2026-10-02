@@ -1,0 +1,107 @@
+
+Let me analyze this call carefully.
+
+Call type: pre_procedure (pre-admission nursing call for colonoscopy prep). Outbound call, transferred to scheduling at end.
+
+Outcome: The main issue (pre-procedure instructions) was handled during the call, plus scheduling follow-up booked. Resolved.
+
+Sentiment: Start - spouse is neutral/positive, friendly. End - patient positive ("Thank you"). Start: neutral probably (friendly small talk, but neutral). Actually the spouse is chatty and positive. I'd say neutral start, positive end. Or positive start. The spouse is friendly, laughing. Hmm. First minutes: friendly small talk, "You've been easy to talk to" — positive-ish. I'll say neutral start (routine, no strong emotion) — but she's laughing and warm. I'll go positive start? The patient later says he was nervous. Spouse seems fine. I'll pick neutral start, positive end.
+
+Quality score: The nurse did verify identity (DOB for spouse via release form check, DOB for patient). Accurate info. But there's a critical discrepancy: earlier the nurse said "take your last dose Monday night, the fifth, and then none Tuesday, Wednesday, Thursday, or Friday morning" — wait, apixaban: last dose Monday night Oct 5, none Tue/Wed/Thu/Fri. But in the recap at 43:57 she says "stop the Eliquis Wednesday morning". That's a contradiction! Monday night last dose vs "stop the Eliquis Wednesday morning". Also note the drug name confusion: apixaban = Eliquis, correct. But the timing: last dose Monday night the 5th means no doses Tuesday onward. Recap says "stop the Eliquis Wednesday morning" — inconsistent. This is a misinformation/accuracy flag. Actually wait — "stop Wednesday morning" could mean last dose Tuesday night? Either way it contradicts "last dose Monday night, the fifth". This is a notable accuracy issue. Hmm, but which is corrected? The recap is later, but it's not framed as a correction. The patient repeated "Monday night, the fifth. Last one." So the recap introduces a discrepancy. Flag as misinformation/clinical_safety — conflicting instructions about blood thinner stop date, which is safety-relevant (A-fib stroke risk vs bleeding). This is significant.
+
+Also note: the nurse said "per our protocol and the note from Dr. Mbatha's office" — so Monday night was per protocol. The recap "stop the Eliquis Wednesday morning" contradicts. Flag it.
+
+Also insurance: authorization pending with Halvard, nurse said "I'll keep an eye on it" — but later when patient asks "so I'm all set with insurance then?" nurse says "Yep, you're all set, nothing for you to do there." That's misleading — authorization was still pending. That's misinformation / potentially missed commitment (she said she'd keep an eye on it but told patient all set). Flag: misinformation — told patient insurance all set when authorization still pending.
+
+Also fish oil: "stop it seven days before, so starting this Friday, October second." Wait — procedure is Friday October 9. Seven days before = October 2. Correct. Call date is 2026-09-29 (Tuesday). October 2 is Friday. Check: Sept 29, 2026 is a Tuesday. Oct 2 Friday, Oct 9 Friday. Consistent. Monday Oct 5. Good.
+
+Wait — apixaban last dose Monday night Oct 5, none Tue/Wed/Thu/Fri. But polyp removal — typically stop 2-3 days prior. Monday night dose, procedure Friday — that's ~4 days off. Fine.
+
+But recap says "stop the Eliquis Wednesday morning" — Wednesday is Oct 7. Contradiction confirmed.
+
+Also arrival time correction: 7:45 → 6:45 (corrected, use 6:45).
+
+Follow-up appointment: Thursday, October 22 at 1:15 p.m. (corrected from 1:50).
+
+Driver: Phil Haddad, phone 555-010-0139 (corrected from 0138). Wait — patient said "Five five five, zero one, uh, three-eight" then spouse corrected "Three-nine. Zero-one-three-nine." Patient confirmed "Zero-one-three-nine." But nurse said "Five-five-five, zero-one-three-nine. Got it." Good.
+
+Cell number for text: 555-010-0124. Email: wof58@mailbridge.com (W-O-F-five-eight). Patient said "w-o-f, like the dog, wof fifty-eight" — scheduler confirmed W-O-F-five-eight. Good.
+
+Identity verification: nurse asked spouse to confirm DOB, checked release form. Patient confirmed DOB. Fine. But — did the nurse verify the spouse's identity beyond the release form? She asked DOB of patient which spouse knew. That's reasonable. Not a flag.
+
+Small talk: extensive — nearly half the call is small talk and technical difficulties. The call is ~53 minutes for a pre-procedure call that nurse said would take ~20 minutes. Lots of inefficiency: computer issues, noise, chitchat. Quality: clinically thorough and empathetic, verified identity, caught safety issue (don't stop blood thinner early), checked with anesthesia about cough. But: conflicting apixaban stop instructions, misleading "all set" on insurance, very long call with excessive small talk and tech issues. I'd score 3 (mixed: generally competent but one notable lapse) — arguably the conflicting med instructions plus insurance misstatement are two notable lapses → 2? The instructions conflict is a safety-relevant accuracy failure. Score 2 seems harsh given overall good handling; but "a serious compliance, safety or accuracy failure" = 2. Conflicting blood thinner stop dates is a serious accuracy failure with safety implications. I'll go 3... Hmm. The rubric: 3 = generally competent but with one notable lapse; 2 = a serious accuracy failure or several notable lapses. There are two accuracy issues (apixaban timing conflict, insurance "all set") plus excessive small talk extending call. I'll give 3, since the recap conflict may confuse but the patient wrote down Monday night and the prep calendar email will clarify... Actually the recap is the last word and says Wednesday morning — that's the one the patient will follow from the recap. Risk of taking apixaban Tuesday night when it should be stopped. That's clinically meaningful. I'll score 3 with reasons noting the lapse. Hmm, or 2. I think 3 is defensible: "generally competent but with one notable lapse" — the apixaban discrepancy is the notable lapse; insurance comment is minor-ish. I'll go 3.
+
+Flags:
+1. misinformation: conflicting apixaban/Eliquis stop instructions — initial "last dose Monday night, the fifth" vs recap "stop the Eliquis Wednesday morning." Evidence: quote both? Evidence should be short verbatim quote. Use "stop the Eliquis Wednesday morning" with description noting contradiction with earlier "last dose Monday night, the fifth."
+2. misinformation: told patient insurance all set while authorization pending. Evidence: "Yep, you're all set, nothing for you to do there." Description: authorization still pending with Halvard; nurse earlier said she'd keep an eye on it but gave false reassurance.
+
+Any missed commitment? "I'll keep an eye on it" — vague, not a concrete callback. Not flagging as missed commitment since call ended same day.
+
+Privacy: spouse in parking lot initially, on speakerphone later — patient authorized. Not a flag.
+
+Action items:
+- Nurse: monitor pending Halvard authorization ("I'll keep an eye on it") — due unspecified.
+- Nurse: put note for doctor about hernia — due unspecified.
+- Scheduler Marisela: email prep calendar and driver attestation form to wof58@mailbridge.com — due unspecified (during/after call).
+- Scheduler: booked follow-up Oct 22 1:15 pm — done during call, could be action item? It's completed. Maybe include as booked appointment in notable details instead.
+- Scheduler: send text reminder Thursday morning (Oct 8) to 555-010-0124.
+- Patient: stop fish oil starting Friday Oct 2; take last apixaban Monday Oct 5 night (conflicting); half glargine (20 units) Thursday night; no metformin Friday morning; lisinopril Friday with sip; check sugar Friday morning; bring meter, ID, insurance card, med list, glasses; driver Phil Haddad signs driver form. These are patient instructions — action items? The schema says "every follow-up commitment or task stated in the call." Patient prep instructions could count. I'll include key patient tasks: stop fish oil Oct 2, last apixaban Monday Oct 5 per initial instruction (note conflict), 20 units glargine Thursday Oct 8 night, skip metformin Friday morning, arrive 6:45 am Friday Oct 9 with driver Phil Haddad, call office if fever ≥100.4 or worsening cough before Friday. Keep it manageable — maybe 6-8 items.
+
+- Patient: call at least 48 hours ahead if rescheduling — that's informational.
+- Office to set up follow-up — done (booked Oct 22).
+
+Notable details:
+- Arrival time corrected from 7:45 to 6:45 a.m.
+- Follow-up corrected from 1:50 to 1:15 p.m., Thursday Oct 22.
+- Phil's number corrected from ...0138 to ...0139.
+- Drug referred to as apixaban/Eliquis interchangeably; prescribed by Dr. Mbatha (cardiologist) for A-fib.
+- Insurance Halvard authorization pending; office faxed twice.
+- Patient had cold last week, lingering morning cough; anesthesia cleared mild cough without fever; fever threshold 100.4.
+- Family history: father had colon cancer.
+- Patient has umbilical hernia — note for doctor.
+- Prior anesthesia 2019/20 knee — nausea post-op; will note for anti-nausea.
+- A1c 7.2 in August; morning sugars 120-130.
+- Weight corrected to 215 (patient joked 220, nurse put 215).
+- Patient's father... wait, "my dad had colon cancer" — patient's father.
+- Check-in at second-floor endoscopy desk, Entrance B parking off Wellstone Ave, free with validation.
+- Reschedule requires 48 hours notice.
+- Text reminder Thursday morning to cell 555-010-0124.
+- Email wof58@mailbridge.com.
+- Loretta authorized on release form signed June; welcome at Oct 22 results appointment.
+- Snoring, no diagnosed sleep apnea, no CPAP.
+- Partial denture (top) — leave home or cup; wedding ring can't be removed, will be taped.
+- Split-dose prep: first half 6 pm Thursday, second half 1:45 am Friday, done by 2:45, NPO after 4:45.
+- Jell-O: lemon or lime; avoid red, purple, blue.
+
+Summary notes (≤120 words): pre-procedure call for colonoscopy Friday Oct 9 with Dr. Lindqvist-Amaro, arrival 6:45 am. Verified identity (DOB), reviewed meds with patient: apixaban last dose Monday Oct 5 night per protocol/Dr. Mbatha note (recap conflictingly said stop Wednesday morning — needs clarification), metformin skip Friday, glargine 20 units Thursday night, lisinopril Friday with sip, stop fish oil Oct 2. Split-dose prep. Driver Phil Haddad. Halvard auth still pending — nurse to monitor. Leftover cough cleared by anesthesia; call if fever ≥100.4. Hernia note for doctor. Transferred to scheduling: prep calendar + driver form emailed, follow-up Oct 22 1:15 pm booked, text reminder set.
+
+Outcome: resolved (main issue handled; scheduling transfer completed tasks). Not "escalated" — transfer to scheduling was routine completion, not escalation of a problem. Resolved.
+
+Sentiment start: neutral (spouse friendly but neutral). End: positive ("Thank you", warm). I'll go neutral → positive. Actually spouse is quite warm/laughing early... "I'm a little tired of being on the phone" — mild negative tinge but overall neutral. Neutral start.
+
+Quality reasons:
+- Identity verified appropriately for both spouse (release form + DOB) and patient.
+- Thorough, accurate clinical review; correctly refused early blood-thinner stop; checked anesthesia re cough.
+- Conflicting apixaban stop instructions between med review and recap (Monday night vs Wednesday morning).
+- Told patient insurance "all set" while authorization still pending.
+- Excessive small talk and repeated technical difficulties extended a ~20-min call to ~53 minutes.
+
+Flags: two flags as above. Types: misinformation both. Maybe clinical_safety for the apixaban one? Misinformation fits. I'll use misinformation for both, or clinical_safety for apixaban. The apixaban conflict is a safety-relevant misinformation. I'll use "misinformation" for insurance and "clinical_safety" for apixaban? The description: conflicting stop instructions could lead to patient taking dose incorrectly — stroke/bleeding risk. clinical_safety seems apt. Either works. I'll use clinical_safety for the apixaban conflict and misinformation for insurance.
+
+Action items list:
+1. Owner: Nurse (Coralie) — monitor pending Halvard insurance authorization — due: unspecified.
+2. Owner: Nurse (Coralie) — add note for doctor about umbilical hernia — unspecified.
+3. Owner: Scheduler (Marisela) — email prep calendar and driver attestation form to wof58@mailbridge.com — unspecified (end of call).
+4. Owner: Scheduler (Marisela) — send text reminder Thursday morning (Oct 8) to 555-010-0124 — Oct 8 morning.
+5. Owner: Patient (Wendell) — stop fish oil starting Friday Oct 2 — Oct 2.
+6. Owner: Patient — take last apixaban dose Monday night Oct 5 (per med review; recap said stop Wednesday morning — clarify) — Oct 5 night.
+7. Owner: Patient — take half glargine dose (20 units) Thursday Oct 8 night; skip metformin Friday morning; take lisinopril with sip of water Friday — Oct 8-9.
+8. Owner: Patient — arrive 6:45 a.m. Friday Oct 9 with driver Phil Haddad; check in at second-floor endoscopy desk — Oct 9 6:45 am.
+9. Owner: Patient — call office before Friday if fever ≥100.4, worsening cough, or shortness of breath — before Oct 9.
+10. Owner: Patient/Phil — Phil signs driver attestation form on arrival — Oct 9.
+
+Maybe also check sugar Friday morning, bring meter. Combine.
+
+Due format: as stated or "unspecified".
+
+Summary ≤120 words. Write it.

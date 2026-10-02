@@ -1,0 +1,17 @@
+{
+ "description": "Cross-call themes planted across several transcripts. A theme counts as found if any theme item the model returns (theme + description + evidence text) satisfies the matcher: every inner list is a group, at least one regex in each group must match (case-insensitive).",
+ "themes": [
+  {
+   "id": "T_DOUBLE_CHARGE",
+   "text": "The ClearPay payment portal (migrated late February) auto-charges copays that were already paid at the front desk, causing duplicate charges; it recurs across billing, imaging, eye-surgery and complaint calls and has escalated as far as a collections referral.",
+   "calls": ["C02", "C05", "C09", "C14", "C18"],
+   "match": [["double", "twice", "duplicate", "charged again", "second charge", "re-?charg", "two charges"], ["copay", "charge", "payment", "billing", "bill", "clearpay", "portal"]]
+  },
+  {
+   "id": "T_FASTING_CONFLICT",
+   "text": "Pre-procedure fasting instructions conflict: the mailed packet says nothing to eat or drink after midnight while the automated text reminder says clear liquids are allowed until 2 hours before arrival; this caused at least two same-day cancellations and repeated patient confusion.",
+   "calls": ["C03", "C07", "C12", "C16"],
+   "match": [["fast", "npo", "nothing (to eat|by mouth)", "clear liquid", "eat", "drink", "midnight", "pre-?op", "pre-?procedure"], ["conflict", "contradict", "inconsisten", "mismatch", "differ", "confus", "unclear", "two different", "discrepan"]]
+  }
+ ]
+}

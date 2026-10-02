@@ -1,0 +1,36 @@
+## Missed issues
+
+1. **The no-show fee is contractually prohibited for the patients who no-show most.** The Medicaid contracts bar billing members for missed appointments, and Medicaid is 34% of patients with a 27% no-show rate — meaning Medicaid accounts for roughly 55% of all no-shows (0.34×27% ÷ 18% weighted total). The $90k estimate includes revenue from patients the clinic may not charge, and the vendor-tested auto-billing will happily bill them unless the system is configured with payer carve-outs — a contract-violation generator running automatically.
+
+2. **The 18%→8% target is arithmetically unreachable if Medicaid no-shows don't move.** Even if commercial and Medicare no-shows fell to 8%, the weighted rate would be 0.34×27% + 0.66×8% ≈ **14.5%**. Nothing in the memo touches Medicaid no-shows: the fee is banned for them, and their top recorded barrier (transportation) isn't addressed. Any capacity or staffing plan built on 8% is built on a number the policy cannot deliver.
+
+3. **January 1 is not a lawful effective date for the fee.** Two commercial contracts require **90 days' written notice to the plan** before a new patient-facing fee. The memo's 60-day notice is to the wrong party, for the wrong period, and doesn't satisfy this. Approving as written puts the clinic in breach on day one for a chunk of its 41% commercial book.
+
+4. **The largest recorded cause of no-shows gets no intervention.** Transportation is 38% of rescheduling reasons — more than "forgot" (24%). Fees don't produce a ride and texts don't either. Medicaid managed-care plans typically carry transportation benefits (assumption — verify in your contracts); telehealth for suitable visits and ride coordination attack the actual cause. Without this, the biggest no-show segment is untouched.
+
+5. **Text reminders reach roughly half of patients, not a replacement for calls.** 41% lack opt-in (the vendor simply won't text them), 15% have no mobile number, and English-only templates miss the 22% who prefer Spanish. Effective coverage is plausibly ~45–55%. The "30 hours back" assumes full replacement, and consent capture plus Spanish templates is a prerequisite project, not a settings change.
+
+6. **The $90k doesn't survive arithmetic even for billable patients.** Assuming ~50,000 booked visits/year (my assumption for a 12-provider clinic), non-Medicaid no-shows ≈ 3,800; the automatic first-miss waiver removes a large share (no-shows cluster among repeat no-showers); and the clinic collects only 31% of patient-responsibility charges under $100. Realistic collections are maybe $40–60k — and the revenue is self-eroding, since the policy's stated goal is fewer no-shows, i.e., fewer fees to collect.
+
+7. **The balance hold's "recover half of $410k" has no mechanism, and the attrition cost is documented.** The clinic collects 31% on small patient-responsibility balances — there's no evidence it does better on large ones. A booking ban is a stronger push than the collections letters that already drove 9% of >$200-balance patients out within 6 months. Each lost patient takes recurring revenue ($148/visit, several visits/year), and the hold exempts urgent visits but not chronic-disease follow-ups — exactly the "non-urgent" visits where missing care does the most harm.
+
+8. **Double-booking worsens an existing lateness problem and is aimed at the wrong slots.** 61% of sessions already run >20 minutes late; with an 18% no-show rate, both patients show ~82% of the time, pushing those sessions further behind. There's no evidence no-shows concentrate in first slots — overbooking should follow each provider's measured no-show pattern by slot, not a blanket rule.
+
+9. **Front-desk time converts rather than disappears, and the rollout has config gaps.** Waiver decisions, fee disputes, payment conversations at every balance-held booking, opt-in capture, and Spanish-language calling for the 22% replace the reminder calls. Separately: patients who don't visit before January 1 never sign the financial policy, and the billing system needs payer-specific suppression rules the sandbox test never covered.
+
+## Looks like a problem but isn't
+
+- **Urgent/same-day exemption from balance holds** — handles the acute-access objection cleanly.
+- **Automatic first-miss waiver plus documented hardship discretion** — handles the "punitive on first offense" objection.
+- **60-day patient notice, posting, and website** — adequate patient-facing communication; the defective notice is the *plan* notice, not this one.
+- **Sandbox-tested auto-billing** — the software mechanism is proven; the gap is payer rules, not the vendor.
+
+## Top 3 priorities
+
+1. **Fix the legal perimeter of the no-show fee before approving anything.** Build the Medicaid carve-out into the billing configuration, issue 90-day notices to the two commercial plans (and confirm rules for other payers), and re-date the fee's effective date accordingly. As written, the clinic breaches contracts on day one.
+2. **Rebuild the expected-impact section on defensible numbers.** Re-based fee revenue (payer carve-outs, waiver, 31% collection rate, self-eroding base), a realistic no-show floor near 13–15% unless Medicaid no-shows move, and at least one intervention aimed at transportation and "forgot" — opt-in drive, Spanish templates, reschedule-by-text, plan transportation benefits.
+3. **Make the balance-hold trade-off an explicit decision, not a claim.** Set an acceptable attrition rate for >$200-balance patients, exempt chronic-disease management visits, define how recovery actually happens (e.g., payment plans at booking), and pilot it on one segment before clinic-wide rollout.
+
+## Bottom line
+
+Modify — do not approve as written. The package breaches at least two contracts on its effective date, and its two headline numbers ($90k and 8%) don't survive contact with the clinic's own facts. Proceed now with reminders (after an opt-in and Spanish-language push) and a piloted balance hold with chronic-care exemptions; delay the no-show fee until payer carve-outs and plan notices are complete; and add a transportation intervention, because that's where most no-shows actually live.

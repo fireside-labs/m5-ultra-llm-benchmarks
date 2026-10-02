@@ -1,0 +1,239 @@
+### C01 (scheduling, outcome: resolved)
+Summary: Patient called to reschedule PT appointment. Original Friday Apr 10 2:15 moved to Thursday Apr 16 9:40 with same therapist (Dr. Haddad's team). Updated contact number to 555-216-4471. Patient mentioned chest tightness last month, cleared by cardiologist as asthma; agent advised to call 911 if symptoms return. Reminded to bring updated insurance card. Confirmation text to be sent.
+Notable details:
+- Original appointment: Friday April 10 at 2:15; new appointment: Thursday April 16 at 9:40
+- Patient initially thought April 14 was Wednesday; corrected to Tuesday, then chose Thursday April 16
+- New phone number: 555-216-4471 (old ended in 8802)
+- Chest tightness last month, diagnosed as asthma, cleared by cardiologist, inhaler changed
+- Insurance card on file expired end of last year; patient has new cards since January
+- Agent had system issues (multiple screens, re-login) but handled professionally
+
+### C02 (billing_dispute, outcome: callback)
+Summary: Patient called about a duplicate charge for a visit on the 26th. Two charges of $45 each on card ending 3318. Agent verified identity, corrected copay amount, initiated refund request, and promised a callback by Friday. Agent also made an unauthorized 48-hour refund guarantee. Patient mentioned her daughter may have a similar issue and may call.
+Notable details:
+- Visit date is the 26th (likely February 26, 2026).
+- Card ending in 3318 was charged twice for $45 each.
+- Copay amount corrected from $40 to $45.
+- Patient uses ClearPay portal, which auto-charged without her action.
+- Agent promised a callback by Friday (2026-03-20) from billing team.
+- Patient's daughter is also a patient and may have a similar duplicate charge.
+- Patient requested a reference number but was not provided one.
+- Agent had to log in again due to password expiration.
+Flags:
+- [unauthorized_commitment] Agent guaranteed a 48-hour refund, which is outside the stated 7-10 business day review policy.
+
+### C03
+(no analysis available for this call)
+
+### C04 (pharmacy_refill, outcome: resolved)
+Summary: Patient requested refill of lisinopril; dose increased from 10mg to 20mg two weeks ago, but new prescription not on file. Technician verified identity, sent request to prescriber, and arranged 3-day emergency supply of 10mg (to take two daily) at Harbor Road location, ready after 4pm today. Patient will be notified by text when 20mg prescription arrives. Advised patient to call doctor if no text by tomorrow afternoon. Patient's preferred location changed from Ferris Avenue to Harbor Road.
+Notable details:
+- Patient name: Philippa Oyelaran-Groot (spelled O-Y-E-L-A-R-A-N-G-R-O-O-T), DOB 09/14/1959.
+- Lisinopril dose changed from 10mg to 20mg; patient instructed to take two 10mg tablets daily.
+- Patient has only two 10mg pills left (enough for tomorrow morning).
+- Emergency supply transferred to Harbor Road location; ready after 4:00 PM today.
+- Text notification number ending in 6109 confirmed as cell phone.
+- Patient staying at sister's house for a couple weeks; sister recently had hip surgery.
+- Drive-through window open until 9pm on weekdays.
+- Phone menu issue: pressing 3 led to wrong destination; patient used 0 to reach operator.
+
+### C05 (billing_dispute, outcome: resolved)
+Summary: Patient called about duplicate copay charges for PT visits on 3/3 and 3/10. Agent verified identity, identified duplicate ClearPay auto-payments, created refund ticket CP-58871 for $60. Patient will withdraw card dispute for 3/5 charge. Agent also zeroed out $310 MRI balance without supervisor approval (policy violation). Agent to email summary. Patient satisfied.
+Notable details:
+- Reference number CP-58871 (corrected from CP-58817)
+- Duplicate charges: $30 each for PT eval on 3/3 and follow-up on 3/10, auto-drafted via ClearPay on 3/5 and 3/12
+- Patient already disputed the 3/5 charge with credit card; agreed to withdraw
+- MRI balance of $310 from January was zeroed by agent without supervisor approval
+- Agent stated courtesy adjustment limit of $100 but exceeded it
+Flags:
+- [unauthorized_commitment] Agent zeroed a $310 balance without supervisor approval, exceeding his stated authority of $100.
+
+### C06 (no_show_followup, outcome: escalated)
+Summary: Outbound no-show follow-up for Marisol Quintanar-Bede. Missed appointment with Dr. Ferreira-Holm yesterday; first-time missed-appointment fee waived. Patient provided new phone number (555-448-0926) replacing old (ending 3350). Patient reported dizziness on standing and fainting Saturday with head bump; agent escalated to nurse line and gave 911 instructions. Ride program request submitted. Agent to call back tomorrow morning to reschedule.
+Notable details:
+- New phone number: 555-448-0926 (old ending 3350)
+- Missed-appointment fee waived (first occurrence)
+- Patient fainted Saturday, hit head on cabinet, small bump
+- History of low iron
+- Transferred to Nurse Adeyemi-Strand
+- Ride program requested
+- Callback scheduled for tomorrow morning
+
+### C07
+(no analysis available for this call)
+
+### C08 (saas_support, outcome: resolved)
+Summary: Customer called because CSV time report export failed, blocking payroll. Agent verified identity, identified 5000-row cap on Team Classic plan as cause, and resolved by guiding customer to XLSX export, which succeeded. Filed bug (ticket 44091) and linked account for notification. Also noted weekly digest emails stopped since last Tuesday; agent added to ticket. Customer mentioned renewal in ~2 weeks; agent arranged account manager outreach. Call ended positively.
+Notable details:
+- Ticket number: 44091
+- CSV export fails due to 5000-row cap on Team Classic plan; workaround is XLSX export
+- Weekly digest emails stopped since last Tuesday
+- Renewal due in about two weeks
+- Customer verified via one-time code 419227
+- Hold lasted 4 minutes 20 seconds
+- Customer email: odalys@ferrante-mwangi-studio.com; workspace: FM Studio
+
+### C09 (scheduling, outcome: callback)
+Summary: Outbound call to patient to schedule lumbar spine MRI ordered by Dr. Kowalczyk-Nnamdi. Verified identity. Collected new insurance info (Granite Meridian, member ID GMH447182009, group 70315). Insurance active but requires prior authorization for MRI. Agent will submit PA today and call back when decision received. Patient to upload card images to portal. Patient reported duplicate copay charge of $45 via ClearPay; agent promised to transfer to billing but call ended without transfer. No other issues.
+Notable details:
+- Patient DOB: 12/05/1977, ZIP 97209
+- Insurance member ID corrected from GMH447182006 to GMH447182009 (final digit is 9)
+- Group number: 70315
+- Patient has secondary insurance through wife but no card available
+- Duplicate copay charge of $45 via ClearPay
+- MRI ordered by Dr. Kowalczyk-Nnamdi
+- Patient has been dealing with back pain for two months
+- Agent mentioned system slowness and login issues during call
+Flags:
+- [missed_commitment] Agent promised to transfer patient to billing for the duplicate copay charge but ended the call without doing so.
+
+### C10 (saas_support, outcome: resolved)
+Summary: Customer Mina (account owner) reported SSO login failure for 112 Denver users. Root cause: IdP certificate rotated on Sept 3, old cert expired Sept 7, Stackmoor had old cert. Agent verified identity, troubleshooted, identified issue, had IT director download new metadata, uploaded, SSO restored. Also escalated SCIM sync issue to Tier 2 (ticket SM-20931). Agent asked for password (security issue), promised unauthorized credit, disclosed another customer's info. Customer to remove exceptions, update security contact. Billing issue noted.
+Notable details:
+- User count corrected from 40 to 112 (all Denver office users on SSO).
+- Certificate rotation date corrected from Aug 30 to Sept 3.
+- Customer name: Wilhelmina Castellanos-Reid, email mina.c-r@fennimore-tile.com.
+- IT director: Rosalind Ndiaye-Fairbanks.
+- Agent mentioned another customer: Pellmont Freight, admin Gary Tolliver-Shea.
+- Break-glass owner emergency access link used.
+- SCIM sync failing, escalated to Tier 2, ticket SM-20931.
+- Invoice discrepancy: billed for 140 seats, only 120 licensed.
+- Security contact was a dead distribution list; updated with Mina and Rosalind.
+- Six dispatch users added to SSO enforcement exceptions, to be removed end of day.
+Flags:
+- [security] Agent requested the customer's admin password, which is a security risk and violates policy.
+- [unauthorized_commitment] Agent promised a full month free credit without authorization, as credits are normally handled by the account manager.
+- [privacy_disclosure] Agent disclosed another customer's name and incident details to this customer.
+
+### C11 (sales, outcome: callback)
+Summary: Inbound sales call with Rufus (ops manager) at Kranz and Daughters, a plumbing company with 32 vehicles (25 vans + 7 box trucks). Prospect interested in fuel savings and dispatch. Rep made misleading claims about cancel-anytime and guaranteed 30% savings, later clarified contract is 36-month with ETF and savings not guaranteed. Agreed to send written proposal by Thursday and schedule demo with CFO Priscilla Kranz-Albright next Tuesday at 2. Prospect will forward invite. Noted need for calendar sync, offline capability, and accounting integration.
+Notable details:
+- Vehicle count corrected from 25 to 32 (25 vans + 7 box trucks).
+- Decision maker is CFO Priscilla Kranz-Albright.
+- Prospect uses spreadsheets, shared calendar, and group texts.
+- Need for offline capability in rural areas.
+- Rep had technical difficulties (mouse died, wrong window).
+- Prospect mentioned handoffs as biggest pain point.
+Flags:
+- [misinformation] Represented the contract as cancel-anytime without disclosing the 36-month term and early termination fee until the prospect questioned it.
+- [misinformation] Claimed a guaranteed 30% fuel savings with money-back guarantee, but later admitted it is not in the contract and only 'very, very likely'.
+
+### C12 (complaint_escalation, outcome: escalated)
+Summary: Patient filed complaint about conflicting prep instructions (text vs packet) leading to cancelled colonoscopy. Grievance G-260411 opened. Rescheduled for April 30 at 7:30 AM. Lost wages request included in grievance, not guaranteed. Prep kit cost approved. GI nurse to call re prep and insulin plan. Patient is diabetic on insulin. Electronic communication preferred.
+Notable details:
+- Grievance number G-260411
+- New appointment April 30, 7:30 AM
+- Patient diabetic on insulin; needs insulin plan for prep day
+- Conflicting instructions: text said clear liquids up to 2 hours before, packet said nothing after midnight
+- Agent promised lost wages but supervisor corrected that it's subject to review
+- Prep kit cost ~$30 approved for reimbursement
+- Patient prefers electronic communication
+Flags:
+- [unauthorized_commitment] Agent promised to cover lost wages without authority; supervisor later clarified it is subject to review committee decision.
+
+### C13 (insurance_verification, outcome: resolved)
+Summary: Insurance verified with Thistlecrest (effective 4/1/2026). Prior authorization approved for one night attended in-lab polysomnography (CPT 95810) at Westbrook facility, auth #PA-2026-0441973, valid through 6/30/2026, pending fax of clinical notes within 2 business days. Patient scheduled at Ridgeline on 5/12/2026, which is out-of-network per payer; agent incorrectly told patient they are fully covered and that two nights are covered. Deductible remaining $1120, then 20% coinsurance. Patient prefers text reminders. Need to correct scheduling and coverage information.
+Notable details:
+- New insurance: Thistlecrest Health Plan, effective 4/1/2026.
+- Member ID: THC-50288144.
+- Authorization number: PA-2026-0441973.
+- Approved for one night at Westbrook, not Ridgeline.
+- Deductible: $1500, met $380, remaining $1120, then 20% coinsurance.
+- Sleep studies covered in-network only; Ridgeline out-of-network.
+- Patient scheduled at Ridgeline on 5/12/2026 (out-of-network).
+- Agent told patient fully covered (incorrect).
+- Agent said two nights covered (incorrect).
+- Patient prefers text reminders.
+- Parking validation available at front desk.
+Flags:
+- [misinformation] Agent told patient they are fully covered and will owe nothing, despite the plan having a deductible and coinsurance.
+- [misinformation] Agent scheduled the study at Ridgeline, which the payer stated is out-of-network, and told the patient they are covered.
+- [misinformation] Agent stated the study is covered for two nights, but the payer approved only one night and said a second night requires a separate authorization.
+
+### C14 (billing_dispute, outcome: resolved)
+Summary: Patient called regarding duplicate ClearPay copay charges leading to collections. Supervisor confirmed three duplicate charges ($45 each) and issued refunds, recalled collections, placed billing hold, applied $50 goodwill credit, and escalated to billing director. Also referred patient to financial counseling and nurse for blood pressure medication concerns. Privacy incident: agent disclosed husband's account info without authorization; supervisor reported to privacy office. Husband to call to address his account.
+Notable details:
+- Duplicate charges: March 9/11, May 4/6, July 13/15, each $45.
+- Refunds to Visa ending 1186 and HSA ending 7720.
+- Collections referral amount $135 for patient, $212.40 for husband.
+- Patient skipping blood pressure meds since August.
+- Supervisor's name: Danielle Okafor-Brandt.
+- Patient's name: Gwendolyn Achterberg-Lowe.
+- Husband's name: Reinhold Achterberg-Lowe.
+- Callback promise from Kyle on 9/8 not kept.
+- Goodwill credit $50.
+- Billing director call expected by Wednesday.
+Flags:
+- [privacy_disclosure] Agent Brent disclosed patient's husband's account details to the patient without authorization.
+- [missed_commitment] A callback promised by Kyle on September 8th was never made, contributing to the collections referral.
+
+### C15 (pharmacy_refill, outcome: resolved)
+Summary: Patient requested early refill of alprazolam 0.5mg due to vacation. Technician processed refill, ready at 3 PM; cash payment if insurance rejects. Patient also mentioned starting zolpidem and asked about interaction; technician advised it's fine. No identity verification performed; medication list disclosed. Flagged for privacy and clinical safety.
+Notable details:
+- Patient leaves on 22nd; refill last filled July 30, 30-day supply, so early.
+- Patient has alprazolam 0.5, sertraline, and a cholesterol medication.
+- Patient started zolpidem (Ambien) from another pharmacy.
+- Refill ready at 3 PM; patient needs ID for pickup.
+- Technician had multiple technical issues during call.
+Flags:
+- [privacy_disclosure] Technician disclosed the patient's medication list before verifying the caller's identity.
+- [clinical_safety] Technician gave medical advice that alprazolam and zolpidem can be taken together without consulting a pharmacist.
+
+### C16 (pre_procedure, outcome: callback)
+Summary: Patient called to verify endoscopy details. Agent confirmed updated arrival time of 7:00 AM at Westbrook Endoscopy Center (second floor) on May 8, and parking validation available. Patient updated email to ottoline.fn@gmail.com. Dietary instruction conflict (packet vs text) escalated to pre-procedure nurse team for same-day callback; agent also reported issue to team lead. Patient reminded of driver requirement due to sedation.
+Notable details:
+- Appointment changed to 7:00 AM arrival at Westbrook Endoscopy Center, second floor (previously 7:30 AM at Main Street)
+- Patient email updated to ottoline.fn@gmail.com
+- Dietary instructions conflict: packet says nothing after midnight, text says clear liquids up to 2 hours before arrival
+- Agent noted this was the third similar question this week and reported to team lead
+- Patient's phone number ending 8133 used for verification and callback
+
+### C17 (sales, outcome: resolved)
+Summary: Sales discovery call with Marguerite, Director of Operations at Tidewell Home Care, a home health agency. They are leaving their current scheduling vendor due to a data breach and need a new system by January 15. Approximately 85 seats (60 staff plus 25 per-diem contractors). Key needs: calendar sync, offline capability for rural areas, visit notes in tasks, and handoff visibility. Budget is tight; Team plan preferred. REP offered up to 15% discount on annual agreement. Next steps: security review call with compliance officer Theodora on Oct 6 at 10 a.m., proposal for 85 seats by Friday. REP disclosed another client's pricing (Halloway Pediatrics) and gave contradictory BAA information.
+Notable details:
+- Tidewell Home Care is leaving current vendor due to a data breach last spring; contract ends January 15.
+- Seat count corrected from 60 to 85 (includes 25 per-diem contractors).
+- Security review call scheduled for Tuesday, October 6, 10:00 a.m. with compliance officer Theodora.
+- Proposal for 85 seats to be sent by Friday (October 2).
+- REP disclosed Halloway Pediatrics pays $9/seat (confidential).
+- BAA availability initially stated as Enterprise-only, later confirmed on Team plan.
+- Prospect mentioned need for offline capability due to rural areas.
+- Prospect wants to include visit notes in tasks (e.g., wound care, BP readings).
+- REP offered up to 15% discount on annual agreement.
+Flags:
+- [privacy_disclosure] The representative disclosed another client's pricing information without authorization.
+- [misinformation] The representative gave contradictory information about BAA availability, first stating it was only on Enterprise, then confirming it on Team.
+
+### C18 (post_procedure_followup, outcome: escalated)
+Summary: Post-op follow-up call for cataract surgery on right eye. Patient reported new floaters, flashes, and a curtain shadow in operated eye. Nurse recognized as potential retinal emergency, escalated to on-call ophthalmologist and instructed patient to go to clinic urgently. Also corrected prednisolone dosing (should be 4x/day, not 3x/day) and noted duplicate copay charge to be handled by billing. Patient's son Jules was present and authorized to discuss care.
+Notable details:
+- Patient DOB: April 1, 1948
+- Prednisolone frequency corrected from 3x/day to 4x/day
+- Duplicate copay charge of $40 via ClearPay portal
+- On-call ophthalmologist: Dr. Achebe-Lindqvist
+- Clinic urgent entrance on Westbrook Road
+- Patient's son Jules is staying with him and administers drops
+- Patient has a friend from church checking in daily
+
+### C19 (saas_support, outcome: resolved)
+Summary: Customer Benedikt (ben@szymanski-roe-design.com) called to undo accidental annual Business plan (10 seats) purchased Aug 15. Within 14-day refund window. Agent verified identity, processed full refund to original Visa ending 2209, and set up Team monthly plan for 3 seats on new card ending 5530 via secure link. Customer added card. Refund processing, emails to be sent. Customer satisfied.
+Notable details:
+- Purchase date Aug 15, today Aug 26 (11 days), within 14-day refund window
+- Original card ends 2209, new card ends 5530
+- Workspace: Szymanski-Roe Design
+- Customer initially thought refund window had passed
+- Agent offered secure link for card entry to avoid reading card numbers over phone
+
+### C20 (scheduling, outcome: resolved)
+Summary: Caller (separated husband) called to confirm wife Annika Sorensen-Mbatha's appointment. Agent disclosed PHI (Thursday 10th at 2:40 PM with Dr. Iwu-Castellano, 20-week anatomy ultrasound) without verifying identity, accepted a vague DOB, and changed the patient's contact number to the caller's (555-827-3091) without authorization. Reminder text will go to the new number. No follow-up actions pending.
+Notable details:
+- Appointment: Thursday, September 10 at 2:40 PM with Dr. Iwu-Castellano at Women's Health center on Alder Street
+- Procedure: 20-week anatomy ultrasound followed by doctor visit
+- Caller is separated from patient since spring, not authorized on release form
+- Phone number changed to caller's: 555-827-3091
+- Reminder text scheduled to go out tomorrow to new number
+- Agent accepted approximate DOB (March 1993/1994) as verification
+Flags:
+- [privacy_disclosure] Agent disclosed appointment date, time, provider, and procedure before verifying the caller's identity or authorization.
+- [identity_verification] Agent accepted an approximate date of birth without confirming exact details, failing to properly verify the caller's identity.
+- [policy_violation] Agent updated the patient's primary phone number to the caller's number despite no release form being on file and without confirming authorization.

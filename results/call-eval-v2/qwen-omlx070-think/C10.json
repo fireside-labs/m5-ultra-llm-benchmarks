@@ -1,0 +1,155 @@
+{
+  "call_type": "pre_procedure",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Verified authorized spouse and patient identity before disclosing medical information.",
+    "Provided detailed prep, medication, arrival, and recovery instructions and consulted anesthesia about the recent cough.",
+    "Final recap incorrectly stated to stop Eliquis Wednesday morning, conflicting with the earlier instruction to take the last dose Monday night, October 5.",
+    "Insurance authorization status was communicated inconsistently as pending and then as all set.",
+    "Call was lengthy with repeated system and connection delays, but staff remained patient and empathetic."
+  ],
+  "flags": [
+    {
+      "type": "misinformation",
+      "description": "The nurse's final recap incorrectly changed the apixaban hold timing, conflicting with the earlier instruction and creating a potential anticoagulant-safety risk.",
+      "evidence": "stop the Eliquis Wednesday morning"
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "Patient",
+      "task": "Take last dose of apixaban Monday night, October 5; no doses Tuesday through Friday morning; restart only as directed by the doctor after the procedure.",
+      "due": "Monday, October 5"
+    },
+    {
+      "owner": "Patient",
+      "task": "Stop fish oil starting Friday, October 2.",
+      "due": "Friday, October 2"
+    },
+    {
+      "owner": "Patient",
+      "task": "Have a light low-fiber breakfast before 9 a.m. Thursday, October 8; clear liquids only after that.",
+      "due": "Thursday, October 8"
+    },
+    {
+      "owner": "Patient",
+      "task": "Start first half of the prep at 6 p.m. Thursday, October 8.",
+      "due": "Thursday, October 8 at 6 p.m."
+    },
+    {
+      "owner": "Patient",
+      "task": "Start second half of the prep at 1:45 a.m. Friday, October 9 and finish by 2:45 a.m.; nothing by mouth after 4:45 a.m. except the lisinopril sip.",
+      "due": "Friday, October 9 at 1:45 a.m."
+    },
+    {
+      "owner": "Patient",
+      "task": "Take 20 units insulin glargine Thursday night instead of 40 units.",
+      "due": "Thursday, October 8 at bedtime"
+    },
+    {
+      "owner": "Patient",
+      "task": "Skip metformin Friday morning.",
+      "due": "Friday, October 9 morning"
+    },
+    {
+      "owner": "Patient",
+      "task": "Take lisinopril Friday morning with a small sip of water.",
+      "due": "Friday, October 9 morning"
+    },
+    {
+      "owner": "Patient",
+      "task": "Check blood sugar when waking Friday and before leaving; bring the meter.",
+      "due": "Friday, October 9"
+    },
+    {
+      "owner": "Patient",
+      "task": "Call if fever is 100.4 or higher, the cough worsens, or shortness of breath develops before Friday.",
+      "due": "Before Friday, October 9"
+    },
+    {
+      "owner": "Patient",
+      "task": "Call the after-hours number if vomiting prevents keeping the prep down.",
+      "due": "Unspecified"
+    },
+    {
+      "owner": "Patient",
+      "task": "Arrive at 6:45 a.m. Friday, October 9; check in at the second-floor endoscopy suite; park at Entrance B off Wellstone Avenue and bring the ticket for validation.",
+      "due": "Friday, October 9 at 6:45 a.m."
+    },
+    {
+      "owner": "Patient",
+      "task": "Bring ID, insurance card, medication list, reading glasses, warm clothing, and meter; leave the partial denture at home if possible; no jewelry except the wedding ring may be taped.",
+      "due": "Friday, October 9"
+    },
+    {
+      "owner": "Driver Phil Haddad",
+      "task": "Stay in the waiting area or be reachable and return within 15 minutes; come in to get the patient; sign the driver attestation form.",
+      "due": "Friday, October 9"
+    },
+    {
+      "owner": "Doctor",
+      "task": "Tell the patient when to restart apixaban after the procedure depending on findings.",
+      "due": "Friday, October 9"
+    },
+    {
+      "owner": "Nurse",
+      "task": "Monitor the Halvard authorization status.",
+      "due": "Unspecified"
+    },
+    {
+      "owner": "Nurse",
+      "task": "Note the umbilical hernia for the doctor.",
+      "due": "Unspecified"
+    },
+    {
+      "owner": "Scheduler",
+      "task": "Email the prep calendar and driver attestation form to wof58@mailbridge.com.",
+      "due": "During call"
+    },
+    {
+      "owner": "Scheduler",
+      "task": "Send a text reminder with arrival time and address to 555-0124.",
+      "due": "Thursday morning, October 8"
+    },
+    {
+      "owner": "Patient",
+      "task": "Attend follow-up with Dr. Lindqvist-Amaro on Thursday, October 22 at 1:15 p.m.; Loretta may attend.",
+      "due": "Thursday, October 22 at 1:15 p.m."
+    },
+    {
+      "owner": "Patient",
+      "task": "Call at least 48 hours ahead if rescheduling.",
+      "due": "At least 48 hours before Friday, October 9"
+    },
+    {
+      "owner": "Patient",
+      "task": "No alcohol for 24 hours, no driving until the next day, and no big decisions after the procedure.",
+      "due": "After procedure"
+    }
+  ],
+  "summary_notes": "Outbound pre-admission call for Wendell Osei-Fairbanks, colonoscopy with Dr. Lindqvist-Amaro Friday Oct 9. Authorized spouse Loretta answered; DOB 4/3/1958 verified. Nurse reviewed meds: apixaban last dose Mon Oct 5, none Tue-Fri AM; metformin skip Fri AM; glargine 20 units Thu night; lisinopril Fri AM with sip; stop fish oil Oct 2. Prep: clear liquids after light breakfast before 9 AM Thu; first half 6 PM Thu, second half 1:45 AM Fri done by 2:45, NPO after 4:45. Arrival corrected to 6:45 AM, second-floor endoscopy suite, Entrance B parking. Driver Phil Haddad 555-0139. Follow-up Oct 22 1:15 PM. Email wof58@mailbridge.com; text 555-0124. Authorization pending; recap error on Eliquis.",
+  "notable_details": [
+    "Procedure: colonoscopy with Dr. Lindqvist-Amaro, Friday, October 9, 2026.",
+    "Patient DOB: April 3, 1958.",
+    "Authorized spouse: Loretta Osei-Fairbanks, release form signed in June.",
+    "Arrival time corrected from 7:45 a.m. to 6:45 a.m.",
+    "Follow-up time corrected from 1:50 p.m. to 1:15 p.m. on Thursday, October 22.",
+    "Driver phone corrected from 555-0138 to 555-0139.",
+    "Patient cell for text reminder: 555-0124.",
+    "Email: wof58@mailbridge.com.",
+    "Insurance: Halvard; authorization was pending during the nurse portion; nurse later said no patient action was needed.",
+    "Medication recap error: nurse said stop Eliquis Wednesday morning despite earlier instruction to take the last dose Monday night, October 5.",
+    "Recent cold/cough without fever; anesthesia nurse cleared mild cough; return precautions for fever 100.4 or higher, worsening cough, or shortness of breath.",
+    "Family history: father had colon cancer.",
+    "Secondary issue: umbilical hernia; nurse noted it for the doctor.",
+    "Anesthesia history: knee surgery around 2019 or 2020 with post-op nausea and one episode of vomiting; no CPAP, but snoring.",
+    "Weight recorded as 215 lb after patient uncertainty; height 5'11\".",
+    "Parking: Entrance B off Wellstone Avenue, validate ticket; check in at second-floor endoscopy suite, not main lobby.",
+    "Reschedule notice: call at least 48 hours ahead.",
+    "Fish oil stop date: Friday, October 2.",
+    "Prep times: first half 6 p.m. Thursday, October 8; second half 1:45 a.m. Friday, October 9, finish by 2:45 a.m.; nothing by mouth after 4:45 a.m."
+  ]
+}

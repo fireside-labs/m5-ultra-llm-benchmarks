@@ -1,0 +1,243 @@
+@id C06
+@date 2026-09-22 14:10
+@line Tallyforge (invoicing & accounts-receivable SaaS) - Customer Support, Tier 1 (escalated to Tier 2)
+@direction inbound
+@target 18000
+@seed 6061
+@diar_drop 0.15
+@speaker A AGENT = Tier 1 support agent (Kwame)
+@speaker T AGENT_2 = Tier 2 support specialist (Priyanka), joins after transfer
+@speaker C CUSTOMER = bookkeeper at a joinery / cabinet-making company
+@speaker O OTHER = customer's coworker in the room (shop foreman), occasionally audible
+---
+A: Thank you for calling Tallyforge support, this is Kwame, how can I help you today?
+C: Hi, Kwame. Hi. Um, okay, so I'm the bookkeeper at Ferncliff Joinery, and I have— I've got a bit of a mess with the reminder emails, and also some late fees, and honestly I've been on hold for, what, twenty minutes, so I'm a little—
+A: I'm sorry about the wait, it's been a busy afternoon. Let's get you sorted. Can I start with your name?
+C: Odile. Odile Marchetti-Sung. M-A-R-C-H-E-T-T-I, hyphen, Sung, S-U-N-G.
+A: Thank you, Odile. And the company name on the account, Ferncliff...?
+C: Ferncliff Joinery. Like, joinery, cabinets, doors, staircases. [background: saw running]
+A: Got it, I see Ferncliff Joinery. Okay. So to verify you I'm going to send a six-digit code to the email address on the account, and you'll just read it back to me.
+C: Oh. Um. Which email is on the account? Because if it's the accounts-at one, that's— that goes to Bernie, and Bernie retired in June. Nobody's looked at that inbox since, honestly. That's actually one of the things I wanted to fix, I want the billing stuff coming to me.
+A: Let me see, the email on file is accounts at ferncliff joinery dot com.
+C: Yeah, that's Bernie's. That's the dead one. Can we change it to mine? It's odile dot m s at ferncliff joinery dot com.
+A: Sure, I can do that for you, let me just fix that while we're here. [typing] Odile dot M, S... at ferncliff joinery dot com. Okay.
+C: Great, thank you. That's been bugging me for months.
+A: And I'm sending the verification code now.
+C: Okay... [pause] ...nothing yet. Where did it go?
+A: Hmm, it goes to the account login email, so probably the accounts-at one.
+C: Right, so Bernie's inbox. Which I can't get into.
+A: Oh, no worries, I already updated it, so I'll just send it to the billing address instead, that's yours now. [typing] Okay, sent.
+C: Okay, here it is. Four-one-nine, two-two-six.
+A: Four-one-nine, two-two-six. Perfect, you're verified. Thanks, Odile. Okay, so tell me about the reminder emails.
+C: Okay. Um. Hang on, let me— I've got like nine tabs open. [laughs] Where is— okay. So, background. We're a small shop, it's me, the owner, Junie who helps me part time, and then the guys on the floor, twenty-two of them? Twenty-three now. And we do mostly custom kitchens and staircases for contractors, so our clients are mostly contractors, and they're— they're very particular about paper. They pay on the day. They don't pay early, they don't pay late, they pay on the day.
+A: Got it, so the dates really matter to them.
+C: The dates are everything. Hartwell has a guy, Moe, whose whole job is paying invoices on the due date. That's it. That's his whole job. [laughs]
+A: [laughs] Okay.
+C: So when the dates are wrong, I hear about it. Fast.
+A: Understood. And how long have you been using the automatic reminders?
+C: Oh, since we started with you guys. Three years? Three and a half. Never a problem. Never one problem until this month.
+A: Okay, that's helpful.
+#fill saas_billing_nav saas_early @C=C
+C: So. Okay. We send all our invoices through Tallyforge, and we have the automatic reminders turned on, the ones that go out, you know, three days before the due date and then on the due date. And for about the last— since the beginning of the month, maybe— our clients are getting reminders that say the wrong due date.
+A: The wrong due date, okay.
+C: A day early. The invoice says due September thirtieth, and the reminder email says "your invoice is due September twenty-ninth." And people are calling me going, which one is it? And a couple of them paid early which, fine, but a couple of them got really snippy.
+A: Okay. And this is on all invoices, or certain ones?
+C: Every one I've checked. I checked, like, ten.
+A: Do you have one of the reminder emails handy? Like, could you read me what it says exactly?
+C: Yeah, I forwarded one to myself. Okay, here. "Hi Hartwell Kitchens, this is a friendly reminder that invoice INV-two-oh-four-one-seven for four thousand, eight hundred twelve dollars and fifty cents is due on September fourteenth, twenty twenty-six. You can view and pay your invoice using the link below." And then the link. And then our logo. And when you click the link, the invoice says September fifteenth. Right there at the top. Due date, September fifteenth.
+A: Okay. So the email and the invoice disagree.
+C: The email and the invoice disagree. That's the whole problem in one sentence. [laughs]
+A: Okay. And the amount in the email, the four thousand eight-twelve fifty, is that right?
+C: Yes, that's right. It's just the date.
+A: Okay, let me pull up one of the invoices. Can you give me an invoice number?
+C: Sure, um, the one that started all this is two oh four seventy— no, sorry, I'm reading it wrong. Two-oh-four-one-seven. I-N-V dash two oh four one seven. One-seven at the end.
+A: INV-20417. Let me look.
+O: [background] Odile, the Hartwell delivery, is that tomorrow or Thursday?
+C: [to coworker] Thursday. Thursday morning, Dale. It's on the board. [to agent] Sorry. Shop floor.
+A: No problem. Okay, I've got INV-20417 open. Due date on the invoice is September fifteenth.
+C: September fifteenth. Yes. And issued August sixteenth, net thirty.
+A: Net thirty, issued August sixteenth... yes, that matches.
+C: Right, and that's the other thing. That one's the one with the late fee.
+#fill saas_billing_nav office_smalltalk
+A: Okay so, I see the reminder log for that invoice. Reminder sent September twelfth, says... yep, it says "due September fourteenth." And the invoice says the fifteenth. So you're right, that's a day off.
+C: Thank you. I'm not crazy.
+A: You're not crazy. [laughs] Okay, and then the late fee.
+C: So, the client, Hartwell Kitchens, paid on the fifteenth. On the due date! And they got a thirty-five dollar late fee slapped on, on the fifteenth. Automatically. And the owner called me furious, because they've been with us eleven years and they've never paid late in their life.
+A: Okay. Yeah, I see the late fee posted on the fifteenth, thirty-five dollars.
+C: And there's a second one. INV-20422. Same thing. Different client, Brookfield something, Brookfield Renovations. Thirty-five dollars. Also on the due date.
+A: [typing] INV-20422... yep. Thirty-five dollars, posted the eighteenth, which is also the due date.
+C: So that's seventy dollars in late fees that shouldn't exist, and two clients who think we're running a scam.
+A: I understand. So, I can see what's happening, but I'm going to be honest, on the late fees, once a late fee posts to an invoice it can't be reversed. The system locks it.
+C: What? It can't be reversed? That's— no. That can't be right.
+A: That's my understanding. What you could do is issue them a credit note for thirty-five dollars each, which kind of nets it out.
+C: A credit note. So their statement shows a late fee AND a credit. That looks terrible. That looks worse.
+A: I know, it's not ideal.
+C: Can I at least see which clients got the wrong reminders? Like, a list? Because I'd rather call them before they call me.
+A: Yeah, there's a reminder log. Go to Reports, then Communications, then Reminder history. You can filter by date.
+C: Reports... Communications... I don't see Communications. I see Sales, Receivables, Taxes...
+A: Oh, sorry, it moved in the last release. It's under Receivables now, then "Reminder history" at the bottom.
+C: Receivables... okay, yes, Reminder history. Oh. Oh, wow. That's a lot of rows.
+A: You can set the date filter to September first through today.
+C: September first... to the twenty-second. Okay. That's, um, sixty-one reminders. Sixty-one!
+A: And you can export that to a spreadsheet, there's a download button at the top right.
+C: Okay, I'll do that later, I'll go through them. Sixty-one. Lord.
+#hold 140
+A: Thanks for holding, sorry, I was checking our internal knowledge base to see if there's an article on this.
+C: And?
+A: There's nothing published yet. Just an internal note to send reminder-date tickets to Tier 2.
+C: Well, that's something.
+#fill saas_billing_nav it_side_talk
+C: Okay, so is this a— is this a bug? Like, is this on your end? Because I didn't change anything.
+A: It does look like it might be on our end. We had a release at the start of the month, 7.4, and I've seen a couple of tickets about reminder emails since then, but I don't have the details.
+C: A couple of tickets. So it's not just us.
+A: I don't want to say for sure. Let me check the settings on your account first, just to rule things out. Can you go to Settings, then Invoicing, then Reminders?
+C: Settings... Invoicing... okay. Reminders.
+A: What does it say for time zone, at the top?
+C: Time zone... America, Chicago. Which is right. We're in Chicago. Well, outside Chicago.
+A: Okay, that's correct. And the reminder schedule?
+C: Three days before, on due date, and seven days after. And then the late fee is set to "apply on due date if unpaid." Which, I mean, they DID pay.
+A: Right. And when did Hartwell's payment come in? Like, what time?
+C: Um, I'd have to look. It was the afternoon, I think. They pay through the link.
+A: Okay so it's possible the late fee job ran before the payment cleared. But that still doesn't explain the reminder date.
+#diar off
+C: Can we— is there someone above you, maybe, who'd know more about the release thing?
+A: Yeah, I think this might need to go to Tier 2. They have access to the engineering tickets.
+C: Okay. Will I have to explain everything again?
+A: No, I'll write it all up in the ticket before I transfer you, and I'll stay on until they pick up.
+#diar on
+C: Okay. Thank you.
+A: Actually, while I'm writing it up, can you tell me roughly what time Hartwell's payment came through on the fifteenth? It'll help Tier 2.
+C: Let me look. Payments... Hartwell... September fifteenth, two forty-seven p.m. Paid by ACH through the link.
+A: Two forty-seven p.m. And the late fee posted at... [typing] the log says the late fee job ran at, um, seven-oh-one p.m. on the fourteenth? That's weird. That's before the due date even started.
+C: The fourteenth? So it charged them a late fee the night before the invoice was even due?
+A: That's what the timestamp says, seven-oh-one p.m. Central on the fourteenth. I'll put that in the note, that's really useful.
+C: That's insane. Okay.
+A: Okay, and for the other one, Brookfield, do you know when they paid?
+C: Brookfield paid... the eighteenth, ten fifteen in the morning. By card.
+A: Ten fifteen a.m. on the eighteenth. And their fee posted... seven-oh-one p.m. on the seventeenth. Same pattern.
+C: Same pattern. Great. [sighs]
+#fill office_smalltalk saas_billing_nav
+A: Okay, before I transfer you, is there anything else on the account you wanted to look at?
+C: Um, yes, actually, one more small thing. When we renew, which is— October twentieth, I think? — we want to switch to the annual plan. My boss says it's cheaper.
+A: It is, about two months free compared to monthly. Your renewal date is October twentieth, yep. I can make a note that you want annual at renewal.
+C: Please. And does it switch automatically or do I have to do something?
+A: You'd click "switch to annual" under Plan before the twentieth, or Tier 2 can do it for you.
+C: Okay, I'll do it myself, I don't trust anyone today. [laughs] No offense.
+A: [laughs] None taken. Okay. I've written up the ticket. I'm going to transfer you to Tier 2 now, please hold.
+#note transferred to Tier 2 support; hold music
+#hold 380
+#fill hold_announce @C=C
+#note Tier 2 specialist joined; Tier 1 agent dropped off
+T: Hi Odile, this is Priyanka on the Tier 2 team. Kwame wrote me a pretty thorough note, so I think I've got the picture, but tell me if I miss anything. You're seeing reminder emails with a due date one day earlier than the invoice, and two late fees that posted on the due date even though the clients paid on the due date.
+C: Yes. Exactly. Thank you for reading it. Seventy dollars, two invoices, twenty-four-seventeen— sorry, two oh four one seven and two oh four two two.
+T: INV-20417 and INV-20422. Got them both open. Okay, so first, the reminder date. That's a known bug. It came in with 7.4, which went out September second. The reminder emails convert the due date to UTC before formatting, so for anyone west of UTC — which is everyone in the Americas — the date shows one day early.
+C: Oh my God. So it's literally every remind— every reminder we've sent this month.
+T: Every reminder that included the due date, since September second, yes. I'm sorry. It's being tracked as an engineering ticket. TF-88213.
+C: TF...?
+T: T-F, dash, eight-eight-two-one-three.
+C: Eight-eight... sorry, my pen died. [background: rummaging] Okay. Eighty-two thirteen?
+T: Eight-eight, two-one-three. Double eight.
+C: Double eight, two one three. Got it. TF-88213.
+#fill saas_debug office_smalltalk @A=T
+T: And the late fees are related, actually. The late-fee job reads the same converted date. So as far as it's concerned, the due date already passed the moment it hits midnight UTC, which is seven p.m. your time the day before. Hartwell paid in the afternoon on the fifteenth, but the job had already posted the fee.
+C: So it's the same bug.
+T: Same root cause, yeah.
+C: And Kwame found that it ran at seven-oh-one the night before. Is that the— is that the midnight thing?
+T: Exactly that. Seven p.m. Central is midnight UTC, the job kicks off right after, so seven-oh-one. Kwame's note was really helpful, actually, that's how I matched it so fast.
+C: Okay, well, credit to Kwame for that part.
+T: [laughs] I'll pass it on.
+C: Okay. And Kwame said the fees can't be reversed. Is that true? Because I really don't want to do credit notes.
+T: No, actually, Kwame had that wrong, and I'll make sure he knows. You can reverse a late fee. Open the invoice, click the three dots next to the late fee line, and choose "Reverse fee." It removes it completely, it doesn't leave a credit line, and the client gets an updated invoice with the fee gone.
+C: Oh, thank God.
+T: Do you want to try it on INV-20417 while I'm on with you?
+C: Yes. Okay. Opening it. Three dots... "Edit line," "Reverse fee." Okay. Reverse fee. It's asking for a reason.
+T: Just put "system error, TF-88213" or whatever you like.
+C: [typing] System error... Okay. Done. It says "fee reversed." And the total went back to... yes. Back to the original amount.
+T: Perfect. You can do the same on 20422 whenever you like.
+C: I'll do it right after this call. Okay, that's a relief.
+T: Do you want me to share my screen for a minute? I can show you what the bug looks like on our side, it might help when you talk to your clients.
+C: Sure, why not.
+T: Okay, you should get a link in the chat... it's the little meeting icon at the bottom right of Tallyforge.
+C: Bottom right... "Join screen share." Okay. Oh, I see your screen. Lots of tabs. [laughs]
+T: [laughs] Occupational hazard. Okay, so this is a test account, not yours. I'm creating an invoice dated today, due the thirtieth, and I'll hit "send reminder now." And... here's the preview. See, "due September twenty-ninth."
+C: Oh, there it is. Same as mine.
+T: And if I switch this test account's time zone to London... preview again... "due September thirtieth." Correct.
+C: So if we were in London it'd be fine.
+T: If you were in London it'd be fine. [laughs] Which I don't recommend as a workaround.
+C: [laughs] I'd love to, honestly.
+T: Okay, I'm going to stop sharing.
+C: Okay, it went away.
+#fill saas_debug connection_issues @A=T
+C: Sorry, can you still hear me? I think I lost you for a sec.
+T: I'm here. I think it was your end, there was some static.
+C: That's the dust collector, it does something to the wife— the Wi-Fi. Every time. Okay, go on.
+C: Oh, and— what do I tell my clients? Hartwell especially. Moe is going to want an explanation in writing. He likes things in writing.
+T: That's fair. I can put a short paragraph in the summary email that you can forward or paste, something like, "our invoicing provider had a software issue that showed the wrong due date on reminder emails; your invoice due date was correct; the late fee has been removed." Would that help?
+C: That would help a lot. Yes, please put that in.
+T: Will do.
+#fill saas_debug saas_billing_nav @A=T
+C: So when does the bug get fixed?
+T: The fix is in 7.4.2. I don't have a firm date to give you yet, I can see engineering has it in progress. I'll add your account to the ticket so it's on their radar, and so you get an email when it's resolved.
+C: Please. Please add us.
+T: Do you have a sense of how many of your clients actually got charged a late fee? Not just the wrong reminder, the fee.
+C: Um, just the two, I think. Hartwell and Brookfield. Most of our clients pay a day or two before, so the fee doesn't trigger.
+T: Okay. You might want to check the Late fees report for September just to be sure. Receivables, Late fees.
+C: Receivables... Late fees... September. Okay. Two rows. Hartwell, Brookfield. Thirty-five, thirty-five. Just those two.
+T: Okay, good, so seventy dollars total, and you've already reversed one.
+C: Right.
+T: Doing it now. [typing] Okay. Ferncliff Joinery is attached to TF-88213. And honestly, you're not alone. Rhiannon over at Kittering Veterinary called about the exact same thing yesterday, she was furious, they had like fifteen clients complaining.
+C: Oh. Ha. Well, at least it's not just me.
+T: No, definitely not just you.
+#fill it_side_talk office_smalltalk @A=T
+C: So in the meantime— because we've got maybe forty invoices going out next week, it's month-end-ish— what do I do? I can't have this happen again.
+T: Two things. First, change the late-fee grace period from zero days to one day. That's under Settings, Invoicing, Late fees, "Grace period." With one day, the job won't post anything until the day after the due date, even with the bug.
+C: Grace period... late fees... okay. Zero. Change to one. Saved.
+T: Great. Second, for the reminders themselves, switch the reminder template to the one that doesn't print the due date — it's called "Friendly reminder, no date." It just says the invoice is coming due and links to it. The link shows the correct date.
+C: Okay. Templates... "Friendly reminder, no date." Selected. [inaudible] Save. Okay.
+T: Once 7.4.2 is out you can switch it back.
+C: Okay. Will someone tell me when that is?
+T: Since you're attached to the ticket, you'll get the resolution email. And I'll also send you a summary of today's call, with the ticket number and these two workaround steps, right after we hang up.
+C: Thank you. Send it to the new email, the odile dot m s one.
+T: Let me check... [typing] Okay, the billing email shows your address. The login email is still the accounts-at one, by the way. And there's a pending confirmation on the billing email change, you should have a link in your inbox to confirm it.
+C: Oh. Okay. I'll click that. And the login one, can that be changed too?
+T: The login email has to be changed by the account owner. Who's the owner?
+C: Um, that'd be Mr. Ferncliff. Gordon. He's... not technical. [laughs]
+T: [laughs] That's okay. He can do it from his profile, or he can call in and we'll walk him through it.
+#fill saas_debug it_side_talk @A=T
+C: Oh, actually, while I have someone who knows things. [laughs] Can I ask a how-do-I question? It's not about the bug.
+T: Sure, go ahead.
+C: So for the big staircase jobs we take a deposit, fifty percent up front, and right now I make two separate invoices, one for the deposit and one for the balance, and then I have to remember to link them in my head. Is there a better way?
+T: There is. When you create the invoice, under "Payment terms" there's an option called "Deposit schedule." You set fifty percent due on acceptance and fifty percent on the completion date, and it generates one invoice with two installments. Each installment gets its own reminder.
+C: Its own reminder. Which, right now, would have the wrong date. [laughs]
+T: [laughs] Right now, yes, so maybe wait until 7.4.2 to switch those over. But the installments themselves are fine.
+C: Okay. Deposit schedule. Under payment terms. I'm writing that down. "Deposit schedule." And can I convert the old ones, or just new ones?
+T: Just new ones. The existing pairs you'd leave as they are.
+C: That's fine, most of them are finishing this month anyway. The Lindqvist staircase is the only long one, that's going till December. Gorgeous staircase, by the way. White oak. Floating treads.
+T: That sounds beautiful.
+C: It is. The guys are very proud of it. Okay. Sorry. Back to business.
+T: No, it's nice to hear what people actually use Tallyforge for. Mostly I hear about errors. [laughs]
+C: [laughs] I'll send you a picture. No, I won't, that's weird. [laughs]
+T: [laughs] Totally up to you.
+C: And, um, the client portal thing, where clients log in and see all their invoices? Hartwell's Moe asked me if he can download all of their invoices for the year at once. For their auditor.
+T: He can, from the client portal there's a "Download all" button on the statements page, it gives a zip of PDFs. Or you can send him a statement from your side, Clients, Hartwell Kitchens, Statement, and choose the date range.
+C: Okay, I'll send him the statement, that's easier than explaining the portal to Moe. [laughs]
+T: [laughs] Fair enough.
+C: Okay. One more question. My assistant, Junie, she does a lot of the invoicing too. What if I just gave Junie my password? Would that be easier? Then she can log in as me when I'm out.
+T: Please don't do that. It's against our terms, and it means everything she does shows up as you in the audit log. Add her as a user instead. Your plan includes three free Staff seats and you're only using one.
+C: Oh. I didn't know that. Okay. How do I add her?
+T: Settings, Team, Invite user. Put in her email, pick the Staff role. She'll get an invite and set her own password.
+C: Okay. I'll do that this afternoon. She's going to be thrilled, she hates when I'm on vacation. [laughs]
+#diar off
+C: Oh— Gordon's here. Gordon, it's the software people, the date thing. ... Yes, the reminders. ... They know, it's a bug. ... No, it's not our fault. ... I'm fixing it.
+C: [laughs] Sorry, he wants to know if we're getting money back.
+T: For the subscription, you mean? I can't offer a subscription credit from Tier 2, that would go through your account manager, but I can note that you asked.
+C: No, no, it's fine. He means the clients' late fees. Which, we reversed. So, yes, Gordon. ... Yes. ... Okay, he's gone.
+#diar on
+T: [laughs] All good?
+C: All good. He's sweet, he just worries. Where were we.
+O: [background] Odile! The glass guy's here!
+C: [to coworker] One minute! [to agent] Sorry. I think that's everything.
+T: Let me recap. The reminder date and the late fees are the same bug, TF-88213, fixed in 7.4.2, and your account is attached. You reversed the fee on INV-20417 and you'll reverse INV-20422. You set the late-fee grace period to one day and switched to the no-date reminder template as a workaround. You'll confirm the new billing email from the link, and add Junie as a Staff user. I'll email you the summary today. And you're planning to switch to annual before your October twentieth renewal.
+C: That's it. Thank you, Priyanka. Honestly, you've been a lifesaver.
+T: Happy to help. Sorry again for the trouble.
+C: Bye now.

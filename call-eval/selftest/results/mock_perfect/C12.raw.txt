@@ -1,0 +1,46 @@
+{
+ "call_type": "complaint_escalation",
+ "outcome": "escalated",
+ "sentiment_start": "negative",
+ "sentiment_end": "neutral",
+ "quality_score": 3,
+ "quality_reasons": [
+  "Verified identity, strong empathy, appropriate escalation to patient relations with a formal grievance",
+  "Front-line agent promised lost-wage reimbursement she had no authority to grant; supervisor had to walk it back"
+ ],
+ "flags": [
+  {
+   "type": "other",
+   "description": "Agent promised the patient that lost wages would 'definitely' be covered, outside her authority/policy (reimbursement is decided by the grievance review committee); supervisor had to retract it",
+   "evidence": "we'll definitely cover your lost wages. I'll make sure of it."
+  }
+ ],
+ "action_items": [
+  {
+   "owner": "patient relations supervisor",
+   "task": "Formal grievance G-260411 opened; written acknowledgment within 5 business days and written response after review",
+   "due": "acknowledgment within 5 business days"
+  },
+  {
+   "owner": "patient relations supervisor",
+   "task": "Cover the cost of a second prep kit (approved); include lost-wage request in grievance review",
+   "due": "unspecified"
+  },
+  {
+   "owner": "patient",
+   "task": "Rescheduled colonoscopy Thursday April 30, arrive 7:30 am",
+   "due": "2026-04-30 07:30"
+  },
+  {
+   "owner": "GI nurse",
+   "task": "Call patient before the procedure to review prep, give written drinking instructions and an insulin plan for prep day",
+   "due": "before 2026-04-30"
+  }
+ ],
+ "summary_notes": "Mock summary for C12.",
+ "notable_details": [
+  "Patient is diabetic on insulin and was guessing her doses during prep; nobody asked about it",
+  "Grievance number G-260411",
+  "Supervisor walked back the lost-wages promise; only the second prep kit cost was approved"
+ ]
+}

@@ -1,0 +1,427 @@
+{
+ "task_id": "R08",
+ "title": "Debate: remote work as the default for knowledge workers",
+ "category": "C",
+ "sections": [
+  "for",
+  "against",
+  "cruxes",
+  "mind",
+  "lean"
+ ],
+ "items": [
+  {
+   "id": "F1",
+   "text": "Focused individual productivity: fewer interruptions and more deep-work time",
+   "importance": "high",
+   "match": [
+    [
+     "focus",
+     "deep work",
+     "interruption",
+     "distraction",
+     "concentrat",
+     "productiv",
+     "quiet",
+     "flow"
+    ]
+   ],
+   "paraphrases": [
+    "Fewer interruptions mean more deep, focused work.",
+    "Individual productivity rises for concentration-heavy tasks.",
+    "Remote work cuts office distractions."
+   ],
+   "side": "for"
+  },
+  {
+   "id": "F2",
+   "text": "Talent pool and hiring: recruit beyond commuting distance and widen diversity of candidates",
+   "importance": "high",
+   "match": [
+    [
+     "talent",
+     "hiring",
+     "recruit",
+     "labor (pool|market)",
+     "candidates?",
+     "geograph",
+     "anywhere",
+     "wider pool",
+     "broader pool"
+    ]
+   ],
+   "paraphrases": [
+    "Hire talent beyond commuting distance.",
+    "A wider candidate pool across geographies.",
+    "Recruiting advantage over office-bound competitors."
+   ],
+   "side": "for"
+  },
+  {
+   "id": "F3",
+   "text": "Time and wellbeing: no commute saves hours, money and stress; better work-life balance",
+   "importance": "high",
+   "match": [
+    [
+     "commut",
+     "work.life",
+     "wellbeing",
+     "well.being",
+     "stress",
+     "burnout",
+     "time saved",
+     "saves? (hours|time|money)"
+    ]
+   ],
+   "paraphrases": [
+    "No commute saves hours a week, money and stress.",
+    "Better work-life balance and wellbeing.",
+    "Time saved from commuting goes to rest or work."
+   ],
+   "side": "for"
+  },
+  {
+   "id": "F4",
+   "text": "Retention: flexibility is valued; mandating office days drives attrition, especially of top performers",
+   "importance": "high",
+   "match": [
+    [
+     "retention",
+     "retain",
+     "attrition",
+     "turnover",
+     "quit",
+     "leave for",
+     "(valued|prized) (perk|benefit)",
+     "flexibility"
+    ]
+   ],
+   "paraphrases": [
+    "Retention: people value flexibility and quit over office mandates.",
+    "Lower attrition and turnover with remote default.",
+    "Top performers leave for competitors offering flexibility."
+   ],
+   "side": "for"
+  },
+  {
+   "id": "F5",
+   "text": "Cost: less office space and real estate",
+   "importance": "normal",
+   "match": [
+    [
+     "real estate",
+     "office (space|costs?|footprint|leases?)",
+     "\\brent",
+     "overhead",
+     "facilit"
+    ]
+   ],
+   "paraphrases": [
+    "Savings on office space and real estate.",
+    "Smaller office footprint cuts overhead.",
+    "Lower facilities and lease costs."
+   ],
+   "side": "for"
+  },
+  {
+   "id": "F6",
+   "text": "Inclusion: caregivers, people with disabilities and those far from offices can participate fully",
+   "importance": "normal",
+   "match": [
+    [
+     "caregiv",
+     "parents?",
+     "childcare",
+     "disab",
+     "inclusi",
+     "accessib",
+     "neurodiver",
+     "chronic (illness|condition)"
+    ]
+   ],
+   "paraphrases": [
+    "Caregivers and parents can work full careers.",
+    "People with disabilities or chronic illness benefit from remote work.",
+    "More inclusive workplace."
+   ],
+   "side": "for"
+  },
+  {
+   "id": "A1",
+   "text": "Collaboration and innovation: spontaneous interactions, weak ties and cross-team idea flow decline",
+   "importance": "high",
+   "match": [
+    [
+     "collaborat",
+     "innovat",
+     "serendip",
+     "spontaneous",
+     "weak ties",
+     "hallway",
+     "water.?cooler",
+     "chance (encounters|conversations)",
+     "idea flow",
+     "creativ",
+     "brainstorm"
+    ]
+   ],
+   "paraphrases": [
+    "Collaboration and innovation suffer without spontaneous in-person interaction.",
+    "Fewer weak ties and serendipitous hallway conversations.",
+    "Cross-team idea flow and creativity decline."
+   ],
+   "side": "against"
+  },
+  {
+   "id": "A2",
+   "text": "Mentoring and early-career development: juniors learn by observation and quick feedback; onboarding is harder",
+   "importance": "high",
+   "match": [
+    [
+     "mentor",
+     "junior",
+     "early.career",
+     "new (hires|joiners|employees)",
+     "onboard",
+     "apprentic",
+     "learn(ing)? by (watching|observ|osmosis)",
+     "osmosis",
+     "coaching",
+     "training"
+    ]
+   ],
+   "paraphrases": [
+    "Juniors learn by osmosis and lose mentoring when remote.",
+    "Onboarding new hires is harder remotely.",
+    "Early-career development suffers without observation and quick feedback."
+   ],
+   "side": "against"
+  },
+  {
+   "id": "A3",
+   "text": "Culture, cohesion and trust erode; loneliness and isolation rise",
+   "importance": "high",
+   "match": [
+    [
+     "culture",
+     "cohesion",
+     "belonging",
+     "lonel",
+     "isolat",
+     "trust",
+     "social (ties|bonds|capital|connection)",
+     "team spirit",
+     "relationships?"
+    ]
+   ],
+   "paraphrases": [
+    "Culture and cohesion erode remotely.",
+    "Loneliness and isolation among employees.",
+    "Trust and social capital are harder to build."
+   ],
+   "side": "against"
+  },
+  {
+   "id": "A4",
+   "text": "Coordination costs: slower communication, more meetings and messages, time-zone and async friction",
+   "importance": "normal",
+   "match": [
+    [
+     "coordinat",
+     "communication (overhead|cost|friction|lag)",
+     "slower (communication|decisions)",
+     "meetings",
+     "zoom fatigue",
+     "video calls?",
+     "async",
+     "time.zones?",
+     "misunderstand",
+     "bandwidth"
+    ]
+   ],
+   "paraphrases": [
+    "Coordination costs rise: more meetings and slower communication.",
+    "Async friction and misunderstandings slow decisions.",
+    "Video-call fatigue and time-zone problems."
+   ],
+   "side": "against"
+  },
+  {
+   "id": "A5",
+   "text": "Management and accountability: harder to observe and evaluate work; risk of shirking or of invasive monitoring",
+   "importance": "normal",
+   "match": [
+    [
+     "manag",
+     "accountab",
+     "oversight",
+     "performance (evaluation|management|review)",
+     "monitor",
+     "surveillance",
+     "shirk",
+     "slack(ing)?",
+     "visibility into (work|output)"
+    ]
+   ],
+   "paraphrases": [
+    "Managers find it harder to evaluate performance and hold people accountable.",
+    "Risk of shirking - or of invasive monitoring to compensate.",
+    "Less visibility into work and output."
+   ],
+   "side": "against"
+  },
+  {
+   "id": "A6",
+   "text": "Two-tier workforce: proximity bias favours those in the office; unequal home setups",
+   "importance": "normal",
+   "match": [
+    [
+     "proximity bias",
+     "two.tier",
+     "in.office (colleagues|workers|employees) (get|are)",
+     "favou?r(itism|ed)? (toward|those)",
+     "promotion",
+     "unequal",
+     "home (setup|office|environment)",
+     "cramped",
+     "face time"
+    ]
+   ],
+   "paraphrases": [
+    "Proximity bias: those in the office get promoted first, creating a two-tier workforce.",
+    "Unequal home setups - not everyone has a quiet home office.",
+    "Face time still drives promotions."
+   ],
+   "side": "against"
+  }
+ ],
+ "cruxes": [
+  {
+   "id": "C1",
+   "text": "Does remote-by-default raise or lower productivity for this company's kinds of work, measured as output rather than activity, including team-level and long-run effects?",
+   "importance": "high",
+   "match": [
+    [
+     "productiv",
+     "output",
+     "performance"
+    ],
+    [
+     "net",
+     "measur",
+     "depend",
+     "task",
+     "type of work",
+     "team.level",
+     "long.run",
+     "long.term",
+     "whether",
+     "empirical",
+     "rais|lower",
+     "actually"
+    ]
+   ],
+   "paraphrases": [
+    "Does remote work actually raise or lower productivity for our kinds of tasks, measured by output?",
+    "Net productivity effect, including team-level and long-run effects - an empirical question.",
+    "Whether measured output changes depends on the type of work."
+   ]
+  },
+  {
+   "id": "C2",
+   "text": "Can mentoring, onboarding and early-career growth be made to work remotely, or do juniors fall behind?",
+   "importance": "high",
+   "match": [
+    [
+     "junior",
+     "early.career",
+     "mentor",
+     "onboard",
+     "new hires",
+     "develop(ment)?",
+     "learn"
+    ],
+    [
+     "can",
+     "whether",
+     "fall behind",
+     "work remotely",
+     "remotely",
+     "replicat",
+     "substitut",
+     "long.term",
+     "careers?"
+    ]
+   ],
+   "paraphrases": [
+    "Can mentoring and onboarding work remotely, or do juniors fall behind?",
+    "Whether early-career development can be replicated without the office.",
+    "Long-term effect on juniors' careers is the key unknown."
+   ]
+  },
+  {
+   "id": "C3",
+   "text": "Does innovation and cross-team collaboration actually depend on in-person contact, or can deliberate gatherings substitute?",
+   "importance": "high",
+   "match": [
+    [
+     "innovat",
+     "collaborat",
+     "serendip",
+     "weak ties",
+     "creativ",
+     "in.person"
+    ],
+    [
+     "depend",
+     "require",
+     "substitut",
+     "whether",
+     "can",
+     "deliberate",
+     "offsites?",
+     "gatherings?",
+     "really",
+     "actually",
+     "need"
+    ]
+   ],
+   "paraphrases": [
+    "Does innovation really depend on in-person contact, or can deliberate offsites substitute?",
+    "Whether serendipitous collaboration requires physical presence.",
+    "Can planned gatherings replace hallway creativity?"
+   ]
+  },
+  {
+   "id": "C4",
+   "text": "Values: how much weight to give employee autonomy and wellbeing versus organisational cohesion and control",
+   "importance": "normal",
+   "match": [
+    [
+     "values?",
+     "weigh",
+     "trade.?off",
+     "priorit(y|ize|ise)",
+     "autonomy",
+     "what (the company|we) owe"
+    ],
+    [
+     "autonomy",
+     "wellbeing",
+     "well.being",
+     "flexibility",
+     "cohesion",
+     "control",
+     "culture",
+     "employees?"
+    ]
+   ],
+   "paraphrases": [
+    "Value question: employee autonomy and wellbeing vs organisational cohesion and control.",
+    "How to weigh flexibility against culture - a trade-off, not a fact.",
+    "What priority to give employees' autonomy versus the company's need for cohesion."
+   ]
+  }
+ ],
+ "decoys": []
+}

@@ -1,0 +1,87 @@
+
+Let me work through this problem.
+
+TCO per van over 8 years:
+- Electric: $118,000
+- Diesel: $131,000
+- Electric advantage: $13,000 per van over 8 years.
+
+Infrastructure constraint: depot supports up to 6 overnight chargers. 7-12 chargers requires $240,000 upgrade.
+
+Option 1: 12 electric vans → needs upgrade → +$240,000 total → 12 × $118,000 + $240,000 = $1,416,000 + $240,000 = $1,656,000. Per-van effective: $138,000.
+
+Option 2: 12 diesel → 12 × $131,000 = $1,572,000.
+
+Option 3: 6 electric + 6 diesel → 6 × $118,000 + 6 × $131,000 = $708,000 + $786,000 = $1,494,000. No upgrade needed (6 chargers fit within capacity). This is the cheapest.
+
+Comparison:
+- Option 3: $1,494,000
+- Option 2: $1,572,000 (option 3 saves $78,000 vs all-diesel)
+- Option 1: $1,656,000 (option 3 saves $162,000 vs all-electric)
+
+Also warranty check: battery warranty 8 years or 250,000 km. Each van drives 30,000 km/year × 8 = 240,000 km — just under the 250,000 km limit. So warranty covers the full period, but barely (10,000 km margin, ~4%). Risk: if mileage increases slightly, warranty expires early. Note resale value at 8 years assumed in TCO; battery condition at end matters.
+
+Range: longest daily route 160 km vs winter range 230 km — fine, 70 km buffer (~30% headroom), even with winter degradation. Overnight charging at depot means full start each day.
+
+Insurance: electric is $4,000 more over 8 years per van — already in TCO.
+
+Phased mix option: revisit diesel half when replaced — but note that the diesel vans are replaced when? The brief says "revisiting the diesel half when those vans are replaced" — presumably at the 8-year mark or earlier. The TCO covers 8 years. If diesel vans are replaced mid-cycle, new decision then. Also, if the company later wants more electric vans, the $240k upgrade would be needed then — but that's a future decision, and the upgrade cost would be deferred (not avoided if they eventually go all-electric; but deferral has value, and technology/battery costs may improve).
+
+Also, one nuance: the electric van purchase price includes its depot charger — so 6 electric vans include 6 chargers, exactly at depot capacity. Good.
+
+Potential risk: if an electric van charger fails, no redundancy? Minor. Also winter range 230 km vs 160 km route — fine.
+
+Another risk: battery warranty margin — 240,000 km vs 250,000 km cap. If routes grow >4%, warranty lapses before year 8; battery replacement cost not in TCO. That's a real risk worth flagging.
+
+Risk: utility upgrade quote $240k is for 7-12 chargers; if phased mix later expands to more electric, that cost lands in the next cycle — but decision can incorporate then-cheaper tech.
+
+Risk: electric resale value assumption (-$8,000) may be optimistic/pessimistic; battery state at resale.
+
+Risk: energy price volatility — diesel fuel vs electricity prices; electric saves $33,000 energy over 8 years per van. If electricity rates rise, advantage shrinks; if diesel rises, grows.
+
+Reliability: decision should be on cost and reliability. Electric vans have fewer moving parts (maintenance $10k less), but newer tech risk; diesel is proven. Phased mix hedges: if electric vans prove unreliable, only half the fleet affected; also keeps diesel experience.
+
+Recommendation: Phased mix (option 3). It's the lowest total cost ($1.494M vs $1.572M diesel vs $1.656M all-electric), avoids the $240k upgrade, fits charger capacity exactly, hedges reliability risk, and preserves optionality.
+
+Confidence: fairly high — the math is straightforward from given numbers. Maybe 85%. Risks: battery warranty mileage margin, future expansion needing upgrade, energy price shifts. I'd say 85%.
+
+Word count: aim 150-300 words. Use exact headings. End with exactly two lines:
+
+POSITION: Phased mix (6 electric + 6 diesel now)
+CONFIDENCE: 85%
+
+Let me draft.
+
+## Recommendation
+Choose the phased mix: 6 electric vans now + 6 diesel vans. Eight-year fleet cost ≈ $1,494,000, vs $1,572,000 all-diesel and $1,656,000 all-electric (12 × $118,000 + $240,000 utility upgrade). It is the cheapest option and avoids the $240k upgrade.
+
+## Key reasons
+- Lowest cost: saves $78,000 vs all-diesel, $162,000 vs all-electric.
+- Electric per-van advantage ($13,000) is real but small; the 7–12 charger upgrade ($240,000 = $20,000/van) wipes it out and more for a full electric fleet.
+- 6 chargers fit existing depot service exactly; electric purchase price includes chargers.
+- Operations fit: 160 km longest route vs 230 km winter range (~30% buffer), overnight depot charging.
+- Warranty covers the full 8 years at planned mileage (240,000 km vs 250,000 km cap).
+- Hedge: if electrics underperform, only half the fleet is exposed; revisit with better data when diesels are replaced.
+
+## Risks
+- Warranty margin is thin: only ~10,000 km (4%) spare; route growth beyond ~31,250 km/yr voids coverage before year 8, and out-of-warranty battery cost isn't in the TCO.
+- If the fleet later goes fully electric, the $240k upgrade cost is deferred, not avoided.
+- TCO assumes resale values and energy prices; a diesel price drop or electricity rise narrows the $13,000/van gap.
+- Exactly 6 chargers = no spare capacity if a charger fails.
+
+## Confidence
+85%
+
+Then the two lines.
+
+Check word count roughly: should be within 150-300. Let me count approximately. The draft is around 260 words. Fine.
+
+Let me verify math: 12 × 118,000 = 1,416,000. +240,000 = 1,656,000. 12 × 131,000 = 1,572,000. 6×118,000=708,000; 6×131,000=786,000; total 1,494,000. Savings vs diesel: 78,000. Vs electric: 162,000. Correct.
+
+Route growth: 250,000/8 = 31,250 km/yr. Current 30,000. Margin 1,250 km/yr ~4.2%. Correct.
+
+Winter range buffer: 230-160 = 70 km, 70/160 ≈ 44% headroom over route, or route is ~70% of range. I said ~30% buffer — 70/230 ≈ 30% of range unused. Fine either way; say route uses ~70% of winter range.
+
+Confidence: 85% seems right. The numbers clearly favor phased mix; main uncertainty is unquantified risks (battery, resale, future upgrade timing). Maybe 85%.
+
+Format: headings exactly as given. End with exactly two lines.

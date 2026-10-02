@@ -1,0 +1,20 @@
+## Recommendation
+Adopt Nimbus cloud backup (Option 1) as the firm's backup solution. Do not purchase the NAS appliance at this time.
+
+## Key reasons
+- **Only option meeting both hard constraints.** The insurer requires a copy at a separate location ≥10 km away: Nimbus stores data in two regions >300 km away, while the NAS sits in the office cupboard and fails this condition alone. Option 3 (both) costs ~$4,140/year ($2,160 Nimbus + $1,080 amortised NAS over 5 years + $900 support), breaching the $3,000 cap.
+- **Within budget:** $2,160/year, leaving ~$840 headroom.
+- **Restore expectations met:** the managing partner accepts a 1–2 day full restore; individual files recover in minutes, covering the common case.
+- **Stronger ransomware protection:** immutable 90-day version history beats NAS snapshots that an admin account can delete.
+
+## Risks
+- A full 2 TB restore takes 1–2 days; in a worst case during peak season this could disrupt client work. Mitigate by using the 1-day courier-drive option and running an annual test restore.
+- Confirm in writing that the insurer accepts a cloud provider's data centre as the required off-site location (almost certainly yes, given >300 km, but verify).
+- Upload bandwidth is unknown: confirm the office connection can complete nightly incremental backups and estimate how long the initial 2 TB seed will take.
+- Per-user pricing scales with headcount; at ~13–14 users the budget cap is reached.
+
+## Confidence
+90%
+
+POSITION: Nimbus cloud backup (Option 1), without the NAS
+CONFIDENCE: 90%

@@ -2,8 +2,14 @@
 """Render the Reddit post's tables as PNGs, in the style of ../charts/make_charts.py.
 
     python make_tables.py            # render table_NN_*.png from tables.json
+    python make_tables.py --parse    # (re)parse the markdown tables out of a POST.md next to tables/ (not in this repo), then render
+    python make_tables.py --json tables_v2.json --prefix table_v2_   # render another table set
 
-Edit numbers in tables.json (cells are the raw markdown: **bold** and `code` are honoured) and re-run.
+Optional per-table JSON keys: "rules"/"key" (override RULES below, same format; [] = no shading)
+and "note" (a caption line drawn under the table).
+
+Edit numbers in tables.json / tables_v2.json (cells are the raw markdown: **bold** and `code` are honoured)
+and re-run without --parse.
 Winner shading is rule-based (RULES below), so it follows the numbers if they change.
 """
 import json
@@ -19,6 +25,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib.patches import FancyBboxPatch, Rectangle  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+POST = os.path.join(HERE, "..", "POST.md")
 JSON = os.path.join(HERE, "tables.json")
 DPI = 200  # 2x
 W = 8.4    # inches -> 1680 px
@@ -59,6 +66,29 @@ RULES = {
 }
 
 
+# ------------------------------------------------------------------ parse ---
+def parse_post(path=POST):
+    lines = open(path, encoding="utf-8").read().split("\n")
+    tables, heading, i = [], "", 0
+    while i < len(lines):
+        ln = lines[i]
+        if ln.startswith("## "):
+            heading = re.sub(r"^\d+\.\s*", "", ln[3:].strip())
+        if ln.startswith("|"):
+            block = []
+            while i < len(lines) and lines[i].startswith("|"):
+                block.append(lines[i])
+                i += 1
+            rows = [[c.strip() for c in r.strip().strip("|").split("|")] for r in block]
+            rows = [r for r in rows if not all(re.fullmatch(r":?-+:?", c) for c in r)]
+            n = len(tables)
+            tables.append({"n": n + 1, "name": NAMES[n] if n < len(NAMES) else f"table{n + 1}",
+                           "title": heading, "header": rows[0], "rows": rows[1:]})
+            continue
+        i += 1
+    return tables
+
+
 # ----------------------------------------------------------------- render ---
 def clean(cell):
     bold = cell.startswith("**") and cell.endswith("**") and len(cell) > 4
@@ -72,6 +102,8 @@ def number(cell):
 
 def winners(t):
     rules, key = RULES.get(t["name"], ([], None))
+    if "rules" in t:
+        rules, key = [tuple(x) for x in t["rules"]], t.get("key")
     rows, cells = t["rows"], set()
     for kind, sense, sel, cols in rules:
         pick = max if sense == "max" else min
@@ -126,7 +158,9 @@ def render(t):
     hl, key = winners(t)
     heights = [max(s.count("\n") + 1 for s, _ in row) * LINE + 0.17 for row in grid]
     TOP, TITLE_BAND, FOOT_BAND = 0.22, 0.36, 0.38
-    H = TOP + TITLE_BAND + sum(heights) + FOOT_BAND
+    note = "\n".join(textwrap.wrap(clean(t["note"])[0], 120)) if t.get("note") else ""
+    NOTE_BAND = (note.count("\n") + 1) * 0.19 + 0.12 if note else 0
+    H = TOP + TITLE_BAND + sum(heights) + NOTE_BAND + FOOT_BAND
     fig.set_size_inches(W, H)
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(0, W)
@@ -156,15 +190,33 @@ def render(t):
                     color=INK2 if i == 0 else INK, linespacing=1.35, zorder=2)
         y += h
         ax.plot([LEFT, W - LEFT], [y, y], color=AXIS if i == 0 else GRID, lw=1.0 if i == 0 else 0.6, zorder=3)
+    if note:
+        ax.text(LEFT, y + 0.12, note, ha="left", va="top", fontsize=8.5, style="italic", color=INK2, linespacing=1.35)
     ax.text(LEFT, H - 0.14, FOOT, ha="left", va="bottom", fontsize=7, color=MUTED)
 
-    path = os.path.join(HERE, f"table_{t['n']:02d}_{t['name']}.png")
+    path = os.path.join(HERE, f"{PREFIX}{t['n']:02d}_{t['name']}.png")
     fig.savefig(path, dpi=DPI)
     plt.close(fig)
     print("wrote", path)
 
 
+PREFIX = "table_"
+
+
+def opt(flag, default):
+    return sys.argv[sys.argv.index(flag) + 1] if flag in sys.argv else default
+
+
 def main():
+    global JSON, PREFIX
+    JSON = os.path.join(HERE, opt("--json", JSON))
+    PREFIX = opt("--prefix", PREFIX)
+    if "--parse" in sys.argv:
+        tables = parse_post()
+        if not tables:
+            sys.exit("no markdown tables in POST.md (already replaced by markers?) - edit tables.json instead")
+        json.dump(tables, open(JSON, "w", encoding="utf-8"), indent=2, ensure_ascii=False)
+        print(f"parsed {len(tables)} tables -> {JSON}")
     for t in json.load(open(JSON, encoding="utf-8")):
         render(t)
 

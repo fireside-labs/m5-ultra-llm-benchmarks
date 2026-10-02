@@ -1,0 +1,64 @@
+{
+  "call_type": "pre_procedure",
+  "outcome": "escalated",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 4,
+  "quality_reasons": [
+    "Verified identity with name, date of birth, and phone last four before discussing appointment details.",
+    "Corrected the appointment time and location and updated the patient's email and communication preference.",
+    "Escalated the conflicting fasting instructions to the pre-procedure nurse team instead of guessing.",
+    "Minor issues included system delays, mute/background noise, and a prior notification failure to an outdated email."
+  ],
+  "flags": [
+    {
+      "type": "other",
+      "description": "The appointment time and location change was communicated only to an outdated email, so the patient was not notified.",
+      "evidence": "it looks like the update went out by email only, and I see the email on your file might be an old one."
+    },
+    {
+      "type": "clinical_safety",
+      "description": "The patient received conflicting pre-procedure fasting instructions, creating a safety and cancellation risk.",
+      "evidence": "The packet says nothing to eat or drink after midnight. But I already got a text this morning, a reminder, and it says clear liquids are fine up to two hours before arrival."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent",
+      "task": "Send an urgent message to the pre-procedure nurse team requesting a same-day callback with correct fasting instructions.",
+      "due": "today before 5 p.m."
+    },
+    {
+      "owner": "pre-procedure nurse team",
+      "task": "Call the patient back with the correct eating and drinking instructions.",
+      "due": "today before 5 p.m."
+    },
+    {
+      "owner": "agent",
+      "task": "Report the conflicting packet and text fasting instructions to the team lead for correction.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "patient",
+      "task": "Bring the parking ticket to the front desk for garage validation.",
+      "due": "Friday, May 8"
+    },
+    {
+      "owner": "patient",
+      "task": "Arrange an adult driver to drive home after sedation.",
+      "due": "Friday, May 8"
+    }
+  ],
+  "summary_notes": "Patient Ottoline Ferraby-Nkemelu (DOB 10/02/1992) called to confirm upper endoscopy with Dr. Halvorsen-Adu on Friday, May 8. Corrected appointment: arrive 7:00 a.m. at Westbrook endoscopy center, second floor, not 7:30 a.m. at Main Street. Conflicting fasting instructions: packet says NPO after midnight; text says clear liquids up to 2 hours before arrival. Agent sent urgent message to pre-procedure nurse team for same-day callback before 5 p.m. and reported discrepancy. Email updated to ottoline.f-n@gmail.com; electronic preferred. Parking validation available at front desk; adult driver required due sedation.",
+  "notable_details": [
+    "Patient: Ottoline Ferraby-Nkemelu, DOB 10/02/1992, phone ending 8133.",
+    "Procedure: upper endoscopy with Dr. Halvorsen-Adu on Friday, May 8, 2026.",
+    "Corrected arrival: 7:00 a.m. at Westbrook endoscopy center, second floor; original letter said 7:30 a.m. at Main Street.",
+    "Conflicting fasting instructions: packet says nothing to eat or drink after midnight; text says clear liquids up to 2 hours before arrival.",
+    "Email updated to ottoline.f-n@gmail.com; patient prefers electronic communications.",
+    "Parking validation available at front desk; patient must bring parking ticket.",
+    "Adult driver required after sedation; no taxis or rideshares alone.",
+    "Pre-procedure nurse team to call back today before 5 p.m. with fasting instructions.",
+    "Agent reported conflicting instructions to team lead."
+  ]
+}

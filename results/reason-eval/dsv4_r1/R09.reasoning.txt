@@ -1,0 +1,60 @@
+1.  **Deconstruct the User's Request**:
+    *   Role: Senior generalist advisor. Steer work, look at whole problem, name driving variables, spot missed/wrong analysis, separate real vs fake problems, prioritize ruthlessly, find crux of disagreement. Reason from facts given + general reasoning. State assumptions for missing numbers. Be concrete, specific, not generic. No padding.
+    *   Task: Take charge of a goal from COO: "Reduce patient call-center wait times. The board is angry. Fix it this quarter."
+    *   Given data (messy): 9 min avg wait (answered only, target <2 min). 14 agent positions, 2 unfilled. All agents same shift M-F 8-17. Monday 8-11 = 22% of week's calls. Call reasons (31% refill status, 24% book appt, 14% resched/cancel, 11% test results, 9% billing, 11% other). 18% repeat callers (2+ times same week same issue). 21% hang up (abandonment). Avg handle time rose 4.1 to 5.6 min after new EHR in March. Phone menu 7 options. 26% of answered calls transferred at least once. 35% portal activation. Proposals: (a) hire 4 agents ($260k/yr), (b) callback add-on ($40k/yr).
+    *   Output format: Exactly these sections in this order:
+        *   `## First steps` (numbered list, max 8, order for first 2-4 weeks. For each: what, why now, who/what it needs).
+        *   `## Measure first` (numbered list, max 6 things to measure/pull before committing money, with the decision each informs).
+        *   `## What would kill the idea` (bullets: results that would drop proposal (a), proposal (b), or own leading idea).
+        *   `## Top 3 priorities` (exactly 3 numbered items, levers expected to matter most, most important first).
+
+2.  **Analyze the Situation (The "Whole Problem")**:
+    *   *The math*: 14 positions, 2 unfilled = 12 active. But wait time is 9 min. Handle time is 5.6 min. 21% abandon. 26% transferred.
+    *   *The core issue*: It's not just about headcount. The EHR change increased handle time by 1.5 minutes (37% increase). If 12 agents handle X calls, the increase in handle time is eating capacity. Let's calculate rough capacity impact: 12 agents * 9 hours * 60 min = 6480 agent-minutes per day. If handle time is 5.6 min, they handle ~1157 calls/day (if fully utilized, ignoring breaks). If it was 4.1, they handled ~1580. So the EHR change effectively removed ~27% of capacity. That's massive.
+    *   *The schedule*: All agents work 8-17. Monday 8-11 has 22% of weekly calls. Assuming 5 days, 22% in 3 hours out of 45 hours (9*5). 3 hours is 6.7% of the time, but gets 22% of calls. That's a massive spike. Hiring 4 agents who work the same shift won't help Monday morning spike much unless they are scheduled for that window.
+    *   *The call reasons*: 31% refill status + 24% book appt + 14% resched = 69% are administrative tasks that could potentially be automated (IVR, portal, text). 35% portal activation is low. 18% repeat callers means 18% of calls are wasted capacity.
+    *   *The transfers*: 26% transferred. That means the IVR is routing poorly, causing double handling.
+    *   *Proposals*: (a) Hire 4 agents ($260k) - addresses raw capacity but not the spike or the inefficiency. (b) Callback ($40k) - addresses the wait time experience (removes the "wait" but doesn't reduce work), but doesn't reduce the 9 min average if people don't opt in, and doesn't fix the Monday spike if they still call back.
+    *   *Leading idea*: Fix the schedule (stagger shifts, add part-time for Monday peak) + fix the IVR (reduce transfers, self-service for refills) + address the EHR handle time (training, macros). The callback is a good band-aid for the board's anger, but the real fix is capacity alignment and deflection.
+
+3.  **Drafting the Sections**:
+
+    *   **First steps** (max 8, first 2-4 weeks):
+        *   Need to address the Monday spike and the EHR handle time immediately.
+        1.  **Pull the actual call volume and staffing data by 15-minute interval** (especially Monday 8-11). Why: To model the queue correctly. The 22% stat is a red flag; we need to see if the spike is 3x or 10x normal. Needs: IT/Telecom access.
+        2.  **Interview the 12 remaining agents about the new EHR** (what takes longer, what screens). Why: Handle time went up 1.5 min. If it's a fixable workflow (e.g., missing macros, double-entry), we can claw back capacity without hiring. Needs: Team lead, 30-min sessions.
+        3.  **Audit the 7-option IVR and the 26% transfer rate** (map the menu paths). Why: Transfers double-handle calls. If we can route refill status to an automated line or fix the menu, we cut load. Needs: Phone system admin.
+        4.  **Implement a temporary "callback" option immediately** (even if it's just a manual promise to call back, or fast-track the $40k vendor). Why: The board is angry *now*. A 9-minute hold is unacceptable. Callback converts wait time into a promise, which reduces abandonment and anger. Needs: $40k budget approval (or manual process).
+        5.  **Draft a staggered schedule proposal** (e.g., 4 agents start at 7:00, 4 at 8:00, etc., and 2 part-timers for Monday). Why: All 12 on the same shift means 0 coverage at 8:00 sharp and overstaffing at 16:00. Needs: HR approval for flexible shifts.
+        6.  **Quantify the 18% repeat callers** (pull the call logs to see if they are refill status calls). Why: If we can solve the refill status issue (via portal/text), we remove 18% of calls + the 31% refill calls. Needs: Call log analysis.
+        7.  **Check the EHR vendor's support tickets** for known issues causing slowness. Why: The 1.5 min increase might be a system bug, not a user issue. Needs: IT department.
+        8.  **Set a daily huddle with the call center lead** to track the 9-min wait and abandonment in real-time. Why: To see immediate impact of any changes. Needs: Call center lead.
+
+    *   **Measure first** (max 6, before committing money):
+        *   Decisions: Hire vs. Callback vs. Process fix.
+        1.  **Average speed of answer (ASA) and abandonment rate by 15-minute interval** (especially Monday 8-11). Informs: Whether hiring 4 agents (who work 8-5) will even touch the Monday spike, or if we need staggered shifts/part-timers.
+        2.  **Post-EHR handle time breakdown** (talk time vs. after-call work vs. hold time). Informs: Whether the 5.6 min is due to slow system, lack of training, or increased complexity. If it's after-call work, we can fix it with macros.
+        3.  **Transfer rate by IVR menu option** (which option leads to transfers). Informs: Whether to fix the IVR menu (reduce transfers) vs. hiring. If 26% are transferred, that's 26% of calls taking double agent time.
+        4.  **Self-service deflection potential** (of the 31% refill status calls, how many have portal access? Can they use the automated refill line?). Informs: Whether to push portal adoption or invest in IVR automation vs. hiring agents.
+        5.  **Cost per call currently vs. projected** (with hiring vs. callback). Informs: The ROI of the $260k vs $40k. If callback reduces abandonment but not handle time, it doesn't fix the root cause.
+        6.  **Repeat call rate by reason** (are the 18% repeat callers all about test results or refills?). Informs: Whether to fix the underlying process (e.g., text notifications) to kill the repeat calls.
+
+    *   **What would kill the idea** (bullets):
+        *   *Proposal (a) - Hire 4 agents*: If the Monday 8-11 spike is 3x the average, adding 4 agents to the same 8-5 shift won't help that window (they'd be idle at 2 PM). Or if handle time is still 5.6 min due to a broken EHR workflow, we'd just be paying people to be slow.
+        *   *Proposal (b) - Callback*: If the abandonment rate stays high because callers don't trust the callback or if the callback just shifts the call to later (and the 18% repeat callers still call back), it doesn't reduce the *volume* of work. Also, if the board wants the *wait* fixed, a callback that says "we'll call you in 30 min" might still be seen as a failure if they want immediate service.
+        *   *My leading idea (fix schedule + IVR/EHR workflow)*: If the handle time increase is actually due to a regulatory requirement for the new EHR (e.g., mandatory double-checking), then we can't claw it back, and we must hire. If the IVR changes don't reduce transfers because the callers are confused, we might need more human routing.
+
+    *   **Top 3 priorities** (exactly 3, most important first):
+        1.  **Fix the Monday 8-11 capacity crunch via staggered shifts and part-time coverage** (not just hiring 4 full-time 8-5 agents). This is the biggest driver of the 9-min average.
+        2.  **Claw back the 1.5-minute handle time increase from the EHR** (via macros, training, or system fixes). This is equivalent to adding ~3-4 agents in capacity without the $260k cost.
+        3.  **Deflect the 31% refill status calls (and the 18% repeat callers) via IVR/portal automation**. This reduces the raw demand, which is the only way to get under 2 minutes sustainably.
+
+4.  **Refining and polishing**:
+    *   Ensure sections are exactly as requested.
+    *   Check the "First steps" - max 8, I have 8. Good.
+    *   Check "Measure first" - max 6, I have 6. Good.
+    *   "What would kill the idea" - need bullets for (a), (b), and my own leading idea. I have that.
+    *   "Top 3 priorities" - exactly 3. I have that.
+    *   Make sure it's specific to the data provided (mention 22%, 26%, 5.6 min, etc.).
+    *   State assumptions where needed (e.g., the 22% spike calculation).
+    *   Keep it sharp, no fluff.

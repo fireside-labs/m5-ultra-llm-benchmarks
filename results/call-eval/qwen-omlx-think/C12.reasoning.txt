@@ -1,0 +1,221 @@
+
+We need answer user's request: analyze transcript and return ONE JSON object conforming schema, no markdown. Need produce final JSON only. Need carefully analyze.
+
+We need determine call_type. Main purpose: caller wants file complaint about conflicting prep instructions causing cancellation. Also rescheduled, billing lost wages. Main purpose complaint escalation? enum includes complaint_escalation = caller's main goal is to complain or get problem escalated. Yes call_type complaint_escalation.
+
+Outcome: main issue handled? They opened formal grievance, rescheduled, approved second prep kit, lost wages pending committee, GI nurse callback. Main issue? complaint opened and rescheduled. But some pending follow-up (written acknowledgment, nurse call, committee). Outcome enum: resolved, unresolved, escalated, callback. Since handed to supervisor and formal grievance, use escalated even if callback planned. So outcome escalated.
+
+Sentiment_start: caller starts negative: wants real complaint, upset. sentiment_end: after supervisor, says no just fix instructions, somewhat neutral/positive? Last minute: "No. Just fix the instructions..." Supervisor thanks. Caller likely neutral or positive? Earlier said calm voice helps. End not angry, cooperative. Could be neutral. Maybe positive? "Yes. Please." "Okay." "No. Just fix..." Not explicitly positive. Use neutral.
+
+Quality_score: Need rate staff overall. Agent verified identity, empathetic, but made unauthorized commitment: "we'll definitely cover your lost wages. I'll make sure of it." Supervisor corrected: committee decides, can't promise. That's serious compliance/authority failure. Also system issues, long hold? 2 min hold unannounced? Agent said one moment while bring supervisor, then hold 2m. Not too bad. Agent disclosed? no. Clinical safety? Conflicting instructions caused cancellation; staff didn't dismiss symptom? Caller diabetic insulin not asked last time; supervisor addressed. Agent made unauthorized commitment. Also maybe misinformation? Agent said lost wages covered, not policy. Flag unauthorized_commitment. Maybe missed_commitment? No. Quality score likely 2 due serious authority failure. Could be 3? One notable lapse? But unauthorized financial commitment is serious compliance/accuracy failure. Score 2. Quality reasons: verified identity, empathetic, escalated appropriately, but agent promised lost wages without authority causing confusion; system delays/hold. Need 2-5 reasons.
+
+Flags: unauthorized_commitment: agent promised lost wages reimbursement. Evidence: "we'll definitely cover your lost wages. I'll make sure of it." Maybe also misinformation? The promise is misinformation about policy. But type unauthorized_commitment best. Could flag clinical_safety? Conflicting prep instructions and diabetic insulin not asked last time? The call itself: patient reports prior cancellation due conflicting instructions and no insulin assessment. Is that a flag in how this call handled? The current staff didn't dismiss; supervisor addressed. But the business had a clinical safety issue: conflicting instructions caused cancellation; diabetic patient not asked about insulin during prep. Flag type clinical_safety? Description: Conflicting pre-procedure instructions and failure to assess insulin management led to cancellation and patient safety concern. Evidence: "the text says clear liquids until two hours before" and "I'm diabetic, I'm on insulin... Nobody asked me about that last time either". But flags are compliance, privacy, security, patient-safety, or accuracy problems in how the call was handled, and commitments made without authority or not kept. It says examples: symptom warranted escalation but dismissed; incorrect info given. The conflicting instructions are prior handling, not this call? But should flag? It is a patient-safety issue raised. Could include clinical_safety. Need evidence quote. Also maybe policy_violation? Not sure.
+
+Identity verification: done correctly, no flag. Privacy disclosure? no. Security? Caller says writes password on sticky note, agent says didn't hear. Not staff credential sharing. Could flag security? Caller disclosed password practice? Not a business handling problem? Maybe not. Agent says system logs out, password every 30 days. Not flag.
+
+Missed_commitment? Agent promised written? Supervisor says written acknowledgment. No missed.
+
+Unauthorized_commitment definitely.
+
+Could flag misinformation: Agent told caller lost wages covered, which is not guaranteed. But unauthorized_commitment covers. Maybe also policy_violation? no.
+
+Clinical_safety: The prior conflicting instructions and lack of insulin assessment. Is that "in how the call was handled"? The call handled by current staff: they didn't create it, but they are handling complaint. Flag can be patient-safety problem in business. The instructions: "the text says clear liquids until two hours before" vs packet "nothing after midnight". This caused cancellation. Also diabetic insulin not asked. I'd include one clinical_safety flag with evidence combining? Need short verbatim quote. Could use "the text says clear liquids until two hours before" or "I'm diabetic, I'm on insulin. Nobody asked me about that last time either". Description: Conflicting pre-procedure instructions and lack of insulin assessment created safety risk and cancellation. Evidence: "the text says clear liquids until two hours before". But evidence should support. Maybe two flags? One clinical_safety for conflicting instructions, one unauthorized_commitment. Could also flag clinical_safety for insulin: "Nobody asked me about that last time either". But maybe too many? It's okay.
+
+Action_items: every follow-up commitment/task.
+- Agent: note electronic preferred? That's done? Could be action? "I'll note electronic preferred" completed. Not follow-up.
+- Agent: make sure this gets to right people? vague. Could action: patient services representative to report conflicting prep instructions to relevant teams. Due unspecified. But supervisor says grievance will do. Maybe include.
+- Supervisor: open formal grievance (done during call). Not follow-up? Could be action completed. But action_items every follow-up commitment or task stated. Include pending:
+  - Patient Relations Supervisor / grievance team: send written acknowledgment within five business days. Owner: patient relations supervisor/grievance team. Due: within five business days.
+  - Patient Relations Supervisor / review committee: review grievance with endoscopy center and text reminder team and provide written response. Owner: patient relations supervisor/review committee. Due: unspecified (after review).
+  - Patient Relations Supervisor: include lost wages request in grievance for committee review. Owner: patient relations supervisor. Due: unspecified.
+  - Patient Relations Supervisor: approve second prep kit cost. Owner: patient relations supervisor. Due: unspecified? It says approving now. Could be action completed, but follow-up to process reimbursement. Owner: patient relations supervisor/billing? Due unspecified.
+  - GI nurse: call patient before April 30 to review prep and provide written instructions, including insulin plan. Owner: GI nurse. Due: before April 30, 2026.
+  - Patient: attend rescheduled colonoscopy April 30 arrival 7:30 am. Owner: patient. Due: April 30, 2026 7:30 am.
+  - Patient: bring photo ID, insurance card, list of medicines if changed. Owner: patient. Due: April 30, 2026.
+  - Patient: reply to reminder text to cancel if needed? Not specific follow-up.
+  - Agent: note electronic preferred? completed.
+  - Agent: bring supervisor? completed.
+Need include all stated commitments. Could include "Agent to report conflicting instructions to right people" due unspecified. But supervisor formal grievance covers. Maybe include as action: Patient Services Representative to escalate conflicting prep instructions to relevant teams. Due unspecified. Evidence? Not needed in action.
+
+Need summary_notes <=120 words. Include patient complaint, conflicting instructions, cancellation, grievance G-260411, rescheduled Apr 30 7:30, second prep kit approved, lost wages pending committee, GI nurse call re insulin, electronic preferred.
+
+Notable_details: corrected? No corrections except maybe date? Call date 2026-04-15, yesterday colonoscopy. Rescheduled Thursday April 30 arrival 7:30. Grievance number G-260411. Patient name Henrietta Moss-Okwuosa DOB July 17 1968 phone 555-240-7713. Preferred pharmacy Ferris Avenue. Electronic preferred. Diabetic on insulin. Conflicting instructions: text clear liquids until 2 hours before arrival vs mailed packet nothing after midnight. Agent unauthorized promise lost wages; supervisor corrected. Second prep kit cost approved. Lost wages committee. Hold 2 min. System timeouts. Maybe not all. Need specific details careful reviewer not miss. Include final values.
+
+Need ensure JSON valid, no markdown. Schema additionalProperties false. Need exact fields.
+
+Potential issue: call_type could be scheduling because rescheduled? But main purpose complaint. Use complaint_escalation.
+
+Outcome: escalated. Good.
+
+Sentiment_end: maybe positive? Let's examine last minute: caller says "No. Just fix the instructions so this doesn't happen to someone else." Supervisor thanks. Caller not expressing positive. Neutral. Start negative.
+
+Quality_score: 2. Reasons:
+- "Agent verified identity and remained empathetic."
+- "Supervisor opened formal grievance, rescheduled procedure, and addressed insulin concern."
+- "Agent made unauthorized reimbursement promise for lost wages, later corrected by supervisor."
+- "System timeouts and a 2-minute hold introduced delays."
+Need 2-5. Good.
+
+Flags:
+1 unauthorized_commitment: description: Agent promised lost wages reimbursement without authority. Evidence: "we'll definitely cover your lost wages. I'll make sure of it."
+2 clinical_safety: description: Conflicting pre-procedure instructions and lack of insulin assessment created patient safety risk and cancellation. Evidence: "the text says clear liquids until two hours before" maybe include also insulin? Could use "I'm diabetic, I'm on insulin. Nobody asked me about that last time either". Which is more safety? Both. Maybe one flag with evidence quote from caller: "the text says clear liquids until two hours before". But description mentions insulin; evidence doesn't. Could use two clinical_safety flags? One for conflicting instructions, one for insulin assessment. But maybe overflag. The instructions conflict is accuracy/policy? Could be misinformation? The business gave incorrect/conflicting instructions. Type could be misinformation: incorrect information given to customer. But it's prior. Flag type misinformation description: Patient received conflicting pre-procedure instructions, causing cancellation. Evidence: "the text says clear liquids until two hours before". But the current call didn't give incorrect info. The flag examples include incorrect information given to customer. Could be business. But type misinformation maybe. However schema flags include clinical_safety. Conflicting NPO instructions for anesthesia is clinical safety. Use clinical_safety.
+3 clinical_safety for insulin? Could combine: "Patient reported diabetic insulin management was not assessed during prior prep and conflicting NPO instructions caused cancellation." Evidence: "I'm diabetic, I'm on insulin. Nobody asked me about that last time either". This is strong. But if only one evidence quote, can't cover both. Could have two flags:
+- clinical_safety: Conflicting NPO instructions created anesthesia safety/cancellation risk. Evidence: "the text says clear liquids until two hours before".
+- clinical_safety: Diabetic insulin management was not assessed during prior prep. Evidence: "Nobody asked me about that last time either".
+But flags should be problems in how call was handled? The prior handling is not this call, but complaint. It's okay? The instruction says flags: compliance, privacy, security, patient-safety, or accuracy problems in how the call was handled, and commitments... It might mean this call. But patient-safety problem raised in call? It says examples: a symptom that warranted escalation but was dismissed. Here current staff didn't dismiss. The prior lack of insulin assessment is not current call handling. But could still be a patient-safety issue for account. However to be safe, only flag current call handling: unauthorized_commitment. Maybe also misinformation? Agent's promise is misinformation. But unauthorized_commitment enough.
+
+Could flag "policy_violation" for agent promising lost wages? unauthorized_commitment better.
+
+Could flag "security" for caller saying writes password on sticky note? Not business handling. No.
+
+Could flag "other" for system timeouts? Not compliance. No.
+
+Need maybe flag "missed_commitment"? Agent said "I'll make sure this gets to the right people" and supervisor opened grievance, so kept.
+
+Quality reasons mention unauthorized promise. Good.
+
+Action items details:
+Need owner strings. Use "Patient Services Representative", "Patient Relations Supervisor", "GI nurse", "Patient", "Review committee". Due as stated.
+List:
+1 owner: Patient Services Representative, task: Report conflicting pre-procedure instructions to relevant teams. due: unspecified. Evidence? not needed. But is this stated? Agent: "I'm going to make sure this gets to the right people." Yes.
+2 owner: Patient Relations Supervisor, task: Open formal grievance G-260411. due: during call? Could be completed. Action items every follow-up commitment or task stated. It was done, but maybe include due "during call". But action_items likely follow-up commitments. Could include completed tasks? It says every follow-up commitment or task stated. Opening grievance is task stated and done. But due? "during call". Might be okay. But to avoid clutter, include pending only? "every follow-up commitment or task stated" includes completed? Hmm. It says follow-up commitment or task stated. Could include all. But due for completed maybe "during call". Schema due string. Let's include pending and maybe completed? Need not overdo. But if include completed, okay.
+3 owner: Patient Relations Supervisor, task: Send written acknowledgment of grievance. due: within five business days.
+4 owner: Patient Relations Supervisor / review committee, task: Review grievance with endoscopy center and text reminder team and provide written response. due: unspecified.
+5 owner: Patient Relations Supervisor, task: Include lost wages reimbursement request in grievance for committee review. due: unspecified.
+6 owner: Patient Relations Supervisor, task: Approve/process cost of second prep kit. due: unspecified (approved during call). Could say due: during call? But process maybe unspecified.
+7 owner: GI nurse, task: Call patient before rescheduled procedure to review prep and provide written instructions, including insulin plan. due: before April 30, 2026.
+8 owner: Patient, task: Attend rescheduled colonoscopy at endoscopy center. due: April 30, 2026 7:30 AM.
+9 owner: Patient, task: Bring photo ID, insurance card, and updated medication list. due: April 30, 2026.
+10 owner: Patient, task: Use reminder text reply to cancel if needed. due: unspecified. Not really commitment.
+11 owner: Patient Services Representative, task: Note electronic communication preference. due: during call. Completed.
+Maybe too many. But action_items can be many. Need concise? No limit. Ensure due strings.
+
+Could include "Patient Relations Supervisor: include Noor's statement in record" due unspecified. Stated: "I'll include Noor's statement in the record." Add.
+
+Need not include every small. But "every follow-up commitment or task stated" maybe include all explicit "I'll". Let's enumerate explicit:
+- Agent: "I'll note 'electronic preferred.'" completed.
+- Agent: "I'm going to make sure this gets to the right people." follow-up.
+- Agent: "we'll definitely cover your lost wages. I'll make sure of it." unauthorized, later corrected. Could action? Supervisor: include request in grievance.
+- Agent: "bring in supervisor" completed.
+- Supervisor: "opening a formal grievance right now" completed.
+- Supervisor: "You'll get a written acknowledgment within five business days" action.
+- Supervisor: "written response once we've reviewed it..." action.
+- Supervisor: "I'll make sure your request is part of the grievance" action.
+- Supervisor: "I'm approving that now" second prep kit. action process.
+- Supervisor: "I'll include Noor's statement in the record." action.
+- Supervisor: "I see an opening... rescheduled" completed? Patient agrees.
+- Supervisor: "I'll have the GI nurse call you before then..." action.
+- Supervisor: "I'll put that in the request so the GI nurse goes over your insulin plan..." action.
+- Patient: attend, bring items.
+
+Need owner for "review committee" maybe.
+
+Flags evidence must be short verbatim quote. Use exact from transcript. For unauthorized: "we'll definitely cover your lost wages. I'll make sure of it." Good.
+Maybe flag misinformation? Could use same evidence? Avoid duplicate. Maybe one flag enough. But quality_score 2 due one serious failure. If only one flag, okay.
+
+But maybe need flag "clinical_safety" because caller reported diabetic insulin not assessed and conflicting instructions. The current staff should have escalated? They did. But the issue itself is patient safety. The flag definition: "compliance, privacy, security, patient-safety, or accuracy problems in how the call was handled". The call handling included not immediately addressing? They did. But the business's prior instructions are accuracy problem. Could flag "misinformation" with evidence: "the text says clear liquids until two hours before". Description: Patient received conflicting pre-procedure instructions, causing cancellation. This is an accuracy problem. It may be appropriate. But if we flag prior issue, not current call? The transcript is complaint about it. I'd include one clinical_safety flag for conflicting instructions because it's important. But risk: instructions say do NOT flag things handled correctly. This was not handled correctly by business. So flag.
+
+Could also flag "clinical_safety" for insulin: "Nobody asked me about that last time either". This is prior. But maybe too much. Maybe combine into one flag: type clinical_safety, description: Conflicting NPO instructions and lack of insulin assessment created patient-safety risk and cancellation. Evidence: "the text says clear liquids until two hours before". But evidence doesn't mention insulin. Could use evidence: "I'm diabetic, I'm on insulin. Nobody asked me about that last time either". Description can mention both? Evidence supports insulin part. But conflicting instructions also in transcript. Maybe two flags is clearer.
+
+Need ensure flags not too many? Fine.
+
+Potential flag "policy_violation" for agent promising lost wages? unauthorized_commitment.
+
+Potential flag "identity_verification"? No, verified. Do not flag.
+
+Potential flag "security" for password sticky note? Caller says "I write mine on a sticky note. Don't tell anyone." Agent says didn't hear. This is customer security risk but not business handling. Could flag security? It is a security problem (password disclosure) but not by staff. The flag examples include credential sharing. Caller disclosed own password practice, not actual password. Not necessary.
+
+Quality_score if include clinical_safety prior issue maybe 2 still.
+
+Summary notes: Need at most 120 words. Draft:
+"Patient Henrietta Moss-Okwuosa complained that conflicting colonoscopy prep instructions (text allowed clear liquids until 2 hours before arrival; mailed packet said nothing after midnight) caused cancellation. She also reported diabetes/insulin was not assessed during prior prep. Identity verified. Agent empathetically escalated to Patient Relations Supervisor, who opened grievance G-260411, rescheduled colonoscopy for Apr 30, 2026, 7:30 AM, approved second prep kit cost, and arranged GI nurse call to review insulin-specific prep instructions. Lost wages reimbursement was promised by agent but corrected to committee review. Patient prefers electronic communications; pharmacy on Ferris Avenue confirmed."
+Count words? Patient1 Henrietta2 Moss-Okwuosa3 complained4 that5 conflicting6 colonoscopy7 prep8 instructions9 text10 allowed11 clear12 liquids13 until14 2 15 hours16 before17 arrival18 mailed19 packet20 said21 nothing22 after23 midnight24 caused25 cancellation26. She27 also28 reported29 diabetes/insulin30 was31 not32 assessed33 during34 prior35 prep36. Identity37 verified38. Agent39 empathetically40 escalated41 to42 Patient43 Relations44 Supervisor45, who46 opened47 grievance48 G-260411 49, rescheduled50 colonoscopy51 for52 Apr53 30 54, 2026 55, 7:30 56 AM57, approved58 second59 prep60 kit61 cost62, and63 arranged64 GI65 nurse66 call67 to68 review69 insulin-specific70 prep71 instructions72. Lost73 wages74 reimbursement75 was76 promised77 by78 agent79 but80 corrected81 to82 committee83 review84. Patient85 prefers86 electronic87 communications88; pharmacy89 on90 Ferris91 Avenue92 confirmed93. Under 120.
+
+Notable_details: list strings. Include:
+- "Patient: Henrietta Moss-Okwuosa, DOB 07/17/1968, phone 555-240-7713."
+- "Grievance number: G-260411."
+- "Rescheduled colonoscopy: Thursday, April 30, 2026, arrival 7:30 AM, same endoscopy center."
+- "Conflicting prep instructions: text said clear liquids until 2 hours before arrival; mailed packet said nothing after midnight."
+- "Patient is diabetic and on insulin; prior prep did not include insulin assessment."
+- "Agent initially promised lost wages coverage; supervisor corrected that lost wages are committee-decided."
+- "Second prep kit cost approved by supervisor."
+- "Patient prefers electronic communications; preferred pharmacy on Ferris Avenue confirmed."
+- "Call included 2-minute hold and multiple system timeouts."
+Maybe include "Written acknowledgment within five business days." Good.
+
+Need JSON only. Ensure no trailing commas. Use double quotes. Escape? No special.
+
+Let's think about outcome: Could be callback because GI nurse call and written response pending? But supervisor escalated formal grievance. Rule: escalated = handed to supervisor, higher tier, clinician or another team (use even if callback planned). Yes.
+
+Call_type: complaint_escalation. Good.
+
+Quality_score: 2. Need quality_reasons 2-5. Use 4.
+
+Flags: Need decide final flags. I think include unauthorized_commitment and clinical_safety (conflicting instructions/insulin). But if flag prior issue, evidence quote. Let's create two flags:
+1 unauthorized_commitment: description "Agent promised lost wages reimbursement without authority; supervisor later corrected that it is committee-decided." evidence "we'll definitely cover your lost wages. I'll make sure of it."
+2 clinical_safety: description "Conflicting pre-procedure instructions created anesthesia/cancellation safety risk." evidence "the text says clear liquids until two hours before".
+3 clinical_safety: description "Patient reported diabetic insulin management was not assessed during prior prep." evidence "Nobody asked me about that last time either".
+Is that too many? It's okay. But flags should be problems in how call was handled? The prior issue is not current call. But it's a patient-safety problem in service. The instruction says "flags: compliance, privacy, security, patient-safety, or accuracy problems in how the call was handled, and commitments that were made without authority or were not kept." It might expect flags only for this call's handling. The conflicting instructions were not given in this call, but the call is about them. Could still be "accuracy problems" in business. But "in how the call was handled" maybe not. If we include, not wrong? It says do NOT flag things handled correctly. This was not handled correctly. I'd include at least one clinical_safety because important. But maybe the current staff handled correctly by escalating. The flag could be about the prior handling, not current. The schema doesn't restrict to current call? It says flags: ... problems in how the call was handled. Hmm.
+
+Maybe better flag "misinformation" for the conflicting instructions? But again prior. The current agent said "You're right, they shouldn't say different things." Not misinformation.
+
+Could flag "other" for system issues? no.
+
+If only unauthorized_commitment, quality_score 2 still due that. But summary/notable cover safety. The flags section may miss patient safety. The prompt examples include "a symptom that warranted escalation but was dismissed". Here no symptom dismissed. But diabetic insulin not asked prior is clinical safety. I'd include clinical_safety flag with evidence from caller. It's a patient-safety problem raised, even if not current handling. The flag type description can say "Prior pre-procedure handling...". That's acceptable.
+
+Need ensure evidence is short verbatim quote. Use exact lower-case? Transcript: "the text says clear liquids until two hours before". Good. For insulin: "Nobody asked me about that last time either". Good.
+
+Could flag "policy_violation" for agent promising lost wages? no.
+
+Action items: Need due strings. Let's craft robust list.
+
+Action items final:
+[
+ {"owner":"Patient Services Representative","task":"Report conflicting pre-procedure instructions to the relevant teams.","due":"unspecified"},
+ {"owner":"Patient Services Representative","task":"Note patient's electronic communication preference.","due":"during call"},
+ {"owner":"Patient Relations Supervisor","task":"Open formal grievance G-260411.","due":"during call"},
+ {"owner":"Patient Relations Supervisor","task":"Send written acknowledgment of the grievance.","due":"within five business days"},
+ {"owner":"Patient Relations Supervisor / review committee","task":"Review grievance with endoscopy center and text reminder team and provide written response.","due":"unspecified"},
+ {"owner":"Patient Relations Supervisor","task":"Include lost wages reimbursement request in the grievance for committee review.","due":"unspecified"},
+ {"owner":"Patient Relations Supervisor","task":"Approve and process cost of second prep kit.","due":"unspecified"},
+ {"owner":"Patient Relations Supervisor","task":"Include agent Noor's statement in the grievance record.","due":"unspecified"},
+ {"owner":"GI nurse","task":"Call patient before the rescheduled procedure to review prep and provide written instructions, including insulin plan.","due":"before April 30, 2026"},
+ {"owner":"Patient","task":"Attend rescheduled colonoscopy at the endoscopy center.","due":"April 30, 2026 7:30 AM"},
+ {"owner":"Patient","task":"Bring photo ID, insurance card, and updated medication list.","due":"April 30, 2026"}
+]
+Could include "Patient: reply to reminder text to cancel if needed" but not necessary. "every follow-up commitment" maybe include cancellation line? It's informational, not commitment.
+
+Need maybe owner "Patient Relations Supervisor" for "have GI nurse call" but actual owner GI nurse. Good.
+
+Potential issue: action item "Note electronic preference" completed, due during call. okay.
+
+Quality reasons: Need short specific. 
+- "Identity was verified before discussing account details."
+- "Agent was empathetic and escalated to supervisor appropriately."
+- "Supervisor opened grievance, rescheduled procedure, and addressed insulin-specific prep follow-up."
+- "Agent made an unauthorized lost-wages reimbursement promise, later corrected by supervisor."
+- "System timeouts and a 2-minute hold caused minor delays."
+5 reasons. Good.
+
+Sentiment_start negative. sentiment_end neutral. Could end positive? Let's decide neutral. Last caller: "No. Just fix the instructions..." not positive. neutral.
+
+Need final JSON only. Ensure no markdown. Let's produce.
+
+Double-check schema: quality_score integer 1-5. flags items required type description evidence. action_items owner task due. summary_notes string. notable_details array.
+
+No additional properties. Good.
+
+One nuance: call_type enum includes "pre_procedure" maybe because pre-procedure instructions? But main purpose complaint. Use complaint_escalation.
+
+Outcome: "escalated". Good.
+
+Potential flag "unauthorized_commitment" evidence quote includes "we'll definitely cover your lost wages. I'll make sure of it." Good.
+
+Potential flag "clinical_safety" description: "Conflicting pre-procedure instructions created anesthesia/cancellation safety risk." evidence: "the text says clear liquids until two hours before". Good.
+Potential flag "clinical_safety" description: "Patient reported diabetic insulin management was not assessed during prior prep." evidence: "Nobody asked me about that last time either". Good.
+
+Could there be flag "misinformation" for agent's promise? unauthorized_commitment enough.
+
+Need maybe flag "policy_violation" for system password sticky note? no.
+
+Let's final.

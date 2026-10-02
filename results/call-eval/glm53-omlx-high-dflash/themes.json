@@ -1,0 +1,106 @@
+{
+  "themes": [
+    {
+      "theme": "ClearPay duplicate copay charges",
+      "description": "Since the ClearPay portal rollout at the end of February, copays paid at the front desk are being auto-drafted a second time through the portal, generating duplicate charges on patient accounts. In one case the unresolved duplicates led to a referral to outside collections while a dispute was open.",
+      "call_ids": [
+        "C02",
+        "C05",
+        "C09",
+        "C14",
+        "C18"
+      ],
+      "evidence": "Duplicate desk-plus-portal charges confirmed in C02 ($45 x2), C05 ($30 x2 pairs), C09 ($45 x2), C14 ($45 x3 pairs, $135 total, collections referral 9/14), and C18 ($40 x2); C05 notes the double-draft is a known issue since late February with a vendor fix in progress.",
+      "recommended_action": "Suspend ClearPay auto-drafting until the vendor fix is verified, proactively audit and refund all duplicate charges since the portal launch, and place a hold on collections referrals for accounts with open billing disputes."
+    },
+    {
+      "theme": "Conflicting pre-procedure fasting/prep instructions",
+      "description": "Patients consistently receive contradictory instructions between the mailed prep packet (NPO after midnight) and the automated reminder text (clear liquids until 2 hours prior), causing day-of-surgery cancellations and repeated confusion. Agents and nurses have also given inconsistent guidance when resolving the discrepancy.",
+      "call_ids": [
+        "C03",
+        "C07",
+        "C12",
+        "C16"
+      ],
+      "evidence": "C03: surgery cancelled day-of over the packet-vs-text conflict; C07: same conflict, nurse told patient black coffee is fine before confirming with anesthesia; C12: colonoscopy cancelled, grievance G-260411 opened, lost wages and repurchased prep kit; C16: agent notes this is the third such inquiry this week.",
+      "recommended_action": "Immediately align the automated text templates with the written prep packets, and route any discrepancy reports to a single pre-procedure nursing protocol with mandatory anesthesia confirmation before advising patients."
+    },
+    {
+      "theme": "Agents making commitments beyond their authority",
+      "description": "Agents and sales reps repeatedly promise refunds, credits, guarantees, or contract terms that exceed their authority or contradict stated policy, creating liability and broken expectations. This spans billing, SaaS support, and sales contexts.",
+      "call_ids": [
+        "C02",
+        "C05",
+        "C10",
+        "C11",
+        "C12",
+        "C17"
+      ],
+      "evidence": "C02: 48-hour refund guarantee vs 7-10 day policy; C05: $310 waiver vs $100 adjustment limit; C10: month-free credit vs account-manager SLA; C11: money-back guarantee and 'cancel anytime' walked back; C12: lost-wages promise corrected to review committee; C17: BAA promised on Team plan after stating it is Enterprise-only.",
+      "recommended_action": "Reinforce authority-limit training and add call-time guardrails (supervisor approval prompts or scripted disclaimers) for refunds, credits, guarantees, and contract terms."
+    },
+    {
+      "theme": "Confusing phone menu routing",
+      "description": "Callers across multiple call types report that IVR menu options (2, 3, and 4) route them somewhere unexpected, forcing them to press 0 repeatedly or otherwise struggle to reach the right department.",
+      "call_ids": [
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C07",
+        "C16"
+      ],
+      "evidence": "C02: option 2 misroutes; C03 and C05: option 3 misroutes; C04: option 3 misroutes; C07: option 4 misroutes; C16: option 4 misroutes, caller pressed 0 repeatedly.",
+      "recommended_action": "Audit and re-map the IVR call tree for options 2, 3, and 4, and validate the fix with test calls before redeploying."
+    },
+    {
+      "theme": "Agent workstation and IT problems",
+      "description": "Agents experience recurring technical disruptions during calls: forced 30-day password rotations causing mid-call logouts, slow systems, glitchy headsets/monitors, and aggressive idle timeouts, all extending call handling times.",
+      "call_ids": [
+        "C01",
+        "C03",
+        "C12",
+        "C15",
+        "C16",
+        "C19"
+      ],
+      "evidence": "C01: four non-integrated screens, slow system, forced password cycle, dropped to login mid-call; C03: repeated logouts from password rotation; C12: 2-minute idle logout and glitchy headset; C15: recurring glitches and forced password changes; C16: glitchy headset, IT 'looking into it'; C19: login-page reverts and glitchy monitor.",
+      "recommended_action": "Escalate a consolidated IT ticket covering password-cycle policy, session timeout settings, and hardware replacements, with a fix deadline and agent-impact reporting."
+    },
+    {
+      "theme": "Identity verification and privacy disclosure failures",
+      "description": "Staff disclose protected account, medication, or appointment details without completing identity verification or confirming authorization, including discussing one patient's account with an unverified related party and updating a patient's contact number at an unverified separated spouse's request.",
+      "call_ids": [
+        "C02",
+        "C14",
+        "C15",
+        "C20"
+      ],
+      "evidence": "C02: balance and card details shared before DOB verification; C14: husband's account discussed with no authorization on file; C15: medication profile read out with no verification at all; C20: appointment details disclosed and contact number changed for an unverified separated spouse with an approximate DOB.",
+      "recommended_action": "Enforce mandatory verification-before-disclosure scripting and a hard block on account changes or third-party discussions without documented authorization, with privacy refresher training for all front-line staff."
+    },
+    {
+      "theme": "Promised callbacks and follow-ups never completed",
+      "description": "Commitments to call patients back, transfer to billing, or assign follow-up tasks are repeatedly dropped, leaving patients to call multiple times about the same issue. Missing reference numbers compound the problem.",
+      "call_ids": [
+        "C02",
+        "C05",
+        "C09",
+        "C14"
+      ],
+      "evidence": "C02: no reference number issued, caller told to identify herself by phone number; C05: patient had called three times previously and asked that notes be visible; C09: promised billing transfer never occurred before call ended; C14: 9/11 callback never made because the task was never assigned, on a patient's fifth attempt.",
+      "recommended_action": "Require a ticket/reference number for every billing contact and implement automated callback-task creation with supervisor visibility into open commitments."
+    },
+    {
+      "theme": "Outdated patient contact information causing missed communications",
+      "description": "Stale phone numbers and email addresses on file cause patients to miss appointment reminders and schedule-change notices, contributing to missed appointments and confusion on the day of procedures.",
+      "call_ids": [
+        "C01",
+        "C06",
+        "C16"
+      ],
+      "evidence": "C01: phone number changed due to carrier switch, old number replaced; C06: reminder texts went to an old number ending 3350, patient never received the Monday reminder and missed the appointment; C16: outdated email on file caused the patient to miss a schedule-change notice.",
+      "recommended_action": "Add a standard contact-info confirmation step to every inbound and outbound call, and send reminders through a secondary channel when delivery cannot be confirmed."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+We are analyzing a call transcript. The call is about a patient, Nadia Prewitt-Okafor, calling Brightwater Family Medicine about a prior authorization for an MRI that might get cancelled because there's no authorization on file. The agent, Yusuf, verifies her identity, pulls up the order, and then calls Halvard Health Plan with the patient on the line. They go through a long hold, talk to a provider services rep (Carla) who confirms eligibility and benefits, then get transferred to utilization management (Devon) who discovers that the fax number used was old and retired, so the authorization requests were never received. Devon opens a new case by phone, gives a reference number, and the agent uploads documents to the portal. The agent also promises to call Larkspur imaging, send a message to the doctor about tingling in toes, and update the fax template. The call ends with the patient thanking the agent.
+
+We need to produce a JSON object with the specified fields.
+
+First, determine call_type: This is about prior authorization for an MRI, which is insurance verification/authorization. The main purpose is to get the authorization sorted. So call_type: "insurance_verification" (since it's about coverage and prior authorization). Could also be "scheduling" but the main issue is authorization, not scheduling. The patient is calling because the MRI might get cancelled due to no auth. So it's insurance_verification.
+
+Outcome: The main issue was resolved? The authorization was opened, documents uploaded, and they have a reference number. The agent will follow up. The patient's MRI is likely to proceed if approved. The call ended with a plan. So outcome: "resolved" or "callback"? The agent said they will watch the portal and call the patient when there's a decision. Also they will call Larkspur. So there is a follow-up planned. But the main issue (getting the authorization process started) was handled during the call. The authorization is not yet approved, but the issue of "no auth on file" was addressed by opening a new case. So it's resolved in the sense that the problem was identified and a solution was initiated. However, the final approval is pending. The outcome could be "callback" because the agent will call back with the decision. But the call itself resolved the immediate problem: they now have a reference number and the process is underway. The patient's main concern was that the MRI might get cancelled; the agent will call Larkspur to prevent cancellation. So the issue is handled. I think "resolved" is appropriate because the agent took action to ensure the MRI won't be cancelled and the authorization is in process. But there is a pending decision. The definition says: "resolved = the caller's main issue was handled during the call; escalated = handed to a supervisor, higher tier, clinician or another team (use this even if a callback is also planned); callback = the main issue is pending a specific follow-up contact; unresolved = the call ended without the main issue handled and without a concrete follow-up." Here, the main issue was that the authorization was missing. The agent discovered the cause and opened a new case. The authorization decision is pending, but the immediate issue (no auth on file) was resolved by submitting a new request. The agent also promised to call Larkspur to prevent cancellation. So the main issue (preventing cancellation and getting the auth process started) was handled. I'd say "resolved" because the agent took concrete steps and the patient knows the MRI is likely to proceed. But there is a follow-up call planned. The definition says "callback" if the main issue is pending a specific follow-up contact. The main issue is the authorization approval, which is pending. But the call itself resolved the immediate problem. I think "resolved" is more accurate because the agent fixed the root cause and initiated the correct process. However, the outcome is not fully resolved until approval. But the call ended with a clear plan and the patient is satisfied. I'll go with "resolved" because the agent handled the issue by opening a new case and will follow up. But note that the agent said "I'll watch the portal, and as soon as there's a decision I'll call you." So there is a callback planned. The definition says "callback" if the main issue is pending a specific follow-up contact. The main issue is the authorization decision, which is pending. So maybe "callback" is more appropriate. But the call also resolved the immediate problem of the missing auth. I think the main issue was that the MRI might get cancelled; the agent ensured that won't happen by calling Larkspur and starting the auth. So the main issue is resolved. I'll go with "resolved" because the agent took action to prevent cancellation and the auth is in process. But to be safe, I'll consider the outcome as "resolved" because the patient's immediate concern was addressed. The agent also promised to call back with the decision, but that's a follow-up on the resolution. I'll choose "resolved".
+
+Sentiment_start: The patient starts off stressed and frustrated. She says "I'm stressed" and "I almost gave up." So sentiment_start: "negative".
+
+Sentiment_end: By the end, she is grateful and positive. She says "Thank you, Yusuf. Really. I don't know what I would've done." and laughs. So sentiment_end: "positive".
+
+Quality_score: Rate how well the business's staff handled the call. The agent was empathetic, verified identity, took time to explain, called the payer with the patient, discovered the root cause, opened a new case, uploaded documents, and made follow-up commitments. There were some minor issues: long holds, technical difficulties, but the agent handled it well. There was a privacy concern: the agent disclosed the patient's depression medication to the payer without explicit consent? Actually, the patient gave permission for the call, and the agent gave the med list. But the patient later questioned why they needed to know about the depression medicine. The agent said they give everything up front to avoid pends. That might be a minor privacy issue? But the patient was on the line and gave permission for the call, and the agent was providing information to the payer for the authorization. It's not a flag because it's part of the process. However, the agent mentioned sertraline without asking the patient first. The patient seemed surprised but didn't object strongly. It might be a minor issue but not a flag. Also, the agent made a commitment to call Larkspur and send a message to the doctor, which they said they would do. So no missed commitments. The agent also updated the fax template. Overall, the agent was excellent: empathetic, thorough, resolved the issue. There were some technical issues but not the agent's fault. I'd give a 5. But there was a long hold and the agent had to navigate the phone tree multiple times, but that's not the agent's fault. The agent also asked for the patient's permission to share info. So I'd say 5. However, there was a minor issue: the agent disclosed the depression medication without asking the patient first, which might be a privacy concern. But the patient gave permission for the call and the agent was providing the med list as part of the auth. It's not a flag because it's standard. But the patient later expressed discomfort. That could be a minor lapse. Also, the agent said "I'll send her a message" about the tingling, which is good. I think overall it's a 5. But to be conservative, maybe 4 because of the long hold and the medication disclosure. But the agent handled everything well. I'll go with 5.
+
+Quality_reasons: 2-5 short reasons. Examples: "Verified patient identity thoroughly", "Empathetic and patient throughout long hold", "Identified root cause of missing authorization (old fax number)", "Opened new case and uploaded documents promptly", "Made clear follow-up commitments". I'll list 4.
+
+Flags: We need to check for compliance, privacy, etc. The agent verified identity before discussing PHI. The patient gave permission for the three-way call. The agent disclosed the depression medication to the payer without explicitly asking the patient, but the patient was on the line and had given permission for the call. However, the patient later questioned it. Is that a privacy disclosure? The patient authorized the call and the agent was providing information for the authorization. It's not a flag because it's part of the process. Also, the agent asked for permission to give the member ID and DOB to the payer, and the patient said yes. So no flag. There was no unauthorized commitment. The agent promised to call Larkspur and send a message, which they said they would do. No missed commitments. There was a potential clinical safety issue: the patient mentioned tingling in toes, and the agent said they would send a message to the doctor and advised to go to ER if symptoms worsen. That's appropriate. No misinformation. The agent gave correct information about the deductible and benefits. So no flags. However, there is a possible issue: the agent said "I'll call Larkspur imaging today" and "I'll send Dr. Okonjo-Reyes the message" - these are commitments, but they are within the agent's authority. So no flag. Also, the agent updated the fax template. So no flags. I'll return an empty list.
+
+Action_items: Every follow-up commitment or task stated. From the call:
+- Agent: Call Larkspur imaging today to inform them authorization is in process with reference number.
+- Agent: Send message to Dr. Okonjo-Reyes about tingling in toes, so nurse calls patient.
+- Agent: Watch portal for decision and call patient when decision is available.
+- Agent: Update fax template and email team about new fax number.
+- Patient: Call Larkspur billing for cost estimate.
+- Patient: Fill out release form on portal for husband to be able to get updates.
+- Patient: Monitor member portal for authorization status.
+- Also, the agent said "If we still don't have a decision by Tuesday the sixth, I'll call you and we'll move the MRI" - that's a conditional commitment.
+- Also, the agent said "I'll call them right after we hang up" for Larkspur.
+- Also, the agent said "I'll send her a message" - so that's an action item.
+- Also, the agent said "I'll watch the portal" - that's an action item.
+- Also, the agent said "I'll update our fax sheet" - that's an action item.
+- Also, the patient said "I'll do it on the portal tonight" for the release form.
+- Also, the patient said "I'll call them" for Larkspur billing.
+- Also, the patient said "I'll write that down" but that's not a task.
+
+We need to list each with owner, task, due. Due: "today" for Larkspur call, "today" for message to doctor, "as soon as decision" for call back, "today" for fax update, "tonight" for release form, "unspecified" for others. Also, the agent said "I'll call you on Tuesday the sixth if no decision" - that's a conditional, but we can list it as a task with due "Tuesday the sixth" if needed. But it's conditional. I'll list the main ones.
+
+Let's list:
+1. Owner: Agent (Yusuf) - Task: Call Larkspur imaging to inform them authorization is in process with reference number - Due: today (after call)
+2. Owner: Agent - Task: Send message to Dr. Okonjo-Reyes about tingling in toes - Due: today
+3. Owner: Agent - Task: Monitor portal for authorization decision and call patient - Due: as soon as decision (within 72 hours)
+4. Owner: Agent - Task: Update fax template and email team about new fax number - Due: today
+5. Owner: Patient - Task: Call Larkspur billing for cost estimate - Due: unspecified
+6. Owner: Patient - Task: Fill out release form on portal for husband - Due: tonight
+7. Owner: Agent - Task: If no decision by Tuesday the 6th, call patient to reschedule MRI - Due: Tuesday the 6th (conditional)
+
+Also, the agent said "I'll call them right after we hang up" for Larkspur, so due is immediate.
+
+I'll include these.
+
+Summary_notes: A concise note for the file. Something like: "Patient called re: missing prior auth for lumbar MRI scheduled 10/8. Agent verified identity, called Halvard with patient on line. Discovered faxes sent to retired fax number (555-0144) since 8/31. Halvard UM opened new case PA-2609-55170, expedited based on provider attestation. Agent uploaded order, PT notes, office note. Agent to call Larkspur to prevent cancellation, send message to Dr. Okonjo-Reyes re: new toe tingling, and update fax template. Patient to call Larkspur billing for cost estimate and complete release form for husband. Follow-up call when decision available."
+
+Notable_details: Specific details like corrected numbers, reference numbers, etc. 
+- Reference number: PA-2609-55170 (corrected from PA-2609-55170? Actually the agent misheard and corrected to 55170)
+- New fax number: 555-0188 (old was 555-0144)
+- Deductible: $1,500, $1,210 met, so $290 remaining.
+- PT benefit: 30 visits/year, 8 used, 22 remaining.
+- MRI scheduled: Thursday, October 8 at 7:20 AM.
+- Ordering provider: Dr. Simone Okonjo-Reyes.
+- Diagnosis: low back pain with radiculopathy, M54.16 and M54.42.
+- Patient's DOB: 11/27/1984.
+- Member ID: HVD-6044-1829.
+- Patient's phone ending in 0166.
+- The agent mentioned the fax template was updated March 2025.
+- The patient mentioned tingling in toes for the past week.
+- The patient's husband is on a different plan; she asked about switching.
+- The patient's sister is a paralegal.
+- The patient works at a bakery, lifting 50-lb flour sacks.
+- The injury happened in July while carrying eggs.
+- The patient has done 6 weeks of PT.
+- The agent said the doctor considers it urgent for expedited review.
+
+I'll list a few notable details.
+
+Now, construct the JSON.
+
+Make sure to follow the schema exactly.
+
+I'll output the JSON.

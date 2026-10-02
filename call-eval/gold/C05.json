@@ -1,0 +1,204 @@
+{
+ "call_id": "C05",
+ "call_type": "billing_dispute",
+ "outcome": "resolved",
+ "sentiment_start": "negative",
+ "sentiment_end": "positive",
+ "quality_score": 3,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Verified identity first, was transparent about the known ClearPay issue, opened a ticket and stated the correct refund timeline",
+   "match": [
+    [
+     "verif",
+     "transparen",
+     "honest",
+     "ticket",
+     "known issue",
+     "explain"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Caught the card-dispute double-refund risk and arranged withdrawal",
+   "match": [
+    [
+     "dispute",
+     "chargeback"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "Waived the $310 balance himself despite having just stated that adjustments over $100 need supervisor approval",
+   "match": [
+    [
+     "310",
+     "three-ten",
+     "supervisor",
+     "approval",
+     "waiv",
+     "write.?off",
+     "zero"
+    ]
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "id": "F1",
+   "text": "Agent waived/zeroed a $310 balance on his own authority after stating courtesy adjustments over $100 require supervisor approval (adjustment outside policy)",
+   "evidence": "I'm just going to take care of the three-ten for you. I'll zero it out right now.",
+   "match": [
+    [
+     "310",
+     "three-ten",
+     "three hundred",
+     "balance",
+     "adjust",
+     "waiv",
+     "write.?off",
+     "writeoff",
+     "zero"
+    ],
+    [
+     "supervisor",
+     "approv",
+     "polic",
+     "authority",
+     "limit",
+     "\\$100",
+     "over (a |one )?hundred",
+     "outside",
+     "exceed"
+    ]
+   ]
+  }
+ ],
+ "decoys": [],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Systemic ClearPay duplicate-charge issue",
+   "match": [
+    [
+     "double",
+     "duplicate",
+     "twice",
+     "clearpay",
+     "portal"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Open credit-card dispute could cause a double refund",
+   "match": [
+    [
+     "dispute",
+     "chargeback"
+    ]
+   ]
+  },
+  {
+   "id": "OK3",
+   "text": "MRI claim denied for missing prior authorization",
+   "match": [
+    [
+     "prior auth",
+     "authorization",
+     "mri",
+     "denied"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "billing team",
+   "task": "Refund the two duplicate $30 ClearPay copay charges (ticket CP-58871) within 7-10 business days",
+   "due": "7-10 business days",
+   "match": [
+    [
+     "refund"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "caller",
+   "task": "Call credit card company to withdraw the dispute on the March 5 charge",
+   "due": "2026-03-25",
+   "match": [
+    [
+     "dispute",
+     "chargeback"
+    ],
+    [
+     "withdraw",
+     "cancel",
+     "drop",
+     "call"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "agent",
+   "task": "Email a summary with the ticket number to the email on file",
+   "due": "today",
+   "match": [
+    [
+     "email",
+     "summary"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Ticket number corrected from CP-58817 to CP-58871",
+   "evidence": "It's CP-five-eight-eight-seven-one.",
+   "match": [
+    [
+     "58871",
+     "5-8-8-7-1",
+     "five-eight-eight-seven-one"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Two separate visits (Mar 3 and Mar 10) were each double-charged: $60 total duplicate",
+   "evidence": "So that's sixty dollars total",
+   "match": [
+    [
+     "60",
+     "sixty",
+     "two visits",
+     "both visits",
+     "two duplicate",
+     "two separate"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Caller had already filed a credit-card dispute for the Mar 5 charge and agreed to withdraw it",
+   "evidence": "I already disputed the March fifth one with my credit card company",
+   "match": [
+    [
+     "dispute",
+     "chargeback"
+    ]
+   ]
+  }
+ ],
+ "themes": [
+  "T_DOUBLE_CHARGE"
+ ]
+}

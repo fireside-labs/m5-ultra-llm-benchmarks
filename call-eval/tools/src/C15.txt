@@ -1,0 +1,32 @@
+@id C15
+@date 2026-08-17 12:48
+@line Corrowind Pharmacy - Refill Line
+@direction inbound
+@target 1800
+@speaker A TECH = pharmacy technician
+@speaker C CALLER = patient
+---
+A: Pharmacy, Ollie.
+C: Hey, hi. I need to get a refill on one of my prescriptions a little early.
+A: Sure, what's the name?
+C: Lucan Merriweather-Daly.
+A: [typing] Lucan... Merriweather-Daly. Okay. I see you've got alprazolam, the point five, sertraline, and a cholesterol one. Which one?
+C: The alprazolam. I'm going on vacation, two weeks, I leave on the twenty-second, and I'll run out while I'm gone.
+A: Okay, so, let's see. It was last filled... July thirtieth. Thirty-day supply. So it's not due until the end of the month.
+C: Right, but I'll be gone. Is there any way?
+A: Uh, yeah, I can just push it through. Insurance might reject it for being early, but you can just pay cash for it, it's not that expensive.
+C: Oh, great. Cash is fine. How much?
+A: Like twelve bucks.
+C: Perfect.
+#fill pharmacy_lookup smalltalk
+C: Oh, and— I don't know if this matters, but my sleep doctor just started me on zolpidem. Ambien. For sleep. I got it filled at the place by my work, so you probably don't have it on there.
+A: Oh, cool. Yeah, I don't see it. That's fine.
+C: Is it okay to take both? The sleep doctor didn't really say.
+A: I mean, lots of people take both. You should be fine.
+C: Okay, cool.
+A: So the alprazolam'll be ready at three. Front counter.
+C: Three o'clock. Do I need anything?
+A: Just your ID since it's, you know, one of those.
+C: Okay. Thanks, man.
+A: Yep. Have a good trip.
+C: Thanks, bye.

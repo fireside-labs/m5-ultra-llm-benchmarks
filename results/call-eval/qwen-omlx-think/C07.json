@@ -1,0 +1,79 @@
+{
+  "call_type": "pre_procedure",
+  "outcome": "callback",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Verified identity and confirmed procedure details.",
+    "Collected relevant history, medications, allergies, and gave day-of instructions.",
+    "Updated driver and contact preferences and promised anesthesia confirmation.",
+    "Provided uncertain fasting guidance before confirming with anesthesia.",
+    "Handled system delays and background noise professionally."
+  ],
+  "flags": [
+    {
+      "type": "clinical_safety",
+      "description": "Nurse gave a potentially unsafe preoperative fasting instruction based on an unconfirmed text before anesthesia confirmation.",
+      "evidence": "Honestly, I think the text is the newer guideline, so, um, go with the text. Clear liquids are fine until two hours before you arrive."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "nurse",
+      "task": "Double-check with anesthesia and call patient back to confirm clear-liquid guideline and arrival time",
+      "due": "Tuesday by end of day"
+    },
+    {
+      "owner": "nurse",
+      "task": "Send copy of today's notes to patient portal",
+      "due": "unspecified"
+    },
+    {
+      "owner": "nurse",
+      "task": "Set appointment reminders to text and leave email on file for statements",
+      "due": "unspecified"
+    },
+    {
+      "owner": "patient",
+      "task": "Stop ibuprofen/Advil/Aleve and other NSAIDs",
+      "due": "for the next seven days before surgery"
+    },
+    {
+      "owner": "patient",
+      "task": "Stop fish oil",
+      "due": "until after surgery"
+    },
+    {
+      "owner": "patient",
+      "task": "Skip lisinopril on morning of surgery; take metoprolol and omeprazole with a small sip of water",
+      "due": "Thursday morning"
+    },
+    {
+      "owner": "patient",
+      "task": "Bring CPAP machine, photo ID, insurance card, and medication list; shower night before and morning of with antibacterial soap",
+      "due": "Thursday"
+    },
+    {
+      "owner": "patient",
+      "task": "Have Bev Lindgren-Shaw drive patient home and stay for first 24 hours",
+      "due": "Thursday"
+    }
+  ],
+  "summary_notes": "Pre-admission interview completed for laparoscopic cholecystectomy Thu 3/19 with Dr. Vanterpool-Iyer. Patient confirmed DOB 8/30/1956. History: HTN, AFib, sleep apnea, recent chest cold/cough, penicillin allergy hives. Meds reviewed: stop NSAIDs/fish oil; skip lisinopril morning of; take metoprolol/omeprazole with sip; bring CPAP, ID, insurance, med list; shower with antibacterial soap. Driver changed from Theo to Bev Lindgren-Shaw, 555-701-9910, staying overnight. Arrival 5:45 a.m., surgery 7:15, to confirm. NPO conflict: text says clear liquids until 2h before arrival; nurse will confirm with anesthesia and call back Tuesday EOD. Portal notes requested; text reminders preferred.",
+  "notable_details": [
+    "Surgery: laparoscopic cholecystectomy with Dr. Vanterpool-Iyer on Thursday, March 19.",
+    "Patient DOB: August 30, 1956.",
+    "Allergy: penicillin causing hives; already on chart and confirmed.",
+    "History: hypertension, atrial fibrillation (patient uncertain 2019/2020), sleep apnea with CPAP, recent chest cold with morning cough.",
+    "Post-op nausea history; nurse will note for anesthesia.",
+    "Medication changes: stop ibuprofen/NSAIDs for 7 days before surgery; stop fish oil until after surgery; skip lisinopril morning of surgery; take metoprolol and omeprazole with small sip of water.",
+    "Driver/contact corrected from Theo Ashdown-Pike to Bev Lindgren-Shaw, 555-701-9910, staying overnight.",
+    "NPO conflict: packet says NPO after midnight; text says clear liquids until 2 hours before arrival; nurse will confirm with anesthesia.",
+    "Arrival time currently 5:45 a.m.; surgery planned 7:15 a.m.; to be confirmed.",
+    "Contact preferences: text reminders; email on file starts with J at yahoo; electronic records preferred; mailing address and emergency contact unchanged.",
+    "Patient requested copy of notes sent to portal; portal password issue noted.",
+    "Parking: patient garage north side level 3, skybridge; front desk can validate parking.",
+    "Cancellation: can reply to reminder text."
+  ]
+}

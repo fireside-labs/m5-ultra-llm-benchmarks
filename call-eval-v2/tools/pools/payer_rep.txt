@@ -1,0 +1,49 @@
+// Payer representative chatter (only after the rep has joined). A=clinic agent, C=patient, P=payer rep.
+P: Sorry, I'm going to need to put you on a brief hold while I pull up the clinical guidelines. Is that okay?
+A: That's fine.
+#hold 95
+P: Thank you for holding. Okay, I'm back with you.
+===
+P: Bear with me, my system's a little slow this afternoon.
+A: Oh, believe me, I understand. Ours too.
+P: [laughs] Must be going around.
+#pause 20
+P: Okay, it's up.
+===
+A: Sorry, you're breaking up a little bit on my end. Can you hear me?
+P: I can hear you. Is that better?
+A: Yes, that's better. Thanks.
+===
+P: Can I get a call-back number in case we're disconnected?
+A: Sure, it's the clinic's main number, and my name's on the request.
+P: Okay. Got it.
+===
+P: Just a moment, I'm documenting the call. [typing]
+A: No problem.
+P: Okay, almost done.
+#pause 15
+P: Thank you for your patience.
+===
+P: Is the patient still on the line?
+C: Yes, I'm here.
+P: Okay, thank you. Just making sure.
+===
+P: One second, I need to switch screens. Our benefits tool and our authorization tool are separate. [typing]
+A: Ours are the same way. Nothing talks to anything.
+P: [laughs] Isn't that the truth.
+===
+P: I'm going to read you a standard disclosure. Benefits quoted are not a guarantee of payment. Final payment is determined when the claim is processed, based on the member's eligibility and plan provisions at that time.
+A: Understood.
+===
+P: Can you hold for one moment? My supervisor needs to sign off on a screen. It's just a formality.
+A: Sure.
+#hold 70
+P: Thank you. Okay.
+===
+P: Sorry, it's asking me to re-enter the member ID, it timed out. Can you read it to me one more time?
+A: Sure. [reads member ID again]
+P: Thank you. Okay, I'm back in.
+===
+C: Sorry, can I ask something? Is this, um, is this normal? To take this long?
+A: Honestly, yes. Insurance calls just take time.
+P: [laughs] I'm afraid that's true. We're getting there, though.

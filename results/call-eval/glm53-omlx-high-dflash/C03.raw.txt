@@ -1,0 +1,71 @@
+{
+  "call_type": "post_procedure_followup",
+  "outcome": "resolved",
+  "sentiment_start": "positive",
+  "sentiment_end": "positive",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Verified patient DOB before discussing care and confirmed spouse was on the authorization form before reviewing medications with her.",
+    "Conducted a thorough post-op assessment with a read-back of key instructions at the end of the call.",
+    "Dismissed left calf achiness, swelling and warmth - potential DVT warning signs - as normal without further assessment or red-flag guidance.",
+    "Changed the PT referral from Main Street to Eastgate per the patient's stated travel constraint.",
+    "Multiple technical interruptions (screen lockouts, dead mouse battery) made the call inefficient."
+  ],
+  "flags": [
+    {
+      "type": "clinical_safety",
+      "description": "The nurse attributed calf pain, swelling and warmth on the operated leg to immobility and compression stockings without assessing for DVT or advising the patient on warning signs that warrant urgent evaluation.",
+      "evidence": "yeah, that's pretty common after knee surgery, you're not moving as much and you're wearing those stockings. Just keep it propped up on a pillow and it should settle down."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "nurse",
+      "task": "Mention the conflicting pre-op fasting instructions (paper packet vs. text message) to her manager.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Eastgate Rehab",
+      "task": "Call the patient to schedule physical therapy after referral is sent to Eastgate location.",
+      "due": "within two to three business days"
+    },
+    {
+      "owner": "patient/spouse",
+      "task": "Restart baby aspirin 81 mg once daily (day three post-op).",
+      "due": "today (2026-03-06)"
+    },
+    {
+      "owner": "patient",
+      "task": "Remove the big dressing (day five) and place regular Band-Aids over the incisions, keeping them dry.",
+      "due": "tomorrow (2026-03-07)"
+    },
+    {
+      "owner": "patient",
+      "task": "Do ankle pumps every hour while awake, ten at a time, and keep the leg propped on a pillow.",
+      "due": "ongoing"
+    },
+    {
+      "owner": "patient",
+      "task": "Attend post-op visit with Dr. Okonjo-Reyes.",
+      "due": "Thursday, March 12 at 1:30 PM"
+    },
+    {
+      "owner": "patient",
+      "task": "Call the after-hours number on the discharge sheet if fever over 100.4 or incisions become red, hot, or drain pus.",
+      "due": "as needed"
+    }
+  ],
+  "summary_notes": "Outbound post-op follow-up after left knee arthroscopy with Dr. Okonjo-Reyes (performed Monday 2026-03-02; originally scheduled 2/23 but cancelled day-of due to conflicting fasting instructions - packet said NPO after midnight, text allowed clear liquids; patient had apple juice at 5 AM). Pain 3-4/10 on acetaminophen (max 3000 mg/day); oxycodone stopped after first night. Afebrile, dressing intact with one day of pink spotting. Reported left calf achiness, swelling and warmth since yesterday; nurse advised elevation and ankle pumps but did not assess for DVT. Amlodipine resumed Tuesday; aspirin 81 mg restart clarified for today. PT referral redirected to Eastgate Rehab. Spouse Ruth is on the authorization form. Post-op visit 3/12 at 1:30 PM.",
+  "notable_details": [
+    "Patient identity verified via DOB: February 2, 1964.",
+    "Surgery was originally scheduled for the 23rd but cancelled the morning of surgery over a clear-liquids instruction conflict (apple juice at ~5 AM); performed the following week (Monday, 2026-03-02).",
+    "Spouse raised the conflicting pre-op fasting instructions (paper packet vs. night-before text) as a systemic issue; nurse promised to raise it with her manager.",
+    "PT referral was corrected from Main Street Rehab (40-minute drive) to Eastgate Rehab (~10 minutes).",
+    "Aspirin 81 mg restart (day three per surgeon's note) had not been started because the family was unaware; instructed to start today.",
+    "Patient reported left calf achiness, swelling, tightness and warmth on the operated side since yesterday - possible DVT signs - managed only with elevation advice.",
+    "Medication regimen confirmed with spouse: acetaminophen 500 mg x2 every 6 hours; oxycodone stopped after first night (only two doses); amlodipine resumed Tuesday.",
+    "Patient mentioned a confusing phone menu (pressing 2 routes somewhere unexpected) during small talk.",
+    "Patient is at a workplace hallway during the call; mentions a roommate with the game on and a 6-year-old child in the background, despite describing a home setting with spouse Ruth - living situation details are inconsistent in passing remarks.",
+    "Nurse's system logged her out repeatedly (30-day password rotation) and her mouse battery died, causing multiple delays."
+  ]
+}

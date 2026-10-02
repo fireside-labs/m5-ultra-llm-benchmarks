@@ -1,0 +1,59 @@
+{
+  "call_type": "insurance_verification",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Identity verified and patient consent obtained before the three-way payer call, handled professionally",
+    "Agent told the patient the study is fully covered with no out-of-pocket cost, contradicting the payer's quoted $1,120 remaining deductible and 20% coinsurance",
+    "Agent booked the study at Ridgeline after the payer explicitly stated Ridgeline is out-of-network with no out-of-network sleep study benefit and the authorization is valid only for Westbrook",
+    "Agent implied a second night was covered when the payer approved only one night, with a second night requiring separate authorization",
+    "Empathetic, patient handling of long holds and technical glitches, with holds announced"
+  ],
+  "flags": [
+    {
+      "type": "misinformation",
+      "description": "Agent incorrectly told the patient the approved sleep study would cost nothing out of pocket, despite the payer quoting a $1,500 deductible with $1,120 remaining and 20% coinsurance.",
+      "evidence": "Honestly, you're fully covered. It's approved, so you won't owe anything out of pocket."
+    },
+    {
+      "type": "misinformation",
+      "description": "Agent scheduled the study at the Ridgeline facility, which the payer stated is out-of-network with no out-of-network sleep study benefit and for which the authorization (valid for Westbrook only) cannot be used.",
+      "evidence": "Ridgeline is sooner, so let's do Ridgeline, May twelfth."
+    },
+    {
+      "type": "misinformation",
+      "description": "Agent told the patient a second night was covered, contradicting the payer's approval of one night only with a separate authorization required for a titration night.",
+      "evidence": "Oh, um, yeah, I think it's covered for the two. We'll see after the first one."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "agent (Wendell, authorization coordinator)",
+      "task": "Fax clinical notes to Thistlecrest Health Plan to complete the pending authorization (PA-2026-0441973)",
+      "due": "today (payer requires within two business days)"
+    },
+    {
+      "owner": "agent (Wendell)",
+      "task": "Send sleep lab preparation instructions and a copy of today's call notes to the patient's portal",
+      "due": "unspecified"
+    },
+    {
+      "owner": "patient",
+      "task": "Attend overnight sleep study at Ridgeline Sleep Lab (as booked; note facility conflicts with authorization/network status), arriving 8:30 p.m., bringing photo ID, insurance card, medication list and sleepwear; no caffeine after noon and no napping that day",
+      "due": "Tuesday, May 12, 2026, 8:30 p.m. arrival"
+    }
+  ],
+  "summary_notes": "Outbound three-way call with Thistlecrest Health Plan after new insurance (effective 4/1/2026) caused a scheduling block. Identity verified; patient consented to disclosure. Payer confirmed coverage active, quoted $1,500 deductible ($1,120 remaining) then 20% coinsurance, in-network sleep studies only. Westbrook in-network; Ridgeline out-of-network. PA-2026-0441973 approved for one night, CPT 95810, Westbrook, valid through 6/30/2026, pending clinical notes fax within 2 business days. Agent booked Ridgeline 5/12 (8:30 p.m. arrival) - conflicts with authorization/network status and must be corrected. Agent also incorrectly told patient the study is fully covered and that two nights are approved. Reminders by text; electronic communication preferred; pharmacy and contacts confirmed unchanged.",
+  "notable_details": [
+    "New insurance: Thistlecrest Health Plan, effective April 1, 2026; member ID THC-50288144; provider line 1-800-555-0199",
+    "Prior authorization number PA-2026-0441973: one night, CPT 95810, Westbrook facility only, valid through June 30, 2026, pending receipt of clinical notes (fax within two business days via provider portal)",
+    "Benefits: $1,500 individual deductible, $380 met, $1,120 remaining, then 20% coinsurance; sleep studies covered in-network only - Westbrook in-network, Ridgeline out-of-network/not contracted",
+    "Booked appointment (Ridgeline, Tue May 12, 8:30 p.m. arrival, done ~6 a.m.) contradicts the payer's network status and authorization facility; Westbrook alternative was Wed May 27",
+    "Clinical picture: suspected OSA, Epworth 16, BMI 34, hypertension, witnessed apneas; ordering physician Dr. Abernathy-Osei; split-night/titration possibility - second night requires separate authorization with results",
+    "Patient preferences: text reminders, electronic communication preferred, email on file is a Yahoo address starting with J, pharmacy on Ferris Avenue confirmed, emergency contact unchanged",
+    "Logistics shared: patient garage east side level 2 with skybridge, front desk validates parking, check-in past the elevators, cancellations via reply to reminder text",
+    "Payer representative: Desirée; clinic provider NPI 1284409173; facility NPIs - Ridgeline 1660428195, Westbrook 1991330782"
+  ]
+}

@@ -1,0 +1,98 @@
+
+
+{
+  "call_type": "pharmacy_refill",
+  "outcome": "callback",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Technician gave clinical reassurance about dizziness and low blood pressure instead of escalating to a pharmacist.",
+    "Technician promised the pharmacist would address the ibuprofen question, but it was not addressed.",
+    "Caller experienced a very long hold and repeated system distractions.",
+    "Pharmacist verified patient and son authorization, investigated the prior authorization, and arranged a bridge fill."
+  ],
+  "flags": [
+    {
+      "type": "clinical_safety",
+      "description": "Technician provided clinical reassurance about dizziness and low blood pressure outside scope instead of escalating to a pharmacist.",
+      "evidence": "Oh, yeah, it's probably the heat, honestly, it's been crazy hot this week. Make sure you're drinking water."
+    },
+    {
+      "type": "missed_commitment",
+      "description": "Technician promised the pharmacist would review the caller's ibuprofen question, but the pharmacist did not address it during the call.",
+      "evidence": "When I transfer you over, she'll go over the ibuprofen thing with you, okay? I'll put it in my note for her."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "pharmacist",
+      "task": "Call Dr. Lindqvist's office today to ask them to resend the prior authorization and confirm where it is going.",
+      "due": "today"
+    },
+    {
+      "owner": "pharmacy",
+      "task": "Call Rafael or leave voicemail when the 90-day lisinopril is approved and ready.",
+      "due": "when approved"
+    },
+    {
+      "owner": "pharmacy",
+      "task": "Text Rafael a pickup-ready message when the 30-day bridge fill is ready.",
+      "due": "Thursday after 2"
+    },
+    {
+      "owner": "son",
+      "task": "Pick up the 30-day lisinopril bridge fill and atorvastatin at the Millbrook counter.",
+      "due": "Thursday after 2"
+    },
+    {
+      "owner": "pharmacy",
+      "task": "Fill atorvastatin 40 mg, 90-day supply, and include it with the bridge fill bag.",
+      "due": "Thursday after 2"
+    },
+    {
+      "owner": "patient",
+      "task": "Use the mailed lisinopril tablets first, then start the new bottle.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "technician",
+      "task": "Add a note for the pharmacist about the caller's ibuprofen question.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "son",
+      "task": "If the prior authorization is not resolved within a week, call Halvard member services to check whether the PA was received.",
+      "due": "next week"
+    },
+    {
+      "owner": "pharmacy",
+      "task": "Continue 30-day bridge fills if the 90-day prior authorization is not approved.",
+      "due": "ongoing"
+    },
+    {
+      "owner": "patient",
+      "task": "Bring blood pressure notebook to next appointment.",
+      "due": "next appointment"
+    }
+  ],
+  "summary_notes": "Beatriz Almeida-Hough called for a 90-day lisinopril 20 mg refill. The claim rejected for prior authorization; Halvard showed no PA despite Dr. Lindqvist’s office faxing it twice. Pharmacist Ingrid arranged a 30-day bridge fill at $4, ready Thursday after 2 at Millbrook, with atorvastatin. She will call the office today to resend the PA and contact Rafael when the 90-day is approved. Rafael was added as preferred contact with patient authorization. Technician verified identity but gave unsupervised reassurance about dizziness/low BP and promised pharmacist review of ibuprofen, which was not addressed.",
+  "notable_details": [
+    "Patient: Beatriz Almeida-Hough, DOB 02/04/1959, address 1410 Corbel Street.",
+    "Medication corrected: lisinopril 20 mg, one tablet daily, 90-day supply from Dr. Lindqvist, received on the 8th.",
+    "Partial fill: 15 tablets mailed Monday; patient took two old 10 mg tablets since Monday after old supply ran out Sunday.",
+    "Insurance: Halvard, member number ending 61; new card in January was same number/design change.",
+    "90-day lisinopril claim rejected for prior authorization; office faxed PA on the 9th and Monday, but Halvard showed no request received.",
+    "Bridge plan: 30-day lisinopril 20 mg at $4 copay, ready Thursday after 2 at Millbrook, not Eastgate.",
+    "Atorvastatin 40 mg, 90-day, due and will be in same bag.",
+    "Latanoprost corrected from 'Latin a prost'; filled on the 2nd, not due; unopened refrigerated, opened room temp about six weeks.",
+    "Prescription number for lisinopril: 771042.",
+    "Copay corrected from $40 to $4 for 30-day generic lisinopril.",
+    "Cash price for 90 generic lisinopril 20 mg: about $18.",
+    "Rafael, son, authorized for prescriptions/insurance and added as preferred contact; number 555-0191; texts only for pickup, calls/voicemail for PA.",
+    "Patient reported BP 94/58 and lightheadedness; technician attributed to heat and said lower is better.",
+    "Ibuprofen question for knee pain was raised and promised for pharmacist but not addressed.",
+    "Flu shot offered at pickup tomorrow, no copay; patient undecided.",
+    "Long hold: caller waited approximately 29 minutes for pharmacist transfer."
+  ]
+}

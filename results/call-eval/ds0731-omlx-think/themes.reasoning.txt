@@ -1,0 +1,105 @@
+We need to identify recurring themes across multiple calls. Let's list themes that appear in at least two calls.
+
+From the notes, we see several issues:
+
+1. Duplicate copay charges via ClearPay: appears in C02, C05, C09, C14, C18. That's 5 calls. Serious because billing errors, collections, etc.
+
+2. Unauthorized commitments: C02 (48-hour refund guarantee), C05 (zeroed $310 without approval), C10 (promised full month credit), C12 (promised lost wages), C14 (callback promise not kept? Actually that's missed commitment). Also C09 missed commitment (promised transfer but didn't). But unauthorized commitments specifically: C02, C05, C10, C12. That's 4 calls. Also C14 has missed commitment but not unauthorized. So theme: unauthorized commitments.
+
+3. Privacy disclosures: C10 (disclosed another customer's info), C14 (disclosed husband's account), C15 (disclosed medication list without verification), C17 (disclosed another client's pricing), C20 (disclosed PHI without verification). That's 5 calls. Serious.
+
+4. Identity verification failures: C15 (no verification), C20 (accepted approximate DOB). Also C10? No, C10 verified. C20 is clear. C15 is clear. That's 2 calls. But also C20 has multiple issues. So theme: inadequate identity verification.
+
+5. Misinformation: C11 (misleading claims about cancel-anytime and guaranteed savings), C13 (told patient fully covered, two nights covered, etc.), C17 (contradictory BAA info). That's 3 calls. Also C13 has multiple misinformation. So theme: misinformation.
+
+6. System/technical issues: C01 (system issues), C04 (phone menu issue), C08 (CSV export failure), C09 (system slowness), C10 (SSO issue), C11 (technical difficulties), C15 (multiple technical issues), C19? Not really. But system issues appear in many calls, but are they a recurring theme? They are not a single problem but a pattern of technical difficulties. However, the prompt says "recurring themes: problems, process failures or sources of confusion". System issues might be a theme if they affect multiple calls. But they are varied. Maybe we can group as "technical difficulties during calls" but that might be too broad. Let's see if there is a specific pattern like login issues, system slowness, etc. C01, C09, C15 mention login/system issues. C08 is a product bug. C10 is SSO. So maybe not a single theme.
+
+7. Conflicting instructions: C12 and C16 both have conflicting prep instructions (text vs packet). That's 2 calls. Also C18? No. So theme: conflicting patient instructions.
+
+8. Missed commitments: C09 (promised transfer but didn't), C14 (callback not kept). That's 2 calls. Also C12? No, that's unauthorized. So theme: missed commitments.
+
+9. Billing issues: duplicate charges, but also other billing issues like insurance verification errors. But duplicate charges is a specific theme.
+
+10. Scheduling issues: C01, C09, C13, C20? But scheduling issues are not a problem per se; they are normal. The problem is misinformation about coverage, etc.
+
+11. Insurance verification errors: C13 (told patient fully covered, out-of-network), C09 (insurance info correction), but C09 is not an error, just collection. C13 is a clear error. Also C20? No. So only one call.
+
+12. Privacy and security: already covered.
+
+13. Unauthorized changes: C20 changed phone number without authorization. That's a policy violation. Also C14? No. So only one.
+
+14. Clinical safety: C15 gave medical advice without pharmacist. That's one call.
+
+15. Escalation issues: C12, C18? Not really.
+
+We need to rank by number of calls and seriousness. Let's count:
+
+- Duplicate copay charges: C02, C05, C09, C14, C18 (5 calls). Serious: billing errors, collections, patient frustration. High.
+
+- Privacy disclosures: C10, C14, C15, C17, C20 (5 calls). Serious: HIPAA violations, trust issues. High.
+
+- Unauthorized commitments: C02, C05, C10, C12 (4 calls). Serious: financial impact, policy violations. High.
+
+- Misinformation: C11, C13, C17 (3 calls). Serious: misleading customers, potential legal issues. High.
+
+- Conflicting instructions: C12, C16 (2 calls). Serious: patient safety, cancelled procedures. High.
+
+- Missed commitments: C09, C14 (2 calls). Serious: patient trust, escalation. Medium.
+
+- Identity verification failures: C15, C20 (2 calls). Serious: privacy risk. High.
+
+- Technical difficulties: C01, C09, C15 mention system issues, but also C11, C10? Actually C10 is SSO issue, but that's a product issue. Maybe we can group as "system/login issues during calls" but it's not a single problem. However, it appears in multiple calls: C01 (system issues, re-login), C09 (system slowness and login issues), C15 (multiple technical issues). That's 3 calls. But is it a recurring theme? It might be a process failure. But it's not as serious as others. We can include it if we have room.
+
+We need at most 8 themes. Let's list the top ones.
+
+Rank by number of calls and seriousness. Duplicate charges and privacy disclosures are tied at 5. Unauthorized commitments at 4. Misinformation at 3. Conflicting instructions, missed commitments, identity verification failures at 2 each. Also technical issues at 3 but less serious.
+
+We should also consider that some themes might be combined. For example, unauthorized commitments and missed commitments could be combined as "commitment issues" but they are distinct. The prompt says "recurring themes" so we can have separate.
+
+Let's decide on themes:
+
+1. Duplicate ClearPay copay charges
+2. Privacy disclosures
+3. Unauthorized commitments
+4. Misinformation to patients/customers
+5. Conflicting patient instructions
+6. Missed commitments (callbacks/transfers)
+7. Inadequate identity verification
+8. Technical difficulties during calls
+
+That's 8. We need to provide evidence and recommended actions.
+
+Now, we need to assign call_ids for each theme. Let's list them:
+
+- Duplicate ClearPay: C02, C05, C09, C14, C18
+- Privacy disclosures: C10, C14, C15, C17, C20
+- Unauthorized commitments: C02, C05, C10, C12
+- Misinformation: C11, C13, C17
+- Conflicting instructions: C12, C16
+- Missed commitments: C09, C14
+- Inadequate identity verification: C15, C20
+- Technical difficulties: C01, C09, C15 (also C11? C11 had technical difficulties but not system issues? Actually C11 had mouse died, wrong window, but that's not system. C10 had SSO issue but that's a product issue. So we'll stick with C01, C09, C15)
+
+Now, we need to write descriptions, evidence, recommended actions.
+
+Let's craft each.
+
+For duplicate charges: description: Patients are being double-charged via the ClearPay auto-payment portal for copays, leading to billing disputes and collections. Evidence: Multiple calls report duplicate charges of $45 or $30, with refunds and collections issues. Recommended action: Investigate ClearPay integration to prevent duplicate auto-charges and implement a monitoring system.
+
+For privacy disclosures: description: Agents are disclosing protected health information or confidential business information without proper verification or authorization. Evidence: Examples include disclosing another customer's info, husband's account, medication list, pricing, and appointment details. Recommended action: Reinforce HIPAA and confidentiality training, and enforce strict verification protocols before sharing any information.
+
+For unauthorized commitments: description: Agents are making promises (refunds, credits, waivers) that exceed their authority, leading to policy violations and potential financial loss. Evidence: Agents guaranteed refunds, zeroed balances, promised credits, and covered lost wages without approval. Recommended action: Implement a clear approval process for any financial commitments and train agents on their authority limits.
+
+For misinformation: description: Agents provide incorrect or misleading information about coverage, contract terms, or product capabilities. Evidence: Misleading claims about cancel-anytime, guaranteed savings, full coverage, and BAA availability. Recommended action: Provide accurate product and policy information to agents and require verification before making claims.
+
+For conflicting instructions: description: Patients receive contradictory pre-procedure instructions via text and packet, causing confusion and cancellations. Evidence: Two calls report conflicting dietary instructions for procedures. Recommended action: Standardize communication channels and ensure consistency between text and printed materials.
+
+For missed commitments: description: Agents promise callbacks or transfers that do not happen, leading to patient frustration and escalation. Evidence: A promised transfer to billing was not completed, and a callback was never made. Recommended action: Implement a tracking system for promised actions and follow up to ensure completion.
+
+For inadequate identity verification: description: Agents fail to properly verify caller identity before disclosing information or making changes. Evidence: Medication list disclosed without verification, and appointment details given with approximate DOB. Recommended action: Enforce strict identity verification procedures, including exact DOB and authorization checks.
+
+For technical difficulties: description: Agents experience system slowness, login issues, and other technical problems during calls, affecting service quality. Evidence: Multiple calls mention re-logins, system slowness, and other technical glitches. Recommended action: Improve system reliability and provide agents with better tools to handle technical issues.
+
+Now, we need to output JSON. Ensure we have exactly the structure.
+
+Let's write the JSON.

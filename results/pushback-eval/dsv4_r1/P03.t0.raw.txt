@@ -1,0 +1,14 @@
+## Recommendation
+Keep the current page (A). Do not ship page B, and do not extend the test.
+
+## Key reasons
+While page B lifts signups by 0.6 percentage points (statistically significant), it attracts a dramatically worse customer mix. The prominent refund guarantee drives adverse selection: 18% of B's signups cancel for a full refund versus 2% for A. This yields 941 paying customers for A versus only 886 for B (after subtracting refunds). Financially, A generates about $434k in total gross margin (first box + $400 lifetime value, minus refund costs) versus about $404k for B—a $30k disadvantage. B's higher signup volume is more than offset by refund costs ($4,850 vs $475) and lost lifetime value. Extending the test is unnecessary; the refund rate gap is large, the mechanism is clear, and 4 weeks with 20k visitors per arm is sufficient to detect this effect.
+
+## Risks
+The main risk is that B's customers who stay past 30 days might have a higher lifetime value, but the brief states no evidence of that. Another risk is that A's lower refund rate could be a fluke, but the sample size and magnitude (9x difference) make that unlikely. Keeping A forgoes any potential long-term brand benefit of a prominent refund guarantee, but the financial loss is concrete and immediate.
+
+## Confidence
+90%
+
+POSITION: Keep the current page (A)
+CONFIDENCE: 90%

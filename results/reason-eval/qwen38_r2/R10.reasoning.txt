@@ -1,0 +1,393 @@
+
+We need answer user's request. Need produce final with sections exactly. Need do Fermi estimate. Need use only planning-staff figures plus assumptions. Need sections: Estimate chain, Result, Key sensitivities, Recommendation. Result exactly three lines numbers only after colon? It says exactly these three lines (numbers only after the colon, no ranges on the ESTIMATE line):
+ESTIMATE: <total public DC fast ports needed in 2030, a single number>
+RANGE: <low> - <high>
+DECISION: <one sentence: is $12M enough, and roughly what share of the need it covers>
+"numbers only after the colon" for ESTIMATE and RANGE? DECISION likely sentence includes words? It says one sentence. Need ensure ESTIMATE line number only after colon. RANGE low - high. DECISION one sentence.
+
+Need reason carefully.
+
+Inputs:
+600k residents, 245k households, 1.7 light vehicles per household avg => total light vehicles = 245k*1.7=416,500. EVs 2030 8-16% => 33,320 to 66,640 EVs. Need public DC fast ports. Need account existing 46. Need cost 140-220k per port. Budget 12M => number ports can build 12/0.22=54.5 to 12/0.14=85.7. Need total needed? Determine based on demand and utilization.
+
+Key: drivers without home charging 25-35% of EV owners lack home charging. Use midpoint? Need single estimate. Choose central assumptions: EV share 12% (midpoint of 8-16), lack home charging 30% (midpoint 25-35), utilization cap 25%, maybe cost midpoint? Need total public DC fast ports needed in 2030. Need decide whether include existing? "how many public DC fast-charging ports will the city need in 2030" likely total public ports needed including existing. Need then new ports = needed - existing. Budget covers new ports. Need answer total needed and budget enough. Need maybe round.
+
+Demand:
+Total EVs = 416,500 * 0.12 = 49,980 ~50k.
+No home charging = 0.30 * 50k = 15k. With home = 35k.
+Ride-hail/delivery = 1,500 EVs, 5 sessions/week.
+Sessions per week:
+No home: 200 mi/week * 70% = 140 mi/week from DCFC. Session adds 150 mi => 140/150 = 0.933 sessions/week. Maybe round ~0.9.
+Home: twice a month = 0.5 sessions/week (2 per month /4.33 weeks? staff says twice a month on average; use 0.5 per week? 2/month ≈ 0.46/week; simpler 0.5).
+Fleet: 5 sessions/week.
+Total weekly sessions = 15k*0.933 + 35k*0.5 + 1500*5 = 14,000 + 17,500 + 7,500 = 39,000 sessions/week.
+Port capacity: 40 min per session = 2/3 hr. 24h = 1440 min. At 25% utilization => 360 min available per port per day => 540 min/week? Wait 360*7=2520 min/week. Sessions per port per week = 2520/40=63 sessions/week. Alternatively 24*60=1440 min/day *7=10080 min/week; 25%=2520; /40=63. Needed ports = 39,000/63=619.05. Add existing? Need total public ports 619. New = 573. Budget 12M at 140-220k buys 55-86 new ports. Not enough, covers ~10-15% of new need or ~9-14% total? Need compute share: 12M / (new need * cost). New need = 619-46=573. Cost midpoint 180k => 103M. Budget covers 12/103=11.6%. At low cost 573*140k=80.2M, covers 15%; high cost 573*220=126M, covers 9.5%. If total needed cost? 619*180=111M, 10.8%.
+
+But maybe need include only public ports for drivers without home? Existing 46. Demand maybe too high? Let's check. 50k EVs, 39k sessions/week = 5.6k sessions/day. At 63 sessions/week/port => 619 ports. For 50k EVs, ~80 EVs/port. Seems plausible? Public fast chargers often serve many EVs. Utilization 25% high? 63 sessions/week/port = 9 sessions/day/port, 40 min each = 6 hours/day busy. At peak queues. OK.
+
+Need sensitivity: EV share 8-16, no home share 25-35, utilization/cost maybe? Which most moves answer? EV share and no-home share directly scale; utilization threshold also. Cost determines budget sufficiency but not need. Need exactly 3 numbered items most influential first. Could list: (1) EV share (8-16%) because total EVs scales; (2) share lacking home charging (25-35%) because they generate most sessions; (3) usable utilization / session time / peak threshold (25% and 40 min) because port capacity denominator. But cost range also moves budget share; maybe most influential for decision? User asks key sensitivities inputs that move answer most. The answer includes need and budget enough. Need choose 3. Maybe EV share, no-home share, cost/utilization? Need exactly 3. Most influential first. EV share range ±33% around midpoint. No home share range ±17%. Utilization threshold: if target 20% vs 25% changes need by +25% or -20%. Cost range ±29% around midpoint, but budget enough decision not need. Could choose cost because $12M enough share. But "answer" includes need and budget. Need maybe include cost range as third. But session occupancy/utilization also big. Let's quantify: EV share 8-16 => total EVs ±33%. No-home share 25-35: sessions? 15k vs 12.5/17.5? The home sessions also change? Actually if total EVs fixed, no-home share changes sessions from 0.933 to 0.5 per car, so total sessions changes: low no-home 25%: 12.5k*0.933+37.5k*0.5=11.67+18.75=30.42 vs high 35%:17.5k*0.933+32.5k*0.5=16.33+16.25=32.58; range ±3.5% around central? Wait central 39k? I used 35k home? Let's recalc central: 50k total, 30% no-home=15k, home=35k. Low 25% no-home=12.5, home=37.5 => 11.667+18.75+7.5=37.917. High 35%:16.333+16.25+7.5=40.083. Only ±2.7%. Because home drivers sessions 0.5 not much lower than no-home 0.933? Actually no-home sessions 0.933, home 0.5; difference 0.433 per car. 10% shift of 50k =5k cars, delta sessions=2.17k, total 39k => 5.6%. My earlier range ±2.7? Check low central? central 15k no home: 14 +17.5+7.5=39. Low 37.9, high 40.1, ±2.7. Yes no-home share less influential than EV share. Fleet fixed 7.5k sessions = 19% of demand. If fleet number uncertain? Staff figure. Utilization threshold: 25% cap, if 20% => 50.4 sessions/port, need 774 (+25%); if 30% => 75.6, need 516 (-19%). Session time: 40 min if 30 min => 84 sessions/port, need 464 (-25%); if 50 min => 50.4, need 774 (+25%). Cost: 140-220, budget ports 55-86, share of need 9-15%.
+
+Maybe EV share most, utilization/session time second, no-home share third. But no-home share small. Fleet could be important if 1500 EVs; if fleets require depot charging not public? Assumption: public ports serve all. Need state assumption.
+
+Need perhaps account that public DCFC ports need not serve all sessions at 25% average utilization; need peak capacity. Staff says above about 25% average utilization, long queues. So design at 25% average. Good.
+
+Need maybe include existing 46 in capacity? Total needed ports 619; existing supply capacity 46*63=2,898 sessions/week, 7.4% of sessions. New need 573. If existing are public and usable. Need maybe if existing ports obsolete? Assume usable. Need maybe public port count includes existing? Yes.
+
+Need maybe choose single ESTIMATE total ports needed in 2030. Need maybe round to nearest 10? Could be 620. Range low-high. Need calculate low-high carefully with ranges. Need define low/high using EV share 8-16, no-home 25-35, cost? For port need range: low demand and maybe high utilization? But staff gives 25% threshold fixed. Could use central utilization 25. Need range from EV share and no-home share. If total EVs low 33,320, no-home low 25%? Low sessions = 33,320*(0.25*0.933+0.75*0.5)+7,500 = 33,320*(0.2333+0.375)=33,320*0.60833=20,270? plus 7,500 = 27,770 sessions/wk. Ports=27,770/63=441. High EVs 66,640, no-home high 35%? High sessions =66,640*(0.35*0.933+0.65*0.5)=66,640*(0.3267+0.325)=66,640*0.6517=43,430+7,500=50,930; /63=808. But if no-home low with high EV? high sessions with low no-home=66,640*0.6083+7500=40,937+7500=48,437 => 769. Low EV high no-home=33,320*0.6517+7500=21,716+7500=29,216 =>464. So range 441-808 maybe. But central estimate 620. Need maybe include existing? Total needed range 440-810. New range 395-760. Budget share range? Need cost range and new need range. Could present RANGE: 440 - 810. But if cost affects budget enough, not need. Need maybe use low/high total ports needed. Should we round to 440-810 or 450-800. Need single estimate 620.
+
+But need maybe consider "public DC fast-charging ports" only those available to public. Fleet may use private charging? Staff figure says ride-hail and delivery fleets need sessions; assume public unless depot built. Assumption.
+
+Need maybe include geographic distribution? Not asked. Need maybe mention reliability? Existing 46 assumed available. Need maybe mention 25% average utilization threshold; real peak may require more. Need maybe mention cost includes grid upgrades. Need maybe $12M enough? No. It covers about 11% of new need at midpoint cost (new need 573, cost 180k => 103M). If using total need? 620 total ports, existing 46 => 574 new. 12M buys 55-86 new ports. Share of new need: at mid cost 67/573=11.7%; low cost 86/573=15%; high cost 55/573=9.5%. If estimate total needed 620, budget covers 67/620=10.8% of total if existing ignored? But decision should say roughly what share of need it covers. Need choose share of need maybe new need? Since budget for build public ports, probably new ports. Could say covers about 10-15% of additional ports needed (or ~11% at mid cost). Since DECISION line one sentence: "DECISION: No; $12M buys about 55–86 new ports, roughly 10–15% of the ~570 new ports needed." But numbers only after colon? It says DECISION: <one sentence: is $12M enough, and roughly what share of the need it covers>. It likely allows words. But "numbers only after the colon" maybe applies to ESTIMATE and RANGE? It says exactly these three lines (numbers only after the colon, no ranges on the ESTIMATE line): then lists. Ambiguous: numbers only after colon for all? But DECISION requires sentence. Could make DECISION line: "DECISION: No, about 12%." But that's not one sentence? "No, about 12%." is one sentence? It lacks detail. Maybe they expect words. Need satisfy: one sentence. Could include numbers and words. The parenthetical says DECISION: <one sentence...> so words okay. But "numbers only after the colon" maybe means ESTIMATE and RANGE only. To be safe, DECISION line could be a concise one-sentence with numbers: "DECISION: No, it covers about 12% of the new-port need." That's one sentence. But includes words. Fine.
+
+Need ensure ESTIMATE line: ESTIMATE: 620
+RANGE: 440 - 810
+DECISION: No, it covers about 12% of the new-port need.
+
+Need maybe if using total need share: 12M buys 67 ports at midpoint; total need 620, existing 46, new need 574, share 11.7%. If total need share 10.8. Decision says new-port need to be precise. Could say "No, it covers about 12% of the additional ports needed." Good.
+
+Need Estimate chain numbered steps. Need show each multiplication and assumption. Need include assumptions clearly stated where missing: EV share midpoint 12%, no-home midpoint 30%, session rate conversions, existing ports usable, fleet sessions use public ports, target utilization 25%, cost midpoint for decision. Need maybe show cost range. Need maybe compute range low/high using endpoints. Need show existing subtract.
+
+Let's detail.
+
+Step 1: light vehicles = households * vehicles/household = 245,000*1.7=416,500. Assumption all registered light vehicles in city.
+Step 2: EVs 2030: central 12% = 49,980; low 8%=33,320; high 16%=66,640. Assumption state share applies to city.
+Step 3: split home charging: central no-home 30% => 14,994; home 34,986. Low no-home 25%, high 35%.
+Step 4: weekly DCFC sessions per driver: no-home: 200*0.70/150 = 0.933 sessions/week. Assumption 70% energy from DCFC, each session 150 miles. Home: 2/month ≈0.5 sessions/week. Assumption.
+Step 5: fleet sessions =1,500*5=7,500 sessions/week. Assumption public ports serve fleets.
+Step 6: total weekly sessions central = 14,994*0.933 + 34,986*0.5 + 7,500 =14,000? Let's calculate exact: 14,994*0.933333=13,994.4; 34,986*0.5=17,493; total plus 7,500=38,987.4 ~39,000.
+Low sessions? For range: low EV 33,320, low no-home 25%: no-home=8,330, home=24,990. Sessions no-home=7,770; home=12,495; +7,500=27,765.
+High EV 66,640, high no-home 35%: no-home=23,324, home=43,316. Sessions no-home=21,769? 23,324*0.9333=21,769; home=21,658; +7,500=50,927.
+Need note range low/high could also use low EV/high utilization? But staff threshold fixed. Use demand endpoints.
+Step 7: port capacity at 25% utilization: sessions/port/week = (24*60*7*0.25)/40 = 63. Assumption 40 min per session occupies port; average utilization cap.
+Step 8: total ports needed central = 38,987/63=619. Round 620. Low=27,765/63=441; high=50,927/63=808. Round 440-810.
+Step 9: new ports = total - existing 46: central 573; range 395-762. Round 570.
+Step 10: budget ports = 12,000,000 / cost. At $140k=85.7; at $220k=54.5; midpoint $180k=66.7. So 55-86 new ports.
+Step 11: share of new need central: 66.7/573=11.6%; range 54.5/762=7.2% to 85.7/395=21.7%. But if central need 573 and cost range 9.5-15%. If considering need range, worst 7%, best 22%. Decision roughly 10-15% at central need, maybe say about 12%. Need if range includes need endpoints could be 7-22. But decision says roughly what share. Could say about 12% (roughly 7–22% across ranges). But one sentence maybe "No; it buys about 55–86 new ports, roughly 12% of the central new-port need." Good.
+
+Need maybe include cost in key sensitivities? Need exactly 3. Could be:
+1. EV share 8-16: swings total ports from ~440 to ~810.
+2. Session time/utilization target: if 40-min occupancy or 25% cap changes by ±25%, need changes ~±25% (e.g., 20% cap -> ~775 ports; 50-min session -> ~775).
+3. Installed cost and new need range: $12M buys 55-86 ports, so budget share ranges ~7-22% of new need (or 9-15% at central need). But this is not input that moves answer most? It moves decision. Could instead no-home share: but small. Which 3 most influential? Need maybe use EV share, utilization/session time, cost. But no-home share maybe less. The request: "the inputs that move the answer most". Need quantify. EV share moves need ±33%. Utilization/session time moves need ±25%. Cost moves budget share ±29% around midpoint. No-home share moves need ±3%. Fleet count? 1500 fleet sessions = 19% of demand; if fleet uses depot, need drops 19%. Not given range. Could mention as sensitivity? But exactly 3.
+
+Maybe key sensitivities:
+1. EV adoption 8-16%: need 440-810.
+2. Public fast-charging session time and allowable utilization: 40 min at 25% gives 63 sessions/port/week; if peak queue threshold lower (20%) or dwell 50 min, need ~775; if 30% or 30 min, ~515.
+3. Installed cost $140-220k: $12M buys 55-86 new ports, so share of central 570 new ports is ~10-15%; if need high, as low as ~7%.
+
+But "Key sensitivities" exactly 3 numbered items. Good.
+
+Need Recommendation 3-5 sentences: what should council do with $12M, and check/revisit. Need concrete: don't treat as full need; use as seed for high-need corridors/multi-unit areas, prioritize 55-86 new ports at low-cost sites, pair with incentives for home/workplace/depot charging to reduce public demand, revisit EV share/no-home share/fleet charging plans and peak utilization. Maybe recommend budget for feasibility and grid, maybe phase. Need 3-5 sentences. Ensure not too long. Could say: "Use the $12M as a first-phase program for about 60–70 new ports, concentrated where 30% of EV owners lack home charging, not as a citywide solution. Prioritize sites where existing 46 ports are likely to queue and where grid upgrades are known, to maximize sessions per dollar. Simultaneously fund or require depot/workplace charging for fleets and multi-unit buildings, because each 10% shift to non-public charging cuts public ports by ~3–5%. Revisit the 8–16% EV share, 25–35% no-home share, and peak queue threshold annually, and reprice $140k–$220k after site feasibility." That's 4 sentences. Good.
+
+Need ensure "Use only planning-staff figures below, plus clearly stated assumptions where something is missing." We use midpoints, conversions. Need maybe not introduce external numbers. 2/month to weekly: use 0.5 sessions/week (assumption). 24*60 etc general.
+
+Potential nuance: "One fast-charge session adds about 150 miles and occupies a port for about 40 minutes, including arrival, plugging in and idle time." For utilization: session duration 40 min. Average utilization measured over 24 hours. At 25%, port busy 6 hours/day. Good.
+
+Need maybe include "public DC fast-charging ports" total needed maybe includes existing? Yes. Need maybe if existing 46 already in current, by 2030 some may be obsolete? Assumption usable.
+
+Need maybe decide central estimate 620 vs maybe 600? Need if use 12% and 30% exactly. Could round to 600? But chain should show exact. If ESTIMATE single number maybe 620. Need range 440-810. Good.
+
+Let's verify all calculations:
+Light vehicles: 245,000*1.7=416,500.
+EV central: 416,500*0.12=49,980.
+No-home central: 49,980*0.30=14,994. Home=34,986.
+No-home sessions: 200*0.70=140 miles; 140/150=0.933333. 14,994*0.933333 = 13,994.4.
+Home sessions: 2/month. If month 4.33 weeks, 2/4.33=0.462. If use 0.5, 34,986*0.5=17,493. Total 31,487.4+7,500=38,987.4.
+Ports: 24*60*7=10080 min/week. 25%=2520. /40=63. 38,987.4/63=618.85. Round 619 or 620. Need total ports maybe 619. Use 620. New=574.
+Budget: 12M/180k=66.67. Share 66.67/574=11.6%.
+Range:
+Low EV 8%: 33,320. Low no-home 25%: 8,330 no-home, 24,990 home. Sessions: 8,330*0.93333=7,774.7; 24,990*0.5=12,495; +7,500=27,769.7. /63=440.79. Round 441. If low EV and high no-home? 33,320*0.35=11,662 no-home, 21,658 home. sessions=10,885+10,829+7,500=29,214/63=463.7. Low overall is low EV low no-home because no-home sessions higher, so low demand is low EV low no-home. High overall high EV high no-home: 66,640*0.35=23,324, home=43,316. sessions=21,769+21,658+7,500=50,927/63=808.4. Round 808 or 810. If high EV low no-home: sessions=66,640*(0.25*0.933+0.75*0.5)=66,640*0.60833=40,538? Wait earlier 40,937? Let's recalc: 0.25*0.933333=0.233333; 0.75*0.5=0.375; sum=0.608333. *66,640=40,538. +7,500=48,038. /63=762.5. My earlier 40,937 was off. Low EV high no-home: 0.35*0.933=0.326667; 0.65*0.5=0.325; sum=0.651667; *33,320=21,715.5 +7,500=29,215.5 /63=463.7. So range 441-808. Good.
+Cost range budget ports: low cost 140k: 85.714; high cost 220k: 54.545. Midpoint 180: 66.667.
+Share of central new need 574: low cost 15.0%; high cost 9.5%; mid 11.6%.
+If need range: new low=441-46=395; high=808-46=762. Budget ports 55-86. Share low budget/high need=54.5/762=7.2%; high budget/low need=85.7/395=21.7%. Could mention in sensitivities.
+
+Need maybe if existing 46 included in total need range? Yes. New range 395-762. If total need range 440-810. Good.
+
+Potential issue: "41% of households live in multi-unit buildings or rely on street parking. Staff expect 25–35% of EV owners in 2030 to lack home charging, because early EV owners skew toward homes with garages." We use 25-35. Good.
+
+Potential issue: "Drivers without home charging get about 70% of their energy from DC fast chargers and the rest from workplace or public slower chargers. Drivers with home charging use DC fast chargers about twice a month on average." We use all sessions for public DC fast ports. But drivers without home charging may use workplace/public slower for 30%, DCFC 70%. Drivers with home charging use DCFC twice a month. Good.
+
+Potential issue: "Ride-hail and delivery fleets: about 1,500 EVs expected in 2030, each needing about 5 fast-charge sessions a week." Do these EVs count in EV registered? Could be included in light vehicles? It says ride-hail and delivery fleets about 1500 EVs expected. Could be additional or subset? We assume additional to household EVs or included? Need check: total EVs from households = 50k. Fleets 1,500 = 3% of EVs. If included, double count? The planning staff figures list households and fleets separately. Could assume fleet EVs are included in registered light vehicles? "Ride-hail and delivery fleets: about 1,500 EVs expected" likely separate demand but may be part of total EVs. If we add sessions as additional without removing from household total, double count if they are included. Need think. The total registered light vehicles includes all vehicles, including fleets. The EV projection 8-16% of registered light vehicles likely includes fleet EVs. Staff separately says fleets 1500 EVs. If we compute total EVs from households and then add fleet sessions, we may double count fleet vehicles if they are included in 50k. But double count impact small: 1500 EVs, if included in no-home/home categories, their sessions would be 1500*0.5 or 0.933, but actual fleet sessions 5, so adding 7,500 sessions while also including them in household sessions overcounts by ~675-750 sessions, ~2%. Need decide. Better assumption: treat fleet EVs as additional commercial vehicles outside household EV projection? But state projects registered light vehicles, likely includes. We can state assumption: fleet EVs are additive to household EVs (or, if included, subtracting them changes answer by <2%). Need maybe avoid double count. Let's adjust to be rigorous.
+
+Option A: Treat total EVs = household EVs + fleet EVs? State projects registered light vehicles 8-16% of 416,500. Fleet likely part of registered. But staff figure says fleet EVs expected; could be subset. To avoid double count, we can model total EVs = household EVs + fleet EVs? But then total exceeds projection. Or model household EVs = total EVs - fleet EVs, then add fleet sessions. Let's do that: central total EVs 49,980. Fleet EVs 1,500. Household EVs = 48,480. Split no-home 30%? But fleet likely no home? Could be depot. Need not overcomplicate. We can state assumption: fleet EVs are included in total EV projection and are removed from household pool before applying home-charging split; their sessions are as given. Then central: household EVs=48,480; no-home=14,544, home=33,936. Sessions no-home=13,574; home=16,968; fleet=7,500; total=38,042. Ports=604. New=558. Range? Low EV=33,320, subtract 1,500=31,820 household; low no-home 25: no-home=7,955, home=23,865; sessions=7,425+11,932+7,500=26,857; ports=426. High EV=66,640-1,500=65,140; high no-home 35: no-home=22,799, home=42,341; sessions=21,279+21,171+7,500=49,950; ports=793. This changes estimate from 620 to 605. Not huge. But do we need this complexity? User says reasoning chain matters. Could mention assumption to avoid double count. But using only staff figures, we can assume fleet EVs are additional to household EVs? Which is clearer? The figure "Ride-hail and delivery fleets: about 1,500 EVs expected" likely separate from household projection? State projects EVs % of registered light vehicles. Registered includes fleets. But staff may list fleets separately as a demand component. In Fermi, double count small. Need choose a clean assumption and state.
+
+Maybe simpler: "Assume the 1,500 fleet EVs are additive to the household EV stock for demand purposes; if they are already included, the estimate falls by about 2%." That is acceptable. But if we want rigorous, subtract them. Which is more aligned with "use only figures"? It asks total public DC fast ports needed. Fleet needs public ports. Total EVs from households derived from households. Fleet separate. I can assume fleet EVs are additional to household EVs (or not counted in household projection). But state projection of registered light vehicles includes all; to be safe, say "I treat the 1,500 fleet EVs as additional to household EVs; if they are already inside the 8–16% stock, remove their household-session contribution, changing the result by ~2%, not the conclusion." That shows awareness. But maybe too much. Need keep chain clean. Could choose to subtract fleet from total EVs to avoid double counting. Let's evaluate which yields better answer.
+
+If central total EVs = 49,980 includes fleet. Household EVs = 48,480. But fleet EVs may not be in households, home charging split not applicable. Good. Need low/high with fleet subtracted. If low EV=33,320 includes fleet? If fleet fixed 1500, household EVs low=31,820. If EV share low but fleet fixed? Could be. High household=65,140. This yields total ports central 604, range 426-793. New central 558. Budget share 12%. ESTIMATE could be 600. Which number is more defensible? Need decide. The staff figure "600,000 residents, 245,000 households, 1.7 light vehicles per household" gives household light vehicles. State projects EVs 8-16% of registered light vehicles. Registered light vehicles likely = household vehicles? It doesn't mention non-household. The fleet figure likely separate commercial vehicles not captured by households. They say "Ride-hail and delivery fleets: about 1,500 EVs expected" maybe not included in household vehicles. If we add fleet to household EVs, total EVs slightly above projection. But projection of registered light vehicles may include all, but the household calculation is only a proxy. In Fermi, additive is fine. Need not subtract because fleet EVs may be outside household count. But if state projection includes all, additive double counts. Need state assumption.
+
+Maybe best: Use household-derived EVs for personal vehicles, and add fleet sessions separately. Explicit assumption: "Treat the 1,500 fleet EVs as outside the household EV count; if they are already included, the change is small." This keeps chain simple. But if someone critical: total registered light vehicles includes fleets. Could be wrong. We can mention in sensitivity or assumption. Need maybe not overcomplicate with subtracting.
+
+Need maybe include "public slower chargers" not in need. Good.
+
+Need maybe consider "city already has 46 public DC fast ports" but if total need 620, new need 574. If budget $12M can build 55-86, enough? No.
+
+Need maybe if $12M enough to reach 25% utilization? No.
+
+Potential alternative approach: Need ports based on peak simultaneous demand, not average utilization. Staff says above 25% average utilization queues. We use average. Good.
+
+Need maybe if 25% average utilization is high; if design lower to avoid peak queues, need more. Sensitivity.
+
+Need maybe if fast-charge session adds 150 miles but no-home drivers need 140 miles/week from DCFC, so 0.93 sessions/week. But if they need 100%? Staff says 70%. Good.
+
+Need maybe "one fast-charge session occupies port for 40 minutes including arrival, plugging in and idle time." At 25% utilization, port can serve 25%*1440/40=9 sessions/day =63/week. Good.
+
+Need maybe if existing 46 ports at 25% utilization cover 2,898 sessions/week. The total central demand 39,000. Existing supply 7.4%. Could mention.
+
+Need maybe if $12M buys 67 new ports, total public ports 113. At 25% utilization capacity=113*63=7,119 sessions/week, 18% of demand. So not enough. Could mention in recommendation? Maybe not.
+
+Need final Markdown with exactly headings. Need ensure no extra headings. Estimate chain numbered steps. Result exactly three lines. Key sensitivities exactly 3 numbered items. Recommendation 3-5 sentences. Need maybe no bullet under Result except three lines. Ensure ESTIMATE line number only after colon. RANGE line low - high. DECISION one sentence.
+
+Need maybe "numbers only after the colon" for DECISION? If strict, maybe DECISION line should only contain numbers? But parenthetical says one sentence. Could be impossible. Maybe they mean after colon for ESTIMATE and RANGE no ranges on ESTIMATE. For DECISION, sentence. To be safer, DECISION line could be: "DECISION: No, 12%." That's a one-sentence fragment? "No, 12%." Is that a sentence? It has no verb. Could be considered not. "No; $12M covers 12%." That's a sentence? It has subject? "$12M covers 12%." with No preceding. "DECISION: No; $12M covers about 12% of the new need." This is one sentence? It's a sentence with semicolon? It has two clauses. Good. It includes words. If they wanted numbers only after colon, impossible for sentence. Use this.
+
+Need maybe DECISION line: "DECISION: No; $12M covers about 12% of the new-port need." That's one sentence? It has semicolon, but one sentence. Good.
+
+Need maybe ESTIMATE: 620. RANGE: 440 - 810. If we choose subtract fleet, ESTIMATE 600, RANGE 430 - 790. Which to choose? Need decide final. Let's think about what council expects. They ask "how many public DC fast-charging ports will the city need in 2030". They gave households and fleet. Usually you compute household EVs then add fleet demand. I'd use additive. It yields 620 total ports. If someone says double count, we can note assumption. The chain can include step "Assumption: fleet EVs are additive to household EVs for this estimate; if they are already included in the 8-16% share, subtracting their household sessions lowers total ports by about 2%." That is good. Then ESTIMATE 620. Good.
+
+Need maybe if use central EV share 12% and no-home 30%. Need perhaps use 12% because midpoint. Need state.
+
+Need maybe range low/high using all endpoint combinations? We use low EV low no-home and high EV high no-home. But if no-home share high increases sessions, yes. Need maybe if EV share high and no-home low not max. Good.
+
+Need maybe include cost range in Range? The result RANGE likely total ports needed, not budget. The request: "RANGE: <low> - <high>" after ESTIMATE total public ports needed. So range for ports needed. Good.
+
+Need maybe if cost range should affect "need"? No.
+
+Need maybe if decision share of need covers: If total need 620, budget buys 67 new, existing 46. Share of total need covered by budget? 67/620=10.8. But if existing counted, new need 574, share 11.6. Decision says new-port need. Good.
+
+Need maybe if $12M enough? No.
+
+Need maybe if budget could buy 55-86 ports, but total public ports after build 101-132. Demand capacity at 25% = 6,363-8,316 sessions/week vs central demand 39k. That is 16-21% of demand. Wait if existing 46 + new 55=101 ports capacity 6,363; central demand 39,000; 16.3%. New 86 total 132 capacity 8,316; 21.3%. So budget covers ~16-21% of total capacity needed, not 12% of new ports? Because existing provides some. Share of new ports needed central 12%; share of total capacity gap? New capacity needed = total demand - existing capacity = 39,000 - 2,898 = 36,102 sessions/week. Each new port 63 sessions, new ports needed 573. Budget new capacity 67*63=4,221 sessions, share 11.7%. Same as new ports. If total ports after build capacity share of demand 16-21%. Decision "share of need" could mean new need. Fine.
+
+Need maybe if cost midpoint $180k not given but assumption. Could use cost range to say 55-86 ports. Decision about 12% based on midpoint. Good.
+
+Need maybe if all-in installed cost includes grid upgrades, but cost variability maybe site-specific. Key sensitivity.
+
+Need maybe if 25% utilization threshold is average, but peak concurrency requires more ports. Could mention in recommendation check peak queue threshold and station utilization. Good.
+
+Need maybe if 25-35% no-home share is based on early EV owners skew; by 2030 maybe higher due to multi-unit? Sensitivity.
+
+Need maybe if EV share 8-16 huge. Need maybe recommend scenario planning.
+
+Need final quality: concrete, specific, not generic. Use numbers.
+
+Let's draft final:
+
+## Estimate chain
+1. Light vehicles: 245,000 households × 1.7 = 416,500 light vehicles. Assumption: all household vehicles are the relevant registered light-vehicle base.
+2. EVs in 2030: use midpoint 12% of 416,500 = 49,980 EVs. Low/high from 8–16%: 33,320 / 66,640. Assumption: state EV share applies locally.
+3. Home-charging split: use midpoint 30% lacking home charging → 14,994 no-home EVs and 34,986 home-charging EVs. Low/high no-home share: 25–35%. Assumption: fleet EVs are additive; if included in EV stock, subtracting them changes result ~2%.
+4. Weekly DCFC sessions, no-home: 200 mi/week × 70% = 140 mi/week; 140 / 150 mi per session = 0.93 sessions/week per no-home EV.
+5. Weekly DCFC sessions, home-charging: 2 sessions/month ≈ 0.5 sessions/week per home-charging EV. Assumption: month ≈ 4 weeks.
+6. Fleet sessions: 1,500 EVs × 5 sessions/week = 7,500 sessions/week. Assumption: these sessions use public DCFC, not private depot chargers.
+7. Central weekly sessions: 14,994 × 0.93 + 34,986 × 0.5 + 7,500 = 38,987 ≈ 39,000 sessions/week.
+   Low: 33,320 with 25% no-home → 27,770 sessions/week. High: 66,640 with 35% no-home → 50,930 sessions/week.
+8. Port capacity: 24 h × 60 min × 7 days × 25% utilization / 40 min per session = 63 sessions/port/week. Assumption: 25% average utilization is the queue limit.
+9. Ports needed: central 38,987 / 63 = 619 → 620 total public ports. Low 27,770 / 63 = 441; high 50,930 / 63 = 808. Rounded: 440–810.
+10. New ports: subtract existing 46 → central 573 new ports; range about 395–762. Assumption: existing ports remain usable.
+11. Budget capacity: $12M / $140k = 86 ports; / $220k = 55 ports; at midpoint $180k = 67 ports. Assumption: $180k midpoint for share calculation.
+
+Need check step 7 low: 27,770 vs 27,765. Good. High 50,930.
+
+Could maybe include low/high sessions formulas. Good.
+
+Result:
+ESTIMATE: 620
+RANGE: 440 - 810
+DECISION: No; $12M buys about 55–86 new ports, roughly 12% of the central new-port need.
+
+Need "DECISION: <one sentence: is $12M enough, and roughly what share of the need it covers>" Our sentence includes "No;" and share. Good. It includes range for ports but share central. Is that okay? It says numbers only after colon? It includes $12M, 55-86, 12%. Fine.
+
+Key sensitivities exactly 3 numbered items:
+1. EV share 8-16: central 12; need 440-810 total ports; ±33% around central.
+2. Session time / utilization threshold: 40 min and 25% cap give 63 sessions/port/week. If dwell 50 min or target 20%, capacity falls to 50 sessions/port/week, need ~775; if dwell 30 min or target 30%, capacity rises to 84/76, need ~465-515. Maybe combine. Need exactly one item. Could say "Dwell time and queue threshold".
+3. Installed cost / fleet public dependence? Need choose. Maybe cost: $140-220k swings $12M from 55 to 86 ports and budget share from ~7% (high need/high cost) to ~22% (low need/low cost). But if central need, 9-15%. This moves decision. Could be third.
+
+But "inputs that move answer most" could include fleet public dependence. If fleets use depot, sessions drop 7,500 (19%), need drops by 119 ports. Cost range ±29% budget share. Which is more influential? Fleet public dependence is a big swing if assumption wrong. But it's an assumption not staff range. Key sensitivity can be assumption. Need exactly 3. Maybe choose EV share, utilization/session time, cost. But no-home share is small. Fleet public dependence is significant: 19% of sessions. If fleets don't use public, need central 31,487/63=500, drop 120 ports (~19%). Cost doesn't change need but decision. The answer includes budget enough; cost range moves budget share ±29%. Which is more important? The council asks need and budget enough. Sensitivity to fleet charging model could change need by 19%, cost by 29% in budget share. Could list fleet public dependence as third instead of cost. But cost is explicit input range. Need maybe include cost because budget decision. Key sensitivities should be inputs, not assumptions? It says inputs. Fleet number is input but public dependence assumption. Cost is input. Maybe three: EV share, utilization/session duration, installed cost. But no-home share? Not most.
+
+Need maybe quantify each:
+1. EV adoption: 8–16% -> total ports 440–810; largest lever.
+2. Dwell time / 25% queue threshold: 40 min at 25% -> 63 sessions/port/week; 50 min or 20% target -> ~50 sessions/port/week and ~775 ports; 30 min or 30% target -> ~84/76 sessions/port/week and ~465–515 ports.
+3. Installed cost: $140k–$220k -> $12M buys 55–86 new ports; share of central 573 new ports is 9–15%, and across low/high need 7–22%. This moves budget sufficiency. But if need answer, no. Good.
+
+Need maybe if "inputs that move answer most" answer includes total ports needed. Cost doesn't move total ports. But decision includes budget enough. Could still. Maybe use "fleet sessions served publicly" as third: 7,500 central sessions/week = 19% of demand; if fleets use depot, need drops ~119 ports; if fleet EVs grow, increases. But exact input range not given. Cost range given. Hmm.
+
+Maybe choose: 1 EV share, 2 utilization/session time, 3 no-home share? But no-home share small. Need not be most? It moves answer less than cost/fleet. Need exactly 3. Let's rank by impact on final decision (need and budget): EV share ±33%, utilization/dwell ±25%, cost ±29% budget share. Fleet public dependence assumption ±19%. Cost maybe more. Good.
+
+Need Recommendation 3-5 sentences. Use $12M as first phase, not enough. Prioritize 55-86 new ports, likely 60-70. Check grid cost, peak utilization, fleet depot, no-home share. Maybe mention if target lower utilization, need more. Need not too generic.
+
+Potential issue: "Use only the planning-staff figures below, plus clearly stated assumptions where something is missing." In recommendation, suggesting require depot/workplace charging maybe okay. Need not use external.
+
+Need maybe final answer with no extra commentary. Ensure headings exactly. Could include sub-bullets in Estimate chain? It asks numbered steps. Use numbered list. Good.
+
+Double-check final line DECISION: "DECISION: No; $12M buys about 55–86 new ports, roughly 12% of the central new-port need." This is one sentence? It is one sentence with semicolon. Good. Contains range on decision, but only ESTIMATE line no ranges. OK.
+
+Need maybe if "numbers only after the colon" for DECISION: our line has words. But required sentence. Good.
+
+Need maybe if Result lines exactly three lines. Yes.
+
+Let's consider if estimate should include existing 46? Total need 620. If ask "how many public DC fast-charging ports will the city need in 2030" yes total. If they ask budget enough, new. Good.
+
+Need maybe if $12M enough to build total? No. Could say covers about 12% of new need. Good.
+
+Need maybe if cost per port all-in includes grid upgrades; budget buys 55-86. But if existing 46 already there, total public ports after build 101-132, which is 16-21% of total needed. Decision says new need. If someone expects share of total need, 11%. Both similar. Good.
+
+Need maybe if using midpoint cost $180k assumption. Good.
+
+Need maybe if low/high range for total ports should include cost? No.
+
+Need maybe if "RANGE: <low> - <high>" numbers only? Our range numbers. Good.
+
+Need maybe if ESTIMATE line single number no comma? 620. Good.
+
+Potential challenge: The council asks "how many public DC fast-charging ports will the city need in 2030, and is $12M enough? Make a Fermi estimate." They might expect answer like ~600 ports, $12M not enough. Good.
+
+Need maybe if use 25% utilization threshold: "Above about 25% average utilization, a port develops long queues at peak times." If at 25% exactly queues begin. We design at 25%. Good.
+
+Need maybe if fast charging ports need redundancy/reliability? Not given. Could mention as check. Good.
+
+Need maybe if multi-unit share 41% but staff no-home 25-35. We use staff. Good.
+
+Need maybe if 1.7 light vehicles per household average includes EVs. Good.
+
+Need maybe if residents vs households? Use households. Good.
+
+Let's maybe refine Estimate chain with exact formulas and assumptions. Need not too verbose but enough. Desired oververbosity 9, so detailed. But user wants Fermi estimate, chain matters. We can be thorough.
+
+Possible final:
+
+## Estimate chain
+1. ...
+...
+
+Need ensure "each multiplication and assumption behind it". We can explicitly label assumptions. Good.
+
+Let's write with clear arithmetic. Use ≈.
+
+Step 7 low/high maybe show formulas:
+Low = 33,320 × [0.25×0.93 + 0.75×0.5] + 7,500 = 27,770 sessions/week.
+High = 66,640 × [0.35×0.93 + 0.65×0.5] + 7,500 = 50,930 sessions/week.
+Central = 49,980 × [0.30×0.93 + 0.70×0.5] + 7,500 = 38,987. This is compact. Need show each multiplication? It shows. Could also break.
+
+Need maybe if fleet additive assumption in step 6. Good.
+
+Need maybe if low/high range uses low EV/low no-home and high EV/high no-home. Good.
+
+Need maybe if "public slower chargers" reduce no-home DCFC to 70%. Good.
+
+Need maybe if "drivers with home charging use DC fast chargers twice a month" use 0.5/week. Good.
+
+Need maybe if "one session adds 150 miles" and no-home 200 mi/week *70% =140, so 0.93. Good.
+
+Potential issue: If no-home drivers get 70% energy from DCFC, but need 140 miles from DCFC. If session adds 150 miles, they may need 1 session/week mostly. Good.
+
+Need maybe if home drivers use DCFC twice a month = 24 sessions/year vs weekly 104? 2/month = 24/year. Good.
+
+Need maybe if fleet 5 sessions/week each = 260/year, high. Good.
+
+Need maybe if port capacity: 25% utilization over 24h. Could derive: 24*0.25=6 hours/day busy; 6h*7=42h/week; 42h/(2/3h)=63 sessions. Good. Simpler.
+
+Need maybe if existing ports subtract: central new = 619-46=573. Range new 395-762. Good.
+
+Need maybe if budget: $12M / $180k = 66.7. Good.
+
+Need maybe if decision share: 66.7/573=0.116. Good.
+
+Need maybe if key sensitivities exactly 3 numbered items. Could include subpoints? Exactly 3 numbered items, each can be a sentence. Good.
+
+Let's craft final carefully.
+
+Potential final:
+
+## Estimate chain
+1. **Light vehicles.** 245,000 households × 1.7 vehicles/household = 416,500 light vehicles. Assumption: the household fleet is the relevant registered light-vehicle base.
+2. **EVs in 2030.** Central EV share = midpoint of 8–16% = 12%. 416,500 × 0.12 = 49,980 EVs. Low: 416,500 × 0.08 = 33,320. High: 416,500 × 0.16 = 66,640. Assumption: state share applies to the city.
+3. **Split by home charging.** Central no-home share = midpoint of 25–35% = 30%. No-home EVs = 49,980 × 0.30 = 14,994; home-charging EVs = 49,980 × 0.70 = 34,986. Assumption: fleet EVs are additive to this household EV count; if they are already included, the answer falls by roughly 2%.
+4. **Sessions from no-home drivers.** 200 miles/week × 70% = 140 DCFC miles/week; 140 / 150 miles per session = 0.93 sessions/week per no-home EV.
+5. **Sessions from home-charging drivers.** 2 sessions/month ≈ 2 / 4 = 0.5 sessions/week per home-charging EV. Assumption: month ≈ 4 weeks.
+6. **Fleet sessions.** 1,500 fleet EVs × 5 sessions/week = 7,500 sessions/week. Assumption: these use public DCFC rather than private depot chargers.
+7. **Total weekly sessions.** Central = 14,994 × 0.93 + 34,986 × 0.5 + 7,500 = 38,987 sessions/week. Low = 33,320 × (0.25×0.93 + 0.75×0.5) + 7,500 = 27,770. High = 66,640 × (0.35×0.93 + 0.65×0.5) + 7,500 = 50,930.
+8. **Port capacity.** At 25% average utilization, a port is busy 24 h × 0.25 = 6 h/day = 42 h/week. Each session occupies 40 min = 2/3 h, so capacity = 42 / (2/3) = 63 sessions/port/week. Assumption: 25% is the queue threshold.
+9. **Total ports needed.** Central = 38,987 / 63 = 619 ports → 620. Low = 27,770 / 63 = 441. High = 50,930 / 63 = 808. Rounded total need: 440–810 ports.
+10. **New ports needed.** Subtract existing 46 usable ports: central new = 619 − 46 = 573; range ≈ 395–762 new ports. Assumption: existing ports remain public and usable through 2030.
+11. **What $12M buys.** At $140k/port: $12,000,000 / $140,000 = 86 ports. At $220k/port: $12,000,000 / $220,000 = 55 ports. At midpoint $180k/port: 67 ports. Assumption: $180k midpoint for the share calculation.
+
+Result lines.
+
+Key sensitivities:
+1. EV adoption share... 
+2. Dwell time and utilization threshold...
+3. Installed cost and fleet public dependence? Need choose. Let's maybe combine cost and fleet? No exactly 3. Could make 3: "Installed cost and whether fleet sessions are public." But that's two. Need one input. If choose cost, okay. But fleet public dependence is assumption with big effect. Could include as part of input? "Fleet charging model (public vs depot)" is not given range but key. Maybe more important than cost? Let's rank: EV adoption, utilization/dwell, fleet public dependence. Cost affects budget but not need. The question asks need and budget enough. Cost is an input to budget. But if fleet sessions not public, need changes 19%, budget still not enough. Cost range ±29% budget share. Both. Which "moves answer most"? If answer includes share budget covers, cost range moves from 9-15% central, 7-22% across need. Fleet public dependence moves need 19%, and budget share of new need? If fleet sessions removed central new need = (38,987-7,500)/63 -46 = 500-46=454? Wait total ports 500, new 454. Budget share = 67/454=14.8%, still not enough. Need range? Not huge decision. Cost moves budget share more. Need choose cost.
+
+But key sensitivities should be "inputs" not "assumptions". The inputs with ranges: EV share, no-home share, cost. Utilization threshold is input fixed. Session time input. The 3 most influential inputs: EV share, session time/utilization, cost. No-home share less. Good.
+
+Need quantify:
+1. EV share 8–16%: total ports 440–810, about ±33% around 620.
+2. 40-minute dwell and 25% queue threshold: if dwell rises to 50 min or target utilization falls to 20%, capacity drops to ~50 sessions/port/week and need rises to ~775 ports; if dwell falls to 30 min or target rises to 30%, need falls to ~465–515 ports.
+3. Installed cost $140k–$220k: $12M buys 55–86 new ports; share of central 573 new ports is 9–15%, and across low/high need 7–22%.
+
+Need maybe if item 3 says "installed cost" moves budget share most, not need. Good.
+
+Recommendation: 3-5 sentences. Need maybe exactly 3-5. Let's count.
+"Use the $12M as a first-phase, not a citywide solution: fund about 60–70 new ports at $140k–$220k, prioritizing corridors and multi-unit areas where the 30% no-home share is concentrated." sentence 1.
+"Because existing 46 ports plus 67 new ports would serve only about 16–21% of central demand at 25% utilization, pair the build with depot/workplace charging requirements for fleets and slower charging for multi-unit homes to reduce public DCFC sessions." sentence 2.
+"Before final site selection, recheck peak queue thresholds, actual dwell time, and grid-upgrade costs, since a 50-minute dwell or 20% utilization target pushes need toward ~775 ports." sentence 3.
+"Revisit annually as EV share moves within 8–16% and no-home share moves within 25–35%, and reprice after feasibility rather than assuming the $180k midpoint." sentence 4.
+Good 4 sentences. Need maybe "16-21% central demand" calculation: existing 46+67=113 ports *63=7119 sessions /38987=18.3%. With new 55 total 101 => 16.3%; 86 total 132 =>21.3%. Good. "60-70 new ports" at midpoint. Good.
+
+Need maybe if recommendation says fund 60-70 new ports but cost range 55-86. Good.
+
+Potential issue: "Use only planning-staff figures" recommendation mentions corridor, multi-unit areas, depot/workplace. That's strategic, not numeric. OK.
+
+Need maybe if final answer not too long but detailed. Good.
+
+Double-check "Exactly 3 numbered items" in Key sensitivities. Use "1." "2." "3." no sub-numbering. Good.
+
+Need maybe if Estimate chain numbered steps includes assumptions. Good.
+
+Need maybe if Result DECISION line "No; $12M buys about 55–86 new ports, roughly 12% of the central new-port need." Contains semicolon. One sentence. Good.
+
+Need maybe if "numbers only after the colon" for ESTIMATE and RANGE: yes. For DECISION maybe not. Could maybe make DECISION line: "DECISION: No, 12%." But less informative. The instruction says one sentence. I'll keep informative.
+
+Need maybe if "RANGE: 440 - 810" with spaces. Good.
+
+Need maybe if "ESTIMATE: 620" no range. Good.
+
+Let's consider alternative if central estimate should be 600 if subtract fleet. If we choose 620, key sensitivities EV share range 440-810. If subtract fleet range 426-793. Difference not material. Our assumption stated. Good.
+
+Need maybe if low/high range should include existing? We use total. Good.
+
+Need maybe if cost per port range and budget: $12M / 140k = 85.714, round 86. /220=54.545, round 55. Good.
+
+Need maybe if central new need 573 and budget 67, share 11.7. Decision says roughly 12%. Good.
+
+Need maybe if central total need 620 and budget buys 67, share of total need 10.8. If decision says new-port need, okay. If they expected total need, 12% vs 11% similar. Good.
+
+Need maybe if "share of the need it covers" could include existing 46 already there? The need is total public ports; budget covers new ports. Existing already covers some. If share of total need, after build total ports 113/620=18.2%, not 12. But "what share of the need it covers" likely budget covers new need. Our decision says new-port need. Good.
+
+Need maybe if $12M enough to build 620? No. Good.
+
+Need maybe if "all-in installed cost, including grid upgrades: $140k–$220k per port". Use midpoint. Good.
+
+Potential hidden trap: 25% average utilization threshold: If port utilization measured over 24h, 25% busy. But sessions per port per week at 25% = 63. If average utilization includes idle time? Yes. Good.
+
+Potential hidden trap: "One fast-charge session adds about 150 miles and occupies a port for about 40 minutes, including arrival, plugging in and idle time." Could use energy per session? Not needed.
+
+Potential hidden trap: "Drivers without home charging get about 70% of their energy from DC fast chargers and the rest from workplace or public slower chargers." We assume all DCFC sessions public. Some may be workplace DCFC? But public DC fast ports needed. Good.
+
+Potential hidden trap: "Drivers with home charging use DC fast chargers about twice a month on average." Could be public or workplace? Assume public DC fast chargers. Good.
+
+Potential hidden trap: "Ride-hail and delivery fleets" might use public fast chargers. Assumption. Good.
+
+Need maybe if "public slower chargers" not DC fast. Good.
+
+Let's maybe include in assumptions: "All DCFC sessions counted are assumed to need public ports unless private depot/workplace charging is explicitly excluded." Good.
+
+Need maybe if "25-35% of EV owners lack home charging" but fleet EVs may not have home charging. Our additive assumption. Good.
+
+Need maybe if "41% households multi-unit/street parking" not used directly because staff gives no-home share. Could note not used. Not necessary.
+
+Need maybe if "mid-sized city" no external. Good.
+
+Let's ensure final no extra text outside sections. Start with ## Estimate chain. Good.
+
+Need maybe if markdown headings exactly. Good.
+
+Let's write final. Ensure no table maybe okay.

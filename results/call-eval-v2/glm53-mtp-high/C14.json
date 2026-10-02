@@ -1,0 +1,99 @@
+{
+  "call_type": "billing_dispute",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Corwin accessed and discussed the patient's account without any identity verification, even after the patient asked 'Don't you need my birthday or something?'",
+    "Corwin gave incorrect information, telling the patient he was out of network at Brightwater's own urgent care when the denial was a coding issue",
+    "Corwin threatened collections on an actively disputed account, contradicting the IVR policy that open disputes are held from collections",
+    "Transfer to the coding specialist was misrouted to the appointments scheduler, adding roughly ten minutes of hold time",
+    "Ines performed excellently: verified identity, identified all three billing errors, submitted a corrected claim, placed a hold, and gave a clear recap"
+  ],
+  "flags": [
+    {
+      "type": "identity_verification",
+      "description": "Billing representative Corwin accessed and discussed the patient's account details without verifying identity, declining when the patient offered.",
+      "evidence": "Don't you need my birthday or something? ... Nah, you're fine, I got you. There's only one of you in here."
+    },
+    {
+      "type": "misinformation",
+      "description": "Corwin incorrectly told the patient he was out of network at Brightwater's own urgent care; the coding specialist later confirmed he is in network and the issue was a coding error.",
+      "evidence": "And you were out of network, that's why it's so high."
+    },
+    {
+      "type": "policy_violation",
+      "description": "Corwin told the patient the disputed balance would go to collections on Friday despite the open dispute, contradicting the IVR disclosure that open disputes are not referred to collections.",
+      "evidence": "Yeah, whatever, that doesn't stop the clock. If it's not paid by Friday it goes to collections."
+    },
+    {
+      "type": "other",
+      "description": "Corwin's transfer to the coding queue was misrouted to the appointments scheduler, leaving the patient on hold longer.",
+      "evidence": "I think he hit the wrong line, we're right next to each other on the transfer list."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "coding specialist (Ines)",
+      "task": "Submit corrected claim (recode 99285 to 99214, right-wrist diagnosis S63.501A, replacement of claim 2609-33418) to Halvard in tonight's batch",
+      "due": "tonight (2026-09-22)"
+    },
+    {
+      "owner": "coding specialist (Ines)",
+      "task": "Send portal message confirming corrected claim was submitted, with date",
+      "due": "this afternoon"
+    },
+    {
+      "owner": "coding specialist (Ines)",
+      "task": "Call patient with Halvard's reprocessing result; corrected itemized statement to follow by mail",
+      "due": "by October 6 (within 10 business days)"
+    },
+    {
+      "owner": "coding specialist (Ines)",
+      "task": "Report statement-template date error to statement team, denial-code mapping issue and urgent-care location/scrubber master-data problem to her manager, and note on account what Corwin told the patient",
+      "due": "unspecified"
+    },
+    {
+      "owner": "patient",
+      "task": "Send photo of urgent care discharge papers via portal message to billing, attention Ines",
+      "due": "tonight"
+    },
+    {
+      "owner": "patient",
+      "task": "Look for receipt or card charge for the $75 copay from September 5 and send via portal if found",
+      "due": "tonight"
+    },
+    {
+      "owner": "patient",
+      "task": "Complete and return Halvard's accident questionnaire (yellow-ish envelope) promptly if received",
+      "due": "upon receipt"
+    },
+    {
+      "owner": "patient",
+      "task": "Pay corrected balance within 30 days of the corrected statement to receive the 20% prompt-pay discount",
+      "due": "within 30 days of corrected statement"
+    },
+    {
+      "owner": "patient",
+      "task": "Call the nurse line (menu option 4) to request amlodipine refill",
+      "due": "after this call"
+    }
+  ],
+  "summary_notes": "Patient Thaddeus Mbeki-Rowntree disputed a $1,284 urgent care bill (visit 9/5/2026, wrist sprain from canoe injury). Dispute ticket D-58812 opened 9/10. Billing rep Corwin misinformed him (claimed out-of-network, threatened collections Friday 9/25, no identity verification) and misrouted the transfer. Coding specialist Ines verified identity, found three errors: visit coded 99285 (ER level 5) instead of 99214; statement printed DOS 9/15 instead of 9/5; diagnosis listed left wrist instead of right. Corrected claim (replacement of 2609-33418) submitted to Halvard; account hold placed so nothing goes to collections. Estimated patient responsibility ~$184 ($75 copay + $109 x-ray coinsurance); 20% prompt-pay discount noted. 9/5 $75 copay payment not posted. Patient to send discharge papers and any copay receipt via portal; Ines to call by 10/6. Patient also needs amlodipine refill via nurse line (option 4). Spouse Lucia separately noted a missing August bill but declined verification.",
+  "notable_details": [
+    "Dispute ticket D-58812 opened September 10 by a rep with an M name (patient recalled 'Marguerite' or 'Marisol'); coding queue note read 'pt disputes charges, sent to coding queue'",
+    "Original claim number: 2609-33418; corrected claim uses frequency code 7 (replacement)",
+    "Corrected codes: procedure 99285 changed to 99214; diagnosis S63.502A (left wrist, wrong) changed to S63.501A (right wrist); x-ray 73100 two views billed correctly",
+    "Date of service is September 5; the patient statement wrongly printed September 15 (known statement-template defect), but the claim to Halvard had the correct date",
+    "Insurance is Halvard PPO; patient is in network; EOB remark code N59 'service not covered at this place of service'",
+    "Estimated responsibility ~$184 ($75 urgent care copay + $109 x-ray coinsurance); no $75 payment posted for 9/5 - only a $75 payment on 8/2 for a physical with Dr. Okonjo; if no receipt is found the $75 is included in the $184",
+    "Account summary: balance $1,284 pending adjustment, last statement 9/18, next statement cycle 10/18, Ines extension 2271",
+    "IVR states open-dispute accounts are placed on hold and not referred to collections - contradicted by Corwin's collections threat",
+    "Caller pressed menu option 3 expecting refills but reached billing; nurse line is option 4; amlodipine refill needed (~4 doses left)",
+    "Spouse Lucia, on speakerphone throughout, has her own unresolved concern: an August visit with no bill received; she declined separate verification",
+    "Timely filing limit for Halvard corrected claims is one year from date of service; Halvard reprocessing typically 7-10 business days",
+    "Patient recorded the call on his end and opted in to the post-call survey",
+    "Patient mentioned in passing a tuition payment due the first for Mateo as a reason not to pay the disputed amount by card"
+  ]
+}

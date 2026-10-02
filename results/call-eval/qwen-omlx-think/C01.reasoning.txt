@@ -1,0 +1,75 @@
+
+We need answer user's request: analyze transcript and return ONE JSON object conforming schema, no markdown. Need produce final JSON only. Need carefully analyze.
+
+Transcript: inbound scheduling. Patient wants move PT follow-up appointment. Agent verifies identity with name DOB street number. Finds options. Corrects date confusion: next Tuesday is April 14, not Wednesday 14. Patient chooses Thursday April 16 at 9:40 with same therapist. Agent mentions callback if disconnected. Asks interpreter/accessibility, no. System slow, multiple screens, login issue. Asks new health concerns. Patient mentions chest tightness last month, evaluated by cardiologist, treadmill test, asthma, inhaler changed, cleared. Agent notes therapist cleared by cardiology and keep inhaler handy, advises 911 if returns especially at rest. Updates phone number from ending 8802 to 555-216-4471, read back. Sends confirmation text to new number in next few minutes. Reminds bring updated insurance card expiring end last year; patient has new cards Jan. Ends positive.
+
+Need JSON fields:
+call_type: scheduling (main purpose move appointment). Could be post_procedure_followup? No, scheduling.
+outcome: resolved (appointment moved, details updated).
+sentiment_start: neutral? Caller starts polite, apologetic. Not negative. neutral.
+sentiment_end: positive (you were great).
+quality_score: likely 5? Need assess. Staff verified identity, accurate, empathetic, handled clinical concern appropriately, updated contact, reminder. Minor system inefficiencies but not staff failure. Could be 5. quality_reasons 2-5.
+flags: Need compliance/privacy/security/accuracy problems. Any? Agent says "if disconnected I'll try you right back" commitment, likely okay. No unauthorized commitment. Clinical safety: patient mentions chest tightness but cleared by cardiology; agent notes and advises emergency if returns. Good. No flag. Maybe security: agent says password changed every 30 days and can't remember; caller says writes on sticky note, agent says didn't hear. Not a credential sharing? Caller jokes about writing password on sticky note, agent says didn't hear. Could be security? But not actual sharing, and agent didn't acknowledge. Probably no flag. Privacy: verified before details. No.
+action_items: owner agent: send confirmation text to new number in next few minutes. owner agent: add note for therapist re cardiology clearance/inhaler? It says "I'll add a note" during call, likely completed? Action item maybe completed? The schema asks every follow-up commitment or task stated. Include: agent add note to account for front desk? Already did? "I'm just going to put a little note on the account" and typed. Could be completed. But action_items can include commitments. Need owner, task, due. For completed during call, due "during call" or unspecified? Better include pending: send confirmation text due next few minutes. Also patient bring updated insurance card to appointment due Thursday April 16 at 9:40. Also patient call 911/doctor if chest tightness returns due if symptoms return. Also agent add note? Could include due during call. But action_items likely follow-up commitments. Include agent send confirmation text, patient bring insurance card, patient seek emergency care if chest tightness returns. Maybe agent add note to therapist? It was done during call but still task. Could include due "during call". Need not overdo.
+summary_notes <=120 words. concise.
+notable_details: corrected date: next Tuesday is April 14, not Wednesday 14; appointment changed from Friday April 10 2:15 to Thursday April 16 9:40; phone updated from ending 8802 to 555-216-4471; chest tightness last month evaluated by cardiology, treadmill test, asthma, inhaler changed, cleared; bring updated insurance card (old expiring end last year, new cards Jan); no interpreter/accessibility; agent will send confirmation text; system slow/login issues maybe not notable? Could include.
+
+Need ensure JSON valid, no markdown. Use double quotes. No trailing commas.
+
+Potential nuance: call_type maybe scheduling. outcome resolved. quality_score 5. quality_reasons: verified identity, corrected date confusion, handled clinical concern with safety advice, updated contact and insurance reminder, empathetic. Good.
+
+Flags empty list.
+
+Action items: owner strings. due strings.
+- owner: "agent" task: "Send appointment confirmation text to updated phone number 555-216-4471" due: "within next few minutes"
+- owner: "patient" task: "Bring updated insurance card to Thursday, April 16 appointment" due: "Thursday, April 16 at 9:40"
+- owner: "patient" task: "Call 911 or doctor immediately if chest tightness returns, especially at rest" due: "if symptoms return"
+- owner: "agent" task: "Add note for therapist that patient was cleared by cardiology and to keep inhaler handy" due: "during call" maybe. But if already done, still commitment. Could include.
+- owner: "agent" task: "Call patient back if disconnected" due: "if disconnected" but not applicable. Maybe not.
+
+Need not include completed? "every follow-up commitment or task stated" includes "I'll add a note" and "I'll send confirmation text". Include both. For add note due "during call". For front desk note? "put a little note on account so front desk sees it" due during call. Could combine.
+
+Need ensure no invented facts. "updated phone number 555-216-4471" verbatim? It's in transcript. Good.
+
+Sentiment_start: caller says "Hi, yeah, um, I need to move... I'm so sorry" maybe neutral/positive? neutral. End positive.
+
+Quality: Could there be flag for unauthorized commitment? "I'll try you right back" if disconnected. That's within scheduling? Not a problem. No.
+
+Potential privacy: agent asks street number after name/DOB. Good.
+
+Potential clinical safety: chest tightness could warrant escalation? But patient says evaluated and cleared. Agent appropriately notes and safety advice. No flag.
+
+Potential misinformation: agent says next Tuesday is April 14. Date/time call 2026-04-08. April 8 2026 is Wednesday? Let's check: 2026-04-08. If April 8 Wednesday, next Tuesday is April 14. Yes. Patient said Wednesday the 14th, agent corrected. Good.
+
+Potential security: password sticky note. Could be flag? The caller says "I write mine on a sticky note. Don't tell anyone." Agent says "I didn't hear that." This is a security concern? It's customer's password, not business credential. Could be a security flag? The flag types include security. But do we flag customer's poor password hygiene? The instructions: flags compliance, privacy, security, patient-safety, or accuracy problems in how the call was handled, and commitments made without authority or not kept. Examples credential sharing. This is not credential sharing, and agent didn't engage. Probably no flag. If flagged, might be overflagging. Keep empty.
+
+Need final JSON only. Ensure schema additionalProperties false. All required.
+
+Let's craft summary_notes under 120 words:
+"Inbound scheduling call. Patient Tomasz Brennick-Vale verified and moved PT follow-up from Friday, April 10 at 2:15 to Thursday, April 16 at 9:40 with same therapist. Patient initially confused Wednesday/14th; agent clarified next Tuesday is April 14. No interpreter/accessibility needs. Patient reported prior chest tightness, evaluated by cardiology, treadmill test, asthma diagnosis, inhaler changed, cleared; agent added note for therapist and advised emergency care if symptoms recur. Updated phone from ending 8802 to 555-216-4471 and will text confirmation. Reminded patient to bring updated insurance card." Count ~85. Good.
+
+notable_details array:
+- "Appointment changed from Friday, April 10 at 2:15 to Thursday, April 16 at 9:40 with same therapist."
+- "Patient initially said Wednesday, the 14th; agent corrected that next Tuesday is April 14."
+- "Phone number updated from number ending 8802 to 555-216-4471."
+- "Patient reported chest tightness last month; cardiology evaluation/treadmill test found asthma, inhaler changed, patient cleared."
+- "Agent will add note for therapist to keep inhaler handy and advised 911/doctor if chest tightness returns, especially at rest."
+- "Patient reminded to bring updated insurance card; old card expired end of last year, new cards received in January."
+- "No interpreter or accessibility accommodations needed."
+- "Agent will send confirmation text to new number within next few minutes."
+Maybe include system issues? "Agent experienced slow system, multiple screens, and login interruption." Not critical but notable. Could include.
+
+Quality_reasons:
+- "Verified identity using name, DOB, and street number before accessing appointment details."
+- "Corrected date confusion and confirmed final appointment clearly."
+- "Handled chest tightness disclosure appropriately by documenting cardiology clearance and giving safety advice."
+- "Updated contact information and reminded about insurance card."
+- "Maintained empathetic, professional tone despite system delays."
+
+Need ensure quality_score 5. If system delays are business issue but staff handled. 5 okay.
+
+Action items due: "within next few minutes", "Thursday, April 16 at 9:40", "if symptoms return", "during call". Good.
+
+Double-check JSON schema: action_items owner task due all strings. flags empty array. quality_reasons array strings. summary_notes string. notable_details array strings.
+
+No markdown. final only JSON.

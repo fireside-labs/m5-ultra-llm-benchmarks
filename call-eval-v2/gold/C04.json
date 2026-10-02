@@ -1,0 +1,248 @@
+{
+ "call_id": "C04",
+ "call_type": "pharmacy_refill",
+ "call_type_accept": [
+  "billing_dispute"
+ ],
+ "outcome": "resolved",
+ "outcome_accept": [
+  "callback"
+ ],
+ "sentiment_start": "negative",
+ "sentiment_end": "positive",
+ "quality_score": 5,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Verified identity and clearly explained that the second charge is a pending authorization hold",
+   "match": [
+    [
+     "pending",
+     "pre-?auth",
+     "authori[sz]ation hold",
+     "\\bhold\\b"
+    ],
+    [
+     "explain",
+     "clarif",
+     "second charge",
+     "charge",
+     "double",
+     "twice"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Correctly declined the early controlled-substance refill per policy and offered a vacation override; fixed the pickup location",
+   "match": [
+    [
+     "controlled",
+     "override",
+     "vacation",
+     "zolpidem",
+     "early refill",
+     "refill early"
+    ]
+   ]
+  }
+ ],
+ "flags": [],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Customer was double charged $12.50 for one prescription order",
+   "why_not": "One of the two entries is a pending card pre-authorization hold that drops off in 3-5 business days; only one payment exists.",
+   "evidence": "One says pending. The top one. Pending.",
+   "paraphrases": [
+    "Duplicate charge of $12.50 on the patient's card from the pharmacy app.",
+    "Patient was billed twice for the same order.",
+    "Billing error: two charges posted for one prescription."
+   ],
+   "match": [
+    [
+     "double",
+     "twice",
+     "duplicate",
+     "two charges",
+     "charged two",
+     "second charge"
+    ],
+    [
+     "charg",
+     "bill",
+     "payment",
+     "12\\.50",
+     "twelve fifty"
+    ]
+   ]
+  },
+  {
+   "id": "D2",
+   "text": "Pharmacist refused an early zolpidem refill the traveling patient needed",
+   "why_not": "Correct: controlled-substance early-fill rules; she offered the proper route (vacation override from the prescriber).",
+   "evidence": "by law and by our policy we can't fill it this early",
+   "paraphrases": [
+    "Patient denied an early refill of a controlled medication before travel.",
+    "Pharmacy declined to fill zolpidem early, leaving the patient short during his trip."
+   ],
+   "match": [
+    [
+     "zolpidem",
+     "early (re)?fill",
+     "controlled",
+     "sleep (pill|med)"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "App defaulted the pickup to the wrong (Millbrook) location",
+   "match": [
+    [
+     "millbrook",
+     "pickup location",
+     "wrong location",
+     "app"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "pharmacist",
+   "task": "Send a vacation-override request for zolpidem to Dr. Abernathy-Coles",
+   "due": "today",
+   "match": [
+    [
+     "override",
+     "abernathy",
+     "vacation",
+     "prescriber",
+     "doctor"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "caller",
+   "task": "Check that the pending $12.50 hold drops off; call back if still there after 5 business days",
+   "due": "3-5 business days",
+   "match": [
+    [
+     "pending",
+     "hold",
+     "5 business",
+     "five business",
+     "bank",
+     "call back",
+     "drop"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "pharmacy",
+   "task": "Move order pickup to Eastgate and text when ready",
+   "due": "tomorrow morning",
+   "match": [
+    [
+     "text",
+     "notif",
+     "eastgate",
+     "move",
+     "switch"
+    ],
+    [
+     "ready",
+     "eastgate",
+     "pick"
+    ]
+   ]
+  },
+  {
+   "id": "A4",
+   "owner": "caller",
+   "task": "Check app / call a few days before leaving Oct 9 about the override fill",
+   "due": "before 2026-10-09",
+   "match": [
+    [
+     "before (the )?(oct\\w*\\.? 9|9th|ninth|trip|travel|leav)",
+     "prior to (the )?(trip|travel|oct\\w*\\.? 9|leav)",
+     "week before",
+     "few days before",
+     "oct\\w*\\.? 9",
+     "10/9",
+     "2026-10-09",
+     "override"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Patient travels for three weeks starting October 9",
+   "evidence": "I leave October ninth, for three weeks",
+   "match": [
+    [
+     "oct\\w*\\.? 9\\b",
+     "10/9\\b",
+     "october ninth",
+     "oct\\w*\\.? 9th"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Order pickup switched from Millbrook to the Eastgate counter",
+   "evidence": "I'll move it to the Eastgate counter",
+   "match": [
+    [
+     "eastgate"
+    ],
+    [
+     "pick.?up",
+     "mov",
+     "switch",
+     "chang",
+     "counter",
+     "instead",
+     "millbrook"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Single real payment of $12.50; the other $12.50 is a pending hold",
+   "evidence": "Twelve fifty and twelve fifty.",
+   "match": [
+    [
+     "12\\.50",
+     "twelve fifty"
+    ]
+   ]
+  },
+  {
+   "id": "S4",
+   "text": "Zolpidem refill not due until Oct 14 (26 days early now); override would allow filling a few days before the Oct 9 departure",
+   "evidence": "it isn't due until October fourteenth, so that's twenty-six days early right now",
+   "match": [
+    [
+     "oct\\w*\\.? 14",
+     "10/14",
+     "october fourteenth",
+     "26 days",
+     "twenty.six days"
+    ]
+   ]
+  }
+ ],
+ "themes": [],
+ "decoy_themes": [
+  "D_DOUBLE_CHARGE"
+ ]
+}

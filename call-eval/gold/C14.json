@@ -1,0 +1,372 @@
+{
+ "call_id": "C14",
+ "call_type": "complaint_escalation",
+ "call_type_accept": [
+  "billing_dispute"
+ ],
+ "outcome": "escalated",
+ "outcome_accept": [
+  "resolved"
+ ],
+ "sentiment_start": "negative",
+ "sentiment_end": "neutral",
+ "sentiment_end_accept": [
+  "positive"
+ ],
+ "quality_score": 3,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "First agent was curt, interrupted, disclosed the husband's account and ignored the patient skipping BP medication",
+   "match": [
+    [
+     "brent",
+     "first agent",
+     "initial agent",
+     "curt",
+     "dismissive",
+     "interrupt",
+     "rude"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Supervisor was excellent: owned the failures, recalled collections, refunded, escalated with a named callback, caught the privacy breach and the medication-skipping",
+   "match": [
+    [
+     "supervisor",
+     "danielle"
+    ]
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "id": "F1",
+   "text": "Prior callback commitment (billing to call back by Fri Sept 11, made by agent Kyle on Sept 8) was missed; the callback task was never assigned",
+   "evidence": "he said, \"Billing will call you back by Friday.\" That was Friday the eleventh. Nobody called.",
+   "match": [
+    [
+     "call.?back",
+     "call back",
+     "callback",
+     "never called",
+     "nobody called",
+     "no one called",
+     "follow.?up"
+    ],
+    [
+     "miss",
+     "never",
+     "not (made|happen|honou?r|complet|assign)",
+     "fail",
+     "broken",
+     "nobody",
+     "no one",
+     "didn't",
+     "did not",
+     "unfulfilled"
+    ]
+   ]
+  },
+  {
+   "id": "F2",
+   "text": "Account was referred to collections ($135) while a billing dispute was open since May, violating the dispute-hold policy",
+   "evidence": "the collections referral. That should never have happened while you had an open dispute.",
+   "match": [
+    [
+     "collection"
+    ]
+   ]
+  },
+  {
+   "id": "F3",
+   "text": "First agent disclosed the husband's account balance, collections status and payment details to the caller without his authorization (privacy breach)",
+   "evidence": "his account shows two hundred twelve dollars and forty cents",
+   "match": [
+    [
+     "husband",
+     "spouse",
+     "reinhold"
+    ],
+    [
+     "authoriz",
+     "privacy",
+     "disclos",
+     "consent",
+     "hipaa",
+     "phi",
+     "without"
+    ]
+   ]
+  }
+ ],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Supervisor issued a goodwill credit outside policy",
+   "why_not": "She states supervisors can issue courtesy credits up to $75; $50 is within her authority.",
+   "evidence": "Supervisors can do courtesy credits up to seventy-five dollars",
+   "match": [
+    [
+     "goodwill",
+     "\\$50",
+     "fifty",
+     "courtesy credit"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Patient rationing blood-pressure medication due to cost (ignored by first agent, addressed by supervisor)",
+   "match": [
+    [
+     "blood pressure",
+     "bp ",
+     "medication",
+     "pills",
+     "skipping",
+     "ration"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Systemic ClearPay duplicate charges",
+   "match": [
+    [
+     "clearpay",
+     "duplicate",
+     "double",
+     "twice",
+     "portal"
+    ]
+   ]
+  },
+  {
+   "id": "OK3",
+   "text": "Dispute open since May unresolved / repeated contacts",
+   "match": [
+    [
+     "dispute",
+     "unresolved",
+     "since may",
+     "repeat",
+     "five months",
+     "multiple calls"
+    ]
+   ]
+  },
+  {
+   "id": "OK4",
+   "text": "First agent unprofessional / dismissive",
+   "match": [
+    [
+     "brent",
+     "first agent",
+     "dismissive",
+     "rude",
+     "curt",
+     "interrupt",
+     "unprofessional"
+    ]
+   ]
+  },
+  {
+   "id": "OK5",
+   "text": "Elderly / vulnerable patient on fixed income",
+   "match": [
+    [
+     "elderly",
+     "vulnerable",
+     "fixed income",
+     "71",
+     "seventy-one"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "billing supervisor",
+   "task": "Recall the collections referral from the agency and place a billing hold on the account",
+   "due": "today; agency confirmation letter within 10 business days",
+   "match": [
+    [
+     "collection",
+     "recall",
+     "billing hold",
+     "hold"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "billing",
+   "task": "Refund three duplicate $45 charges ($135): two to Visa ending 1186, one separately to HSA card ending 7720",
+   "due": "7-10 business days",
+   "match": [
+    [
+     "refund"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "billing director's office",
+   "task": "Call the patient within 48 hours (by Wednesday Sept 23) on the escalation",
+   "due": "2026-09-23 end of day",
+   "match": [
+    [
+     "director",
+     "48",
+     "forty-eight",
+     "wednesday"
+    ]
+   ]
+  },
+  {
+   "id": "A4",
+   "owner": "billing supervisor",
+   "task": "Apply $50 goodwill credit",
+   "due": "next statement",
+   "match": [
+    [
+     "goodwill",
+     "\\$50",
+     "fifty",
+     "credit"
+    ]
+   ]
+  },
+  {
+   "id": "A5",
+   "owner": "nurse/pharmacist + financial counseling",
+   "task": "Nurse/pharmacist call today about BP medication cost; financial counselor call within 2 business days",
+   "due": "today / 2 business days",
+   "match": [
+    [
+     "nurse",
+     "pharmac",
+     "financial counsel",
+     "assistance"
+    ],
+    [
+     "blood pressure",
+     "medication",
+     "bp",
+     "cost",
+     "counsel"
+    ]
+   ]
+  },
+  {
+   "id": "A6",
+   "owner": "patient's husband",
+   "task": "Husband to call billing himself (or sign authorization) about his own account",
+   "due": "this afternoon",
+   "match": [
+    [
+     "husband",
+     "spouse",
+     "reinhold"
+    ]
+   ]
+  },
+  {
+   "id": "A7",
+   "owner": "billing supervisor",
+   "task": "Report the husband's-account disclosure to the privacy office",
+   "due": "today",
+   "match": [
+    [
+     "privacy office",
+     "privacy",
+     "report"
+    ]
+   ]
+  },
+  {
+   "id": "A8",
+   "owner": "billing supervisor",
+   "task": "Mail a written summary letter and post a copy to the patient portal",
+   "due": "today",
+   "match": [
+    [
+     "letter",
+     "in writing",
+     "written",
+     "summary",
+     "portal"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "The July 13 duplicate was charged to the HSA card ending 7720 (not the Visa ending 1186), so it needs a separate refund",
+   "evidence": "The HSA card ends in seven-seven-two-zero.",
+   "match": [
+    [
+     "hsa",
+     "health savings",
+     "7720"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Patient has been skipping blood-pressure pills every other day since August because of cost",
+   "evidence": "I've been skipping my blood pressure pills, every other day",
+   "match": [
+    [
+     "blood.?pressure",
+     "bp med",
+     "bp pill",
+     "antihypertensive"
+    ],
+    [
+     "skip",
+     "ration",
+     "every other day",
+     "afford",
+     "stretch"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Root cause of the missed callback: Kyle's Sept 8 note had no callback task attached; it was never assigned",
+   "evidence": "But there's no callback task attached to it. It was never assigned to anyone.",
+   "match": [
+    [
+     "task",
+     "assign",
+     "never routed",
+     "process failure"
+    ]
+   ]
+  },
+  {
+   "id": "S4",
+   "text": "Husband's account also has a duplicate ClearPay charge and $212.40 referred to collections",
+   "evidence": "two hundred twelve dollars and forty cents",
+   "match": [
+    [
+     "212",
+     "husband",
+     "spouse",
+     "reinhold"
+    ]
+   ]
+  }
+ ],
+ "themes": [
+  "T_DOUBLE_CHARGE"
+ ]
+}

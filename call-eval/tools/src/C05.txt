@@ -1,0 +1,48 @@
+@id C05
+@date 2026-03-24 15:47
+@line Corrowind Health Partners - Patient Billing
+@direction inbound
+@target 4000
+@speaker A AGENT = billing representative
+@speaker C CALLER = patient
+---
+A: Thank you for calling Corrowind patient billing, my name is Tobias. Who do I have the pleasure of speaking with?
+C: Yeah, hi, this is Ignatius Fairweather-Oduya. I'm calling about— honestly I'm calling about a mess.
+A: I'm sorry to hear that, Mr. Fairweather-Oduya, let's see if I can clean it up. Before I open the account, can you give me your date of birth and the ZIP code on file?
+C: April twenty-ninth, eighty-two. ZIP is nine-seven-two-one-four.
+A: Thank you, you're verified. Okay, I've got your account open. What's going on?
+C: So. I've been charged twice. Not once— twice, twice. For two different visits. I had my physical therapy evaluation on March third and then the follow-up on the tenth, and both times I paid my thirty-dollar copay at the front desk, and both times that new portal also charged my card thirty dollars a day or two later.
+A: Okay. I'm really sorry. Let me look. [typing] Yes, I see it. March third, thirty dollars at the desk, and then thirty dollars through ClearPay on March fifth. And March tenth, same thing, desk payment, and a ClearPay auto-payment on the twelfth. So that's sixty dollars total that shouldn't have come out.
+C: Exactly. Sixty bucks.
+A: I want to be upfront with you, this is a known problem. Since we moved to ClearPay at the end of February, the portal isn't always seeing payments that were taken at the front desk, so it auto-drafts the copay again. You're not the only one, and we have a fix in progress with the vendor.
+C: Okay. Well, I appreciate you being honest about it, at least. The last place I called just kept saying "I don't see anything wrong."
+A: [laughs] No, I see it plain as day. So what I'll do is open a refund ticket for both duplicates. The refund policy is seven to ten business days for billing to review and process, and then it goes back to the card it came from.
+C: Seven to ten business days. Okay. That's, uh, that's fine I guess. As long as it actually happens.
+#fill billing_lookup smalltalk
+A: Okay, the ticket's created. Your reference number is C-P, five-eight-eight-one-seven.
+C: CP-five-eight-eight-one-seven. Okay. Writing that down.
+A: Oh— sorry, I transposed that. It's CP-five-eight-eight-seven-one. Seven-one at the end.
+C: Five-eight-eight-seven-one. Got it. Glad you caught that.
+A: Me too. [laughs] So, CP-58871.
+C: Now, um, I should tell you, I already disputed the March fifth one with my credit card company. Like, last week. Before I knew who to call.
+A: Okay, thank you for telling me. That matters, because if the card dispute goes through and our refund goes through, you'd end up refunded twice for that one, and then we'd have to re-bill you, which is a headache for everybody. Would you be willing to withdraw the card dispute for the March fifth charge, and let our refund handle both?
+C: Yeah, that's fine. I'll call them tomorrow and cancel it.
+A: Perfect. I'll put a note on the ticket that you're withdrawing the card dispute.
+#fill billing_lookup
+C: Okay. And while I have you. There's a three-hundred-ten dollar balance on here from my MRI in January, which I also don't think I owe, because my insurance was supposed to cover it.
+A: Let me look. [typing] Okay, so the MRI claim came back with the insurance saying it needed a prior authorization that wasn't on file, so they denied it and it went to patient responsibility.
+C: But the authorization was done! The doctor's office told me it was done.
+A: I believe you. Sometimes it's done but not attached to the claim. Just so you know, for a balance adjustment like that, I can do courtesy adjustments up to a hundred dollars myself, anything over a hundred I'd need my supervisor to approve, and usually the better route is to have the claim reprocessed with the authorization attached.
+C: Okay. I mean, I just don't want to keep calling about this. I've spent so much time on this already. I've called three times.
+A: I completely understand.
+#fill smalltalk
+C: Honestly I'm just tired. Between the double charges and this, it feels like I'm doing your billing department's job.
+A: Yeah. You know what, you've been more than patient. I'm just going to take care of the three-ten for you. I'll zero it out right now. Consider it gone.
+C: Wait, really? The whole thing?
+A: The whole thing. [typing] There. Your balance is zero, other than the refunds that are coming back to you.
+C: Wow. Okay. Thank you. That's— thank you, Tobias. Seriously.
+A: You're welcome. I'll email you a summary with the ticket number and everything we discussed, to the email on file.
+C: Perfect.
+A: Is there anything else I can do for you today?
+C: No, that's everything. This was the best call I've had with you guys.
+A: I'm glad. Have a great evening, Mr. Fairweather-Oduya.

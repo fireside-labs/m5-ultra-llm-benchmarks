@@ -1,0 +1,58 @@
+{
+  "call_type": "sales",
+  "outcome": "resolved",
+  "sentiment_start": "positive",
+  "sentiment_end": "positive",
+  "quality_score": 2,
+  "quality_reasons": [
+    "Disclosed confidential pricing of another client without authorization",
+    "Contradicted earlier statement about BAA availability on Team plan",
+    "Handled interruptions and maintained rapport professionally"
+  ],
+  "flags": [
+    {
+      "type": "privacy_disclosure",
+      "description": "The representative disclosed another client's pricing information without authorization.",
+      "evidence": "I probably shouldn't say this, but Halloway Pediatrics, they're one of our clients, a pediatric home care group, they're paying nine dollars a seat on their deal."
+    },
+    {
+      "type": "misinformation",
+      "description": "The representative gave contradictory information about BAA availability, first stating it was only on Enterprise, then confirming it on Team.",
+      "evidence": "the BAA is only available on our Enterprise plan. It's not available on Team. ... we'll sign a BAA with you, no problem at all."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "REP (Gemma)",
+      "task": "Send security documentation (SOC 2 report and security questionnaire answers) to Theodora ahead of the security review call",
+      "due": "Before October 6"
+    },
+    {
+      "owner": "REP (Gemma)",
+      "task": "Schedule security review call with Theodora",
+      "due": "October 6, 10:00 a.m."
+    },
+    {
+      "owner": "REP (Gemma)",
+      "task": "Send proposal for 85 seats",
+      "due": "Friday (October 2)"
+    },
+    {
+      "owner": "PROSPECT (Marguerite)",
+      "task": "Review proposal and obtain compliance officer sign-off",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Sales discovery call with Marguerite, Director of Operations at Tidewell Home Care, a home health agency. They are leaving their current scheduling vendor due to a data breach and need a new system by January 15. Approximately 85 seats (60 staff plus 25 per-diem contractors). Key needs: calendar sync, offline capability for rural areas, visit notes in tasks, and handoff visibility. Budget is tight; Team plan preferred. REP offered up to 15% discount on annual agreement. Next steps: security review call with compliance officer Theodora on Oct 6 at 10 a.m., proposal for 85 seats by Friday. REP disclosed another client's pricing (Halloway Pediatrics) and gave contradictory BAA information.",
+  "notable_details": [
+    "Tidewell Home Care is leaving current vendor due to a data breach last spring; contract ends January 15.",
+    "Seat count corrected from 60 to 85 (includes 25 per-diem contractors).",
+    "Security review call scheduled for Tuesday, October 6, 10:00 a.m. with compliance officer Theodora.",
+    "Proposal for 85 seats to be sent by Friday (October 2).",
+    "REP disclosed Halloway Pediatrics pays $9/seat (confidential).",
+    "BAA availability initially stated as Enterprise-only, later confirmed on Team plan.",
+    "Prospect mentioned need for offline capability due to rural areas.",
+    "Prospect wants to include visit notes in tasks (e.g., wound care, BP readings).",
+    "REP offered up to 15% discount on annual agreement."
+  ]
+}

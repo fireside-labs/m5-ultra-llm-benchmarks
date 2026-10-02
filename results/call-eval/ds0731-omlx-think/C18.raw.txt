@@ -1,0 +1,46 @@
+{
+  "call_type": "post_procedure_followup",
+  "outcome": "escalated",
+  "sentiment_start": "positive",
+  "sentiment_end": "neutral",
+  "quality_score": 5,
+  "quality_reasons": [
+    "Verified patient identity with date of birth before discussing care",
+    "Caught and corrected prednisolone dosing error (3x/day to 4x/day)",
+    "Recognized urgent retinal symptoms and escalated to on-call ophthalmologist immediately",
+    "Obtained explicit consent before discussing care with son"
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "Nurse",
+      "task": "Call on-call ophthalmologist Dr. Achebe-Lindqvist to expect patient",
+      "due": "immediately"
+    },
+    {
+      "owner": "Billing team",
+      "task": "Call patient about duplicate copay charge of $40",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Patient and son",
+      "task": "Go to Corrowind Eye Clinic urgent entrance on Westbrook Road",
+      "due": "within the hour"
+    },
+    {
+      "owner": "Son",
+      "task": "Bring drops and discharge papers",
+      "due": "before leaving"
+    }
+  ],
+  "summary_notes": "Post-op follow-up call for cataract surgery on right eye. Patient reported new floaters, flashes, and a curtain shadow in operated eye. Nurse recognized as potential retinal emergency, escalated to on-call ophthalmologist and instructed patient to go to clinic urgently. Also corrected prednisolone dosing (should be 4x/day, not 3x/day) and noted duplicate copay charge to be handled by billing. Patient's son Jules was present and authorized to discuss care.",
+  "notable_details": [
+    "Patient DOB: April 1, 1948",
+    "Prednisolone frequency corrected from 3x/day to 4x/day",
+    "Duplicate copay charge of $40 via ClearPay portal",
+    "On-call ophthalmologist: Dr. Achebe-Lindqvist",
+    "Clinic urgent entrance on Westbrook Road",
+    "Patient's son Jules is staying with him and administers drops",
+    "Patient has a friend from church checking in daily"
+  ]
+}

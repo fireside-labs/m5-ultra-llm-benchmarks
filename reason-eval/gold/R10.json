@@ -1,0 +1,306 @@
+{
+ "task_id": "R10",
+ "title": "Fermi + decision: public DC fast-charging ports for 2030",
+ "category": "D",
+ "sections": [
+  "chain",
+  "result",
+  "priorities",
+  "recommendation"
+ ],
+ "notes": "Reference chain (central): 245k households x 1.7 = ~416k vehicles; x 12% EV = ~50k EVs. No home charging 30% = ~15k EVs x (200 mi x 70% / 150 mi) = ~0.93 sessions/wk = ~14k/wk. Home chargers ~35k x ~0.46/wk (2/month) = ~16k/wk. Fleet 1,500 x 5 = 7.5k/wk. Total ~38k sessions/wk = ~5.4k/day. Port capacity at 25% x 24 h = 360 min / 40 min = 9 sessions/day -> ~600 ports (low inputs ~430, high ~780; ~550 new after the existing 46). $12M / $140k-$220k = ~55-86 ports, i.e. roughly 10-15% of the need.",
+ "estimate": {
+  "full_credit": [
+   250,
+   1200
+  ],
+  "half_credit": [
+   125,
+   2400
+  ],
+  "decision_match": [
+   [
+    "not (be )?(nearly |remotely |close to )?enough",
+    "insufficient",
+    "not sufficient",
+    "falls? (far )?short",
+    "(only|just) (covers?|funds?|pays? for|buys?)",
+    "fraction",
+    "small (share|part|portion)",
+    "\\b(about |roughly |~)?(5|8|9|1[0-9]|2[0-5]) ?%",
+    "shortfall",
+    "no\\b[,.]? (it|\\$12m)",
+    "^no\\b",
+    "far from"
+   ]
+  ],
+  "decision_paraphrases": [
+   "No - $12M buys roughly 55-85 ports, about 10-15% of the ~600 needed.",
+   "Not enough: it covers only a small share of the need.",
+   "$12M is insufficient; it funds about 12% of required ports."
+  ],
+  "decision_negatives": [
+   "Yes, $12M is enough to meet 2030 demand.",
+   "The budget is sufficient."
+  ]
+ },
+ "items": [
+  {
+   "id": "F1",
+   "text": "EV count: households x vehicles per household x EV share (8-16%) gives ~33k-67k EVs",
+   "importance": "high",
+   "match": [
+    [
+     "\\bevs?\\b",
+     "electric vehicles?"
+    ],
+    [
+     "8.?(-|to|–).?16",
+     "\\b1[0-6] ?%",
+     "\\b8 ?%",
+     "share",
+     "adoption",
+     "penetration",
+     "41[0-9],?\\d{3}",
+     "416",
+     "417",
+     "\\b[3-6]\\d,?\\d{3}\\b",
+     "\\b[3-6]\\d(\\.\\d)?k\\b"
+    ]
+   ],
+   "paraphrases": [
+    "EVs in 2030: 245k households x 1.7 = 416k vehicles; at 12% EV share that's about 50,000 EVs.",
+    "EV adoption of 8-16% gives 33k to 67k EVs.",
+    "Number of EVs = vehicles x EV share."
+   ]
+  },
+  {
+   "id": "F2",
+   "text": "Home-charging access: 25-35% of EV owners lack home charging and depend on public fast charging",
+   "importance": "high",
+   "match": [
+    [
+     "home charg",
+     "multi.unit",
+     "apartment",
+     "street parking",
+     "garage",
+     "25.?(-|to|–).?35",
+     "\\b30 ?%",
+     "without (home )?charging",
+     "lack(ing)? home",
+     "no home"
+    ]
+   ],
+   "paraphrases": [
+    "30% of EV owners lack home charging: about 15,000 drivers depend on public chargers.",
+    "Share without home charging (25-35%) is a key driver.",
+    "Apartment dwellers and street parkers rely on fast charging."
+   ]
+  },
+  {
+   "id": "F3",
+   "text": "Session frequency: 200 mi/week x 70% from DC fast / 150 mi per session = ~0.9 sessions/week for drivers without home charging",
+   "importance": "normal",
+   "match": [
+    [
+     "200 ?mi",
+     "150 ?mi",
+     "sessions? (per|a|/) ?(week|wk)",
+     "0\\.9\\d?",
+     "0\\.93",
+     "per week",
+     "/ ?week",
+     "/ ?wk",
+     "70 ?%",
+     "frequency",
+     "miles per session",
+     "weekly miles"
+    ],
+    [
+     "session",
+     "charg",
+     "miles",
+     "week"
+    ]
+   ],
+   "paraphrases": [
+    "200 miles x 70% / 150 miles = 0.93 fast-charge sessions per week per driver without home charging.",
+    "Each no-home-charging EV needs about 0.9 sessions a week.",
+    "Charging frequency from weekly miles and miles per session."
+   ]
+  },
+  {
+   "id": "F4",
+   "text": "Drivers with home charging still add substantial load: ~2 sessions/month x the majority of EVs (~16k sessions/week, comparable to the no-home group)",
+   "importance": "high",
+   "match": [
+    [
+     "twice a month",
+     "2 (times|sessions) (a|per) month",
+     "2/month",
+     "0\\.4[5-7]",
+     "with home charg",
+     "home.?charg(ing|er) (owners|drivers|evs|group)",
+     "occasional"
+    ],
+    [
+     "session",
+     "charg",
+     "week",
+     "month"
+    ]
+   ],
+   "paraphrases": [
+    "Drivers with home charging still use DC fast chargers twice a month: 35k x 0.46 = ~16k sessions a week.",
+    "Home-charging owners add occasional sessions (2 per month) that are a large share of total demand.",
+    "Don't ignore occasional fast charging by drivers with home charging."
+   ]
+  },
+  {
+   "id": "F5",
+   "text": "Ride-hail and delivery fleets: 1,500 EVs x 5 sessions/week = 7,500 sessions/week",
+   "importance": "normal",
+   "match": [
+    [
+     "fleet",
+     "ride.?hail",
+     "delivery",
+     "1,?500"
+    ],
+    [
+     "session",
+     "7,?500",
+     "7\\.5k",
+     "x ?5",
+     "5 (sessions|per week|/week)",
+     "charg"
+    ]
+   ],
+   "paraphrases": [
+    "Fleets: 1,500 EVs x 5 sessions a week = 7,500 sessions.",
+    "Ride-hail and delivery vehicles add about 7.5k sessions per week.",
+    "Fleet charging is a large, concentrated load."
+   ]
+  },
+  {
+   "id": "F6",
+   "text": "Port throughput: 25% of 24 h = 6 h = 360 min / 40 min = ~9 sessions per port per day",
+   "importance": "high",
+   "match": [
+    [
+     "25 ?%",
+     "utili[sz]ation",
+     "6 hours",
+     "360 ?min",
+     "sessions? per port",
+     "per port per day",
+     "\\b9 sessions",
+     "throughput",
+     "port capacity"
+    ]
+   ],
+   "paraphrases": [
+    "Each port handles about 9 sessions a day at 25% utilization (360 minutes / 40 minutes).",
+    "Utilization cap of 25% limits throughput per port.",
+    "Port capacity = 6 usable hours per day."
+   ]
+  },
+  {
+   "id": "F7",
+   "text": "Subtract the 46 existing ports",
+   "importance": "normal",
+   "match": [
+    [
+     "\\b46\\b",
+     "existing (ports|chargers|stations)",
+     "already (has|have|exist)"
+    ]
+   ],
+   "paraphrases": [
+    "Subtract the 46 existing ports from the total need.",
+    "The city already has 46 ports, so new ports needed are about 550.",
+    "Existing chargers cover a small part."
+   ]
+  },
+  {
+   "id": "F8",
+   "text": "Budget arithmetic: $12M / $140k-$220k = ~55-86 ports, a small fraction of the need",
+   "importance": "high",
+   "match": [
+    [
+     "12 ?m",
+     "12,000,000",
+     "budget"
+    ],
+    [
+     "140",
+     "220",
+     "180",
+     "per port",
+     "5[4-9] ?(-|to|–) ?8[0-9]",
+     "\\b5[4-9]\\b",
+     "\\b6\\d\\b",
+     "\\b7\\d\\b",
+     "\\b8[0-6]\\b",
+     "ports?"
+    ]
+   ],
+   "paraphrases": [
+    "$12M buys about 55-86 ports at $140k-$220k each.",
+    "Budget covers about 67 ports at $180k per port.",
+    "With the budget we can fund roughly 60-85 ports."
+   ]
+  },
+  {
+   "id": "F9",
+   "text": "Leverage other sources: private charging operators, utilities, grants, and cheaper Level 2 / workplace charging",
+   "importance": "normal",
+   "match": [
+    [
+     "private (operators?|investment|sector|companies|networks?|capital)",
+     "utilit(y|ies)",
+     "grants?",
+     "level 2",
+     "\\bl2\\b",
+     "workplace",
+     "partner",
+     "public.private",
+     "leverage",
+     "cost.shar"
+    ]
+   ],
+   "paraphrases": [
+    "Leverage private charging operators and utility programs; the city can't fund it alone.",
+    "Use cheaper Level 2 and workplace charging where possible.",
+    "Public-private partnerships and grants should fill the gap."
+   ]
+  },
+  {
+   "id": "F10",
+   "text": "Phase and target: put first ports where residents lack home charging; build in stages and revisit as adoption becomes clearer",
+   "importance": "normal",
+   "match": [
+    [
+     "phase",
+     "staged",
+     "stages",
+     "increment",
+     "revisit",
+     "monitor",
+     "adjust",
+     "target(ed)? (the )?(neighbou?rhoods|areas)",
+     "priorit(i[sz]e|y) (sites|areas|neighbou?rhoods|locations)",
+     "multi.unit (neighbou?rhoods|areas)",
+     "(where|areas) (residents|drivers) lack"
+    ]
+   ],
+   "paraphrases": [
+    "Phase the build-out and revisit annually as adoption becomes clear.",
+    "Target the first ports to neighborhoods where residents lack home charging.",
+    "Build in stages and monitor utilization before expanding."
+   ]
+  }
+ ],
+ "decoys": []
+}

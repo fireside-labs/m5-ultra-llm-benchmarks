@@ -1,0 +1,65 @@
+{
+  "call_type": "insurance_verification",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 5,
+  "quality_reasons": [
+    "Thoroughly verified patient identity before discussing PHI",
+    "Empathetic and patient throughout a very long hold and technical issues",
+    "Identified root cause (retired fax number) and corrected it",
+    "Opened new authorization case and uploaded required documents promptly",
+    "Made clear, actionable follow-up commitments and kept patient informed"
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "Agent (Yusuf)",
+      "task": "Call Larkspur imaging to inform them authorization is in process with reference number",
+      "due": "today"
+    },
+    {
+      "owner": "Agent (Yusuf)",
+      "task": "Send message to Dr. Okonjo-Reyes about new toe tingling so nurse can call patient",
+      "due": "today"
+    },
+    {
+      "owner": "Agent (Yusuf)",
+      "task": "Monitor portal for authorization decision and call patient with result",
+      "due": "as soon as decision (within 72 hours)"
+    },
+    {
+      "owner": "Agent (Yusuf)",
+      "task": "Update fax template and email team about new Halvard fax number",
+      "due": "today"
+    },
+    {
+      "owner": "Agent (Yusuf)",
+      "task": "If no decision by Tuesday the 6th, call patient to reschedule MRI",
+      "due": "Tuesday the 6th"
+    },
+    {
+      "owner": "Patient",
+      "task": "Call Larkspur billing for cost estimate",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Patient",
+      "task": "Complete release form on portal so husband can receive updates",
+      "due": "tonight"
+    }
+  ],
+  "summary_notes": "Patient called re: missing prior auth for lumbar MRI scheduled 10/8. Agent verified identity, called Halvard with patient on line. Discovered faxes sent to retired fax number (555-0144) since 8/31. Halvard UM opened new case PA-2609-55170, expedited based on provider attestation. Agent uploaded order, PT notes, office note. Agent to call Larkspur to prevent cancellation, send message to Dr. Okonjo-Reyes re: new toe tingling, and update fax template. Patient to call Larkspur billing for cost estimate and complete release form for husband. Follow-up call when decision available.",
+  "notable_details": [
+    "Reference number PA-2609-55170 (corrected from misheard PA-2609-55107)",
+    "New Halvard UM fax number is 555-0188; old 555-0144 retired 8/31",
+    "Deductible $1,500, $1,210 met, $290 remaining; 80% coverage after deductible",
+    "PT benefit: 30 visits/year, 8 used, 22 remaining",
+    "MRI scheduled Thursday, October 8 at 7:20 AM at Larkspur",
+    "Ordering provider Dr. Simone Okonjo-Reyes; diagnosis M54.16 and M54.42",
+    "Patient reported new tingling in toes over past week; agent to notify doctor",
+    "Patient's husband on different plan; advised to discuss open enrollment in November",
+    "Patient works at bakery, injury occurred in July lifting eggs",
+    "Patient's phone number ends in 0166"
+  ]
+}

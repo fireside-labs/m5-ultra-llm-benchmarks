@@ -1,0 +1,76 @@
+{
+  "call_type": "complaint_escalation",
+  "outcome": "escalated",
+  "sentiment_start": "negative",
+  "sentiment_end": "neutral",
+  "quality_score": 3,
+  "quality_reasons": [
+    "Identity was properly verified with name, DOB and phone number before discussing the record.",
+    "Agent was empathetic and correctly escalated to the Patient Relations supervisor to open a formal grievance.",
+    "Agent made an unauthorized commitment to cover lost wages that the supervisor had to walk back on the same call.",
+    "Supervisor handled the escalation well: opened grievance G-260411, approved the prep-kit reimbursement, rescheduled the procedure and arranged a nurse call.",
+    "Excessive small talk, repeated screen timeouts and audio glitches made the call inefficient and stretched a simple complaint well beyond necessary length."
+  ],
+  "flags": [
+    {
+      "type": "unauthorized_commitment",
+      "description": "The agent promised the caller that lost wages would be covered, a decision outside her authority that the supervisor later clarified could only be made by the review committee.",
+      "evidence": "we'll definitely cover your lost wages. I'll make sure of it."
+    },
+    {
+      "type": "misinformation",
+      "description": "The patient received contradictory pre-procedure fasting instructions (text message vs mailed packet), leading to cancellation of her colonoscopy.",
+      "evidence": "the text message said I could have clear liquids up to two hours before my arrival ... no, the instructions say nothing after midnight"
+    },
+    {
+      "type": "clinical_safety",
+      "description": "The patient, a diabetic on insulin, was not asked about her insulin use before the prep and had to guess her doses, an unaddressed safety gap until she raised it herself.",
+      "evidence": "I'm diabetic, I'm on insulin. Nobody asked me about that last time either, and I was guessing on my insulin doses during the prep"
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "patient relations supervisor (Celia Banerjee-Strom)",
+      "task": "Open formal grievance G-260411 regarding conflicting prep instructions and send written acknowledgment",
+      "due": "within 5 business days"
+    },
+    {
+      "owner": "patient relations supervisor / grievance review committee",
+      "task": "Review grievance with the endoscopy center and the text-reminder team and issue a written response, including the lost-wages reimbursement request",
+      "due": "unspecified"
+    },
+    {
+      "owner": "patient relations supervisor",
+      "task": "Cover/approve the cost of the second prep kit (approved on the call)",
+      "due": "approved during call"
+    },
+    {
+      "owner": "patient relations supervisor",
+      "task": "Reschedule colonoscopy for Thursday, April 30, arrival 7:30 AM, same endoscopy center",
+      "due": "April 30, 2026"
+    },
+    {
+      "owner": "GI nurse",
+      "task": "Call patient before the procedure to review prep instructions in writing and go over her insulin plan for prep day",
+      "due": "before April 30, 2026"
+    },
+    {
+      "owner": "agent (Noor)",
+      "task": "Note 'electronic preferred' communication preference on the account",
+      "due": "completed during call"
+    }
+  ],
+  "summary_notes": "Patient Henrietta Moss-Okwuosa (DOB 7/17/1968, verified) called to complain that her 4/14 colonoscopy was cancelled by the anesthesiologist because her text reminder said clear liquids until 2 hours prior while the mailed packet said nothing after midnight. She lost unpaid wages, her sister lost a day, and she must repurchase the prep kit (~$30). Formal grievance G-260411 opened; written acknowledgment within 5 business days; lost-wages reimbursement referred to review committee (agent's blanket promise corrected); second prep kit cost approved. Rescheduled Thursday 4/30, 7:30 AM arrival, same endoscopy center; GI nurse to call beforehand with written prep and insulin plan (patient is diabetic on insulin). Prefers electronic communication; pharmacy on Ferris Avenue confirmed.",
+  "notable_details": [
+    "Grievance number: G-260411.",
+    "Rescheduled colonoscopy: Thursday, April 30, 2026, arrival 7:30 AM, same endoscopy center.",
+    "Conflicting prep instructions: reminder text allowed clear liquids until 2 hours before arrival; mailed packet said nothing to eat or drink after midnight.",
+    "Patient is diabetic and on insulin; she was not asked about this before the cancelled procedure and guessed her doses during prep.",
+    "Second prep kit cost (~$30) approved for reimbursement; lost wages reimbursement is NOT guaranteed and goes to the review committee.",
+    "Patient prefers electronic communication over mailed documents.",
+    "Preferred pharmacy on Ferris Avenue confirmed as unchanged.",
+    "Cancellation line: patients can reply to the reminder text to cancel.",
+    "Caller was told to bring photo ID, insurance card, and an updated medication list to the rescheduled appointment.",
+    "Agent's systems repeatedly timed out (2-minute idle logout, 30-day password rotation) and her headset was glitchy, extending the call."
+  ]
+}

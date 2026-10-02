@@ -1,0 +1,97 @@
+{
+  "call_type": "sales",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 4,
+  "quality_reasons": [
+    "Accurate and transparent pricing for renewal, SSO, and Collections Pro with clear terms.",
+    "Handled customer complaints (reminder bug, retainage, logo) with concrete next steps and follow-ups.",
+    "Provided a workaround for the reminder-date bug and offered to connect with product team for retainage feedback.",
+    "Minor misinformation: told customer the reminder bug was already fixed when the fix was scheduled for October 20th."
+  ],
+  "flags": [
+    {
+      "type": "misinformation",
+      "description": "Agent told the customer the reminder-date bug was already fixed, contradicting earlier statement that the fix is scheduled for October 20th.",
+      "evidence": "Yes, that's fixed in the current version, you're all good."
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "Delphine (AM)",
+      "task": "Send proposal with 42 seats, two-year price at $18/seat, SSO add-on, and Collections Pro trial details",
+      "due": "Friday, October 2nd"
+    },
+    {
+      "owner": "Delphine (AM)",
+      "task": "Ask deal desk about possibility of three-year term",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Delphine (AM)",
+      "task": "Connect Arvid with Rafferty for SSO setup once identity provider is ready",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Delphine (AM)",
+      "task": "Send Yetunde the reminder-template workaround instructions",
+      "due": "today"
+    },
+    {
+      "owner": "Delphine (AM)",
+      "task": "Send redlines of master agreement with proposal for lawyer review",
+      "due": "with proposal"
+    },
+    {
+      "owner": "Delphine (AM)",
+      "task": "Send invite for quarterly business review on October 27th at 10 a.m.",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Delphine (AM)",
+      "task": "Send Collections Pro trial invite to Mortimer's personal gmail",
+      "due": "sent during call"
+    },
+    {
+      "owner": "Delphine (AM)",
+      "task": "Put note on account so support knows customer is affected by reminder bug",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Mortimer (customer)",
+      "task": "Send PO number for renewal invoice",
+      "due": "at renewal"
+    },
+    {
+      "owner": "Mortimer (customer)",
+      "task": "Have outside counsel review MSA redlines",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Yetunde (customer)",
+      "task": "Send original logo file (large PNG) for blurry PDF fix",
+      "due": "unspecified"
+    },
+    {
+      "owner": "Arvid (SE)",
+      "task": "Conduct SSO working session with Rafferty when identity provider is ready",
+      "due": "when ready"
+    }
+  ],
+  "summary_notes": "Renewal and expansion call with CFO Mortimer and controller Yetunde. Agreed to renew 42 seats on Business plan at $18/seat/month (down from $22) locked for 2 years, with SSO add-on at $3/seat for all seats. Collections Pro 30-day trial for 5 seats at $4/seat if kept. Agent to ask deal desk about 3-year term. Reminder-date bug (due date off by one day) is known, fix in 7.4.2 on Oct 20; workaround is to switch template. Agent will send proposal by Oct 2, connect Arvid with Rafferty for SSO, and set up QBR on Oct 27. Customer to send PO number and logo file. Retainage feature not in product; agent will connect with product manager. Note: agent incorrectly stated bug was already fixed at end of call.",
+  "notable_details": [
+    "Seat count corrected from 24 to 42 (added field estimators and dispatch team).",
+    "Renewal price: $18/seat/month for 2 years (from $22), with 7% annual cap after lock period.",
+    "SSO add-on: $3/seat/month for all 42 seats; supports SAML and SCIM; enforce SSO recommended.",
+    "Collections Pro: $4/seat/month for 5 seats; 30-day free trial; ACH fee $0.50 per payment.",
+    "Reminder bug: due date shown one day early due to time zone conversion in release 7.4; fix in 7.4.2 on Oct 20; workaround: switch template or grace period.",
+    "Retainage not in product; on roadmap; agent to set up feedback session with product manager.",
+    "Blurry PDF logo: need larger PNG (at least 1000px wide) to re-upload.",
+    "PO number required on renewal invoice; customer will send new PO.",
+    "QBR scheduled for October 27th at 10 a.m.",
+    "Mortimer requested trial invite sent to personal gmail (mort.ashgrove.cv@gmail.com) due to IT delays.",
+    "Email migration in August may cause mismatches for SSO; Arvid will send checklist to compare user list.",
+    "Agent mistakenly told customer the reminder bug was already fixed, though fix is scheduled for Oct 20."
+  ]
+}

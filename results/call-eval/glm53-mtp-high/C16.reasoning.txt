@@ -1,0 +1,28 @@
+
+Call type: pre_procedure (patient calling to check pre-procedure instructions). Could be scheduling since she's confirming appointment details. Main purpose: double-check things before endoscopy — arrival time, location, fasting instructions. That's pre_procedure instructions. I'd say pre_procedure.
+
+Outcome: resolved? The main issue — conflicting fasting instructions — was not resolved during the call; nurse team will call back today. So outcome = callback (pending specific follow-up contact). Not escalated to supervisor — it's a nurse team callback. "escalated = handed to a supervisor, higher tier, clinician or another team (use this even if a callback is also planned)". Handed to pre-procedure nurse team = another team. So escalated. Hmm. The clinical instruction question was handed to the nurse team — that's another team. So outcome = escalated.
+
+Sentiment: start neutral (slightly anxious but joking), end positive.
+
+Quality: agent verified identity, corrected info, appropriately declined to guess clinical instruction, escalated to nurse team, updated email. Minor issues: lots of small talk, technical glitches, some inefficiency. Score 4.
+
+Flags: none really. The agent didn't disclose anything improperly. The conflicting instructions is a systemic issue but agent handled correctly. Maybe flag misinformation? The packet vs text conflict — but agent didn't give misinformation. No flags. Possibly flag "other" for conflicting pre-procedure instructions causing patient confusion? The instructions say don't flag things handled correctly. The conflict itself is a system issue, not a handling problem. I could flag it as "other" — conflicting fasting instructions in packet vs text, third caller this week. It's a compliance/accuracy problem in the business's communications. I think it's worth flagging as "other" or "misinformation" — the patient received contradictory clinical instructions. Evidence: "The packet says nothing to eat or drink after midnight. But I already got a text this morning... clear liquids are fine up to two hours before arrival." I'll include it as type "other" (or "misinformation"). Misinformation fits: incorrect/contradictory information given to the customer. I'll use "misinformation".
+
+Action items:
+1. Pre-procedure nurse team: call patient back today with correct fasting instructions, due today before 5.
+2. Agent (Celeste): report packet/text discrepancy to team lead, due unspecified.
+3. Agent: updated email on file — done during call, not an action item. Maybe note "electronic preferred" noted — done. Skip.
+
+Notable details:
+- Corrected arrival time: 7:00 a.m. (not 7:30), Friday May 8, 2026.
+- Corrected location: Westbrook endoscopy center, second floor (not Main Street).
+- Email on file was old; updated to ottoline.f.n@gmail.com (ottoline dot f-n at gmail dot com).
+- Driver required due to sedation; no taxis/rideshares alone.
+- Parking validation available at front desk for garage.
+- Third caller this week reporting packet/text discrepancy.
+- Phone ending 8133 verified.
+- Procedure with Dr. Halvorsen-Adu, upper endoscopy.
+- IT investigating agent headset issues.
+
+Summary notes ≤120 words.

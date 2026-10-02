@@ -1,0 +1,32 @@
+{
+  "call_type": "billing_dispute",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_end": "positive",
+  "quality_score": 5,
+  "quality_reasons": [
+    "Verified identity via security code before discussing account details",
+    "Clearly explained the two separate subscriptions and the reason for the double charge",
+    "Offered a suitable solution (downgrade to free Read-Only tier) and processed a refund within policy",
+    "Empathetic and professional throughout, including handling small talk appropriately"
+  ],
+  "flags": [],
+  "action_items": [
+    {
+      "owner": "agent",
+      "task": "Send confirmation email for downgrade and refund",
+      "due": "unspecified"
+    }
+  ],
+  "summary_notes": "Customer called about an apparent duplicate $49 charge. Agent verified identity, then explained two separate subscriptions: Halden Studio (active) and Halden Studio Archive (forgotten). Customer agreed to downgrade archive to free Read-Only tier. Agent processed refund of the most recent $49 charge per 30-day policy (archive unused for billing since February). Confirmation email to be sent. Main workspace unchanged.",
+  "notable_details": [
+    "Customer: Saoirse Lindgren-Abara, owner of Halden Studio",
+    "Two workspaces: 'Halden Studio' (active, 4 users) and 'Halden Studio Archive' (only customer, unused since February)",
+    "Card ending 6604 (Mastercard) charged $49 twice on the 20th",
+    "Archive downgraded to free Read-Only tier; no more charges",
+    "Refund of $49 for the most recent charge, to appear in 5-7 business days",
+    "Refund policy: within 30 days if workspace not used for billing in that period",
+    "Confirmation email to be sent for accountant",
+    "Main workspace remains on Studio plan unchanged"
+  ]
+}

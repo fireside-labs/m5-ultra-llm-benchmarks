@@ -1,0 +1,32 @@
+{
+  "call_id": "C08",
+  "call_type": "saas_support",
+  "outcome": "resolved",
+  "sentiment_start": "negative",
+  "sentiment_start_accept": ["neutral"],
+  "sentiment_end": "positive",
+  "quality_score": 4,
+  "quality_reasons": [
+    {"id": "Q1", "text": "Verified with an emailed one-time code, diagnosed the row-cap root cause and gave a working workaround", "match": [["verif", "code", "workaround", "xlsx", "excel", "root cause", "diagnos"]]},
+    {"id": "Q2", "text": "Long hold (~4 minutes) with no check-in, on a caller who asked for speed", "match": [["hold"]]}
+  ],
+  "flags": [],
+  "decoys": [],
+  "acceptable_flags": [
+    {"id": "OK1", "text": "CSV export silently fails instead of reporting the row cap (product bug)", "match": [["csv", "export", "bug", "cap", "row"]]},
+    {"id": "OK2", "text": "Digest emails stopped", "match": [["digest", "email"]]},
+    {"id": "OK3", "text": "Renewal / churn risk", "match": [["renew", "churn", "plan"]]},
+    {"id": "OK4", "text": "Long hold", "match": [["hold"]]}
+  ],
+  "action_items": [
+    {"id": "A1", "owner": "agent", "task": "Bug filed for the CSV export failure (ticket 44091); customer linked for fix notification", "due": "done", "match": [["bug", "ticket", "engineering", "44091"]]},
+    {"id": "A2", "owner": "agent", "task": "Add stopped weekly digest emails to the ticket and investigate", "due": "unspecified", "match": [["digest"]]},
+    {"id": "A3", "owner": "account manager", "task": "Contact customer about plan options before renewal (~2 weeks)", "due": "before renewal", "match": [["account manager", "plan", "renew", "upgrade"]]}
+  ],
+  "subtle_facts": [
+    {"id": "S1", "text": "Root cause: Team Classic plan caps CSV export at 5,000 rows; report is ~7,200 rows", "evidence": "the CSV export has a cap of five thousand rows", "match": [["5,?000", "five thousand", "row (limit|cap)", "classic"]]},
+    {"id": "S2", "text": "Second issue raised in passing: weekly digest emails stopped arriving since last Tuesday", "evidence": "the weekly digest emails stopped coming too", "match": [["digest"]]},
+    {"id": "S3", "text": "Renewal is in about two weeks; customer may reconsider plan", "evidence": "we're up for renewal in like two weeks", "match": [["renew"]]}
+  ],
+  "themes": []
+}

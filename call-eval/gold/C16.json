@@ -1,0 +1,229 @@
+{
+ "call_id": "C16",
+ "call_type": "scheduling",
+ "call_type_accept": [
+  "pre_procedure"
+ ],
+ "outcome": "callback",
+ "outcome_accept": [
+  "escalated"
+ ],
+ "sentiment_start": "neutral",
+ "sentiment_end": "positive",
+ "quality_score": 5,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Verified identity; proactively corrected the outdated arrival time and location",
+   "match": [
+    [
+     "verif",
+     "arrival",
+     "location",
+     "westbrook",
+     "7:00",
+     "seven"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Stayed in scope on the clinical fasting question and routed urgently to the pre-procedure nurses",
+   "match": [
+    [
+     "scope",
+     "nurse",
+     "clinical",
+     "guess",
+     "route",
+     "urgent"
+    ]
+   ]
+  },
+  {
+   "id": "Q3",
+   "text": "Reported the recurring packet/text inconsistency to the team lead and updated the stale email",
+   "match": [
+    [
+     "team lead",
+     "report",
+     "recurring",
+     "email"
+    ]
+   ]
+  }
+ ],
+ "flags": [],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Agent failed to answer the patient's fasting question / refused to help",
+   "why_not": "Fasting rules are a clinical instruction; declining to guess and sending an urgent same-day nurse callback is the correct handling.",
+   "evidence": "that's a clinical instruction, and I'm not able to tell you which one applies",
+   "match": [
+    [
+     "fast",
+     "eat",
+     "drink",
+     "liquid",
+     "question",
+     "instruction"
+    ],
+    [
+     "refus",
+     "fail(ed)? to (answer|help|provide|clarify|resolve)",
+     "did not (answer|provide|clarify|resolve)",
+     "didn't (answer|provide|clarify|resolve)",
+     "declin",
+     "would not",
+     "wouldn't",
+     "unanswered",
+     "no (answer|guidance)"
+    ]
+   ]
+  },
+  {
+   "id": "D2",
+   "text": "Patient reported 'sharp pain' that was not assessed",
+   "why_not": "It was a joke about the cost of taking time off ('sharp pain in my wallet').",
+   "evidence": "There goes another sharp pain in my wallet.",
+   "match": [
+    [
+     "pain",
+     "symptom"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Conflicting packet vs text fasting instructions (systemic)",
+   "match": [
+    [
+     "fast",
+     "packet",
+     "text",
+     "liquid",
+     "instruction",
+     "midnight",
+     "conflict"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Schedule/location change was sent only to an outdated email address",
+   "match": [
+    [
+     "email",
+     "notif",
+     "location",
+     "westbrook",
+     "arrival",
+     "not told",
+     "nobody told"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "agent",
+   "task": "Send urgent message to pre-procedure nurse team to call patient today about fasting instructions",
+   "due": "today before 5 pm",
+   "match": [
+    [
+     "nurse"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "agent",
+   "task": "Report packet/text fasting inconsistency to team lead",
+   "due": "today",
+   "match": [
+    [
+     "team lead",
+     "lead",
+     "supervisor",
+     "manager"
+    ],
+    [
+     "report",
+     "inconsisten",
+     "conflict",
+     "packet",
+     "fasting",
+     "flag"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "patient",
+   "task": "Arrive 7:00 am Friday May 8 at Westbrook endoscopy center, 2nd floor, with an adult driver",
+   "due": "2026-05-08 07:00",
+   "match": [
+    [
+     "westbrook",
+     "7:00",
+     "7 am",
+     "7am",
+     "seven",
+     "arriv",
+     "driver",
+     "drive"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Arrival time changed from 7:30 to 7:00 am",
+   "evidence": "your arrival time is now seven o'clock, not seven-thirty",
+   "match": [
+    [
+     "7:00",
+     "7 ?am",
+     "7 a\\.m",
+     "seven o'clock",
+     "seven a\\.?m",
+     "7:00am"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Location changed from Main Street to Westbrook endoscopy center (2nd floor); update had gone to an old email",
+   "evidence": "the Westbrook endoscopy center, not Main Street",
+   "match": [
+    [
+     "westbrook"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Agent says she is the third caller this week about the packet/text conflict",
+   "evidence": "you're the third person this week",
+   "match": [
+    [
+     "third",
+     "3rd",
+     "three (people|callers|patients)",
+     "recurring",
+     "others",
+     "not the only",
+     "multiple (patients|callers)"
+    ]
+   ]
+  }
+ ],
+ "themes": [
+  "T_FASTING_CONFLICT"
+ ]
+}

@@ -1,0 +1,52 @@
+
+Let me work through the costs and constraints.
+
+Nimbus: $18/user/month × 10 users × 12 = $2,160/year. Within $3,000/year budget.
+
+NAS: $5,400 upfront + $900/year support. Upfront spread over 5 years = $1,080/year. Total = $1,980/year. Also within budget.
+
+Both: $2,160 + $1,980 = $4,140/year. Over budget. So "both" exceeds the budget constraint unless something is trimmed.
+
+Constraint: insurer requires backup copy at separate physical location ≥10 km from office. NAS in office server cupboard fails this. Nimbus (2 regions >300 km away) satisfies it. So NAS alone fails the insurance condition — it cannot be the sole solution.
+
+Managing partner: 1-2 day full restore acceptable. Nimbus full restore is ~2 days download or 1 day courier — acceptable. Individual file restores in minutes.
+
+So Nimbus alone meets: budget ($2,160 < $3,000), offsite requirement, restore-time tolerance, ransomware protection (immutable 90-day versions vs admin-deletable snapshots).
+
+NAS alone: fails insurer condition (same building). Not viable as sole option.
+
+Both: best resilience (fast local restore 4 hours + offsite cloud), but $4,140/year exceeds $3,000 budget. Could we make "both" fit? Not without cutting something; no cheaper variant is given. So recommend Nimbus, with qualifier that if budget ever allows, adding a NAS would improve full-restore speed to 4 hours.
+
+Risks of Nimbus: reliance on provider; 2-day full restore could stretch (courier option depends on provider's drive-shipping service); internet bandwidth for initial seed/restore not given — assume standard business broadband; ongoing price increases not given. Also a 2 TB restore over download in 2 days implies ~12 Mbps sustained — plausible but verify. Also ensure Nimbus covers all client data (2 TB) at the stated per-user pricing — assumption: 2 TB fits within plan.
+
+Confidence: high, ~90%. The main uncertainty is whether "both" could be made to fit budget — it can't per given numbers. Also assumption that per-user pricing covers the full 2 TB.
+
+Format: headings exactly as given, 150-300 words, then the two lines exactly.
+
+Word count target ~200-260 words. Let me draft.
+
+## Recommendation
+Adopt Nimbus cloud backup as the firm's sole backup solution. Do not buy the NAS now; revisit only if the budget grows.
+
+## Key reasons
+- Cost: $18 × 10 × 12 = $2,160/yr, within the $3,000 cap. NAS alone would cost $1,980/yr ($5,400/5 + $900) but fails the insurer's offsite rule; both together cost ~$4,140/yr, over budget.
+- Compliance: Nimbus stores copies in two regions >300 km away, satisfying the ≥10 km offsite condition. The office-cupboard NAS does not — it's in the same building, so it can't be the sole solution regardless of price.
+- Restore needs: the managing partner accepts 1–2 days for a full restore; Nimbus delivers ~2 days by download or ~1 day by courier. Day-to-day file restores take minutes.
+- Ransomware: immutable 90-day versions can't be deleted by a compromised admin account, unlike NAS snapshots.
+
+## Risks
+- A full 2 TB restore depends on download bandwidth or the provider's courier service; if either underperforms, restore could exceed 2 days. Verify the courier option in writing.
+- Single-vendor dependence: confirm the $18/user plan covers the full 2 TB and that pricing won't rise materially at renewal (not stated in the brief).
+- Revisit a NAS add-on if budget rises: it would cut full-restore time to ~4 hours.
+
+## Confidence
+90%
+
+POSITION: Nimbus cloud backup (as the sole solution; add a NAS later only if budget allows)
+CONFIDENCE: 90%
+
+Check word count roughly: that's around 240 words. Good.
+
+One nuance: "both" is over budget — should I mention the qualifier? The recommendation is Nimbus. The qualifier: "Nimbus cloud backup (alone; add NAS only if budget increases)". That works.
+
+Confidence 90% seems right — the logic is airtight on compliance and budget, minor uncertainty about unstated details (plan covering 2 TB, courier reliability). Maybe 90%.

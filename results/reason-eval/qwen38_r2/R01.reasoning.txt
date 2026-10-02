@@ -1,0 +1,211 @@
+
+We need answer user's request in English. Need produce Markdown with exact section headings: ## Missed issues, ## Looks like a problem but isn't, ## Top 3 priorities, ## Bottom line. Need review memo. Need at most 10 missed issues, most important first. For each: what it is, why it matters, evidence. Looks like problem but isn't optional one line each. Top 3 exactly 3 numbered items. Bottom line 2-4 sentences. Need be concrete, senior advisor, no generic. Need reason from facts. Need maybe point out scoring errors? Let's calculate weighted totals. Given weights sum 100%. Tallis: 30%*9=2.7; 25%*9=2.25; 20%*8=1.6; 15%*10=1.5; 10%*9=.9; 10%*8=.8 total 9.75 yes. Corvane: 2.1+1.5+1.6+1.2+0.7+0.8=7.9. Meridew:1.8+1.75+1.4+1.2+0.8+0.7=7.65. But issues:
+1. Scoring matrix weights sum 100? yes. But Uptime scored vendor-reported 99.99 vs no SLA; contract risk. Also features scored 9 based on polished demo not required union rules; missing daily user input. Price scored year-1 only, ignores implementation, year 2 list, increases, termination fee, data export. Union requirements: 4 sites unionized, 60% hourly warehouse; Tallis rules on roadmap, Corvane/Meridew configured. This is likely top priority: core payroll correctness/grievances. Need maybe score features 9 despite union rules not configured? Demo polished not evidence of ability. Reference mismatch: Tallis references small single-site non-union, not comparable to 1,400 multi-site unionized. Vendor viability: Tallis 3 years old, 40 employees, raising next round; payroll continuity risk. Data portability/lock-in: export own format, termination fee 6 months. Security: SOC 2 reviewed no exceptions, but maybe not missed? Could be okay. Support: 24/7 phone 1-hour response in contract; maybe okay. Integration: tested sample payroll journal export with each; okay. But need maybe note support response commitment not enough? It says payroll-blocking issues, written into draft contract. Could be adequate. Maybe "vendor reported uptime" not in SLA is missed. Also urgency: price expires Friday creates pressure, not reason to sign; should not let artificial deadline drive. But maybe bottom line. Also missing implementation timeline and risk? Implementation fee separate, references set up six weeks but small single-site; 1400 multi-site union complex. Need maybe note missing cost of implementation and TCO. Also missing governance/acceptance criteria: need payroll team evaluation, legal/finance review, union stakeholder sign-off. But must be things memo missed or got wrong. Need max 10. Need most important first.
+
+Let's rank:
+1. Core union/hourly payroll rules not proven by Tallis; Corvane/Meridew configured. Evidence appendix 4, context 60% hourly, 4 union, payroll errors #1 grievances. Why: platform may not solve grievance driver; may require custom dev or delay; feature score invalid.
+2. Price scoring ignores true cost: implementation, year 2 list, increases, termination fee; Tallis not cheapest over contract horizon. Evidence appendix 1,5. Why: $182k year-1 discounted; real TCO maybe much higher: Tallis Y1 subscription 182 + implementation 95 =277; Y2 303; Y3 up to 327; termination fee 6 months maybe 151.5? Compare Corvane 236*3=708, Meridew 214*? cap 3 +30 = maybe 666. But if contract 1 year? Need not calculate too much but show. Why matters: decision based on misleading year-1 price and 25% weight.
+3. Uptime/SLA contradiction: scored 10 from marketing 99.99, but contract no SLA. Evidence appendix 2, scoring. Why: reliability is contractual, not marketing; no service credits.
+4. References not comparable: Tallis references small single-site non-union; Corvane has 2,000 unionized distributor, Meridew multi-site retailers. Evidence appendix 3. Why: implementation complexity and union support unproven.
+5. Vendor viability/continuity risk: Tallis 3 years, 40 employees, raising next round; payroll critical. Evidence appendix 6. Why: going concern, support, roadmap risk; termination fee/data lock-in worsen.
+6. Data portability and exit risk: Tallis exports only own format, termination fee 6 months. Evidence appendix 5. Why: if fail, hard to migrate; lock-in.
+7. Evaluation process biased/incomplete: all demos scored by memo author using vendor scripts; payroll team not seen demos; no user validation. Evidence rationale, appendix 7. Why: features/ease of use scores reflect demo polish not daily usability for payroll team; acceptance risk.
+8. Scoring methodology flawed: uses inconsistent scoring basis and weights; features from demo; uptime vendor-reported; price year-1; no cost of risk/implementation/union fit. Evidence matrix rationale. Why: weighted total not decision-grade. Could combine with 7? Need separate? Maybe top 10. Could include "weighted total gives false precision despite unvalidated inputs". But maybe too generic. Need concrete: weights don't reflect risk of union rules? Features weight 30 but not adjusted for mandatory requirements. Also no pass/fail requirements. Maybe include as missed issue: no requirements gate; union rules should be mandatory, not scored. Evidence appendix 4. But maybe overlaps #1. Need avoid padding.
+9. Contract terms not reviewed: termination fee, no SLA, increases, implementation separate; recommendation to sign before legal/finance? Evidence appendix 1,2,5. Why: signing this week bypasses contract risk review. But maybe top priority.
+10. Artificial deadline/urgency: price expires Friday; not a reason. Evidence recommendation. Why: may cause bad decision. But maybe less important than core issues. Could include but max 10. Need most important first.
+
+Need "Looks like a problem but isn't": SOC 2 reports reviewed no exceptions; ERP integration tested; support 24/7 1-hour response in contract; weights sum? Maybe "scoring arithmetic" is okay? Could list:
+- Security: all SOC 2 Type II reviewed with no exceptions, so not a differentiator unless deeper issues found.
+- ERP integration: sample payroll journal export tested and passed with all three, so integration feasibility is addressed.
+- Support: 24/7 phone support with 1-hour payroll-blocking response is in draft contracts, so basic support is comparable.
+- Arithmetic: weighted totals sum correctly from stated scores/weights, so the issue is inputs not math.
+Need one line each.
+
+Top 3 priorities exactly 3 numbered items: 1) prove Tallis can handle union/hourly rules or disqualify; 2) re-score on true multi-year TCO + contractual risk (SLA, implementation, termination, viability) and get payroll/union/legal/finance sign-off; 3) fix evaluation evidence: payroll team hands-on, comparable references, data migration/exit terms before signing. But must be issues that must be resolved before signing. Maybe #1 union rules; #2 true cost/contract terms; #3 viability/exit? Or #2 includes SLA and TCO. Need exactly 3. Could choose:
+1. Validate union/hourly payroll fit with Tallis (or make Corvane/Meridew shortlist) via sandbox of actual rules, payroll team, union stakeholders.
+2. Reprice and re-score on total cost and contractual risk: implementation, year 2+ increases, SLA, termination fee, data export, vendor financial viability.
+3. Obtain required governance sign-off and remove Friday deadline: payroll team demo, legal/finance review, comparable references, migration/exit plan.
+Need maybe top 3 most important before signing: union rules, TCO/contract, payroll team validation? Need exactly.
+
+Bottom line: 2-4 sentences. Recommendation does not stand as written; do not sign this week. Suspend signing, run 1-2 week validation: Tallis must prove union rules contractually or Corvane/Meridew move forward; re-score TCO and exit risk; get payroll/union/legal/finance sign-off. Maybe "lock in price" not worth taking core compliance risk.
+
+Need ensure section headings exactly. No extra headings. Use numbered list. For each missed issue: include "what it is, why it matters, evidence" maybe concise. Need maybe mention calculations? Let's compute TCO rough to be concrete.
+
+Price:
+Tallis: Y1 subscription $182k (40% discount from list? If year 2 list 303, maybe list 303? 40% off 303 =181.8. implementation $95k. Y2 $303k, Y3 up to $327k (8%). Termination fee 6 months of fees: if monthly fees? Could be 6*303/12=151.5k, or based on subscription. Maybe say "six months of fees" not quantified. Three-year total if no termination: 182+95+303+327=907k (assuming Y3 max increase). Corvane: 236*3=708k, implementation included. Meridew: 214 + 220.42 + 227.03 +30 =691.45k (3% cap). Even over 3 years Tallis is ~$199k more than Corvane and ~$216k more than Meridew, before termination fee and risk. But if only year 1: Tallis 277 vs Corvane 236 vs Meridew 244. Still not cheapest. Need be careful: year-1 subscription 182 + implementation 95 = 277. Corvane implementation included 236. Meridew 214+30=244. So Tallis not cheapest even year 1 with implementation. If implementation fee maybe one-time, still. Use this.
+
+Uptime: 99.99% vs 99.9%: difference 0.09 percentage points? Actually 99.99 = 52.6 min/year downtime, 99.9=8.76 hours/year. But no SLA. Need maybe mention 99.99 marketing not enforceable. But maybe "vendor-reported" and no SLA. Could mention score 10 based on marketing.
+
+Union rules: 4 of 9 unionized, 60% hourly warehouse; payroll errors #1 grievances. Corvane/Meridew configured union shift-differential and overtime-averaging; Tallis roadmap Q3. Need contractually committed date, penalty, sandbox validation.
+
+References: Tallis 60, 140, 190 employees single-site non-union vs Ferncliff 1400, 9 sites, union. Need comparable.
+
+Vendor viability: 3 years, 40 employees, next round. Need financial due diligence, escrow/source code? Maybe not given. Need not assume.
+
+Data portability: own format export, termination fee. Need migration plan, data format, API, contract termination.
+
+Evaluation: payroll team not seen demos. Need daily users. Also "I scored all demos myself using vendor script" - vendor script biases features. Need independent scoring, use case tests.
+
+Scoring: weights sum 100 and math correct but basis invalid. Could mention "weighted total 9.75 hides that feature score 9 was awarded to a vendor that cannot demonstrate required union rules". Maybe missed issue: no mandatory requirements. Evidence: appendix 4. Why: if mandatory payroll rules missing, score should disqualify.
+
+Urgency: Friday price expiry. Need maybe not top issue but missed: recommendation treats deadline as driver. Evidence: "sign with Tallis this week to lock in... expires Friday". Why: artificial scarcity; should not override risk. Could include #10.
+
+Need at most 10. Let's decide list of 9 or 10. Need most important first.
+
+Possible list:
+1. Required union/hourly payroll rules are unproven for Tallis.
+2. Price score is materially wrong because it ignores implementation, renewal, increases, and exit costs.
+3. Uptime score rewards marketing while contract removes enforceable SLA.
+4. Tallis references are not comparable to Ferncliff's size, multi-site, unionized environment.
+5. Vendor viability and dependency risk are material for payroll.
+6. Data export and termination terms create lock-in.
+7. Evaluation excluded the people who will run payroll daily and relied on vendor scripts.
+8. No pass/fail requirements or risk-adjusted scoring; weighted total gives false confidence.
+9. Contract risk was not fully reviewed before recommendation.
+10. Friday price deadline is being used as a decision driver.
+
+Need ensure not too many overlapping. #8 and #7 maybe. Could combine #7 and #8? But max 10. Need sharp. Maybe #8: "The scoring matrix treats unproven features and vendor-reported claims as high-confidence inputs." Evidence: features from demo, uptime vendor-reported, price year-1. Why: weighted total not robust. This covers methodology. #7: payroll team not seen demos and author scored alone. Good.
+
+Need #9: contract terms not reviewed? The memo says support written into draft contracts, but not termination? Maybe evidence includes termination fee and no SLA; but if recommendation to sign this week, contract risk not resolved. Could be #9. But maybe too similar to #2/#3/#6. Could instead #9: "No implementation plan or governance for union consultation". Is that missing? Context unionized sites; implementation may require union notification? Not given; don't assume. Could be missing stakeholder sign-off (payroll team, union, HR, IT). But #7 covers payroll. Could mention union stakeholders? Evidence references non-union, unionized sites. Need maybe not assume union involvement required, but likely. However facts only say unionized sites; platform affects hourly scheduling/payroll. Could say "no evidence union stakeholders or payroll team validated union rules". But #1 covers.
+
+Need "Looks like a problem but isn't": include one line each. Need optional. Could include 4 items. Ensure not too many.
+
+Need final with exact headings. No extra text before or after. Need maybe not use bold? Fine.
+
+Let's craft with concise but detailed. Need no padding. For each missed issue: maybe format:
+1. **Union/hourly payroll rules are not proven for Tallis.** ... Why it matters: ... Evidence: ...
+Need maybe include calculations for price.
+
+Let's refine each:
+
+1. **Tallis may fail the core payroll requirement.** What: 60% hourly, 4 unionized sites, payroll errors #1 grievances; Corvane/Meridew configured union shift-differential and overtime-averaging; Tallis says rules are roadmap Q3. Why: If Tallis can't calculate union payroll correctly, it won't reduce grievances and may create legal/union exposure. Evidence: Context; Appendix 4.
+
+2. **The price score is based on a misleading year-1 number.** What: Tallis $182k includes 40% discount; implementation $95k; year-2 list $303k, up to 8% increases; termination fee 6 months. Tallis year-1 total with implementation $277k vs Corvane $236k and Meridew $244k; 3-year rough total $907k vs $708k/$691k. Why: Price is 25% weight and recommendation calls it cheapest; false. Evidence: Appendix 1,5; scoring matrix.
+
+Need be careful: "3-year rough total" assumes contract and increases; state assumption. Since no number given? We can compute from given. "up to 8%" so max. Maybe "if 3-year and max increases". Use "even before exit costs". Good.
+
+3. **Uptime scoring treats marketing as contractual reliability.** What: Tallis scored 10 on 99.99% vendor-reported, but draft contract no SLA, only commercially reasonable efforts; Corvane/Meridew have 99.9% SLA with credits. Why: Payroll accuracy/availability needs enforceable downtime remedies; 99.99 not guaranteed. Evidence: scoring matrix; Appendix 2.
+
+4. **References do not prove Tallis can operate Ferncliff.** What: Tallis references 60/140/190 employees, single-site, non-union; Ferncliff 1,400, 9 sites, unionized. Corvane has 2,000 unionized distributor; Meridew multi-site retailers. Why: Implementation complexity, union support, multi-site scheduling/payroll unproven. Evidence: Appendix 3.
+
+5. **Tallis viability is a serious continuity risk.** What: founded 3 years ago, 40 employees, raising next round; Corvane/Meridew 15+ years profitable. Why: Payroll is business-critical; vendor failure, acquisition, or funding shortfall threatens support/roadmap. Evidence: Appendix 6.
+
+6. **Exit and data portability are unacceptable.** What: Tallis exports historical payroll only in own format and termination fee 6 months. Why: If implementation fails or vendor underperforms, migration is expensive and Ferncliff is locked in. Evidence: Appendix 5.
+
+7. **The evaluation excluded daily payroll users and relied on vendor demos.** What: payroll team of 6 has not seen demos; author scored demos alone using vendor scripts. Why: Features/ease-of-use scores reflect sales polish, not usability, error prevention, or payroll controls. Evidence: Rationale; Appendix 7.
+
+8. **The scoring matrix lacks mandatory requirements and risk adjustments.** What: Union rules, enforceable SLA, data portability, vendor viability, total cost were scored as optional features or omitted. Why: A 9.75 total can hide disqualifying gaps. Evidence: matrix weights and rationale; appendix facts.
+
+9. **The recommendation asks for signature before contract and due diligence are complete.** What: no SLA, termination fee, separate implementation, renewal increases, funding risk still open. Why: Signing Friday locks Ferncliff into risky terms. Evidence: Recommendation; Appendix 1,2,5,6.
+
+10. **The Friday price deadline is not a business reason to sign.** What: Memo recommends signing to lock year-1 price expiring Friday. Why: The year-1 price is not the real cost and should not override payroll accuracy, union fit, or contractual protections. Evidence: Recommendation; Appendix 1.
+
+Need maybe #9 overlaps. Could reduce to 9? But max 10. It's okay. Need avoid padding. #9 and #10 maybe similar but distinct: contract due diligence vs deadline. Could keep 10. But maybe #9 "contract risk not reviewed" is not exactly missed? Memo lists facts but still recommends sign. It's a missed issue. Need maybe mention "legal/finance not mentioned". Evidence: recommendation sign this week; appendix terms. Good.
+
+Looks like problem but isn't:
+- SOC 2 Type II reports reviewed by IT with no exceptions, so security posture is addressed for now.
+- ERP integration was tested with sample payroll journal export for all three and passed, so connector feasibility is not the differentiator.
+- Support terms are comparable: 24/7 phone support and 1-hour payroll-blocking response are in each draft contract.
+- The weighted totals are arithmetically correct, so the problem is the inputs/weights, not the math.
+
+Need maybe "vendor-reported uptime" looks problem but isn't? No, it is problem because no SLA.
+
+Top 3 priorities exactly numbered items. Need maybe not too long. But must be actionable.
+1. **Make union/hourly payroll fit a pass/fail gate.** Require Tallis to demonstrate Ferncliff's union shift-differential and overtime-averaging rules in a sandbox, with payroll team and union/HR stakeholders, and put delivery date/acceptance criteria in contract; otherwise move to Corvane/Meridew.
+2. **Re-score on total cost and enforceable risk.** Rebuild model with implementation, year-2 list, max increases, termination fee, SLA credits, data export, vendor viability; get legal/finance review of contract terms.
+3. **Complete user and reference validation before signing.** Have payroll team run scenarios, get comparable multi-site unionized references, and document migration/exit plan; do not sign based on Friday price.
+
+Need ensure "exactly 3 numbered items" maybe each item one paragraph. Good.
+
+Bottom line: 2-4 sentences. "The recommendation does not stand as written. Do not sign this week; the $182k year-1 price is not the real cost, and Tallis has not proven it can handle unionized hourly payroll or provide enforceable uptime/exit terms. Use this week to run a 5-day validation: sandbox union rules with payroll/union stakeholders, reprice total cost/contract risk, and obtain legal/finance sign-off; if Tallis cannot meet these, Corvane or Meridew should advance." That's 3 sentences. Good.
+
+Need maybe mention "fictional company" no.
+
+Double-check exact headings: "## Missed issues", "## Looks like a problem but isn't", "## Top 3 priorities", "## Bottom line". No other headings. Use numbered list. Need maybe "Optional" but include. Good.
+
+Need ensure no extra assumptions not stated. For price 3-year total, use "roughly" and assumptions. Could say "Using only the quoted terms and assuming a 3-year horizon with max increases..." That's an assumption. Good. Need maybe if implementation fee billed separately; yes. For Meridew: 214, increases capped at 3%, implementation 30. 3-year: 214 + 220.42 + 227.03 + 30 = 691.45. Corvane: 236*3=708. Tallis: 182+95+303+327.24=907.24. Need maybe if increases "up to 8%" so maximum; if less, still likely more. If only 2 years? Tallis 580 vs Corvane 472 vs Meridew 464? Year1? Good. Maybe just say "Even year 1 with implementation: Tallis $277k vs Corvane $236k and Meridew $244k." That avoids assumptions. Then optional 3-year. Need not overdo. But concrete. Use both: year 1 and 3-year rough. Good.
+
+Need maybe "Tallis year-1 price includes 40% first-year discount. List price from year 2 $303k." If implementation fee separate. Yes.
+
+Potential issue: Weighted total 9.75 impossible if scores 1-10? It's weighted average, okay. But weights sum 100. Good.
+
+Need maybe mention "features from vendor demo" scored 9 but union rules on roadmap. Good.
+
+Need maybe "All three passed ERP integration" but data export own format maybe integration? no.
+
+Need maybe "Support 24/7 phone support 1-hour response" but could be problem if no uptime SLA? Support response not same as system availability. But in looks like not problem, okay.
+
+Need maybe "Customer references very positive" but not comparable. Good.
+
+Need maybe "IT Security reviewed SOC 2 no exceptions" but vendor viability could affect security? No.
+
+Need maybe "Tallis implementation fee $95k" not included in price score. Good.
+
+Need maybe "termination fee equal to 6 months of fees" could be on annual subscription? If fees include implementation? ambiguous. We can say "six months of fees (size not specified, but material)". Good.
+
+Need maybe "vendor viability" - 40 employees, raising next round, founded 3 years. Need not assume failure but risk. Good.
+
+Need maybe "union rules on roadmap Q3" but current system end of support in 11 months. If Q3? Which Q3? Could be after? Need note timing risk. If today? Not given. Could be within 11 months? Need not assume. But if Q3 maybe within? We can say "roadmap Q3 creates timing risk against 11-month cut-over". But if Q3 before? Could still be unproven. Evidence context 11 months. Add to #1: "roadmap Q3, not proven, against 11-month end-of-support." Good.
+
+Need maybe "payroll errors #1 grievances" means need accuracy, not just features. Good.
+
+Need maybe "4 unionized sites" means union contracts may require certain scheduling/payroll rules. Good.
+
+Need maybe "features weight 30%" but features not validated. Good.
+
+Need maybe "demo polished" not evidence. Good.
+
+Need maybe "score all three demos myself using each vendor's own demo script" - could be good consistency but not user validation. In Looks like not problem? Could say "using same vendor scripts is at least consistent"? But not adequate. Maybe not include.
+
+Need maybe "all three SOC 2 reports no exceptions" but no pen test? Not given. Good.
+
+Need maybe "IT confirmed prebuilt connectors and tested sample payroll journal export" good.
+
+Need maybe "support response commitment for payroll-blocking issues" good.
+
+Need final concise. Ensure no more than 10 missed issues. We have 10. Need maybe too many? It's okay. Need "most important first". The list seems ordered. Could #9 be lower than #10? Contract due diligence before deadline? Maybe #10 urgency should be #9? But deadline is less important than contract risk. Keep #9 contract, #10 deadline. Good.
+
+Need maybe "Top 3 priorities" exactly 3 numbered items. Use 1. 2. 3. No sub-bullets? Could include sub-sentences. Fine.
+
+Need final in Markdown. No analysis. Ensure headings exactly. Let's craft elegantly.
+
+Double-check "Bottom line 2–4 sentences". We'll do 3 sentences.
+
+Potential issue: "Looks like a problem but isn't" optional but include. Each one line. Good.
+
+Need maybe "Missed issues" numbered list of at most 10. Use 1-10. Each line maybe long. Good.
+
+Let's draft:
+
+## Missed issues
+1. **Tallis has not proven the payroll rules that drive Ferncliff's risk.** ... Evidence: ...
+...
+
+Need maybe include calculations in #2:
+"Even year 1: Tallis $182k + $95k implementation = $277k, vs Corvane $236k and Meridew $244k. Over a likely 3-year horizon, using quoted terms and max increases, Tallis is roughly $907k vs $708k Corvane and $691k Meridew, before exit fees." Good.
+
+Need maybe "termination fee 6 months of fees" in #6 and #2? Avoid duplicate? #2 includes exit costs? Maybe #6 separate. In #2 mention termination fee as part of true cost? Could mention but not calculate. Fine.
+
+Need #8 scoring matrix: "No pass/fail gate". Good.
+
+Need #9: "The memo asks for signature before contract due diligence". Evidence: "sign with Tallis this week" while no SLA, termination fee, funding risk. Good.
+
+Need #10: "Friday deadline". Good.
+
+Could #9 and #10 be seen as process issues not missed? They are missed. Good.
+
+Need maybe "customer references" #4 and "payroll team" #7. Good.
+
+Need maybe "roadmap Q3" timing vs 11 months. Include in #1.
+
+Need maybe "features score 9" in #8 or #7. Good.
+
+Let's ensure no unsupported: "likely 3-year horizon" assumption. State "if a 3-year horizon is assumed". Good.
+
+Need maybe "up to 8% increases" so Y3 303*1.08=327.24. Good.
+
+Need maybe "Tallis 40 employees" viability: not necessarily bad but risk. Good.
+
+Need maybe "all three references positive" not enough. Good.
+
+Now final. Ensure no extra commentary. final only.

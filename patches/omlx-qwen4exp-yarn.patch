@@ -1,0 +1,118 @@
+From 38577fe08d9d577b38f3d3cd76106d068d89884b Mon Sep 17 00:00:00 2001
+From: Jordan N <257315154+JordanFableFur@users.noreply.github.com>
+Date: Wed, 30 Sep 2026 20:03:03 -0700
+Subject: [PATCH] qwen4_exp: optional YaRN RoPE scaling when rope_parameters
+ type is yarn
+
+---
+ .../mlx_vlm/models/qwen4_exp/language.py      | 87 +++++++++++++++++++
+ 1 file changed, 87 insertions(+)
+
+diff --git a/omlx/patches/mlx_vlm_qwen4_exp_compat/vendor/mlx_vlm/models/qwen4_exp/language.py b/omlx/patches/mlx_vlm_qwen4_exp_compat/vendor/mlx_vlm/models/qwen4_exp/language.py
+index bf7f81d4..b3c2e27b 100644
+--- a/omlx/patches/mlx_vlm_qwen4_exp_compat/vendor/mlx_vlm/models/qwen4_exp/language.py
++++ b/omlx/patches/mlx_vlm_qwen4_exp_compat/vendor/mlx_vlm/models/qwen4_exp/language.py
+@@ -1448,6 +1448,92 @@ class Qwen4ExpQSAIndexer(nn.Module):
+         return selected_tokens[:, None]
+ 
+ 
++def _yarn_inv_freq(
++    dim: int,
++    base: float,
++    factor: float,
++    original_max_position_embeddings: int,
++    beta_fast: float = 32.0,
++    beta_slow: float = 1.0,
++    truncate: bool = True,
++):
++    """YaRN inverse frequencies, mirroring transformers' _compute_yarn_parameters."""
++
++    def correction_dim(num_rotations):
++        return (
++            dim * math.log(original_max_position_embeddings / (num_rotations * 2 * math.pi))
++        ) / (2 * math.log(base))
++
++    low = correction_dim(beta_fast)
++    high = correction_dim(beta_slow)
++    if truncate:
++        low = math.floor(low)
++        high = math.ceil(high)
++    low = max(low, 0)
++    high = min(high, dim - 1)
++    if low == high:
++        high += 0.001
++    pos_freqs = base ** (np.arange(0, dim, 2, dtype=np.float32) / dim)
++    extrapolation = 1.0 / pos_freqs
++    interpolation = 1.0 / (factor * pos_freqs)
++    ramp = np.clip((np.arange(dim // 2, dtype=np.float32) - low) / (high - low), 0, 1)
++    extrapolation_factor = 1.0 - ramp
++    return (
++        interpolation * (1.0 - extrapolation_factor)
++        + extrapolation * extrapolation_factor
++    ).astype(np.float32)
++
++
++def _maybe_apply_yarn_rope(rotary_emb, config) -> None:
++    """Switch an MRoPE rotary module to YaRN when rope_parameters asks for it.
++
++    No-op unless rope_parameters type/rope_type == "yarn", so default
++    checkpoints are untouched. The mscale (0.1*ln(factor)+1) is applied to the
++    rotated q/k (equivalent to scaling cos/sin, and exact on the fused Metal
++    path, which ignores ``attention_scaling``).
++    """
++    rp = getattr(config, "rope_parameters", None) or {}
++    kind = rp.get("type", rp.get("rope_type"))
++    if kind != "yarn":
++        return
++    factor = float(rp["factor"])
++    orig = int(
++        rp.get("original_max_position_embeddings") or config.max_position_embeddings
++    )
++    inv_freq = _yarn_inv_freq(
++        rotary_emb.dim,
++        float(rp["rope_theta"]),
++        factor,
++        orig,
++        float(rp.get("beta_fast", 32.0)),
++        float(rp.get("beta_slow", 1.0)),
++        bool(rp.get("truncate", True)),
++    )
++    mscale = rp.get("attention_factor")
++    if mscale is None:
++        mscale = 0.1 * math.log(factor) + 1.0 if factor > 1 else 1.0
++    mscale = float(mscale)
++    rotary_emb._inv_freq = mx.array(inv_freq)
++    rotary_emb.yarn_mscale = mscale
++    rotary_emb.eval_cached_arrays()
++    if mscale != 1.0:
++        orig_apply = rotary_emb.apply_rotary
++
++        def apply_rotary(q, k, position_ids, **kwargs):
++            q_out, k_out = orig_apply(q, k, position_ids, **kwargs)
++            # Scale only the rotated channels (HF scales cos/sin, which do not
++            # touch the pass-through part of a partial-rotary head).
++            rd = rotary_emb.dim
++
++            def _scale(x):
++                head = (x[..., :rd] * mscale).astype(x.dtype)
++                return mx.concatenate([head, x[..., rd:]], axis=-1)
++
++            return _scale(q_out), _scale(k_out)
++
++        rotary_emb.apply_rotary = apply_rotary
++
++
+ class Qwen4ExpAttention(Qwen3_5Attention):
+     def __init__(self, config: TextConfig):
+         super().__init__(config)
+@@ -1457,6 +1543,7 @@ class Qwen4ExpAttention(Qwen3_5Attention):
+         self.k_norm = Qwen4ExpRMSNorm(
+             self.head_dim, eps=config.rms_norm_eps, cache_scale=True
+         )
++        _maybe_apply_yarn_rope(self.rotary_emb, config)
+         self.indexer = Qwen4ExpQSAIndexer(config, self.rotary_emb)
+ 
+     @staticmethod
+-- 
+2.54.0 (Apple Git-157)
+

@@ -1,0 +1,257 @@
+
+We need answer user's request. Need produce JSON only. Need analyze calls identify recurring themes appearing in two or more different calls. Rank by number calls affected and seriousness. At most 8 themes. Need output single JSON object no markdown.
+
+Need inspect notes. Need identify systemic problems/process failures/sources of confusion across multiple calls. Need include call_ids. Need rank by count and seriousness. Need likely themes:
+1 ClearPay duplicate copay charges after front desk payments: C02, C05, C09, C14, C18? C18 duplicate $40 copay via ClearPay. Also C02 daughter may same but not call. So 5 calls. Serious billing, refunds, collections. Evidence: duplicate payments, known issue since late Feb, refunds, collections.
+2 Conflicting pre-procedure fasting/NPO instructions (packet vs text): C03, C07, C12, C16. Also C03 prior cancellation, C12 colonoscopy, C16 endoscopy, C07 cholecystectomy. 4 calls. Serious clinical safety/cancellation.
+3 Unauthorized commitments/overpromising by agents: C02 guaranteed 48h refund, C05 zeroed $310 without supervisor, C10 full month credit, C11 30% savings/cancel anytime, C12 lost wages, C13 second night covered/no out-of-pocket, C15 early refill controlled substance, C20 promised reminders/contact. Also C09? promised transfer not commitment? C14? maybe. Need theme: staff make commitments outside authority or inaccurate promises. Many calls. Serious. Could rank high. But maybe separate: unauthorized commitments and misinformation. Need recurring. Could combine? User wants themes problems/process failures/sources confusion. Could have theme "Unauthorized or unsupported commitments" with many calls. Need evidence.
+4 Identity verification/privacy disclosure failures: C14 husband account disclosed, C15 medication list disclosed without verification, C20 appointment details disclosed and phone changed without release. Also C10 security credential sharing? Could be separate security. C13? no. C09? no. C06? no. C03 spouse authorized okay. C18 son authorized okay. So 3 calls. Serious privacy/security.
+5 Portal/accessibility/communication confusion: portal password issues C07, C09, C13, C14? C07 portal password issue, C09 forgot portal password, C13 does not know portal password, C14 portal password unknown. Also C04 phone menu confusion? C01 slow system? C12 system timeouts. Theme: patient portal access/password issues and electronic communication confusion. 4 calls. Less serious but recurring.
+6 Missed callbacks/commitments not completed: C09 promised billing transfer not occurred, C14 promised callback not assigned, C02 promised billing team callback? maybe not failed yet, C06 promised call tomorrow, C07 callback, C16 callback. But actual failure: C09, C14. Maybe C02 no reference number? Could be process failure: promised follow-up without reference/task. Need at least two. Could theme "Promised follow-ups/callbacks not reliably tracked or completed" C02, C09, C14. C02 promised callback Friday but no reference number; C09 transfer not occurred; C14 no callback task. 3 calls.
+7 Controlled substance/pharmacy clinical safety: C04 dose not received, emergency supply; C15 early refill controlled substance and drug interaction without pharmacist. Also C03 DVT not escalated, C06 syncope escalated, C18 urgent symptoms escalated, C14 skipped BP meds not escalated initially. Theme: clinical safety concerns not escalated or medication safety gaps. Need recurring: C03 DVT not escalated, C14 skipped BP meds due cost not escalated initially, C15 drug interaction/early refill without pharmacist, C04 prescription not received causing near run-out? Could be medication access/safety. But maybe separate: "Medication safety/clinical escalation gaps" C03, C14, C15. Also C06 escalated properly, C18 properly. Need serious.
+8 System performance/systems issues: C01 slow system multiple screens login interruption, C08 CSV export bug, C10 SSO outage, C12 system timeouts, C16 outdated email notification? Could theme "System/tooling failures causing delays or errors" C01, C08, C10, C12. But healthcare vs SaaS? Batch includes SaaS support. Recurring across calls. Serious? Could include.
+9 Misinformation/incorrect information given: C13 out-of-pocket and out-of-network scheduling, C17 BAA Team and client pricing, C11 fuel savings/cancel anytime, C02 amount corrected, C05 ticket number corrected, C10 affected users corrected, C16 appointment time/location outdated. Could theme "Incorrect or inconsistent information provided to customers/patients" many. But overlaps unauthorized commitments. Need choose top 8.
+10 Appointment scheduling/location/time confusion: C01 date confusion, C03 PT referral wrong, C13 scheduled out-of-network, C16 wrong time/location, C20 phone number changed. Could theme "Scheduling errors and outdated appointment details" C01, C03, C13, C16, C20. But C13 more insurance. Need rank.
+11 Insurance/prior authorization issues: C05 MRI denied missing PA, C09 PA required, C13 PA and out-of-network scheduling. 3 calls. Serious.
+12 Collections while dispute open: C14 only? C05? no. Not recurring.
+13 Refund process confusion: C02, C05, C19? C19 refund window confusion. C02 48h vs 7-10, C05 7-10, C19 customer thought outside window. 3 calls. Could be theme "Refund policy/process confusion and inconsistent timelines". But ClearPay duplicate is bigger.
+14 Security credential sharing: C10 only? maybe C20 identity? no.
+15 Data breach/vendor replacement: C17 only.
+16 Billing seat discrepancy: C10 only.
+17 Export cap bug: C08 only.
+18 Ride/no-show: C06 only.
+19 Accessibility/interpreter: none recurring.
+20 Phone number updates: C01, C06, C09? C09 member ID, C14 contact preferences, C20 phone changed. Not systemic problem? Could be contact info updates. But not necessarily failure.
+
+Need rank by how many calls affected and seriousness. Need at most 8. Need likely top:
+- ClearPay duplicate copay charges (5 calls) serious billing.
+- Conflicting pre-procedure fasting instructions (4 calls) serious clinical safety.
+- Unauthorized commitments/overpromising (maybe 8 calls) serious compliance/customer trust. Count: C02, C05, C10, C11, C12, C13, C15, C20. Also C17? BAA commitment. C17 yes unauthorized_commitment. C09? missed commitment not unauthorized. C14? maybe no. So 9? Let's list flags unauthorized_commitment: C02, C05, C10, C11, C12, C13, C15, C17, C20. That's 9. Very high. But if combine with misinformation? Could be too broad. Theme: "Agents make unauthorized or unsupported commitments" includes refunds, credits, coverage, contract terms, clinical actions. Serious.
+- Identity verification/privacy disclosure failures: C14, C15, C20 (3) serious privacy.
+- Clinical safety escalation/medication safety gaps: C03, C14, C15 (3) maybe C04? C04 prescription not received, emergency supply; not necessarily failure? Could include C04 as medication access/prescription communication failure. But theme maybe "Medication safety and access gaps" C03, C04, C14, C15. Count 4. Serious. Need evidence: DVT not escalated, skipped BP meds due cost, early controlled substance refill and interaction without pharmacist, dose change not received. Good.
+- Portal access/password and electronic communication confusion: C07, C09, C13, C14 (4). Also C16 outdated email? Could include C16 as communication failure. But portal specifically 4. Less serious but recurring.
+- Missed/unclear follow-up commitments: C02, C09, C14 (3). Could combine with unauthorized commitments? But separate process failure: promised callbacks/transfers not tracked. Count 3.
+- Insurance/prior authorization and network errors: C05, C09, C13 (3). Serious.
+- System/tooling failures: C01, C08, C10, C12 (4). But maybe less relevant? Could include if top 8. Need choose 8.
+- Scheduling/location/time errors: C01, C03, C13, C16, C20 (5). But some overlap. Could be important. Need decide.
+
+Need output JSON with themes array. Need ensure each theme appears in two or more different calls. Need call_ids unique. Need evidence brief. Need recommended_action one sentence.
+
+Need rank by count and seriousness. Could order:
+1 ClearPay duplicate copay charges (5)
+2 Conflicting pre-procedure fasting instructions (4)
+3 Unauthorized commitments (9) maybe should be first by count, but seriousness? It affects 9, serious. Rank by count and seriousness: maybe unauthorized commitments first (9), ClearPay second (5), fasting third (4), medication safety fourth (4), portal fourth (4), system fourth (4), privacy third (3), insurance third (3), follow-up third (3). But user says rank by how many calls affected and how serious. Could put high count and high seriousness. Unauthorized commitments high count and serious. ClearPay high count serious. Fasting high seriousness. Medication safety high seriousness. Privacy high seriousness. Insurance high seriousness. Follow-up medium. Portal medium. System medium. Need at most 8. Could omit system or portal? Need top 8. Let's count potential themes:
+A Unauthorized commitments (9)
+B ClearPay duplicate payments (5)
+C Conflicting pre-procedure instructions (4)
+D Medication safety/clinical escalation gaps (4)
+E Portal/electronic access confusion (4)
+F System/tooling failures (4)
+G Identity/privacy disclosure failures (3)
+H Insurance/PA/network errors (3)
+I Missed follow-up commitments (3)
+J Scheduling/location errors (5?)
+Need choose 8. Which to omit? Maybe system/tooling failures less directly patient/customer harm? But includes SaaS support. Could omit system. Or omit portal? Portal recurring but less serious. Need top 8 by count/seriousness. Unauthorized, ClearPay, fasting, medication, privacy, insurance, scheduling, follow-up? Portal maybe less serious than follow-up? Hmm.
+
+Need identify scheduling errors across calls: C01 patient confused date, agent clarified; not systemic problem? C03 PT referral wrong, C13 scheduled out-of-network, C16 wrong time/location, C20 phone changed. Could be "Scheduling and appointment detail errors" 5 calls. Serious? Could cause missed care. But C01 minor. C13 serious. C16 serious. C03 moderate. C20 privacy. Could include.
+
+Need maybe combine scheduling with communication? But distinct.
+
+Need ensure no theme only single. Need call_ids.
+
+Let's examine each call for themes:
+C01: scheduling, date confusion, phone update, insurance card expired, slow system/login.
+C02: duplicate ClearPay, refund timeline inconsistency, unauthorized 48h, no reference, callback promised, daughter same issue.
+C03: post-op DVT not escalated, conflicting NPO caused cancellation, PT referral wrong.
+C04: pharmacy dose not received, emergency supply, phone menu confusion, drive-through.
+C05: duplicate ClearPay known issue, refund ticket correction, unauthorized zero balance, MRI PA missing.
+C06: no-show ride issue, syncope escalated, phone update, ride program.
+C07: pre-procedure NPO conflict, portal password issue, text reminders.
+C08: SaaS export cap bug, digest emails stopped, hold.
+C09: insurance PA, duplicate ClearPay, promised billing transfer not occurred, portal password.
+C10: SaaS SSO outage, SCIM, unauthorized credit, security password sharing, billing seat discrepancy.
+C11: sales misstatements, unauthorized savings, contract terms.
+C12: conflicting prep instructions, diabetes insulin not assessed, unauthorized lost wages, system timeouts.
+C13: insurance PA, misinformation coverage, out-of-network scheduling, portal password.
+C14: duplicate ClearPay, collections while dispute, privacy disclosure, missed callback, skipped BP meds, portal password.
+C15: early controlled refill, drug interaction without pharmacist, identity verification.
+C16: pre-procedure conflicting fasting, wrong time/location communicated to outdated email.
+C17: sales BAA misinformation, unauthorized BAA, disclosed client pricing.
+C18: post-op retinal detachment symptoms escalated, duplicate ClearPay.
+C19: refund window confusion, refund to original card.
+C20: identity verification, privacy disclosure, phone change, unauthorized reminders.
+
+Need maybe theme "Refund policy and timeline confusion" C02, C05, C19. But ClearPay covers C02/C05; C19 not duplicate. Could be separate but lower.
+
+Need maybe theme "Incorrect or inconsistent information provided" C02 amount, C05 ticket, C10 affected users, C11 contract/savings, C13 coverage, C16 appointment, C17 BAA. Many. But overlaps unauthorized. Could be a theme: "Inaccurate or inconsistent information given during calls" count maybe 7. But if we already have unauthorized commitments, maybe separate? The user wants recurring themes; could include both but avoid too broad. Need rank. Could have "Misinformation or inconsistent statements" with C02, C05, C10, C11, C13, C16, C17. But some are unauthorized commitments. Could be process failure: agents provide incorrect details then correct. Serious? Could be. But top 8 maybe include.
+
+Need decide final 8. Let's think like operations analyst. Recurring systemic problems:
+1 ClearPay duplicate payments (known vendor issue) - 5 calls.
+2 Conflicting pre-procedure instructions (NPO) - 4 calls.
+3 Staff overpromising/unauthorized commitments - 9 calls.
+4 Clinical safety/medication escalation gaps - 4 calls.
+5 Identity verification/privacy disclosure failures - 3 calls.
+6 Insurance verification/prior authorization/network scheduling errors - 3 calls.
+7 Follow-up/callback commitments not tracked/completed - 3 calls.
+8 Patient portal/electronic communication access issues - 4 calls.
+Maybe omit system/tooling and scheduling. But scheduling errors maybe 5. Could replace portal? Which more serious? Scheduling errors can cause missed procedures. Portal access less serious. But portal appears 4. Scheduling errors: C01 date confusion, C03 PT referral wrong, C13 out-of-network scheduling, C16 wrong time/location, C20 phone change. Count 5. Serious. Should include. Then omit portal or follow-up? Follow-up commitments 3. Portal 4. Hmm.
+
+Need at most 8. Could combine follow-up commitments with unauthorized commitments? No, missed commitments is process failure. Could combine portal with communication confusion? Maybe include as "Electronic communication/portal access confusion" 4. But if include scheduling, we have 9. Need choose 8.
+
+Ranking by count and seriousness:
+- Unauthorized commitments: 9, serious.
+- ClearPay duplicate: 5, serious.
+- Conflicting pre-procedure: 4, very serious.
+- Medication/clinical safety: 4, very serious.
+- Scheduling/appointment detail errors: 5? If count 5, should rank before 4. But some minor. Could count 4 if exclude C01? C01 date confusion is patient confusion, not systemic? But recurring confusion about dates/times/locations. C01, C03, C13, C16, C20 = 5. Serious. Include.
+- Identity/privacy: 3, very serious.
+- Insurance/PA/network: 3, serious.
+- Follow-up/callback: 3, moderate.
+- Portal: 4, moderate. If count 4, should rank above 3. But maybe less serious. Need rank by both. Could put portal after insurance? Hmm.
+
+Maybe combine portal with system/tooling? "System and access issues" C01, C07, C08, C09, C10, C12, C13, C14, C16? Too broad. But recurring: portal password, system timeouts, export bug, SSO. Could be one theme "System/tooling and access failures" count many. But user wants themes; broad okay. But if combine, top. Need evidence. However SaaS support calls are different domain; still operations. Could include.
+
+Need maybe produce 8 themes:
+1 Unauthorized commitments/overpromising (C02,C05,C10,C11,C12,C13,C15,C17,C20)
+2 ClearPay duplicate copay charges (C02,C05,C09,C14,C18)
+3 Conflicting pre-procedure fasting instructions (C03,C07,C12,C16)
+4 Medication safety and clinical escalation gaps (C03,C04,C14,C15)
+5 Scheduling and appointment detail errors (C01,C03,C13,C16,C20)
+6 Identity verification and privacy disclosure failures (C14,C15,C20)
+7 Insurance/prior authorization/network errors (C05,C09,C13)
+8 Follow-up/callback commitments not tracked or completed (C02,C09,C14)
+This omits portal/system. But portal appears 4; maybe should include instead of follow-up? Follow-up is process failure serious. Portal less serious. Could include portal as 8 and omit follow-up? But follow-up missed commitments is systemic and serious. Could combine follow-up with unauthorized commitments? Not exactly. Could include "Missed or untracked follow-up commitments" with C02,C09,C14. Good.
+
+Need ensure each theme description 1-2 sentences. Evidence brief. Recommended action one sentence.
+
+Need maybe include C19 in refund confusion? Not in top. Could mention in ClearPay? no.
+
+Need check call_ids for unauthorized commitments: C02, C05, C10, C11, C12, C13, C15, C17, C20. Also C09? promised transfer not occurred is missed commitment not unauthorized. C14? supervisor applied goodwill credit maybe authorized? no. C18? no. Good.
+
+Need evidence for unauthorized: guaranteed 48h refund, zeroed $310, full month credit, 30% savings, lost wages, second night/no out-of-pocket, early controlled refill, BAA on Team, reminders without authorization. Good.
+
+Need ClearPay: C02 duplicate $45, C05 duplicate $30 known issue, C09 duplicate $45, C14 three duplicates and collections, C18 duplicate $40. Good.
+
+Need pre-procedure: C03 prior cancellation due NPO conflict, C07 text vs packet, C12 colonoscopy prep conflict, C16 endoscopy conflict. Good.
+
+Need medication safety: C03 DVT not escalated, C04 dose change not received and near run-out, C14 skipped BP meds due cost not escalated initially, C15 early alprazolam refill and interaction advice without pharmacist. Good. Could include C18? symptoms escalated properly, not failure. C06 escalated. Good.
+
+Need scheduling: C01 date confusion, C03 PT referral wrong, C13 scheduled out-of-network despite PA, C16 wrong time/location communicated to outdated email, C20 phone changed without authorization. But C20 more privacy. Could include as appointment detail error. Evidence: date/time/location/provider/facility/phone details wrong or changed without verification. Good.
+
+Need identity/privacy: C14 husband account disclosed, C15 medication list disclosed without verification, C20 appointment details disclosed and phone changed. Good.
+
+Need insurance/PA: C05 MRI denied missing PA, C09 PA required and new insurance, C13 PA approved for Westbrook but scheduled Ridgeline out-of-network and coverage misinformation. Good.
+
+Need follow-up: C02 promised callback Friday but no reference? C09 promised billing transfer not occurred, C14 promised callback not assigned. Good.
+
+Need rank: maybe order as above. But unauthorized commitments count 9 first. ClearPay 5 second. Scheduling 5? Should scheduling be third by count? But seriousness maybe pre-procedure and medication more serious. User says rank by how many calls affected and how serious. Could order: 1 unauthorized (9, serious), 2 ClearPay (5, serious), 3 pre-procedure (4, very serious), 4 medication (4, very serious), 5 scheduling (5, moderate/serious), 6 identity (3, very serious), 7 insurance (3, serious), 8 follow-up (3, moderate). But scheduling count 5 should maybe before pre-procedure? But seriousness lower? Could put scheduling after medication. Fine.
+
+Need maybe include portal? If not, okay at most 8. But portal appears 4 and could be considered recurring. But top 8 chosen. Need ensure no missing more serious: privacy only 3 but very serious. Good.
+
+Need output valid JSON only. Need escape quotes? JSON string. No markdown. Ensure no trailing commas.
+
+Need maybe include "call_ids" arrays. Need evidence concise. Need recommended_action one sentence.
+
+Double-check JSON format: {"themes": [{"theme": "...", "description": "...", "call_ids": [...], "evidence": "...", "recommended_action": "..."}]}
+
+Need no markdown fences. Final only JSON.
+
+Potential issue: theme "Unauthorized commitments" includes clinical early refill, which is also medication safety. Overlap okay. Need maybe call_ids unique within theme. Good.
+
+Need maybe include C17 in unauthorized and misinformation. Good.
+
+Need maybe include C10 security credential sharing? Not in top. Could be single? C10 only. But security is serious. Could combine with identity/privacy? C10 credential sharing is security, not identity verification? Could include C10 in identity/privacy? It is security/credential-sharing, not disclosure. But theme identity/privacy disclosure failures could include C10? It is security risk, not privacy disclosure. If include, count 4. But C10 is SaaS, agent asked/read admin password. Could be "Security and identity verification failures" C10, C14, C15, C20. That might be stronger. But C10 is credential sharing, not identity verification. Could include as security. Theme: "Identity verification and security/privacy failures". Evidence: C10 password sharing, C14 unauthorized disclosure, C15 no verification, C20 no release. Count 4. More serious. Should we include C10? It is a security concern. But user asks recurring themes across calls; security appears C10 and C20/C15/C14. Could combine. Then call_ids C10,C14,C15,C20. Good. But C10 is SaaS support, still operations. Let's consider replacing follow-up? No, keep 8. Identity theme count 4. Good.
+
+Need maybe include system/tooling? C01, C08, C10, C12. But if include identity with C10, system omitted. Could be okay.
+
+Need maybe include "Refund policy confusion" C02,C05,C19. But ClearPay covers C02/C05; C19 not. Not top.
+
+Need maybe include "Incorrect information" C11,C13,C17,C16? But unauthorized covers many. Could be separate but not needed.
+
+Need maybe include "Portal access" C07,C09,C13,C14. If omitted, okay? It is recurring 4. But top 8 by seriousness maybe omitted. However user might expect portal. But at most 8. Need choose most systemic. Portal is process failure/source of confusion. Could be included instead of follow-up? Follow-up is also process. Which more serious? Missed callbacks can harm. Portal less. Keep follow-up.
+
+Need maybe include "System performance" C01,C12,C08,C10. Could be less direct. Omit.
+
+Need ensure descriptions not too long. 1-2 sentences.
+
+Let's draft JSON:
+{
+ "themes": [
+  {"theme":"Unauthorized commitments and overpromising","description":"Agents repeatedly promise refunds, credits, coverage, contract terms, or clinical actions outside their authority or without required approvals. This creates false expectations and compliance risk.","call_ids":["C02","C05","C10","C11","C12","C13","C15","C17","C20"],"evidence":"Guaranteed 48-hour refund, zeroed $310 balance, promised full month credit, 30% savings guarantee, lost wages, second sleep-study night, early controlled-substance refill, BAA on Team, and unauthorized reminder commitments.","recommended_action":"Enforce approval workflows and script guardrails for refunds, credits, coverage, contract terms, and clinical commitments."},
+  {"theme":"ClearPay duplicate copay charges","description":"Patients are charged twice for the same visit when a front-desk payment is followed by an automatic ClearPay payment. The issue is known but still generating disputes, refunds, and collections risk.","call_ids":["C02","C05","C09","C14","C18"],"evidence":"Duplicate $45, $30, $45, three $45 charges, and $40 copay duplicates were reported; one account was referred to collections despite an open dispute.","recommended_action":"Pause or fix ClearPay duplicate-payment logic and proactively audit affected accounts before collections."},
+  {"theme":"Conflicting pre-procedure fasting instructions","description":"Patients receive different NPO or prep instructions from mailed packets and text messages, causing confusion, cancellations, and safety risk. The conflict is not consistently resolved before the procedure.","call_ids":["C03","C07","C12","C16"],"evidence":"Packet said nothing after midnight while text allowed clear liquids until 2 hours before arrival; this caused a prior cancellation and required urgent nurse confirmation.","recommended_action":"Standardize one authoritative pre-procedure instruction source and require anesthesia confirmation before sending patient-facing texts."},
+  {"theme":"Medication safety and clinical escalation gaps","description":"Medication changes, dangerous symptoms, or cost-related nonadherence are sometimes not escalated to the right clinician or pharmacist. This creates avoidable clinical risk.","call_ids":["C03","C04","C14","C15"],"evidence":"Possible DVT symptoms were not escalated, a dose change was not received, skipped BP meds due to cost were not initially escalated, and a controlled-substance interaction was handled without pharmacist review.","recommended_action":"Require mandatory clinical escalation and pharmacist review for red-flag symptoms, medication changes, and controlled-substance requests."},
+  {"theme":"Scheduling and appointment detail errors","description":"Appointment dates, times, locations, referrals, and contact details are frequently wrong or changed without proper verification. This can lead to missed care, wrong-facility visits, and privacy exposure.","call_ids":["C01","C03","C13","C16","C20"],"evidence":"Date confusion, wrong PT referral, out-of-network scheduling, wrong time/location sent to outdated email, and phone number changed without release form.","recommended_action":"Add mandatory double-checks for appointment details, network status, and identity verification before scheduling or contact changes."},
+  {"theme":"Identity verification and security/privacy failures","description":"Staff disclose account, medication, or appointment information without adequate identity verification or authorization, and in one case shared credentials. This creates privacy and security exposure.","call_ids":["C10","C14","C15","C20"],"evidence":"Agent read customer admin password, husband's account disclosed without authorization, medication list disclosed after name only, and appointment details/phone changed without release form.","recommended_action":"Enforce strict identity verification, HIPAA/privacy authorization checks, and no-credential-sharing rules with QA monitoring."},
+  {"theme":"Insurance, prior authorization, and network errors","description":"Insurance verification, prior authorization, and network status are mishandled, leading to denied balances, delayed care, or scheduling at the wrong facility. Agents also give inaccurate coverage estimates.","call_ids":["C05","C09","C13"],"evidence":"MRI denied for missing prior authorization, PA required for MRI, and patient scheduled at out-of-network Ridgeline despite PA for Westbrook and told no out-of-pocket cost.","recommended_action":"Integrate real-time eligibility/network checks and require PA/network confirmation before scheduling or quoting costs."},
+  {"theme":"Missed or untracked follow-up commitments","description":"Promised callbacks, transfers, and billing follow-ups are not reliably assigned, referenced, or completed. This leaves unresolved issues and increases repeat contacts.","call_ids":["C02","C09","C14"],"evidence":"A promised billing callback had no reference number, a promised billing transfer did not occur, and a promised callback had no task assigned.","recommended_action":"Require every promised follow-up to create a tracked task with owner, due date, and reference number before call closure."}
+ ]
+}
+
+Need check if C10 in identity theme: "Agent read customer admin password" yes. Good.
+
+Need maybe include C17 in unauthorized but not in misinformation. Good.
+
+Need ensure JSON valid. Use double quotes. No trailing. Final only JSON.
+
+Need consider if "call_ids" should be strings. yes.
+
+Need maybe rank by count: unauthorized 9, ClearPay 5, scheduling 5, pre-procedure 4, medication 4, identity 4, insurance 3, follow-up 3. Our order puts pre-procedure before scheduling. Is that okay? Rank by count and seriousness. Could reorder to put scheduling third due count 5. But pre-procedure more serious. Maybe order: 1 unauthorized, 2 ClearPay, 3 scheduling (5), 4 pre-procedure (4), 5 medication (4), 6 identity (4), 7 insurance (3), 8 follow-up (3). But pre-procedure serious. The instruction says rank by how many calls affected and how serious. Could use count primary. If count primary, scheduling third. But if seriousness, pre-procedure maybe third. Need choose. Maybe put pre-procedure third because clinical safety. But scheduling count 5. Hmm.
+
+Could adjust scheduling count to 4 by excluding C01? If C01 date confusion is patient confusion not systemic? But still source of confusion. If exclude C01, count 4. Then order okay. But call_ids include C01? Could remove C01 to make count 4. But C01 is date confusion, recurring with C16? It is minor. Could keep. If count 5, maybe should be higher. But not necessarily systemic problem? It is patient confusion, agent clarified. Not a process failure. Theme is scheduling errors; C01 not error by system, just patient confusion. Could exclude C01. Then scheduling call_ids C03,C13,C16,C20 (4). But C20 is privacy. Still appointment detail change. Count 4. Good. Then order okay. But C01 date confusion could be source of confusion. Yet not systemic? Maybe recurring confusion about dates/times across C01, C16. But C01 resolved. I can exclude C01 to avoid overcount. But theme "Scheduling and appointment detail errors" with C03, C13, C16, C20. Evidence: wrong PT referral, out-of-network scheduling, wrong time/location, phone changed. Good. Count 4. Then top order: unauthorized 9, ClearPay 5, pre-procedure 4, medication 4, scheduling 4, identity 4, insurance 3, follow-up 3. Good.
+
+Need maybe include C01 in system? omitted. Fine.
+
+Need maybe include C01 in portal? no.
+
+Need maybe include C04 in medication safety: dose change not received. Good.
+
+Need maybe include C18 in ClearPay. yes.
+
+Need maybe include C19 in refund confusion? omitted.
+
+Need maybe include C08/C10 system? omitted. Could be okay.
+
+Need ensure no theme with single call. All >=2.
+
+Need maybe include "known ClearPay issue since late February" evidence. Good.
+
+Need final JSON only. Ensure no newline? okay.
+
+Double-check JSON escaping: apostrophe in "patient's"? In JSON string, apostrophe fine. Use no unescaped double quotes inside. We have "no out-of-pocket" no quotes. Good.
+
+Need maybe recommended_action one sentence. All one sentence.
+
+Need maybe description 1-2 sentences. Good.
+
+Potential issue: "call_ids" for unauthorized includes C15 early refill, which is also medication safety. Overlap okay.
+
+Potential issue: C10 in identity theme: "Agent read customer admin password" is security, not identity verification. Theme name includes security/privacy. Good.
+
+Potential issue: C14 in identity theme: privacy disclosure. Good.
+
+Potential issue: C15 identity verification flag. Good.
+
+Potential issue: C20 identity/privacy. Good.
+
+Need maybe include C17 in unauthorized: BAA. Good.
+
+Need maybe include C11 in unauthorized: savings/cancel. Good.
+
+Need maybe include C13 in unauthorized: second night/no out-of-pocket. Good.
+
+Need maybe include C12 in unauthorized: lost wages. Good.
+
+Need maybe include C05 in unauthorized: zeroed balance. Good.
+
+Need maybe include C02 in unauthorized: 48h refund. Good.
+
+Need maybe include C20 in unauthorized: promised reminders/contact without authorization. Good.
+
+Need maybe include C10 in unauthorized: full month credit. Good.
+
+Need maybe include C15 in unauthorized: early refill without authorization. Good.
+
+All good.
+
+Need final.

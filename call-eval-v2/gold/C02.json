@@ -1,0 +1,283 @@
+{
+ "call_id": "C02",
+ "call_type": "billing_dispute",
+ "outcome": "resolved",
+ "sentiment_start": "negative",
+ "sentiment_start_accept": [
+  "neutral"
+ ],
+ "sentiment_end": "positive",
+ "quality_score": 3,
+ "quality_reasons": [
+  {
+   "id": "Q1",
+   "text": "Warm, empathetic agent who verified identity (DOB and address) before opening the account and explained every charge",
+   "match": [
+    [
+     "empath",
+     "warm",
+     "friendly",
+     "kind",
+     "caring",
+     "verif",
+     "courteous",
+     "polite",
+     "rapport"
+    ]
+   ]
+  },
+  {
+   "id": "Q2",
+   "text": "Waived the $95 no-show fee herself although she said fees over $50 need her lead's approval",
+   "match": [
+    [
+     "waiv",
+     "no.show",
+     "95",
+     "ninety.five",
+     "approv",
+     "authori[sz]",
+     "\\$50",
+     "fifty dollar",
+     "limit",
+     "policy"
+    ]
+   ]
+  }
+ ],
+ "flags": [
+  {
+   "id": "F1",
+   "text": "Agent waived the $95 no-show fee on her own ('just this once') even though she had stated that she can only remove fees up to $50 and anything over $50 needs her lead's approval",
+   "evidence": "I'm just going to take that off for you. Don't even worry about it. Just this once, okay?",
+   "paraphrases": [
+    "Unauthorized waiver of a $95 no-show fee, exceeding the agent's $50 limit without supervisor approval.",
+    "Agent removed the ninety-five dollar fee without getting her lead's sign-off, contrary to the stated policy.",
+    "Policy violation: fee over her authority was waived without approval."
+   ],
+   "negatives": [
+    "Agent explained the statement balance and took a card payment."
+   ],
+   "match": [
+    [
+     "no.show",
+     "95",
+     "ninety.five",
+     "fee",
+     "waiv"
+    ],
+    [
+     "waiv",
+     "remov",
+     "took (it )?off",
+     "take (that |it )?off",
+     "approv",
+     "authori[sz]",
+     "lead",
+     "supervisor",
+     "policy",
+     "exceed",
+     "over (the )?\\$?50",
+     "limit",
+     "just this once"
+    ]
+   ]
+  }
+ ],
+ "decoys": [
+  {
+   "id": "D1",
+   "text": "Agent disclosed the account balance before verifying the caller's identity",
+   "why_not": "She found two accounts with the name and verified DOB and address before opening or discussing anything.",
+   "evidence": "So before I open anything, can I get your date of birth?",
+   "paraphrases": [
+    "Balance and visit details were shared before identity verification was completed.",
+    "Identity verification lapse: account information discussed with only a name.",
+    "Agent opened an account with a matching name without confirming the caller's identity."
+   ],
+   "match": [
+    [
+     "verif",
+     "identity",
+     "date of birth",
+     "dob",
+     "two accounts",
+     "matching name"
+    ]
+   ]
+  },
+  {
+   "id": "D2",
+   "text": "Caller's brother-in-law was wrongly sent to collections",
+   "why_not": "Hearsay about a different person; the agent correctly declined to look into his account and said he must call himself.",
+   "evidence": "my brother-in-law said you guys sent him to collections for no reason last year",
+   "paraphrases": [
+    "A family member's account was referred to collections in error.",
+    "Brother-in-law reportedly sent to collections without reason."
+   ],
+   "match": [
+    [
+     "brother.in.law",
+     "collection"
+    ]
+   ]
+  }
+ ],
+ "acceptable_flags": [
+  {
+   "id": "OK1",
+   "text": "Phone menu option 3 for refills routes callers to billing",
+   "match": [
+    [
+     "menu",
+     "phone tree",
+     "ivr",
+     "press",
+     "option",
+     "rout",
+     "misdirect"
+    ]
+   ]
+  },
+  {
+   "id": "OK2",
+   "text": "Front-desk voicemail cancellation message was not noted / unreliable voicemail",
+   "match": [
+    [
+     "voicemail",
+     "message",
+     "not noted",
+     "cancel"
+    ]
+   ]
+  },
+  {
+   "id": "OK3",
+   "text": "Agent initially misread the copay balance as $15.20",
+   "match": [
+    [
+     "misread",
+     "15\\.20",
+     "fifteen twenty",
+     "incorrect(ly)? (stated|read)"
+    ]
+   ]
+  },
+  {
+   "id": "OK4",
+   "text": "Card details taken over the phone",
+   "match": [
+    [
+     "card",
+     "payment"
+    ]
+   ]
+  }
+ ],
+ "action_items": [
+  {
+   "id": "A1",
+   "owner": "agent",
+   "task": "Remove the $95 no-show fee from the account",
+   "due": "during call (done)",
+   "match": [
+    [
+     "no.show",
+     "95",
+     "ninety.five",
+     "fee"
+    ],
+    [
+     "remov",
+     "waiv",
+     "took off",
+     "take off",
+     "credit",
+     "revers",
+     "adjust"
+    ]
+   ]
+  },
+  {
+   "id": "A2",
+   "owner": "agent",
+   "task": "Update mailing address to 18 Wrenfield Court Apt 3B",
+   "due": "during call",
+   "match": [
+    [
+     "address",
+     "wrenfield"
+    ]
+   ]
+  },
+  {
+   "id": "A3",
+   "owner": "agent",
+   "task": "Email the payment receipt for $51.20",
+   "due": "right after the call",
+   "match": [
+    [
+     "receipt"
+    ]
+   ]
+  },
+  {
+   "id": "A4",
+   "owner": "caller",
+   "task": "Call Ostrander Pharmacy direct line 555-0162 for the albuterol inhaler refill",
+   "due": "today",
+   "match": [
+    [
+     "0162",
+     "albuterol",
+     "inhaler",
+     "pharmacy (direct )?(line|number)",
+     "ostrander"
+    ]
+   ]
+  }
+ ],
+ "subtle_facts": [
+  {
+   "id": "S1",
+   "text": "Copay balance is $51.20 (agent first misread it as fifteen twenty), paid in full by Visa ending 2914",
+   "evidence": "It's fifty-one twenty. Fifty-one dollars and twenty cents.",
+   "negatives": [
+    "Copay balance was $15.20",
+    "remaining balance fifteen twenty"
+   ],
+   "match": [
+    [
+     "51\\.20",
+     "fifty.one.twenty",
+     "fifty.one dollars"
+    ]
+   ]
+  },
+  {
+   "id": "S2",
+   "text": "Caller moved in August; new address 18 Wrenfield Court Apt 3B",
+   "evidence": "It's eighteen Wrenfield Court. Apartment three-B.",
+   "match": [
+    [
+     "wrenfield"
+    ]
+   ]
+  },
+  {
+   "id": "S3",
+   "text": "Pharmacy direct line given: 555-0162 (caller originally pressed 3 for refills and landed in billing)",
+   "evidence": "it's five-five-five, oh-one-six-two",
+   "match": [
+    [
+     "0162",
+     "oh.one.six.two",
+     "zero.one.six.two"
+    ]
+   ]
+  }
+ ],
+ "themes": [
+  "T_IVR_MISROUTE"
+ ]
+}

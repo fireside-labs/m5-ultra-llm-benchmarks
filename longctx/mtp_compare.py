@@ -30,6 +30,8 @@ def record(args):
     model = args.model or server_model(args.url)
     extra = {"chat_template_kwargs": {"enable_thinking": False, "thinking": False},
              "temperature": args.temperature}
+    if args.template_kwargs:
+        extra["chat_template_kwargs"].update(json.loads(args.template_kwargs))
     if args.top_k is not None:
         extra["top_k"] = args.top_k
     if args.top_p is not None:
@@ -76,7 +78,8 @@ def compare(args):
             continue
         s_off = statistics.median(r["decode_tps"] for r in a)
         s_on = statistics.median(r["decode_tps"] for r in b)
-        ta, tb = a[0]["content"], b[0]["content"]
+        # reasoning models (GLM-5.3 can't turn it off) may spend the whole budget reasoning
+        ta, tb = (a[0].get("reasoning", "") + a[0]["content"]), (b[0].get("reasoning", "") + b[0]["content"])
         if a[0].get("temperature", 0) > 0 or b[0].get("temperature", 0) > 0:
             match = "sampled (speed only)"
         elif ta == tb:
@@ -102,6 +105,7 @@ def main():
     r.add_argument("--temperature", type=float, default=0.0,
                    help="0 = greedy, outputs comparable; use the model's recommended value for realistic speed")
     r.add_argument("--top-k", type=int)
+    r.add_argument("--template-kwargs", help='JSON merged into chat_template_kwargs, e.g. \'{"reasoning_effort": "low"}\'')
     r.add_argument("--top-p", type=float)
     r.add_argument("--out", default=str(pathlib.Path.home() / "bench-results"))
     c = sub.add_parser("compare")

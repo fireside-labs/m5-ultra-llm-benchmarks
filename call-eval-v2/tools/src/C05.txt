@@ -1,0 +1,142 @@
+@id C05
+@date 2026-09-17 10:12
+@line Brightwater Family Medicine - Millbrook, Care Coordination (outbound; transferred to Nurse Line)
+@direction outbound
+@target 8000
+@seed 5105
+@speaker A AGENT = care coordinator (Brightwater Millbrook)
+@speaker R OTHER = person who answered the phone
+@speaker C PATIENT = patient
+@speaker N NURSE = nurse line registered nurse
+---
+#note outbound call placed, ringing
+R: [background TV] Yeah? Hello?
+A: Hi there, good morning! This is Wren calling from Brightwater Family Medicine over at Millbrook. I'm calling for Harlan about his missed diabetes appointment on Tuesday, the A1c recheck with Dr. Ruiz-Pakula. Is he around?
+R: Uh. Harlan? Hang on. He's, uh, he's here somewhere. HARLAN. [inaudible] It's the doctor's office, something about your diabetes thing.
+R: [muffled] I don't know, some lady. Wren? Like the bird.
+#pause 18
+C: Hello, this is Harlan.
+A: Hi Harlan, this is Wren with Brightwater Millbrook, care coordination. Before I go any further, can you confirm your full name and date of birth for me?
+C: Harlan Brecken-Ayodele. Date of birth is, uh, February second, nineteen seventy-eight.
+A: Perfect, thank you. And can you confirm the street address we have?
+C: Forty-four Tannery Row. Apartment, uh, two.
+A: Great, you're verified. So I'm just calling because we had you down for Tuesday at nine with Dr. Ruiz-Pakula, the endocrinology follow-up and your A1c recheck, and it looks like we didn't see you. I just wanted to check in and see if everything's okay and get you rebooked.
+C: Yeah. Yeah, I know. Look, I— honestly I'm a little annoyed you're calling, no offense, because I tried to cancel. I did.
+A: Oh, I'm sorry. Okay, tell me what happened.
+C: So the appointment card says, you know, call the main number to cancel or change. So I call Monday night— Monday afternoon, I guess. And it's the menu thing. And I'm also out of my, my strips, the test strips, so I'm thinking two birds, right? I press three, for the prescriptions, figuring I'll ask them about the strips and they can transfer me to cancel.
+A: Mm-hm.
+C: And I end up in billing. Like, a guy answers, "Patient Financial Services." I said I'm trying to get prescriptions, he says, oh, the menu's been doing that, let me transfer you, and then it rang for, I don't know, ten minutes, and then it hung up on me. And I had to go to work. So I gave up. I figured somebody would call. And, well, here you are.
+A: Ugh. I'm really sorry, Harlan. You're not the first person who's told me that this week, honestly.
+C: So it's not just me.
+A: It's not just you. That's not on you at all. And just so you know, before we hang up I'll give you the direct line so you don't get stuck in billing again.
+C: That'd be great. Seriously.
+A: Of course. So, about the appointment. Normally there's a forty-dollar no-show fee, but it's your first missed visit in twelve months, so per our policy that's waived automatically. You won't see a charge.
+C: Oh. Okay. Good, because that would've really made my day.
+A: [laughs] No, you're fine. Okay, let me pull up Dr. Ruiz-Pakula's schedule.
+#fill ehr_navigation smalltalk @A=A @C=C
+A: Okay so, she's pretty booked. The soonest I'm seeing is, um, Tuesday October sixth.
+C: What times?
+A: I have, let's see, a seven-forty, an eight-fifty— sorry, that's wrong, I'm reading the wrong column. Eight-fifteen. Eight one-five. And then nothing again till the afternoon, like a two-thirty.
+C: I work nights now. That's actually— I started on nights at the warehouse in August, so mornings are actually better, I get off at six.
+A: Oh, okay, so early's good for you.
+C: Early's great. If I go home and fall asleep I'm never coming back out. [laughs]
+A: [laughs] Fair. So the eight-fifteen on Tuesday October sixth?
+C: Eight-fifteen, yeah. Let's do that.
+A: Okay, booking it. Tuesday, October sixth, eight-fifteen a.m., Dr. Ruiz-Pakula, here at Millbrook, second floor.
+C: Second floor. Got it.
+A: And the lab order for your A1c is still active, so you can stop by the Millbrook lab any morning before the sixth and get that drawn, and then she'll have the result when she sees you. No appointment needed for the lab.
+C: Do I have to fast for that one?
+A: Not for the A1c by itself, no. If she adds anything else it'll say on the order, but right now it's just the A1c.
+C: Okay.
+A: And while I have you, I just need to double-check insurance before the visit. Still Halvard Health Plan?
+C: Still Halvard. Through the warehouse now, actually, I switched in August when I went full-time. Same company, different, uh, different plan or group or whatever. New card.
+A: Oh, okay, good thing I asked. Do you have the new card handy?
+C: It's in my wallet, which is... [background] Dee, have you seen my wallet? ... The kitchen? ... Okay hang on.
+#pause 25
+C: Okay. Got it. Halvard. Member ID is H, then, uh, two-two-zero-eight-four-six. Group number is W-H-S, nine-one-one-zero.
+A: H-two-two-zero-eight-four-six, and group W-H-S-nine-one-one-zero.
+C: Yep.
+A: Okay, updated. That'll help so the visit doesn't bounce.
+#diar off
+C: Sorry, my roommate's making eggs and the fan is— can you hear me okay?
+A: I can hear you fine. Smells good I bet.
+C: It's eggs. [laughs] It's always eggs.
+A: [laughs] Could be worse.
+C: Hey, um, quick question. Should I be worried? About missing it? Like, is she gonna drop me as a patient or something?
+A: No, no. Nobody's dropping you. It happens. We just like to catch people so they don't fall through the cracks, especially with the diabetes follow-ups, because the A1c is how she knows whether the medicine's working.
+C: Okay. Because last time she was kind of, she said if it's still up she wants to talk about adding something.
+A: Yeah, that's a conversation for you and her on the sixth. I don't know the clinical side, I'm just the scheduling and follow-up person.
+#diar on
+C: Fair enough.
+A: Is there anything that would make it hard to get here on the sixth? Transportation, anything like that?
+C: No, I've got my truck. Well. It's my brother's truck. But I've got it till Christmas. [laughs]
+A: [laughs] Okay, that works. And Millbrook parking is the lot behind the building, it's free, the front lot is for the bank.
+C: Oh, that's good to know. Last time I parked at the bank and some guy came out and yelled at me.
+A: [laughs] Yeah, they're very protective of that lot.
+#fill smalltalk connection_issues @A=A @C=C
+A: Okay. And I want to make sure you get a reminder this time. What's the best way to reach you, is this number okay for texts?
+C: This is actually the house phone. My roommate's phone, kind of. My cell is better. Five five five, oh one, uh, nine one.
+A: Five-five-five, zero-one-nine-one.
+C: Yeah. Wait. Is that— hold on, I always do this. Zero-one-nine-one. Yeah. That's it.
+A: Okay, I'll text the confirmation there, and you'll get a reminder two days before.
+C: Perfect.
+A: Now, you mentioned you're out of test strips. How long have you been out?
+C: Uh, since, like, Saturday? Sunday? I had a couple left in an old box in the car. So I checked this morning with one of those.
+A: Okay. And how was it, if you don't mind me asking?
+C: It was a hundred forty— no. [paper rustling] No, I wrote it down, it was two-forty. Two hundred forty this morning. Which, I mean, I hadn't eaten, so.
+A: Okay. I'm not a nurse, so I don't want to give you advice on that, but I think the nurse should hear about that number, and they can also get the strips sent to the pharmacy for you. Would it be okay if I transfer you over to our nurse line? I'll stay on until they pick up.
+C: Yeah. Yeah, sure.
+A: Okay. And are you still using Ostrander Pharmacy here at Millbrook?
+C: Yeah, the Millbrook one.
+A: Got it. One sec.
+#hold 95
+#fill hold_announce @C=C
+#note call transferred to nurse line (warm transfer)
+A: Hi, this is Wren in care coordination, I've got Harlan Brecken-Ayodele, date of birth two-two-seventy-eight, he's verified. He's out of test strips since the weekend, and he got a fasting reading of two-forty this morning, and he's rebooked with Dr. Ruiz-Pakula for October sixth. He'd like the strips sent to Ostrander Millbrook.
+N: Thanks, Wren. I've got him. Hi Harlan, this is Teodora, I'm one of the nurses.
+C: Hi.
+A: Okay, I'm going to drop off. Take care, Harlan!
+C: Thanks, Wren.
+#note care coordinator left the call
+N: Okay, Harlan, so Wren said two-forty this morning, fasting. Is that right?
+C: Two-forty. Yeah. I had a hundred forty in my head but it was two-forty, I wrote it on my hand. [laughs] It's still on my hand.
+N: [laughs] Okay, that's a good system. And how are you feeling? Any unusual thirst, peeing a lot more, blurry vision, nausea, vomiting, belly pain?
+C: Thirsty, kind of, but I work in a warehouse, I'm always thirsty. No throwing up. No belly pain. Vision's fine.
+N: Okay. Any confusion, any trouble breathing, feeling really weak?
+C: No. No. I feel fine, honestly, I just feel tired, but I work nights.
+N: Okay. Are you taking your metformin?
+C: The, uh, the met for men? Yeah, the met-form-in. Twice a day. I mean. Mostly twice a day. When I'm on nights it's like, what's morning, you know?
+N: Totally understand. Any insulin?
+C: No. Just the metformin. And the, um, the blood pressure one.
+N: Okay. So here's what I want you to do. A reading of two-forty fasting is high, but with no vomiting, no confusion, no belly pain, you don't need to go to the ER right now. I'm going to send the strips to Ostrander today, so you can check properly. I want you to check twice a day, when you wake up and before your main meal, and write them down. If you see anything over three hundred, or if you start vomiting, or get belly pain, or feel confused, or really short of breath, you go to urgent care or the ER that same day, don't wait for us. Okay?
+C: Over three hundred, urgent care.
+N: Over three hundred, or any of those symptoms. And call the nurse line if you're not sure. And I don't want you waiting till October sixth with readings like this, so I'm going to put you on the nurse visit schedule early next week too, so we can look at your numbers. Do you have Monday, the twenty-first, in the morning?
+C: Monday morning. After work. Like seven-thirty?
+N: We start at eight. Eight o'clock, Monday September twenty-first, nurse visit at Millbrook. Bring your log, or your meter.
+C: Eight o'clock Monday. Okay.
+#fill nurse_chat smalltalk @A=N @C=C
+C: Can I ask you something kind of dumb?
+N: There are no dumb questions on the nurse line. Mostly. [laughs]
+C: [laughs] So when I'm on nights, I eat, like, my dinner is at two in the morning. Does that mess up the, the checking? Like when's "before my main meal"?
+N: Not dumb at all. Your "morning" is whenever you wake up for your day, so if you sleep seven to two, your waking check is around two in the afternoon. And then check again before your big meal, whenever that is for you, the two a.m. one. The point is the same times every day so we can compare.
+C: Okay. That makes more sense than what I was doing, which was nothing. [laughs]
+N: [laughs] Well, now you have a plan. And write the time next to the number.
+C: Time next to the number. Got it.
+N: And the metformin, try to tie it to your meals too. Your first meal and your big meal. Don't skip it on your days off just because your schedule flips. If it's hard to remember, the pharmacy can sync it with a reminder.
+C: Okay. My days off are the worst. I flip back to days for my kid.
+N: Oh, you've got a kid?
+C: My daughter. She's nine. Every other weekend.
+N: That's lovely. Okay, so bring that up with Dr. Ruiz-Pakula too, the flipping schedule, she might want to time things differently.
+C: Will do.
+N: Okay, I'm putting the strips through now. Which meter do you have?
+C: It's the, uh, the gray one. Accu-something? No. The one that came in the kit. Let me— [inaudible] it says "TrueStep Mini" on it.
+N: Okay, I see TrueStep strips on your med list from last year, so I'll send TrueStep strips, a hundred count, and lancets. Ostrander Millbrook. They should have it ready this afternoon or tomorrow morning.
+C: Great. Do I need to pay anything?
+N: That depends on your plan, the pharmacy will tell you. Usually strips are covered.
+C: Okay.
+N: Anything else for me today?
+C: No, I think that's— I think that's it. Thank you. Honestly, thank you, I thought I was getting yelled at.
+N: [laughs] Nobody's yelling. You did the right thing writing it down. Check twice a day, over three hundred or any of those symptoms go in, Monday eight a.m. nurse visit, October sixth with Dr. Ruiz-Pakula. Okay?
+C: Got it.
+N: Take care, Harlan.
+C: You too. Bye.

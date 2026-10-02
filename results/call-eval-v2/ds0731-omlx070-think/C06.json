@@ -1,0 +1,66 @@
+{
+  "call_type": "saas_support",
+  "outcome": "resolved",
+  "sentiment_start": "neutral",
+  "sentiment_end": "positive",
+  "quality_score": 4,
+  "quality_reasons": [
+    "Identity verified via emailed code before account changes",
+    "Root cause correctly diagnosed as UTC conversion bug (TF-88213) and explained clearly",
+    "Provided effective workarounds (grace period, no-date template) and reversed a late fee",
+    "Tier 1 gave incorrect info about late fee reversal, later corrected by Tier 2",
+    "Long hold times (20 min initial, 6+ min transfer) without proactive updates"
+  ],
+  "flags": [
+    {
+      "type": "misinformation",
+      "description": "Tier 1 agent incorrectly stated that posted late fees cannot be reversed, which was later corrected by Tier 2.",
+      "evidence": "once a late fee posts to an invoice it can't be reversed"
+    }
+  ],
+  "action_items": [
+    {
+      "owner": "customer",
+      "task": "Reverse late fee on invoice INV-20422",
+      "due": "unspecified"
+    },
+    {
+      "owner": "customer",
+      "task": "Confirm new billing email change via link sent to odile.ms@ferncliffjoinery.com",
+      "due": "unspecified"
+    },
+    {
+      "owner": "customer",
+      "task": "Add Junie as a Staff user via Settings > Team > Invite user",
+      "due": "this afternoon"
+    },
+    {
+      "owner": "customer",
+      "task": "Switch to annual plan before renewal date October 20",
+      "due": "before October 20"
+    },
+    {
+      "owner": "agent_2",
+      "task": "Send summary email with ticket number TF-88213 and workaround steps",
+      "due": "today"
+    },
+    {
+      "owner": "agent_2",
+      "task": "Attach Ferncliff Joinery account to engineering ticket TF-88213",
+      "due": "done during call"
+    }
+  ],
+  "summary_notes": "Odile Marchetti-Sung, bookkeeper at Ferncliff Joinery, reported reminder emails showing due dates one day early and two erroneous late fees. Tier 1 (Kwame) verified identity, updated billing email to odile.ms@ferncliffjoinery.com, and escalated to Tier 2. Priyanka identified known bug TF-88213 (UTC conversion in release 7.4) affecting all reminders since Sept 2. Late fees on INV-20417 and INV-20422 ($35 each) were caused by the same bug; one reversed during call, other to be reversed by customer. Workarounds applied: late-fee grace period set to 1 day, reminder template changed to 'Friendly reminder, no date'. Customer to confirm email change, add Junie as Staff user, and switch to annual plan before Oct 20 renewal. Summary email promised. Account attached to ticket for fix in 7.4.2.",
+  "notable_details": [
+    "Bug ticket TF-88213, fix in version 7.4.2",
+    "Reminder emails show due date one day early due to UTC conversion; late-fee job runs at 7:01 PM Central (midnight UTC)",
+    "Affected invoices: INV-20417 (Hartwell Kitchens) and INV-20422 (Brookfield Renovations), each with $35 late fee",
+    "Billing email changed to odile.ms@ferncliffjoinery.com, pending confirmation; login email still accounts@ and requires owner (Gordon Ferncliff) to change",
+    "Customer set late-fee grace period to 1 day and switched reminder template to 'Friendly reminder, no date'",
+    "Customer plans to switch to annual plan before renewal on October 20",
+    "Customer asked about deposit schedule feature and client portal download; advised to wait for 7.4.2 for deposit schedule",
+    "Customer asked about sharing password with Junie; advised against, plan includes 3 free Staff seats (only 1 used)",
+    "Customer mentioned Kittering Veterinary also affected by same bug",
+    "Tier 1 agent Kwame gave incorrect info that late fees cannot be reversed; corrected by Tier 2"
+  ]
+}
